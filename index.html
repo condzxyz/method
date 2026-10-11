@@ -13,7 +13,10 @@
 <meta property="og:url" content="https://condzmethod.com/">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#F7F5F0">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2320211F'/%3E%3Ctext x='32' y='45' text-anchor='middle' font-family='Georgia,serif' font-size='38' fill='%23F7F5F0'%3EM%3C/text%3E%3C/svg%3E">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src https://formsubmit.co; base-uri 'none'; form-action 'none'; object-src 'none'; frame-src 'none'">
+<link rel="canonical" href="https://condzmethod.com/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='14'%20fill='%2320211F'/%3E%3Ctext%20x='32'%20y='45'%20text-anchor='middle'%20font-family='Georgia,serif'%20font-size='38'%20fill='%23F7F5F0'%3EM%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500&display=swap">
@@ -44,6 +47,7 @@ img{max-width:100%}
 .logo{display:flex;align-items:baseline;gap:10px;text-decoration:none;color:var(--ink)}
 .logo b{font-family:var(--serif);font-weight:400;font-size:28px;line-height:1}
 .logo span{font-size:13px;color:var(--muted)}
+@media (max-width:359px){.logo span{display:none}}
 .nav nav{display:flex;gap:32px}
 .nav nav a{font-size:15px;color:var(--muted);text-decoration:none}.nav nav a:hover{color:var(--ink)}
 @media (max-width:819px){.nav nav{display:none}}
@@ -242,8 +246,8 @@ textarea.fi{height:auto;min-height:96px;padding:12px 14px;line-height:1.5;resize
       <g data-orbit="-140000" style="transform-origin:720px 760px"><circle cx="720" cy="760" r="760" stroke="#ECEAE3" stroke-dasharray="2 7"/><circle cx="1340" cy="320" r="1.6" fill="#B9B6AC" stroke="none"/></g>
     </g>
   </svg>
-  <div class="hand hand-l" id="hlS"><div id="hlP"><img id="hlI" src="assets/method-mao-pintada.webp" alt="" width="1000" height="500" fetchpriority="high" decoding="async"></div></div>
-  <div class="hand hand-r" id="hrS"><div id="hrP"><img id="hrI" src="assets/method-mao-tipografica.webp" alt="" width="1150" height="453" fetchpriority="high" decoding="async"></div></div>
+  <div class="hand hand-l" id="hlS"><div id="hlP"><picture><source media="(max-width:1023px)" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><img id="hlI" src="assets/method-mao-pintada.webp" alt="" width="1000" height="500" fetchpriority="high" decoding="async"></picture></div></div>
+  <div class="hand hand-r" id="hrS"><div id="hrP"><picture><source media="(max-width:1023px)" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><img id="hrI" src="assets/method-mao-tipografica.webp" alt="" width="1150" height="453" fetchpriority="high" decoding="async"></picture></div></div>
   <div class="hero-in"><div class="hero-txt">
     <p class="eyebrow" data-reveal="0">Mentoria em grupo · 30 dias · limite de 15 pessoas</p>
     <h1 data-reveal="60">Todo mestre já teve um <em>mestre</em>.</h1>
@@ -254,7 +258,7 @@ textarea.fi{height:auto;min-height:96px;padding:12px 14px;line-height:1.5;resize
     </div>
     <p class="by" data-reveal="220">por <a href="https://x.com/condzxyz" target="_blank" rel="noopener">@condzxyz</a></p>
   </div></div>
-  <div class="hero-mob"><div><img src="assets/method-hero-mobile.webp" alt="Uma mão pintada e uma mão feita de palavras quase se tocando" width="1100" height="733" decoding="async"></div></div>
+  <div class="hero-mob"><div><picture><source media="(min-width:1024px)" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><img src="assets/method-hero-mobile.webp" alt="Uma mão pintada e uma mão feita de palavras quase se tocando" width="1100" height="733" fetchpriority="high" decoding="async"></picture></div></div>
 </section>
 
 <section id="trajetoria" class="sec bt">
@@ -322,7 +326,7 @@ textarea.fi{height:auto;min-height:96px;padding:12px 14px;line-height:1.5;resize
 
 <section id="duvidas" class="sec bt">
   <div class="wrap faqg">
-    <div class="phil" data-reveal="0"><img src="assets/method-filosofo.webp" alt="" width="800" height="1200" loading="lazy" decoding="async"><canvas data-kind="letters" data-pad="60" aria-hidden="true"></canvas></div>
+    <div class="phil" data-reveal="0"><picture><source media="(max-width:1023px)" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><img src="assets/method-filosofo.webp" alt="" width="800" height="1200" loading="lazy" decoding="async"></picture><canvas data-kind="letters" data-pad="60" aria-hidden="true"></canvas></div>
     <div>
       <h2 class="h2" data-reveal="0" style="margin-bottom:32px">Dúvidas <em>essenciais</em>.</h2>
       <div class="faq" id="faq">
@@ -370,16 +374,16 @@ textarea.fi{height:auto;min-height:96px;padding:12px 14px;line-height:1.5;resize
 
       <fieldset class="st" data-step="1">
         <legend>Sobre você</legend>
-        <div><label class="lb" for="mf-nome">Nome</label><input class="fi" id="mf-nome" data-first type="text" autocomplete="name" aria-describedby="mf-nome-e"><p class="er" id="mf-nome-e"></p></div>
-        <div><label class="lb" for="mf-email">E-mail</label><input class="fi" id="mf-email" type="email" inputmode="email" autocomplete="email" aria-describedby="mf-email-e"><p class="er" id="mf-email-e"></p></div>
-        <div><label class="lb" for="mf-tel">WhatsApp <span>(opcional)</span></label><input class="fi" id="mf-tel" type="tel" inputmode="tel" autocomplete="tel" placeholder="(11) 91234-5678" aria-describedby="mf-tel-e"><p class="er" id="mf-tel-e"></p></div>
-        <div><label class="lb" for="mf-tg">Telegram</label><input class="fi" id="mf-tg" type="text" autocomplete="off" autocapitalize="none" spellcheck="false" placeholder="@seuusuario" aria-describedby="mf-tg-e"><p class="er" id="mf-tg-e"></p></div>
+        <div><label class="lb" for="mf-nome">Nome</label><input class="fi" id="mf-nome" data-first type="text" autocomplete="name" maxlength="120" aria-describedby="mf-nome-e"><p class="er" id="mf-nome-e"></p></div>
+        <div><label class="lb" for="mf-email">E-mail</label><input class="fi" id="mf-email" type="email" inputmode="email" autocomplete="email" maxlength="254" aria-describedby="mf-email-e"><p class="er" id="mf-email-e"></p></div>
+        <div><label class="lb" for="mf-tel">WhatsApp <span>(opcional)</span></label><input class="fi" id="mf-tel" type="tel" inputmode="tel" autocomplete="tel" maxlength="24" placeholder="(11) 91234-5678" aria-describedby="mf-tel-e"><p class="er" id="mf-tel-e"></p></div>
+        <div><label class="lb" for="mf-tg">Telegram</label><input class="fi" id="mf-tg" type="text" autocomplete="off" autocapitalize="none" spellcheck="false" maxlength="40" placeholder="@seuusuario" aria-describedby="mf-tg-e"><p class="er" id="mf-tg-e"></p></div>
         <input class="hp" id="mf-hp" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
       </fieldset>
 
       <fieldset class="st" data-step="2" hidden style="gap:24px">
         <legend>Seu momento</legend>
-        <div><label class="lb" for="mf-negocio">Qual é o seu negócio e em que momento ele está?</label><textarea class="fi" id="mf-negocio" data-first rows="3" aria-describedby="mf-negocio-e"></textarea><p class="er" id="mf-negocio-e"></p></div>
+        <div><label class="lb" for="mf-negocio">Qual é o seu negócio e em que momento ele está?</label><textarea class="fi" id="mf-negocio" data-first rows="3" maxlength="3000" aria-describedby="mf-negocio-e"></textarea><p class="er" id="mf-negocio-e"></p></div>
         <div role="radiogroup" id="mf-rg" aria-labelledby="mf-reserva-l" aria-describedby="mf-reserva-e">
           <p class="rgq" id="mf-reserva-l">Você tem pelo menos R$50 mil de reserva e pode investir US$888 (cerca de R$4.431) sem comprometer suas finanças?</p>
           <div class="opts">
@@ -395,7 +399,7 @@ textarea.fi{height:auto;min-height:96px;padding:12px 14px;line-height:1.5;resize
         <legend style="margin-bottom:16px">Sua intenção</legend>
         <label class="lb" for="mf-intencao" style="margin-bottom:6px">O que você quer transformar em você e no seu negócio?</label>
         <p class="hint" id="mf-intencao-h">Pode falar de decisões, emoções, direção ou crescimento.</p>
-        <textarea class="fi" id="mf-intencao" data-first rows="5" style="min-height:140px" aria-describedby="mf-intencao-h mf-intencao-e"></textarea>
+        <textarea class="fi" id="mf-intencao" data-first rows="5" maxlength="3000" style="min-height:140px" aria-describedby="mf-intencao-h mf-intencao-e"></textarea>
         <p class="er" id="mf-intencao-e"></p>
       </fieldset>
 
@@ -551,21 +555,24 @@ $$("#faq button").forEach(b => b.addEventListener("click", () => {
 
 // formulário
 const digits = v => String(v || "").replace(/\D/g, "");
+// número estrangeiro: começa com + e não é +55; mantém como digitado
+const intl = v => /^\s*\+/.test(v) && !/^\s*\+\s*55/.test(v);
 function fmtTel(v) {
+  if (intl(v)) return "+" + String(v).replace(/[^\d -]/g, "").replace(/\s+/g, " ").replace(/^\s+/, "").slice(0, 22);
   let d = digits(v); if (d.length >= 12 && d.startsWith("55")) d = d.slice(2); d = d.slice(0, 11);
   if (!d) return ""; if (d.length <= 2) return "(" + d;
   const a = d.slice(0, 2), r = d.slice(2);
   if (r.length <= 4) return `(${a}) ${r}`;
   return d.length === 11 ? `(${a}) ${r.slice(0, 5)}-${r.slice(5)}` : `(${a}) ${r.slice(0, 4)}-${r.slice(4)}`;
 }
-const telOk = v => { let d = digits(v); if (d.length >= 12 && d.startsWith("55")) d = d.slice(2); return (d.length === 10 || d.length === 11) && +d.slice(0, 2) >= 11; };
+const telOk = v => { if (intl(v)) { const n = digits(v).length; return n >= 8 && n <= 15; } let d = digits(v); if (d.length >= 12 && d.startsWith("55")) d = d.slice(2); return (d.length === 10 || d.length === 11) && +d.slice(0, 2) >= 11; };
 const tgFmt = v => v.trim() ? "@" + v.trim().replace(/^@/, "") : "";
 const ARTS = ["emocoes", "atencao", "perspectiva", "respiracao"].map(n => `assets/method-pilar-${n}.webp`);
 const QUOTES = ["Primeiro, quem é você.", "Onde você está agora.", "Para onde você quer ir.", "Respire e revise com calma."];
 const mbg = $("#mbg"), mf = $("#mf"), mbody = $("#mfbody"), back = $("#back"), go = $("#go");
 const F = { nome: $("#mf-nome"), email: $("#mf-email"), whatsapp: $("#mf-tel"), telegram: $("#mf-tg"), negocio: $("#mf-negocio"), intencao: $("#mf-intencao"), ciente: $("#mf-ciente") };
 const ERR = { nome: "mf-nome-e", email: "mf-email-e", whatsapp: "mf-tel-e", telegram: "mf-tg-e", negocio: "mf-negocio-e", reserva: "mf-reserva-e", intencao: "mf-intencao-e", ciente: "mf-ciente-e" };
-let step = 1, done = false, sending = false, sendError = false, origin = null;
+let step = 1, done = false, sending = false, sendError = false, origin = null, pushed = false;
 const vals = () => ({ nome: F.nome.value, email: F.email.value, whatsapp: F.whatsapp.value, telegram: F.telegram.value, negocio: F.negocio.value, reserva: ($('input[name="reserva"]:checked') || {}).value || "", intencao: F.intencao.value, ciente: F.ciente.checked });
 function setErr(k, msg) {
   document.getElementById(ERR[k]).textContent = msg || "";
@@ -579,7 +586,7 @@ function validate(s) {
   if (s === 1) {
     if (v.nome.trim().length < 2) e.nome = "Informe seu nome.";
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.email.trim())) e.email = "Informe um e-mail válido.";
-    if (v.whatsapp.trim() && !telOk(v.whatsapp)) e.whatsapp = "Confira o número com DDD, ou deixe em branco.";
+    if (v.whatsapp.trim() && !telOk(v.whatsapp)) e.whatsapp = "Confira o número com DDD (ou +código do país), ou deixe em branco.";
     if (!/^@?[A-Za-z0-9_]{5,32}$/.test(v.telegram.trim())) e.telegram = v.telegram.trim() ? "Use seu usuário do Telegram, como @seuusuario." : "Informe seu usuário do Telegram.";
   }
   if (s === 2) { if (v.negocio.trim().length < 3) e.negocio = "Conte um pouco sobre o seu negócio."; if (!v.reserva) e.reserva = "Escolha uma opção."; }
@@ -620,14 +627,19 @@ function openForm(e) {
   if (done) { done = false; step = 1; }
   sendError = false; clearErrs();
   mbg.hidden = false; document.body.style.overflow = "hidden"; formOpen = true; syncAmbient();
+  // o "voltar" do celular fecha o formulário em vez de sair da página
+  if (!pushed) { try { history.pushState({ mf: 1 }, ""); pushed = true; } catch (x) {} }
   render(); mbody.scrollTop = 0;
   if (canAnim) mf.animate([{ opacity: 0, transform: "translateY(8px) scale(.99)" }, { opacity: 1, transform: "none" }], { duration: 260, easing: EASE });
   focusFirst();
 }
-function closeForm() {
+function closeForm(fromPop) {
+  if (mbg.hidden) return;
   mbg.hidden = true; document.body.style.overflow = ""; formOpen = false; syncAmbient();
+  if (pushed) { pushed = false; if (fromPop !== true) history.back(); }
   if (origin && origin.focus) origin.focus();
 }
+addEventListener("popstate", () => { if (!mbg.hidden) closeForm(true); });
 async function submit() {
   if (sending) return;
   const v = vals();
@@ -680,6 +692,7 @@ $("#mfx").addEventListener("click", closeForm);
 mbg.addEventListener("click", e => { if (e.target === mbg) closeForm(); });
 mf.addEventListener("keydown", ev => {
   if (ev.key === "Escape") { ev.preventDefault(); closeForm(); return; }
+  if (ev.key === "Enter" && ev.target.matches("input.fi")) { ev.preventDefault(); go.click(); return; }
   if (ev.key !== "Tab") return;
   const f = $$("button:not([disabled]),input:not(.hp),textarea,a[href]", mf).filter(x => x.offsetParent !== null && x.tabIndex >= 0);
   if (!f.length) return; const a = f[0], b = f[f.length - 1];
