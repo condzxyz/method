@@ -176,7 +176,7 @@ function desenhar(p) {
       h('div', { class: 'preco' }, h('b', {}, 'R$150')),
       h('p', {}, 'O vídeo completo, em alta qualidade e sem marca d’água. Libera pra baixar nesta página depois do pagamento.'),
       p.pagar_url ? h('a', { class: 'btn', href: p.pagar_url, onclick: () => pixel('track', 'InitiateCheckout', { value: 150, currency: 'BRL' }) }, 'Pagar e baixar o vídeo') : h('p', {}, 'O link de pagamento sai em instantes.'),
-      h('p', { class: 'pequeno' }, 'Pagamento seguro pela Stripe')))
+      h('p', { class: 'pequeno' }, 'Pix ou cartão · pagamento seguro pela Stripe')))
     blocos.push(formAjuste(p))
   }
   if (p.status === 'pago') {
