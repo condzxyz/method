@@ -55,8 +55,14 @@ details[open]::details-content{block-size:auto}
 .navlinks{display:flex;gap:40px;font:400 17px/1 Inter,sans-serif}
 /* mãos do hero: 3 tamanhos (celular, tablet, desktop) */
 #hero{--pad:clamp(72px,10vh,120px);--hl-top:34%;--hr-top:40%;--hl-w:clamp(260px,27vw,540px);--hr-w:clamp(280px,31vw,600px)}
-@media (max-width:1279px){#hero{--pad:calc(22vw + 96px);--hl-top:24px;--hr-top:88px;--hl-w:40vw;--hr-w:44vw}}
-@media (max-width:767px){#hero{--pad:230px;--hl-top:28px;--hr-top:120px;--hl-w:60vw;--hr-w:66vw}.navlinks{display:none}}
+@media (max-width:1279px){#hero{--pad:calc(22vw + 96px);--hl-top:104px;--hr-top:168px;--hl-w:40vw;--hr-w:44vw}}
+@media (max-width:767px){#hero{--pad:230px;--hl-top:108px;--hr-top:200px;--hl-w:60vw;--hr-w:66vw}.navlinks{display:none}}
+/* céu do hero: passa por baixo do menu; o véu clareia o centro (texto) e funde embaixo com o papel */
+#hero{margin-top:-80px}
+.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;pointer-events:none;user-select:none}
+.hero-veil{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 46% 50% at 50% 52%,rgba(247,245,240,.58),rgba(247,245,240,.14) 72%,rgba(247,245,240,0)),linear-gradient(to bottom,rgba(247,245,240,.5),rgba(247,245,240,0) 170px,rgba(247,245,240,0) 72%,#F7F5F0)}
+.header{background:rgba(247,245,240,0);transition:border-color .2s,background-color .2s}
+.header.scrolled{background:rgba(247,245,240,.84);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
 .cta-overlay{background:linear-gradient(90deg,rgba(247,245,240,0) 28%,rgba(247,245,240,.8) 60%,rgba(247,245,240,.95))}
 @media (max-width:767px){.cta-overlay{background:rgba(247,245,240,.86)}}
 /* lista de recursos e FAQ */
@@ -90,7 +96,7 @@ details[open]::details-content{block-size:auto}
 <div id="root" style="position:relative;overflow-x:clip;padding:clamp(6px,1.1vw,16px)">
 <div style="position:relative;background:#F7F5F0;border-radius:clamp(16px,2vw,28px);overflow:clip;box-shadow:0 1px 3px rgba(60,45,25,.10)">
 
-<header class="header" style="position:sticky;top:0;z-index:50;background:rgba(247,245,240,.84);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)">
+<header class="header" style="position:sticky;top:0;z-index:50">
   <nav style="max-width:1240px;margin:0 auto;padding:0 clamp(20px,3vw,40px);height:80px;display:flex;align-items:center;justify-content:space-between;gap:16px">
     <a href="#topo" aria-label="Built, início" style="display:flex;align-items:baseline;gap:12px;text-decoration:none;color:#1F1E1C">
       <span style="font:400 36px/1 'Instrument Serif',serif;letter-spacing:-0.02em">Built</span>
@@ -106,9 +112,11 @@ details[open]::details-content{block-size:auto}
 </header>
 
 <main>
-<section id="hero" style="position:relative;min-height:min(calc(100vh - 110px),900px);padding:var(--pad) 20px clamp(96px,12vh,140px);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;overflow:hidden;background:radial-gradient(ellipse 34% 40% at 20% 46%,rgba(214,186,140,.26),transparent 70%),radial-gradient(ellipse 30% 36% at 84% 70%,rgba(160,170,182,.14),transparent 70%)">
-  <span id="topo" style="position:absolute;top:-80px"></span>
-  <svg data-draw aria-hidden="true" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMax slice" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;fill:none;stroke:rgba(29,27,23,.10);stroke-width:1">
+<section id="hero" style="position:relative;min-height:min(calc(100vh - 30px),980px);padding:calc(var(--pad) + 80px) 20px clamp(96px,12vh,140px);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;overflow:hidden;background:#EDE6DA">
+  <span id="topo" style="position:absolute;top:0"></span>
+  <img class="hero-bg" src="img/hero-ceu.webp" alt="" aria-hidden="true" width="1536" height="1024" decoding="async" fetchpriority="high">
+  <div class="hero-veil" aria-hidden="true"></div>
+  <svg data-draw aria-hidden="true" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMax slice" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;fill:none;stroke:rgba(29,27,23,.16);stroke-width:1">
     <circle cx="720" cy="1180" r="560"/><circle cx="720" cy="1180" r="760"/><circle cx="720" cy="1180" r="980"/><circle cx="720" cy="390" r="300"/>
   </svg>
   <svg aria-hidden="true" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMax slice" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none">
