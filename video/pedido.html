@@ -6,7 +6,7 @@
 <title>Seu pedido · Vídeo pro seu negócio</title>
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="#0d0d0f">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; media-src https://motion-pedidos.built-bot.workers.dev; connect-src https://motion-pedidos.built-bot.workers.dev; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://connect.facebook.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://www.facebook.com; media-src https://motion-pedidos.built-bot.workers.dev; connect-src https://motion-pedidos.built-bot.workers.dev https://www.facebook.com https://connect.facebook.net; base-uri 'none'; form-action https://www.facebook.com; frame-src https://www.facebook.com">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23ffd61f'/%3E%3Cpath d='M12 9l12 7-12 7z' fill='%230d0d0f'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -82,20 +82,40 @@ function h(tag, props, ...filhos) {
   return e
 }
 
+// O código de acesso (k) e a sessão do Stripe saem da barra de endereço antes do pixel da Meta ler a URL.
+// O link completo continua valendo em qualquer aparelho; neste, o código fica guardado.
 let id = q.get('id'), k = q.get('k')
-if (!id || !k) { // voltou do pagamento sem o link: usa o último pedido deste aparelho
-  const u = store.get('motion_pedidos', []).slice(-1)[0]
-  if (u) { id = u.id; k = u.k; const n = new URL(location.href); n.searchParams.set('id', id); n.searchParams.set('k', k); history.replaceState(null, '', n) }
+if (!id || !k) { // voltou do pagamento ou recarregou: usa o pedido guardado neste aparelho
+  const meus = store.get('motion_pedidos', [])
+  const u = id ? meus.find(p => p.id === id) : meus.slice(-1)[0]
+  if (u) { id = u.id; k = u.k }
 }
-if (id && k) {
+function guardar() {
+  if (!id || !k) return
   const lista = store.get('motion_pedidos', [])
   if (!lista.some(p => p.id === id)) { lista.push({ id, k }); store.set('motion_pedidos', lista.slice(-5)) }
 }
+function limparUrl() {
+  const n = new URL(location.href)
+  n.searchParams.delete('k'); n.searchParams.delete('session_id')
+  if (id) n.searchParams.set('id', id)
+  history.replaceState(null, '', n)
+}
+guardar(); limparUrl();
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '967098266454901'); fbq('track', 'PageView')
 
 let ultimo = '', timer = null, voltouDoPagamento = q.has('pago')
+const pixel = (...a) => { try { if (window.fbq) fbq(...a) } catch {} }
 
 async function carregar() {
   clearTimeout(timer)
+  if ((!id || !k) && q.get('session_id')) {
+    try {
+      const r = await fetch(`${API}/api/sessao/${enc(q.get('session_id'))}`)
+      if (r.ok) { const s = await r.json(); id = s.id; k = s.k; guardar(); limparUrl() }
+    } catch {}
+  }
   if (!id || !k) return mensagem('Não achamos seu pedido', 'Abra o link que você recebeu no WhatsApp ou faça um pedido novo.', true)
   try {
     const sid = q.get('session_id')
@@ -107,7 +127,8 @@ async function carregar() {
     store.set('motion_pedidos', lista)
     const estado = JSON.stringify(p) + voltouDoPagamento
     if (estado !== ultimo) { ultimo = estado; desenhar(p) }
-    const espera = p.status === 'previa' && voltouDoPagamento ? 10e3 : ['recebido', 'produzindo', 'ajuste', 'previa'].includes(p.status) ? 60e3 : 0
+    if (p.status === 'pago' && !store.get('motion_pago_' + p.id)) { store.set('motion_pago_' + p.id, 1); pixel('track', 'Purchase', { content_name: 'video motion 30s', value: 150, currency: 'BRL' }, { eventID: 'pago-' + p.id }) }
+    const espera = p.status === 'previa' && voltouDoPagamento ? (p.confirma_na_hora ? 10e3 : 60e3) : ['recebido', 'produzindo', 'ajuste', 'previa'].includes(p.status) ? 60e3 : 0
     if (espera) timer = setTimeout(carregar, espera)
   } catch {
     if (!ultimo) mensagem('Sem conexão', 'Não deu pra carregar seu pedido agora. Tentando de novo…')
@@ -146,13 +167,15 @@ function desenhar(p) {
     if (p.previa_url) blocos.push(h('p', { class: 'mono' }, 'prévia anterior'), h('video', { class: 'video', src: p.previa_url, controls: true, playsinline: true, preload: 'metadata' }))
   }
   if (p.status === 'previa') {
-    if (voltouDoPagamento) blocos.push(h('p', { class: 'faixa ok' }, 'Recebemos seu pagamento. Estamos confirmando, e o vídeo completo libera aqui em alguns minutos. Pode deixar esta página aberta.'))
+    if (voltouDoPagamento) blocos.push(h('p', { class: 'faixa ok' }, p.confirma_na_hora
+      ? 'Recebemos seu pagamento. O vídeo completo libera aqui em instantes, pode deixar esta página aberta.'
+      : `Recebemos seu pagamento. Assim que ele for confirmado, o vídeo completo libera aqui e avisamos no WhatsApp terminado em ${p.whatsapp_fim || '…'}. Durante o dia, leva até 30 minutos.`))
     blocos.push(h('p', { class: 'mono' }, 'sua prévia · com marca d’água'))
     if (p.previa_url) blocos.push(h('video', { class: 'video', src: p.previa_url, controls: true, playsinline: true, preload: 'metadata' }))
     blocos.push(h('div', { class: 'card' },
       h('div', { class: 'preco' }, h('b', {}, 'R$150')),
       h('p', {}, 'O vídeo completo, em alta qualidade e sem marca d’água. Libera pra baixar nesta página depois do pagamento.'),
-      p.pagar_url ? h('a', { class: 'btn', href: p.pagar_url }, 'Pagar e baixar o vídeo') : h('p', {}, 'O link de pagamento sai em instantes.'),
+      p.pagar_url ? h('a', { class: 'btn', href: p.pagar_url, onclick: () => pixel('track', 'InitiateCheckout', { value: 150, currency: 'BRL' }) }, 'Pagar e baixar o vídeo') : h('p', {}, 'O link de pagamento sai em instantes.'),
       h('p', { class: 'pequeno' }, 'Pagamento seguro pela Stripe')))
     blocos.push(formAjuste(p))
   }

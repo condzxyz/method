@@ -10,11 +10,15 @@
 <meta property="og:title" content="Vídeo pro seu negócio por R$150">
 <meta property="og:description" content="30 segundos de motion, narração e música. Prévia em até 24h, você só paga se gostar.">
 <meta property="og:url" content="https://condzmethod.com/video/">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: blob:; connect-src https://motion-pedidos.built-bot.workers.dev; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://connect.facebook.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: blob: https://www.facebook.com; connect-src https://motion-pedidos.built-bot.workers.dev https://www.facebook.com https://connect.facebook.net; base-uri 'none'; form-action https://www.facebook.com; frame-src https://www.facebook.com">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23ffd61f'/%3E%3Cpath d='M12 9l12 7-12 7z' fill='%230d0d0f'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','967098266454901');fbq('track','PageView');
+</script>
 <style>
 :root{--bg:#0d0d0f;--card:#161619;--field:#0d0d0f;--ink:#f3f3eb;--mute:#9d9c95;--line:rgba(243,243,235,.13);--y:#ffd61f;--b:#2d5bff;--err:#ff7a66}
 *,*::before,*::after{box-sizing:border-box}
@@ -286,6 +290,14 @@ const MAX_FOTOS = 6
 let passo = 0, logo = null, fotos = []
 
 const valores = () => Object.fromEntries(CAMPOS.map(n => [n, (el[n] && el[n].value || '').trim()]))
+const origem = (() => {
+  const q = new URLSearchParams(location.search)
+  const partes = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content'].map(k => q.get(k)).filter(Boolean)
+  if (q.get('fbclid')) partes.push('fbclid')
+  if (!partes.length && document.referrer) { try { partes.push(new URL(document.referrer).hostname) } catch {} }
+  return partes.join(' / ').slice(0, 200)
+})()
+const pixel = (...a) => { try { if (window.fbq) fbq(...a) } catch {} }
 
 // pedido já feito neste aparelho
 const meus = store.get('motion_pedidos', [])
@@ -342,6 +354,7 @@ $('#voltar').addEventListener('click', () => { mostrar(passo - 1); irProTopo() }
 f.addEventListener('submit', e => {
   e.preventDefault()
   if (!valido(passo)) return
+  if (passo === 0) pixel('trackCustom', 'ComecouPedido')
   if (passo < steps.length - 1) { mostrar(passo + 1); irProTopo() } else enviar()
 })
 
@@ -420,7 +433,7 @@ async function tentar(fn, vezes = 3) {
   for (let i = 0; ; i++) { try { return await fn() } catch (e) { if (i >= vezes - 1 || e.definitivo) throw e; await new Promise(r => setTimeout(r, 1200 * (i + 1))) } }
 }
 async function enviar() {
-  const dados = valores(); dados.empresa_site = el.empresa_site.value
+  const dados = valores(); dados.empresa_site = el.empresa_site.value; dados.origem = origem
   const caixa = $('#enviando'), msg = $('#envMsg'), barra = $('#envBar'), botoes = [$('#seguir'), $('#voltar')]
   $('#envErro').hidden = true; caixa.hidden = false; botoes.forEach(b => { b.disabled = true })
   try {
@@ -446,6 +459,7 @@ async function enviar() {
     const lista2 = store.get('motion_pedidos', []).filter(p => p.id !== j.id)
     lista2.push({ id: j.id, k: j.k, negocio: dados.negocio }); store.set('motion_pedidos', lista2.slice(-5))
     store.del('motion_rascunho')
+    pixel('track', 'Lead', { content_name: 'video motion 30s', value: 150, currency: 'BRL' }, { eventID: 'pedido-' + j.id })
     sucesso(j, dados, falhas)
   } catch (e) {
     caixa.hidden = true; botoes.forEach(b => { b.disabled = false })
