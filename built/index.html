@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Built · build in public com @condzxyz</title>
-<meta name="description" content="Comunidade no Telegram pra crescer no X, criar conteúdo com IA e aprender a vender. Feedback do @condzxyz todo dia útil. Preço de fundador até 30/10.">
+<meta name="description" content="Comunidade no Telegram pra crescer no X, criar conteúdo com IA e aprender a vender. Feedback do @condzxyz todo dia útil.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Built · build in public com @condzxyz">
 <meta property="og:description" content="Comunidade no Telegram pra crescer no X, criar conteúdo com IA e aprender a vender. Feedback do @condzxyz todo dia útil.">
@@ -256,7 +256,7 @@ details[open]::details-content{block-size:auto}
   <div style="max-width:1160px;margin:0 auto;padding:0 20px">
     <div data-reveal style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));background:#FCFBF8;border:1px solid #E7E3DB;border-radius:28px;overflow:hidden">
       <div style="padding:clamp(32px,5vw,72px)">
-        <div style="font:400 17px/1 Inter,sans-serif;color:#6E6A63">Acesso de fundador</div>
+        <div id="access-label" style="font:400 17px/1 Inter,sans-serif;color:#6E6A63">Acesso de fundador</div>
         <h2 style="margin:24px 0 0;font:400 clamp(44px,5vw,72px)/.98 'Instrument Serif',serif;letter-spacing:-0.02em;color:#1F1E1C;text-wrap:balance">Contato diário com o Condz e builders com o <em>mesmo mindset</em>.</h2>
         <p style="margin:20px 0 0;max-width:460px;font:400 18px/1.5 Inter,sans-serif;color:#6E6A63">Sem reclamações e sem choro. Só criadores que querem evoluir.</p>
         <ul style="margin:44px 0 0;padding:0;list-style:none;font:400 18px/1.45 Inter,sans-serif;color:#3D3B37;border-bottom:1px solid #E7E3DB">
@@ -280,12 +280,12 @@ details[open]::details-content{block-size:auto}
           <div style="margin-top:32px;display:grid;grid-template-columns:22px 1fr;gap:14px;padding:22px 24px;border-radius:18px;background:#F1EEE7;border:1px solid #E7E3DB;font:400 16px/1.55 Inter,sans-serif;color:#3D3B37"><svg width="20" height="20" viewBox="0 0 16 16" aria-hidden="true" style="margin-top:2px;fill:none;stroke:#3D3B37;stroke-width:1.3;stroke-linejoin:round"><path d="M8 1.5l5.5 2v4c0 3.4-2.4 6-5.5 7-3.1-1-5.5-3.6-5.5-7v-4z"/></svg><span><strong style="font-weight:500;color:#1F1E1C">7 dias de garantia.</strong> Não curtiu, me avisa e eu devolvo tudo. Minha trajetória não é promessa de resultado.</span></div>
           <div class="buy" style="margin-top:32px;display:flex;flex-direction:column;align-items:flex-start;gap:12px">
             <a class="btn" data-plan="trimestralCartao" id="btn-cartao" href="https://buy.stripe.com/8x228sg2w1KW309142bsc00" style="display:inline-flex;align-items:center;justify-content:center;gap:14px;height:58px;padding:0 30px;border-radius:999px;background:#1F1E1C;color:#FCFBF8;font:500 17px/1 Inter,sans-serif;text-decoration:none">Entrar com cartão<svg data-arrow width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" style="fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-            <p style="margin:0;font:400 14px/1.5 Inter,sans-serif;color:#6E6A63">R$ 441 agora. Renova sozinho a cada 3 meses. Cancela quando quiser e não renova.</p>
+            <p id="note-cartao" style="margin:0;font:400 14px/1.5 Inter,sans-serif;color:#6E6A63">R$ 441 agora. Renova sozinho a cada 3 meses. Cancela quando quiser e não renova.</p>
             <a class="btn-out" data-plan="trimestralPix" id="btn-pix" href="https://buy.stripe.com/fZueVeg2w9do309fYWbsc01" style="margin-top:8px;display:inline-flex;align-items:center;height:52px;padding:0 26px;border-radius:999px;border:1px solid #D6D0C5;color:#1F1E1C;font:500 16px/1 Inter,sans-serif;text-decoration:none">Entrar com Pix</a>
-            <p style="margin:0;font:400 14px/1.5 Inter,sans-serif;color:#6E6A63">R$ 441 por 3 meses. O bot te avisa antes de vencer.</p>
+            <p id="note-pix" style="margin:0;font:400 14px/1.5 Inter,sans-serif;color:#6E6A63">R$ 441 por 3 meses. O bot te avisa antes de vencer.</p>
           </div>
           <div class="buy" style="margin-top:28px;padding-top:24px;border-top:1px solid #E7E3DB;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px">
-            <p style="margin:0;font:400 16px/1.5 Inter,sans-serif;color:#3D3B37"><strong style="font-weight:500;color:#1F1E1C">Anual de fundador: R$ 1.470</strong> à vista (2 meses grátis)</p>
+            <p style="margin:0;font:400 16px/1.5 Inter,sans-serif;color:#3D3B37"><strong id="anual-strong" style="font-weight:500;color:#1F1E1C">Anual de fundador: R$ 1.470</strong> à vista (2 meses grátis)</p>
             <a class="ul-link" data-plan="anual" id="btn-anual" href="https://buy.stripe.com/00wcN66rWblw58heUSbsc02" style="display:inline-flex;align-items:center;gap:8px;font:500 16px/1 Inter,sans-serif;color:#1F1E1C;text-decoration:underline;text-underline-offset:6px;text-decoration-color:#A39E95">Entrar no anual<svg data-arrow width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" style="fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
           </div>
           <p id="closed-note" hidden style="margin:32px 0 0;font:400 16px/1.55 Inter,sans-serif;color:#3D3B37">O preço de fundador fechou em 30/10. Os novos planos abrem em breve: me chama no <a href="https://x.com/condzxyz" target="_blank" rel="noopener">X</a>.</p>
@@ -306,7 +306,7 @@ details[open]::details-content{block-size:auto}
       <details><summary>Quanto tempo por dia?<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v12M2 8h12"/></svg></summary><p>De 20 a 30 minutos: postar e trocar com o grupo no Chat.</p></details>
       <details><summary>O feedback é seu mesmo?<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v12M2 8h12"/></svg></summary><p>É. Em dia útil eu passo no Chat e respondo os rascunhos postados até as 18h.</p></details>
       <details><summary>Por que no mínimo 3 meses?<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v12M2 8h12"/></svg></summary><p>Porque ninguém cresce em 30 dias. Três meses é o tempo de criar constância, testar formato e ver o número mexer.</p></details>
-      <details><summary>Como funciona o pagamento?<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v12M2 8h12"/></svg></summary><p>Pelo Stripe. No cartão, R$ 441 a cada 3 meses, renovando sozinho. No Pix, você paga os 3 meses e o bot te avisa antes de vencer. O anual é um pagamento só de R$ 1.470, no cartão ou no Pix. Depois de pagar, você abre o bot no Telegram e entra no grupo na hora.</p></details>
+      <details><summary>Como funciona o pagamento?<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v12M2 8h12"/></svg></summary><p id="faq-pagamento">Pelo Stripe. No cartão, R$ 441 a cada 3 meses, renovando sozinho. No Pix, você paga os 3 meses e o bot te avisa antes de vencer. O anual é um pagamento só de R$ 1.470, no cartão ou no Pix. Depois de pagar, você abre o bot no Telegram e entra no grupo na hora.</p></details>
       <details><summary>Posso cancelar?<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v12M2 8h12"/></svg></summary><p>Pode, quando quiser e sem multa: a assinatura só não renova no próximo trimestre, e seu acesso vai até o fim do período pago. É só mandar /assinatura pro bot.</p></details>
       <details><summary>E se eu não gostar?<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v12M2 8h12"/></svg></summary><p>Você tem 7 dias pra pedir o dinheiro de volta, inteiro.</p></details>
       <details><summary>O preço de fundador sobe depois?<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v12M2 8h12"/></svg></summary><p>Não, enquanto sua assinatura estiver ativa. Se cancelar e voltar depois de 30/10, entra no preço do momento.</p></details>
@@ -365,6 +365,13 @@ details[open]::details-content{block-size:auto}
       trimestralPix: 'https://buy.stripe.com/fZueVeg2w9do309fYWbsc01',
       anual: 'https://buy.stripe.com/00wcN66rWblw58heUSbsc02',
     },
+    // Preço cheio (R$ 591 a cada 3 meses, R$ 591 Pix, R$ 1.970 anual). Entram no lugar dos de fundador depois do prazo.
+    // Se algum ficar vazio, a página esconde os botões e mostra "os novos planos abrem em breve".
+    linksCheio: {
+      trimestralCartao: 'https://buy.stripe.com/4gM28saIc4X8cAJdQObsc04',
+      trimestralPix: 'https://buy.stripe.com/eVqaEYeYsexIcAJbIGbsc05',
+      anual: 'https://buy.stripe.com/4gMaEY4jO89kfMVcMKbsc06',
+    },
     membrosUrl: 'https://built-bot.built-bot.workers.dev/membros',
     mostrarMembrosAPartirDe: 10,
   };
@@ -388,25 +395,46 @@ details[open]::details-content{block-size:auto}
       return u.toString();
     } catch (e) { return url; }
   };
-  document.querySelectorAll('a[data-plan]').forEach((a) => { const l = CFG.links[a.dataset.plan]; if (l) a.href = decorate(l); });
+  const setLinks = (links) => document.querySelectorAll('a[data-plan]').forEach((a) => { const l = links[a.dataset.plan]; if (l) a.href = decorate(l); });
+  setLinks(CFG.links);
 
-  // Prazo do preço de fundador
+  // Prazo do preço de fundador. Depois dele a página vende pelo preço cheio.
   const deadline = Date.parse(CFG.fundadorAte);
+  const temCheio = ['trimestralCartao', 'trimestralPix', 'anual'].every((k) => CFG.linksCheio[k]);
+  let encerrado = false;
   function renderPhase() {
     const left = deadline - Date.now();
     if (left <= 0) {
+      if (encerrado) return;
+      encerrado = true;
       $('#hero-dot').hidden = true;
-      $('#hero-strong').textContent = 'Preço de fundador encerrado';
-      $('#hero-rest').textContent = ' · R$ 197/mês';
       $('#price-label').textContent = 'Built';
-      $('#price-main').textContent = 'R$ 197';
-      $('#price-main').style.color = '#1F1E1C';
       $('#price-strike').hidden = true;
-      $('#price-deadline').textContent = 'Preço de fundador encerrado.';
-      $('#price').classList.add('closed');
-      $('#closed-note').hidden = false;
-      $('#cta-final-sub').textContent = 'R$ 197/mês, mínimo de 3 meses.';
-      $('#mobile-bar-text').textContent = 'R$ 197/mês';
+      $('#membros').hidden = true;
+      if (!temCheio) {
+        $('#hero-strong').textContent = 'Preço de fundador encerrado';
+        $('#hero-rest').textContent = ' · R$ 197/mês';
+        $('#price-main').textContent = 'R$ 197';
+        $('#price-main').style.color = '#1F1E1C';
+        $('#price-deadline').textContent = 'Preço de fundador encerrado.';
+        $('#price').classList.add('closed');
+        $('#closed-note').hidden = false;
+        $('#cta-final-sub').textContent = 'R$ 197/mês, mínimo de 3 meses.';
+        $('#mobile-bar-text').textContent = 'R$ 197/mês';
+        return;
+      }
+      setLinks(CFG.linksCheio);
+      $('#hero-strong').textContent = 'R$ 197/mês';
+      $('#hero-rest').textContent = ' · plano de 3 meses ou anual';
+      $('#access-label').textContent = 'Acesso ao Built';
+      $('#price-main').textContent = 'R$ 197';
+      $('#price-deadline').hidden = true;
+      $('#note-cartao').textContent = 'R$ 591 agora. Renova sozinho a cada 3 meses. Cancela quando quiser e não renova.';
+      $('#note-pix').textContent = 'R$ 591 por 3 meses. O bot te avisa antes de vencer.';
+      $('#anual-strong').textContent = 'Anual: R$ 1.970';
+      $('#faq-pagamento').textContent = 'Pelo Stripe. No cartão, R$ 591 a cada 3 meses, renovando sozinho. No Pix, você paga os 3 meses e o bot te avisa antes de vencer. O anual é um pagamento só de R$ 1.970, no cartão ou no Pix. Depois de pagar, você abre o bot no Telegram e entra no grupo na hora.';
+      $('#cta-final-sub').textContent = 'R$ 197/mês no plano de 3 meses. Ou anual por R$ 1.970.';
+      $('#mobile-bar-text').textContent = 'R$ 197/mês · mínimo de 3 meses';
       return;
     }
     if (left < 48 * 3600e3) {
