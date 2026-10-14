@@ -87,6 +87,9 @@ details[open]::details-content{block-size:auto}
 .pstat{padding-top:16px;display:flex;flex-direction:column;gap:4px}
 .pstat b{font:400 30px/1 'Instrument Serif',serif}
 .pstat span{font:400 14px/1.4 Inter,sans-serif;color:#6E6A63}
+/* retrato: a foto some numa névoa embaixo em vez de cortar seco */
+.retrato img{-webkit-mask-image:linear-gradient(to bottom,#000 58%,rgba(0,0,0,.55) 76%,transparent 94%);mask-image:linear-gradient(to bottom,#000 58%,rgba(0,0,0,.55) 76%,transparent 94%)}
+.retrato-nevoa{position:absolute;left:-12%;right:-12%;bottom:-6%;height:42%;pointer-events:none;background:radial-gradient(ellipse 55% 60% at 30% 78%,rgba(247,245,240,.95),rgba(247,245,240,0) 70%),radial-gradient(ellipse 45% 55% at 62% 85%,rgba(247,245,240,.9),rgba(247,245,240,0) 70%),radial-gradient(ellipse 35% 40% at 50% 100%,#F7F5F0,rgba(247,245,240,0) 75%);filter:blur(6px)}
 .closed .buy{display:none!important}
 .sticky-col{position:sticky;top:120px}
 @media (max-width:760px){.sticky-col{position:static}}
@@ -226,7 +229,7 @@ details[open]::details-content{block-size:auto}
 
 <section style="padding:clamp(64px,8vw,112px) 0">
   <div style="max-width:1160px;margin:0 auto;padding:0 20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:clamp(40px,6vw,96px);align-items:center">
-    <div data-reveal style="position:relative;max-width:520px;width:100%"><img src="img/s-conrado.webp" alt="Conrado, @condzxyz" width="1000" height="1000" loading="lazy" decoding="async" style="display:block;width:100%;height:auto"></div>
+    <div data-reveal class="retrato" style="position:relative;max-width:520px;width:100%"><img src="img/s-conrado.webp" alt="Conrado, @condzxyz" width="1000" height="1000" loading="lazy" decoding="async" style="display:block;width:100%;height:auto"><div class="retrato-nevoa" aria-hidden="true"></div></div>
     <div data-reveal>
       <h2 style="margin:0;font:400 clamp(36px,4.8vw,68px)/1 'Instrument Serif',serif;letter-spacing:-0.015em;color:#1F1E1C">Quem está <em>construindo</em>.</h2>
       <p style="margin:28px 0 0;max-width:520px;font:400 19px/1.55 Inter,sans-serif;color:#3D3B37;text-wrap:pretty">Sou o Conrado. Já trabalhei com empresas como Microsoft e Bandai Namco, vendi uma empresa e saí de uma dívida de R$&nbsp;300 mil para mais de R$&nbsp;5 mi de patrimônio.</p>
