@@ -90,6 +90,16 @@ details[open]::details-content{block-size:auto}
 /* retrato: a foto some numa névoa embaixo em vez de cortar seco */
 .retrato img{-webkit-mask-image:linear-gradient(to bottom,#000 58%,rgba(0,0,0,.55) 76%,transparent 94%);mask-image:linear-gradient(to bottom,#000 58%,rgba(0,0,0,.55) 76%,transparent 94%)}
 .retrato-nevoa{position:absolute;left:-12%;right:-12%;bottom:-6%;height:42%;pointer-events:none;background:radial-gradient(ellipse 55% 60% at 30% 78%,rgba(247,245,240,.95),rgba(247,245,240,0) 70%),radial-gradient(ellipse 45% 55% at 62% 85%,rgba(247,245,240,.9),rgba(247,245,240,0) 70%),radial-gradient(ellipse 35% 40% at 50% 100%,#F7F5F0,rgba(247,245,240,0) 75%);filter:blur(6px)}
+/* card dos casos (ilustrativos) */
+.cases{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}
+.case{display:flex;align-items:center;gap:12px;min-width:0;padding:14px;background:#2A2926;border:1px solid #3A3834;border-radius:16px}
+.case-av{flex:none;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;font:600 15px/1 Inter,sans-serif;color:#F7F5F0}
+.case-tx{min-width:0;display:flex;flex-direction:column;gap:2px}
+.case-nm{font:600 14px/1.2 Inter,sans-serif;color:#F7F5F0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.case-nm span{filter:blur(5px);user-select:none}
+.case-what{font:400 13px/1.3 Inter,sans-serif;color:#A39E95;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.case-res{margin-top:4px;font:500 13px/1.25 Inter,sans-serif;color:#D8A48F}
+.case-more{justify-content:center;border-style:dashed;background:transparent;font:500 14px/1.3 Inter,sans-serif;color:#D6D0C5}
 .closed .buy{display:none!important}
 .sticky-col{position:sticky;top:120px}
 @media (max-width:760px){.sticky-col{position:static}}
@@ -185,7 +195,7 @@ details[open]::details-content{block-size:auto}
         <svg viewBox="0 0 280 100" preserveAspectRatio="none" aria-hidden="true" style="margin-top:auto;width:100%;height:96px;overflow:visible"><path d="M0.0 85.8 L10.4 81.7 L20.7 75.8 L31.1 74.2 L41.5 71.7 L51.9 69.5 L62.2 61.7 L72.6 59.5 L83.0 53.0 L93.3 50.0 L103.7 44.5 L114.1 38.0 L124.4 34.7 L134.8 31.3 L145.2 27.5 L155.6 25.3 L165.9 23.0 L176.3 21.7 L186.7 20.0 L197.0 18.0 L207.4 16.2 L217.8 15.0 L228.1 14.5 L238.5 14.0 L248.9 13.7 L259.3 13.2 L269.6 12.7 L280.0 12.3 L280 100 L0 100 Z" style="fill:rgba(166,90,67,.10);stroke:none"/><path d="M0.0 85.8 L10.4 81.7 L20.7 75.8 L31.1 74.2 L41.5 71.7 L51.9 69.5 L62.2 61.7 L72.6 59.5 L83.0 53.0 L93.3 50.0 L103.7 44.5 L114.1 38.0 L124.4 34.7 L134.8 31.3 L145.2 27.5 L155.6 25.3 L165.9 23.0 L176.3 21.7 L186.7 20.0 L197.0 18.0 L207.4 16.2 L217.8 15.0 L228.1 14.5 L238.5 14.0 L248.9 13.7 L259.3 13.2 L269.6 12.7 L280.0 12.3" style="fill:none;stroke:#A65A43;stroke-width:2;vector-effect:non-scaling-stroke;stroke-linejoin:round"/></svg>
       </article>
     </div>
-    <div style="margin-top:16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:16px">
+    <div style="margin-top:16px;display:grid;grid-template-columns:minmax(0,1fr);gap:16px">
       <a data-reveal class="card-link" href="https://x.com/condzxyz/status/2110125736095105241" target="_blank" rel="noopener" style="display:flex;flex-direction:column;text-decoration:none;color:#1F1E1C;background:#FCFBF8;border:1px solid #E7E3DB;border-radius:24px;padding:28px">
         <div style="font:400 14px/1.4 Inter,sans-serif;color:#6E6A63">A demanda · post de 13/10</div>
         <p style="margin:20px 0 0;font:400 clamp(24px,2.4vw,30px)/1.2 'Instrument Serif',serif;color:#1F1E1C;text-wrap:pretty">“vou ter q lançar uma comunidade pra build in public… se tiver interesse comenta aí”</p>
@@ -196,10 +206,13 @@ details[open]::details-content{block-size:auto}
           <div class="pstat"><b>98</b><span>salvos</span></div>
         </div>
       </a>
-      <div data-reveal style="display:flex;flex-direction:column;gap:20px;min-height:320px;background:#1F1E1C;border-radius:24px;padding:28px">
-        <span style="font:400 14px/1.4 Inter,sans-serif;color:#A39E95">Automações</span>
-        <span style="margin-top:auto;font:400 clamp(56px,6vw,88px)/.9 'Instrument Serif',serif;letter-spacing:-0.02em;color:#F7F5F0">Centenas <em>viralizando</em></span>
-        <p style="margin:0;max-width:420px;font:400 18px/1.5 Inter,sans-serif;color:#D6D0C5">de pessoas já têm resultado com automações que eu fiz.</p>
+      <div data-reveal style="display:flex;flex-direction:column;gap:24px;background:#1F1E1C;border-radius:24px;padding:clamp(24px,3vw,40px)">
+        <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:12px 24px;flex-wrap:wrap">
+          <span style="font:400 clamp(44px,5vw,72px)/.92 'Instrument Serif',serif;letter-spacing:-0.02em;color:#F7F5F0">Centenas <em>viralizando</em></span>
+          <p style="margin:0;max-width:360px;font:400 16px/1.5 Inter,sans-serif;color:#D6D0C5">de pessoas já têm resultado com automações que eu fiz, construindo em público no X e no LinkedIn com o Otto.</p>
+        </div>
+        <div class="cases"><div class="case"><div class="case-av" style="background:#A65A43">MR</div><div class="case-tx"><div class="case-nm">Mariana <span aria-hidden="true">Rocha</span></div><div class="case-what">designer de produto · X</div><div class="case-res">+12 mil seguidores em 3 meses</div></div></div><div class="case"><div class="case-av" style="background:#6B7A5E">TL</div><div class="case-tx"><div class="case-nm">Thiago <span aria-hidden="true">Lima</span></div><div class="case-what">dev de SaaS · X</div><div class="case-res">R$ 9 mil/mês no app, vindo do X</div></div></div><div class="case"><div class="case-av" style="background:#8C6E54">JS</div><div class="case-tx"><div class="case-nm">Júlia <span aria-hidden="true">Santos</span></div><div class="case-what">nutricionista · LinkedIn</div><div class="case-res">1,1 mi de impressões num post</div></div></div><div class="case"><div class="case-av" style="background:#5E6B7A">PA</div><div class="case-tx"><div class="case-nm">Pedro <span aria-hidden="true">Alves</span></div><div class="case-what">automações no-code · X</div><div class="case-res">R$ 14 mil de MRR</div></div></div><div class="case"><div class="case-av" style="background:#9A5B6B">CN</div><div class="case-tx"><div class="case-nm">Carol <span aria-hidden="true">Nunes</span></div><div class="case-what">consultora de RH · LinkedIn</div><div class="case-res">+9 mil seguidores</div></div></div><div class="case"><div class="case-av" style="background:#7A6A4E">RF</div><div class="case-tx"><div class="case-nm">Rafael <span aria-hidden="true">Freitas</span></div><div class="case-what">indie hacker · X</div><div class="case-res">1º app vendido pelo X</div></div></div><div class="case"><div class="case-av" style="background:#4E6A6A">BM</div><div class="case-tx"><div class="case-nm">Bruna <span aria-hidden="true">Moraes</span></div><div class="case-what">fotógrafa · LinkedIn</div><div class="case-res">6 clientes em 30 dias</div></div></div><div class="case"><div class="case-av" style="background:#7A5E4E">LC</div><div class="case-tx"><div class="case-nm">Lucas <span aria-hidden="true">Castro</span></div><div class="case-what">advogado tributário · X</div><div class="case-res">post com 480 mil views</div></div></div><div class="case"><div class="case-av" style="background:#6A5E7A">AP</div><div class="case-tx"><div class="case-nm">Ana <span aria-hidden="true">Prado</span></div><div class="case-what">professora de inglês · X</div><div class="case-res">turma lotada vendida no X</div></div></div><div class="case"><div class="case-av" style="background:#5E7A66">DS</div><div class="case-tx"><div class="case-nm">Diego <span aria-hidden="true">Siqueira</span></div><div class="case-what">agência de tráfego · LinkedIn</div><div class="case-res">4 contratos fechados</div></div></div><div class="case case-more">e mais centenas…</div></div>
+        <p style="margin:0;font:400 13px/1.5 Inter,sans-serif;color:#A39E95">Exemplos ilustrativos: os nomes e os números destes blocos são fictícios.</p>
       </div>
     </div>
   </div>
