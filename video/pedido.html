@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Seu pedido · Vídeo pro seu negócio</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0d0d0f">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; media-src https://motion-pedidos.built-bot.workers.dev; connect-src https://motion-pedidos.built-bot.workers.dev; base-uri 'none'; form-action 'none'">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23ffd61f'/%3E%3Cpath d='M12 9l12 7-12 7z' fill='%230d0d0f'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0d0d0f;--card:#161619;--field:#0d0d0f;--ink:#f3f3eb;--mute:#9d9c95;--line:rgba(243,243,235,.13);--y:#ffd61f;--b:#2d5bff;--ok:#5fd68a;--err:#ff7a66}
+*,*::before,*::after{box-sizing:border-box}
+[hidden]{display:none!important}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.5 Archivo,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.mono{font:500 12px/1.5 "JetBrains Mono",ui-monospace,monospace;letter-spacing:.16em;text-transform:uppercase;color:var(--mute)}
+main{max-width:560px;margin:0 auto;padding:20px 16px 56px}
+.topo{text-decoration:none}
+h1{margin:28px 0 0;font-weight:900;font-variation-settings:"wdth" 92;font-size:clamp(38px,11vw,60px);line-height:.92;letter-spacing:-.035em;text-transform:uppercase;overflow-wrap:anywhere}
+h2{margin:0 0 8px;font-weight:900;font-variation-settings:"wdth" 92;font-size:28px;line-height:1;letter-spacing:-.03em;text-transform:uppercase}
+.linha{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:24px 0;padding:0;list-style:none}
+.linha li{font:500 10.5px/1.3 "JetBrains Mono",monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);padding-top:10px;border-top:3px solid var(--line)}
+.linha li.feito{border-color:var(--y);color:var(--ink)}
+.linha li.agora{border-color:var(--y);color:var(--y)}
+.card{background:var(--card);border-radius:22px;padding:22px 20px;margin:0 0 14px}
+.card p{margin:0 0 10px;color:#cfcec7}
+.card p:last-child{margin-bottom:0}
+.video{display:block;width:100%;max-height:60vh;margin:0 auto 14px;border-radius:18px;background:#000}
+.preco{display:flex;align-items:baseline;gap:10px;margin:0 0 4px}
+.preco b{font-weight:900;font-variation-settings:"wdth" 92;font-size:56px;line-height:1;letter-spacing:-.04em;color:var(--y)}
+.btn{display:flex;width:100%;align-items:center;justify-content:center;gap:8px;border:0;border-radius:999px;padding:18px 24px;margin-top:14px;background:var(--y);color:var(--bg);font:900 17px/1 Archivo,system-ui,sans-serif;text-transform:uppercase;letter-spacing:-.01em;text-decoration:none;cursor:pointer}
+.btn:disabled{opacity:.5;cursor:wait}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.pequeno{font-size:14px;color:var(--mute)!important;text-align:center;margin-top:10px!important}
+textarea{display:block;width:100%;margin-top:10px;padding:14px 16px;background:var(--field);color:var(--ink);border:1px solid var(--line);border-radius:14px;font:400 17px/1.4 Archivo,system-ui,sans-serif;min-height:96px;resize:vertical}
+textarea:focus{outline:0;border-color:var(--y);box-shadow:0 0 0 3px rgba(255,214,31,.2)}
+.faixa{padding:14px 16px;border-radius:14px;margin:0 0 14px;font-weight:600;font-size:15.5px}
+.faixa.ok{background:rgba(95,214,138,.12);color:var(--ok)}
+.faixa.err{background:rgba(255,122,102,.12);color:var(--err)}
+.citacao{border-left:3px solid var(--y);padding-left:12px;color:var(--ink)!important}
+.pulso{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--y);margin-right:8px;animation:p 1.6s ease-in-out infinite}
+@keyframes p{50%{opacity:.25}}
+footer{margin-top:36px;text-align:center}
+footer a{color:var(--mute)}
+@media (prefers-reduced-motion:reduce){.pulso{animation:none}}
+</style>
+</head>
+<body>
+<main>
+  <a class="mono topo" href="./">← vídeo pro seu negócio</a>
+  <div id="app" aria-live="polite"><h1>Carregando…</h1></div>
+  <footer><p class="mono">dúvidas: <a href="mailto:conrado@doti.gg">conrado@doti.gg</a> · <a href="privacidade.html">privacidade</a></p></footer>
+</main>
+
+<script>
+const API = 'https://motion-pedidos.built-bot.workers.dev'
+const q = new URLSearchParams(location.search)
+const enc = encodeURIComponent
+const store = {
+  get(k, d) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d } catch { return d } },
+  set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)) } catch {} },
+}
+const app = document.getElementById('app')
+const ETAPAS = ['Recebido', 'Em produção', 'Prévia', 'Pago']
+const POSICAO = { rascunho: 0, recebido: 0, produzindo: 1, ajuste: 1, previa: 2, pago: 3 }
+
+// monta elementos sem innerHTML (o texto vem do cliente)
+function h(tag, props, ...filhos) {
+  const e = document.createElement(tag)
+  for (const [k, v] of Object.entries(props || {})) {
+    if (v == null || v === false) continue
+    if (k.startsWith('on')) e.addEventListener(k.slice(2), v)
+    else if (k === 'class') e.className = v
+    else e.setAttribute(k, v === true ? '' : v)
+  }
+  for (const f of filhos.flat()) if (f != null && f !== false) e.append(f)
+  return e
+}
+
+let id = q.get('id'), k = q.get('k')
+if (!id || !k) { // voltou do pagamento sem o link: usa o último pedido deste aparelho
+  const u = store.get('motion_pedidos', []).slice(-1)[0]
+  if (u) { id = u.id; k = u.k; const n = new URL(location.href); n.searchParams.set('id', id); n.searchParams.set('k', k); history.replaceState(null, '', n) }
+}
+if (id && k) {
+  const lista = store.get('motion_pedidos', [])
+  if (!lista.some(p => p.id === id)) { lista.push({ id, k }); store.set('motion_pedidos', lista.slice(-5)) }
+}
+
+let ultimo = '', timer = null, voltouDoPagamento = q.has('pago')
+
+async function carregar() {
+  clearTimeout(timer)
+  if (!id || !k) return mensagem('Não achamos seu pedido', 'Abra o link que você recebeu no WhatsApp ou faça um pedido novo.', true)
+  try {
+    const sid = q.get('session_id')
+    const r = await fetch(`${API}/api/pedidos/${enc(id)}?k=${enc(k)}${sid ? '&session_id=' + enc(sid) : ''}`, { cache: 'no-store' })
+    if (r.status === 404) return mensagem('Não achamos esse pedido', 'Confira se o link está completo. Se o problema continuar, escreva pra conrado@doti.gg.', true)
+    const p = await r.json()
+    if (!r.ok) throw new Error(p.erro)
+    const lista = store.get('motion_pedidos', []).map(x => (x.id === p.id ? { ...x, negocio: p.negocio } : x))
+    store.set('motion_pedidos', lista)
+    const estado = JSON.stringify(p) + voltouDoPagamento
+    if (estado !== ultimo) { ultimo = estado; desenhar(p) }
+    const espera = p.status === 'previa' && voltouDoPagamento ? 10e3 : ['recebido', 'produzindo', 'ajuste', 'previa'].includes(p.status) ? 60e3 : 0
+    if (espera) timer = setTimeout(carregar, espera)
+  } catch {
+    if (!ultimo) mensagem('Sem conexão', 'Não deu pra carregar seu pedido agora. Tentando de novo…')
+    timer = setTimeout(carregar, 30e3)
+  }
+}
+
+function mensagem(titulo, texto, comLink) {
+  app.replaceChildren(h('h1', {}, titulo), h('div', { class: 'card', style: 'margin-top:24px' }, h('p', {}, texto), comLink && h('a', { class: 'btn', href: './' }, 'Fazer um pedido')))
+}
+
+function linhaDoTempo(status) {
+  const i = POSICAO[status] ?? 0
+  return h('ol', { class: 'linha' }, ETAPAS.map((t, j) => h('li', { class: j < i ? 'feito' : j === i ? 'agora' : '' }, t)))
+}
+
+function desenhar(p) {
+  const blocos = [h('p', { class: 'mono', style: 'margin:28px 0 0' }, `pedido ${p.id}`), h('h1', { style: 'margin-top:8px' }, p.negocio || 'Seu vídeo')]
+  if (p.status !== 'cancelado') blocos.push(linhaDoTempo(p.status))
+  const aviso = p.whatsapp_fim ? `Avisamos no WhatsApp terminado em ${p.whatsapp_fim}.` : 'Avisamos no seu WhatsApp.'
+
+  if (p.status === 'rascunho') {
+    blocos.push(h('div', { class: 'card' }, h('h2', {}, 'Faltou terminar'), h('p', {}, 'Seu pedido não terminou de enviar. Volte ao formulário e mande de novo, por favor.'), h('a', { class: 'btn', href: './' }, 'Voltar ao formulário')))
+  }
+  if (p.status === 'recebido' || p.status === 'produzindo') {
+    blocos.push(h('div', { class: 'card' },
+      h('h2', {}, h('span', { class: 'pulso', 'aria-hidden': 'true' }), p.status === 'recebido' ? 'Pedido recebido' : 'Seu vídeo está sendo feito'),
+      h('p', {}, `A prévia fica pronta em até 24h depois do pedido. ${aviso} Esta página também atualiza sozinha.`)))
+  }
+  if (p.status === 'ajuste') {
+    const ult = p.ajustes[p.ajustes.length - 1]
+    blocos.push(h('div', { class: 'card' },
+      h('h2', {}, h('span', { class: 'pulso', 'aria-hidden': 'true' }), 'Ajuste a caminho'),
+      h('p', {}, `A nova prévia sai em até 24h. ${aviso}`),
+      ult && h('p', { class: 'citacao' }, ult.texto)))
+    if (p.previa_url) blocos.push(h('p', { class: 'mono' }, 'prévia anterior'), h('video', { class: 'video', src: p.previa_url, controls: true, playsinline: true, preload: 'metadata' }))
+  }
+  if (p.status === 'previa') {
+    if (voltouDoPagamento) blocos.push(h('p', { class: 'faixa ok' }, 'Recebemos seu pagamento. Estamos confirmando, e o vídeo completo libera aqui em alguns minutos. Pode deixar esta página aberta.'))
+    blocos.push(h('p', { class: 'mono' }, 'sua prévia · com marca d’água'))
+    if (p.previa_url) blocos.push(h('video', { class: 'video', src: p.previa_url, controls: true, playsinline: true, preload: 'metadata' }))
+    blocos.push(h('div', { class: 'card' },
+      h('div', { class: 'preco' }, h('b', {}, 'R$150')),
+      h('p', {}, 'O vídeo completo, em alta qualidade e sem marca d’água. Libera pra baixar nesta página depois do pagamento.'),
+      p.pagar_url ? h('a', { class: 'btn', href: p.pagar_url }, 'Pagar e baixar o vídeo') : h('p', {}, 'O link de pagamento sai em instantes.'),
+      h('p', { class: 'pequeno' }, 'Pagamento seguro pela Stripe')))
+    blocos.push(formAjuste(p))
+  }
+  if (p.status === 'pago') {
+    blocos.push(h('p', { class: 'faixa ok' }, 'Pagamento confirmado. O vídeo é seu.'))
+    if (p.final_url) {
+      blocos.push(h('video', { class: 'video', src: p.final_url, controls: true, playsinline: true, preload: 'metadata' }))
+      blocos.push(h('div', { class: 'card' },
+        h('a', { class: 'btn', href: p.baixar_url, download: '' }, 'Baixar vídeo (MP4)'),
+        h('p', { class: 'pequeno' }, 'O link fica no ar por pelo menos 90 dias. Salve o arquivo no celular ou no computador.')))
+    } else blocos.push(h('div', { class: 'card' }, h('p', {}, 'O vídeo completo libera aqui em instantes.')))
+  }
+  if (p.status === 'cancelado') {
+    blocos.push(h('div', { class: 'card', style: 'margin-top:24px' }, h('h2', {}, 'Pedido cancelado'), h('p', {}, 'Se foi engano, escreva pra conrado@doti.gg.')))
+  }
+  app.replaceChildren(...blocos)
+}
+
+function formAjuste(p) {
+  if (!p.ajustes_restantes) return h('div', { class: 'card' }, h('h2', {}, 'Quer mudar algo?'), h('p', {}, 'Os ajustes desta prévia acabaram. Pra mais mudanças, escreva pra conrado@doti.gg.'))
+  const campo = h('textarea', { maxlength: '1000', placeholder: 'ex.: troca a música por uma mais animada e coloca o telefone maior no final', 'aria-label': 'O que você quer mudar' })
+  const status = h('p', { class: 'faixa err', role: 'alert', hidden: true })
+  const botao = h('button', { class: 'btn ghost', type: 'button', onclick: async () => {
+    const texto = campo.value.trim()
+    if (texto.length < 3) { status.textContent = 'Escreva o que você quer mudar.'; status.hidden = false; return }
+    botao.disabled = true; status.hidden = true
+    try {
+      const r = await fetch(`${API}/api/pedidos/${enc(id)}/ajuste?k=${enc(k)}`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ texto }) })
+      const j = await r.json().catch(() => ({}))
+      if (!r.ok) throw new Error(j.erro || 'Não deu pra enviar.')
+      carregar()
+    } catch (e) { status.textContent = e.message; status.hidden = false; botao.disabled = false }
+  } }, 'Pedir ajuste')
+  const n = p.ajustes_restantes
+  return h('div', { class: 'card' }, h('h2', {}, 'Quer mudar algo?'),
+    h('p', {}, `Escreva o que você quer diferente e a gente refaz. ${n === 1 ? 'Você ainda pode pedir 1 ajuste.' : `Você ainda pode pedir ${n} ajustes.`}`),
+    campo, status, botao)
+}
+
+addEventListener('pageshow', e => { if (e.persisted) carregar() })
+carregar()
+</script>
+</body>
+</html>
