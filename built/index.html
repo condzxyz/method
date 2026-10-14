@@ -1,0 +1,527 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Built · build in public com @condzxyz</title>
+<meta name="description" content="Comunidade no Telegram pra crescer no X, criar conteúdo com IA e aprender a vender. Feedback do @condzxyz todo dia útil. Preço de fundador até 30/10.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Built · build in public com @condzxyz">
+<meta property="og:description" content="Comunidade no Telegram pra crescer no X, criar conteúdo com IA e aprender a vender. Feedback do @condzxyz todo dia útil.">
+<meta property="og:image" content="https://condzmethod.com/built/og.jpg">
+<meta property="og:url" content="https://condzmethod.com/built/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#F7F5F0">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src https://built-bot.built-bot.workers.dev; base-uri 'none'; form-action 'none'; object-src 'none'; frame-src 'none'">
+<link rel="canonical" href="https://condzmethod.com/built/">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 22'%3E%3Crect x='1' y='14' width='5' height='7' fill='%231F1E1C'/%3E%3Crect x='8.5' y='8' width='5' height='13' fill='%231F1E1C'/%3E%3Crect x='16' y='1' width='5' height='20' fill='%23A65A43'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Inter:wght@400;500&amp;display=swap">
+<link rel="preload" as="image" href="img/s-mao-pintada.webp">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+:root{interpolate-size:allow-keywords}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:radial-gradient(ellipse at 15% 10%,#E6DCCB,transparent 55%),radial-gradient(ellipse at 85% 85%,#CDBFA8,transparent 60%),#D9CDB9;color:#1F1E1C;font-family:Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:200;opacity:.07;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+a{color:#1F1E1C;text-underline-offset:3px}
+a:hover{color:#3D3B37}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #1F1E1C;outline-offset:3px}
+a [data-arrow]{transition:transform .25s cubic-bezier(.2,.7,.2,1)}
+a:hover [data-arrow]{transform:translateX(3px)}
+summary{list-style:none;cursor:pointer}
+summary::-webkit-details-marker{display:none}
+details summary svg{transition:transform .3s cubic-bezier(.2,.7,.2,1)}
+details[open] summary svg{transform:rotate(45deg)}
+details::details-content{block-size:0;overflow:clip;transition:block-size .35s cubic-bezier(.2,.7,.2,1),content-visibility .35s allow-discrete}
+details[open]::details-content{block-size:auto}
+[hidden]{display:none!important}
+@keyframes builtPulse{0%{box-shadow:0 0 0 0 rgba(166,90,67,.45)}70%{box-shadow:0 0 0 7px rgba(166,90,67,0)}100%{box-shadow:0 0 0 0 rgba(166,90,67,0)}}
+.dot{width:8px;height:8px;border-radius:50%;background:#A65A43;flex:none;animation:builtPulse 2s cubic-bezier(.2,.7,.2,1) infinite}
+@media (prefers-reduced-motion:reduce){.dot{animation:none}html{scroll-behavior:auto}}
+/* hovers (o Claude Design usava style-hover) */
+.nl:hover{color:#1F1E1C!important}
+.btn-ghost:hover{border-color:#1F1E1C!important;color:#1F1E1C!important}
+.btn:hover{background:#000!important;color:#FCFBF8!important}
+.ul-link:hover{text-decoration-color:#1F1E1C!important;color:#1F1E1C!important}
+.card-link:hover{border-color:#D6D0C5!important;color:#1F1E1C!important}
+.btn-out:hover{border-color:#1F1E1C!important;color:#1F1E1C!important}
+.fl:hover{color:#1F1E1C!important}
+/* cabeçalho */
+.header{border-bottom:1px solid transparent;transition:border-color .2s}
+.header.scrolled{border-bottom-color:#E7E3DB}
+.navlinks{display:flex;gap:40px;font:400 17px/1 Inter,sans-serif}
+/* mãos do hero: 3 tamanhos (celular, tablet, desktop) */
+#hero{--pad:clamp(72px,10vh,120px);--hl-top:34%;--hr-top:40%;--hl-w:clamp(260px,27vw,540px);--hr-w:clamp(280px,31vw,600px)}
+@media (max-width:1279px){#hero{--pad:calc(22vw + 96px);--hl-top:24px;--hr-top:88px;--hl-w:40vw;--hr-w:44vw}}
+@media (max-width:767px){#hero{--pad:230px;--hl-top:28px;--hr-top:120px;--hl-w:60vw;--hr-w:66vw}.navlinks{display:none}}
+.cta-overlay{background:linear-gradient(90deg,rgba(247,245,240,0) 28%,rgba(247,245,240,.8) 60%,rgba(247,245,240,.95))}
+@media (max-width:767px){.cta-overlay{background:rgba(247,245,240,.86)}}
+/* lista de recursos e FAQ */
+.feat{display:flex;align-items:center;gap:20px;padding:18px 0;border-top:1px solid #E7E3DB}
+.feat-ico{position:relative;flex:none;width:64px;height:64px;border-radius:14px;overflow:hidden;border:1px solid #E7E3DB;background:#FCFBF8}
+.feat-ico img{position:absolute;inset:4px;width:calc(100% - 8px);height:calc(100% - 8px);object-fit:contain}
+.feat-txt{flex:1;min-width:0;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 24px}
+.feat h3{margin:0;flex:0 0 210px;font:400 26px/1.15 'Instrument Serif',serif;color:#1F1E1C}
+.feat p{margin:0;flex:1 1 280px;font:400 16px/1.5 Inter,sans-serif;color:#3D3B37;text-wrap:pretty}
+.inc{display:grid;grid-template-columns:28px 1fr;gap:16px;padding:22px 0;border-top:1px solid #E7E3DB}
+.inc svg{margin-top:2px;fill:none;stroke:#6E6A63;stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round}
+.faq details{border-top:1px solid #E7E3DB}
+.faq summary{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 0;font:500 18px/1.4 Inter,sans-serif;color:#1F1E1C}
+.faq summary svg{flex:none;fill:none;stroke:#1F1E1C;stroke-width:1.5;stroke-linecap:round}
+.faq p{margin:0;padding:0 32px 24px 0;font:400 16px/1.6 Inter,sans-serif;color:#3D3B37}
+.divider{border-top:1px solid #E7E3DB}
+.divider div{position:relative;max-width:1160px;margin:0 auto;height:0}
+.divider span{position:absolute;top:-5px;width:9px;height:9px;background:linear-gradient(#A39E95,#A39E95) center/1px 9px no-repeat,linear-gradient(#A39E95,#A39E95) center/9px 1px no-repeat}
+.stat{display:flex;flex-direction:column;gap:6px}
+.stat b{font:400 32px/1 'Instrument Serif',serif;color:#1F1E1C}
+.stat span{font:400 14px/1.4 Inter,sans-serif;color:#6E6A63}
+.pstat{padding-top:16px;display:flex;flex-direction:column;gap:4px}
+.pstat b{font:400 30px/1 'Instrument Serif',serif}
+.pstat span{font:400 14px/1.4 Inter,sans-serif;color:#6E6A63}
+.closed .buy{display:none!important}
+.sticky-col{position:sticky;top:120px}
+@media (max-width:760px){.sticky-col{position:static}}
+</style>
+</head>
+<body>
+<div id="root" style="position:relative;overflow-x:clip;padding:clamp(6px,1.1vw,16px)">
+<div style="position:relative;background:#F7F5F0;border-radius:clamp(16px,2vw,28px);overflow:clip;box-shadow:0 1px 3px rgba(60,45,25,.10)">
+
+<header class="header" style="position:sticky;top:0;z-index:50;background:rgba(247,245,240,.84);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)">
+  <nav style="max-width:1240px;margin:0 auto;padding:0 clamp(20px,3vw,40px);height:80px;display:flex;align-items:center;justify-content:space-between;gap:16px">
+    <a href="#topo" aria-label="Built, início" style="display:flex;align-items:baseline;gap:12px;text-decoration:none;color:#1F1E1C">
+      <span style="font:400 36px/1 'Instrument Serif',serif;letter-spacing:-0.02em">Built</span>
+      <span style="font:400 15px/1 Inter,sans-serif;color:#6E6A63">por @condzxyz</span>
+    </a>
+    <div class="navlinks">
+      <a class="nl" href="#prova" style="text-decoration:none;color:#3D3B37">Resultados</a>
+      <a class="nl" href="#como" style="text-decoration:none;color:#3D3B37">Como funciona</a>
+      <a class="nl" href="#entrar" style="text-decoration:none;color:#3D3B37">Preço</a>
+    </div>
+    <a class="btn-ghost" href="#entrar" style="display:inline-flex;align-items:center;gap:10px;height:48px;padding:0 24px;border-radius:999px;border:1px solid #D6D0C5;background:#FCFBF8;color:#1F1E1C;font:500 16px/1 Inter,sans-serif;text-decoration:none">Entrar<svg data-arrow width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" style="fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+  </nav>
+</header>
+
+<main>
+<section id="hero" style="position:relative;min-height:min(calc(100vh - 110px),900px);padding:var(--pad) 20px clamp(96px,12vh,140px);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;overflow:hidden;background:radial-gradient(ellipse 34% 40% at 20% 46%,rgba(214,186,140,.26),transparent 70%),radial-gradient(ellipse 30% 36% at 84% 70%,rgba(160,170,182,.14),transparent 70%)">
+  <span id="topo" style="position:absolute;top:-80px"></span>
+  <svg data-draw aria-hidden="true" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMax slice" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;fill:none;stroke:rgba(29,27,23,.10);stroke-width:1">
+    <circle cx="720" cy="1180" r="560"/><circle cx="720" cy="1180" r="760"/><circle cx="720" cy="1180" r="980"/><circle cx="720" cy="390" r="300"/>
+  </svg>
+  <svg aria-hidden="true" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMax slice" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none">
+    <ellipse cx="310" cy="742" rx="15" ry="5" style="fill:none;stroke:#C2A374;stroke-width:1.2"/><circle cx="310" cy="742" r="5" style="fill:#E3D3B4;stroke:#C2A374"/>
+    <circle cx="1170" cy="330" r="4" style="fill:#C2A374"/><circle cx="1170" cy="330" r="13" style="fill:none;stroke:rgba(194,163,116,.5)"/>
+    <path d="M300 305L392 268" style="stroke:rgba(29,27,23,.28);stroke-width:1"/><circle cx="300" cy="305" r="2" style="fill:rgba(29,27,23,.4)"/>
+  </svg>
+  <canvas id="hero-particles" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none"></canvas>
+  <img data-hand="l" src="img/s-mao-pintada.webp" alt="" aria-hidden="true" width="1100" height="550" decoding="async" fetchpriority="high" style="position:absolute;left:-72px;top:var(--hl-top);width:calc(var(--hl-w) + 72px);height:auto;pointer-events:none;user-select:none;will-change:transform">
+  <img data-hand="r" src="img/s-mao-tipografica.webp" alt="" aria-hidden="true" width="1200" height="473" decoding="async" style="position:absolute;right:-72px;top:var(--hr-top);width:calc(var(--hr-w) + 72px);height:auto;pointer-events:none;user-select:none;mix-blend-mode:multiply;will-change:transform">
+  <div style="position:relative;z-index:2;max-width:820px;display:flex;flex-direction:column;align-items:center">
+    <p data-reveal style="margin:0;font:400 clamp(15px,1.3vw,18px)/1.4 Inter,sans-serif;color:#6E6A63">Construa em público</p>
+    <h1 data-reveal style="margin:24px 0 0;max-width:14ch;font:400 clamp(52px,6.8vw,112px)/.92 'Instrument Serif',serif;letter-spacing:-0.025em;color:#1F1E1C;text-wrap:balance">Aprenda a melhor estratégia de <em>crescimento</em> pro seu negócio.</h1>
+    <div data-reveal style="margin-top:44px;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:16px 32px"><a class="btn" href="#entrar" style="display:inline-flex;align-items:center;justify-content:center;gap:14px;height:58px;padding:0 30px;border-radius:999px;background:#1F1E1C;color:#FCFBF8;font:500 17px/1 Inter,sans-serif;text-decoration:none">Entrar no Built<svg data-arrow width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" style="fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a><a class="ul-link" href="#prova" style="font:500 17px/1 Inter,sans-serif;color:#1F1E1C;text-decoration:underline;text-underline-offset:8px;text-decoration-thickness:1px;text-decoration-color:#A39E95">Ver os números</a></div>
+    <p data-reveal style="margin:28px 0 0;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:4px 10px;font:400 15px/1.5 Inter,sans-serif;color:#6E6A63"><span id="hero-dot" class="dot" aria-hidden="true"></span><span><strong id="hero-strong" style="font-weight:500;color:#1F1E1C">Preço de fundador: R$ 147/mês</strong><span id="hero-rest"> · fecha 30/10</span></span></p>
+  </div>
+</section>
+
+<div class="divider" aria-hidden="true"><div><span style="left:15.5px"></span><span style="right:15.5px"></span></div></div>
+
+<section id="prova" style="padding:clamp(64px,8vw,112px) 0;scroll-margin-top:40px">
+  <div style="max-width:1240px;margin:0 auto;padding:0 20px">
+    <div data-reveal style="position:relative;padding-right:clamp(110px,14vw,200px)">
+      <h2 style="margin:0;max-width:720px;font:400 clamp(36px,4.8vw,68px)/1 'Instrument Serif',serif;letter-spacing:-0.015em;color:#1F1E1C;text-wrap:balance">Tudo em público. <em>Inclusive os números.</em></h2>
+      <p style="margin:16px 0 0;font:400 14px/1.4 Inter,sans-serif;color:#6E6A63">Prints reais · out/2026</p>
+      <img src="img/s-vitoria.webp" alt="Vitória alada de mármore" width="400" height="600" loading="lazy" decoding="async" style="position:absolute;right:0;bottom:-36px;width:clamp(96px,12vw,180px);height:auto;pointer-events:none">
+    </div>
+    <div style="margin-top:clamp(36px,5vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px">
+      <article data-reveal style="grid-column:1/-1;background:#FCFBF8;border:1px solid #E7E3DB;border-radius:24px;padding:clamp(24px,3vw,40px);display:flex;flex-direction:column;gap:28px;overflow:hidden">
+        <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px">
+          <div>
+            <div style="font:400 14px/1.4 Inter,sans-serif;color:#6E6A63">Impressões no X · últimos 90 dias</div>
+            <div style="margin-top:14px;display:flex;align-items:baseline;flex-wrap:wrap;gap:8px 16px"><span style="font:400 clamp(64px,8vw,112px)/.85 'Instrument Serif',serif;letter-spacing:-0.02em;color:#1F1E1C">12 mi</span><span style="font:400 15px/1 Inter,sans-serif;color:#3F7A52">↑ 221%</span></div>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;gap:20px 36px"><div class="stat"><b>214 mil</b><span>engajamentos</span></div><div class="stat"><b>58,1 mil</b><span>visitas no perfil</span></div><div class="stat"><b>49,2 mil</b><span>salvamentos</span></div></div>
+        </div>
+        <div style="position:relative;height:clamp(160px,22vw,280px);display:flex;align-items:flex-end;gap:clamp(1px,.3vw,4px);border-bottom:1px solid #E7E3DB">
+          <div aria-hidden="true" style="position:absolute;inset:0;pointer-events:none;display:flex;flex-direction:column;justify-content:space-between"><span style="border-top:1px dashed rgba(29,27,23,.10)"></span><span style="border-top:1px dashed rgba(29,27,23,.10)"></span><span style="border-top:1px dashed rgba(29,27,23,.10)"></span><span></span></div>
+          <div style="flex:1;min-width:0;height:1.50%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:1.50%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:1.50%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:1.50%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:1.50%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:1.50%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:1.50%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:1.50%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:1.50%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:1.50%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:1.50%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:1.50%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:1.87%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:20.15%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:14.18%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:1.50%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:2.24%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:2.99%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:2.61%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:1.50%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:2.24%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:2.61%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:5.22%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:2.99%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:1.87%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:2.24%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:2.24%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:2.24%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:2.24%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:3.36%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:2.99%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:3.73%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:5.97%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:1.87%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:2.24%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:5.97%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:2.99%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:1.50%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:1.50%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:1.50%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:9.70%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:11.94%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:7.46%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:10.45%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:2.99%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:1.50%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:4.48%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:6.72%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:3.73%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:2.24%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:2.24%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:2.24%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:5.22%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:3.73%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:1.50%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:2.24%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:6.34%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:5.22%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:10.45%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:15.67%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:5.60%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:20.15%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:11.94%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:7.46%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:3.73%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:2.24%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:16.42%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:100.00%;background:#A65A43;border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:14.93%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:27.61%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:25.37%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:23.88%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:14.18%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:16.42%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:26.87%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:29.10%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:14.93%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:11.94%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:20.90%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:8.96%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:15.67%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:26.12%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:25.37%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:12.69%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:8.96%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:20.15%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:67.16%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:32.84%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:29.85%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:8.21%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div>
+          <div style="position:absolute;left:75.00%;top:-4px;transform:translateX(-50%);padding:6px 10px;border-radius:999px;background:#A65A43;font:500 13px/1 Inter,sans-serif;color:#FCFBF8;white-space:nowrap">1,3 mi num dia</div>
+        </div>
+        <div style="display:flex;justify-content:space-between;font:400 14px/1.4 Inter,sans-serif;color:#6E6A63"><span>17 jul</span><span>ago</span><span>set</span><span>13 out</span></div>
+      </article>
+      <article data-reveal style="background:#E9DFCC url(img/nuvens.webp) center/cover;border:1px solid #E7E3DB;border-radius:24px;padding:28px;display:flex;flex-direction:column;gap:12px;min-height:320px">
+        <div style="font:400 14px/1.4 Inter,sans-serif;color:#3D3B37">Faturamento 2026</div>
+        <span style="font:400 clamp(64px,7vw,88px)/.9 'Instrument Serif',serif;letter-spacing:-0.02em;color:#1F1E1C">R$ 3 mi+</span>
+        <span style="font:400 16px/1.4 Inter,sans-serif;color:#1F1E1C">com margem alta, vindo de conteúdo</span>
+        <div style="margin-top:auto;padding-top:24px">
+          <div style="position:relative;height:1px;background:rgba(31,30,28,.4)"><span style="position:absolute;left:0;top:-4px;width:9px;height:9px;border-radius:50%;background:#1F1E1C"></span><span style="position:absolute;right:0;top:-6px;width:13px;height:13px;border-radius:50%;background:#1F1E1C;box-shadow:0 0 0 4px rgba(31,30,28,.25)"></span></div>
+          <div style="margin-top:14px;display:flex;justify-content:space-between;gap:12px;font:400 13px/1.35 Inter,sans-serif;color:#1F1E1C"><span>2021<br>primeiro post</span><span style="text-align:right">2026<br>milionário, dívida dos pais quitada</span></div>
+        </div>
+      </article>
+      <article data-reveal style="background:#FCFBF8;border:1px solid #E7E3DB;border-radius:24px;padding:28px;display:flex;flex-direction:column;gap:12px;min-height:320px">
+        <div style="font:400 14px/1.4 Inter,sans-serif;color:#6E6A63">Seguidores no X</div>
+        <span style="font:400 clamp(56px,6vw,72px)/.9 'Instrument Serif',serif;letter-spacing:-0.02em;color:#1F1E1C">40,5 mil</span>
+        <span style="font:400 16px/1.4 Inter,sans-serif;color:#3D3B37"><strong style="font-weight:500;color:#A65A43">+16 mil</strong> num único dia</span>
+        <div style="margin-top:auto;height:96px;display:flex;align-items:flex-end;gap:2px;border-bottom:1px solid #E7E3DB"><div style="flex:1;min-width:0;height:1.50%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:1.50%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:1.50%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:1.59%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:1.88%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:2.16%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:2.44%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:2.72%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:3.00%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:1.50%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:1.50%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:1.50%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:1.59%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:1.88%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:2.16%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:2.44%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:2.72%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:3.00%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:1.50%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:1.50%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:1.50%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:1.59%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:1.88%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:2.16%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:2.44%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:2.72%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:3.00%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:1.50%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:1.50%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:1.50%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:1.59%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:1.88%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:2.16%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:2.44%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:2.72%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:3.00%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:1.50%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:1.50%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:1.50%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:1.59%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:1.88%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:2.16%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:2.44%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:8.75%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:100.00%;background:#A65A43;border-radius:1px"></div><div style="flex:1;min-width:0;height:1.50%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:1.50%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:2.69%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:2.97%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:3.25%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:3.53%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:3.81%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:4.09%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:4.38%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:2.12%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:2.41%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:2.69%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:2.97%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:3.25%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:3.53%;background:#D6D0C5;border-radius:1px"></div></div>
+      </article>
+      <article data-reveal style="background:#FCFBF8;border:1px solid #E7E3DB;border-radius:24px;padding:28px;display:flex;flex-direction:column;gap:12px;min-height:320px">
+        <div style="font:400 14px/1.4 Inter,sans-serif;color:#6E6A63">LinkedIn · 28 dias</div>
+        <div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap"><span style="font:400 clamp(56px,6vw,72px)/.9 'Instrument Serif',serif;letter-spacing:-0.02em;color:#1F1E1C">526 mil</span><span style="font:400 13px/1 Inter,sans-serif;color:#2F7A4E">↑ 13%</span></div>
+        <span style="font:400 16px/1.4 Inter,sans-serif;color:#3D3B37">impressões, acumulado</span>
+        <svg viewBox="0 0 280 100" preserveAspectRatio="none" aria-hidden="true" style="margin-top:auto;width:100%;height:96px;overflow:visible"><path d="M0.0 85.8 L10.4 81.7 L20.7 75.8 L31.1 74.2 L41.5 71.7 L51.9 69.5 L62.2 61.7 L72.6 59.5 L83.0 53.0 L93.3 50.0 L103.7 44.5 L114.1 38.0 L124.4 34.7 L134.8 31.3 L145.2 27.5 L155.6 25.3 L165.9 23.0 L176.3 21.7 L186.7 20.0 L197.0 18.0 L207.4 16.2 L217.8 15.0 L228.1 14.5 L238.5 14.0 L248.9 13.7 L259.3 13.2 L269.6 12.7 L280.0 12.3 L280 100 L0 100 Z" style="fill:rgba(166,90,67,.10);stroke:none"/><path d="M0.0 85.8 L10.4 81.7 L20.7 75.8 L31.1 74.2 L41.5 71.7 L51.9 69.5 L62.2 61.7 L72.6 59.5 L83.0 53.0 L93.3 50.0 L103.7 44.5 L114.1 38.0 L124.4 34.7 L134.8 31.3 L145.2 27.5 L155.6 25.3 L165.9 23.0 L176.3 21.7 L186.7 20.0 L197.0 18.0 L207.4 16.2 L217.8 15.0 L228.1 14.5 L238.5 14.0 L248.9 13.7 L259.3 13.2 L269.6 12.7 L280.0 12.3" style="fill:none;stroke:#A65A43;stroke-width:2;vector-effect:non-scaling-stroke;stroke-linejoin:round"/></svg>
+      </article>
+    </div>
+    <div style="margin-top:16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:16px">
+      <a data-reveal class="card-link" href="https://x.com/condzxyz/status/2110125736095105241" target="_blank" rel="noopener" style="display:flex;flex-direction:column;text-decoration:none;color:#1F1E1C;background:#FCFBF8;border:1px solid #E7E3DB;border-radius:24px;padding:28px">
+        <div style="font:400 14px/1.4 Inter,sans-serif;color:#6E6A63">A demanda · post de 13/10</div>
+        <p style="margin:20px 0 0;font:400 clamp(24px,2.4vw,30px)/1.2 'Instrument Serif',serif;color:#1F1E1C;text-wrap:pretty">“vou ter q lançar uma comunidade pra build in public… se tiver interesse comenta aí”</p>
+        <div style="margin-top:auto;padding-top:28px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;border-top:1px solid #E7E3DB">
+          <div class="pstat"><b>14 mil</b><span>views</span></div>
+          <div class="pstat"><b style="color:#A65A43">199</b><span>respostas</span></div>
+          <div class="pstat"><b>409</b><span>curtidas</span></div>
+          <div class="pstat"><b>98</b><span>salvos</span></div>
+        </div>
+      </a>
+      <div data-reveal style="display:flex;flex-direction:column;gap:20px;min-height:320px;background:#1F1E1C;border-radius:24px;padding:28px">
+        <span style="font:400 14px/1.4 Inter,sans-serif;color:#A39E95">Automações</span>
+        <span style="margin-top:auto;font:400 clamp(56px,6vw,88px)/.9 'Instrument Serif',serif;letter-spacing:-0.02em;color:#F7F5F0">Centenas <em>viralizando</em></span>
+        <p style="margin:0;max-width:420px;font:400 18px/1.5 Inter,sans-serif;color:#D6D0C5">de pessoas já têm resultado com automações que eu fiz.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider" aria-hidden="true"><div><span style="left:15.5px"></span><span style="right:15.5px"></span></div></div>
+
+<section id="como" style="padding:clamp(64px,8vw,112px) 0;scroll-margin-top:80px">
+  <div style="max-width:1160px;margin:0 auto;padding:0 20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(32px,5vw,80px);align-items:start">
+    <div data-reveal class="sticky-col">
+      <div style="font:400 17px/1 Inter,sans-serif;color:#6E6A63">Como funciona</div>
+      <h2 style="margin:20px 0 0;font:400 clamp(36px,4.8vw,68px)/1 'Instrument Serif',serif;letter-spacing:-0.02em;color:#1F1E1C">Simples de <em>propósito</em>.</h2>
+      <p style="margin:20px 0 0;max-width:340px;font:400 17px/1.5 Inter,sans-serif;color:#6E6A63">Dois espaços no Telegram: Avisos e Chat. Você entra e já sabe onde postar o quê.</p>
+    </div>
+    <ul data-reveal style="min-width:0;margin:0;padding:0;list-style:none;border-bottom:1px solid #E7E3DB">
+      <li class="feat"><div class="feat-ico"><img src="img/t-compasso.webp" alt="" width="128" height="128" loading="lazy" decoding="async"></div><div class="feat-txt"><h3>Chat</h3><p>Grupo no Telegram com builders no dia a dia: dúvidas, rascunhos e ajuda de quem está construindo junto.</p></div></li>
+      <li class="feat"><div class="feat-ico"><img src="img/t-mao-ideia.webp" alt="" width="128" height="86" loading="lazy" decoding="async"></div><div class="feat-txt"><h3>Feedback do Condz</h3><p>Manda o rascunho no Chat antes de postar. Em dia útil eu respondo: o que está bom, o que muda e o hook reescrito.</p></div></li>
+      <li class="feat"><div class="feat-ico"><img src="img/t-telescopio.webp" alt="" width="128" height="128" loading="lazy" decoding="async"></div><div class="feat-txt"><h3>Encontro do mês</h3><p>Uma vez por mês, ao vivo: um tema e perfis analisados na hora. Fica gravado.</p></div></li>
+      <li class="feat"><div class="feat-ico"><img src="img/t-balanca.webp" alt="" width="128" height="128" loading="lazy" decoding="async"></div><div class="feat-txt"><h3>Vitórias</h3><p>Lançou, vendeu, bateu meta? Mostra no Chat. Toda semana eu destaco membros no meu perfil.</p></div></li>
+      <li class="feat"><div class="feat-ico"><img src="img/t-tigela.webp" alt="" width="128" height="128" loading="lazy" decoding="async"></div><div class="feat-txt"><h3>Mentalidade</h3><p>Emoções, atenção e perspectiva. O que segura a constância.</p></div></li>
+      <li class="feat"><div class="feat-ico"><img src="img/t-roseta.webp" alt="" width="128" height="128" loading="lazy" decoding="async"></div><div class="feat-txt"><h3>Avisos</h3><p>Encontros, gravações e materiais num canal só, sem se perder no meio da conversa.</p></div></li>
+    </ul>
+  </div>
+</section>
+
+<div class="divider" aria-hidden="true"><div><span style="left:15.5px"></span><span style="right:15.5px"></span></div></div>
+
+<section style="padding:clamp(64px,8vw,112px) 0">
+  <div style="max-width:1160px;margin:0 auto;padding:0 20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:clamp(40px,6vw,96px);align-items:center">
+    <div data-reveal style="position:relative;max-width:520px;width:100%"><img src="img/s-conrado.webp" alt="Conrado, @condzxyz" width="1000" height="1000" loading="lazy" decoding="async" style="display:block;width:100%;height:auto"></div>
+    <div data-reveal>
+      <h2 style="margin:0;font:400 clamp(36px,4.8vw,68px)/1 'Instrument Serif',serif;letter-spacing:-0.015em;color:#1F1E1C">Quem está <em>construindo</em>.</h2>
+      <p style="margin:28px 0 0;max-width:520px;font:400 19px/1.55 Inter,sans-serif;color:#3D3B37;text-wrap:pretty">Sou o Conrado. Já trabalhei com empresas como Microsoft e Bandai Namco, vendi uma empresa e saí de uma dívida de R$&nbsp;300 mil para mais de R$&nbsp;5 mi de patrimônio.</p>
+      <p style="margin:20px 0 0;max-width:520px;font:400 clamp(26px,2.6vw,34px)/1.2 'Instrument Serif',serif;color:#1F1E1C;text-wrap:pretty">O foco é a evolução inteira. O resto é <em>consequência</em>.</p>
+      <p style="margin:28px 0 0;font:400 13px/1.5 Inter,sans-serif;color:#6E6A63">Minha trajetória não é promessa de resultado.</p>
+    </div>
+  </div>
+</section>
+
+<section id="entrar" style="padding:clamp(64px,8vw,112px) 0;scroll-margin-top:80px">
+  <div style="max-width:1160px;margin:0 auto;padding:0 20px">
+    <div data-reveal style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));background:#FCFBF8;border:1px solid #E7E3DB;border-radius:28px;overflow:hidden">
+      <div style="padding:clamp(32px,5vw,72px)">
+        <div style="font:400 17px/1 Inter,sans-serif;color:#6E6A63">Acesso de fundador</div>
+        <h2 style="margin:24px 0 0;font:400 clamp(44px,5vw,72px)/.98 'Instrument Serif',serif;letter-spacing:-0.02em;color:#1F1E1C;text-wrap:balance">Contato diário com o Condz e builders com o <em>mesmo mindset</em>.</h2>
+        <p style="margin:20px 0 0;max-width:460px;font:400 18px/1.5 Inter,sans-serif;color:#6E6A63">Sem reclamações e sem choro. Só criadores que querem evoluir.</p>
+        <ul style="margin:44px 0 0;padding:0;list-style:none;font:400 18px/1.45 Inter,sans-serif;color:#3D3B37;border-bottom:1px solid #E7E3DB">
+          <li class="inc"><svg width="20" height="20" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg><span>Chat diário com builders no Telegram.</span></li>
+          <li class="inc"><svg width="20" height="20" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg><span>Feedback meu nos seus posts, todo dia útil.</span></li>
+          <li class="inc"><svg width="20" height="20" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg><span>Encontro ao vivo todo mês, gravado.</span></li>
+          <li class="inc"><svg width="20" height="20" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg><span>Gravações e materiais no canal de Avisos.</span></li>
+        </ul>
+      </div>
+      <div id="price" style="position:relative;padding:clamp(32px,5vw,72px);border-left:1px solid #E7E3DB">
+        <img src="img/damasco.webp" alt="" aria-hidden="true" loading="lazy" style="position:absolute;left:0;top:0;width:100%;height:220px;object-fit:cover;object-position:center;opacity:.5;-webkit-mask-image:linear-gradient(#000,transparent);mask-image:linear-gradient(#000,transparent);pointer-events:none">
+        <div style="position:relative">
+          <div id="price-label" style="font:400 17px/1 Inter,sans-serif;color:#6E6A63">Built · fundador</div>
+          <div style="margin-top:20px;display:flex;align-items:baseline;flex-wrap:wrap;gap:8px 16px">
+            <span id="price-main" style="font:400 clamp(88px,10vw,136px)/.85 'Instrument Serif',serif;letter-spacing:-0.03em;color:#A65A43">R$ 147</span>
+            <span style="font:400 20px/1 Inter,sans-serif;color:#6E6A63">/mês</span>
+            <s id="price-strike" style="font:400 26px/1 'Instrument Serif',serif;color:#A39E95">R$ 197</s>
+          </div>
+          <p style="margin:18px 0 0;font:500 17px/1.4 Inter,sans-serif;color:#1F1E1C">Mínimo de 3 meses. Ou anual com desconto.</p>
+          <p id="price-deadline" style="margin:6px 0 0;font:400 15px/1.4 Inter,sans-serif;color:#6E6A63">Preço de fundador até 30 de outubro, 23h59. Travado enquanto você ficar.</p>
+          <div style="margin-top:32px;display:grid;grid-template-columns:22px 1fr;gap:14px;padding:22px 24px;border-radius:18px;background:#F1EEE7;border:1px solid #E7E3DB;font:400 16px/1.55 Inter,sans-serif;color:#3D3B37"><svg width="20" height="20" viewBox="0 0 16 16" aria-hidden="true" style="margin-top:2px;fill:none;stroke:#3D3B37;stroke-width:1.3;stroke-linejoin:round"><path d="M8 1.5l5.5 2v4c0 3.4-2.4 6-5.5 7-3.1-1-5.5-3.6-5.5-7v-4z"/></svg><span><strong style="font-weight:500;color:#1F1E1C">7 dias de garantia.</strong> Não curtiu, me avisa e eu devolvo tudo. Minha trajetória não é promessa de resultado.</span></div>
+          <div class="buy" style="margin-top:32px;display:flex;flex-direction:column;align-items:flex-start;gap:12px">
+            <a class="btn" data-plan="trimestralCartao" id="btn-cartao" href="https://buy.stripe.com/8x228sg2w1KW309142bsc00" style="display:inline-flex;align-items:center;justify-content:center;gap:14px;height:58px;padding:0 30px;border-radius:999px;background:#1F1E1C;color:#FCFBF8;font:500 17px/1 Inter,sans-serif;text-decoration:none">Entrar com cartão<svg data-arrow width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" style="fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+            <p style="margin:0;font:400 14px/1.5 Inter,sans-serif;color:#6E6A63">R$ 441 agora. Renova sozinho a cada 3 meses. Cancela quando quiser e não renova.</p>
+            <a class="btn-out" data-plan="trimestralPix" id="btn-pix" href="https://buy.stripe.com/fZueVeg2w9do309fYWbsc01" style="margin-top:8px;display:inline-flex;align-items:center;height:52px;padding:0 26px;border-radius:999px;border:1px solid #D6D0C5;color:#1F1E1C;font:500 16px/1 Inter,sans-serif;text-decoration:none">Entrar com Pix</a>
+            <p style="margin:0;font:400 14px/1.5 Inter,sans-serif;color:#6E6A63">R$ 441 por 3 meses. O bot te avisa antes de vencer.</p>
+          </div>
+          <div class="buy" style="margin-top:28px;padding-top:24px;border-top:1px solid #E7E3DB;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px">
+            <p style="margin:0;font:400 16px/1.5 Inter,sans-serif;color:#3D3B37"><strong style="font-weight:500;color:#1F1E1C">Anual de fundador: R$ 1.470</strong> à vista (2 meses grátis)</p>
+            <a class="ul-link" data-plan="anual" id="btn-anual" href="https://buy.stripe.com/00wcN66rWblw58heUSbsc02" style="display:inline-flex;align-items:center;gap:8px;font:500 16px/1 Inter,sans-serif;color:#1F1E1C;text-decoration:underline;text-underline-offset:6px;text-decoration-color:#A39E95">Entrar no anual<svg data-arrow width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" style="fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          </div>
+          <p id="closed-note" hidden style="margin:32px 0 0;font:400 16px/1.55 Inter,sans-serif;color:#3D3B37">O preço de fundador fechou em 30/10. Os novos planos abrem em breve: me chama no <a href="https://x.com/condzxyz" target="_blank" rel="noopener">X</a>.</p>
+          <p id="membros" hidden style="margin:24px 0 0;font:400 15px/1.4 Inter,sans-serif;color:#3D3B37"><span id="membros-n" style="font-weight:500;color:#A65A43"></span> fundadores já entraram</p>
+          <p style="margin:24px 0 0;font:400 14px/1.5 Inter,sans-serif;color:#6E6A63">Pagamento seguro pelo Stripe. Depois você abre o bot no Telegram e entra no grupo na hora.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="perguntas" style="padding:clamp(64px,8vw,112px) 0;scroll-margin-top:40px">
+  <div style="max-width:1160px;margin:0 auto;padding:0 20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(32px,6vw,96px);align-items:start">
+    <div data-reveal><h2 style="margin:0;font:400 clamp(36px,4.8vw,68px)/1 'Instrument Serif',serif;letter-spacing:-0.015em;color:#1F1E1C">Perguntas <em>frequentes</em>.</h2><img src="img/s-cavaleiro.webp" alt="Cavaleiro apontando adiante, em afresco" width="640" height="960" loading="lazy" decoding="async" style="display:block;margin-top:40px;width:min(100%,320px);height:auto"></div>
+    <div data-reveal class="faq" style="min-width:0;border-bottom:1px solid #E7E3DB">
+      <details open><summary>Por que no Telegram?<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v12M2 8h12"/></svg></summary><p>Porque lá o bot cuida da entrada e da assinatura sozinho, e o grupo fica organizado em dois espaços: Avisos e Chat. Se você não tem, é grátis e leva 1 minuto pra instalar.</p></details>
+      <details><summary>Preciso ter seguidores?<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v12M2 8h12"/></svg></summary><p>Não. O Built é pra quem está começando ou travado entre 100 e alguns milhares.</p></details>
+      <details><summary>Quanto tempo por dia?<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v12M2 8h12"/></svg></summary><p>De 20 a 30 minutos: postar e trocar com o grupo no Chat.</p></details>
+      <details><summary>O feedback é seu mesmo?<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v12M2 8h12"/></svg></summary><p>É. Em dia útil eu passo no Chat e respondo os rascunhos postados até as 18h.</p></details>
+      <details><summary>Por que no mínimo 3 meses?<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v12M2 8h12"/></svg></summary><p>Porque ninguém cresce em 30 dias. Três meses é o tempo de criar constância, testar formato e ver o número mexer.</p></details>
+      <details><summary>Como funciona o pagamento?<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v12M2 8h12"/></svg></summary><p>Pelo Stripe. No cartão, R$ 441 a cada 3 meses, renovando sozinho. No Pix, você paga os 3 meses e o bot te avisa antes de vencer. O anual é um pagamento só de R$ 1.470, no cartão ou no Pix. Depois de pagar, você abre o bot no Telegram e entra no grupo na hora.</p></details>
+      <details><summary>Posso cancelar?<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v12M2 8h12"/></svg></summary><p>Pode, quando quiser e sem multa: a assinatura só não renova no próximo trimestre, e seu acesso vai até o fim do período pago. É só mandar /assinatura pro bot.</p></details>
+      <details><summary>E se eu não gostar?<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v12M2 8h12"/></svg></summary><p>Você tem 7 dias pra pedir o dinheiro de volta, inteiro.</p></details>
+      <details><summary>O preço de fundador sobe depois?<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v12M2 8h12"/></svg></summary><p>Não, enquanto sua assinatura estiver ativa. Se cancelar e voltar depois de 30/10, entra no preço do momento.</p></details>
+      <details><summary>Quais são as regras do grupo?<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v12M2 8h12"/></svg></summary><p>Sem xingamento, sem desrespeito, sem spam. O grupo é meu e eu decido o que acontece nele, inclusive remover quem quebrar as regras. Ao entrar, você concorda com isso.</p></details>
+    </div>
+  </div>
+</section>
+
+<div class="divider" aria-hidden="true"><div><span style="left:15.5px"></span><span style="right:15.5px"></span></div></div>
+
+<section style="position:relative;min-height:clamp(560px,60vw,820px);display:flex;align-items:center;overflow:hidden;border-top:1px solid #E7E3DB">
+  <img src="img/arcada.webp" alt="Galeria em arcos que começa pintada e termina como desenho técnico" width="1536" height="1024" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center">
+  <div class="cta-overlay" aria-hidden="true" style="position:absolute;inset:0"></div>
+  <div style="position:relative;width:100%;max-width:1160px;margin:0 auto;padding:clamp(64px,8vw,112px) 20px;display:flex;justify-content:flex-end">
+    <div data-reveal style="max-width:500px">
+      <p style="margin:0;font:400 17px/1.4 Inter,sans-serif;color:#3D3B37">Do rascunho à obra. Em público.</p>
+      <h2 style="margin:20px 0 0;font:400 clamp(52px,6.4vw,96px)/.95 'Instrument Serif',serif;letter-spacing:-0.025em;color:#1F1E1C">Bora construir <em>junto</em>.</h2>
+      <p id="cta-final-sub" style="margin:24px 0 0;font:400 clamp(18px,1.6vw,20px)/1.5 Inter,sans-serif;color:#3D3B37">R$ 147/mês de fundador, até 30/10.</p>
+      <div style="margin-top:36px;display:flex"><a class="btn" href="#entrar" style="display:inline-flex;align-items:center;justify-content:center;gap:14px;height:58px;padding:0 30px;border-radius:999px;background:#1F1E1C;color:#FCFBF8;font:500 17px/1 Inter,sans-serif;text-decoration:none">Entrar no Built<svg data-arrow width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" style="fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer id="footer" style="border-top:1px solid #E7E3DB;padding:48px 0 40px">
+  <div style="max-width:1160px;margin:0 auto;padding:0 20px;display:flex;flex-direction:column;gap:24px">
+    <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px">
+      <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
+        <span style="font:400 30px/1 'Instrument Serif',serif;color:#1F1E1C">Built</span><span style="font:400 15px/1.4 Inter,sans-serif;color:#6E6A63">build in public com @condzxyz</span>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:24px;font:400 14px/1 Inter,sans-serif">
+        <a class="fl" href="https://t.me/built_condz_bot" target="_blank" rel="noopener" style="color:#3D3B37;text-decoration:none">Já é membro? Abra o bot</a>
+        <a class="fl" href="https://x.com/condzxyz" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:4px;color:#3D3B37;text-decoration:none">Perfil no X<svg width="12" height="12" viewBox="0 0 16 16" aria-hidden="true" style="fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round"><path d="M5 11l6-6M6 5h5v5"/></svg></a>
+        <a class="fl" href="privacidade.html" style="color:#3D3B37;text-decoration:none">Privacidade</a>
+        <a class="fl" href="termos.html" style="color:#3D3B37;text-decoration:none">Termos</a>
+        <span style="color:#6E6A63">© 2026</span>
+      </div>
+    </div>
+    <p style="margin:0;font:400 13px/1.5 Inter,sans-serif;color:#6E6A63">Pagamento processado pelo Stripe. Dúvidas: <a href="mailto:conrado@doti.gg" style="color:#6E6A63">conrado@doti.gg</a>.</p>
+  </div>
+</footer>
+
+</div>
+<div id="mobile-bar" hidden style="position:fixed;left:0;right:0;bottom:0;z-index:60;background:rgba(247,245,240,.94);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-top:1px solid #E7E3DB;padding:10px 16px calc(10px + env(safe-area-inset-bottom));display:flex;align-items:center;justify-content:space-between;gap:12px">
+  <span id="mobile-bar-text" style="font:500 14px/1.3 Inter,sans-serif;color:#1F1E1C">R$ 147/mês · fundador até 30/10</span>
+  <a href="#entrar" style="display:inline-flex;align-items:center;height:44px;padding:0 22px;border-radius:999px;background:#1F1E1C;color:#FCFBF8;font:500 15px/1 Inter,sans-serif;text-decoration:none">Entrar</a>
+</div>
+</div>
+
+<script>
+(() => {
+  const CFG = {
+    fundadorAte: '2026-10-30T23:59:00-03:00',
+    links: {
+      trimestralCartao: 'https://buy.stripe.com/8x228sg2w1KW309142bsc00',
+      trimestralPix: 'https://buy.stripe.com/fZueVeg2w9do309fYWbsc01',
+      anual: 'https://buy.stripe.com/00wcN66rWblw58heUSbsc02',
+    },
+    membrosUrl: 'https://built-bot.built-bot.workers.dev/membros',
+    mostrarMembrosAPartirDe: 10,
+  };
+  const $ = (s) => document.querySelector(s);
+  const root = $('#root');
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Quem vem do bot chega com ?tg=ID. O id vai pro Stripe como client_reference_id
+  // e o bot libera o acesso sozinho quando o pagamento cai.
+  const q = new URLSearchParams(location.search);
+  let tg = q.get('tg');
+  if (!(tg && /^\d{1,15}$/.test(tg))) tg = null;
+  try { if (tg) sessionStorage.setItem('built_tg', tg); else tg = sessionStorage.getItem('built_tg'); } catch (e) {}
+  const utm = {};
+  ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'].forEach((k) => { const v = q.get(k); if (v) utm[k] = v; });
+  const decorate = (url) => {
+    try {
+      const u = new URL(url);
+      if (tg) u.searchParams.set('client_reference_id', tg);
+      Object.keys(utm).forEach((k) => u.searchParams.set(k, utm[k]));
+      return u.toString();
+    } catch (e) { return url; }
+  };
+  document.querySelectorAll('a[data-plan]').forEach((a) => { const l = CFG.links[a.dataset.plan]; if (l) a.href = decorate(l); });
+
+  // Prazo do preço de fundador
+  const deadline = Date.parse(CFG.fundadorAte);
+  function renderPhase() {
+    const left = deadline - Date.now();
+    if (left <= 0) {
+      $('#hero-dot').hidden = true;
+      $('#hero-strong').textContent = 'Preço de fundador encerrado';
+      $('#hero-rest').textContent = ' · R$ 197/mês';
+      $('#price-label').textContent = 'Built';
+      $('#price-main').textContent = 'R$ 197';
+      $('#price-main').style.color = '#1F1E1C';
+      $('#price-strike').hidden = true;
+      $('#price-deadline').textContent = 'Preço de fundador encerrado.';
+      $('#price').classList.add('closed');
+      $('#closed-note').hidden = false;
+      $('#cta-final-sub').textContent = 'R$ 197/mês, mínimo de 3 meses.';
+      $('#mobile-bar-text').textContent = 'R$ 197/mês';
+      return;
+    }
+    if (left < 48 * 3600e3) {
+      const cd = `${Math.floor(left / 86400e3)}d ${String(Math.floor((left % 86400e3) / 3600e3)).padStart(2, '0')}h`;
+      $('#hero-rest').textContent = ` · fecha em ${cd}`;
+      $('#price-deadline').textContent = `Preço de fundador fecha em ${cd}. Travado enquanto você ficar.`;
+    }
+  }
+  renderPhase();
+  setInterval(renderPhase, 30000);
+
+  // Contador público de membros (só aparece a partir de 10)
+  function loadMembros() {
+    const ac = new AbortController();
+    const t = setTimeout(() => ac.abort(), 4000);
+    fetch(CFG.membrosUrl, { signal: ac.signal, cache: 'no-store' })
+      .then((r) => r.json())
+      .then((d) => {
+        const n = Number(d.membros);
+        if (Number.isFinite(n) && n >= CFG.mostrarMembrosAPartirDe && Date.now() < deadline) {
+          $('#membros-n').textContent = String(n);
+          $('#membros').hidden = false;
+        }
+      })
+      .catch(() => {})
+      .finally(() => clearTimeout(t));
+  }
+  loadMembros();
+  setInterval(() => { if (!document.hidden) loadMembros(); }, 60000);
+
+  // Cabeçalho com linha depois de rolar
+  const header = $('.header');
+  const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 8);
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // Barra fixa no celular: aparece depois do hero e some quando o preço está na tela
+  const bar = $('#mobile-bar'), footer = $('#footer');
+  let heroOut = false, entrarIn = false;
+  const updateBar = () => {
+    const show = window.innerWidth < 768 && heroOut && !entrarIn;
+    bar.hidden = !show;
+    footer.style.paddingBottom = show ? '112px' : '40px';
+  };
+  const hero = $('#hero'), entrar = $('#entrar');
+  new IntersectionObserver((entries) => entries.forEach((en) => {
+    if (en.target === hero) heroOut = !en.isIntersecting && en.boundingClientRect.top < 0;
+    if (en.target === entrar) entrarIn = en.isIntersecting;
+    updateBar();
+  })).observe(hero);
+  new IntersectionObserver((entries) => entries.forEach((en) => { entrarIn = en.isIntersecting; updateBar(); })).observe(entrar);
+  window.addEventListener('resize', updateBar);
+
+  // Entrada suave dos blocos
+  const ease = 'cubic-bezier(.2,.7,.2,1)';
+  const reveals = root.querySelectorAll('[data-reveal]');
+  if (!reduced && 'IntersectionObserver' in window) {
+    reveals.forEach((el) => { el.style.opacity = '0'; el.style.transform = 'translateY(12px)'; });
+    const io = new IntersectionObserver((entries) => {
+      let i = 0;
+      entries.forEach((en) => {
+        if (!en.isIntersecting) return;
+        const el = en.target, d = (i++) * 60;
+        const go = () => { el.style.transition = `opacity .6s ${ease} ${d}ms, transform .6s ${ease} ${d}ms`; el.style.opacity = '1'; el.style.transform = 'none'; };
+        const imgs = [...el.querySelectorAll('img')].filter((im) => !im.complete);
+        if (!imgs.length) go(); else Promise.race([Promise.all(imgs.map((im) => (im.decode ? im.decode().catch(() => {}) : null))), new Promise((r) => setTimeout(r, 900))]).then(go);
+        io.unobserve(el);
+      });
+    }, { rootMargin: '0px 0px -6% 0px' });
+    reveals.forEach((el) => io.observe(el));
+  }
+
+  // Círculos do hero se desenhando
+  root.querySelectorAll('svg[data-draw]').forEach((svg) => {
+    const shapes = svg.querySelectorAll('path,line,circle,rect');
+    shapes.forEach((s) => { s.setAttribute('pathLength', '1'); if (!reduced) { s.style.strokeDasharray = '1'; s.style.strokeDashoffset = '1'; } });
+    if (reduced) return;
+    const io = new IntersectionObserver((entries) => entries.forEach((en) => {
+      if (!en.isIntersecting) return;
+      shapes.forEach((s, i) => { s.style.transition = `stroke-dashoffset 1.6s cubic-bezier(.16,1,.3,1) ${i * 80}ms`; s.style.strokeDashoffset = '0'; });
+      io.unobserve(en.target);
+    }), { threshold: 0.15 });
+    io.observe(svg);
+  });
+
+  // Partículas ASCII subindo no hero
+  (function particles() {
+    const cv = $('#hero-particles');
+    if (!cv || reduced) return;
+    const ctx = cv.getContext('2d');
+    const dpr = Math.min(2, window.devicePixelRatio || 1);
+    let W = 0, H = 0;
+    const size = () => { W = cv.clientWidth; H = cv.clientHeight; cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0); };
+    size(); window.addEventListener('resize', size);
+    const P = [], chars = '#/\\|_-=+*:.01';
+    let running = false, last = 0, acc = 0, raf = 0;
+    const loop = (t) => {
+      if (!running) return;
+      const dt = Math.min(50, last ? t - last : 16); last = t; acc += dt;
+      if (P.length < 46 && acc > 220) {
+        acc = 0;
+        P.push({ x: W * (0.1 + Math.random() * 0.88), y: H * (0.3 + Math.random() * 0.65), vy: -(6 + Math.random() * 12), life: 0, max: 3500 + Math.random() * 3500, c: Math.random() < 0.2 ? chars[(Math.random() * chars.length) | 0] : null });
+      }
+      ctx.clearRect(0, 0, W, H);
+      ctx.font = '11px ui-monospace, Menlo, monospace';
+      for (let i = P.length - 1; i >= 0; i--) {
+        const p = P[i]; p.life += dt; p.y += p.vy * dt / 1000;
+        const k = p.life / p.max;
+        if (k >= 1) { P.splice(i, 1); continue; }
+        ctx.fillStyle = `rgba(29,27,23,${(Math.sin(Math.PI * k) * 0.5).toFixed(3)})`;
+        if (p.c) { if (Math.random() < 0.015) p.c = chars[(Math.random() * chars.length) | 0]; ctx.fillText(p.c, p.x, p.y); }
+        else ctx.fillRect(p.x | 0, p.y | 0, 2, 2);
+      }
+      raf = requestAnimationFrame(loop);
+    };
+    new IntersectionObserver(([en]) => {
+      if (en.isIntersecting && !running) { running = true; last = 0; size(); raf = requestAnimationFrame(loop); }
+      else if (!en.isIntersecting) { running = false; cancelAnimationFrame(raf); }
+    }).observe(cv);
+  })();
+
+  // Mãos do hero: entram dos lados e seguem o mouse
+  (function hands() {
+    const hs = root.querySelectorAll('[data-hand]');
+    if (!hs.length || reduced) return;
+    let mx = 0, my = 0, sy = 0, live = false;
+    const apply = () => {
+      if (!live) return;
+      hs.forEach((el) => { const s = el.dataset.hand === 'l' ? 1 : -1; const close = Math.min(1, sy / 520) * 36; el.style.transform = `translate(${s * (close + Math.max(0, s * mx) * 20)}px,${my * 10}px)`; });
+    };
+    hs.forEach((el) => { const s = el.dataset.hand === 'l' ? -1 : 1; el.style.opacity = '0'; el.style.transform = `translateX(${s * 60}px)`; });
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      hs.forEach((el) => { el.style.transition = 'opacity 1.4s cubic-bezier(.16,1,.3,1), transform 2s cubic-bezier(.16,1,.3,1)'; el.style.opacity = '1'; el.style.transform = 'none'; });
+      setTimeout(() => { hs.forEach((el) => { el.style.transition = 'transform 1s cubic-bezier(.16,1,.3,1)'; }); live = true; apply(); }, 2000);
+    }));
+    hero.addEventListener('mousemove', (e) => { const b = hero.getBoundingClientRect(); mx = (e.clientX - b.left) / b.width - 0.5; my = (e.clientY - b.top) / b.height - 0.5; apply(); });
+    window.addEventListener('scroll', () => { sy = window.scrollY; apply(); }, { passive: true });
+  })();
+})();
+</script>
+</body>
+</html>
