@@ -426,6 +426,7 @@ details[open]::details-content{block-size:auto}
     },
     membrosUrl: 'https://built-bot.built-bot.workers.dev/membros',
     leadUrl: 'https://built-bot.built-bot.workers.dev/lead',
+    visitUrl: 'https://built-bot.built-bot.workers.dev/v',
     mostrarMembrosAPartirDe: 10,
   };
   const $ = (s) => document.querySelector(s);
@@ -450,6 +451,20 @@ details[open]::details-content{block-size:auto}
   };
   const setLinks = (links) => document.querySelectorAll('a[data-plan]').forEach((a) => { const l = links[a.dataset.plan]; if (l) a.href = decorate(l); });
   setLinks(CFG.links);
+
+  // Contador de visitas sem cookie: só números por dia e por origem (ver a página de privacidade)
+  const fonte = tg ? 'bot' : (utm.utm_source || document.referrer || '');
+  const beacon = (data) => {
+    try {
+      const body = JSON.stringify({ ...data, src: fonte });
+      if (!(navigator.sendBeacon && navigator.sendBeacon(CFG.visitUrl, body))) fetch(CFG.visitUrl, { method: 'POST', body, keepalive: true }).catch(() => {});
+    } catch (e) {}
+  };
+  beacon({ e: 'visita' });
+  document.addEventListener('click', (ev) => {
+    const a = ev.target.closest && ev.target.closest('a[data-plan]');
+    if (a) beacon({ e: 'clique', plan: a.dataset.plan });
+  });
 
   // Lista de email
   (function leadForm() {
