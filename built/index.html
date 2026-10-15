@@ -101,6 +101,14 @@ details[open]::details-content{block-size:auto}
 .case-res{margin-top:4px;font:500 13px/1.25 Inter,sans-serif;color:#D8A48F}
 .case-more{justify-content:center;border-style:dashed;background:transparent;font:500 14px/1.3 Inter,sans-serif;color:#D6D0C5}
 .closed .buy{display:none!important}
+.bill{margin-top:22px;display:inline-flex;padding:4px;border-radius:999px;background:#F1EEE7;border:1px solid #E7E3DB;gap:2px}
+.bill[hidden]{display:none}
+.bill button{appearance:none;border:0;background:transparent;cursor:pointer;height:40px;padding:0 18px;border-radius:999px;font:500 15px/1 Inter,sans-serif;color:#3D3B37;display:inline-flex;align-items:center;gap:8px;transition:background .2s,color .2s}
+.bill button[aria-checked="true"]{background:#1F1E1C;color:#FCFBF8}
+.bill button:focus-visible{outline:2px solid #A65A43;outline-offset:2px}
+.bill-tag{font:600 12px/1 Inter,sans-serif;color:#A65A43;background:rgba(166,90,67,.12);padding:4px 7px;border-radius:999px}
+.bill button[aria-checked="true"] .bill-tag{color:#FCFBF8;background:rgba(252,251,248,.16)}
+.closed .bill{display:none!important}
 .sticky-col{position:sticky;top:120px}
 /* lista de email (quem ainda não vai entrar agora) */
 .lead{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(24px,4vw,64px);align-items:center;background:#F1EEE7;border:1px solid #E7E3DB;border-radius:28px;padding:clamp(28px,4.5vw,56px)}
@@ -282,12 +290,13 @@ details[open]::details-content{block-size:auto}
         <img src="img/damasco.webp" alt="" aria-hidden="true" loading="lazy" style="position:absolute;left:0;top:0;width:100%;height:220px;object-fit:cover;object-position:center;opacity:.5;-webkit-mask-image:linear-gradient(#000,transparent);mask-image:linear-gradient(#000,transparent);pointer-events:none">
         <div style="position:relative">
           <div id="price-label" style="font:400 17px/1 Inter,sans-serif;color:#6E6A63">Built · fundador</div>
+          <div class="bill" id="bill" role="radiogroup" aria-label="Como pagar" hidden><button type="button" role="radio" aria-checked="true" data-bill="tri">3 meses <span class="bill-tag" id="bill-tag">−23%</span></button><button type="button" role="radio" aria-checked="false" data-bill="mes">Mensal</button></div>
           <div style="margin-top:20px;display:flex;align-items:baseline;flex-wrap:wrap;gap:8px 16px">
             <span id="price-main" style="font:400 clamp(88px,10vw,136px)/.85 'Instrument Serif',serif;letter-spacing:-0.03em;color:#A65A43">R$ 147</span>
             <span style="font:400 20px/1 Inter,sans-serif;color:#6E6A63">/mês</span>
             <s id="price-strike" style="font:400 26px/1 'Instrument Serif',serif;color:#A39E95">R$ 197</s>
           </div>
-          <p style="margin:18px 0 0;font:500 17px/1.4 Inter,sans-serif;color:#1F1E1C">Mínimo de 3 meses. Ou anual com desconto.</p>
+          <p id="price-sub" style="margin:18px 0 0;font:500 17px/1.4 Inter,sans-serif;color:#1F1E1C">Mínimo de 3 meses. Ou anual com desconto.</p>
           <p id="price-deadline" style="margin:6px 0 0;font:400 15px/1.4 Inter,sans-serif;color:#6E6A63">Preço de fundador até 30 de outubro, 23h59. Travado enquanto você ficar.</p>
           <div style="margin-top:32px;display:grid;grid-template-columns:22px 1fr;gap:14px;padding:22px 24px;border-radius:18px;background:#F1EEE7;border:1px solid #E7E3DB;font:400 16px/1.55 Inter,sans-serif;color:#3D3B37"><svg width="20" height="20" viewBox="0 0 16 16" aria-hidden="true" style="margin-top:2px;fill:none;stroke:#3D3B37;stroke-width:1.3;stroke-linejoin:round"><path d="M8 1.5l5.5 2v4c0 3.4-2.4 6-5.5 7-3.1-1-5.5-3.6-5.5-7v-4z"/></svg><span><strong style="font-weight:500;color:#1F1E1C">7 dias de garantia.</strong> Não curtiu, me avisa e eu devolvo tudo. Minha trajetória não é promessa de resultado.</span></div>
           <div class="buy" style="margin-top:32px;display:flex;flex-direction:column;align-items:flex-start;gap:12px">
@@ -338,9 +347,9 @@ details[open]::details-content{block-size:auto}
       <details><summary>Preciso ter seguidores?<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v12M2 8h12"/></svg></summary><p>Não. O Built é pra quem está começando ou travado entre 100 e alguns milhares.</p></details>
       <details><summary>Quanto tempo por dia?<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v12M2 8h12"/></svg></summary><p>De 20 a 30 minutos: postar e trocar com o grupo no Chat.</p></details>
       <details><summary>O feedback é seu mesmo?<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v12M2 8h12"/></svg></summary><p>É. Em dia útil eu passo no Chat e respondo os rascunhos postados até as 18h.</p></details>
-      <details><summary>Por que no mínimo 3 meses?<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v12M2 8h12"/></svg></summary><p>Porque ninguém cresce em 30 dias. Três meses é o tempo de criar constância, testar formato e ver o número mexer.</p></details>
+      <details><summary><span id="faq-min-q">Por que no mínimo 3 meses?</span><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v12M2 8h12"/></svg></summary><p id="faq-min-a">Porque ninguém cresce em 30 dias. Três meses é o tempo de criar constância, testar formato e ver o número mexer.</p></details>
       <details><summary>Como funciona o pagamento?<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v12M2 8h12"/></svg></summary><p id="faq-pagamento">Pelo Stripe. No cartão, R$ 441 a cada 3 meses, renovando sozinho. No Pix, você paga os 3 meses e o bot te avisa antes de vencer. O anual é um pagamento só de R$ 1.470, no cartão ou no Pix. Depois de pagar, você abre o bot no Telegram e entra no grupo na hora.</p></details>
-      <details><summary>Posso cancelar?<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v12M2 8h12"/></svg></summary><p>Pode, quando quiser e sem multa: a assinatura só não renova no próximo trimestre, e seu acesso vai até o fim do período pago. É só mandar /assinatura pro bot.</p></details>
+      <details><summary>Posso cancelar?<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v12M2 8h12"/></svg></summary><p>Pode, quando quiser e sem multa: a assinatura só não renova no próximo período, e seu acesso vai até o fim do período pago. É só mandar /assinatura pro bot.</p></details>
       <details><summary>E se eu não gostar?<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v12M2 8h12"/></svg></summary><p>Você tem 7 dias pra pedir o dinheiro de volta, inteiro.</p></details>
       <details><summary>O preço de fundador sobe depois?<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v12M2 8h12"/></svg></summary><p>Não, enquanto sua assinatura estiver ativa. Se cancelar e voltar depois de 30/10, entra no preço do momento.</p></details>
       <details><summary>Quais são as regras do grupo?<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v12M2 8h12"/></svg></summary><p>Sem xingamento, sem desrespeito, sem spam. O grupo é meu e eu decido o que acontece nele, inclusive remover quem quebrar as regras. Ao entrar, você concorda com isso.</p></details>
@@ -397,13 +406,23 @@ details[open]::details-content{block-size:auto}
       trimestralCartao: 'https://buy.stripe.com/8x228sg2w1KW309142bsc00',
       trimestralPix: 'https://buy.stripe.com/fZueVeg2w9do309fYWbsc01',
       anual: 'https://buy.stripe.com/00wcN66rWblw58heUSbsc02',
+      // Mensal (30% acima do trimestral). Vazio = a página só mostra o plano de 3 meses e o anual.
+      mensalCartao: 'https://buy.stripe.com/cNi9AU9E8blw8kt3cabsc07',
+      mensalPix: 'https://buy.stripe.com/4gM28s17C4X87gph30bsc08',
     },
-    // Preço cheio (R$ 591 a cada 3 meses, R$ 591 Pix, R$ 1.970 anual). Entram no lugar dos de fundador depois do prazo.
+    // Preço cheio (R$ 591 a cada 3 meses, R$ 591 Pix, R$ 1.970 anual, R$ 256 mensal). Entram no lugar dos de fundador depois do prazo.
     // Se algum ficar vazio, a página esconde os botões e mostra "os novos planos abrem em breve".
     linksCheio: {
       trimestralCartao: 'https://buy.stripe.com/4gM28saIc4X8cAJdQObsc04',
       trimestralPix: 'https://buy.stripe.com/eVqaEYeYsexIcAJbIGbsc05',
       anual: 'https://buy.stripe.com/4gMaEY4jO89kfMVcMKbsc06',
+      mensalCartao: 'https://buy.stripe.com/7sYfZi9E8dtEdENfYWbsc09',
+      mensalPix: 'https://buy.stripe.com/9B6bJ2bMggFQcAJfYWbsc0a',
+    },
+    // Valores por mês. Mensal = trimestral + 30%.
+    precos: {
+      fundador: { tri: 147, triTotal: 441, triRiscado: 197, mes: 191, mesRiscado: 256, anual: 1470 },
+      cheio: { tri: 197, triTotal: 591, mes: 256, anual: 1970 },
     },
     membrosUrl: 'https://built-bot.built-bot.workers.dev/membros',
     leadUrl: 'https://built-bot.built-bot.workers.dev/lead',
@@ -457,7 +476,67 @@ details[open]::details-content{block-size:auto}
   // Prazo do preço de fundador. Depois dele a página vende pelo preço cheio.
   const deadline = Date.parse(CFG.fundadorAte);
   const temCheio = ['trimestralCartao', 'trimestralPix', 'anual'].every((k) => CFG.linksCheio[k]);
+  const reais = (n) => 'R$ ' + n.toLocaleString('pt-BR');
   let encerrado = false;
+  let bill = 'tri';
+  try { if (sessionStorage.getItem('built_bill') === 'mes') bill = 'mes'; } catch (e) {}
+
+  // Plano de 3 meses × mensal. O mensal só aparece quando os dois links dele existem.
+  function renderBill() {
+    if (encerrado && !temCheio) return;
+    const P = CFG.precos[encerrado ? 'cheio' : 'fundador'];
+    const links = encerrado ? CFG.linksCheio : CFG.links;
+    const mensalOk = !!(links.mensalCartao && links.mensalPix);
+    if (!mensalOk) bill = 'tri';
+    const mes = bill === 'mes';
+    const desconto = Math.round((1 - P.tri / P.mes) * 100);
+    $('#bill').hidden = !mensalOk;
+    $('#bill-tag').textContent = '−' + desconto + '%';
+    document.querySelectorAll('#bill button').forEach((b) => {
+      const on = b.dataset.bill === bill;
+      b.setAttribute('aria-checked', String(on));
+      b.tabIndex = on ? 0 : -1;
+    });
+    $('#btn-cartao').dataset.plan = mes ? 'mensalCartao' : 'trimestralCartao';
+    $('#btn-pix').dataset.plan = mes ? 'mensalPix' : 'trimestralPix';
+    setLinks(links);
+    $('#price-main').textContent = reais(mes ? P.mes : P.tri);
+    const riscado = mes ? P.mesRiscado : P.triRiscado;
+    $('#price-strike').hidden = !riscado;
+    if (riscado) $('#price-strike').textContent = reais(riscado);
+    $('#price-sub').textContent = mes
+      ? 'Mês a mês, sem fidelidade. Cancela quando quiser.'
+      : mensalOk
+        ? `Plano de 3 meses: ${reais(P.triTotal)} a cada 3 meses, ${desconto}% a menos que o mensal. Ou anual com desconto.`
+        : 'Mínimo de 3 meses. Ou anual com desconto.';
+    $('#note-cartao').textContent = mes
+      ? `${reais(P.mes)} agora. Renova sozinho todo mês. Cancela quando quiser e não renova.`
+      : `${reais(P.triTotal)} agora. Renova sozinho a cada 3 meses. Cancela quando quiser e não renova.`;
+    $('#note-pix').textContent = mes ? `${reais(P.mes)} por 1 mês. O bot te avisa antes de vencer.` : `${reais(P.triTotal)} por 3 meses. O bot te avisa antes de vencer.`;
+    $('#faq-pagamento').textContent =
+      `Pelo Stripe. No cartão, ${reais(P.triTotal)} a cada 3 meses${mensalOk ? ` ou ${reais(P.mes)} por mês` : ''}, renovando sozinho. ` +
+      `No Pix, você paga ${mensalOk ? 'o período (1 ou 3 meses)' : 'os 3 meses'} e o bot te avisa antes de vencer. ` +
+      `O anual é um pagamento só de ${reais(P.anual)}, no cartão ou no Pix. Depois de pagar, você abre o bot no Telegram e entra no grupo na hora.`;
+    if (!mensalOk) return;
+    $('#faq-min-q').textContent = 'Por que o plano de 3 meses sai mais barato?';
+    $('#faq-min-a').textContent = `Porque ninguém cresce em 30 dias. Três meses é o tempo de criar constância, testar formato e ver o número mexer, e quem se compromete com isso paga menos. O mensal, de ${reais(P.mes)}, é pra quem prefere ir mês a mês.`;
+    $('#hero-strong').textContent = encerrado ? `A partir de ${reais(P.tri)}/mês` : `Preço de fundador: a partir de ${reais(P.tri)}/mês`;
+    $('#cta-final-sub').textContent = encerrado ? `A partir de ${reais(P.tri)}/mês no plano de 3 meses. Ou mensal, ou anual.` : `A partir de ${reais(P.tri)}/mês de fundador, até 30/10.`;
+    $('#mobile-bar-text').textContent = encerrado ? `A partir de ${reais(P.tri)}/mês` : `A partir de ${reais(P.tri)}/mês · até 30/10`;
+  }
+  document.querySelectorAll('#bill button').forEach((b) => b.addEventListener('click', () => {
+    bill = b.dataset.bill;
+    try { sessionStorage.setItem('built_bill', bill); } catch (e) {}
+    renderBill();
+  }));
+  $('#bill').addEventListener('keydown', (e) => {
+    if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+    e.preventDefault();
+    bill = bill === 'tri' ? 'mes' : 'tri';
+    renderBill();
+    $(`#bill [data-bill="${bill}"]`).focus();
+  });
+
   function renderPhase() {
     const left = deadline - Date.now();
     if (left <= 0) {
@@ -480,18 +559,15 @@ details[open]::details-content{block-size:auto}
         $('#mobile-bar-text').textContent = 'R$ 197/mês';
         return;
       }
-      setLinks(CFG.linksCheio);
       $('#hero-strong').textContent = 'R$ 197/mês';
       $('#hero-rest').textContent = ' · plano de 3 meses ou anual';
       $('#access-label').textContent = 'Acesso ao Built';
-      $('#price-main').textContent = 'R$ 197';
       $('#price-deadline').hidden = true;
-      $('#note-cartao').textContent = 'R$ 591 agora. Renova sozinho a cada 3 meses. Cancela quando quiser e não renova.';
-      $('#note-pix').textContent = 'R$ 591 por 3 meses. O bot te avisa antes de vencer.';
       $('#anual-strong').textContent = 'Anual: R$ 1.970';
-      $('#faq-pagamento').textContent = 'Pelo Stripe. No cartão, R$ 591 a cada 3 meses, renovando sozinho. No Pix, você paga os 3 meses e o bot te avisa antes de vencer. O anual é um pagamento só de R$ 1.970, no cartão ou no Pix. Depois de pagar, você abre o bot no Telegram e entra no grupo na hora.';
       $('#cta-final-sub').textContent = 'R$ 197/mês no plano de 3 meses. Ou anual por R$ 1.970.';
       $('#mobile-bar-text').textContent = 'R$ 197/mês · mínimo de 3 meses';
+      renderBill();
+      if (CFG.linksCheio.mensalCartao && CFG.linksCheio.mensalPix) $('#hero-rest').textContent = ' · 3 meses, mensal ou anual';
       return;
     }
     if (left < 48 * 3600e3) {
@@ -501,6 +577,7 @@ details[open]::details-content{block-size:auto}
     }
   }
   renderPhase();
+  if (!encerrado) renderBill();
   setInterval(renderPhase, 30000);
 
   // Contador público de membros (só aparece a partir de 10)
