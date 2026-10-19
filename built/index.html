@@ -56,7 +56,7 @@ details[open]::details-content{block-size:auto}
 /* mãos do hero: 3 tamanhos (celular, tablet, desktop) */
 #hero{--pad:clamp(72px,10vh,120px);--hl-top:34%;--hr-top:40%;--hl-w:clamp(260px,27vw,540px);--hr-w:clamp(280px,31vw,600px)}
 @media (max-width:1279px){#hero{--pad:calc(22vw + 96px);--hl-top:104px;--hr-top:168px;--hl-w:40vw;--hr-w:44vw}}
-@media (max-width:767px){#hero{--pad:230px;--hl-top:108px;--hr-top:200px;--hl-w:60vw;--hr-w:66vw}.navlinks{display:none}}
+@media (max-width:767px){#hero{--pad:205px;--hl-top:96px;--hr-top:166px;--hl-w:56vw;--hr-w:58vw}.navlinks{display:none}}
 /* céu do hero: passa por baixo do menu; o véu clareia o centro (texto) e funde embaixo com o papel */
 #hero{margin-top:-80px}
 .hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;pointer-events:none;user-select:none}
@@ -206,9 +206,9 @@ details[open]::details-content{block-size:auto}
   <img data-hand="l" src="img/s-mao-pintada.webp" alt="" aria-hidden="true" width="1100" height="550" decoding="async" fetchpriority="high" style="position:absolute;left:-72px;top:var(--hl-top);width:calc(var(--hl-w) + 72px);height:auto;pointer-events:none;user-select:none;will-change:transform">
   <img data-hand="r" src="img/s-mao-tipografica.webp" alt="" aria-hidden="true" width="1200" height="473" decoding="async" style="position:absolute;right:-72px;top:var(--hr-top);width:calc(var(--hr-w) + 72px);height:auto;pointer-events:none;user-select:none;mix-blend-mode:multiply;will-change:transform">
   <div style="position:relative;z-index:2;max-width:820px;display:flex;flex-direction:column;align-items:center">
-    <p data-reveal style="margin:0;font:400 clamp(15px,1.3vw,18px)/1.4 Inter,sans-serif;color:#6E6A63">Comunidade do @condzxyz no Telegram</p>
-    <h1 data-reveal style="margin:24px 0 0;max-width:14ch;font:400 clamp(52px,6.8vw,112px)/.92 'Instrument Serif',serif;letter-spacing:-0.025em;color:#1F1E1C;text-wrap:balance">Conteúdo que vira <em>cliente</em>.</h1>
-    <p data-reveal style="margin:22px 0 0;max-width:34ch;font:400 clamp(17px,1.6vw,20px)/1.5 Inter,sans-serif;color:#3D3B37;text-wrap:balance">Descubra em 1 minuto o que trava seu crescimento e o caminho até a sua meta de faturamento com conteúdo e IA.</p>
+    <p data-reveal style="margin:0;font:400 clamp(15px,1.3vw,18px)/1.4 Inter,sans-serif;color:#6E6A63">Comunidade do Condz no Telegram</p>
+    <h1 data-reveal style="margin:24px 0 0;max-width:14ch;font:400 clamp(46px,6.8vw,112px)/.92 'Instrument Serif',serif;letter-spacing:-0.025em;color:#1F1E1C;text-wrap:balance">Evolua. O dinheiro vem como <em>consequência</em>.</h1>
+    <p data-reveal style="margin:22px 0 0;max-width:34ch;font:400 clamp(17px,1.6vw,20px)/1.5 Inter,sans-serif;color:#3D3B37;text-wrap:balance">Pra quem é CLT, toca um negócio ou está buscando uma nova forma de fazer dinheiro. Cabeça, conteúdo e venda, com o Condz e uma galera no mesmo caminho.</p>
     <div data-reveal style="margin-top:36px;display:flex;flex-direction:column;align-items:center;gap:14px"><button type="button" class="btn btn-quiz" data-quiz id="hero-cta" style="display:inline-flex;align-items:center;justify-content:center;gap:14px;height:60px;padding:0 32px;border-radius:999px;background:#1F1E1C;color:#FCFBF8;font:500 17px/1 Inter,sans-serif"><span id="hero-cta-txt">Fazer meu diagnóstico</span><svg data-arrow width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" style="fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button><span style="font:400 14px/1.4 Inter,sans-serif;color:#6E6A63">1 minuto · grátis · <a href="#entrar" data-skip style="color:#3D3B37;text-underline-offset:4px">já quero entrar</a></span></div>
     <p data-reveal style="margin:28px 0 0;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:4px 10px;font:400 15px/1.5 Inter,sans-serif;color:#6E6A63"><span id="hero-dot" class="dot" aria-hidden="true"></span><span><strong id="hero-strong" style="font-weight:500;color:#1F1E1C">Preço de fundador: R$ 147/mês</strong><span id="hero-rest"> · fecha 30/10</span></span></p>
   </div>
@@ -405,7 +405,7 @@ details[open]::details-content{block-size:auto}
     <div data-reveal><h2 style="margin:0;font:400 clamp(36px,4.8vw,68px)/1 'Instrument Serif',serif;letter-spacing:-0.015em;color:#1F1E1C">Perguntas <em>frequentes</em>.</h2><img src="img/s-cavaleiro.webp" alt="Cavaleiro apontando adiante, em afresco" width="640" height="960" loading="lazy" decoding="async" style="display:block;margin-top:40px;width:min(100%,320px);height:auto"></div>
     <div data-reveal class="faq" style="min-width:0;border-bottom:1px solid #E7E3DB">
       <details open><summary>Por que no Telegram?<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v12M2 8h12"/></svg></summary><p>Porque lá o bot cuida da entrada e da assinatura sozinho, e o grupo fica organizado em dois espaços: Avisos e Chat. Se você não tem, é grátis e leva 1 minuto pra instalar.</p></details>
-      <details><summary>Preciso ter seguidores?<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v12M2 8h12"/></svg></summary><p>Não. O Built é pra quem está começando ou travado entre 100 e alguns milhares.</p></details>
+      <details><summary>Preciso ter seguidores?<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v12M2 8h12"/></svg></summary><p>Não. A Built é pra quem está começando: CLT, quem toca um negócio próprio ou da família, ou quem está buscando uma nova forma de fazer dinheiro.</p></details>
       <details><summary>Quanto tempo por dia?<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v12M2 8h12"/></svg></summary><p>De 20 a 30 minutos: postar e trocar com o grupo no Chat.</p></details>
       <details><summary>O feedback é seu mesmo?<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v12M2 8h12"/></svg></summary><p>É. Em dia útil eu passo no Chat e respondo os rascunhos postados até as 18h.</p></details>
       <details><summary><span id="faq-min-q">Por que no mínimo 3 meses?</span><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v12M2 8h12"/></svg></summary><p id="faq-min-a">Porque ninguém cresce em 30 dias. Três meses é o tempo de criar constância, testar formato e ver o número mexer.</p></details>
@@ -545,28 +545,29 @@ details[open]::details-content{block-size:auto}
   // ---------- funil: quiz → diagnóstico → vídeo → planos ----------
   const track = (nome) => beacon({ e: 'evento', nome });
   const QUIZ = [
-    { k: 'vende', q: 'O que você vende hoje?', o: [['servico', 'Serviço ou agência'], ['freela', 'Sou freelancer'], ['digital', 'Produto digital ou curso'], ['app', 'App ou SaaS'], ['clt', 'Sou CLT e quero sair'], ['nada', 'Ainda não vendo nada']] },
-    { k: 'fatura', q: 'Quanto entra por mês hoje com isso?', o: [['zero', 'Nada ainda'], ['ate3', 'Até R$ 3 mil'], ['3a8', 'R$ 3 a 8 mil'], ['8a15', 'R$ 8 a 15 mil'], ['mais15', 'Mais de R$ 15 mil']] },
-    { k: 'rede', q: 'Onde você mais posta?', o: [['x', 'X'], ['ig', 'Instagram'], ['li', 'LinkedIn'], ['tt', 'TikTok'], ['nao', 'Ainda não posto']] },
-    { k: 'seguidores', q: 'Quantos seguidores você tem lá?', o: [['ate500', 'Até 500'], ['500a2k', '500 a 2 mil'], ['2ka10k', '2 a 10 mil'], ['mais10k', 'Mais de 10 mil']], se: (r) => r.rede !== 'nao' },
-    { k: 'trava', q: 'O que mais te trava hoje?', o: [['oque', 'Não sei o que postar'], ['ninguem', 'Posto e ninguém vê'], ['naovende', 'Tenho alcance, mas não vendo'], ['constancia', 'Não tenho constância'], ['fechar', 'Não sei fechar cliente']] },
-    { k: 'tempo', q: 'Quanto tempo por dia você pode dar pra isso?', o: [['15', '15 minutos'], ['60', '30 a 60 minutos'], ['120', '1 a 2 horas']] },
-    { k: 'meta', q: 'Qual sua meta de faturamento em 90 dias?', hint: 'A meta é sua. O caminho a gente monta junto.', o: [['5', 'R$ 5 mil por mês'], ['10', 'R$ 10 mil por mês'], ['15', 'R$ 15 mil por mês'], ['30', 'R$ 30 mil por mês ou mais']] },
+    { k: 'situacao', q: 'Qual é a sua situação hoje?', o: [['clt', 'Sou CLT'], ['proprio', 'Tenho um negócio meu'], ['familia', 'Trabalho no negócio da família'], ['autonomo', 'Sou freelancer ou autônomo'], ['buscando', 'Estou buscando uma nova forma de fazer dinheiro'], ['estudante', 'Sou estudante']] },
+    { k: 'renda', q: 'Quanto você ganha por mês hoje?', hint: 'Só pra montar o seu caminho. Ninguém vê além do Condz.', o: [['ate3', 'Até R$ 3 mil'], ['3a6', 'R$ 3 a 6 mil'], ['6a10', 'R$ 6 a 10 mil'], ['10a20', 'R$ 10 a 20 mil'], ['mais20', 'Mais de R$ 20 mil']] },
+    { k: 'conteudo', q: 'Você já cria conteúdo na internet?', o: [['nao', 'Ainda não'], ['agora', 'Comecei agora'], ['vezes', 'Posto de vez em quando'], ['frequente', 'Posto com frequência']] },
+    { k: 'trava', q: 'O que mais te trava hoje?', o: [['comeco', 'Não sei por onde começar'], ['tempo', 'Falta tempo ou energia'], ['vergonha', 'Vergonha de me expor'], ['paro', 'Começo e paro'], ['dinheiro', 'Não sei como isso vira dinheiro'], ['cabeca', 'Minha cabeça: foco e ansiedade']] },
+    { k: 'objetivo', q: 'O que você quer pros próximos 90 dias?', o: [['postar', 'Começar a postar com constância'], ['extra', 'Ter uma renda extra'], ['sairclt', 'Sair do CLT'], ['negocio', 'Fazer meu negócio crescer'], ['clareza', 'Ter mais clareza e controle da cabeça']] },
+    { k: 'meta', q: 'Quanto você quer ganhar por mês?', hint: 'A meta é sua. O caminho a gente monta junto.', o: [['5', 'R$ 5 mil por mês'], ['10', 'R$ 10 mil por mês'], ['15', 'R$ 15 mil por mês'], ['30', 'R$ 30 mil por mês ou mais']] },
   ];
   const META = { '5': 'R$ 5 mil por mês', '10': 'R$ 10 mil por mês', '15': 'R$ 15 mil por mês', '30': 'R$ 30 mil por mês' };
+  const OBJETIVO = { postar: 'começar a postar com constância', extra: 'ter uma renda extra', sairclt: 'sair do CLT', negocio: 'fazer seu negócio crescer', clareza: 'ter mais clareza e controle da cabeça' };
   const SEG = {
-    comecando: { fase: 'começando', titulo: 'Antes de viralizar, constância.', a: 'Com menos de mil seguidores, a conta está em aquecimento: postar todo dia e responder no seu nicho pesa mais que o post perfeito.', c: 'Fale do que você vende. É o que você mais domina e atrai o seguidor que pode virar cliente.' },
-    alcance: { fase: 'alcance sem venda', titulo: 'Você já tem atenção. Falta o caminho até a venda.', a: 'Cada post precisa de um próximo passo: seguir, comentar, chamar. Sem isso, a view morre no post.', c: 'Número dentro de uma história (o que era, o que você fez, o que aconteceu) é um dos formatos que mais performaram no perfil do Condz.' },
-    escala: { fase: 'escala', titulo: 'Você já fatura. Agora é volume sem viver no app.', a: 'IA pra produzir mais no mesmo tempo: você dá o input, revisa e interage. Perfil 100% no automático não funciona.', c: 'Transparência com número real é o que faz quem já tem resultado atrair cliente maior.' },
+    primeiro: { fase: 'primeiro passo', titulo: 'Você não precisa estar pronto. Precisa começar.', a: 'Criar em vez de consumir: postar pro mundo te obriga a aprender o assunto. Foi assim que o Condz cresceu.', c: 'Fale do que você vive e do que sabe fazer. É o que você mais domina e o que atrai quem pode te pagar depois.' },
+    constancia: { fase: 'constância', titulo: 'Você já começou. Agora é não parar.', a: 'Constância vem de ambiente: prazo, grupo e alguém revisando o seu rascunho.', c: 'Repetição é estratégia: a mente aprende por intensidade ou por repetição, e nas redes é difícil ter intensidade.' },
+    crescer: { fase: 'crescimento', titulo: 'Você já posta. Agora é transformar em renda.', a: 'Dinheiro vem como consequência de gerar valor de verdade pra quem tem dinheiro. Cada post precisa levar a um próximo passo.', c: 'Número dentro de uma história (o que era, o que você fez, o que aconteceu) é um dos formatos que mais performaram no perfil do Condz.' },
   };
   const TRAVA = {
-    oque: 'Ideia todo dia: na Built o bot te manda às 9h uma ideia de post pro seu negócio, e o Condz revisa rascunho em dia útil.',
-    ninguem: 'Alcance: no código do X uma resposta vale uns 8 likes, e as primeiras horas contam muito. Post que puxa conversa anda mais.',
-    naovende: 'Venda: oferta clara, chamada e conversa. É um bloco fixo de toda call ao vivo da Built.',
-    constancia: 'Constância: grupo, prazo e feedback. Quem posta o rascunho no Chat publica.',
-    fechar: 'Fechar cliente: a gente trabalha casos reais da galera ao vivo, da oferta à conversa.',
+    comeco: 'Por onde começar: na Built o bot te manda todo dia às 9h uma ideia de post pro seu momento, e o Condz revisa rascunho em dia útil.',
+    tempo: 'Tempo e energia: dá pra fazer em 20 a 30 minutos por dia. Energia alta vem de meditar, respirar antes de decidir, comer decente e ter tempo pra si.',
+    vergonha: 'Vergonha de se expor: comece contando o que você está aprendendo, em público. No grupo, feedback é sobre o post, nunca sobre a pessoa.',
+    paro: 'Começar e parar: grupo, prazo e feedback. Quem posta o rascunho no Chat publica.',
+    dinheiro: 'Virar dinheiro: oferta clara, chamada e conversa. É um bloco fixo de toda call ao vivo da Built.',
+    cabeca: 'Cabeça: o Condz medita todo dia desde 2016, 5 minutos no mesmo horário. Pra ele, mudou como reage à pressão. Não substitui acompanhamento profissional.',
   };
-  const segmentOf = (r) => (r.rede === 'nao' || r.seguidores === 'ate500' ? 'comecando' : r.fatura === '8a15' || r.fatura === 'mais15' ? 'escala' : 'alcance');
+  const segmentOf = (r) => (r.conteudo === 'frequente' ? 'crescer' : r.conteudo === 'vezes' ? 'constancia' : 'primeiro');
   const esc = (t) => String(t).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
   const QKEY = 'built_quiz';
   const loadQ = () => { try { return JSON.parse(localStorage.getItem(QKEY) || 'null'); } catch (e) { return null; } };
@@ -600,7 +601,6 @@ details[open]::details-content{block-size:auto}
       const opts = qbody.querySelectorAll('.quiz-opt');
       opts.forEach((b) => b.addEventListener('click', () => {
         resp[p.k] = b.dataset.v;
-        if (p.k === 'rede' && b.dataset.v === 'nao') delete resp.seguidores;
         opts.forEach((x) => x.setAttribute('aria-checked', String(x === b)));
         setTimeout(() => { step = i + 1; renderPasso(); }, 170);
       }));
@@ -658,7 +658,7 @@ details[open]::details-content{block-size:auto}
     const r = dados.resp || {}, seg = SEG[segmentOf(r)];
     $('#diag-pill').textContent = `Diagnóstico de ${dados.nome || 'você'} · fase: ${seg.fase}`;
     $('#diag-titulo').textContent = seg.titulo;
-    $('#diag-meta').textContent = r.meta ? `Seu caminho até ${META[r.meta]}.` : '';
+    $('#diag-meta').textContent = [r.meta && `Seu caminho até ${META[r.meta]}.`, r.objetivo && `Foco dos próximos 90 dias: ${OBJETIVO[r.objetivo]}.`].filter(Boolean).join(' ');
     $('#diag-lista').innerHTML = [seg.a, TRAVA[r.trava], seg.c].filter(Boolean).map((t, i) => `<li><b>${i + 1}</b><span>${esc(t)}</span></li>`).join('');
     $('#diagnostico').hidden = false;
     $('#hero-cta-txt').textContent = 'Ver meu diagnóstico';
