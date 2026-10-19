@@ -109,6 +109,51 @@ details[open]::details-content{block-size:auto}
 .bill-tag{font:600 12px/1 Inter,sans-serif;color:#A65A43;background:rgba(166,90,67,.12);padding:4px 7px;border-radius:999px}
 .bill button[aria-checked="true"] .bill-tag{color:#FCFBF8;background:rgba(252,251,248,.16)}
 .closed .bill{display:none!important}
+/* funil: quiz em tela cheia no celular, cartão no desktop */
+.quiz{position:fixed;inset:0;z-index:300;display:flex;align-items:center;justify-content:center;padding:16px;background:rgba(31,30,28,.45);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.quiz-card{position:relative;width:100%;max-width:560px;max-height:calc(100dvh - 32px);overflow:auto;background:#F7F5F0;border-radius:28px;padding:22px clamp(20px,4vw,40px) 32px;box-shadow:0 30px 80px rgba(31,30,28,.25)}
+@media (max-width:600px){.quiz{padding:0;align-items:stretch}.quiz-card{max-width:none;max-height:none;height:100dvh;border-radius:0;padding:14px 20px calc(24px + env(safe-area-inset-bottom))}}
+.quiz-top{display:flex;align-items:center;gap:10px}
+.quiz-bar{flex:1;height:4px;border-radius:4px;background:#E7E3DB;overflow:hidden}
+.quiz-bar i{display:block;height:100%;width:0;background:#A65A43;transition:width .35s cubic-bezier(.2,.7,.2,1)}
+.quiz-count{font:500 13px/1 Inter,sans-serif;color:#6E6A63;min-width:30px;text-align:right}
+.quiz-ico{appearance:none;border:0;background:transparent;width:40px;height:40px;flex:none;border-radius:50%;display:grid;place-items:center;cursor:pointer;color:#3D3B37}
+.quiz-ico:hover{background:#EDE8DF}
+.quiz-ico svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.quiz-q{margin:26px 0 0;font:400 clamp(32px,6vw,44px)/1.04 'Instrument Serif',serif;letter-spacing:-.015em;color:#1F1E1C;text-wrap:balance}
+.quiz-hint{margin:10px 0 0;font:400 15px/1.5 Inter,sans-serif;color:#6E6A63}
+.quiz-opts{margin-top:22px;display:grid;gap:10px}
+.quiz-opt{appearance:none;text-align:left;width:100%;min-height:56px;padding:14px 18px;border-radius:16px;border:1px solid #D6D0C5;background:#FCFBF8;font:500 16px/1.35 Inter,sans-serif;color:#1F1E1C;cursor:pointer;transition:border-color .15s,background .15s,color .15s,transform .15s}
+.quiz-opt:hover{border-color:#1F1E1C}
+.quiz-opt[aria-checked="true"]{border-color:#1F1E1C;background:#1F1E1C;color:#FCFBF8}
+.quiz-opt:active{transform:scale(.99)}
+.quiz-opt:focus-visible{outline:2px solid #A65A43;outline-offset:2px}
+.quiz-form{margin-top:20px;display:grid;gap:12px}
+.quiz-form label{display:grid;gap:6px;font:500 14px/1.3 Inter,sans-serif;color:#3D3B37}
+.quiz-form label i{font-style:normal;font-weight:400;color:#6E6A63}
+.quiz-form input{height:52px;padding:0 16px;border-radius:14px;border:1px solid #D6D0C5;background:#FCFBF8;font:400 17px/1 Inter,sans-serif;color:#1F1E1C;width:100%}
+.quiz-form input:focus{outline:2px solid #1F1E1C;outline-offset:1px;border-color:#1F1E1C}
+.quiz-form small{font:400 13px/1.5 Inter,sans-serif;color:#6E6A63}
+.quiz-err{margin:0;min-height:20px;font:500 14px/1.4 Inter,sans-serif;color:#A0402A}
+.quiz-submit{height:58px;border:0;border-radius:999px;background:#1F1E1C;color:#FCFBF8;font:500 17px/1 Inter,sans-serif;cursor:pointer}
+.quiz-submit:hover{background:#000}
+.quiz-submit[disabled]{opacity:.6;cursor:wait}
+.quiz-step{animation:quizIn .35s cubic-bezier(.2,.7,.2,1)}
+@keyframes quizIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.quiz-step{animation:none}}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.btn-quiz{appearance:none;border:0;cursor:pointer}
+/* diagnóstico + vídeo */
+.diag-pill{display:inline-flex;align-items:center;gap:8px;min-height:32px;padding:6px 14px;border-radius:999px;background:rgba(166,90,67,.12);color:#8E4A36;font:500 14px/1.2 Inter,sans-serif}
+.diag-list{margin:28px 0 0;padding:0;list-style:none;display:grid;gap:14px}
+.diag-list li{display:grid;grid-template-columns:28px 1fr;gap:12px;font:400 17px/1.55 Inter,sans-serif;color:#3D3B37}
+.diag-list li b{display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:#1F1E1C;color:#FCFBF8;font:500 13px/1 Inter,sans-serif}
+.vsl{position:relative;margin-top:36px;aspect-ratio:16/9;border-radius:22px;overflow:hidden;background:#1F1E1C;box-shadow:0 24px 60px rgba(31,30,28,.18)}
+.vsl video{width:100%;height:100%;display:block;background:#000;object-fit:cover}
+.vsl-ph{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:24px;color:#FCFBF8;background:radial-gradient(ellipse at 30% 20%,#3D3B37,#1F1E1C 70%)}
+.vsl-ph p{margin:0;max-width:30ch;font:400 clamp(22px,3vw,30px)/1.15 'Instrument Serif',serif}
+.vsl-ph small{display:block;margin-top:10px;font:400 14px/1.5 Inter,sans-serif;color:#CFC8BC}
+@media (max-width:600px){.vsl{border-radius:16px;margin-left:-8px;margin-right:-8px}}
 .sticky-col{position:sticky;top:120px}
 /* lista de email (quem ainda não vai entrar agora) */
 .lead{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(24px,4vw,64px);align-items:center;background:#F1EEE7;border:1px solid #E7E3DB;border-radius:28px;padding:clamp(28px,4.5vw,56px)}
@@ -161,14 +206,30 @@ details[open]::details-content{block-size:auto}
   <img data-hand="l" src="img/s-mao-pintada.webp" alt="" aria-hidden="true" width="1100" height="550" decoding="async" fetchpriority="high" style="position:absolute;left:-72px;top:var(--hl-top);width:calc(var(--hl-w) + 72px);height:auto;pointer-events:none;user-select:none;will-change:transform">
   <img data-hand="r" src="img/s-mao-tipografica.webp" alt="" aria-hidden="true" width="1200" height="473" decoding="async" style="position:absolute;right:-72px;top:var(--hr-top);width:calc(var(--hr-w) + 72px);height:auto;pointer-events:none;user-select:none;mix-blend-mode:multiply;will-change:transform">
   <div style="position:relative;z-index:2;max-width:820px;display:flex;flex-direction:column;align-items:center">
-    <p data-reveal style="margin:0;font:400 clamp(15px,1.3vw,18px)/1.4 Inter,sans-serif;color:#6E6A63">Construa em público</p>
-    <h1 data-reveal style="margin:24px 0 0;max-width:14ch;font:400 clamp(52px,6.8vw,112px)/.92 'Instrument Serif',serif;letter-spacing:-0.025em;color:#1F1E1C;text-wrap:balance">Aprenda a melhor estratégia de <em>crescimento</em> pro seu negócio.</h1>
-    <div data-reveal style="margin-top:44px;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:16px 32px"><a class="btn" href="#entrar" style="display:inline-flex;align-items:center;justify-content:center;gap:14px;height:58px;padding:0 30px;border-radius:999px;background:#1F1E1C;color:#FCFBF8;font:500 17px/1 Inter,sans-serif;text-decoration:none">Entrar no Built<svg data-arrow width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" style="fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a><a class="ul-link" href="#prova" style="font:500 17px/1 Inter,sans-serif;color:#1F1E1C;text-decoration:underline;text-underline-offset:8px;text-decoration-thickness:1px;text-decoration-color:#A39E95">Ver os números</a></div>
+    <p data-reveal style="margin:0;font:400 clamp(15px,1.3vw,18px)/1.4 Inter,sans-serif;color:#6E6A63">Comunidade do @condzxyz no Telegram</p>
+    <h1 data-reveal style="margin:24px 0 0;max-width:14ch;font:400 clamp(52px,6.8vw,112px)/.92 'Instrument Serif',serif;letter-spacing:-0.025em;color:#1F1E1C;text-wrap:balance">Conteúdo que vira <em>cliente</em>.</h1>
+    <p data-reveal style="margin:22px 0 0;max-width:34ch;font:400 clamp(17px,1.6vw,20px)/1.5 Inter,sans-serif;color:#3D3B37;text-wrap:balance">Descubra em 1 minuto o que trava seu crescimento e o caminho até a sua meta de faturamento com conteúdo e IA.</p>
+    <div data-reveal style="margin-top:36px;display:flex;flex-direction:column;align-items:center;gap:14px"><button type="button" class="btn btn-quiz" data-quiz id="hero-cta" style="display:inline-flex;align-items:center;justify-content:center;gap:14px;height:60px;padding:0 32px;border-radius:999px;background:#1F1E1C;color:#FCFBF8;font:500 17px/1 Inter,sans-serif"><span id="hero-cta-txt">Fazer meu diagnóstico</span><svg data-arrow width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" style="fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button><span style="font:400 14px/1.4 Inter,sans-serif;color:#6E6A63">1 minuto · grátis · <a href="#entrar" data-skip style="color:#3D3B37;text-underline-offset:4px">já quero entrar</a></span></div>
     <p data-reveal style="margin:28px 0 0;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:4px 10px;font:400 15px/1.5 Inter,sans-serif;color:#6E6A63"><span id="hero-dot" class="dot" aria-hidden="true"></span><span><strong id="hero-strong" style="font-weight:500;color:#1F1E1C">Preço de fundador: R$ 147/mês</strong><span id="hero-rest"> · fecha 30/10</span></span></p>
   </div>
 </section>
 
 <div class="divider" aria-hidden="true"><div><span style="left:15.5px"></span><span style="right:15.5px"></span></div></div>
+
+<section id="diagnostico" hidden style="padding:clamp(48px,7vw,96px) 0;scroll-margin-top:80px">
+  <div style="max-width:880px;margin:0 auto;padding:0 20px">
+    <span class="diag-pill" id="diag-pill">Seu diagnóstico</span>
+    <h2 id="diag-titulo" style="margin:20px 0 0;font:400 clamp(40px,5.4vw,68px)/1 'Instrument Serif',serif;letter-spacing:-0.02em;color:#1F1E1C;text-wrap:balance"></h2>
+    <p id="diag-meta" style="margin:16px 0 0;font:500 18px/1.5 Inter,sans-serif;color:#1F1E1C"></p>
+    <ul class="diag-list" id="diag-lista"></ul>
+    <div class="vsl" id="vsl"></div>
+    <div id="vsl-cta" style="margin-top:28px;display:flex;flex-direction:column;align-items:flex-start;gap:10px">
+      <a class="btn" href="#entrar" data-planos style="display:inline-flex;align-items:center;justify-content:center;gap:14px;height:58px;padding:0 30px;border-radius:999px;background:#1F1E1C;color:#FCFBF8;font:500 17px/1 Inter,sans-serif;text-decoration:none">Quero entrar na Built<svg data-arrow width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" style="fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      <p style="margin:0;font:400 14px/1.5 Inter,sans-serif;color:#6E6A63">Preço de fundador até 30/10 · 7 dias de garantia · entra no grupo na hora</p>
+    </div>
+    <p style="margin:28px 0 0;font:400 13px/1.5 Inter,sans-serif;color:#6E6A63">A meta é sua; o caminho a gente faz junto. Não é promessa de resultado. <button type="button" id="diag-refazer" style="appearance:none;border:0;background:none;padding:0;font:inherit;color:#3D3B37;text-decoration:underline;text-underline-offset:3px;cursor:pointer">Refazer o diagnóstico</button></p>
+  </div>
+</section>
 
 <section id="prova" style="padding:clamp(64px,8vw,112px) 0;scroll-margin-top:40px">
   <div style="max-width:1240px;margin:0 auto;padding:0 20px">
@@ -392,9 +453,20 @@ details[open]::details-content{block-size:auto}
 </footer>
 
 </div>
+<div class="quiz" id="quiz" hidden role="dialog" aria-modal="true" aria-label="Diagnóstico da Built">
+  <div class="quiz-card">
+    <div class="quiz-top">
+      <button type="button" class="quiz-ico" id="quiz-back" aria-label="Voltar"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M13 8H3M7 4L3 8l4 4"/></svg></button>
+      <div class="quiz-bar" aria-hidden="true"><i id="quiz-prog"></i></div>
+      <span class="quiz-count" id="quiz-count"></span>
+      <button type="button" class="quiz-ico" id="quiz-close" aria-label="Fechar"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8"/></svg></button>
+    </div>
+    <div id="quiz-body"></div>
+  </div>
+</div>
 <div id="mobile-bar" hidden style="position:fixed;left:0;right:0;bottom:0;z-index:60;background:rgba(247,245,240,.94);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-top:1px solid #E7E3DB;padding:10px 16px calc(10px + env(safe-area-inset-bottom));display:flex;align-items:center;justify-content:space-between;gap:12px">
   <span id="mobile-bar-text" style="font:500 14px/1.3 Inter,sans-serif;color:#1F1E1C">R$ 147/mês · fundador até 30/10</span>
-  <a href="#entrar" style="display:inline-flex;align-items:center;height:44px;padding:0 22px;border-radius:999px;background:#1F1E1C;color:#FCFBF8;font:500 15px/1 Inter,sans-serif;text-decoration:none">Entrar</a>
+  <a href="#entrar" id="mobile-bar-btn" style="display:inline-flex;align-items:center;height:44px;padding:0 22px;border-radius:999px;background:#1F1E1C;color:#FCFBF8;font:500 15px/1 Inter,sans-serif;text-decoration:none">Entrar</a>
 </div>
 </div>
 
@@ -427,6 +499,10 @@ details[open]::details-content{block-size:auto}
     membrosUrl: 'https://built-bot.built-bot.workers.dev/membros',
     leadUrl: 'https://built-bot.built-bot.workers.dev/lead',
     visitUrl: 'https://built-bot.built-bot.workers.dev/v',
+    quizUrl: 'https://built-bot.built-bot.workers.dev/quiz',
+    // Vídeo de vendas. Sem src, a página mostra o aviso "vídeo em produção" e o botão aparece direto.
+    // ctaAt: segundo em que o botão aparece (metade das visitas vê o botão desde o início, pra comparar).
+    video: { src: '', poster: '', ctaAt: 390 },
     mostrarMembrosAPartirDe: 10,
   };
   const $ = (s) => document.querySelector(s);
@@ -465,6 +541,193 @@ details[open]::details-content{block-size:auto}
     const a = ev.target.closest && ev.target.closest('a[data-plan]');
     if (a) beacon({ e: 'clique', plan: a.dataset.plan });
   });
+
+  // ---------- funil: quiz → diagnóstico → vídeo → planos ----------
+  const track = (nome) => beacon({ e: 'evento', nome });
+  const QUIZ = [
+    { k: 'vende', q: 'O que você vende hoje?', o: [['servico', 'Serviço ou agência'], ['freela', 'Sou freelancer'], ['digital', 'Produto digital ou curso'], ['app', 'App ou SaaS'], ['clt', 'Sou CLT e quero sair'], ['nada', 'Ainda não vendo nada']] },
+    { k: 'fatura', q: 'Quanto entra por mês hoje com isso?', o: [['zero', 'Nada ainda'], ['ate3', 'Até R$ 3 mil'], ['3a8', 'R$ 3 a 8 mil'], ['8a15', 'R$ 8 a 15 mil'], ['mais15', 'Mais de R$ 15 mil']] },
+    { k: 'rede', q: 'Onde você mais posta?', o: [['x', 'X'], ['ig', 'Instagram'], ['li', 'LinkedIn'], ['tt', 'TikTok'], ['nao', 'Ainda não posto']] },
+    { k: 'seguidores', q: 'Quantos seguidores você tem lá?', o: [['ate500', 'Até 500'], ['500a2k', '500 a 2 mil'], ['2ka10k', '2 a 10 mil'], ['mais10k', 'Mais de 10 mil']], se: (r) => r.rede !== 'nao' },
+    { k: 'trava', q: 'O que mais te trava hoje?', o: [['oque', 'Não sei o que postar'], ['ninguem', 'Posto e ninguém vê'], ['naovende', 'Tenho alcance, mas não vendo'], ['constancia', 'Não tenho constância'], ['fechar', 'Não sei fechar cliente']] },
+    { k: 'tempo', q: 'Quanto tempo por dia você pode dar pra isso?', o: [['15', '15 minutos'], ['60', '30 a 60 minutos'], ['120', '1 a 2 horas']] },
+    { k: 'meta', q: 'Qual sua meta de faturamento em 90 dias?', hint: 'A meta é sua. O caminho a gente monta junto.', o: [['5', 'R$ 5 mil por mês'], ['10', 'R$ 10 mil por mês'], ['15', 'R$ 15 mil por mês'], ['30', 'R$ 30 mil por mês ou mais']] },
+  ];
+  const META = { '5': 'R$ 5 mil por mês', '10': 'R$ 10 mil por mês', '15': 'R$ 15 mil por mês', '30': 'R$ 30 mil por mês' };
+  const SEG = {
+    comecando: { fase: 'começando', titulo: 'Antes de viralizar, constância.', a: 'Com menos de mil seguidores, a conta está em aquecimento: postar todo dia e responder no seu nicho pesa mais que o post perfeito.', c: 'Fale do que você vende. É o que você mais domina e atrai o seguidor que pode virar cliente.' },
+    alcance: { fase: 'alcance sem venda', titulo: 'Você já tem atenção. Falta o caminho até a venda.', a: 'Cada post precisa de um próximo passo: seguir, comentar, chamar. Sem isso, a view morre no post.', c: 'Número dentro de uma história (o que era, o que você fez, o que aconteceu) é um dos formatos que mais performaram no perfil do Condz.' },
+    escala: { fase: 'escala', titulo: 'Você já fatura. Agora é volume sem viver no app.', a: 'IA pra produzir mais no mesmo tempo: você dá o input, revisa e interage. Perfil 100% no automático não funciona.', c: 'Transparência com número real é o que faz quem já tem resultado atrair cliente maior.' },
+  };
+  const TRAVA = {
+    oque: 'Ideia todo dia: na Built o bot te manda às 9h uma ideia de post pro seu negócio, e o Condz revisa rascunho em dia útil.',
+    ninguem: 'Alcance: no código do X uma resposta vale uns 8 likes, e as primeiras horas contam muito. Post que puxa conversa anda mais.',
+    naovende: 'Venda: oferta clara, chamada e conversa. É um bloco fixo de toda call ao vivo da Built.',
+    constancia: 'Constância: grupo, prazo e feedback. Quem posta o rascunho no Chat publica.',
+    fechar: 'Fechar cliente: a gente trabalha casos reais da galera ao vivo, da oferta à conversa.',
+  };
+  const segmentOf = (r) => (r.rede === 'nao' || r.seguidores === 'ate500' ? 'comecando' : r.fatura === '8a15' || r.fatura === 'mais15' ? 'escala' : 'alcance');
+  const esc = (t) => String(t).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
+  const QKEY = 'built_quiz';
+  const loadQ = () => { try { return JSON.parse(localStorage.getItem(QKEY) || 'null'); } catch (e) { return null; } };
+  const saveQ = (v) => { try { localStorage.setItem(QKEY, JSON.stringify(v)); } catch (e) {} };
+  const quiz = $('#quiz'), qbody = $('#quiz-body'), qprog = $('#quiz-prog'), qcount = $('#quiz-count'), qback = $('#quiz-back');
+  let resp = {}, step = 0, abriu = false, contato = false, enviando = false, lastFocus = null;
+  const passos = () => QUIZ.filter((x) => !x.se || x.se(resp));
+
+  function abrirQuiz() {
+    lastFocus = document.activeElement;
+    quiz.hidden = false;
+    document.documentElement.style.overflow = 'hidden';
+    if (!abriu) { abriu = true; track('quiz_abriu'); }
+    renderPasso();
+  }
+  function fecharQuiz() {
+    quiz.hidden = true;
+    document.documentElement.style.overflow = '';
+    if (lastFocus && lastFocus.focus) lastFocus.focus({ preventScroll: true });
+  }
+  function renderPasso() {
+    const lista = passos();
+    const total = lista.length + 1;
+    const i = Math.min(step, lista.length);
+    qprog.style.width = (i / total) * 100 + '%';
+    qcount.textContent = `${i + 1}/${total}`;
+    qback.style.visibility = i ? 'visible' : 'hidden';
+    if (i < lista.length) {
+      const p = lista[i];
+      qbody.innerHTML = `<div class="quiz-step"><h2 class="quiz-q" id="quiz-q">${p.q}</h2>${p.hint ? `<p class="quiz-hint">${p.hint}</p>` : ''}<div class="quiz-opts" role="radiogroup" aria-labelledby="quiz-q">${p.o.map(([v, l]) => `<button type="button" class="quiz-opt" role="radio" aria-checked="${resp[p.k] === v}" data-v="${v}">${l}</button>`).join('')}</div></div>`;
+      const opts = qbody.querySelectorAll('.quiz-opt');
+      opts.forEach((b) => b.addEventListener('click', () => {
+        resp[p.k] = b.dataset.v;
+        if (p.k === 'rede' && b.dataset.v === 'nao') delete resp.seguidores;
+        opts.forEach((x) => x.setAttribute('aria-checked', String(x === b)));
+        setTimeout(() => { step = i + 1; renderPasso(); }, 170);
+      }));
+      (qbody.querySelector('[aria-checked="true"]') || opts[0]).focus({ preventScroll: true });
+      return;
+    }
+    if (!contato) { contato = true; track('quiz_contato'); }
+    const salvo = loadQ() || {};
+    qbody.innerHTML = `<div class="quiz-step"><h2 class="quiz-q" id="quiz-q">Pra onde mando seu diagnóstico?</h2><p class="quiz-hint">Ele aparece aqui na hora. O WhatsApp é pra eu te chamar se você tiver dúvida.</p>
+      <form class="quiz-form" novalidate>
+        <label><span>Seu nome</span><input name="nome" autocomplete="given-name" required maxlength="60" value="${esc(salvo.nome || '')}"></label>
+        <label><span>WhatsApp com DDD</span><input name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" placeholder="(11) 98765-4321" required maxlength="20"></label>
+        <label><span>Email <i>(opcional)</i></span><input name="email" type="email" inputmode="email" autocomplete="email" placeholder="voce@email.com" maxlength="254"></label>
+        <label><span>Seu @ no X <i>(opcional)</i></span><input name="x" autocapitalize="off" autocomplete="off" spellcheck="false" placeholder="@seuuser" maxlength="16"></label>
+        <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <p class="quiz-err" role="alert"></p>
+        <button class="quiz-submit" type="submit">Ver meu diagnóstico</button>
+        <small>Ao enviar, você aceita receber mensagens sobre a Built no WhatsApp e por email. É só pedir pra parar. <a href="privacidade.html" target="_blank" rel="noopener">Privacidade</a></small>
+      </form></div>`;
+    const form = qbody.querySelector('form'), err = qbody.querySelector('.quiz-err'), btn = qbody.querySelector('.quiz-submit');
+    form.nome.focus({ preventScroll: true });
+    form.addEventListener('submit', (ev) => {
+      ev.preventDefault();
+      if (enviando) return;
+      const nome = form.nome.value.trim(), whatsapp = form.whatsapp.value.trim(), email = form.email.value.trim();
+      const digitos = whatsapp.replace(/\D/g, '');
+      if (!nome) { err.textContent = 'Faltou o seu nome.'; form.nome.focus(); return; }
+      if (!/^(55)?\d{10,11}$/.test(digitos)) { err.textContent = 'Confere o WhatsApp com DDD.'; form.whatsapp.focus(); return; }
+      if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) { err.textContent = 'Confere o email.'; form.email.focus(); return; }
+      enviando = true; btn.disabled = true; btn.textContent = 'Montando seu diagnóstico…'; err.textContent = '';
+      fetch(CFG.quizUrl, { method: 'POST', headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ nome, whatsapp, email, x: form.x.value.trim(), respostas: resp, src: fonte, utm, tg, website: form.website.value }) })
+        .then((r) => r.json().then((d) => ({ r, d })))
+        .then(({ r, d }) => {
+          if (!r.ok || !d.ok) throw new Error(d.error || 'erro');
+          const dados = { token: d.token, nome: nome.split(' ')[0], resp: { ...resp } };
+          saveQ(dados);
+          track('quiz_fim');
+          fecharQuiz();
+          mostrarDiagnostico(dados, true);
+        })
+        .catch((e) => { err.textContent = /DDD|email|nome|tentativas/.test(e.message) ? e.message : 'Não deu certo agora. Tenta de novo em instantes.'; })
+        .finally(() => { enviando = false; btn.disabled = false; btn.textContent = 'Ver meu diagnóstico'; });
+    });
+  }
+  qback.addEventListener('click', () => { if (step > 0) { step = Math.min(step, passos().length) - 1; renderPasso(); } });
+  $('#quiz-close').addEventListener('click', fecharQuiz);
+  quiz.addEventListener('click', (ev) => { if (ev.target === quiz) fecharQuiz(); });
+  document.addEventListener('keydown', (ev) => { if (ev.key === 'Escape' && !quiz.hidden) fecharQuiz(); });
+
+  // diagnóstico + vídeo
+  let feito = false;
+  function mostrarDiagnostico(dados, rolar) {
+    feito = true;
+    const r = dados.resp || {}, seg = SEG[segmentOf(r)];
+    $('#diag-pill').textContent = `Diagnóstico de ${dados.nome || 'você'} · fase: ${seg.fase}`;
+    $('#diag-titulo').textContent = seg.titulo;
+    $('#diag-meta').textContent = r.meta ? `Seu caminho até ${META[r.meta]}.` : '';
+    $('#diag-lista').innerHTML = [seg.a, TRAVA[r.trava], seg.c].filter(Boolean).map((t, i) => `<li><b>${i + 1}</b><span>${esc(t)}</span></li>`).join('');
+    $('#diagnostico').hidden = false;
+    $('#hero-cta-txt').textContent = 'Ver meu diagnóstico';
+    montarVideo();
+    atualizarBarra();
+    if (rolar) {
+      // quem chega pelo link (?q=) vai direto, sem animação; quem acabou o quiz desliza
+      const ir = () => $('#diagnostico').scrollIntoView({ behavior: rolar === 'link' || reduced ? 'instant' : 'smooth', block: 'start' });
+      setTimeout(ir, 60);
+      if (rolar === 'link' && document.readyState !== 'complete') window.addEventListener('load', () => setTimeout(ir, 60), { once: true });
+    }
+  }
+  let videoPronto = false;
+  function montarVideo() {
+    if (videoPronto) return;
+    videoPronto = true;
+    const box = $('#vsl'), cta = $('#vsl-cta'), v = CFG.video || {};
+    if (!v.src) {
+      box.innerHTML = '<div class="vsl-ph"><div><p>O vídeo em que eu explico tudo chega em breve.</p><small>Enquanto isso, desce que está tudo aqui embaixo.</small></div></div>';
+      return;
+    }
+    let modo = 'delay';
+    try { modo = localStorage.getItem('built_cta') || (Math.random() < 0.5 ? 'agora' : 'delay'); localStorage.setItem('built_cta', modo); } catch (e) {}
+    box.innerHTML = `<video controls playsinline preload="metadata"${v.poster ? ` poster="${esc(v.poster)}"` : ''}><source src="${esc(v.src)}" type="video/mp4"></video>`;
+    const vid = box.querySelector('video');
+    if (modo === 'delay' && v.ctaAt) cta.hidden = true;
+    const marcos = { 25: 'video_25', 50: 'video_50', 75: 'video_75', 98: 'video_100' };
+    const vistos = new Set();
+    vid.addEventListener('play', () => { if (!vistos.has('play')) { vistos.add('play'); track('video_play'); } });
+    vid.addEventListener('timeupdate', () => {
+      if (cta.hidden && vid.currentTime >= v.ctaAt) { cta.hidden = false; track('cta_video'); }
+      if (!vid.duration) return;
+      const pct = (vid.currentTime / vid.duration) * 100;
+      for (const [m, nome] of Object.entries(marcos)) if (pct >= Number(m) && !vistos.has(nome)) { vistos.add(nome); track(nome); }
+    });
+    vid.addEventListener('ended', () => { cta.hidden = false; });
+  }
+
+  document.querySelectorAll('[data-quiz]').forEach((b) => b.addEventListener('click', () => {
+    if (feito) $('#diagnostico').scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start' });
+    else abrirQuiz();
+  }));
+  document.querySelectorAll('[data-skip]').forEach((a) => a.addEventListener('click', () => track('pulou_quiz')));
+  document.querySelectorAll('[data-planos]').forEach((a) => a.addEventListener('click', () => track('planos')));
+  $('#diag-refazer').addEventListener('click', () => { resp = {}; step = 0; contato = false; abrirQuiz(); });
+
+  // barra do celular: antes do quiz chama pro diagnóstico; depois, pro preço
+  const barTxt = $('#mobile-bar-text'), barBtn = $('#mobile-bar-btn');
+  function atualizarBarra() {
+    if (feito) { barBtn.textContent = 'Entrar'; barBtn.setAttribute('href', '#entrar'); barBtn.onclick = null; return; }
+    barTxt.textContent = 'Diagnóstico grátis · 1 minuto';
+    barBtn.textContent = 'Começar';
+    barBtn.onclick = (ev) => { ev.preventDefault(); abrirQuiz(); };
+  }
+
+  // volta de quem já fez (mesmo aparelho) ou link do WhatsApp com ?q=
+  const qtok = q.get('q');
+  const jaFez = loadQ();
+  if (qtok && /^[a-z2-9]{16}$/.test(qtok)) {
+    fetch(`${CFG.quizUrl}?t=${qtok}`).then((r) => r.json()).then((d) => {
+      if (!d.ok) return;
+      const dados = { token: qtok, nome: d.nome, resp: d.respostas };
+      saveQ(dados);
+      mostrarDiagnostico(dados, 'link');
+    }).catch(() => {});
+  } else if (jaFez && jaFez.resp) {
+    mostrarDiagnostico(jaFez, false);
+  }
+  queueMicrotask(atualizarBarra);
 
   // Lista de email
   (function leadForm() {
