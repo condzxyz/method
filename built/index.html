@@ -63,17 +63,7 @@ details[open]::details-content{block-size:auto}
 .hero-veil{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 46% 50% at 50% 52%,rgba(247,245,240,.58),rgba(247,245,240,.14) 72%,rgba(247,245,240,0)),linear-gradient(to bottom,rgba(247,245,240,.5),rgba(247,245,240,0) 170px,rgba(247,245,240,0) 72%,#F7F5F0)}
 .header{background:rgba(247,245,240,0);transition:border-color .2s,background-color .2s}
 .header.scrolled{background:rgba(247,245,240,.84);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
-.cta-overlay{background:linear-gradient(90deg,rgba(247,245,240,0) 28%,rgba(247,245,240,.8) 60%,rgba(247,245,240,.95))}
-@media (max-width:767px){.cta-overlay{background:rgba(247,245,240,.86)}}
-/* lista de recursos e FAQ */
-.feat{display:flex;align-items:center;gap:20px;padding:18px 0;border-top:1px solid #E7E3DB}
-.feat-ico{position:relative;flex:none;width:64px;height:64px;border-radius:14px;overflow:hidden;border:1px solid #E7E3DB;background:#FCFBF8}
-.feat-ico img{position:absolute;inset:4px;width:calc(100% - 8px);height:calc(100% - 8px);object-fit:contain}
-.feat-txt{flex:1;min-width:0;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 24px}
-.feat h3{margin:0;flex:0 0 210px;font:400 26px/1.15 'Instrument Serif',serif;color:#1F1E1C}
-.feat p{margin:0;flex:1 1 280px;font:400 16px/1.5 Inter,sans-serif;color:#3D3B37;text-wrap:pretty}
-.inc{display:grid;grid-template-columns:28px 1fr;gap:16px;padding:22px 0;border-top:1px solid #E7E3DB}
-.inc svg{margin-top:2px;fill:none;stroke:#6E6A63;stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round}
+/* FAQ */
 .faq details{border-top:1px solid #E7E3DB}
 .faq summary{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 0;font:500 18px/1.4 Inter,sans-serif;color:#1F1E1C}
 .faq summary svg{flex:none;fill:none;stroke:#1F1E1C;stroke-width:1.5;stroke-linecap:round}
@@ -81,25 +71,6 @@ details[open]::details-content{block-size:auto}
 .divider{border-top:1px solid #E7E3DB}
 .divider div{position:relative;max-width:1160px;margin:0 auto;height:0}
 .divider span{position:absolute;top:-5px;width:9px;height:9px;background:linear-gradient(#A39E95,#A39E95) center/1px 9px no-repeat,linear-gradient(#A39E95,#A39E95) center/9px 1px no-repeat}
-.stat{display:flex;flex-direction:column;gap:6px}
-.stat b{font:400 32px/1 'Instrument Serif',serif;color:#1F1E1C}
-.stat span{font:400 14px/1.4 Inter,sans-serif;color:#6E6A63}
-.pstat{padding-top:16px;display:flex;flex-direction:column;gap:4px}
-.pstat b{font:400 30px/1 'Instrument Serif',serif}
-.pstat span{font:400 14px/1.4 Inter,sans-serif;color:#6E6A63}
-/* retrato: a foto some numa névoa embaixo em vez de cortar seco */
-.retrato img{-webkit-mask-image:linear-gradient(to bottom,#000 58%,rgba(0,0,0,.55) 76%,transparent 94%);mask-image:linear-gradient(to bottom,#000 58%,rgba(0,0,0,.55) 76%,transparent 94%)}
-.retrato-nevoa{position:absolute;left:-12%;right:-12%;bottom:-6%;height:42%;pointer-events:none;background:radial-gradient(ellipse 55% 60% at 30% 78%,rgba(247,245,240,.95),rgba(247,245,240,0) 70%),radial-gradient(ellipse 45% 55% at 62% 85%,rgba(247,245,240,.9),rgba(247,245,240,0) 70%),radial-gradient(ellipse 35% 40% at 50% 100%,#F7F5F0,rgba(247,245,240,0) 75%);filter:blur(6px)}
-/* card dos casos (ilustrativos) */
-.cases{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}
-.case{display:flex;align-items:center;gap:12px;min-width:0;padding:14px;background:#2A2926;border:1px solid #3A3834;border-radius:16px}
-.case-av{flex:none;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;font:600 15px/1 Inter,sans-serif;color:#F7F5F0}
-.case-tx{min-width:0;display:flex;flex-direction:column;gap:2px}
-.case-nm{font:600 14px/1.2 Inter,sans-serif;color:#F7F5F0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.case-nm span{filter:blur(5px);user-select:none}
-.case-what{font:400 13px/1.3 Inter,sans-serif;color:#A39E95;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.case-res{margin-top:4px;font:500 13px/1.25 Inter,sans-serif;color:#D8A48F}
-.case-more{justify-content:center;border-style:dashed;background:transparent;font:500 14px/1.3 Inter,sans-serif;color:#D6D0C5}
 .closed .buy{display:none!important}
 .bill{margin-top:22px;display:inline-flex;padding:4px;border-radius:999px;background:#F1EEE7;border:1px solid #E7E3DB;gap:2px}
 .bill[hidden]{display:none}
@@ -145,29 +116,39 @@ details[open]::details-content{block-size:auto}
 .btn-quiz{appearance:none;border:0;cursor:pointer}
 /* diagnóstico + vídeo */
 .diag-pill{display:inline-flex;align-items:center;gap:8px;min-height:32px;padding:6px 14px;border-radius:999px;background:rgba(166,90,67,.12);color:#8E4A36;font:500 14px/1.2 Inter,sans-serif}
-.diag-list{margin:28px 0 0;padding:0;list-style:none;display:grid;gap:14px}
-.diag-list li{display:grid;grid-template-columns:28px 1fr;gap:12px;font:400 17px/1.55 Inter,sans-serif;color:#3D3B37}
-.diag-list li b{display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:#1F1E1C;color:#FCFBF8;font:500 13px/1 Inter,sans-serif}
+.diag-trava{margin:24px 0 0;padding:18px 20px;border-radius:16px;background:#FCFBF8;border:1px solid #E7E3DB;font:400 17px/1.55 Inter,sans-serif;color:#3D3B37}
 .vsl{position:relative;margin-top:36px;aspect-ratio:16/9;border-radius:22px;overflow:hidden;background:#1F1E1C;box-shadow:0 24px 60px rgba(31,30,28,.18)}
 .vsl video{width:100%;height:100%;display:block;background:#000;object-fit:cover}
 .vsl-ph{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:24px;color:#FCFBF8;background:radial-gradient(ellipse at 30% 20%,#3D3B37,#1F1E1C 70%)}
 .vsl-ph p{margin:0;max-width:30ch;font:400 clamp(22px,3vw,30px)/1.15 'Instrument Serif',serif}
 .vsl-ph small{display:block;margin-top:10px;font:400 14px/1.5 Inter,sans-serif;color:#CFC8BC}
 @media (max-width:600px){.vsl{border-radius:16px;margin-left:-8px;margin-right:-8px}}
-.sticky-col{position:sticky;top:120px}
-/* lista de email (quem ainda não vai entrar agora) */
-.lead{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(24px,4vw,64px);align-items:center;background:#F1EEE7;border:1px solid #E7E3DB;border-radius:28px;padding:clamp(28px,4.5vw,56px)}
-.lead-form{display:flex;flex-wrap:wrap;gap:12px}
-.lead-form input[type=email]{flex:1 1 240px;min-width:0;height:58px;padding:0 22px;border-radius:999px;border:1px solid #D6D0C5;background:#FCFBF8;color:#1F1E1C;font:400 17px/1 Inter,sans-serif;outline:none}
-.lead-form input[type=email]:focus{border-color:#1F1E1C}
-.lead-form button{height:58px;padding:0 28px;border:0;border-radius:999px;background:#1F1E1C;color:#FCFBF8;font:500 17px/1 Inter,sans-serif;cursor:pointer}
-.lead-form button:hover{background:#000}
-.lead-form button:disabled{opacity:.6;cursor:default}
-.hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;overflow:hidden}
-.lead-msg{margin:14px 0 0;font:400 15px/1.5 Inter,sans-serif;color:#6E6A63;min-height:22px}
-.lead-msg.err{color:#A65A43}
-.lead-done{font:400 clamp(26px,2.6vw,34px)/1.2 'Instrument Serif',serif;color:#1F1E1C}
-@media (max-width:760px){.sticky-col{position:static}}
+/* trilha em 3 passos: diagnóstico → vídeo → entrar */
+.passos{margin:0;padding:0;list-style:none;display:flex;align-items:center;flex-wrap:nowrap}
+.passos li{display:flex;align-items:center;gap:10px;font:500 15px/1.2 Inter,sans-serif;color:#6E6A63;white-space:nowrap}
+.passos li+li::before{content:"";width:clamp(18px,3vw,40px);height:1px;background:#D6D0C5;margin-right:12px;margin-left:2px}
+.passos li.feito+li::before{background:#1F1E1C}
+.passos b{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;border:1px solid #D6D0C5;background:#FCFBF8;font:500 13px/1 Inter,sans-serif;color:#6E6A63;flex:none}
+.passos b i{font-style:normal}
+.passos span{display:flex;flex-direction:column;align-items:flex-start}
+.passos em{font-style:normal}
+.passos strong{font-weight:500}
+.passos small{display:block;margin-top:3px;font:400 12px/1.2 Inter,sans-serif;color:#A39E95}
+.passos .agora,.passos .feito{color:#1F1E1C}
+.passos .agora b{border-color:#A65A43;background:#A65A43;color:#FCFBF8;animation:builtPulse 2s cubic-bezier(.2,.7,.2,1) infinite}
+.passos .feito b{border-color:#1F1E1C;background:#1F1E1C;color:#FCFBF8}
+.passos .feito b i{display:none}
+.passos .feito b::after{content:"";width:10px;height:5px;border-left:1.7px solid currentColor;border-bottom:1.7px solid currentColor;transform:translateY(-1px) rotate(-45deg)}
+.hero-passos{margin-top:34px;justify-content:center}
+.hero-passos span{align-items:center}
+@media (max-width:600px){.passos li{gap:7px;font-size:13px}.passos li+li::before{width:14px;margin-right:8px}.passos b{width:26px;height:26px}.passos small,.so-desk{display:none}}
+@media (prefers-reduced-motion:reduce){.passos .agora b{animation:none}}
+/* cartão de entrada (passo 3) */
+.price-card{position:relative;background:#FCFBF8;border:1px solid #E7E3DB;border-radius:28px;overflow:hidden;padding:clamp(28px,5vw,56px)}
+.price-kicker{display:flex;align-items:center;gap:10px;font:500 15px/1.3 Inter,sans-serif;color:#8E4A36}
+.price-inc{margin:32px 0 0;padding:24px 0 0;list-style:none;border-top:1px solid #E7E3DB;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:14px 32px;font:400 16px/1.45 Inter,sans-serif;color:#3D3B37}
+.price-inc li{display:grid;grid-template-columns:20px 1fr;gap:12px}
+.price-inc svg{margin-top:3px;fill:none;stroke:#A65A43;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
 </style>
 </head>
 <body>
@@ -180,11 +161,6 @@ details[open]::details-content{block-size:auto}
       <span style="font:400 36px/1 'Instrument Serif',serif;letter-spacing:-0.02em">Built</span>
       <span style="font:400 15px/1 Inter,sans-serif;color:#6E6A63">por @condzxyz</span>
     </a>
-    <div class="navlinks">
-      <a class="nl" href="#prova" style="text-decoration:none;color:#3D3B37">Resultados</a>
-      <a class="nl" href="#como" style="text-decoration:none;color:#3D3B37">Como funciona</a>
-      <a class="nl" href="#entrar" style="text-decoration:none;color:#3D3B37">Preço</a>
-    </div>
     <a class="btn-ghost" href="#entrar" style="display:inline-flex;align-items:center;gap:10px;height:48px;padding:0 24px;border-radius:999px;border:1px solid #D6D0C5;background:#FCFBF8;color:#1F1E1C;font:500 16px/1 Inter,sans-serif;text-decoration:none">Entrar<svg data-arrow width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" style="fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
   </nav>
 </header>
@@ -208,227 +184,74 @@ details[open]::details-content{block-size:auto}
   <div style="position:relative;z-index:2;max-width:820px;display:flex;flex-direction:column;align-items:center">
     <p data-reveal style="margin:0;font:400 clamp(15px,1.3vw,18px)/1.4 Inter,sans-serif;color:#6E6A63">Comunidade do Condz no Telegram</p>
     <h1 data-reveal style="margin:24px 0 0;max-width:14ch;font:400 clamp(46px,6.8vw,112px)/.92 'Instrument Serif',serif;letter-spacing:-0.025em;color:#1F1E1C;text-wrap:balance">Evolua. O dinheiro vem como <em>consequência</em>.</h1>
-    <p data-reveal style="margin:22px 0 0;max-width:34ch;font:400 clamp(17px,1.6vw,20px)/1.5 Inter,sans-serif;color:#3D3B37;text-wrap:balance">Pra quem é CLT, toca um negócio ou está buscando uma nova forma de fazer dinheiro. Cabeça, conteúdo e venda, com o Condz e uma galera no mesmo caminho.</p>
-    <div data-reveal style="margin-top:36px;display:flex;flex-direction:column;align-items:center;gap:14px"><button type="button" class="btn btn-quiz" data-quiz id="hero-cta" style="display:inline-flex;align-items:center;justify-content:center;gap:14px;height:60px;padding:0 32px;border-radius:999px;background:#1F1E1C;color:#FCFBF8;font:500 17px/1 Inter,sans-serif"><span id="hero-cta-txt">Fazer meu diagnóstico</span><svg data-arrow width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" style="fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button><span style="font:400 14px/1.4 Inter,sans-serif;color:#6E6A63">1 minuto · grátis · <a href="#entrar" data-skip style="color:#3D3B37;text-underline-offset:4px">já quero entrar</a></span></div>
-    <p data-reveal style="margin:28px 0 0;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:4px 10px;font:400 15px/1.5 Inter,sans-serif;color:#6E6A63"><span id="hero-dot" class="dot" aria-hidden="true"></span><span><strong id="hero-strong" style="font-weight:500;color:#1F1E1C">Preço de fundador: R$ 147/mês</strong><span id="hero-rest"> · fecha 30/10</span></span></p>
+    <p data-reveal style="margin:22px 0 0;max-width:34ch;font:400 clamp(17px,1.6vw,20px)/1.5 Inter,sans-serif;color:#3D3B37;text-wrap:balance">Pra quem é CLT, toca um negócio ou busca uma nova renda. Cabeça, conteúdo e venda, com o Condz e uma galera no mesmo caminho.</p>
+    <div data-reveal style="margin-top:36px;display:flex;flex-direction:column;align-items:center;gap:14px"><button type="button" class="btn btn-quiz" data-quiz id="hero-cta" style="display:inline-flex;align-items:center;justify-content:center;gap:14px;height:60px;padding:0 32px;border-radius:999px;background:#1F1E1C;color:#FCFBF8;font:500 17px/1 Inter,sans-serif"><span id="hero-cta-txt">Começar meu diagnóstico</span><svg data-arrow width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" style="fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button><span style="font:400 14px/1.4 Inter,sans-serif;color:#6E6A63">1 minuto · grátis · <a href="#entrar" data-skip style="color:#3D3B37;text-underline-offset:4px">já quero entrar</a></span></div>
+    <div data-reveal style="display:flex;justify-content:center"><ol class="passos hero-passos" data-passos aria-label="Seu caminho até o grupo"><li data-p="1"><b><i>1</i></b><span><strong>Diagnóstico</strong><small>1 min</small></span></li><li data-p="2"><b><i>2</i></b><span><strong>Vídeo</strong><small>5 min</small></span></li><li data-p="3"><b><i>3</i></b><span><strong>Entrar<em class="so-desk"> no grupo</em></strong><small>na hora</small></span></li></ol></div>
   </div>
 </section>
 
 <div class="divider" aria-hidden="true"><div><span style="left:15.5px"></span><span style="right:15.5px"></span></div></div>
 
-<section id="diagnostico" hidden style="padding:clamp(48px,7vw,96px) 0;scroll-margin-top:80px">
+<section id="diagnostico" hidden style="padding:clamp(40px,6vw,80px) 0 clamp(20px,3vw,32px);scroll-margin-top:80px">
   <div style="max-width:880px;margin:0 auto;padding:0 20px">
-    <span class="diag-pill" id="diag-pill">Seu diagnóstico</span>
-    <h2 id="diag-titulo" style="margin:20px 0 0;font:400 clamp(40px,5.4vw,68px)/1 'Instrument Serif',serif;letter-spacing:-0.02em;color:#1F1E1C;text-wrap:balance"></h2>
+    <ol class="passos" data-passos aria-label="Seu caminho até o grupo"><li data-p="1"><b><i>1</i></b><span><strong>Diagnóstico</strong><small>1 min</small></span></li><li data-p="2"><b><i>2</i></b><span><strong>Vídeo</strong><small>5 min</small></span></li><li data-p="3"><b><i>3</i></b><span><strong>Entrar<em class="so-desk"> no grupo</em></strong><small>na hora</small></span></li></ol>
+    <span class="diag-pill" id="diag-pill" style="margin-top:32px">Seu diagnóstico</span>
+    <h2 id="diag-titulo" style="margin:18px 0 0;font:400 clamp(40px,5.4vw,68px)/1 'Instrument Serif',serif;letter-spacing:-0.02em;color:#1F1E1C;text-wrap:balance"></h2>
     <p id="diag-meta" style="margin:16px 0 0;font:500 18px/1.5 Inter,sans-serif;color:#1F1E1C"></p>
-    <ul class="diag-list" id="diag-lista"></ul>
+    <p class="diag-trava" id="diag-trava"></p>
     <div class="vsl" id="vsl"></div>
-    <div id="vsl-cta" style="margin-top:28px;display:flex;flex-direction:column;align-items:flex-start;gap:10px">
-      <a class="btn" href="#entrar" data-planos style="display:inline-flex;align-items:center;justify-content:center;gap:14px;height:58px;padding:0 30px;border-radius:999px;background:#1F1E1C;color:#FCFBF8;font:500 17px/1 Inter,sans-serif;text-decoration:none">Quero entrar na Built<svg data-arrow width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" style="fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-      <p style="margin:0;font:400 14px/1.5 Inter,sans-serif;color:#6E6A63">Preço de fundador até 30/10 · 7 dias de garantia · entra no grupo na hora</p>
+    <div id="vsl-cta" style="margin-top:24px;display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px">
+      <a class="btn" href="#entrar" data-planos style="display:inline-flex;align-items:center;justify-content:center;gap:14px;height:58px;padding:0 30px;border-radius:999px;background:#1F1E1C;color:#FCFBF8;font:500 17px/1 Inter,sans-serif;text-decoration:none">Entrar no grupo agora<svg data-arrow width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" style="fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      <p style="margin:0;font:400 14px/1.5 Inter,sans-serif;color:#6E6A63">7 dias de garantia · entra no grupo na hora</p>
     </div>
-    <p style="margin:28px 0 0;font:400 13px/1.5 Inter,sans-serif;color:#6E6A63">A meta é sua; o caminho a gente faz junto. Não é promessa de resultado. <button type="button" id="diag-refazer" style="appearance:none;border:0;background:none;padding:0;font:inherit;color:#3D3B37;text-decoration:underline;text-underline-offset:3px;cursor:pointer">Refazer o diagnóstico</button></p>
+    <p style="margin:24px 0 0;font:400 13px/1.5 Inter,sans-serif;color:#6E6A63">A meta é sua; o caminho a gente faz junto. Não é promessa de resultado. <button type="button" id="diag-refazer" style="appearance:none;border:0;background:none;padding:0;font:inherit;color:#3D3B37;text-decoration:underline;text-underline-offset:3px;cursor:pointer">Refazer o diagnóstico</button></p>
   </div>
 </section>
 
-<section id="prova" style="padding:clamp(64px,8vw,112px) 0;scroll-margin-top:40px">
-  <div style="max-width:1240px;margin:0 auto;padding:0 20px">
-    <div data-reveal style="position:relative;padding-right:clamp(110px,14vw,200px)">
-      <h2 style="margin:0;max-width:720px;font:400 clamp(36px,4.8vw,68px)/1 'Instrument Serif',serif;letter-spacing:-0.015em;color:#1F1E1C;text-wrap:balance">Tudo em público. <em>Inclusive os números.</em></h2>
-      <p style="margin:16px 0 0;font:400 14px/1.4 Inter,sans-serif;color:#6E6A63">Prints reais · out/2026</p>
-      <img src="img/s-vitoria.webp" alt="Vitória alada de mármore" width="400" height="600" loading="lazy" decoding="async" style="position:absolute;right:0;bottom:-36px;width:clamp(96px,12vw,180px);height:auto;pointer-events:none">
-    </div>
-    <div style="margin-top:clamp(36px,5vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px">
-      <article data-reveal style="grid-column:1/-1;background:#FCFBF8;border:1px solid #E7E3DB;border-radius:24px;padding:clamp(24px,3vw,40px);display:flex;flex-direction:column;gap:28px;overflow:hidden">
-        <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px">
-          <div>
-            <div style="font:400 14px/1.4 Inter,sans-serif;color:#6E6A63">Impressões no X · últimos 90 dias</div>
-            <div style="margin-top:14px;display:flex;align-items:baseline;flex-wrap:wrap;gap:8px 16px"><span style="font:400 clamp(64px,8vw,112px)/.85 'Instrument Serif',serif;letter-spacing:-0.02em;color:#1F1E1C">12 mi</span><span style="font:400 15px/1 Inter,sans-serif;color:#3F7A52">↑ 221%</span></div>
-          </div>
-          <div style="display:flex;flex-wrap:wrap;gap:20px 36px"><div class="stat"><b>214 mil</b><span>engajamentos</span></div><div class="stat"><b>58,1 mil</b><span>visitas no perfil</span></div><div class="stat"><b>49,2 mil</b><span>salvamentos</span></div></div>
-        </div>
-        <div style="position:relative;height:clamp(160px,22vw,280px);display:flex;align-items:flex-end;gap:clamp(1px,.3vw,4px);border-bottom:1px solid #E7E3DB">
-          <div aria-hidden="true" style="position:absolute;inset:0;pointer-events:none;display:flex;flex-direction:column;justify-content:space-between"><span style="border-top:1px dashed rgba(29,27,23,.10)"></span><span style="border-top:1px dashed rgba(29,27,23,.10)"></span><span style="border-top:1px dashed rgba(29,27,23,.10)"></span><span></span></div>
-          <div style="flex:1;min-width:0;height:1.50%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:1.50%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:1.50%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:1.50%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:1.50%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:1.50%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:1.50%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:1.50%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:1.50%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:1.50%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:1.50%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:1.50%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:1.87%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:20.15%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:14.18%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:1.50%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:2.24%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:2.99%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:2.61%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:1.50%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:2.24%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:2.61%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:5.22%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:2.99%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:1.87%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:2.24%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:2.24%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:2.24%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:2.24%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:3.36%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:2.99%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:3.73%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:5.97%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:1.87%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:2.24%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:5.97%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:2.99%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:1.50%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:1.50%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:1.50%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:9.70%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:11.94%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:7.46%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:10.45%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:2.99%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:1.50%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:4.48%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:6.72%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:3.73%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:2.24%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:2.24%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:2.24%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:5.22%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:3.73%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:1.50%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:2.24%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:6.34%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:5.22%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:10.45%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:15.67%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:5.60%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:20.15%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:11.94%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:7.46%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:3.73%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:2.24%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:16.42%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:100.00%;background:#A65A43;border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:14.93%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:27.61%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:25.37%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:23.88%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:14.18%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:16.42%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:26.87%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:29.10%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:14.93%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:11.94%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:20.90%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:8.96%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:15.67%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:26.12%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:25.37%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:12.69%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:8.96%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:20.15%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:67.16%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:32.84%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:29.85%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div><div style="flex:1;min-width:0;height:8.21%;background:rgba(29,27,23,.72);border-radius:2px 2px 0 0"></div>
-          <div style="position:absolute;left:75.00%;top:-4px;transform:translateX(-50%);padding:6px 10px;border-radius:999px;background:#A65A43;font:500 13px/1 Inter,sans-serif;color:#FCFBF8;white-space:nowrap">1,3 mi num dia</div>
-        </div>
-        <div style="display:flex;justify-content:space-between;font:400 14px/1.4 Inter,sans-serif;color:#6E6A63"><span>17 jul</span><span>ago</span><span>set</span><span>13 out</span></div>
-      </article>
-      <article data-reveal style="background:#E9DFCC url(img/nuvens.webp) center/cover;border:1px solid #E7E3DB;border-radius:24px;padding:28px;display:flex;flex-direction:column;gap:12px;min-height:320px">
-        <div style="font:400 14px/1.4 Inter,sans-serif;color:#3D3B37">Faturamento 2026</div>
-        <span style="font:400 clamp(64px,7vw,88px)/.9 'Instrument Serif',serif;letter-spacing:-0.02em;color:#1F1E1C">R$ 3 mi+</span>
-        <span style="font:400 16px/1.4 Inter,sans-serif;color:#1F1E1C">com margem alta, vindo de conteúdo</span>
-        <div style="margin-top:auto;padding-top:24px">
-          <div style="position:relative;height:1px;background:rgba(31,30,28,.4)"><span style="position:absolute;left:0;top:-4px;width:9px;height:9px;border-radius:50%;background:#1F1E1C"></span><span style="position:absolute;right:0;top:-6px;width:13px;height:13px;border-radius:50%;background:#1F1E1C;box-shadow:0 0 0 4px rgba(31,30,28,.25)"></span></div>
-          <div style="margin-top:14px;display:flex;justify-content:space-between;gap:12px;font:400 13px/1.35 Inter,sans-serif;color:#1F1E1C"><span>2021<br>primeiro post</span><span style="text-align:right">2026<br>milionário, dívida dos pais quitada</span></div>
-        </div>
-      </article>
-      <article data-reveal style="background:#FCFBF8;border:1px solid #E7E3DB;border-radius:24px;padding:28px;display:flex;flex-direction:column;gap:12px;min-height:320px">
-        <div style="font:400 14px/1.4 Inter,sans-serif;color:#6E6A63">Seguidores no X</div>
-        <span style="font:400 clamp(56px,6vw,72px)/.9 'Instrument Serif',serif;letter-spacing:-0.02em;color:#1F1E1C">40,5 mil</span>
-        <span style="font:400 16px/1.4 Inter,sans-serif;color:#3D3B37"><strong style="font-weight:500;color:#A65A43">+16 mil</strong> num único dia</span>
-        <div style="margin-top:auto;height:96px;display:flex;align-items:flex-end;gap:2px;border-bottom:1px solid #E7E3DB"><div style="flex:1;min-width:0;height:1.50%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:1.50%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:1.50%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:1.59%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:1.88%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:2.16%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:2.44%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:2.72%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:3.00%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:1.50%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:1.50%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:1.50%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:1.59%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:1.88%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:2.16%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:2.44%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:2.72%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:3.00%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:1.50%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:1.50%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:1.50%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:1.59%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:1.88%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:2.16%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:2.44%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:2.72%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:3.00%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:1.50%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:1.50%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:1.50%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:1.59%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:1.88%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:2.16%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:2.44%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:2.72%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:3.00%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:1.50%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:1.50%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:1.50%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:1.59%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:1.88%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:2.16%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:2.44%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:8.75%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:100.00%;background:#A65A43;border-radius:1px"></div><div style="flex:1;min-width:0;height:1.50%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:1.50%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:2.69%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:2.97%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:3.25%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:3.53%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:3.81%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:4.09%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:4.38%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:2.12%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:2.41%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:2.69%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:2.97%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:3.25%;background:#D6D0C5;border-radius:1px"></div><div style="flex:1;min-width:0;height:3.53%;background:#D6D0C5;border-radius:1px"></div></div>
-      </article>
-      <article data-reveal style="background:#FCFBF8;border:1px solid #E7E3DB;border-radius:24px;padding:28px;display:flex;flex-direction:column;gap:12px;min-height:320px">
-        <div style="font:400 14px/1.4 Inter,sans-serif;color:#6E6A63">LinkedIn · 28 dias</div>
-        <div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap"><span style="font:400 clamp(56px,6vw,72px)/.9 'Instrument Serif',serif;letter-spacing:-0.02em;color:#1F1E1C">526 mil</span><span style="font:400 13px/1 Inter,sans-serif;color:#2F7A4E">↑ 13%</span></div>
-        <span style="font:400 16px/1.4 Inter,sans-serif;color:#3D3B37">impressões, acumulado</span>
-        <svg viewBox="0 0 280 100" preserveAspectRatio="none" aria-hidden="true" style="margin-top:auto;width:100%;height:96px;overflow:visible"><path d="M0.0 85.8 L10.4 81.7 L20.7 75.8 L31.1 74.2 L41.5 71.7 L51.9 69.5 L62.2 61.7 L72.6 59.5 L83.0 53.0 L93.3 50.0 L103.7 44.5 L114.1 38.0 L124.4 34.7 L134.8 31.3 L145.2 27.5 L155.6 25.3 L165.9 23.0 L176.3 21.7 L186.7 20.0 L197.0 18.0 L207.4 16.2 L217.8 15.0 L228.1 14.5 L238.5 14.0 L248.9 13.7 L259.3 13.2 L269.6 12.7 L280.0 12.3 L280 100 L0 100 Z" style="fill:rgba(166,90,67,.10);stroke:none"/><path d="M0.0 85.8 L10.4 81.7 L20.7 75.8 L31.1 74.2 L41.5 71.7 L51.9 69.5 L62.2 61.7 L72.6 59.5 L83.0 53.0 L93.3 50.0 L103.7 44.5 L114.1 38.0 L124.4 34.7 L134.8 31.3 L145.2 27.5 L155.6 25.3 L165.9 23.0 L176.3 21.7 L186.7 20.0 L197.0 18.0 L207.4 16.2 L217.8 15.0 L228.1 14.5 L238.5 14.0 L248.9 13.7 L259.3 13.2 L269.6 12.7 L280.0 12.3" style="fill:none;stroke:#A65A43;stroke-width:2;vector-effect:non-scaling-stroke;stroke-linejoin:round"/></svg>
-      </article>
-    </div>
-    <div style="margin-top:16px;display:grid;grid-template-columns:minmax(0,1fr);gap:16px">
-      <a data-reveal class="card-link" href="https://x.com/condzxyz/status/2110125736095105241" target="_blank" rel="noopener" style="display:flex;flex-direction:column;text-decoration:none;color:#1F1E1C;background:#FCFBF8;border:1px solid #E7E3DB;border-radius:24px;padding:28px">
-        <div style="font:400 14px/1.4 Inter,sans-serif;color:#6E6A63">A demanda · post de 13/10</div>
-        <p style="margin:20px 0 0;font:400 clamp(24px,2.4vw,30px)/1.2 'Instrument Serif',serif;color:#1F1E1C;text-wrap:pretty">“vou ter q lançar uma comunidade pra build in public… se tiver interesse comenta aí”</p>
-        <div style="margin-top:auto;padding-top:28px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;border-top:1px solid #E7E3DB">
-          <div class="pstat"><b>14 mil</b><span>views</span></div>
-          <div class="pstat"><b style="color:#A65A43">199</b><span>respostas</span></div>
-          <div class="pstat"><b>409</b><span>curtidas</span></div>
-          <div class="pstat"><b>98</b><span>salvos</span></div>
-        </div>
-      </a>
-      <div data-reveal style="display:flex;flex-direction:column;gap:24px;background:#1F1E1C;border-radius:24px;padding:clamp(24px,3vw,40px)">
-        <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:12px 24px;flex-wrap:wrap">
-          <span style="font:400 clamp(44px,5vw,72px)/.92 'Instrument Serif',serif;letter-spacing:-0.02em;color:#F7F5F0">Centenas <em>viralizando</em></span>
-          <p style="margin:0;max-width:360px;font:400 16px/1.5 Inter,sans-serif;color:#D6D0C5">de pessoas já têm resultado com automações que eu fiz, construindo em público no X e no LinkedIn com o Otto.</p>
-        </div>
-        <div class="cases"><div class="case"><div class="case-av" style="background:#A65A43">MR</div><div class="case-tx"><div class="case-nm">Mariana <span aria-hidden="true">Rocha</span></div><div class="case-what">designer de produto · X</div><div class="case-res">+12 mil seguidores em 3 meses</div></div></div><div class="case"><div class="case-av" style="background:#6B7A5E">TL</div><div class="case-tx"><div class="case-nm">Thiago <span aria-hidden="true">Lima</span></div><div class="case-what">dev de SaaS · X</div><div class="case-res">R$ 9 mil/mês no app, vindo do X</div></div></div><div class="case"><div class="case-av" style="background:#8C6E54">JS</div><div class="case-tx"><div class="case-nm">Júlia <span aria-hidden="true">Santos</span></div><div class="case-what">nutricionista · LinkedIn</div><div class="case-res">1,1 mi de impressões num post</div></div></div><div class="case"><div class="case-av" style="background:#5E6B7A">PA</div><div class="case-tx"><div class="case-nm">Pedro <span aria-hidden="true">Alves</span></div><div class="case-what">automações no-code · X</div><div class="case-res">R$ 14 mil de MRR</div></div></div><div class="case"><div class="case-av" style="background:#9A5B6B">CN</div><div class="case-tx"><div class="case-nm">Carol <span aria-hidden="true">Nunes</span></div><div class="case-what">consultora de RH · LinkedIn</div><div class="case-res">+9 mil seguidores</div></div></div><div class="case"><div class="case-av" style="background:#7A6A4E">RF</div><div class="case-tx"><div class="case-nm">Rafael <span aria-hidden="true">Freitas</span></div><div class="case-what">indie hacker · X</div><div class="case-res">1º app vendido pelo X</div></div></div><div class="case"><div class="case-av" style="background:#4E6A6A">BM</div><div class="case-tx"><div class="case-nm">Bruna <span aria-hidden="true">Moraes</span></div><div class="case-what">fotógrafa · LinkedIn</div><div class="case-res">6 clientes em 30 dias</div></div></div><div class="case"><div class="case-av" style="background:#7A5E4E">LC</div><div class="case-tx"><div class="case-nm">Lucas <span aria-hidden="true">Castro</span></div><div class="case-what">advogado tributário · X</div><div class="case-res">post com 480 mil views</div></div></div><div class="case"><div class="case-av" style="background:#6A5E7A">AP</div><div class="case-tx"><div class="case-nm">Ana <span aria-hidden="true">Prado</span></div><div class="case-what">professora de inglês · X</div><div class="case-res">turma lotada vendida no X</div></div></div><div class="case"><div class="case-av" style="background:#5E7A66">DS</div><div class="case-tx"><div class="case-nm">Diego <span aria-hidden="true">Siqueira</span></div><div class="case-what">agência de tráfego · LinkedIn</div><div class="case-res">4 contratos fechados</div></div></div><div class="case case-more">e mais centenas…</div></div>
-        <p style="margin:0;font:400 13px/1.5 Inter,sans-serif;color:#A39E95">Exemplos ilustrativos: os nomes e os números destes blocos são fictícios.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="divider" aria-hidden="true"><div><span style="left:15.5px"></span><span style="right:15.5px"></span></div></div>
-
-<section id="como" style="padding:clamp(64px,8vw,112px) 0;scroll-margin-top:80px">
-  <div style="max-width:1160px;margin:0 auto;padding:0 20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(32px,5vw,80px);align-items:start">
-    <div data-reveal class="sticky-col">
-      <div style="font:400 17px/1 Inter,sans-serif;color:#6E6A63">Como funciona</div>
-      <h2 style="margin:20px 0 0;font:400 clamp(36px,4.8vw,68px)/1 'Instrument Serif',serif;letter-spacing:-0.02em;color:#1F1E1C">Simples de <em>propósito</em>.</h2>
-      <p style="margin:20px 0 0;max-width:340px;font:400 17px/1.5 Inter,sans-serif;color:#6E6A63">Dois espaços no Telegram: Avisos e Chat. Você entra e já sabe onde postar o quê.</p>
-    </div>
-    <ul data-reveal style="min-width:0;margin:0;padding:0;list-style:none;border-bottom:1px solid #E7E3DB">
-      <li class="feat"><div class="feat-ico"><img src="img/t-compasso.webp" alt="" width="128" height="128" loading="lazy" decoding="async"></div><div class="feat-txt"><h3>Chat</h3><p>Grupo no Telegram com builders no dia a dia: dúvidas, rascunhos e ajuda de quem está construindo junto.</p></div></li>
-      <li class="feat"><div class="feat-ico"><img src="img/t-mao-ideia.webp" alt="" width="128" height="86" loading="lazy" decoding="async"></div><div class="feat-txt"><h3>Feedback do Condz</h3><p>Manda o rascunho no Chat antes de postar. Em dia útil eu respondo: o que está bom, o que muda e o hook reescrito.</p></div></li>
-      <li class="feat"><div class="feat-ico"><img src="img/t-telescopio.webp" alt="" width="128" height="128" loading="lazy" decoding="async"></div><div class="feat-txt"><h3>Encontro do mês</h3><p>Uma vez por mês, ao vivo: um tema e perfis analisados na hora. Fica gravado.</p></div></li>
-      <li class="feat"><div class="feat-ico"><img src="img/t-balanca.webp" alt="" width="128" height="128" loading="lazy" decoding="async"></div><div class="feat-txt"><h3>Vitórias</h3><p>Lançou, vendeu, bateu meta? Mostra no Chat. Toda semana eu destaco membros no meu perfil.</p></div></li>
-      <li class="feat"><div class="feat-ico"><img src="img/t-tigela.webp" alt="" width="128" height="128" loading="lazy" decoding="async"></div><div class="feat-txt"><h3>Mentalidade</h3><p>Emoções, atenção e perspectiva. O que segura a constância.</p></div></li>
-      <li class="feat"><div class="feat-ico"><img src="img/t-roseta.webp" alt="" width="128" height="128" loading="lazy" decoding="async"></div><div class="feat-txt"><h3>Avisos</h3><p>Encontros, gravações e materiais num canal só, sem se perder no meio da conversa.</p></div></li>
-    </ul>
-  </div>
-</section>
-
-<div class="divider" aria-hidden="true"><div><span style="left:15.5px"></span><span style="right:15.5px"></span></div></div>
-
-<section style="padding:clamp(64px,8vw,112px) 0">
-  <div style="max-width:1160px;margin:0 auto;padding:0 20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:clamp(40px,6vw,96px);align-items:center">
-    <div data-reveal class="retrato" style="position:relative;max-width:520px;width:100%"><img src="img/s-conrado.webp" alt="Conrado, @condzxyz" width="1000" height="1000" loading="lazy" decoding="async" style="display:block;width:100%;height:auto"><div class="retrato-nevoa" aria-hidden="true"></div></div>
-    <div data-reveal>
-      <h2 style="margin:0;font:400 clamp(36px,4.8vw,68px)/1 'Instrument Serif',serif;letter-spacing:-0.015em;color:#1F1E1C">Quem está <em>construindo</em>.</h2>
-      <p style="margin:28px 0 0;max-width:520px;font:400 19px/1.55 Inter,sans-serif;color:#3D3B37;text-wrap:pretty">Sou o Conrado. Já trabalhei com empresas como Microsoft e Bandai Namco, vendi uma empresa e saí de uma dívida de R$&nbsp;300 mil para mais de R$&nbsp;5 mi de patrimônio.</p>
-      <p style="margin:20px 0 0;max-width:520px;font:400 clamp(26px,2.6vw,34px)/1.2 'Instrument Serif',serif;color:#1F1E1C;text-wrap:pretty">O foco é a evolução inteira. O resto é <em>consequência</em>.</p>
-      <p style="margin:28px 0 0;font:400 13px/1.5 Inter,sans-serif;color:#6E6A63">Minha trajetória não é promessa de resultado.</p>
-    </div>
-  </div>
-</section>
-
-<section id="entrar" style="padding:clamp(64px,8vw,112px) 0;scroll-margin-top:80px">
-  <div style="max-width:1160px;margin:0 auto;padding:0 20px">
-    <div data-reveal style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));background:#FCFBF8;border:1px solid #E7E3DB;border-radius:28px;overflow:hidden">
-      <div style="padding:clamp(32px,5vw,72px)">
-        <div id="access-label" style="font:400 17px/1 Inter,sans-serif;color:#6E6A63">Acesso de fundador</div>
-        <h2 style="margin:24px 0 0;font:400 clamp(44px,5vw,72px)/.98 'Instrument Serif',serif;letter-spacing:-0.02em;color:#1F1E1C;text-wrap:balance">Contato diário com o Condz e builders com o <em>mesmo mindset</em>.</h2>
-        <p style="margin:20px 0 0;max-width:460px;font:400 18px/1.5 Inter,sans-serif;color:#6E6A63">Sem reclamações e sem choro. Só criadores que querem evoluir.</p>
-        <ul style="margin:44px 0 0;padding:0;list-style:none;font:400 18px/1.45 Inter,sans-serif;color:#3D3B37;border-bottom:1px solid #E7E3DB">
-          <li class="inc"><svg width="20" height="20" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg><span>Chat diário com builders no Telegram.</span></li>
-          <li class="inc"><svg width="20" height="20" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg><span>Feedback meu nos seus posts, todo dia útil.</span></li>
-          <li class="inc"><svg width="20" height="20" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg><span>Encontro ao vivo todo mês, gravado.</span></li>
-          <li class="inc"><svg width="20" height="20" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg><span>Gravações e materiais no canal de Avisos.</span></li>
-        </ul>
-      </div>
-      <div id="price" style="position:relative;padding:clamp(32px,5vw,72px);border-left:1px solid #E7E3DB">
-        <img src="img/damasco.webp" alt="" aria-hidden="true" loading="lazy" style="position:absolute;left:0;top:0;width:100%;height:220px;object-fit:cover;object-position:center;opacity:.5;-webkit-mask-image:linear-gradient(#000,transparent);mask-image:linear-gradient(#000,transparent);pointer-events:none">
-        <div style="position:relative">
-          <div id="price-label" style="font:400 17px/1 Inter,sans-serif;color:#6E6A63">Built · fundador</div>
-          <div class="bill" id="bill" role="radiogroup" aria-label="Como pagar" hidden><button type="button" role="radio" aria-checked="true" data-bill="tri">3 meses <span class="bill-tag" id="bill-tag">−23%</span></button><button type="button" role="radio" aria-checked="false" data-bill="mes">Mensal</button></div>
-          <div style="margin-top:20px;display:flex;align-items:baseline;flex-wrap:wrap;gap:8px 16px">
+<section id="entrar" style="padding:clamp(16px,3vw,32px) 0 clamp(56px,7vw,96px);scroll-margin-top:80px">
+  <div style="max-width:880px;margin:0 auto;padding:0 20px">
+    <div data-reveal id="price" class="price-card">
+      <img src="img/damasco.webp" alt="" aria-hidden="true" loading="lazy" style="position:absolute;left:0;top:0;width:100%;height:200px;object-fit:cover;object-position:center;opacity:.45;-webkit-mask-image:linear-gradient(#000,transparent);mask-image:linear-gradient(#000,transparent);pointer-events:none">
+      <div style="position:relative">
+        <div id="access-label" class="price-kicker">Acesso de fundador</div>
+        <div class="bill" id="bill" role="radiogroup" aria-label="Como pagar" hidden><button type="button" role="radio" aria-checked="true" data-bill="tri">3 meses <span class="bill-tag" id="bill-tag">−23%</span></button><button type="button" role="radio" aria-checked="false" data-bill="mes">Mensal</button></div>
+        <div style="margin-top:20px;display:flex;align-items:baseline;flex-wrap:wrap;gap:8px 16px">
             <span id="price-main" style="font:400 clamp(88px,10vw,136px)/.85 'Instrument Serif',serif;letter-spacing:-0.03em;color:#A65A43">R$ 147</span>
             <span style="font:400 20px/1 Inter,sans-serif;color:#6E6A63">/mês</span>
             <s id="price-strike" style="font:400 26px/1 'Instrument Serif',serif;color:#A39E95">R$ 197</s>
           </div>
-          <p id="price-sub" style="margin:18px 0 0;font:500 17px/1.4 Inter,sans-serif;color:#1F1E1C">Mínimo de 3 meses. Ou anual com desconto.</p>
-          <p id="price-deadline" style="margin:6px 0 0;font:400 15px/1.4 Inter,sans-serif;color:#6E6A63">Preço de fundador até 30 de outubro, 23h59. Travado enquanto você ficar.</p>
-          <div style="margin-top:32px;display:grid;grid-template-columns:22px 1fr;gap:14px;padding:22px 24px;border-radius:18px;background:#F1EEE7;border:1px solid #E7E3DB;font:400 16px/1.55 Inter,sans-serif;color:#3D3B37"><svg width="20" height="20" viewBox="0 0 16 16" aria-hidden="true" style="margin-top:2px;fill:none;stroke:#3D3B37;stroke-width:1.3;stroke-linejoin:round"><path d="M8 1.5l5.5 2v4c0 3.4-2.4 6-5.5 7-3.1-1-5.5-3.6-5.5-7v-4z"/></svg><span><strong style="font-weight:500;color:#1F1E1C">7 dias de garantia.</strong> Não curtiu, me avisa e eu devolvo tudo. Minha trajetória não é promessa de resultado.</span></div>
-          <div class="buy" style="margin-top:32px;display:flex;flex-direction:column;align-items:flex-start;gap:12px">
+        <p id="price-sub" style="margin:18px 0 0;font:500 17px/1.4 Inter,sans-serif;color:#1F1E1C">Mínimo de 3 meses. Ou anual com desconto.</p>
+        <p id="price-deadline" style="margin:6px 0 0;font:400 15px/1.4 Inter,sans-serif;color:#6E6A63">Preço de fundador até 30 de outubro, 23h59. Travado enquanto você ficar.</p>
+        <div class="buy" style="margin-top:32px;display:flex;flex-direction:column;align-items:flex-start;gap:12px">
             <a class="btn" data-plan="trimestralCartao" id="btn-cartao" href="https://buy.stripe.com/8x228sg2w1KW309142bsc00" style="display:inline-flex;align-items:center;justify-content:center;gap:14px;height:58px;padding:0 30px;border-radius:999px;background:#1F1E1C;color:#FCFBF8;font:500 17px/1 Inter,sans-serif;text-decoration:none">Entrar com cartão<svg data-arrow width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" style="fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
             <p id="note-cartao" style="margin:0;font:400 14px/1.5 Inter,sans-serif;color:#6E6A63">R$ 441 agora. Renova sozinho a cada 3 meses. Cancela quando quiser e não renova.</p>
             <a class="btn-out" data-plan="trimestralPix" id="btn-pix" href="https://buy.stripe.com/fZueVeg2w9do309fYWbsc01" style="margin-top:8px;display:inline-flex;align-items:center;height:52px;padding:0 26px;border-radius:999px;border:1px solid #D6D0C5;color:#1F1E1C;font:500 16px/1 Inter,sans-serif;text-decoration:none">Entrar com Pix</a>
             <p id="note-pix" style="margin:0;font:400 14px/1.5 Inter,sans-serif;color:#6E6A63">R$ 441 por 3 meses. O bot te avisa antes de vencer.</p>
           </div>
-          <div class="buy" style="margin-top:28px;padding-top:24px;border-top:1px solid #E7E3DB;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px">
+        <div style="margin-top:28px;display:grid;grid-template-columns:22px 1fr;gap:14px;padding:22px 24px;border-radius:18px;background:#F1EEE7;border:1px solid #E7E3DB;font:400 16px/1.55 Inter,sans-serif;color:#3D3B37"><svg width="20" height="20" viewBox="0 0 16 16" aria-hidden="true" style="margin-top:2px;fill:none;stroke:#3D3B37;stroke-width:1.3;stroke-linejoin:round"><path d="M8 1.5l5.5 2v4c0 3.4-2.4 6-5.5 7-3.1-1-5.5-3.6-5.5-7v-4z"/></svg><span><strong style="font-weight:500;color:#1F1E1C">7 dias de garantia.</strong> Não curtiu, me avisa e eu devolvo tudo. Minha trajetória não é promessa de resultado.</span></div>
+        <ul class="price-inc"><li><svg width="20" height="20" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg><span>Chat diário no Telegram com uma galera no mesmo caminho.</span></li><li><svg width="20" height="20" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg><span>Feedback do Condz nos seus rascunhos, todo dia útil.</span></li><li><svg width="20" height="20" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg><span>Call ao vivo todo mês, gravada.</span></li><li><svg width="20" height="20" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg><span>Bot com uma ideia de post pro seu momento, todo dia às 9h.</span></li></ul>
+        <div class="buy" style="margin-top:28px;padding-top:24px;border-top:1px solid #E7E3DB;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px">
             <p style="margin:0;font:400 16px/1.5 Inter,sans-serif;color:#3D3B37"><strong id="anual-strong" style="font-weight:500;color:#1F1E1C">Anual de fundador: R$ 1.470</strong> à vista (2 meses grátis)</p>
             <a class="ul-link" data-plan="anual" id="btn-anual" href="https://buy.stripe.com/00wcN66rWblw58heUSbsc02" style="display:inline-flex;align-items:center;gap:8px;font:500 16px/1 Inter,sans-serif;color:#1F1E1C;text-decoration:underline;text-underline-offset:6px;text-decoration-color:#A39E95">Entrar no anual<svg data-arrow width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" style="fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
           </div>
-          <p id="closed-note" hidden style="margin:32px 0 0;font:400 16px/1.55 Inter,sans-serif;color:#3D3B37">O preço de fundador fechou em 30/10. Os novos planos abrem em breve: me chama no <a href="https://x.com/condzxyz" target="_blank" rel="noopener">X</a>.</p>
+        <p id="closed-note" hidden style="margin:32px 0 0;font:400 16px/1.55 Inter,sans-serif;color:#3D3B37">O preço de fundador fechou em 30/10. Os novos planos abrem em breve: me chama no <a href="https://x.com/condzxyz" target="_blank" rel="noopener">X</a>.</p>
           <p id="membros" hidden style="margin:24px 0 0;font:400 15px/1.4 Inter,sans-serif;color:#3D3B37"><span id="membros-n" style="font-weight:500;color:#A65A43"></span> fundadores já entraram</p>
           <p style="margin:24px 0 0;font:400 14px/1.5 Inter,sans-serif;color:#6E6A63">Pagamento seguro pelo Stripe. Depois você abre o bot no Telegram e entra no grupo na hora.</p>
-        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section id="lista" style="padding:0 0 clamp(48px,6vw,88px)">
-  <div style="max-width:1160px;margin:0 auto;padding:0 20px">
-    <div data-reveal class="lead">
-      <div>
-        <div style="font:400 17px/1 Inter,sans-serif;color:#6E6A63">Ainda não é a hora?</div>
-        <h2 style="margin:18px 0 0;font:400 clamp(34px,3.8vw,52px)/1.02 'Instrument Serif',serif;letter-spacing:-0.015em;color:#1F1E1C;text-wrap:balance">Recebe os <em>bastidores</em> por email.</h2>
-        <p id="lead-sub" style="margin:16px 0 0;max-width:440px;font:400 17px/1.5 Inter,sans-serif;color:#3D3B37">O que eu estou testando no X, os números de verdade e um aviso antes do preço de fundador fechar em 30/10.</p>
-      </div>
-      <div>
-        <form id="lead-form" class="lead-form" novalidate>
-          <label for="lead-email" class="hp">Seu email</label>
-          <input id="lead-email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="seu@email.com" required maxlength="254">
-          <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
-          <button type="submit" id="lead-btn">Quero receber</button>
-        </form>
-        <p id="lead-msg" class="lead-msg" role="status" aria-live="polite">Só emails da Built. Você sai quando quiser. Veja a <a href="privacidade.html" style="color:#6E6A63">privacidade</a>.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="perguntas" style="padding:clamp(64px,8vw,112px) 0;scroll-margin-top:40px">
-  <div style="max-width:1160px;margin:0 auto;padding:0 20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(32px,6vw,96px);align-items:start">
-    <div data-reveal><h2 style="margin:0;font:400 clamp(36px,4.8vw,68px)/1 'Instrument Serif',serif;letter-spacing:-0.015em;color:#1F1E1C">Perguntas <em>frequentes</em>.</h2><img src="img/s-cavaleiro.webp" alt="Cavaleiro apontando adiante, em afresco" width="640" height="960" loading="lazy" decoding="async" style="display:block;margin-top:40px;width:min(100%,320px);height:auto"></div>
-    <div data-reveal class="faq" style="min-width:0;border-bottom:1px solid #E7E3DB">
+<section id="perguntas" style="padding:0 0 clamp(56px,7vw,96px);scroll-margin-top:40px">
+  <div style="max-width:880px;margin:0 auto;padding:0 20px">
+    <h2 data-reveal style="margin:0;font:400 clamp(32px,4vw,52px)/1 'Instrument Serif',serif;letter-spacing:-0.015em;color:#1F1E1C">Perguntas <em>rápidas</em>.</h2>
+    <div data-reveal class="faq" style="margin-top:24px;min-width:0;border-bottom:1px solid #E7E3DB">
       <details open><summary>Por que no Telegram?<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v12M2 8h12"/></svg></summary><p>Porque lá o bot cuida da entrada e da assinatura sozinho, e o grupo fica organizado em dois espaços: Avisos e Chat. Se você não tem, é grátis e leva 1 minuto pra instalar.</p></details>
       <details><summary>Preciso ter seguidores?<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v12M2 8h12"/></svg></summary><p>Não. A Built é pra quem está começando: CLT, quem toca um negócio próprio ou da família, ou quem está buscando uma nova forma de fazer dinheiro.</p></details>
       <details><summary>Quanto tempo por dia?<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v12M2 8h12"/></svg></summary><p>De 20 a 30 minutos: postar e trocar com o grupo no Chat.</p></details>
-      <details><summary>O feedback é seu mesmo?<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v12M2 8h12"/></svg></summary><p>É. Em dia útil eu passo no Chat e respondo os rascunhos postados até as 18h.</p></details>
-      <details><summary><span id="faq-min-q">Por que no mínimo 3 meses?</span><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v12M2 8h12"/></svg></summary><p id="faq-min-a">Porque ninguém cresce em 30 dias. Três meses é o tempo de criar constância, testar formato e ver o número mexer.</p></details>
       <details><summary>Como funciona o pagamento?<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v12M2 8h12"/></svg></summary><p id="faq-pagamento">Pelo Stripe. No cartão, R$ 441 a cada 3 meses, renovando sozinho. No Pix, você paga os 3 meses e o bot te avisa antes de vencer. O anual é um pagamento só de R$ 1.470, no cartão ou no Pix. Depois de pagar, você abre o bot no Telegram e entra no grupo na hora.</p></details>
       <details><summary>Posso cancelar?<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v12M2 8h12"/></svg></summary><p>Pode, quando quiser e sem multa: a assinatura só não renova no próximo período, e seu acesso vai até o fim do período pago. É só mandar /assinatura pro bot.</p></details>
       <details><summary>E se eu não gostar?<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v12M2 8h12"/></svg></summary><p>Você tem 7 dias pra pedir o dinheiro de volta, inteiro.</p></details>
-      <details><summary>O preço de fundador sobe depois?<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v12M2 8h12"/></svg></summary><p>Não, enquanto sua assinatura estiver ativa. Se cancelar e voltar depois de 30/10, entra no preço do momento.</p></details>
-      <details><summary>Quais são as regras do grupo?<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v12M2 8h12"/></svg></summary><p>Sem xingamento, sem desrespeito, sem spam. O grupo é meu e eu decido o que acontece nele, inclusive remover quem quebrar as regras. Ao entrar, você concorda com isso.</p></details>
-    </div>
-  </div>
-</section>
-
-<div class="divider" aria-hidden="true"><div><span style="left:15.5px"></span><span style="right:15.5px"></span></div></div>
-
-<section style="position:relative;min-height:clamp(560px,60vw,820px);display:flex;align-items:center;overflow:hidden;border-top:1px solid #E7E3DB">
-  <img src="img/arcada.webp" alt="Galeria em arcos que começa pintada e termina como desenho técnico" width="1536" height="1024" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center">
-  <div class="cta-overlay" aria-hidden="true" style="position:absolute;inset:0"></div>
-  <div style="position:relative;width:100%;max-width:1160px;margin:0 auto;padding:clamp(64px,8vw,112px) 20px;display:flex;justify-content:flex-end">
-    <div data-reveal style="max-width:500px">
-      <p style="margin:0;font:400 17px/1.4 Inter,sans-serif;color:#3D3B37">Do rascunho à obra. Em público.</p>
-      <h2 style="margin:20px 0 0;font:400 clamp(52px,6.4vw,96px)/.95 'Instrument Serif',serif;letter-spacing:-0.025em;color:#1F1E1C">Bora construir <em>junto</em>.</h2>
-      <p id="cta-final-sub" style="margin:24px 0 0;font:400 clamp(18px,1.6vw,20px)/1.5 Inter,sans-serif;color:#3D3B37">R$ 147/mês de fundador, até 30/10.</p>
-      <div style="margin-top:36px;display:flex"><a class="btn" href="#entrar" style="display:inline-flex;align-items:center;justify-content:center;gap:14px;height:58px;padding:0 30px;border-radius:999px;background:#1F1E1C;color:#FCFBF8;font:500 17px/1 Inter,sans-serif;text-decoration:none">Entrar no Built<svg data-arrow width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" style="fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div>
     </div>
   </div>
 </section>
@@ -660,11 +483,11 @@ details[open]::details-content{block-size:auto}
     $('#diag-pill').textContent = `Diagnóstico de ${dados.nome || 'você'} · fase: ${seg.fase}`;
     $('#diag-titulo').textContent = seg.titulo;
     $('#diag-meta').textContent = [r.meta && `Seu caminho até ${META[r.meta]}.`, r.objetivo && `Foco dos próximos 90 dias: ${OBJETIVO[r.objetivo]}.`].filter(Boolean).join(' ');
-    $('#diag-lista').innerHTML = [seg.a, TRAVA[r.trava], seg.c].filter(Boolean).map((t, i) => `<li><b>${i + 1}</b><span>${esc(t)}</span></li>`).join('');
+    $('#diag-trava').textContent = TRAVA[r.trava] || seg.a;
     $('#diagnostico').hidden = false;
     $('#hero-cta-txt').textContent = 'Ver meu diagnóstico';
     montarVideo();
-    atualizarBarra();
+    renderPassos();
     if (rolar) {
       // quem chega pelo link (?q=) vai direto, sem animação; quem acabou o quiz desliza
       const ir = () => $('#diagnostico').scrollIntoView({ behavior: rolar === 'link' || reduced ? 'instant' : 'smooth', block: 'start' });
@@ -672,30 +495,49 @@ details[open]::details-content{block-size:auto}
       if (rolar === 'link' && document.readyState !== 'complete') window.addEventListener('load', () => setTimeout(ir, 60), { once: true });
     }
   }
+  // trilha em 3 passos (hero, diagnóstico e barra do celular): 1 diagnóstico → 2 vídeo → 3 entrar.
+  // O passo 2 conta como feito quando a pessoa chega na oferta do vídeo (ctaAt) ou vê o vídeo até o fim.
+  let videoVisto = false;
+  try { videoVisto = localStorage.getItem('built_video') === '1'; } catch (e) {}
+  const passoAtual = () => (!feito ? 1 : videoVisto ? 3 : 2);
+  function renderPassos() {
+    const n = passoAtual();
+    document.querySelectorAll('[data-passos] li').forEach((li) => {
+      const p = Number(li.dataset.p);
+      li.classList.toggle('feito', p < n);
+      li.classList.toggle('agora', p === n);
+      if (p === n) li.setAttribute('aria-current', 'step'); else li.removeAttribute('aria-current');
+    });
+    $('#access-label').textContent = feito ? 'Passo 3 de 3 · entrar no grupo' : 'Acesso de fundador';
+    atualizarBarra();
+  }
+  function marcarVisto() {
+    if (videoVisto) return;
+    videoVisto = true;
+    try { localStorage.setItem('built_video', '1'); } catch (e) {}
+    renderPassos();
+  }
   let videoPronto = false;
   function montarVideo() {
     if (videoPronto) return;
     videoPronto = true;
-    const box = $('#vsl'), cta = $('#vsl-cta'), v = CFG.video || {};
+    const box = $('#vsl'), v = CFG.video || {};
     if (!v.src) {
-      box.innerHTML = '<div class="vsl-ph"><div><p>O vídeo em que eu explico tudo chega em breve.</p><small>Enquanto isso, desce que está tudo aqui embaixo.</small></div></div>';
+      box.innerHTML = '<div class="vsl-ph"><div><p>O vídeo em que eu explico tudo chega em breve.</p><small>Enquanto isso, o botão pra entrar está aqui embaixo.</small></div></div>';
       return;
     }
-    let modo = 'delay';
-    try { modo = localStorage.getItem('built_cta') || (Math.random() < 0.5 ? 'agora' : 'delay'); localStorage.setItem('built_cta', modo); } catch (e) {}
     box.innerHTML = `<video controls playsinline preload="metadata"${v.poster ? ` poster="${esc(v.poster)}"` : ''}><source src="${esc(v.src)}" type="video/mp4"></video>`;
     const vid = box.querySelector('video');
-    if (modo === 'delay' && v.ctaAt) cta.hidden = true;
     const marcos = { 25: 'video_25', 50: 'video_50', 75: 'video_75', 98: 'video_100' };
     const vistos = new Set();
     vid.addEventListener('play', () => { if (!vistos.has('play')) { vistos.add('play'); track('video_play'); } });
     vid.addEventListener('timeupdate', () => {
-      if (cta.hidden && vid.currentTime >= v.ctaAt) { cta.hidden = false; track('cta_video'); }
+      if (v.ctaAt && vid.currentTime >= v.ctaAt && !vistos.has('oferta')) { vistos.add('oferta'); track('cta_video'); marcarVisto(); }
       if (!vid.duration) return;
       const pct = (vid.currentTime / vid.duration) * 100;
       for (const [m, nome] of Object.entries(marcos)) if (pct >= Number(m) && !vistos.has(nome)) { vistos.add(nome); track(nome); }
     });
-    vid.addEventListener('ended', () => { cta.hidden = false; });
+    vid.addEventListener('ended', marcarVisto);
   }
 
   document.querySelectorAll('[data-quiz]').forEach((b) => b.addEventListener('click', () => {
@@ -706,13 +548,30 @@ details[open]::details-content{block-size:auto}
   document.querySelectorAll('[data-planos]').forEach((a) => a.addEventListener('click', () => track('planos')));
   $('#diag-refazer').addEventListener('click', () => { resp = {}; step = 0; contato = false; abrirQuiz(); });
 
-  // barra do celular: antes do quiz chama pro diagnóstico; depois, pro preço
+  // barra do celular: sempre o próximo passo da trilha
   const barTxt = $('#mobile-bar-text'), barBtn = $('#mobile-bar-btn');
+  let barPreco = 'R$ 147/mês · até 30/10';
   function atualizarBarra() {
-    if (feito) { barBtn.textContent = 'Entrar'; barBtn.setAttribute('href', '#entrar'); barBtn.onclick = null; return; }
-    barTxt.textContent = 'Diagnóstico grátis · 1 minuto';
-    barBtn.textContent = 'Começar';
-    barBtn.onclick = (ev) => { ev.preventDefault(); abrirQuiz(); };
+    const n = passoAtual();
+    if (n === 1) {
+      barTxt.textContent = 'Passo 1 de 3 · diagnóstico grátis';
+      barBtn.textContent = 'Começar';
+      barBtn.onclick = (ev) => { ev.preventDefault(); abrirQuiz(); };
+    } else if (n === 2) {
+      barTxt.textContent = 'Passo 2 de 3 · assista o vídeo';
+      barBtn.textContent = 'Assistir';
+      barBtn.onclick = (ev) => {
+        ev.preventDefault();
+        $('#vsl').scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'center' });
+        const vid = $('#vsl video');
+        if (vid && vid.paused) vid.play().catch(() => {});
+      };
+    } else {
+      barTxt.textContent = `Passo 3 de 3 · ${barPreco}`;
+      barBtn.textContent = 'Entrar';
+      barBtn.onclick = null;
+    }
+    barBtn.setAttribute('href', '#entrar');
   }
 
   // volta de quem já fez (mesmo aparelho) ou link do WhatsApp com ?q=
@@ -728,29 +587,7 @@ details[open]::details-content{block-size:auto}
   } else if (jaFez && jaFez.resp) {
     mostrarDiagnostico(jaFez, false);
   }
-  queueMicrotask(atualizarBarra);
-
-  // Lista de email
-  (function leadForm() {
-    const form = $('#lead-form'), input = $('#lead-email'), btn = $('#lead-btn'), msg = $('#lead-msg');
-    const OKRX = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
-    const say = (t, err) => { msg.textContent = t; msg.classList.toggle('err', !!err); };
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const email = input.value.trim();
-      if (!OKRX.test(email)) { say('Confere o email, parece que faltou alguma coisa.', true); input.focus(); return; }
-      btn.disabled = true; btn.textContent = 'Enviando…';
-      fetch(CFG.leadUrl, { method: 'POST', headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({ email, source: 'landing-preco', utm, tg, website: form.website.value }) })
-        .then((r) => r.json().then((d) => ({ r, d })))
-        .then(({ r, d }) => {
-          if (!r.ok || !d.ok) throw new Error(d.error || 'erro');
-          form.outerHTML = '<p class="lead-done">Pronto, você está na lista.</p>';
-          say('Sai quando quiser pelo link no fim de cada email.');
-        })
-        .catch((err) => { btn.disabled = false; btn.textContent = 'Quero receber'; say(String(err.message).includes('tentativas') ? 'Muitas tentativas. Tenta de novo daqui a pouco.' : 'Não deu certo agora. Tenta de novo em instantes.', true); });
-    });
-  })();
+  renderPassos();
 
   // Prazo do preço de fundador. Depois dele a página vende pelo preço cheio.
   const deadline = Date.parse(CFG.fundadorAte);
@@ -796,12 +633,8 @@ details[open]::details-content{block-size:auto}
       `Pelo Stripe. No cartão, ${reais(P.triTotal)} a cada 3 meses${mensalOk ? ` ou ${reais(P.mes)} por mês` : ''}, renovando sozinho. ` +
       `No Pix, você paga ${mensalOk ? 'o período (1 ou 3 meses)' : 'os 3 meses'} e o bot te avisa antes de vencer. ` +
       `O anual é um pagamento só de ${reais(P.anual)}, no cartão ou no Pix. Depois de pagar, você abre o bot no Telegram e entra no grupo na hora.`;
-    if (!mensalOk) return;
-    $('#faq-min-q').textContent = 'Por que o plano de 3 meses sai mais barato?';
-    $('#faq-min-a').textContent = `Porque ninguém cresce em 30 dias. Três meses é o tempo de criar constância, testar formato e ver o número mexer, e quem se compromete com isso paga menos. O mensal, de ${reais(P.mes)}, é pra quem prefere ir mês a mês.`;
-    $('#hero-strong').textContent = encerrado ? `A partir de ${reais(P.tri)}/mês` : `Preço de fundador: a partir de ${reais(P.tri)}/mês`;
-    $('#cta-final-sub').textContent = encerrado ? `A partir de ${reais(P.tri)}/mês no plano de 3 meses. Ou mensal, ou anual.` : `A partir de ${reais(P.tri)}/mês de fundador, até 30/10.`;
-    $('#mobile-bar-text').textContent = encerrado ? `A partir de ${reais(P.tri)}/mês` : `A partir de ${reais(P.tri)}/mês · até 30/10`;
+    barPreco = encerrado ? `a partir de ${reais(P.tri)}/mês` : `${reais(P.tri)}/mês até 30/10`;
+    atualizarBarra();
   }
   document.querySelectorAll('#bill button').forEach((b) => b.addEventListener('click', () => {
     bill = b.dataset.bill;
@@ -821,39 +654,27 @@ details[open]::details-content{block-size:auto}
     if (left <= 0) {
       if (encerrado) return;
       encerrado = true;
-      $('#lead-sub').textContent = 'O que eu estou testando no X, os números de verdade e as novidades da Built.';
-      $('#hero-dot').hidden = true;
-      $('#price-label').textContent = 'Built';
       $('#price-strike').hidden = true;
       $('#membros').hidden = true;
       if (!temCheio) {
-        $('#hero-strong').textContent = 'Preço de fundador encerrado';
-        $('#hero-rest').textContent = ' · R$ 197/mês';
         $('#price-main').textContent = 'R$ 197';
         $('#price-main').style.color = '#1F1E1C';
         $('#price-deadline').textContent = 'Preço de fundador encerrado.';
         $('#price').classList.add('closed');
         $('#closed-note').hidden = false;
-        $('#cta-final-sub').textContent = 'R$ 197/mês, mínimo de 3 meses.';
-        $('#mobile-bar-text').textContent = 'R$ 197/mês';
+        barPreco = 'R$ 197/mês';
+        atualizarBarra();
         return;
       }
-      $('#hero-strong').textContent = 'R$ 197/mês';
-      $('#hero-rest').textContent = ' · plano de 3 meses ou anual';
-      $('#access-label').textContent = 'Acesso ao Built';
       $('#price-deadline').hidden = true;
       $('#anual-strong').textContent = 'Anual: R$ 1.970';
-      $('#cta-final-sub').textContent = 'R$ 197/mês no plano de 3 meses. Ou anual por R$ 1.970.';
-      $('#mobile-bar-text').textContent = 'R$ 197/mês · mínimo de 3 meses';
       renderBill();
-      if (CFG.linksCheio.mensalCartao && CFG.linksCheio.mensalPix) $('#hero-rest').textContent = ' · 3 meses, mensal ou anual';
       return;
     }
-    if (left < 48 * 3600e3) {
-      const cd = `${Math.floor(left / 86400e3)}d ${String(Math.floor((left % 86400e3) / 3600e3)).padStart(2, '0')}h`;
-      $('#hero-rest').textContent = ` · fecha em ${cd}`;
-      $('#price-deadline').textContent = `Preço de fundador fecha em ${cd}. Travado enquanto você ficar.`;
-    }
+    // contagem até o fim do preço de fundador (prazo real, 30/10 23h59)
+    const d = Math.floor(left / 86400e3), h = Math.floor((left % 86400e3) / 3600e3), m = Math.floor((left % 3600e3) / 60e3);
+    const cd = d ? `${d}d ${String(h).padStart(2, '0')}h` : `${h}h ${String(m).padStart(2, '0')}min`;
+    $('#price-deadline').textContent = `Preço de fundador fecha em ${cd} (30/10, 23h59). Travado enquanto você ficar.`;
   }
   renderPhase();
   if (!encerrado) renderBill();
@@ -884,11 +705,17 @@ details[open]::details-content{block-size:auto}
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  // Barra fixa no celular: aparece depois do hero e some quando o preço está na tela
+  // Barra fixa no celular: aparece depois do hero e some quando o vídeo, o botão dele ou o preço estão na tela
   const bar = $('#mobile-bar'), footer = $('#footer');
   let heroOut = false, entrarIn = false;
+  const vistosNaTela = new Set();
+  const vistosIO = new IntersectionObserver((entries) => entries.forEach((en) => {
+    if (en.isIntersecting) vistosNaTela.add(en.target); else vistosNaTela.delete(en.target);
+    updateBar();
+  }));
+  ['#vsl', '#vsl-cta'].forEach((sel) => vistosIO.observe($(sel)));
   const updateBar = () => {
-    const show = window.innerWidth < 768 && heroOut && !entrarIn;
+    const show = window.innerWidth < 768 && heroOut && !entrarIn && !vistosNaTela.size;
     bar.hidden = !show;
     footer.style.paddingBottom = show ? '112px' : '40px';
   };
