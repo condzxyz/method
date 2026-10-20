@@ -500,9 +500,10 @@ details[open]::details-content{block-size:auto}
     leadUrl: 'https://built-bot.built-bot.workers.dev/lead',
     visitUrl: 'https://built-bot.built-bot.workers.dev/v',
     quizUrl: 'https://built-bot.built-bot.workers.dev/quiz',
-    // Vídeo de vendas. Sem src, a página mostra o aviso "vídeo em produção" e o botão aparece direto.
-    // ctaAt: segundo em que o botão aparece (metade das visitas vê o botão desde o início, pra comparar).
-    video: { src: '', poster: '', ctaAt: 390 },
+    // Vídeo de vendas (gravado 19/10, 5:23). Sem src, a página mostra o aviso "vídeo em produção" e o botão aparece direto.
+    // ctaAt: segundo em que o botão aparece = começo da oferta ("147 no plano de três meses", 4:43).
+    // Metade das visitas vê o botão desde o início, pra comparar.
+    video: { src: 'video/vsl.mp4', poster: 'video/vsl.jpg', ctaAt: 282 },
     mostrarMembrosAPartirDe: 10,
   };
   const $ = (s) => document.querySelector(s);
