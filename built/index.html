@@ -433,11 +433,11 @@ details[open]::details-content{block-size:auto}
     }
     if (!contato) { contato = true; track('quiz_contato'); }
     const salvo = loadQ() || {};
-    qbody.innerHTML = `<div class="quiz-step"><h2 class="quiz-q" id="quiz-q">Pra onde mando seu diagnóstico?</h2><p class="quiz-hint">Ele aparece aqui na hora. O WhatsApp é pra eu te chamar se você tiver dúvida.</p>
+    qbody.innerHTML = `<div class="quiz-step"><h2 class="quiz-q" id="quiz-q">Pra onde mando seu diagnóstico?</h2><p class="quiz-hint">Ele aparece aqui na hora e uma cópia vai pro seu email. O WhatsApp é pra eu te chamar se você tiver dúvida.</p>
       <form class="quiz-form" novalidate>
         <label><span>Seu nome</span><input name="nome" autocomplete="given-name" required maxlength="60" value="${esc(salvo.nome || '')}"></label>
         <label><span>WhatsApp com DDD</span><input name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" placeholder="(11) 98765-4321" required maxlength="20"></label>
-        <label><span>Email <i>(opcional)</i></span><input name="email" type="email" inputmode="email" autocomplete="email" placeholder="voce@email.com" maxlength="254"></label>
+        <label><span>Seu email</span><input name="email" type="email" inputmode="email" autocomplete="email" placeholder="voce@email.com" required maxlength="254"></label>
         <label><span>Seu @ no X <i>(opcional)</i></span><input name="x" autocapitalize="off" autocomplete="off" spellcheck="false" placeholder="@seuuser" maxlength="16"></label>
         <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
         <p class="quiz-err" role="alert"></p>
@@ -453,7 +453,8 @@ details[open]::details-content{block-size:auto}
       const digitos = whatsapp.replace(/\D/g, '');
       if (!nome) { err.textContent = 'Faltou o seu nome.'; form.nome.focus(); return; }
       if (!/^(55)?\d{10,11}$/.test(digitos)) { err.textContent = 'Confere o WhatsApp com DDD.'; form.whatsapp.focus(); return; }
-      if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) { err.textContent = 'Confere o email.'; form.email.focus(); return; }
+      if (!email) { err.textContent = 'Coloca seu email: o diagnóstico também vai pra lá.'; form.email.focus(); return; }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) { err.textContent = 'Confere o email.'; form.email.focus(); return; }
       enviando = true; btn.disabled = true; btn.textContent = 'Montando seu diagnóstico…'; err.textContent = '';
       fetch(CFG.quizUrl, { method: 'POST', headers: { 'content-type': 'application/json' },
         body: JSON.stringify({ nome, whatsapp, email, x: form.x.value.trim(), respostas: resp, src: fonte, utm, tg, website: form.website.value }) })
