@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>O Mapa é seu · Method</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#050505">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src https://built-bot.built-bot.workers.dev; base-uri 'none'; form-action 'none'; object-src 'none'; frame-src 'none'">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<style>
+@font-face{font-family:'Inter';src:url(fonts/inter.woff2) format('woff2');font-weight:100 900;font-display:swap}
+@font-face{font-family:'Newsreader';src:url(fonts/newsreader-display.woff2) format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Newsreader';src:url(fonts/newsreader-display-italic.woff2) format('woff2');font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:'JetBrains Mono';src:url(fonts/jetbrains-mono.woff2) format('woff2');font-weight:100 900;font-display:swap}
+:root{--bg:#050505;--linha:rgba(255,255,255,.08);--linha2:rgba(255,255,255,.16);--txt2:rgba(255,255,255,.76);--txt3:rgba(255,255,255,.52);--serif:'Newsreader',Georgia,serif;--mono:'JetBrains Mono',ui-monospace,monospace;--sans:Inter,system-ui,-apple-system,sans-serif;--verde:#3CCB7F;--roxo:#9B8CFF}
+*,*::before,*::after{box-sizing:border-box}
+html,body{height:100%;overflow:hidden}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:#fff;font:400 16px/1.5 var(--sans);-webkit-font-smoothing:antialiased}
+h1,h2,p{margin:0}
+[hidden]{display:none!important}
+.app{position:fixed;inset:0;overflow:hidden}
+.local .app{top:30px}
+.tela{position:absolute;inset:0;display:flex;flex-direction:column;overflow:hidden}
+.camada{position:absolute;inset:0;pointer-events:none}
+.ceu{background:#1b4f9a url(img/montanha-v.webp) center 62%/cover no-repeat}
+@media (min-aspect-ratio:1/1){.ceu{background-image:url(img/montanha-h.webp);background-position:center 58%}}
+.ceu::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(4,12,28,.42),rgba(4,12,28,.24) 40%,rgba(4,10,22,.6))}
+.pontos{background-image:radial-gradient(rgba(255,255,255,.11) 1px,transparent 1.4px);background-size:18px 18px;-webkit-mask-image:radial-gradient(ellipse 78% 66% at 50% 42%,#000 30%,transparent 100%);mask-image:radial-gradient(ellipse 78% 66% at 50% 42%,#000 30%,transparent 100%)}
+.brilho{background:radial-gradient(95% 55% at 50% 110%,rgba(80,150,235,.5),rgba(30,80,160,.18) 45%,transparent 75%)}
+.miolo{position:relative;z-index:1;flex:1;min-height:0;display:flex;flex-direction:column;width:100%;max-width:560px;margin:0 auto;padding:12px 16px calc(14px + env(safe-area-inset-bottom))}
+.rotulo{font:500 11.5px/1.35 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--txt3)}
+.h-serif{font-family:var(--serif);font-weight:400;letter-spacing:-.02em;text-wrap:balance}
+.h-serif em{font-style:italic}
+.btn{appearance:none;border:0;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;width:100%;min-height:54px;padding:0 20px;border-radius:10px;background:#fff;color:#0A0A0A;font:600 13.5px/1.1 var(--mono);letter-spacing:.08em;text-transform:uppercase;text-decoration:none;text-align:center}
+.btn:hover{background:#E9E9E9}
+.btn svg{width:15px;height:15px;flex:none;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.linkzinho{display:block;margin:10px auto 0;padding:8px 6px;font:500 11.5px/1.4 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--txt2);text-align:center;text-underline-offset:4px}
+.linkzinho:hover{color:#fff}
+/* tela 1: confirmação + Built, no céu */
+.confirma{flex:none;align-self:center;display:flex;gap:10px;align-items:center;max-width:100%;padding:9px 14px 9px 10px;border-radius:999px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.32);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);font:500 13.5px/1.35 var(--sans);color:rgba(255,255,255,.92)}
+.confirma i{flex:none;width:24px;height:24px;border-radius:50%;background:var(--verde);display:grid;place-items:center}
+.confirma b{color:#fff;font-weight:600}
+.up{flex:1;min-height:0;margin-top:12px;display:flex;flex-direction:column;padding:clamp(16px,2.6vh,26px) 18px;border-radius:24px;background:rgba(8,12,20,.74);border:1px solid var(--linha2);-webkit-backdrop-filter:blur(22px) saturate(1.1);backdrop-filter:blur(22px) saturate(1.1);box-shadow:0 30px 70px rgba(0,10,30,.35)}
+.up h1{margin-top:8px;font-size:clamp(30px,min(8.6vw,5vh),46px);line-height:1.04}
+.up .lede{margin-top:8px;font-size:clamp(14.5px,2vh,16px);line-height:1.45;color:var(--txt2)}
+.lista{margin:clamp(10px,1.8vh,16px) 0 0;padding:0;list-style:none;display:grid;gap:clamp(6px,1.1vh,10px)}
+.lista li{display:flex;gap:10px;font-size:clamp(14px,1.95vh,15.5px);line-height:1.38;color:rgba(255,255,255,.9)}
+.lista li::before{content:"";flex:none;width:18px;height:18px;margin-top:1px;border-radius:50%;background:var(--verde) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 8.5l2.5 2.5L12 5.5' fill='none' stroke='%23050505' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/12px no-repeat}
+.credito{margin-top:clamp(10px,1.8vh,16px);display:flex;gap:8px;padding:10px 12px;border-radius:14px;background:rgba(255,255,255,.06);border:1px solid var(--linha);font:500 clamp(13.5px,1.9vh,15px)/1.4 var(--sans);color:#fff}
+.credito::before{content:"✦";flex:none;color:var(--roxo)}
+.espaco{flex:1;min-height:8px}
+.planos{display:grid;gap:8px}
+.plano{display:flex;align-items:center;justify-content:space-between;gap:10px;text-decoration:none;color:#fff;padding:12px 14px;border-radius:14px;border:1px solid var(--linha2);background:rgba(255,255,255,.05);transition:background .15s}
+.plano:hover{background:rgba(255,255,255,.1)}
+.plano.dest{background:#fff;color:#0A0A0A;border-color:#fff}
+.plano.dest:hover{background:#ECECEC}
+.plano b{font:600 15.5px/1.2 var(--sans)}
+.tag{display:table;margin-top:5px;padding:3px 8px;border-radius:999px;background:#0A0A0A;color:#fff;font:600 10.5px/1.4 var(--mono);letter-spacing:.06em;vertical-align:1px}
+.plano .v{font:400 25px/1 var(--serif);letter-spacing:-.01em;white-space:nowrap}
+.plano .v s{font:500 12.5px/1 var(--sans);opacity:.55;margin-right:7px;letter-spacing:0}
+.letras{margin-top:8px;font:400 12px/1.45 var(--sans);color:var(--txt3)}
+@media (max-height:700px){.up .lede{display:none}.tag{display:none}.lista{gap:4px}.plano{padding:9px 12px}.letras{margin-top:6px}.credito{padding:8px 10px}.linkzinho{margin-top:4px}}
+@media (min-height:760px){#t-up .miolo{justify-content:center}.up{flex:0 0 auto}.up .espaco{flex:0 0 16px}}
+/* tela 2: acesso, no preto */
+.acesso{flex:1;min-height:0;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
+.status{display:inline-flex;align-items:center;gap:9px;font:500 11.5px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--txt3)}
+.ponto-verde{width:9px;height:9px;border-radius:50%;background:var(--verde);animation:pulso 1.8s infinite}
+@keyframes pulso{0%{box-shadow:0 0 0 0 rgba(60,203,127,.55)}70%{box-shadow:0 0 0 12px rgba(60,203,127,0)}100%{box-shadow:0 0 0 0 rgba(60,203,127,0)}}
+.acesso h1{margin-top:14px;font-size:clamp(36px,min(10vw,6vh),58px);line-height:1.02}
+.acesso .lede{margin:10px auto 0;max-width:40ch;color:var(--txt2);text-wrap:balance}
+.passos{width:100%;margin:clamp(14px,3vh,26px) 0 0;padding:0;list-style:none;display:grid;gap:8px;counter-reset:p;text-align:left}
+.passos li{display:flex;gap:12px;align-items:flex-start;padding:13px 14px;border-radius:16px;background:rgba(14,14,14,.92);border:1px solid var(--linha);counter-increment:p;font-size:15px;line-height:1.45;color:var(--txt2)}
+.passos li::before{content:"0" counter(p);flex:none;padding-top:3px;font:500 12px/1 var(--mono);color:var(--txt3)}
+.passos b{color:#fff;font-weight:600}
+.acesso .btn{margin-top:clamp(14px,3vh,24px)}
+.rodape{flex:none;margin-top:12px;text-align:center;font:400 12.5px/1.5 var(--sans);color:var(--txt3)}
+.rodape a{color:var(--txt2)}
+.teste-local{position:fixed;top:3px;left:50%;transform:translateX(-50%);z-index:500;padding:5px 12px;border-radius:999px;background:#F2C12E;color:#1F1E1C;font:600 12px/1.3 Inter,sans-serif;box-shadow:0 4px 14px rgba(31,30,28,.18);white-space:nowrap}
+.teste-local button{appearance:none;border:0;background:none;padding:0;font:inherit;text-decoration:underline;cursor:pointer;color:inherit}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<div class="app">
+
+  <!-- TELA 1: confirmação + a Built com os R$ 27,90 abatidos -->
+  <section class="tela" id="t-up">
+    <div class="camada ceu"></div>
+    <div class="miolo">
+      <div class="confirma"><i><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 8.5l2.5 2.5L12 5.5" fill="none" stroke="#050505" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></i><span><b>Pagamento confirmado.</b> O acesso ao Mapa foi pro seu email.</span></div>
+      <div class="up">
+        <p class="rotulo">Só aparece agora</p>
+        <h1 class="h-serif">O estágio 3 não acontece <em>sozinho</em>.</h1>
+        <p class="lede">O Mapa te dá o caminho. A Built é onde você anda com gente junto, no mesmo ritmo.</p>
+        <ul class="lista">
+          <li>Grupo no Telegram com quem está construindo alguma coisa</li>
+          <li>Call ao vivo com o Conrado e feedback nos seus rascunhos</li>
+          <li>Um bot que te manda uma ideia por dia pro seu momento</li>
+        </ul>
+        <p class="credito" id="credito"></p>
+        <div class="espaco"></div>
+        <div class="planos" id="planos"></div>
+        <p class="letras" id="letras"></p>
+        <a class="linkzinho" href="#" id="btn-nao">Agora não, vou começar pelo Mapa</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TELA 2: acesso ao Mapa -->
+  <section class="tela" id="t-acesso" hidden>
+    <div class="camada pontos"></div><div class="camada brilho"></div>
+    <div class="miolo">
+      <div class="acesso">
+        <p class="status"><i class="ponto-verde"></i>Acesso liberado</p>
+        <h1 class="h-serif" id="titulo">Pronto. O Mapa é seu.</h1>
+        <p class="lede">O acesso foi pro seu email. Se não achar, olha no spam e na aba Promoções.</p>
+        <ol class="passos">
+          <li><span><b>Hoje:</b> assista a aula 0 (15 minutos). Quem faz a primeira aula na primeira semana termina muito mais o curso.</span></li>
+          <li><span id="passo-rota"><b>Depois:</b> siga a ordem do seu perfil.</span></li>
+          <li><span><b>Todo dia:</b> 20 a 30 minutos. Cada módulo termina com uma tarefa curta.</span></li>
+        </ol>
+        <a class="btn" id="btn-acesso" href="#" hidden>Abrir o Mapa agora <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+      <p class="rodape"><a href="privacidade.html">Privacidade</a> · <a href="termos.html">Termos</a> · Acesso ou reembolso: <a href="mailto:conrado@doti.gg">conrado@doti.gg</a></p>
+    </div>
+  </section>
+</div>
+<div class="teste-local" id="teste-local" hidden>teste local · nada é salvo nem cobrado · <button type="button" id="btn-zerar">recomeçar do zero</button></div>
+<script>
+(() => {
+  'use strict';
+  // ================== CONFIG (edite aqui) ==================
+  const CFG = {
+    areaMembros: '',  // link de onde ficam as aulas. Vazio = esconde o botão (no teste local mostra um aviso)
+    credito: 27.90,   // desconto da 1ª cobrança da Built pra quem comprou o Mapa
+    cupom: 'MAPA',    // código de promoção do Stripe (precisa existir e o link precisa aceitar código)
+    // Payment Links da Built no preço cheio (os mesmos de linksCheio na landing da Built)
+    planos: [
+      { k: 'trimestral', nome: '3 meses', preco: 591, por: 'a cada 3 meses', link: 'https://buy.stripe.com/4gM28saIc4X8cAJdQObsc04', tag: 'R$ 197/mês' },
+      { k: 'mensal', nome: 'Mensal', preco: 256, por: 'por mês', link: 'https://buy.stripe.com/7sYfZi9E8dtEdENfYWbsc09' },
+    ],
+    visitUrl: 'https://built-bot.built-bot.workers.dev/v',
+  };
+  // ==========================================================
+  const $ = (s) => document.querySelector(s);
+  const esc = (t) => String(t ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
+  const brl = (v) => (Number.isInteger(v) ? v.toLocaleString('pt-BR') : v.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }));
+  const local = /^(localhost|127\.0\.0\.1)$/.test(location.hostname);
+  const track = (nome) => {
+    if (local || !CFG.visitUrl) return;
+    try { const body = JSON.stringify({ e: 'evento', nome, src: 'obrigado' }); if (!(navigator.sendBeacon && navigator.sendBeacon(CFG.visitUrl, body))) fetch(CFG.visitUrl, { method: 'POST', body, keepalive: true }).catch(() => {}); } catch (e) {}
+  };
+  const tela = (id) => ['t-up', 't-acesso'].forEach((t) => { $('#' + t).hidden = t !== id; });
+
+  if (local) {
+    $('#teste-local').hidden = false; document.body.classList.add('local');
+    $('#btn-zerar').addEventListener('click', () => { try { localStorage.removeItem('carta_v1'); } catch (e) {} location.href = './?simular=1'; });
+  }
+
+  // a carta que a pessoa fez fica salva no aparelho (mesmo site)
+  let carta = null;
+  try { carta = JSON.parse(localStorage.getItem('carta_v1') || 'null'); } catch (e) {}
+  const ROTA = {
+    trator: ['Energia', 'Estrutura mensal', 'Negociação'], estrategista: ['Dinheiro com IA', 'Aparecer sem vergonha', 'Estrutura mensal'],
+    joia: ['Negociação', 'Aparecer sem vergonha', 'Dinheiro com IA'], faisca: ['Foco', 'Estrutura mensal', 'Dinheiro com IA'],
+    ancora: ['Dinheiro com IA', 'Como pensar', 'Negociação'], farol: ['Dinheiro sem FOMO', 'Dinheiro com IA', 'Negociação'],
+  };
+  if (carta && carta.nome) $('#titulo').textContent = `Pronto, ${carta.nome}. O Mapa é seu.`;
+  const arq = carta && carta.arq;
+  if (arq && ROTA[arq]) $('#passo-rota').innerHTML = `<b>Depois:</b> siga a ordem do seu perfil: ${ROTA[arq].map(esc).join(', ')}.`;
+  if (CFG.areaMembros) { $('#btn-acesso').hidden = false; $('#btn-acesso').href = CFG.areaMembros; }
+  else if (local) {
+    $('#btn-acesso').hidden = false;
+    $('#btn-acesso').addEventListener('click', (ev) => { ev.preventDefault(); alert('No ar, este botão abre as aulas do Mapa.'); });
+  }
+
+  // no teste local, os planos vão pro checkout de teste em vez do Stripe de verdade
+  const link = (u, k) => { if (local) return `checkout-teste.html?p=built&plano=${k}`; try { const x = new URL(u); if (CFG.cupom) x.searchParams.set('prefilled_promo_code', CFG.cupom); return x.toString(); } catch (e) { return u; } };
+  $('#credito').textContent = `Como você pegou o Mapa, os R$\u00a0${brl(CFG.credito)} voltam como desconto na 1ª cobrança.`;
+  $('#planos').innerHTML = CFG.planos.map((p, i) => `<a class="plano${i === 0 ? ' dest' : ''}" href="${esc(link(p.link, p.k))}" data-k="${p.k}" rel="noopener"><b>${esc(p.nome)}${p.tag ? `<span class="tag">${esc(p.tag)}</span>` : ''}</b><span class="v"><s>R$ ${brl(p.preco)}</s>R$ ${brl(p.preco - CFG.credito)}</span></a>`).join('');
+  $('#letras').textContent = `Depois da 1ª cobrança: ${CFG.planos.map((p) => `R$\u00a0${brl(p.preco)} ${p.por}`).join(' ou ')}. Renova no cartão e você cancela quando quiser, sem multa. 7 dias de garantia.`;
+  document.querySelectorAll('.plano').forEach((a) => a.addEventListener('click', () => track(`up_${a.dataset.k}`)));
+  $('#btn-nao').addEventListener('click', (ev) => { ev.preventDefault(); track('up_nao'); tela('t-acesso'); });
+  $('#btn-acesso').addEventListener('click', () => track('up_acesso'));
+  track('up_viu');
+})();
+</script>
+</body>
+</html>

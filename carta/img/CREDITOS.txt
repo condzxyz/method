@@ -1,0 +1,4 @@
+Fundo (montanha-h.webp e montanha-v.webp): gerado com gpt-image-2 (OpenAI) em 27/10/2026; PNGs originais em ~/Otto/mapa/versoes/fundo-montanha-original/.
+Artes das cartas (arte-*.webp): geradas com gpt-image-2 (OpenAI) em 27/10/2026, recortadas pra janela da carta; PNGs originais em ~/Otto/mapa/versoes/artes-originais/.
+Fonte Newsreader: Production Type, SIL Open Font License (Google Fonts).
+Foto do Conrado (conrado.webp): do próprio Conrado.
