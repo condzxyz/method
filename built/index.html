@@ -2,311 +2,483 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Built · build in public com @condzxyz</title>
-<meta name="description" content="Comunidade no Telegram pra crescer no X, criar conteúdo com IA e aprender a vender. Feedback do @condzxyz todo dia útil.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Built · build in public com @condzxyz">
-<meta property="og:description" content="Comunidade no Telegram pra crescer no X, criar conteúdo com IA e aprender a vender. Feedback do @condzxyz todo dia útil.">
-<meta property="og:image" content="https://condzmethod.com/built/og.jpg">
-<meta property="og:url" content="https://condzmethod.com/built/">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#F7F5F0">
-<meta name="referrer" content="strict-origin-when-cross-origin">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src https://built-bot.built-bot.workers.dev; base-uri 'none'; form-action 'none'; object-src 'none'; frame-src 'none'">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Descubra seu perfil e como crescer seu negócio com IA · Method</title>
+<meta name="description" content="Teste grátis de 1 minuto: 8 perguntas sobre como você trabalha, vende e decide. No fim, você vê o seu perfil, o que te trava e como usar IA pra crescer o seu negócio.">
 <link rel="canonical" href="https://condzmethod.com/built/">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 22'%3E%3Crect x='1' y='14' width='5' height='7' fill='%231F1E1C'/%3E%3Crect x='8.5' y='8' width='5' height='13' fill='%231F1E1C'/%3E%3Crect x='16' y='1' width='5' height='20' fill='%23A65A43'/%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Inter:wght@400;500&amp;display=swap">
-<link rel="preload" as="image" href="img/s-mao-pintada.webp">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://condzmethod.com/built/">
+<meta property="og:title" content="Descubra seu perfil e como crescer seu negócio com IA">
+<meta property="og:description" content="8 perguntas rápidas. No fim, o seu perfil, o que te trava e onde a IA entra no seu caso.">
+<meta property="og:image" content="https://condzmethod.com/built/og.jpg">
+<meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#050505">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: blob:; connect-src 'self' https://built-bot.built-bot.workers.dev; media-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'; frame-src 'none'">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preload" href="fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/newsreader-display.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/newsreader-display-italic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="img/montanha-v.webp" as="image" media="(max-aspect-ratio: 1/1)">
+<link rel="preload" href="img/montanha-h.webp" as="image" media="(min-aspect-ratio: 1/1)">
 <style>
+@font-face{font-family:'Inter';src:url(fonts/inter.woff2) format('woff2');font-weight:100 900;font-style:normal;font-display:swap}
+@font-face{font-family:'Newsreader';src:url(fonts/newsreader-display.woff2) format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Newsreader';src:url(fonts/newsreader-display-italic.woff2) format('woff2');font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:'JetBrains Mono';src:url(fonts/jetbrains-mono.woff2) format('woff2');font-weight:100 900;font-style:normal;font-display:swap}
+:root{--bg:#050505;--sup:#0E0E0E;--sup2:#151515;--linha:rgba(255,255,255,.08);--linha2:rgba(255,255,255,.14);--txt:#FFFFFF;--txt2:rgba(255,255,255,.76);--txt3:rgba(255,255,255,.52);--serif:'Newsreader',Georgia,serif;--mono:'JetBrains Mono',ui-monospace,monospace;--sans:Inter,system-ui,-apple-system,sans-serif;--el:#E8622F;--el-dark:#9A3416;--el-light:#FBE4D8;--amarelo:#F5C518;--verde:#3CCB7F;--vermelho:#F0544F;--roxo:#9B8CFF}
 *,*::before,*::after{box-sizing:border-box}
-:root{interpolate-size:allow-keywords}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{margin:0;background:radial-gradient(ellipse at 15% 10%,#E6DCCB,transparent 55%),radial-gradient(ellipse at 85% 85%,#CDBFA8,transparent 60%),#D9CDB9;color:#1F1E1C;font-family:Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
-body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:200;opacity:.07;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
-a{color:#1F1E1C;text-underline-offset:3px}
-a:hover{color:#3D3B37}
-a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #1F1E1C;outline-offset:3px}
-a [data-arrow]{transition:transform .25s cubic-bezier(.2,.7,.2,1)}
-a:hover [data-arrow]{transform:translateX(3px)}
-summary{list-style:none;cursor:pointer}
-summary::-webkit-details-marker{display:none}
-details summary svg{transition:transform .3s cubic-bezier(.2,.7,.2,1)}
-details[open] summary svg{transform:rotate(45deg)}
-details::details-content{block-size:0;overflow:clip;transition:block-size .35s cubic-bezier(.2,.7,.2,1),content-visibility .35s allow-discrete}
-details[open]::details-content{block-size:auto}
+html,body{height:100%;overflow:hidden}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--txt);font:400 16px/1.5 var(--sans);-webkit-font-smoothing:antialiased}
+img,svg{display:block;max-width:100%}
+button{font:inherit;color:inherit}
+a{color:inherit;text-underline-offset:3px}
+h1,h2,h3,p{margin:0}
 [hidden]{display:none!important}
-@keyframes builtPulse{0%{box-shadow:0 0 0 0 rgba(166,90,67,.45)}70%{box-shadow:0 0 0 7px rgba(166,90,67,0)}100%{box-shadow:0 0 0 0 rgba(166,90,67,0)}}
-.dot{width:8px;height:8px;border-radius:50%;background:#A65A43;flex:none;animation:builtPulse 2s cubic-bezier(.2,.7,.2,1) infinite}
-@media (prefers-reduced-motion:reduce){.dot{animation:none}html{scroll-behavior:auto}}
-/* hovers (o Claude Design usava style-hover) */
-.nl:hover{color:#1F1E1C!important}
-.btn-ghost:hover{border-color:#1F1E1C!important;color:#1F1E1C!important}
-.btn:hover{background:#000!important;color:#FCFBF8!important}
-.ul-link:hover{text-decoration-color:#1F1E1C!important;color:#1F1E1C!important}
-.card-link:hover{border-color:#D6D0C5!important;color:#1F1E1C!important}
-.btn-out:hover{border-color:#1F1E1C!important;color:#1F1E1C!important}
-.fl:hover{color:#1F1E1C!important}
-/* cabeçalho */
-.header{border-bottom:1px solid transparent;transition:border-color .2s}
-.header.scrolled{border-bottom-color:#E7E3DB}
-.navlinks{display:flex;gap:40px;font:400 17px/1 Inter,sans-serif}
-/* mãos do hero: 3 tamanhos (celular, tablet, desktop) */
-#hero{--pad:clamp(72px,10vh,120px);--hl-top:34%;--hr-top:40%;--hl-w:clamp(260px,27vw,540px);--hr-w:clamp(280px,31vw,600px)}
-@media (max-width:1279px){#hero{--pad:calc(22vw + 96px);--hl-top:104px;--hr-top:168px;--hl-w:40vw;--hr-w:44vw}}
-@media (max-width:767px){#hero{--pad:205px;--hl-top:96px;--hr-top:166px;--hl-w:56vw;--hr-w:58vw}.navlinks{display:none}}
-/* céu do hero: passa por baixo do menu; o véu clareia o centro (texto) e funde embaixo com o papel */
-#hero{margin-top:-80px}
-.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;pointer-events:none;user-select:none}
-.hero-veil{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 46% 50% at 50% 52%,rgba(247,245,240,.58),rgba(247,245,240,.14) 72%,rgba(247,245,240,0)),linear-gradient(to bottom,rgba(247,245,240,.5),rgba(247,245,240,0) 170px,rgba(247,245,240,0) 72%,#F7F5F0)}
-.header{background:rgba(247,245,240,0);transition:border-color .2s,background-color .2s}
-.header.scrolled{background:rgba(247,245,240,.84);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
-/* FAQ */
-.faq details{border-top:1px solid #E7E3DB}
-.faq summary{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 0;font:500 18px/1.4 Inter,sans-serif;color:#1F1E1C}
-.faq summary svg{flex:none;fill:none;stroke:#1F1E1C;stroke-width:1.5;stroke-linecap:round}
-.faq p{margin:0;padding:0 32px 24px 0;font:400 16px/1.6 Inter,sans-serif;color:#3D3B37}
-.divider{border-top:1px solid #E7E3DB}
-.divider div{position:relative;max-width:1160px;margin:0 auto;height:0}
-.divider span{position:absolute;top:-5px;width:9px;height:9px;background:linear-gradient(#A39E95,#A39E95) center/1px 9px no-repeat,linear-gradient(#A39E95,#A39E95) center/9px 1px no-repeat}
-.closed .buy{display:none!important}
-.bill{margin-top:22px;display:inline-flex;padding:4px;border-radius:999px;background:#F1EEE7;border:1px solid #E7E3DB;gap:2px}
-.bill[hidden]{display:none}
-.bill button{appearance:none;border:0;background:transparent;cursor:pointer;height:40px;padding:0 18px;border-radius:999px;font:500 15px/1 Inter,sans-serif;color:#3D3B37;display:inline-flex;align-items:center;gap:8px;transition:background .2s,color .2s}
-.bill button[aria-checked="true"]{background:#1F1E1C;color:#FCFBF8}
-.bill button:focus-visible{outline:2px solid #A65A43;outline-offset:2px}
-.bill-tag{font:600 12px/1 Inter,sans-serif;color:#A65A43;background:rgba(166,90,67,.12);padding:4px 7px;border-radius:999px}
-.bill button[aria-checked="true"] .bill-tag{color:#FCFBF8;background:rgba(252,251,248,.16)}
-.closed .bill{display:none!important}
-/* funil: quiz em tela cheia no celular, cartão no desktop */
-.quiz{position:fixed;inset:0;z-index:300;display:flex;align-items:center;justify-content:center;padding:16px;background:rgba(31,30,28,.45);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
-.quiz-card{position:relative;width:100%;max-width:560px;max-height:calc(100dvh - 32px);overflow:auto;background:#F7F5F0;border-radius:28px;padding:22px clamp(20px,4vw,40px) 32px;box-shadow:0 30px 80px rgba(31,30,28,.25)}
-@media (max-width:600px){.quiz{padding:0;align-items:stretch}.quiz-card{max-width:none;max-height:none;height:100dvh;border-radius:0;padding:14px 20px calc(24px + env(safe-area-inset-bottom))}}
-.quiz-top{display:flex;align-items:center;gap:10px}
-.quiz-bar{flex:1;height:4px;border-radius:4px;background:#E7E3DB;overflow:hidden}
-.quiz-bar i{display:block;height:100%;width:0;background:#A65A43;transition:width .35s cubic-bezier(.2,.7,.2,1)}
-.quiz-count{font:500 13px/1 Inter,sans-serif;color:#6E6A63;min-width:30px;text-align:right}
-.quiz-ico{appearance:none;border:0;background:transparent;width:40px;height:40px;flex:none;border-radius:50%;display:grid;place-items:center;cursor:pointer;color:#3D3B37}
-.quiz-ico:hover{background:#EDE8DF}
-.quiz-ico svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
-.quiz-q{margin:26px 0 0;font:400 clamp(32px,6vw,44px)/1.04 'Instrument Serif',serif;letter-spacing:-.015em;color:#1F1E1C;text-wrap:balance}
-.quiz-hint{margin:10px 0 0;font:400 15px/1.5 Inter,sans-serif;color:#6E6A63}
-.quiz-opts{margin-top:22px;display:grid;gap:10px}
-.quiz-opt{appearance:none;text-align:left;width:100%;min-height:56px;padding:14px 18px;border-radius:16px;border:1px solid #D6D0C5;background:#FCFBF8;font:500 16px/1.35 Inter,sans-serif;color:#1F1E1C;cursor:pointer;transition:border-color .15s,background .15s,color .15s,transform .15s}
-.quiz-opt:hover{border-color:#1F1E1C}
-.quiz-opt[aria-checked="true"]{border-color:#1F1E1C;background:#1F1E1C;color:#FCFBF8}
-.quiz-opt:active{transform:scale(.99)}
-.quiz-opt:focus-visible{outline:2px solid #A65A43;outline-offset:2px}
-.quiz-form{margin-top:20px;display:grid;gap:12px}
-.quiz-form label{display:grid;gap:6px;font:500 14px/1.3 Inter,sans-serif;color:#3D3B37}
-.quiz-form label i{font-style:normal;font-weight:400;color:#6E6A63}
-.quiz-form input{height:52px;padding:0 16px;border-radius:14px;border:1px solid #D6D0C5;background:#FCFBF8;font:400 17px/1 Inter,sans-serif;color:#1F1E1C;width:100%}
-.quiz-form input:focus{outline:2px solid #1F1E1C;outline-offset:1px;border-color:#1F1E1C}
-.quiz-form small{font:400 13px/1.5 Inter,sans-serif;color:#6E6A63}
-.quiz-err{margin:0;min-height:20px;font:500 14px/1.4 Inter,sans-serif;color:#A0402A}
-.quiz-submit{height:58px;border:0;border-radius:999px;background:#1F1E1C;color:#FCFBF8;font:500 17px/1 Inter,sans-serif;cursor:pointer}
-.quiz-submit:hover{background:#000}
-.quiz-submit[disabled]{opacity:.6;cursor:wait}
-.quiz-step{animation:quizIn .35s cubic-bezier(.2,.7,.2,1)}
-@keyframes quizIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
-@media (prefers-reduced-motion:reduce){.quiz-step{animation:none}}
-.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
-.btn-quiz{appearance:none;border:0;cursor:pointer}
-/* diagnóstico + vídeo */
-.diag-pill{display:inline-flex;align-items:center;gap:8px;min-height:32px;padding:6px 14px;border-radius:999px;background:rgba(166,90,67,.12);color:#8E4A36;font:500 14px/1.2 Inter,sans-serif}
-.diag-trava{margin:24px 0 0;padding:18px 20px;border-radius:16px;background:#FCFBF8;border:1px solid #E7E3DB;font:400 17px/1.55 Inter,sans-serif;color:#3D3B37}
-.vsl{position:relative;margin-top:36px;aspect-ratio:16/9;border-radius:22px;overflow:hidden;background:#1F1E1C;box-shadow:0 24px 60px rgba(31,30,28,.18)}
-.vsl video{width:100%;height:100%;display:block;background:#000;object-fit:cover}
-.vsl-ph{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:24px;color:#FCFBF8;background:radial-gradient(ellipse at 30% 20%,#3D3B37,#1F1E1C 70%)}
-.vsl-ph p{margin:0;max-width:30ch;font:400 clamp(22px,3vw,30px)/1.15 'Instrument Serif',serif}
-.vsl-ph small{display:block;margin-top:10px;font:400 14px/1.5 Inter,sans-serif;color:#CFC8BC}
-@media (max-width:600px){.vsl{border-radius:16px;margin-left:-8px;margin-right:-8px}}
-/* trilha em 3 passos: diagnóstico → vídeo → entrar */
-.passos{margin:0;padding:0;list-style:none;display:flex;align-items:center;flex-wrap:nowrap}
-.passos li{display:flex;align-items:center;gap:10px;font:500 15px/1.2 Inter,sans-serif;color:#6E6A63;white-space:nowrap}
-.passos li+li::before{content:"";width:clamp(18px,3vw,40px);height:1px;background:#D6D0C5;margin-right:12px;margin-left:2px}
-.passos li.feito+li::before{background:#1F1E1C}
-.passos b{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;border:1px solid #D6D0C5;background:#FCFBF8;font:500 13px/1 Inter,sans-serif;color:#6E6A63;flex:none}
-.passos b i{font-style:normal}
-.passos span{display:flex;flex-direction:column;align-items:flex-start}
-.passos em{font-style:normal}
-.passos strong{font-weight:500}
-.passos small{display:block;margin-top:3px;font:400 12px/1.2 Inter,sans-serif;color:#A39E95}
-.passos .agora,.passos .feito{color:#1F1E1C}
-.passos .agora b{border-color:#A65A43;background:#A65A43;color:#FCFBF8;animation:builtPulse 2s cubic-bezier(.2,.7,.2,1) infinite}
-.passos .feito b{border-color:#1F1E1C;background:#1F1E1C;color:#FCFBF8}
-.passos .feito b i{display:none}
-.passos .feito b::after{content:"";width:10px;height:5px;border-left:1.7px solid currentColor;border-bottom:1.7px solid currentColor;transform:translateY(-1px) rotate(-45deg)}
-.hero-passos{margin-top:34px;justify-content:center}
-.hero-passos span{align-items:center}
-@media (max-width:600px){.passos li{gap:7px;font-size:13px}.passos li+li::before{width:14px;margin-right:8px}.passos b{width:26px;height:26px}.passos small,.so-desk{display:none}}
-@media (prefers-reduced-motion:reduce){.passos .agora b{animation:none}}
-/* cartão de entrada (passo 3) */
-.price-card{position:relative;background:#FCFBF8;border:1px solid #E7E3DB;border-radius:28px;overflow:hidden;padding:clamp(28px,5vw,56px)}
-.price-kicker{display:flex;align-items:center;gap:10px;font:500 15px/1.3 Inter,sans-serif;color:#8E4A36}
-.price-inc{margin:32px 0 0;padding:24px 0 0;list-style:none;border-top:1px solid #E7E3DB;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:14px 32px;font:400 16px/1.45 Inter,sans-serif;color:#3D3B37}
-.price-inc li{display:grid;grid-template-columns:20px 1fr;gap:12px}
-.price-inc svg{margin-top:3px;fill:none;stroke:#A65A43;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+
+/* ---------- estrutura: telas cheias, a página nunca rola ---------- */
+.app{position:fixed;inset:0;overflow:hidden;background:var(--bg)}
+.local .app{top:30px}
+.tela{position:absolute;inset:0;display:flex;flex-direction:column;overflow:hidden;background:var(--bg)}
+.camada{position:absolute;inset:0;pointer-events:none;transition:opacity .7s ease}
+.ceu{background:#0c2c6e url(img/montanha-v.webp) center bottom/cover no-repeat}
+@media (min-aspect-ratio:1/1){.ceu{background-image:url(img/montanha-h.webp);background-position:center bottom}}
+.ceu::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(4,16,40,.38) 0%,rgba(4,16,40,.12) 26%,rgba(4,16,40,.24) 52%,rgba(4,16,40,.16) 70%,rgba(4,12,30,.55) 100%)}
+#t-inicio .eyebrow,#t-inicio .hero-h1,#t-inicio .hero-sub,#t-inicio .q1-label,#t-inicio .rodape-mini{text-shadow:0 1px 14px rgba(2,12,32,.45),0 0 2px rgba(2,12,32,.25)}
+@media (min-width:1000px) and (min-height:600px){.ceu::after{background:linear-gradient(90deg,rgba(3,10,30,.42) 0%,rgba(3,10,30,.2) 40%,rgba(3,10,30,0) 62%),linear-gradient(180deg,rgba(3,10,30,.2) 0%,rgba(3,10,30,0) 30%,rgba(3,10,30,0) 72%,rgba(3,10,30,.35) 100%)}}
+.pontos{background-image:radial-gradient(rgba(255,255,255,.11) 1px,transparent 1.4px);background-size:18px 18px;-webkit-mask-image:radial-gradient(ellipse 78% 66% at 50% 42%,#000 30%,transparent 100%);mask-image:radial-gradient(ellipse 78% 66% at 50% 42%,#000 30%,transparent 100%)}
+.brilho{background:radial-gradient(95% 55% at 50% 110%,rgba(80,150,235,.55),rgba(30,80,160,.2) 45%,transparent 75%)}
+
+/* ---------- tipografia e botões ---------- */
+.h-serif{font-family:var(--serif);font-weight:400;letter-spacing:-.02em;text-wrap:balance}
+.h-serif em{font-style:italic}
+.rotulo{font:500 11.5px/1.35 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--txt3)}
+.btn{appearance:none;border:0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 20px;border-radius:10px;background:#fff;color:#0A0A0A;font:600 13px/1.1 var(--mono);letter-spacing:.08em;text-transform:uppercase;text-decoration:none;text-align:center;transition:background .15s,transform .15s}
+.btn:hover{background:#E9E9E9}
+.btn:active{transform:scale(.985)}
+.btn:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.btn.escuro{background:rgba(22,22,22,.92);color:#fff;border:1px solid var(--linha2)}
+.btn.escuro:hover{background:#222}
+.btn.peq{min-height:40px;padding:0 14px;font-size:12px;border-radius:9px}
+.btn svg{width:15px;height:15px;flex:none;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.linkzinho{appearance:none;border:0;background:none;padding:0;font:500 11.5px/1.4 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--txt2);text-decoration:underline;text-underline-offset:4px;cursor:pointer}
+.linkzinho:hover{color:#fff}
+.ico{appearance:none;border:0;background:transparent;width:40px;height:40px;flex:none;border-radius:10px;display:grid;place-items:center;cursor:pointer;color:#fff}
+.ico:hover{background:rgba(255,255,255,.08)}
+.ico[disabled]{opacity:.25;cursor:default;background:transparent}
+.ico svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.segs{flex:1;display:grid;grid-template-columns:repeat(5,1fr);gap:4px}
+.segs i{display:block;height:3px;border-radius:3px;background:rgba(255,255,255,.16);overflow:hidden;position:relative}
+.segs i b{position:absolute;inset:0;width:0;background:#fff;transition:width .35s cubic-bezier(.2,.7,.2,1)}
+
+/* ---------- topo ---------- */
+.topo{position:relative;z-index:2;flex:none;display:flex;align-items:center;justify-content:space-between;gap:12px;height:60px;padding:0 16px;width:100%;max-width:1200px;margin:0 auto}
+.logo{font:400 27px/1 var(--serif);color:#fff;text-decoration:none;letter-spacing:-.01em}
+.topo-dir{display:flex;align-items:center;gap:18px}
+
+/* ---------- início (céu suave) ---------- */
+.hero{position:relative;z-index:1;flex:1;min-height:0;display:flex;flex-direction:column;align-items:center;width:100%;max-width:1200px;margin:0 auto;padding:0 16px}
+.inicio{flex:none;width:100%;max-width:640px;padding-top:clamp(4px,2vh,28px);text-align:center}
+.eyebrow{color:rgba(255,255,255,.84);letter-spacing:.14em}
+.hero-h1{margin-top:clamp(8px,1.4vh,14px);font-size:clamp(34px,min(9.4vw,6.8vh),68px);line-height:1.04}
+.hero-sub{text-wrap:balance;margin:clamp(10px,1.8vh,18px) auto 0;max-width:44ch;font-size:clamp(15px,2vh,18.5px);line-height:1.5;color:rgba(255,255,255,.92)}
+.q1-label{margin-top:clamp(14px,2.8vh,30px);font:600 15px/1.35 var(--sans);color:#fff}
+.opts{margin-top:10px;display:grid;gap:8px}
+.opts.duas{grid-template-columns:1fr 1fr}
+@media (min-width:700px){#q1-opts{grid-template-columns:repeat(3,1fr)}}
+.opt{appearance:none;display:flex;align-items:center;gap:12px;text-align:left;width:100%;min-height:clamp(50px,6.6vh,58px);padding:10px 16px;border-radius:12px;font:500 16px/1.25 var(--sans);cursor:pointer;transition:background .15s,border-color .15s,color .15s,transform .15s,box-shadow .15s}
+.opt:active{transform:scale(.985)}
+.opt:focus-visible{outline:3px solid #8AB4FF;outline-offset:2px}
+.inicio .opt{background:rgba(255,255,255,.95);border:1px solid #fff;color:#0A0A0A;box-shadow:0 1px 2px rgba(0,12,32,.18)}
+.inicio .opt:hover{background:#fff;box-shadow:0 8px 22px rgba(0,12,32,.28);transform:translateY(-1px)}
+.inicio .opt[aria-checked="true"]{background:#0A0A0A;border-color:#0A0A0A;color:#fff}
+#btn-continuar{margin-top:10px;width:100%}
+.rodape-mini{margin-top:12px;font:400 12.5px/1.4 var(--sans);color:rgba(255,255,255,.8)}
+.rodape-mini a{color:#fff}
+.fan{position:relative;flex:1 1 0;min-height:0;width:100%;container-type:size}
+.fan .fc{position:absolute;left:50%;top:50%;width:min(50cqw,60cqh);aspect-ratio:600/840;filter:drop-shadow(0 22px 36px rgba(0,12,32,.45));transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.fan .fc svg{width:100%;height:100%}
+.fan .f1{transform:translate(-50%,-50%) translateX(-46%) rotate(-9deg) scale(.84)}
+.fan .f2{transform:translate(-50%,-50%) translateX(46%) rotate(9deg) scale(.84)}
+.fan .f3{z-index:2;transform:translate(-50%,-50%);animation:boia 6s ease-in-out infinite}
+@keyframes boia{50%{transform:translate(-50%,-50%) translateY(-7px)}}
+@container (max-height:230px){.fan .fc{display:none}}
+.hero.sem-cartas{justify-content:center}
+@media (max-height:700px){.inicio{padding-top:0}.hero-h1{margin-top:6px;font-size:clamp(30px,min(8.8vw,6.2vh),40px)}.hero-sub{margin-top:8px;font-size:14.5px;line-height:1.45}.q1-label{margin-top:12px}.opt{min-height:46px;padding:8px 14px}.rodape-mini{margin-top:8px}}
+.hero.sem-cartas .fan{display:none}
+@media (hover:hover){.fan:hover .f1{transform:translate(-50%,-50%) translateX(-52%) rotate(-12deg) scale(.84)}.fan:hover .f2{transform:translate(-50%,-50%) translateX(52%) rotate(12deg) scale(.84)}}
+@media (min-width:1000px) and (min-height:600px){
+  .hero{flex-direction:row;justify-content:space-between;gap:48px;padding-bottom:24px}
+  .inicio{flex:0 1 600px;max-width:600px;padding-top:0;text-align:left}
+  .hero-sub{margin-left:0}
+  #q1-opts{grid-template-columns:1fr 1fr}
+  .fan{flex:0 1 520px;height:min(74vh,560px)}
+}
+
+/* ---------- teste (preto com pontinhos) ---------- */
+.quiz-wrap{position:relative;z-index:1;flex:1;min-height:0;display:flex;flex-direction:column;width:100%;max-width:580px;margin:0 auto;padding:8px 18px calc(14px + env(safe-area-inset-bottom))}
+@media (min-width:920px){.quiz-wrap{padding-top:4vh}}
+.quiz-top{display:flex;align-items:center;gap:8px}
+.quiz-meta{margin-top:12px;display:flex;justify-content:space-between}
+.quiz-body{flex:1;min-height:0;display:flex;flex-direction:column}
+.quiz-q{margin:clamp(14px,3vh,28px) 0 0;font-size:clamp(24px,min(6.8vw,4.4vh),36px);line-height:1.1;text-align:center}
+.quiz-hint{margin-top:8px;text-align:center;font-size:14.5px;color:var(--txt3)}
+.quiz-body .opts{margin-top:clamp(14px,2.6vh,24px)}
+.quiz-body .opt{background:#141414;border:1px solid rgba(255,255,255,.22);color:#fff}
+.quiz-body .opt::before{content:"";flex:none;width:18px;height:18px;border-radius:50%;border:1.5px solid rgba(255,255,255,.55)}
+.quiz-body .opt:hover{background:#1D1D1D;border-color:rgba(255,255,255,.55)}
+.quiz-body .opt[aria-checked="true"]{background:#fff;color:#0A0A0A;border-color:#fff}
+.quiz-body .opt[aria-checked="true"]::before{border-color:#0A0A0A;background:radial-gradient(circle,#0A0A0A 0 4px,transparent 4.5px)}
+@media (max-width:520px){.quiz-body .opts.duas .opt::before{display:none}}
+.quiz-step{animation:entra .35s cubic-bezier(.2,.7,.2,1)}
+@keyframes entra{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.campo{display:grid;gap:6px;margin-top:clamp(10px,1.8vh,16px);text-align:left}
+.campo span{font:500 11.5px/1.3 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--txt3)}
+.campo input{height:clamp(48px,6.4vh,54px);padding:0 16px;border-radius:12px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.05);font:400 17px/1 var(--sans);color:#fff;width:100%}
+.campo input::placeholder{color:rgba(255,255,255,.3)}
+.campo input:focus{outline:none;border-color:rgba(255,255,255,.6);background:rgba(255,255,255,.08)}
+.hp-field{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.erro{margin:8px 0 0;min-height:18px;font:500 14px/1.4 var(--sans);color:#FF8A80}
+.miudo{margin-top:10px;font:400 12.5px/1.45 var(--sans);color:var(--txt3)}
+.miudo a{color:var(--txt2)}
+.quiz-body .btn{width:100%}
+.inter,.forja{display:flex;flex-direction:column;align-items:center;text-align:center;padding-top:clamp(8px,2.4vh,24px)}
+.status{display:inline-flex;align-items:center;gap:9px;font:500 11.5px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--txt3)}
+.ponto-verde{width:9px;height:9px;border-radius:50%;background:var(--verde);animation:pulso 1.8s infinite}
+@keyframes pulso{0%{box-shadow:0 0 0 0 rgba(60,203,127,.55)}70%{box-shadow:0 0 0 12px rgba(60,203,127,0)}100%{box-shadow:0 0 0 0 rgba(60,203,127,0)}}
+.inter h2{margin-top:clamp(8px,1.8vh,16px);font-size:clamp(26px,4.2vh,38px);line-height:1.06}
+.mini svg{width:100%;height:100%}
+.inter .mini{height:min(160px,18vh);aspect-ratio:600/840;margin-top:clamp(10px,2vh,18px);filter:drop-shadow(0 16px 30px rgba(0,0,0,.6))}
+.notif{margin-top:clamp(12px,2.4vh,22px);display:flex;gap:12px;align-items:flex-start;width:100%;max-width:480px;padding:14px 16px;border-radius:20px;background:rgba(28,28,28,.78);border:1px solid var(--linha2);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);text-align:left;box-shadow:0 20px 50px rgba(0,0,0,.45)}
+.notif .ico-n{flex:none;width:32px;height:32px;border-radius:9px;display:grid;place-items:center;border:1px solid var(--linha2);color:#fff}
+.notif .ico-n svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.notif p{flex:1;font-size:clamp(14px,2vh,15.5px);line-height:1.45;color:var(--txt2)}
+.notif p b{color:#fff;font-weight:600}
+.notif small{flex:none;font:400 12px/1.4 var(--sans);color:var(--txt3);margin-top:2px}
+.check{margin:clamp(12px,2.2vh,20px) auto 0;display:flex;flex-wrap:wrap;justify-content:center;gap:7px 14px;max-width:460px}
+.check div{display:flex;align-items:center;gap:7px;font:500 10.5px/1.3 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--txt3)}
+.check div::before{content:"";width:14px;height:14px;flex:none;border-radius:50%;border:1.5px solid rgba(255,255,255,.25)}
+.check div.ok{color:#fff}
+.check div.ok::before{border-color:var(--verde);background:var(--verde) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 8.5l2.5 2.5L12 5.5' fill='none' stroke='%23050505' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/11px no-repeat}
+.inter .btn{margin-top:clamp(14px,2.6vh,24px)}
+.gauge-box{position:relative;width:min(240px,58vw);margin:clamp(6px,1.4vh,12px) auto 0}
+.gauge-box svg{width:100%;height:auto}
+.gauge-val{position:absolute;left:0;right:0;top:40%;text-align:center}
+.gauge-val b{display:block;font:400 clamp(42px,6.6vh,58px)/1 var(--serif);letter-spacing:-.02em}
+.gauge-val .rotulo{display:block;margin-top:4px}
+.forja .mini{height:min(220px,27vh);aspect-ratio:600/840;margin-top:18px;filter:drop-shadow(0 0 46px rgba(80,150,255,.35))}
+.forja h2{margin-top:clamp(14px,3vh,26px);font-size:clamp(24px,3.8vh,32px)}
+.forja .check{flex-direction:column;align-items:center}
+.forja .check div{opacity:.35;transition:opacity .3s}
+.forja .check div.on{opacity:1}
+
+/* ---------- resultado: 5 passos, estilo stories ---------- */
+#t-res .camada{opacity:0}
+#t-res[data-fundo="brilho"] .camada.brilho,#t-res[data-fundo="pontos"] .camada.pontos,#t-res[data-fundo="ceu"] .camada.ceu{opacity:1}
+.res-topo{position:relative;z-index:2;flex:none;display:flex;align-items:center;gap:8px;height:56px;padding:0 10px;width:100%;max-width:620px;margin:0 auto}
+.res-topo .segs{grid-template-columns:repeat(3,1fr)}
+.res-topo .linkzinho{padding:8px 6px;text-decoration:none}
+.so-oferta #res-voltar,.so-oferta #segs-res{visibility:hidden}
+.slides{position:relative;z-index:1;flex:1;min-height:0;width:100%;max-width:620px;margin:0 auto}
+.slide{position:absolute;inset:0;display:flex;flex-direction:column;padding:4px 18px calc(14px + env(safe-area-inset-bottom));opacity:0;visibility:hidden;transform:translateX(26px);transition:opacity .35s,transform .35s,visibility 0s linear .35s}
+.slide.antes{transform:translateX(-26px)}
+.slide.ativo{opacity:1;visibility:visible;transform:none;transition:opacity .35s,transform .35s,visibility 0s}
+.espaco{flex:1;min-height:8px}
+@media (min-width:920px) and (min-height:640px){.slide:not([data-s="0"]){justify-content:center}.slide:not([data-s="0"]) .espaco{flex:0 0 26px}}
+.slide .btn{width:100%}
+.h2{margin-top:6px;font-size:clamp(24px,min(7vw,4.2vh),38px);line-height:1.06}
+.res-h1{text-align:center;font-size:clamp(24px,min(7vw,4.2vh),40px);line-height:1.06}
+.palco{position:relative;flex:1;min-height:0;display:flex;align-items:center;justify-content:center;padding:12px 0 6px}
+.brilho-carta{position:absolute;left:50%;top:50%;width:min(120%,600px);aspect-ratio:1;transform:translate(-50%,-50%);background:radial-gradient(closest-side,var(--el) 0%,rgba(70,140,230,.28) 48%,transparent 72%);opacity:.38;filter:blur(12px);pointer-events:none}
+.stage{position:relative;height:min(100%,440px,calc((min(100vw,620px) - 36px) * 1.4 * .8));aspect-ratio:600/840;perspective:1600px}
+.tilt{width:100%;height:100%;transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .2s ease-out;transform-style:preserve-3d}
+.flip{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform 1s cubic-bezier(.3,.6,.2,1);cursor:pointer}
+.flip.virada{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:5%/3.57%;overflow:hidden;filter:drop-shadow(0 22px 40px rgba(0,0,0,.55))}
+.face svg{width:100%;height:100%}
+.face.verso{transform:rotateY(180deg)}
+.holo{position:absolute;inset:0;border-radius:5%/3.57%;pointer-events:none;mix-blend-mode:soft-light;opacity:.85;background:linear-gradient(110deg,transparent 25%,rgba(255,255,255,.75) 42%,rgba(255,190,230,.55) 48%,rgba(160,230,255,.55) 54%,rgba(255,255,255,.6) 60%,transparent 75%);background-size:300% 100%;background-position:120% 0;animation:reflexo 7s ease-in-out infinite}
+@keyframes reflexo{0%,60%{background-position:130% 0}80%{background-position:-30% 0}100%{background-position:-30% 0}}
+.stage.mexendo .holo{animation:none}
+.flash{position:absolute;inset:-30%;pointer-events:none;background:radial-gradient(closest-side,var(--el) 0%,transparent 70%);opacity:0;border-radius:50%}
+.flash.on{animation:flash 1.1s ease-out}
+@keyframes flash{0%{opacity:0;transform:scale(.6)}35%{opacity:.55}100%{opacity:0;transform:scale(1.3)}}
+.virar{margin-top:8px;text-align:center}
+.acoes{margin-top:10px;display:grid;grid-template-columns:auto 1fr;gap:10px}
+.acoes .btn{width:auto}
+.ui{margin-top:10px;background:rgba(14,14,14,.92);border:1px solid var(--linha);border-radius:18px;padding:clamp(10px,1.7vh,16px) 14px}
+.pilula{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:999px;background:#171717;border:1px solid var(--linha2);font:500 13px/1.2 var(--sans);color:#fff}
+.pilula i{width:6px;height:6px;border-radius:50%}
+.pilula i.verde{background:var(--verde)}
+.pilula i.vermelho{background:var(--vermelho)}
+.pilula i.azul{background:#5B8CFF}
+@media (max-height:700px){.slide[data-s="1"] > .rotulo{display:none}.slide[data-s="1"] .ui{margin-top:8px;padding:9px 12px}.slide[data-s="1"] .pilula{padding:4px 10px;font-size:12px}.slide[data-s="1"] .ui-txt{margin-top:6px;font-size:13.5px;line-height:1.42}}
+.ui-txt{margin-top:8px;font-size:clamp(14px,1.95vh,16px);line-height:1.48;color:var(--txt2)}
+.vidro{margin-top:12px;background:rgba(6,14,30,.42);border:1px solid rgba(255,255,255,.22);border-radius:22px;-webkit-backdrop-filter:blur(18px) saturate(1.1);backdrop-filter:blur(18px) saturate(1.1);padding:clamp(14px,2.2vh,20px) 18px}
+.vidro .rotulo{color:rgba(255,255,255,.8)}
+.slide[data-s="2"] > .rotulo{color:rgba(255,255,255,.88)}
+.tarefa h3{margin-top:8px;font-size:clamp(21px,3.2vh,28px);line-height:1.18}
+.tarefa .semana{margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,.18)}
+.tarefa .semana p:last-child{margin-top:6px;font-size:clamp(14.5px,2vh,16px);line-height:1.5;color:rgba(255,255,255,.92)}
+.nota{text-align:center}
+.nota-q{font:600 15px/1.35 var(--sans)}
+.estrelas{margin:8px auto 0;display:flex;justify-content:center;gap:4px}
+.estrelas button{appearance:none;border:0;background:none;padding:4px;cursor:pointer;color:rgba(255,255,255,.38);transition:color .15s,transform .15s}
+.estrelas button svg{width:clamp(30px,4.4vh,36px);height:clamp(30px,4.4vh,36px);fill:currentColor}
+.estrelas button.on{color:var(--amarelo)}
+.estrelas button:hover{transform:scale(1.08)}
+.nota-leg{margin:2px auto 0;max-width:230px;display:flex;justify-content:space-between;font:400 12px/1.3 var(--sans);color:rgba(255,255,255,.75)}
+.nota-ok{margin-top:6px;font:500 13px/1.4 var(--sans);color:#fff}
+.slide[data-s="3"] .gauge-box{width:min(250px,60vw)}
+.resumo-t{display:flex;align-items:center;gap:8px;font:600 15px/1.2 var(--sans)}
+.resumo-t i{font-style:normal;color:var(--roxo)}
+.trilha{margin-top:12px;display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.etapa{padding:10px 8px;border-radius:14px;background:rgba(14,14,14,.92);border:1px solid var(--linha);text-align:center}
+.etapa.ativa{border-color:rgba(255,255,255,.55);background:rgba(255,255,255,.07)}
+.etapa .rotulo{font-size:10px;letter-spacing:.12em}
+.etapa b{display:block;margin-top:4px;font:400 clamp(14px,2vh,17px)/1.15 var(--serif)}
+.nw{white-space:nowrap}
+.etapa small{display:block;margin-top:2px;font:400 11.5px/1.3 var(--sans);color:var(--txt3)}
+.curso-card{flex:none;position:relative;overflow:hidden;display:flex;min-height:clamp(130px,19vh,210px);border-radius:22px;border:1px solid var(--linha2);background:radial-gradient(90% 120% at 88% 20%,rgba(80,140,230,.42),rgba(16,28,56,.9) 52%,#0B0F18 100%)}
+.curso-card::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(9,13,22,.88) 0%,rgba(9,13,22,.6) 42%,rgba(9,13,22,0) 66%);pointer-events:none}
+.curso-foto{position:absolute;right:-7%;bottom:-15%;height:122%;width:auto;max-width:none;pointer-events:none;-webkit-mask-image:linear-gradient(90deg,transparent 4%,#000 34%);mask-image:linear-gradient(90deg,transparent 4%,#000 34%)}
+.curso-txt{position:relative;z-index:2;width:58%;padding:clamp(14px,2.4vh,22px) 0 clamp(14px,2.4vh,20px) 18px}
+.curso-txt .rotulo{color:rgba(255,255,255,.84)}
+.curso-txt h2{margin-top:6px;font-size:clamp(28px,min(8vw,4.8vh),46px);line-height:1}
+.curso-desc{margin-top:8px;font-size:clamp(13.5px,1.9vh,15px);line-height:1.45;color:rgba(255,255,255,.9)}
+@media (max-height:700px){.curso-desc{display:none}}
+.foto-card{position:relative;overflow:hidden;border-radius:22px;padding:clamp(16px,2.6vh,24px) 18px;border:1px solid rgba(255,255,255,.18)}
+.foto-card::before{content:"";position:absolute;inset:0;background:#173b66 url(img/montanha-h.webp) center 35%/cover}
+.foto-card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(3,28,60,.3),rgba(3,28,60,.55))}
+.foto-card > *{position:relative;z-index:1}
+.foto-card .rotulo{color:rgba(255,255,255,.85)}
+.foto-card h2{margin-top:6px;font-size:clamp(32px,min(9vw,5.6vh),52px);line-height:1}
+.of-meta{margin-top:8px;letter-spacing:.08em;text-wrap:balance;color:rgba(255,255,255,.9)!important}
+.of-desc{margin-top:8px;font-size:clamp(14px,1.95vh,15.5px);line-height:1.45;color:rgba(255,255,255,.92)}
+@media (max-height:700px){.of-desc{display:none}}
+.built-box{padding:12px 14px}
+.built-lista{margin:8px 0 0;padding:0;list-style:none;display:grid;gap:6px}
+.built-lista li{display:flex;gap:10px;font-size:clamp(13.5px,1.9vh,15px);line-height:1.35;color:var(--txt2)}
+.built-lista li::before{content:"";flex:none;width:16px;height:16px;margin-top:2px;border-radius:50%;background:var(--verde) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 8.5l2.5 2.5L12 5.5' fill='none' stroke='%23050505' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/11px no-repeat}
+@media (max-height:700px){.built-box{display:none}}
+.bill{display:inline-grid;grid-template-columns:repeat(3,auto);gap:4px;padding:4px;border-radius:12px;background:#121212;border:1px solid var(--linha2)}
+.bill button{appearance:none;border:0;background:none;cursor:pointer;padding:8px 12px;border-radius:9px;font:600 12px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--txt2)}
+.bill button span{color:var(--verde)}
+.bill button[aria-checked="true"]{background:#fff;color:#0A0A0A}
+.bill button[aria-checked="true"] span{color:#1a7a48}
+.bill button:focus-visible{outline:3px solid #8AB4FF;outline-offset:2px}
+.preco .valor s{font:400 clamp(18px,2.6vh,24px)/1 var(--serif);color:var(--txt3);margin-right:10px;vertical-align:.5em}
+.preco .valor small{font:400 clamp(16px,2.4vh,22px)/1 var(--serif);color:var(--txt2);margin-left:4px}
+.preco .linkzinho{padding:6px 8px}
+.lista-rota{padding:12px 14px 6px}
+#rota-t{text-wrap:balance}
+.rota{margin:6px 0 0;padding:0;list-style:none}
+.rota li{display:flex;align-items:center;gap:12px;padding:9px 0;border-top:1px solid var(--linha);font-size:clamp(14px,2vh,15.5px);line-height:1.3}
+.rota li:first-child{border-top:0}
+.rota .num{flex:none;font:500 12px/1 var(--mono);color:var(--txt3)}
+.rota .t{flex:1}
+.rota .d{flex:none;font:500 11.5px/1 var(--mono);color:var(--txt3)}
+.garantia-linha{margin-top:10px;display:flex;gap:10px;align-items:center;font-size:13.5px;line-height:1.4;color:var(--txt2)}
+.garantia-linha svg{flex:none;width:22px;height:22px;fill:none;stroke:#fff;stroke-width:1.6;stroke-linejoin:round;stroke-linecap:round}
+.garantia-linha b{color:#fff;font-weight:600}
+@media (max-height:620px){.garantia-linha{display:none}}
+.preco{display:grid;gap:8px;justify-items:center;text-align:center}
+.preco .valor{font:400 clamp(44px,7vh,64px)/1 var(--serif);letter-spacing:-.02em}
+.preco .btn{min-height:56px;font-size:13.5px}
+.gatilho{font:400 12.5px/1.35 var(--sans);color:var(--txt3)}
+.lista-ok{font:600 14.5px/1.4 var(--sans);color:#fff}
+.of-links{margin-top:12px;display:flex;flex-wrap:wrap;justify-content:center;gap:6px 16px}
+
+/* ---------- gaveta ---------- */
+.sheet{position:fixed;inset:0;z-index:350;display:flex;align-items:flex-end;justify-content:center;background:rgba(0,0,0,.62);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.sheet-card{position:relative;width:100%;max-width:560px;max-height:88dvh;overflow:auto;overscroll-behavior:contain;background:#0E0E0E;border:1px solid var(--linha2);border-bottom:0;border-radius:24px 24px 0 0;padding:22px 18px calc(20px + env(safe-area-inset-bottom));animation:sobe .3s cubic-bezier(.2,.7,.2,1)}
+@keyframes sobe{from{transform:translateY(40px);opacity:0}to{transform:none;opacity:1}}
+@media (min-width:600px){.sheet{align-items:center;padding:16px}.sheet-card{border-radius:24px;border-bottom:1px solid var(--linha2)}}
+.sheet-x{position:absolute;top:12px;right:12px}
+.sheet video{display:block;width:100%;margin-top:12px;border-radius:12px;background:#000;aspect-ratio:16/9}
+.sheet h3{margin:0 44px 0 0;font:400 30px/1.05 var(--serif);letter-spacing:-.015em}
+.sheet p{margin-top:10px;font-size:15px;line-height:1.55;color:var(--txt2)}
+.mods{margin:14px 0 0;padding:0;list-style:none;border-top:1px solid var(--linha)}
+.mods li{display:flex;justify-content:space-between;gap:14px;padding:11px 0;border-bottom:1px solid var(--linha);font-size:15px;line-height:1.35;color:var(--txt2)}
+.mods li .n{font:500 12px/1.4 var(--mono);color:var(--txt3);margin-right:10px}
+.mods li .d{flex:none;font:500 12px/1.4 var(--mono);color:var(--txt3);padding-top:2px}
+.mods li.dest{color:#fff}
+.mods li.dest b{font-weight:600}
+.mods li.dest .n{color:var(--amarelo)}
+.mods li b{font-weight:400}
+.bonus{margin-top:14px;display:grid;gap:8px}
+.bonus div{display:flex;gap:10px;font-size:14.5px;line-height:1.45;color:var(--txt2)}
+.bonus div::before{content:"+";flex:none;width:22px;height:22px;border-radius:7px;display:grid;place-items:center;background:rgba(255,255,255,.08);color:#fff;font:700 15px/1 var(--sans)}
+.faq{margin-top:10px;border-top:1px solid var(--linha)}
+.faq details{border-bottom:1px solid var(--linha)}
+.faq summary{list-style:none;cursor:pointer;padding:14px 30px 14px 0;position:relative;font:600 15px/1.35 var(--sans)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:2px;top:11px;font:400 24px/1 var(--sans);color:var(--txt3);transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{margin:0;padding:0 0 14px}
+.sobre-topo{display:flex;gap:14px;align-items:center}
+.sobre-topo h3{font-size:27px}
+.sobre-topo img{width:68px;height:68px;object-fit:cover;object-position:60% 20%;border-radius:50%;background:#1a1a1a;flex:none}
+.lauros{margin-top:16px;display:grid;grid-template-columns:repeat(3,1fr);gap:4px}
+.lauro{display:flex;align-items:center;justify-content:center;gap:0;color:#d6d6d6}
+.lauro > svg{width:14px;height:42px;flex:none;fill:currentColor}
+.lauro > svg.dir{transform:scaleX(-1)}
+.lauro div{text-align:center;font:500 9px/1.35 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:#cfcfcf}
+.lauro div b{display:block;white-space:nowrap;font:400 15.5px/1.1 var(--serif);letter-spacing:0;text-transform:none;color:#fff;margin-bottom:3px}
+.aviso{margin-top:14px!important;font-size:12.5px!important;color:var(--txt3)!important}
+.aviso a{color:var(--txt2)}
+@media (max-height:760px){.sheet h3{font-size:26px}.mods{margin-top:10px}.mods li{padding:7px 0;font-size:14px}.mods li .d{font-size:11.5px}.bonus{margin-top:10px;gap:6px}.bonus div{font-size:14px}.sheet p{font-size:14.5px;margin-top:8px}.faq summary{padding:11px 28px 11px 0;font-size:14.5px}.faq summary::after{top:8px}.lauros{margin-top:12px}}
+
+.campo span i{font-family:var(--sans);font-style:normal;text-transform:none;letter-spacing:0;color:rgba(255,255,255,.4)}
+.notif .ico-n{object-fit:cover;object-position:60% 20%;border-radius:50%;padding:0;background:#1a1a1a}
+.gauge-box .sg.ok{opacity:.16;transition:opacity .25s ease calc(var(--i) * 24ms)}
+.gauge-box.on .sg.ok{opacity:1}
+@media (max-height:760px){.inter .check{display:none}}
+@media (max-height:680px){.sheet-card{max-height:95dvh;padding-top:18px}.mods li{padding:6px 0}.bonus div{font-size:13.5px;line-height:1.4}}
+.toast{position:fixed;left:50%;bottom:calc(84px + env(safe-area-inset-bottom));transform:translate(-50%,20px);z-index:400;padding:12px 18px;border-radius:12px;background:#fff;color:#0A0A0A;font:500 14px/1.3 var(--sans);opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;box-shadow:0 10px 30px rgba(0,0,0,.4)}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+.teste-local{position:fixed;top:3px;left:50%;transform:translateX(-50%);z-index:500;padding:5px 12px;border-radius:999px;background:#F2C12E;color:#1F1E1C;font:600 12px/1.3 Inter,sans-serif;box-shadow:0 4px 14px rgba(31,30,28,.18);white-space:nowrap}
+.teste-local button{appearance:none;border:0;background:none;padding:0;font:inherit;text-decoration:underline;cursor:pointer;color:inherit}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 </style>
 </head>
 <body>
-<div id="root" style="position:relative;overflow-x:clip;padding:clamp(6px,1.1vw,16px)">
-<div style="position:relative;background:#F7F5F0;border-radius:clamp(16px,2vw,28px);overflow:clip;box-shadow:0 1px 3px rgba(60,45,25,.10)">
+<div class="app" id="app">
 
-<header class="header" style="position:sticky;top:0;z-index:50">
-  <nav style="max-width:1240px;margin:0 auto;padding:0 clamp(20px,3vw,40px);height:80px;display:flex;align-items:center;justify-content:space-between;gap:16px">
-    <a href="#topo" aria-label="Built, início" style="display:flex;align-items:baseline;gap:12px;text-decoration:none;color:#1F1E1C">
-      <span style="font:400 36px/1 'Instrument Serif',serif;letter-spacing:-0.02em">Built</span>
-      <span style="font:400 15px/1 Inter,sans-serif;color:#6E6A63">por @condzxyz</span>
-    </a>
-    <a class="btn-ghost" href="#entrar" style="display:inline-flex;align-items:center;gap:10px;height:48px;padding:0 24px;border-radius:999px;border:1px solid #D6D0C5;background:#FCFBF8;color:#1F1E1C;font:500 16px/1 Inter,sans-serif;text-decoration:none">Entrar<svg data-arrow width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" style="fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-  </nav>
-</header>
-
-<main>
-<section id="hero" style="position:relative;min-height:min(calc(100vh - 30px),980px);padding:calc(var(--pad) + 80px) 20px clamp(96px,12vh,140px);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;overflow:hidden;background:#EDE6DA">
-  <span id="topo" style="position:absolute;top:0"></span>
-  <img class="hero-bg" src="img/hero-ceu.webp" alt="" aria-hidden="true" width="1536" height="1024" decoding="async" fetchpriority="high">
-  <div class="hero-veil" aria-hidden="true"></div>
-  <svg data-draw aria-hidden="true" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMax slice" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;fill:none;stroke:rgba(29,27,23,.16);stroke-width:1">
-    <circle cx="720" cy="1180" r="560"/><circle cx="720" cy="1180" r="760"/><circle cx="720" cy="1180" r="980"/><circle cx="720" cy="390" r="300"/>
-  </svg>
-  <svg aria-hidden="true" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMax slice" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none">
-    <ellipse cx="310" cy="742" rx="15" ry="5" style="fill:none;stroke:#C2A374;stroke-width:1.2"/><circle cx="310" cy="742" r="5" style="fill:#E3D3B4;stroke:#C2A374"/>
-    <circle cx="1170" cy="330" r="4" style="fill:#C2A374"/><circle cx="1170" cy="330" r="13" style="fill:none;stroke:rgba(194,163,116,.5)"/>
-    <path d="M300 305L392 268" style="stroke:rgba(29,27,23,.28);stroke-width:1"/><circle cx="300" cy="305" r="2" style="fill:rgba(29,27,23,.4)"/>
-  </svg>
-  <canvas id="hero-particles" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none"></canvas>
-  <img data-hand="l" src="img/s-mao-pintada.webp" alt="" aria-hidden="true" width="1100" height="550" decoding="async" fetchpriority="high" style="position:absolute;left:-72px;top:var(--hl-top);width:calc(var(--hl-w) + 72px);height:auto;pointer-events:none;user-select:none;will-change:transform">
-  <img data-hand="r" src="img/s-mao-tipografica.webp" alt="" aria-hidden="true" width="1200" height="473" decoding="async" style="position:absolute;right:-72px;top:var(--hr-top);width:calc(var(--hr-w) + 72px);height:auto;pointer-events:none;user-select:none;mix-blend-mode:multiply;will-change:transform">
-  <div style="position:relative;z-index:2;max-width:820px;display:flex;flex-direction:column;align-items:center">
-    <p data-reveal style="margin:0;font:400 clamp(15px,1.3vw,18px)/1.4 Inter,sans-serif;color:#6E6A63">Comunidade do Condz no Telegram</p>
-    <h1 data-reveal style="margin:24px 0 0;max-width:14ch;font:400 clamp(46px,6.8vw,112px)/.92 'Instrument Serif',serif;letter-spacing:-0.025em;color:#1F1E1C;text-wrap:balance">Evolua. O dinheiro vem como <em>consequência</em>.</h1>
-    <p data-reveal style="margin:22px 0 0;max-width:34ch;font:400 clamp(17px,1.6vw,20px)/1.5 Inter,sans-serif;color:#3D3B37;text-wrap:balance">Pra quem é CLT, toca um negócio ou busca uma nova renda. Cabeça, conteúdo e venda, com o Condz e uma galera no mesmo caminho.</p>
-    <div data-reveal style="margin-top:36px;display:flex;flex-direction:column;align-items:center;gap:14px"><button type="button" class="btn btn-quiz" data-quiz id="hero-cta" style="display:inline-flex;align-items:center;justify-content:center;gap:14px;height:60px;padding:0 32px;border-radius:999px;background:#1F1E1C;color:#FCFBF8;font:500 17px/1 Inter,sans-serif"><span id="hero-cta-txt">Começar meu diagnóstico</span><svg data-arrow width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" style="fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button><span style="font:400 14px/1.4 Inter,sans-serif;color:#6E6A63">1 minuto · grátis · <a href="#entrar" data-skip style="color:#3D3B37;text-underline-offset:4px">já quero entrar</a></span></div>
-    <div data-reveal style="display:flex;justify-content:center"><ol class="passos hero-passos" data-passos aria-label="Seu caminho até o grupo"><li data-p="1"><b><i>1</i></b><span><strong>Diagnóstico</strong><small>1 min</small></span></li><li data-p="2"><b><i>2</i></b><span><strong>Vídeo</strong><small>5 min</small></span></li><li data-p="3"><b><i>3</i></b><span><strong>Entrar<em class="so-desk"> no grupo</em></strong><small>na hora</small></span></li></ol></div>
-  </div>
-</section>
-
-<div class="divider" aria-hidden="true"><div><span style="left:15.5px"></span><span style="right:15.5px"></span></div></div>
-
-<section id="diagnostico" hidden style="padding:clamp(40px,6vw,80px) 0 clamp(20px,3vw,32px);scroll-margin-top:80px">
-  <div style="max-width:880px;margin:0 auto;padding:0 20px">
-    <ol class="passos" data-passos aria-label="Seu caminho até o grupo"><li data-p="1"><b><i>1</i></b><span><strong>Diagnóstico</strong><small>1 min</small></span></li><li data-p="2"><b><i>2</i></b><span><strong>Vídeo</strong><small>5 min</small></span></li><li data-p="3"><b><i>3</i></b><span><strong>Entrar<em class="so-desk"> no grupo</em></strong><small>na hora</small></span></li></ol>
-    <span class="diag-pill" id="diag-pill" style="margin-top:32px">Seu diagnóstico</span>
-    <h2 id="diag-titulo" style="margin:18px 0 0;font:400 clamp(40px,5.4vw,68px)/1 'Instrument Serif',serif;letter-spacing:-0.02em;color:#1F1E1C;text-wrap:balance"></h2>
-    <p id="diag-meta" style="margin:16px 0 0;font:500 18px/1.5 Inter,sans-serif;color:#1F1E1C"></p>
-    <p class="diag-trava" id="diag-trava"></p>
-    <div class="vsl" id="vsl"></div>
-    <div id="vsl-cta" style="margin-top:24px;display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px">
-      <a class="btn" href="#entrar" data-planos style="display:inline-flex;align-items:center;justify-content:center;gap:14px;height:58px;padding:0 30px;border-radius:999px;background:#1F1E1C;color:#FCFBF8;font:500 17px/1 Inter,sans-serif;text-decoration:none">Entrar no grupo agora<svg data-arrow width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" style="fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-      <p style="margin:0;font:400 14px/1.5 Inter,sans-serif;color:#6E6A63">7 dias de garantia · entra no grupo na hora</p>
+  <!-- TELA 1: início, no céu -->
+  <section class="tela" id="t-inicio">
+    <div class="camada ceu"></div>
+    <header class="topo">
+      <a class="logo" href="./" aria-label="Method, início">Method</a>
+      <div class="topo-dir"><button type="button" class="btn peq" id="btn-comecar">Começar <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button></div>
+    </header>
+    <div class="hero">
+      <div class="inicio">
+        <p class="rotulo eyebrow">Teste grátis · 1 minuto</p>
+        <h1 class="h-serif hero-h1">Descubra seu <em>perfil</em> e como crescer seu negócio com IA</h1>
+        <p class="hero-sub">8 perguntas rápidas. No fim, você vê o que te trava, onde a IA entra no seu caso e por onde começar, mesmo que o negócio ainda esteja no papel.</p>
+        <p class="q1-label" id="q1-label">Pra começar: hoje, você é…</p>
+        <div class="opts duas" role="radiogroup" aria-labelledby="q1-label" id="q1-opts"></div>
+        <button type="button" class="btn escuro" id="btn-continuar" hidden>Continuar meu teste <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
+        <p class="rodape-mini">Method · <a href="privacidade.html">Privacidade</a> · <a href="termos.html">Termos</a></p>
+      </div>
+      <div class="fan" id="fan" aria-hidden="true"></div>
     </div>
-    <p style="margin:24px 0 0;font:400 13px/1.5 Inter,sans-serif;color:#6E6A63">A meta é sua; o caminho a gente faz junto. Não é promessa de resultado. <button type="button" id="diag-refazer" style="appearance:none;border:0;background:none;padding:0;font:inherit;color:#3D3B37;text-decoration:underline;text-underline-offset:3px;cursor:pointer">Refazer o diagnóstico</button></p>
-  </div>
-</section>
+  </section>
 
-<section id="entrar" style="padding:clamp(16px,3vw,32px) 0 clamp(56px,7vw,96px);scroll-margin-top:80px">
-  <div style="max-width:880px;margin:0 auto;padding:0 20px">
-    <div data-reveal id="price" class="price-card">
-      <img src="img/damasco.webp" alt="" aria-hidden="true" loading="lazy" style="position:absolute;left:0;top:0;width:100%;height:200px;object-fit:cover;object-position:center;opacity:.45;-webkit-mask-image:linear-gradient(#000,transparent);mask-image:linear-gradient(#000,transparent);pointer-events:none">
-      <div style="position:relative">
-        <div id="access-label" class="price-kicker">Acesso de fundador</div>
-        <div class="bill" id="bill" role="radiogroup" aria-label="Como pagar" hidden><button type="button" role="radio" aria-checked="true" data-bill="tri">3 meses <span class="bill-tag" id="bill-tag">−23%</span></button><button type="button" role="radio" aria-checked="false" data-bill="mes">Mensal</button></div>
-        <div style="margin-top:20px;display:flex;align-items:baseline;flex-wrap:wrap;gap:8px 16px">
-            <span id="price-main" style="font:400 clamp(88px,10vw,136px)/.85 'Instrument Serif',serif;letter-spacing:-0.03em;color:#A65A43">R$ 147</span>
-            <span style="font:400 20px/1 Inter,sans-serif;color:#6E6A63">/mês</span>
-            <s id="price-strike" style="font:400 26px/1 'Instrument Serif',serif;color:#A39E95">R$ 197</s>
+  <!-- TELA 2: o teste -->
+  <section class="tela" id="t-teste" hidden role="dialog" aria-label="Teste de perfil">
+    <div class="camada pontos"></div>
+    <div class="quiz-wrap">
+      <div class="quiz-top">
+        <button type="button" class="ico" id="quiz-voltar" aria-label="Voltar"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M13 8H3M7 4L3 8l4 4"/></svg></button>
+        <div class="segs" id="segs-quiz" aria-hidden="true"><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i></div>
+        <button type="button" class="ico" id="quiz-fechar" aria-label="Fechar"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8"/></svg></button>
+      </div>
+      <div class="quiz-meta" aria-live="polite"><span class="rotulo" id="meta-bloco"></span><span class="rotulo" id="meta-n"></span></div>
+      <div class="quiz-body" id="quiz-body"></div>
+    </div>
+  </section>
+
+  <!-- TELA 3: resultado em 3 passos -->
+  <section class="tela" id="t-res" hidden data-fundo="brilho">
+    <div class="camada brilho"></div><div class="camada pontos"></div>
+    <div class="res-topo">
+      <button type="button" class="ico" id="res-voltar" aria-label="Voltar"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M13 8H3M7 4L3 8l4 4"/></svg></button>
+      <div class="segs" id="segs-res" aria-hidden="true"><i><b></b></i><i><b></b></i><i><b></b></i></div>
+      <button type="button" class="linkzinho" id="btn-refazer">Refazer</button>
+    </div>
+    <div class="slides" id="slides">
+
+      <div class="slide" data-s="0">
+        <h1 class="h-serif res-h1" id="res-titulo"></h1>
+        <div class="palco">
+          <div class="brilho-carta" aria-hidden="true"></div>
+          <div class="stage" id="stage">
+            <div class="tilt" id="tilt">
+              <div class="flip virada" id="flip" role="button" tabindex="0" aria-label="Virar a carta">
+                <div class="face frente" id="face-frente"></div>
+                <div class="face verso" id="face-verso"></div>
+                <div class="holo" aria-hidden="true"></div>
+              </div>
+            </div>
           </div>
-        <p id="price-sub" style="margin:18px 0 0;font:500 17px/1.4 Inter,sans-serif;color:#1F1E1C">Mínimo de 3 meses. Ou anual com desconto.</p>
-        <p id="price-deadline" style="margin:6px 0 0;font:400 15px/1.4 Inter,sans-serif;color:#6E6A63">Preço de fundador até 30 de outubro, 23h59. Travado enquanto você ficar.</p>
-        <div class="buy" style="margin-top:32px;display:flex;flex-direction:column;align-items:flex-start;gap:12px">
-            <a class="btn" data-plan="trimestralCartao" id="btn-cartao" href="https://buy.stripe.com/8x228sg2w1KW309142bsc00" style="display:inline-flex;align-items:center;justify-content:center;gap:14px;height:58px;padding:0 30px;border-radius:999px;background:#1F1E1C;color:#FCFBF8;font:500 17px/1 Inter,sans-serif;text-decoration:none">Entrar com cartão<svg data-arrow width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" style="fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-            <p id="note-cartao" style="margin:0;font:400 14px/1.5 Inter,sans-serif;color:#6E6A63">R$ 441 agora. Renova sozinho a cada 3 meses. Cancela quando quiser e não renova.</p>
-            <a class="btn-out" data-plan="trimestralPix" id="btn-pix" href="https://buy.stripe.com/fZueVeg2w9do309fYWbsc01" style="margin-top:8px;display:inline-flex;align-items:center;height:52px;padding:0 26px;border-radius:999px;border:1px solid #D6D0C5;color:#1F1E1C;font:500 16px/1 Inter,sans-serif;text-decoration:none">Entrar com Pix</a>
-            <p id="note-pix" style="margin:0;font:400 14px/1.5 Inter,sans-serif;color:#6E6A63">R$ 441 por 3 meses. O bot te avisa antes de vencer.</p>
+        </div>
+        <p class="rotulo virar" id="virar">Toque na carta pra ver seus números</p>
+        <div class="acoes">
+          <button type="button" class="btn escuro" id="btn-share" aria-label="Compartilhar no story"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 10V2M5 5l3-3 3 3M3 8v5h10V8"/></svg>Story</button>
+          <button type="button" class="btn" data-prox>Ver o que ela diz <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
+        </div>
+      </div>
+
+      <div class="slide" data-s="1">
+        <p class="rotulo">Lendo o seu perfil</p>
+        <h2 class="h-serif h2" id="leitura-titulo"></h2>
+        <div class="ui"><span class="pilula"><i class="verde"></i>Seu superpoder</span><p class="ui-txt" id="l-forte"></p></div>
+        <div class="ui"><span class="pilula"><i class="vermelho"></i>Seu ponto cego</span><p class="ui-txt" id="l-cego"></p></div>
+        <div class="ui"><span class="pilula"><i class="azul"></i>Onde a IA entra</span><p class="ui-txt" id="l-ia"></p></div>
+        <div class="espaco"></div>
+        <button type="button" class="btn" data-prox>Como evoluir isso <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
+      </div>
+
+      <div class="slide" data-s="2" id="oferta">
+        <div class="curso-card">
+          <img class="curso-foto" src="img/conrado.webp" alt="" width="1000" height="1000">
+          <div class="curso-txt">
+            <p class="rotulo">Grupo no Telegram</p>
+            <h2 class="h-serif">Built</h2>
+            <p class="curso-desc">Evolua. O dinheiro vem como consequência.</p>
           </div>
-        <div style="margin-top:28px;display:grid;grid-template-columns:22px 1fr;gap:14px;padding:22px 24px;border-radius:18px;background:#F1EEE7;border:1px solid #E7E3DB;font:400 16px/1.55 Inter,sans-serif;color:#3D3B37"><svg width="20" height="20" viewBox="0 0 16 16" aria-hidden="true" style="margin-top:2px;fill:none;stroke:#3D3B37;stroke-width:1.3;stroke-linejoin:round"><path d="M8 1.5l5.5 2v4c0 3.4-2.4 6-5.5 7-3.1-1-5.5-3.6-5.5-7v-4z"/></svg><span><strong style="font-weight:500;color:#1F1E1C">7 dias de garantia.</strong> Não curtiu, me avisa e eu devolvo tudo. Minha trajetória não é promessa de resultado.</span></div>
-        <ul class="price-inc"><li><svg width="20" height="20" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg><span>Chat diário no Telegram com uma galera no mesmo caminho.</span></li><li><svg width="20" height="20" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg><span>Feedback do Condz nos seus rascunhos, todo dia útil.</span></li><li><svg width="20" height="20" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg><span>Call ao vivo todo mês, gravada.</span></li><li><svg width="20" height="20" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg><span>Bot com uma ideia de post pro seu momento, todo dia às 9h.</span></li></ul>
-        <div class="buy" style="margin-top:28px;padding-top:24px;border-top:1px solid #E7E3DB;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px">
-            <p style="margin:0;font:400 16px/1.5 Inter,sans-serif;color:#3D3B37"><strong id="anual-strong" style="font-weight:500;color:#1F1E1C">Anual de fundador: R$ 1.470</strong> à vista (2 meses grátis)</p>
-            <a class="ul-link" data-plan="anual" id="btn-anual" href="https://buy.stripe.com/00wcN66rWblw58heUSbsc02" style="display:inline-flex;align-items:center;gap:8px;font:500 16px/1 Inter,sans-serif;color:#1F1E1C;text-decoration:underline;text-underline-offset:6px;text-decoration-color:#A39E95">Entrar no anual<svg data-arrow width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" style="fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-          </div>
-        <p id="closed-note" hidden style="margin:32px 0 0;font:400 16px/1.55 Inter,sans-serif;color:#3D3B37">O preço de fundador fechou em 30/10. Os novos planos abrem em breve: me chama no <a href="https://x.com/condzxyz" target="_blank" rel="noopener">X</a>.</p>
-          <p id="membros" hidden style="margin:24px 0 0;font:400 15px/1.4 Inter,sans-serif;color:#3D3B37"><span id="membros-n" style="font-weight:500;color:#A65A43"></span> fundadores já entraram</p>
-          <p style="margin:24px 0 0;font:400 14px/1.5 Inter,sans-serif;color:#6E6A63">Pagamento seguro pelo Stripe. Depois você abre o bot no Telegram e entra no grupo na hora.</p>
+        </div>
+        <div class="ui built-box">
+          <p class="rotulo" id="built-t">O que você leva</p>
+          <ul class="built-lista">
+            <li>Chat diário com a galera no mesmo caminho</li>
+            <li>Feedback do Conrado nos seus rascunhos</li>
+            <li>Call ao vivo todo mês, gravada</li>
+            <li>Uma ideia de post por dia, às 9h</li>
+          </ul>
+        </div>
+        <div class="espaco"></div>
+        <div class="preco">
+          <div class="bill" id="bill" role="radiogroup" aria-label="Plano"><button type="button" role="radio" aria-checked="true" data-bill="tri">3 meses <span id="bill-tag">−23%</span></button><button type="button" role="radio" aria-checked="false" data-bill="mes">Mensal</button><button type="button" role="radio" aria-checked="false" data-bill="anual">Anual</button></div>
+          <div class="valor"><s id="price-strike">R$ 197</s><span id="price-main">R$ 147</span><small id="price-per">/mês</small></div>
+          <p class="rotulo" id="price-deadline">Preço de fundador até 30/10, 23h59</p>
+          <a class="btn" data-plan="trimestralCartao" id="btn-cartao" href="#" rel="noopener">Entrar com cartão <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          <a class="linkzinho" data-plan="trimestralPix" id="btn-pix" href="#" rel="noopener">ou pagar no Pix</a>
+          <p class="gatilho" id="note-plano"></p>
+        </div>
+        <p class="of-links"><button type="button" class="linkzinho" data-sheet="mods">O que tem dentro</button><button type="button" class="linkzinho" data-sheet="faq">Perguntas</button><button type="button" class="linkzinho" data-sheet="video">Vídeo · 5 min</button><button type="button" class="linkzinho" data-sheet="sobre">Quem conduz</button></p>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+</div>
 
-<section id="perguntas" style="padding:0 0 clamp(56px,7vw,96px);scroll-margin-top:40px">
-  <div style="max-width:880px;margin:0 auto;padding:0 20px">
-    <h2 data-reveal style="margin:0;font:400 clamp(32px,4vw,52px)/1 'Instrument Serif',serif;letter-spacing:-0.015em;color:#1F1E1C">Perguntas <em>rápidas</em>.</h2>
-    <div data-reveal class="faq" style="margin-top:24px;min-width:0;border-bottom:1px solid #E7E3DB">
-      <details open><summary>Por que no Telegram?<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v12M2 8h12"/></svg></summary><p>Porque lá o bot cuida da entrada e da assinatura sozinho, e o grupo fica organizado em dois espaços: Avisos e Chat. Se você não tem, é grátis e leva 1 minuto pra instalar.</p></details>
-      <details><summary>Preciso ter seguidores?<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v12M2 8h12"/></svg></summary><p>Não. A Built é pra quem está começando: CLT, quem toca um negócio próprio ou da família, ou quem está buscando uma nova forma de fazer dinheiro.</p></details>
-      <details><summary>Quanto tempo por dia?<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v12M2 8h12"/></svg></summary><p>De 20 a 30 minutos: postar e trocar com o grupo no Chat.</p></details>
-      <details><summary>Como funciona o pagamento?<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v12M2 8h12"/></svg></summary><p id="faq-pagamento">Pelo Stripe. No cartão, R$ 441 a cada 3 meses, renovando sozinho. No Pix, você paga os 3 meses e o bot te avisa antes de vencer. O anual é um pagamento só de R$ 1.470, no cartão ou no Pix. Depois de pagar, você abre o bot no Telegram e entra no grupo na hora.</p></details>
-      <details><summary>Posso cancelar?<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v12M2 8h12"/></svg></summary><p>Pode, quando quiser e sem multa: a assinatura só não renova no próximo período, e seu acesso vai até o fim do período pago. É só mandar /assinatura pro bot.</p></details>
-      <details><summary>E se eu não gostar?<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v12M2 8h12"/></svg></summary><p>Você tem 7 dias pra pedir o dinheiro de volta, inteiro.</p></details>
-    </div>
-  </div>
-</section>
-</main>
-
-<footer id="footer" style="border-top:1px solid #E7E3DB;padding:48px 0 40px">
-  <div style="max-width:1160px;margin:0 auto;padding:0 20px;display:flex;flex-direction:column;gap:24px">
-    <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px">
-      <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
-        <span style="font:400 30px/1 'Instrument Serif',serif;color:#1F1E1C">Built</span><span style="font:400 15px/1.4 Inter,sans-serif;color:#6E6A63">build in public com @condzxyz</span>
-      </div>
-      <div style="display:flex;flex-wrap:wrap;gap:24px;font:400 14px/1 Inter,sans-serif">
-        <a class="fl" href="https://t.me/built_condz_bot" target="_blank" rel="noopener" style="color:#3D3B37;text-decoration:none">Já é membro? Abra o bot</a>
-        <a class="fl" href="https://x.com/condzxyz" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:4px;color:#3D3B37;text-decoration:none">Perfil no X<svg width="12" height="12" viewBox="0 0 16 16" aria-hidden="true" style="fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round"><path d="M5 11l6-6M6 5h5v5"/></svg></a>
-        <a class="fl" href="privacidade.html" style="color:#3D3B37;text-decoration:none">Privacidade</a>
-        <a class="fl" href="termos.html" style="color:#3D3B37;text-decoration:none">Termos</a>
-        <span style="color:#6E6A63">© 2026</span>
-      </div>
-    </div>
-    <p style="margin:0;font:400 13px/1.5 Inter,sans-serif;color:#6E6A63">Pagamento processado pelo Stripe. Dúvidas: <a href="mailto:conrado@doti.gg" style="color:#6E6A63">conrado@doti.gg</a>.</p>
-  </div>
-</footer>
-
-</div>
-<div class="quiz" id="quiz" hidden role="dialog" aria-modal="true" aria-label="Diagnóstico da Built">
-  <div class="quiz-card">
-    <div class="quiz-top">
-      <button type="button" class="quiz-ico" id="quiz-back" aria-label="Voltar"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M13 8H3M7 4L3 8l4 4"/></svg></button>
-      <div class="quiz-bar" aria-hidden="true"><i id="quiz-prog"></i></div>
-      <span class="quiz-count" id="quiz-count"></span>
-      <button type="button" class="quiz-ico" id="quiz-close" aria-label="Fechar"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8"/></svg></button>
-    </div>
-    <div id="quiz-body"></div>
+<div class="sheet" id="sheet" hidden role="dialog" aria-modal="true">
+  <div class="sheet-card">
+    <button type="button" class="ico sheet-x" id="sheet-x" aria-label="Fechar"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8"/></svg></button>
+    <div id="sheet-body"></div>
   </div>
 </div>
-<div id="mobile-bar" hidden style="position:fixed;left:0;right:0;bottom:0;z-index:60;background:rgba(247,245,240,.94);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-top:1px solid #E7E3DB;padding:10px 16px calc(10px + env(safe-area-inset-bottom));display:flex;align-items:center;justify-content:space-between;gap:12px">
-  <span id="mobile-bar-text" style="font:500 14px/1.3 Inter,sans-serif;color:#1F1E1C">R$ 147/mês · fundador até 30/10</span>
-  <a href="#entrar" id="mobile-bar-btn" style="display:inline-flex;align-items:center;height:44px;padding:0 22px;border-radius:999px;background:#1F1E1C;color:#FCFBF8;font:500 15px/1 Inter,sans-serif;text-decoration:none">Entrar</a>
-</div>
-</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<div class="teste-local" id="teste-local" hidden>teste local · o checkout é o Stripe real · <button type="button" id="btn-zerar">recomeçar do zero</button></div>
 
 <script>
 (() => {
+  'use strict';
+
+  // ================== CONFIG (edite aqui) ==================
   const CFG = {
+    // Built (preços e links iguais aos da landing antiga da Built; trocam sozinhos depois do prazo de fundador)
     fundadorAte: '2026-10-30T23:59:00-03:00',
     links: {
       trimestralCartao: 'https://buy.stripe.com/8x228sg2w1KW309142bsc00',
       trimestralPix: 'https://buy.stripe.com/fZueVeg2w9do309fYWbsc01',
       anual: 'https://buy.stripe.com/00wcN66rWblw58heUSbsc02',
-      // Mensal (30% acima do trimestral). Vazio = a página só mostra o plano de 3 meses e o anual.
       mensalCartao: 'https://buy.stripe.com/cNi9AU9E8blw8kt3cabsc07',
       mensalPix: 'https://buy.stripe.com/4gM28s17C4X87gph30bsc08',
     },
-    // Preço cheio (R$ 591 a cada 3 meses, R$ 591 Pix, R$ 1.970 anual, R$ 256 mensal). Entram no lugar dos de fundador depois do prazo.
-    // Se algum ficar vazio, a página esconde os botões e mostra "os novos planos abrem em breve".
     linksCheio: {
       trimestralCartao: 'https://buy.stripe.com/4gM28saIc4X8cAJdQObsc04',
       trimestralPix: 'https://buy.stripe.com/eVqaEYeYsexIcAJbIGbsc05',
@@ -314,328 +486,747 @@ details[open]::details-content{block-size:auto}
       mensalCartao: 'https://buy.stripe.com/7sYfZi9E8dtEdENfYWbsc09',
       mensalPix: 'https://buy.stripe.com/9B6bJ2bMggFQcAJfYWbsc0a',
     },
-    // Valores por mês. Mensal = trimestral + 30%.
     precos: {
       fundador: { tri: 147, triTotal: 441, triRiscado: 197, mes: 191, mesRiscado: 256, anual: 1470 },
       cheio: { tri: 197, triTotal: 591, mes: 256, anual: 1970 },
     },
+    quizUrl: 'https://built-bot.built-bot.workers.dev/quiz',   // contato + respostas vão pro bot (mesmo funil de emails e WhatsApp da Built)
+    leadUrl: 'https://built-bot.built-bot.workers.dev/lead',   // reserva: guarda pelo menos o email
     membrosUrl: 'https://built-bot.built-bot.workers.dev/membros',
-    leadUrl: 'https://built-bot.built-bot.workers.dev/lead',
-    visitUrl: 'https://built-bot.built-bot.workers.dev/v',
-    quizUrl: 'https://built-bot.built-bot.workers.dev/quiz',
-    // Vídeo de vendas (gravado 19/10, 5:23). Sem src, a página mostra o aviso "vídeo em produção" e o botão aparece direto.
-    // ctaAt: segundo em que o botão aparece = começo da oferta ("147 no plano de três meses", 4:43).
-    // Metade das visitas vê o botão desde o início, pra comparar.
-    video: { src: 'video/vsl.mp4', poster: 'video/vsl.jpg', ctaAt: 282 },
     mostrarMembrosAPartirDe: 10,
+    visitUrl: 'https://built-bot.built-bot.workers.dev/v',
+    whatsappObrigatorio: true,
+    site: 'condzmethod.com/built',
+    arrobaStory: '@conrado_desa',
   };
-  const $ = (s) => document.querySelector(s);
-  const root = $('#root');
-  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // ==========================================================
 
-  // Quem vem do bot chega com ?tg=ID. O id vai pro Stripe como client_reference_id
-  // e o bot libera o acesso sozinho quando o pagamento cai.
+  const $ = (s, r = document) => r.querySelector(s);
+  const esc = (t) => String(t ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const local = /^(localhost|127\.0\.0\.1)$/.test(location.hostname);
+  const SETA = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>';
+
+  // ---------------- elementos e tipos ----------------
+  const EL = {
+    fogo:  { nome: 'Fogo',  base: '#E0552D', dark: '#9A3416', light: '#FBE4D8', a1: '#FFC870', a2: '#E8622F', a3: '#5E1B09' },
+    ar:    { nome: 'Ar',    base: '#5F93B4', dark: '#2F5A73', light: '#E2EDF4', a1: '#FFFFFF', a2: '#9EC4DB', a3: '#274B61' },
+    terra: { nome: 'Terra', base: '#98663E', dark: '#5C3B1F', light: '#F1E4D1', a1: '#F3D6A0', a2: '#A8774A', a3: '#3B2511' },
+    raio:  { nome: 'Raio',  base: '#D7A10F', dark: '#765704', light: '#FBF0C8', a1: '#FFF8C7', a2: '#F2C12E', a3: '#6B4F03' },
+    agua:  { nome: 'Água',  base: '#1E6DB0', dark: '#123F69', light: '#D9E8F6', a1: '#D4EDFF', a2: '#3C91D8', a3: '#0B2C52' },
+    luz:   { nome: 'Luz',   base: '#8762C2', dark: '#4E3686', light: '#ECE5F7', a1: '#FFF4D4', a2: '#C2A1EE', a3: '#3B276B' },
+  };
+  const GLYPH = {
+    fogo: '<path d="M50 6c4 16 22 24 24 44 2 22-11 40-24 40S24 76 26 56c1-11 7-19 12-25 1 10 6 16 12 18-3-13-4-28 0-43z" fill="#C"/><path d="M50 54c6 6 11 11 10 20-1 8-5 12-10 12s-10-4-10-11c-1-8 5-13 10-21z" fill="rgba(255,255,255,.5)"/>',
+    ar: '<g fill="none" stroke="#C" stroke-width="7.5" stroke-linecap="round"><path d="M10 38h48c10 0 15-12 7-18-6-4-14 0-13 7"/><path d="M10 56h64c12 0 17 15 6 21-7 4-15-1-14-8"/><path d="M18 73h30"/></g>',
+    terra: '<path d="M4 84 38 28l14 23 10-15 34 48z" fill="#C"/><path d="M38 28l9 15-5-2-4 5-4-5-5 2z" fill="rgba(255,255,255,.65)"/>',
+    raio: '<path d="M60 4 20 56h26L36 96l46-56H56z" fill="#C"/>',
+    agua: '<path d="M50 6S22 42 22 62a28 28 0 0 0 56 0C78 42 50 6 50 6z" fill="#C"/><path d="M35 63c0 8 5 14 12 16" fill="none" stroke="rgba(255,255,255,.65)" stroke-width="5" stroke-linecap="round"/>',
+    luz: '<circle cx="50" cy="50" r="17" fill="#C"/><g stroke="#C" stroke-width="6" stroke-linecap="round"><path d="M50 8v12M50 80v12M8 50h12M80 50h12M20 20l9 9M71 71l9 9M80 20l-9 9M29 71l-9 9"/></g>',
+    neutro: '<path d="M50 22l8 20 20 8-20 8-8 20-8-20-20-8 20-8z" fill="#C"/>',
+  };
+  const glyph = (k, cor) => GLYPH[k].replace(/#C/g, cor);
+
+  const STAT = [['ENE', 'Energia'], ['CAL', 'Calma'], ['ACA', 'Ação'], ['FOC', 'Foco'], ['COR', 'Coragem'], ['VAL', 'Valor']];
+  const dez = (v, min, max) => Math.max(min, Math.min(max, Math.round(v / 10) * 10));
+
+  const MODS = {
+    comece:     { t: 'Comece aqui', d: 15 },
+    pensar:     { t: 'Como pensar: a dimensão de cima', d: 55 },
+    energia:    { t: 'Energia antes de produtividade', d: 50 },
+    foco:       { t: 'Foco, emoção e o fim da correria', d: 45 },
+    fomo:       { t: 'Dinheiro sem FOMO', d: 35 },
+    dinheiro:   { t: 'Dinheiro com IA: sua primeira oferta', d: 75 },
+    negociacao: { t: 'Negociação: cobrar sem pedir desculpa', d: 60 },
+    aparecer:   { t: 'Aparecer sem vergonha', d: 40 },
+    estrutura:  { t: 'Sua estrutura mensal', d: 45 },
+  };
+  const ORDEM = ['comece', 'pensar', 'energia', 'foco', 'fomo', 'dinheiro', 'negociacao', 'aparecer', 'estrutura'];
+  const BONUS = [
+    'Planner do mês: o dia, a semana e o mês numa página só',
+    'Roteiros de negociação: o que responder no "tá caro", no "vou pensar" e no "faz por menos"',
+  ];
+
+  const ARQ = {
+    trator: {
+      nome: 'Trator', el: 'fogo', evo: 'Usina',
+      ia: 'Pra você, a IA é braço extra: ela faz o trabalho repetido e o seu tempo volta pro que só você faz.',
+      hab: ['Mão na massa', 'Quando todo mundo trava, você já está fazendo.'],
+      atk: [
+        { n: 'Resolver no braço', dmg: (s) => dez(s.ACA, 50, 120), custo: ['fogo', 'fogo', 'neutro'], t: 'Também causa 30 de dano em você.' },
+        { n: 'Virar a noite', dmg: () => 60, custo: ['fogo', 'neutro'], t: 'No próximo turno, você não ataca.' },
+      ],
+      fraq: 'Esgotamento ×2', res: 'Preguiça −30', recuo: 1,
+      flavor: 'Ninguém trabalha mais. O problema é que ninguém descansa menos.',
+      forte: 'Você executa. Enquanto os outros discutem, você já fez. Isso é raro e é a base de qualquer coisa grande.',
+      cego: 'Você trata a sua energia como se fosse infinita e resolve tudo no braço. O dinheiro até entra, mas você vira refém dele: se você para, tudo para.',
+      semana: 'Escolha uma tarefa que só você faz e escreva o passo a passo pra outra pessoa, ou uma IA, fazer no seu lugar. É o primeiro tijolo da Usina.',
+      evoTxt: 'A Usina gera energia sem se queimar: cuida do corpo e da cabeça primeiro, monta uma rotina que roda sem você e cobra um preço que paga o seu tempo.',
+      rota: ['energia', 'estrutura', 'negociacao'],
+    },
+    estrategista: {
+      nome: 'Estrategista', el: 'ar', evo: 'Xeque-Mate',
+      ia: 'Pra você, a IA corta o planejamento: ela vira a sua ideia num teste simples, com prazo, pra você jogar.',
+      hab: ['Ver o tabuleiro', 'Enxerga três jogadas à frente. E fica olhando.'],
+      atk: [
+        { n: 'Visão de longe', dmg: (s) => dez(s.CAL, 40, 100), custo: ['ar', 'ar', 'neutro'], t: 'Dobra o dano se você agir no mesmo turno.' },
+        { n: 'Planilha perfeita', dmg: () => 20, custo: ['ar', 'neutro'], t: 'Jogue uma moeda. Se der coroa, nada acontece.' },
+      ],
+      fraq: 'Perfeccionismo ×2', res: 'Promessa milagrosa −30', recuo: 0,
+      flavor: 'Já leu tudo sobre o assunto. Só falta o primeiro passo.',
+      forte: 'Você pensa antes de agir, estuda e enxerga o caminho. Não cai em promessa fácil e, quando se move, se move certo.',
+      cego: 'Você espera estar pronto, e esse dia não chega. Consome mais do que cria, e cada semana planejando é uma semana sem nada pra aprender.',
+      semana: 'Pegue uma coisa que você vem planejando e faça a versão mais simples possível em 48 horas. Feita e imperfeita ensina mais do que perfeita na gaveta.',
+      evoTxt: 'O Xeque-Mate continua pensando três jogadas à frente, só que joga: uma oferta, uma semana, um teste de cada vez, sempre com prazo.',
+      rota: ['dinheiro', 'aparecer', 'estrutura'],
+    },
+    joia: {
+      nome: 'Joia Escondida', el: 'terra', evo: 'Joia Rara',
+      ia: 'Pra você, a IA é vitrine: ela te ajuda a mostrar o seu trabalho, montar a proposta e defender o preço.',
+      hab: ['Mão boa', 'Tudo que passa por você sai melhor do que entrou.'],
+      atk: [
+        { n: 'Entrega impecável', dmg: (s) => dez(s.FOC, 60, 120), custo: ['terra', 'terra', 'neutro'], t: 'O cliente elogia. E paga pouco.' },
+        { n: 'Desconto automático', dmg: () => 10, custo: ['neutro'], t: 'Cure 20 de dano do oponente.' },
+      ],
+      fraq: 'Vergonha ×2', res: 'Pressa −30', recuo: 2,
+      flavor: 'O melhor trabalho da cidade. E o segredo mais bem guardado também.',
+      forte: 'Você manda bem no que faz. Capricha, entrega e resolve. É o tipo de profissional que o cliente indica sem pensar duas vezes.',
+      cego: 'Você acha que trabalho bom se vende sozinho, e não se vende. Pouca gente sabe que você existe, e quem sabe paga menos do que vale, porque o desconto sai antes de alguém pedir.',
+      semana: 'Mande a próxima proposta com o preço 30% acima do que você cobraria, sem pedir desculpa no texto. Anote o que a pessoa responde.',
+      evoTxt: 'A Joia Rara cobra pelo valor que entrega e deixa o trabalho ser visto: mostra o processo, negocia sem culpa e usa IA pra produzir mais sem perder o capricho.',
+      rota: ['negociacao', 'aparecer', 'dinheiro'],
+    },
+    faisca: {
+      nome: 'Faísca', el: 'raio', evo: 'Relâmpago',
+      ia: 'Pra você, a IA é foco, não mais uma ideia: um projeto por mês, as tarefas da semana e uma revisão no fim.',
+      hab: ['Dez ideias antes do café', 'Vê oportunidade onde ninguém vê.'],
+      atk: [
+        { n: 'Começo explosivo', dmg: (s) => dez(s.COR, 70, 130), custo: ['raio', 'raio', 'neutro'], t: 'Só pode ser usado uma vez por projeto.' },
+        { n: 'Ideia nova', dmg: () => 50, custo: ['raio'], t: 'Descarte o projeto que estava em jogo.' },
+      ],
+      fraq: 'Distração ×2', res: 'Medo do novo −30', recuo: 0,
+      flavor: 'Já começou sete projetos. Nenhum passou do primeiro mês.',
+      forte: 'Você tem coragem pra começar e criatividade pra ver oportunidade onde ninguém vê. Aprende rápido e não tem medo do novo.',
+      cego: 'Você troca de projeto antes de ele dar resultado. Toda técnica nova parece a resposta, e o resultado mora justamente na parte chata que vem depois da empolgação.',
+      semana: 'Escreva num papel o único projeto que você vai tocar nos próximos 30 dias. Qualquer outra ideia vai pra uma lista chamada "depois".',
+      evoTxt: 'O Relâmpago mantém a faísca, mas cai num lugar só: um projeto por mês, uma meta e uma revisão no fim. A energia que antes espalhava vira tração.',
+      rota: ['foco', 'estrutura', 'dinheiro'],
+    },
+    ancora: {
+      nome: 'Âncora', el: 'agua', evo: 'Veleiro',
+      ia: 'Pra você, a IA é um teste sem risco: uma oferta pequena em paralelo, com ela fazendo o trabalho pesado.',
+      hab: ['Porto seguro', 'Todo mundo conta com você. Você conta com quem?'],
+      atk: [
+        { n: 'Cumprir o combinado', dmg: (s) => dez(s.FOC, 50, 110), custo: ['agua', 'agua', 'neutro'], t: 'Nunca falha. Nunca arrisca.' },
+        { n: 'Plano B eterno', dmg: () => 20, custo: ['neutro'], t: 'Guarde esta carta pra usar depois. Ou nunca.' },
+      ],
+      fraq: 'Medo de arriscar ×2', res: 'Caos −30', recuo: 3,
+      flavor: 'Segura a casa inteira. Só falta segurar o próprio sonho.',
+      forte: 'Você tem disciplina e responsabilidade. Cumpre o que promete, segura as contas e as pessoas confiam em você. É exatamente o que falta na maioria.',
+      cego: 'Você troca possibilidade por segurança toda vez. Espera ter tempo, dinheiro e certeza ao mesmo tempo e, enquanto isso, a vida que você quer fica pro ano que vem.',
+      semana: 'Separe 30 minutos em três dias dessa semana pra montar uma oferta simples com IA, sem largar nada do que você já faz. Risco pequeno, mas risco.',
+      evoTxt: 'O Veleiro não larga o porto de uma vez: monta uma renda extra em paralelo, com pouco tempo por dia, e só abre mais vela quando ela já se paga.',
+      rota: ['dinheiro', 'pensar', 'negociacao'],
+    },
+    farol: {
+      nome: 'Farol', el: 'luz', evo: 'Holofote',
+      ia: 'Pra você, a IA transforma o que você já sabe em oferta: um serviço com nome, preço e página.',
+      hab: ['Olho do furacão', 'Quanto maior o caos, mais calma você traz.'],
+      atk: [
+        { n: 'Respirar antes', dmg: (s) => dez(s.CAL, 60, 120), custo: ['luz', 'luz', 'neutro'], t: 'Remove todos os efeitos de raiva do campo.' },
+        { n: 'Conselho grátis', dmg: () => 40, custo: ['neutro'], t: 'O oponente também ganha 40 de energia.' },
+      ],
+      fraq: 'Vender ×2', res: 'Pressão −30', recuo: 2,
+      flavor: 'Ilumina o caminho de todo mundo. Menos o próprio.',
+      forte: 'Você tem calma, consciência e leitura das pessoas. Não reage a tudo, pensa antes de falar e ajuda quem está perto. É a base que quase ninguém tem.',
+      cego: 'Você trata dinheiro como se fosse sujo, ou como se não fosse pra você. Ajuda de graça, não cobra e não se posiciona. Só que dinheiro é consequência de gerar valor pra quem tem dinheiro.',
+      semana: 'Liste três problemas que as pessoas te pedem ajuda pra resolver. Escolha um e escreva quanto você cobraria pra resolver ele direito.',
+      evoTxt: 'O Holofote junta a calma com a coragem de aparecer e cobrar: transforma o que já sabe numa oferta, negocia sem culpa e usa o dinheiro como ferramenta.',
+      rota: ['fomo', 'dinheiro', 'negociacao'],
+    },
+  };
+  // fraqueza principal de cada tipo (desempate): o stat mais baixo "esperado"
+  const FRACO = { trator: 'ENE', estrategista: 'ACA', joia: 'VAL', faisca: 'FOC', ancora: 'COR', farol: 'VAL' };
+
+  // ---------------- perguntas ----------------
+  // cada opção: [valor, texto, {pontos nos stats}, {pontos nos tipos}]
+  const BLOCOS = [
+    { k: 'momento', nome: 'Seu momento' },
+    { k: 'energia', nome: 'Energia' },
+    { k: 'acao', nome: 'Ação e foco' },
+    { k: 'coragem', nome: 'Dinheiro e coragem' },
+    { k: 'destino', nome: 'Seu perfil' },
+  ];
+  const Q = [
+    { k: 'situacao', b: 'momento', q: 'Hoje, você é…', o: [['clt', 'CLT'], ['proprio', 'Dono do meu negócio'], ['familia', 'Do negócio da família'], ['autonomo', 'Freelancer ou autônomo'], ['buscando', 'Em busca de uma nova renda'], ['estudante', 'Estudante']] },
+    { k: 'acorda', b: 'energia', q: 'Como você acorda na maioria dos dias?', o: [['a', 'Com energia, pronto pro dia', { ENE: 3 }, { farol: 1 }], ['b', 'Funciono depois do café', { ENE: 2 }], ['c', 'Cansado, mesmo dormindo', {}, { trator: 1 }], ['d', 'Já acordo pensando nos problemas', {}, { trator: 1 }]] },
+    { k: 'reage', b: 'energia', q: 'Um cliente, ou o chefe, te responde mal. O que acontece?', o: [['a', 'Respiro, entendo o lado dele e sigo', { CAL: 3 }, { farol: 3 }], ['b', 'Fico irritado um tempo, depois passa', { CAL: 2 }], ['c', 'Estraga o meu dia inteiro', {}, { ancora: 2, joia: 1 }], ['d', 'Respondo na hora e depois me arrependo', { ACA: 1 }, { trator: 3, faisca: 1 }]] },
+    { k: 'ideia', b: 'acao', q: 'Você teve uma ideia boa de negócio. O que acontece?', o: [['a', 'Começo no mesmo dia, nem que seja pequeno', { ACA: 3, COR: 1 }, { trator: 1, faisca: 1 }], ['b', 'Pesquiso, planejo e fica pra depois', { FOC: 1 }, { estrategista: 3 }], ['c', 'Começo animado e largo na segunda semana', { ACA: 2 }, { faisca: 3 }], ['d', 'Penso que alguém já deve ter feito melhor', {}, { joia: 1, ancora: 1, estrategista: 1 }]] },
+    { k: 'semana', b: 'acao', q: 'A sua semana é mais…', o: [['a', 'Planejada: sei o que faço em cada dia', { FOC: 3 }, { ancora: 2, joia: 1 }], ['b', 'Apagando incêndio o tempo todo', { ACA: 2 }, { trator: 3 }], ['c', 'Cheia de ideia e pouca entrega', { ACA: 1 }, { faisca: 2, estrategista: 2 }], ['d', 'Igual toda semana, no automático', { FOC: 1 }, { ancora: 1 }]] },
+    { k: 'caro', b: 'coragem', q: 'Um cliente diz: "tá caro". Você…', o: [['a', 'Explico o valor e mantenho o preço', { VAL: 3, COR: 1 }], ['b', 'Dou desconto na hora pra não perder', { VAL: 1 }, { joia: 3 }], ['c', 'Fico sem graça e travo', {}, { joia: 1, farol: 3 }], ['d', 'Nunca vendi nada pra ninguém', {}, { estrategista: 2, ancora: 1 }]] },
+    { k: 'risco', b: 'coragem', q: 'Uma oportunidade boa, mas sem garantia nenhuma. Você…', o: [['a', 'Vou com tudo', { COR: 3, ACA: 1 }, { faisca: 2 }], ['b', 'Testo pequeno antes de apostar', { COR: 2, CAL: 1 }, { farol: 2 }], ['c', 'Preciso de muita certeza pra ir', { COR: 1 }, { estrategista: 1, ancora: 1 }], ['d', 'Prefiro o certo, mesmo ganhando pouco', {}, { ancora: 2 }]] },
+    { k: 'trava', b: 'coragem', q: 'No fim das contas, o que mais te trava hoje?', o: [['comeco', 'Não sei por onde começar', { ENE: 1, FOC: 1 }, { estrategista: 3, ancora: 1 }], ['tempo', 'Falta tempo ou energia', { FOC: 1 }, { trator: 1, ancora: 1 }], ['vergonha', 'Vergonha de me expor', { ENE: 1, FOC: 1 }, { joia: 4 }], ['paro', 'Começo e paro', { ENE: 1 }, { faisca: 2 }], ['dinheiro', 'Não sei transformar o que sei em dinheiro', { ENE: 1, FOC: 1 }, { farol: 2, joia: 1 }], ['cabeca', 'A cabeça: foco e ansiedade', {}, { faisca: 1 }]] },
+  ];
+  const QK = Object.fromEntries(Q.map((q) => [q.k, q]));
+  const INTER = {
+    energia: { t: 'HP calculado.', p: 'Energia vem antes de produtividade. Eu medito todo dia desde 2016. Não virei monge: só parei de reagir a tudo, e sobrou energia pro que importa.', hp: true, blur: 10 },
+  };
+  const CHECK = [['momento', 'Seu momento'], ['energia', 'HP e energia'], ['acao', 'Perfil e ataques'], ['coragem', 'Dinheiro e coragem']];
+
+  // ---------------- cálculo ----------------
+  const MAXP = {};
+  STAT.forEach(([s]) => { MAXP[s] = Q.reduce((acc, q) => acc + Math.max(0, ...q.o.map((o) => (o[2] && o[2][s]) || 0)), 0); });
+
+  // HP sai só do bloco de energia (acorda + reage), pra bater com a tela "HP calculado"
+  function calcHP(r) {
+    const pts = (k, s) => { const o = QK[k].o.find((x) => x[0] === r[k]); return (o && o[2] && o[2][s]) || 0; };
+    const e = pts('acorda', 'ENE'), c = pts('reage', 'CAL');
+    return 50 + Math.round(((e / 3) * 45 + (c / 3) * 35) / 10) * 10;
+  }
+
+  function calcular(r) {
+    const pts = Object.fromEntries(STAT.map(([s]) => [s, 0]));
+    const tipo = Object.fromEntries(Object.keys(ARQ).map((k) => [k, 0]));
+    for (const q of Q) {
+      const o = q.o.find((x) => x[0] === r[q.k]);
+      if (!o) continue;
+      for (const [s, v] of Object.entries(o[2] || {})) pts[s] += v;
+      for (const [t, v] of Object.entries(o[3] || {})) tipo[t] += v;
+    }
+    const stats = {};
+    STAT.forEach(([s]) => { stats[s] = Math.max(10, Math.min(97, Math.round((pts[s] / MAXP[s]) * 100))); });
+    const top = Math.max(...Object.values(tipo));
+    const empatados = Object.keys(tipo).filter((k) => tipo[k] === top);
+    const arq = empatados.sort((a, b) => stats[FRACO[a]] - stats[FRACO[b]])[0];
+    const nivel = Math.round(STAT.reduce((a, [s]) => a + stats[s], 0) / STAT.length);
+    return { stats, arq, hp: calcHP(r), nivel };
+  }
+
+  // ---------------- medir texto (pra quebrar linha no SVG) ----------------
+  const cvm = document.createElement('canvas').getContext('2d');
+  const medir = (txt, font) => { cvm.font = font; return cvm.measureText(txt).width; };
+  function quebrar(txt, font, max, linhas) {
+    const pal = String(txt).split(/\s+/); const out = []; let cur = '';
+    for (const p of pal) {
+      const tent = cur ? cur + ' ' + p : p;
+      if (medir(tent, font) <= max || !cur) cur = tent; else { out.push(cur); cur = p; }
+    }
+    if (cur) out.push(cur);
+    if (out.length > linhas) { const r = out.slice(0, linhas); let u = r[linhas - 1]; while (u && medir(u + '…', font) > max) u = u.replace(/\s*\S+$/, ''); r[linhas - 1] = u + '…'; return r; }
+    return out;
+  }
+  function caber(txt, peso, fam, max, maior, menor) {
+    let s = maior;
+    while (s > menor && medir(txt, `${peso} ${s}px ${fam}`) > max) s -= 1;
+    return s;
+  }
+  function semente(str) { let h = 2166136261; for (const c of str) { h ^= c.charCodeAt(0); h = Math.imul(h, 16777619); } return () => { h ^= h << 13; h ^= h >>> 17; h ^= h << 5; return ((h >>> 0) % 10000) / 10000; }; }
+
+  // ---------------- a carta (SVG) ----------------
+  const X = esc;
+  let uidN = 0;
+  function energia(cx, cy, r, k) {
+    const cor = k === 'neutro' ? '#CFC7B8' : EL[k].base;
+    const s = (r * 1.25) / 100;
+    return `<circle cx="${cx}" cy="${cy}" r="${r}" fill="${cor}" stroke="rgba(25,24,22,.25)" stroke-width="1"/><g transform="translate(${cx - 50 * s} ${cy - 50 * s}) scale(${s})">${glyph(k, '#fff')}</g>`;
+  }
+
+  function cartaFrente(c) {
+    const A = ARQ[c.arq], E = EL[A.el], u = 'c' + (++uidN);
+    const INTER_ = 'Inter, sans-serif', SERIF = "'Newsreader', serif", MONO = "'JetBrains Mono', monospace";
+    const nomeTam = caber(c.nome, 800, INTER_, 300, 48, 28);
+    const habLin = quebrar(A.hab[1], `500 17px ${INTER_}`, 532, 2);
+    const flavLin = quebrar(A.flavor, `italic 19px ${SERIF}`, 500, 2);
+    const arte = c.arte || `img/arte-${A.el}.webp`;
+    const cantos = [[42, 150, 1, 1], [558, 150, -1, 1], [42, 404, 1, -1], [558, 404, -1, -1]]
+      .map(([x, y, sx, sy]) => `<path d="M${x} ${y + sy * 24}V${y}H${x + sx * 24}" fill="none" stroke="url(#${u}f)" stroke-width="2.6" stroke-linecap="round"/>`).join('');
+    const selo = (() => {
+      const cx = 530, cy = 396, R = 25, n = 18; let d = '';
+      for (let i = 0; i < n * 2; i++) { const a = (i / (n * 2)) * Math.PI * 2 - Math.PI / 2, r = i % 2 ? R - 3.2 : R; d += `${i ? 'L' : 'M'}${(cx + Math.cos(a) * r).toFixed(1)} ${(cy + Math.sin(a) * r).toFixed(1)}`; }
+      return `<g filter="url(#${u}s)"><path d="${d}Z" fill="url(#${u}f)" stroke="rgba(70,48,14,.4)" stroke-width="1"/><circle cx="${cx}" cy="${cy}" r="${R - 7.5}" fill="none" stroke="rgba(70,48,14,.5)" stroke-width="1.2"/><text x="${cx}" y="${cy + 7.5}" text-anchor="middle" font-family="${SERIF}" font-size="21" fill="#4A3410">M</text></g>`;
+    })();
+    const rnd = semente(c.nome + c.arq);
+    let brilhos = '';
+    for (let i = 0; i < 14; i++) {
+      const x = 44 + rnd() * 512, y = 150 + rnd() * 250, r = 2 + rnd() * 5;
+      brilhos += `<path d="M${x} ${y - r}l${r * .28} ${r * .72} ${r * .72} ${r * .28}-${r * .72} ${r * .28}-${r * .28} ${r * .72}-${r * .28}-${r * .72}-${r * .72}-${r * .28} ${r * .72}-${r * .28}z" fill="rgba(255,255,255,${(.35 + rnd() * .5).toFixed(2)})"/>`;
+    }
+    let raios = '';
+    for (let i = 0; i < 18; i++) { const a = (i / 18) * Math.PI * 2; raios += `<line x1="300" y1="277" x2="${(300 + Math.cos(a) * 420).toFixed(1)}" y2="${(277 + Math.sin(a) * 420).toFixed(1)}" stroke="rgba(255,255,255,.13)" stroke-width="${i % 2 ? 1.5 : 4}"/>`; }
+    const atk = A.atk.map((a, i) => {
+      const y = 544 + i * 72;
+      const icones = a.custo.map((k, j) => energia(46 + j * 25, y + 22, 11, k)).join('');
+      const nx = 46 + a.custo.length * 25 + 4;
+      const dl = quebrar(a.t, `500 15.5px ${INTER_}`, 566 - nx, 1)[0];
+      return `${icones}<text x="${nx}" y="${y + 29}" font-family="${INTER_}" font-weight="800" font-size="22" fill="#1B1A18">${X(a.n)}</text><text x="566" y="${y + 32}" text-anchor="end" font-family="${INTER_}" font-weight="800" font-size="34" fill="#1B1A18">${a.dmg(c.stats)}</text><text x="${nx}" y="${y + 54}" font-family="${INTER_}" font-weight="500" font-size="15.5" fill="#4A4741">${X(dl)}</text>`;
+    }).join('');
+    let recuo = '';
+    for (let i = 0; i < A.recuo; i++) recuo += energia(440 + i * 22, 724, 8.5, 'neutro');
+    if (!A.recuo) recuo = `<text x="430" y="730" font-family="${INTER_}" font-weight="700" font-size="17" fill="#1B1A18">0</text>`;
+    const faixa = [c.numero ? `Nº ${String(c.numero).padStart(4, '0')}` : null, `Builder de ${E.nome}`, `Nível ${c.nivel}`].filter(Boolean).join(' · ');
+    return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 840" width="600" height="840" role="img" aria-label="Carta do perfil de ${X(c.nome)}: ${X(A.nome)}, tipo ${E.nome}">
+<defs>
+<linearGradient id="${u}f" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F7EFD9"/><stop offset=".22" stop-color="#C4AF82"/><stop offset=".5" stop-color="#FFF7DE"/><stop offset=".78" stop-color="#B49E70"/><stop offset="1" stop-color="#F1E3BF"/></linearGradient>
+<linearGradient id="${u}b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${E.light}"/><stop offset=".55" stop-color="#FBF8F1"/><stop offset="1" stop-color="${E.light}"/></linearGradient>
+<radialGradient id="${u}a" cx=".5" cy=".5" r=".72"><stop offset="0" stop-color="${E.a1}"/><stop offset=".42" stop-color="${E.a2}"/><stop offset="1" stop-color="${E.a3}"/></radialGradient>
+<clipPath id="${u}c"><rect x="34" y="142" width="532" height="270" rx="12"/></clipPath>
+<radialGradient id="${u}v" cx=".5" cy=".46" r=".78"><stop offset=".55" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".42"/></radialGradient>
+<linearGradient id="${u}g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".22"/><stop offset=".35" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<filter id="${u}s" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000" flood-opacity=".35"/></filter>
+</defs>
+<rect width="600" height="840" rx="30" fill="#191816"/>
+<rect x="9" y="9" width="582" height="822" rx="23" fill="none" stroke="url(#${u}f)" stroke-width="3"/>
+<rect x="16" y="16" width="568" height="808" rx="18" fill="url(#${u}b)"/>
+<rect x="34" y="32" width="100" height="24" rx="12" fill="#1B1A18"/>
+<text x="84" y="48.5" text-anchor="middle" font-family="${MONO}" font-weight="700" font-size="11.5" letter-spacing="1.6" fill="#F4EFE6">ESTÁGIO ${c.estagio || 1}</text>
+<text x="34" y="102" font-family="${INTER_}" font-weight="800" font-size="${nomeTam}" letter-spacing="-0.5" fill="#1B1A18">${X(c.nome)}</text>
+<text x="34" y="128" font-family="${INTER_}" font-weight="600" font-size="17" fill="${E.dark}">${X(c.titulo || A.nome)} · tipo ${E.nome}</text>
+<text x="514" y="102" text-anchor="end" font-family="${INTER_}" font-weight="800" fill="#1B1A18"><tspan font-size="15" dy="0">HP </tspan><tspan font-size="40">${c.hp}</tspan></text>
+${energia(551, 88, 22, A.el)}
+<g clip-path="url(#${u}c)">
+${arte ? `<rect x="34" y="142" width="532" height="270" fill="${E.a3}"/><image href="${arte}" x="34" y="142" width="532" height="270" preserveAspectRatio="xMidYMid slice"/><rect x="34" y="142" width="532" height="270" fill="url(#${u}v)"/><rect x="34" y="142" width="532" height="270" fill="url(#${u}g)"/>` : `<rect x="34" y="142" width="532" height="270" fill="url(#${u}a)"/>${raios}<circle cx="300" cy="277" r="62" fill="none" stroke="rgba(255,255,255,.28)" stroke-width="1.5"/><circle cx="300" cy="277" r="102" fill="none" stroke="rgba(255,255,255,.2)" stroke-width="1.5"/><circle cx="300" cy="277" r="146" fill="none" stroke="rgba(255,255,255,.14)" stroke-width="1.5"/>`}
+${brilhos}
+${c.estagio === 2 ? `<circle cx="300" cy="277" r="124" fill="none" stroke="url(#${u}f)" stroke-width="5"/><circle cx="300" cy="277" r="104" fill="rgba(255,255,255,.12)"/>` : ''}
+${arte ? '' : `<g transform="translate(206 186) scale(1.88)" opacity=".28">${glyph(A.el, '#000')}</g><g transform="translate(203 180) scale(1.88)">${glyph(A.el, '#FFFFFF')}</g>`}
+</g>
+<rect x="34" y="142" width="532" height="270" rx="12" fill="none" stroke="url(#${u}f)" stroke-width="3"/>
+${cantos}
+${selo}
+<rect x="64" y="424" width="472" height="28" rx="14" fill="rgba(255,255,255,.65)" stroke="rgba(25,24,22,.12)"/>
+<text x="300" y="443.5" text-anchor="middle" font-family="${SERIF}" font-style="italic" font-size="18" fill="#3A3732">${X(faixa)}</text>
+<rect x="34" y="466" width="116" height="24" rx="6" fill="${E.dark}"/>
+<text x="92" y="482.5" text-anchor="middle" font-family="${MONO}" font-weight="700" font-size="11.5" letter-spacing="1.4" fill="#FFFFFF">HABILIDADE</text>
+<text x="162" y="485" font-family="${INTER_}" font-weight="800" font-size="20" fill="${E.dark}">${X(A.hab[0])}</text>
+${habLin.map((l, i) => `<text x="34" y="${512 + i * 20}" font-family="${INTER_}" font-weight="500" font-size="17" fill="#2B2925">${X(l)}</text>`).join('')}
+${atk}
+<line x1="34" y1="696" x2="566" y2="696" stroke="rgba(25,24,22,.18)" stroke-width="1.5"/>
+<text x="34" y="714" font-family="${MONO}" font-weight="700" font-size="11" letter-spacing="1.2" fill="#6E6A63">FRAQUEZA</text>
+<text x="34" y="736" font-family="${INTER_}" font-weight="700" font-size="${caber(A.fraq, 700, INTER_, 184, 17, 12)}" fill="#1B1A18">${X(A.fraq)}</text>
+<text x="228" y="714" font-family="${MONO}" font-weight="700" font-size="11" letter-spacing="1.2" fill="#6E6A63">RESISTÊNCIA</text>
+<text x="228" y="736" font-family="${INTER_}" font-weight="700" font-size="${caber(A.res, 700, INTER_, 188, 17, 12)}" fill="#1B1A18">${X(A.res)}</text>
+<text x="430" y="714" font-family="${MONO}" font-weight="700" font-size="11" letter-spacing="1.2" fill="#6E6A63">RECUO</text>
+${recuo}
+<rect x="34" y="750" width="532" height="54" rx="8" fill="rgba(255,255,255,.5)" stroke="rgba(25,24,22,.12)"/>
+${flavLin.map((l, i) => `<text x="48" y="${772 + i * 21}" font-family="${SERIF}" font-style="italic" font-size="19" fill="#3A3732">${X(l)}</text>`).join('')}
+<text x="34" y="818" font-family="${INTER_}" font-weight="600" font-size="12" fill="#6E6A63">Evolui para: ${X(c.estagio === 2 ? `Builder de ${E.nome}` : A.evo)}</text>
+<text x="566" y="818" text-anchor="end" font-family="${MONO}" font-weight="500" font-size="11.5" fill="#6E6A63">${X(CFG.site)}</text>
+</svg>`;
+  }
+
+  function cartaVerso(c) {
+    const A = ARQ[c.arq], E = EL[A.el], u = 'v' + (++uidN);
+    const INTER_ = 'Inter, sans-serif', MONO = "'JetBrains Mono', monospace";
+    const cx = 300, cy = 296, R = 132;
+    const pt = (i, v) => { const a = (-90 + 60 * i) * Math.PI / 180; return [cx + Math.cos(a) * R * v, cy + Math.sin(a) * R * v]; };
+    const hex = (v) => STAT.map((_, i) => pt(i, v).map((n) => n.toFixed(1)).join(',')).join(' ');
+    const poly = STAT.map(([s], i) => pt(i, c.stats[s] / 100).map((n) => n.toFixed(1)).join(',')).join(' ');
+    const rotulos = STAT.map(([s, n], i) => {
+      const [x, y] = pt(i, 1.24);
+      const anc = Math.abs(x - cx) < 5 ? 'middle' : x > cx ? 'start' : 'end';
+      return `<text x="${x.toFixed(1)}" y="${(y + 5).toFixed(1)}" text-anchor="${anc}" font-family="${MONO}" font-weight="700" font-size="13" letter-spacing="1.2" fill="#BDB5A6">${n.toUpperCase()}</text>`;
+    }).join('');
+    const barras = STAT.map(([s, n], i) => {
+      const y = 516 + i * 40, w = (c.stats[s] / 100) * 380;
+      return `<text x="60" y="${y}" font-family="${INTER_}" font-weight="600" font-size="16" fill="#E9E3D7">${n}</text><text x="540" y="${y}" text-anchor="end" font-family="${INTER_}" font-weight="800" font-size="17" fill="#FFFFFF">${c.stats[s]}</text><rect x="160" y="${y - 11}" width="320" height="8" rx="4" fill="rgba(255,255,255,.1)"/><rect x="160" y="${y - 11}" width="${(w * 320 / 380).toFixed(1)}" height="8" rx="4" fill="${E.a2}"/>`;
+    }).join('');
+    const rota = [A.nome, A.evo, `Builder de ${E.nome}`].join('  ›  ');
+    return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 840" width="600" height="840" role="img" aria-label="Números da carta">
+<defs><linearGradient id="${u}f" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F7EFD9"/><stop offset=".5" stop-color="#C4AF82"/><stop offset="1" stop-color="#F1E3BF"/></linearGradient>
+<radialGradient id="${u}g" cx=".5" cy=".36" r=".6"><stop offset="0" stop-color="${E.a3}"/><stop offset="1" stop-color="#151413"/></radialGradient></defs>
+<rect width="600" height="840" rx="30" fill="#191816"/>
+<rect x="9" y="9" width="582" height="822" rx="23" fill="none" stroke="url(#${u}f)" stroke-width="3"/>
+<rect x="16" y="16" width="568" height="808" rx="18" fill="url(#${u}g)"/>
+<text x="300" y="70" text-anchor="middle" font-family="${INTER_}" font-weight="800" font-size="30" fill="#FFFFFF">${X(c.nome)}</text>
+<text x="300" y="98" text-anchor="middle" font-family="${MONO}" font-weight="500" font-size="13" letter-spacing="1.5" fill="#BDB5A6">${X(A.nome.toUpperCase())} · NÍVEL ${c.nivel} · HP ${c.hp}</text>
+<polygon points="${hex(1)}" fill="none" stroke="rgba(255,255,255,.18)" stroke-width="1.5"/>
+<polygon points="${hex(.66)}" fill="none" stroke="rgba(255,255,255,.12)" stroke-width="1.2"/>
+<polygon points="${hex(.33)}" fill="none" stroke="rgba(255,255,255,.1)" stroke-width="1.2"/>
+${STAT.map((_, i) => { const [x, y] = pt(i, 1); return `<line x1="${cx}" y1="${cy}" x2="${x.toFixed(1)}" y2="${y.toFixed(1)}" stroke="rgba(255,255,255,.1)"/>`; }).join('')}
+<polygon points="${poly}" fill="${E.a2}" fill-opacity=".45" stroke="${E.a1}" stroke-width="3" stroke-linejoin="round"/>
+${STAT.map(([s], i) => { const [x, y] = pt(i, c.stats[s] / 100); return `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="5" fill="${E.a1}"/>`; }).join('')}
+${rotulos}
+${barras}
+<text x="300" y="770" text-anchor="middle" font-family="${MONO}" font-weight="700" font-size="11.5" letter-spacing="1.6" fill="#BDB5A6">SUA EVOLUÇÃO</text>
+<text x="300" y="794" text-anchor="middle" font-family="${INTER_}" font-weight="600" font-size="15" fill="#FFFFFF">${X(rota)}</text>
+<text x="300" y="818" text-anchor="middle" font-family="${MONO}" font-weight="500" font-size="11.5" fill="#8C8577">${X(CFG.site)}</text>
+</svg>`;
+  }
+
+  function cartaMisterio(tag) {
+    const u = 'm' + (++uidN);
+    let raios = '';
+    for (let i = 0; i < 24; i++) { const a = (i / 24) * Math.PI * 2; raios += `<line x1="300" y1="400" x2="${(300 + Math.cos(a) * 520).toFixed(1)}" y2="${(400 + Math.sin(a) * 520).toFixed(1)}" stroke="rgba(255,255,255,.06)" stroke-width="${i % 2 ? 2 : 6}"/>`; }
+    return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 840" width="600" height="840" role="img" aria-label="${X(tag || 'Carta virada')}">
+<defs><linearGradient id="${u}f" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset=".5" stop-color="#9DB4CF"/><stop offset="1" stop-color="#E9F1FA"/></linearGradient>
+<radialGradient id="${u}g" cx=".5" cy=".46" r=".66"><stop offset="0" stop-color="#3577C2"/><stop offset=".55" stop-color="#0F2E58"/><stop offset="1" stop-color="#060D1A"/></radialGradient></defs>
+<rect width="600" height="840" rx="30" fill="#0A0F18"/>
+<rect x="9" y="9" width="582" height="822" rx="23" fill="none" stroke="url(#${u}f)" stroke-width="3"/>
+<rect x="16" y="16" width="568" height="808" rx="18" fill="url(#${u}g)"/>
+${raios}
+<circle cx="300" cy="400" r="120" fill="none" stroke="url(#${u}f)" stroke-width="2.5"/>
+<circle cx="300" cy="400" r="160" fill="none" stroke="rgba(255,255,255,.18)" stroke-width="1.5"/>
+<circle cx="300" cy="400" r="205" fill="none" stroke="rgba(255,255,255,.1)" stroke-width="1.5"/>
+<text x="300" y="468" text-anchor="middle" font-family="'Newsreader', serif" font-style="italic" font-size="200" fill="#FFFFFF">?</text>
+<text x="300" y="700" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-weight="700" font-size="17" letter-spacing="5" fill="#BFD3EA">SEU PERFIL</text>
+<text x="300" y="738" text-anchor="middle" font-family="'Newsreader', serif" font-size="32" fill="#FFFFFF">Method</text>
+</svg>`;
+  }
+
+  // ---------------- story (1080x1920) e PNG ----------------
+  let fontCSS = null;
+  async function fontesEmbutidas() {
+    if (fontCSS) return fontCSS;
+    const b64 = async (u) => {
+      const buf = await (await fetch(u)).arrayBuffer();
+      let s = ''; const bytes = new Uint8Array(buf);
+      for (let i = 0; i < bytes.length; i += 0x8000) s += String.fromCharCode.apply(null, bytes.subarray(i, i + 0x8000));
+      return btoa(s);
+    };
+    const [inter, serif, serifI, mono] = await Promise.all(['fonts/inter.woff2', 'fonts/newsreader-display.woff2', 'fonts/newsreader-display-italic.woff2', 'fonts/jetbrains-mono.woff2'].map(b64));
+    fontCSS = `@font-face{font-family:'Inter';src:url(data:font/woff2;base64,${inter}) format('woff2');font-weight:100 900;font-style:normal}
+@font-face{font-family:'Newsreader';src:url(data:font/woff2;base64,${serif}) format('woff2');font-weight:400;font-style:normal}
+@font-face{font-family:'Newsreader';src:url(data:font/woff2;base64,${serifI}) format('woff2');font-weight:400;font-style:italic}
+@font-face{font-family:'JetBrains Mono';src:url(data:font/woff2;base64,${mono}) format('woff2');font-weight:100 900;font-style:normal}`;
+    return fontCSS;
+  }
+
+  function storySVG(c, css) {
+    const A = ARQ[c.arq];
+    const carta = cartaFrente(c).replace('width="600" height="840"', 'x="150" y="410" width="780" height="1092"');
+    const tTam = caber(`Meu perfil: ${A.nome}.`, 400, "'Newsreader', serif", 960, 96, 58);
+    return `<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920">
+<style>${css}</style>
+<defs>
+<linearGradient id="sv" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#031C3C" stop-opacity=".55"/><stop offset=".26" stop-color="#031C3C" stop-opacity=".1"/><stop offset=".7" stop-color="#031C3C" stop-opacity=".12"/><stop offset="1" stop-color="#031C3C" stop-opacity=".62"/></linearGradient>
+<filter id="sombra" x="-25%" y="-20%" width="150%" height="140%"><feDropShadow dx="0" dy="34" stdDeviation="36" flood-color="#00142B" flood-opacity=".45"/></filter>
+</defs>
+<rect width="1080" height="1920" fill="url(#sv)"/>
+<text x="540" y="236" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-weight="500" font-size="30" letter-spacing="8" fill="#FFFFFF" fill-opacity=".86">TESTE DE PERFIL</text>
+<text x="540" y="350" text-anchor="middle" font-family="'Newsreader', serif" font-size="${tTam}" letter-spacing="-1.5" fill="#FFFFFF">Meu perfil: <tspan font-style="italic">${X(A.nome)}</tspan>.</text>
+<g filter="url(#sombra)">${carta}</g>
+<text x="540" y="1612" text-anchor="middle" font-family="'Newsreader', serif" font-style="italic" font-size="84" fill="#FFFFFF">E o seu?</text>
+<rect x="240" y="1652" width="600" height="84" rx="16" fill="#FFFFFF" fill-opacity=".16" stroke="#FFFFFF" stroke-opacity=".45" stroke-width="2"/>
+<text x="540" y="1706" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-weight="600" font-size="33" letter-spacing="2" fill="#FFFFFF">${X(CFG.site.toUpperCase())}</text>
+<text x="540" y="1796" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-weight="500" font-size="28" fill="#FFFFFF" fill-opacity=".85">${X(CFG.arrobaStory)}</text>
+</svg>`;
+  }
+
+  const cartaAtual = () => ({ nome: estado.nome, ...estado.res, numero: estado.numero });
+  const carregarImg = (src) => new Promise((ok, erro) => { const i = new Image(); i.onload = () => ok(i); i.onerror = erro; i.src = src; });
+  let pngCache = null;
+  async function gerarPNG() {
+    if (pngCache) return pngCache;
+    const css = await fontesEmbutidas();
+    const c = cartaAtual();
+    const arte = await fetch(`img/arte-${ARQ[c.arq].el}.webp`).then((r) => r.blob()).then((b) => new Promise((ok) => { const fr = new FileReader(); fr.onload = () => ok(fr.result); fr.readAsDataURL(b); })).catch(() => '');
+    const svg = storySVG({ ...c, arte }, css);
+    const url = URL.createObjectURL(new Blob([svg], { type: 'image/svg+xml;charset=utf-8' }));
+    try {
+      const [img, ceu] = await Promise.all([carregarImg(url), carregarImg('img/montanha-v.webp')]);
+      await new Promise((ok) => setTimeout(ok, 180)); // Safari aplica a fonte do SVG um instante depois do onload
+      const cv = document.createElement('canvas'); cv.width = 1080; cv.height = 1920;
+      const ctx = cv.getContext('2d');
+      ctx.drawImage(img, 0, 0, 1080, 1920); // 1º desenho só "acorda" a fonte no Safari
+      const k = Math.max(1080 / ceu.naturalWidth, 1920 / ceu.naturalHeight);
+      const w = ceu.naturalWidth * k, h = ceu.naturalHeight * k;
+      ctx.fillStyle = '#173B66'; ctx.fillRect(0, 0, 1080, 1920);
+      ctx.drawImage(ceu, (1080 - w) / 2, (1920 - h) / 2, w, h);
+      ctx.drawImage(img, 0, 0, 1080, 1920);
+      pngCache = await new Promise((ok) => cv.toBlob(ok, 'image/jpeg', .92));
+      return pngCache;
+    } finally { URL.revokeObjectURL(url); }
+  }
+  function baixar(blob) {
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob); a.download = 'meu-perfil-method.jpg';
+    document.body.appendChild(a); a.click();
+    setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 3000);
+  }
+  function toast(t) { const el = $('#toast'); el.textContent = t; el.classList.add('on'); clearTimeout(toast.t); toast.t = setTimeout(() => el.classList.remove('on'), 2600); }
+
+  // ---------------- medição e envio ----------------
   const q = new URLSearchParams(location.search);
+  // ?simular=1 no localhost: o botão de compra vai pro checkout de teste (pagamento simulado) em vez do Stripe real
+  const simular = local && q.get('simular') === '1';
+  const aqui = () => location.pathname + (simular ? '?simular=1' : '');
+  const utm = {};
+  ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'].forEach((k) => { const v = q.get(k); if (v) utm[k] = v.slice(0, 80); });
+  // Quem vem do bot chega com ?tg=ID: o id vai pro Stripe como client_reference_id e o bot libera o acesso sozinho
   let tg = q.get('tg');
   if (!(tg && /^\d{1,15}$/.test(tg))) tg = null;
   try { if (tg) sessionStorage.setItem('built_tg', tg); else tg = sessionStorage.getItem('built_tg'); } catch (e) {}
-  const utm = {};
-  ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'].forEach((k) => { const v = q.get(k); if (v) utm[k] = v; });
-  const decorate = (url) => {
-    try {
-      const u = new URL(url);
-      if (tg) u.searchParams.set('client_reference_id', tg);
-      Object.keys(utm).forEach((k) => u.searchParams.set(k, utm[k]));
-      return u.toString();
-    } catch (e) { return url; }
-  };
-  const setLinks = (links) => document.querySelectorAll('a[data-plan]').forEach((a) => { const l = links[a.dataset.plan]; if (l) a.href = decorate(l); });
-  setLinks(CFG.links);
-
-  // Contador de visitas sem cookie: só números por dia e por origem (ver a página de privacidade)
   const fonte = tg ? 'bot' : (utm.utm_source || document.referrer || '');
   const beacon = (data) => {
+    if (local || !CFG.visitUrl) return;
     try {
       const body = JSON.stringify({ ...data, src: fonte });
       if (!(navigator.sendBeacon && navigator.sendBeacon(CFG.visitUrl, body))) fetch(CFG.visitUrl, { method: 'POST', body, keepalive: true }).catch(() => {});
     } catch (e) {}
   };
-  beacon({ e: 'visita' });
-  document.addEventListener('click', (ev) => {
-    const a = ev.target.closest && ev.target.closest('a[data-plan]');
-    if (a) beacon({ e: 'clique', plan: a.dataset.plan });
+  const vistos = new Set();
+  function track(nome, umaVez = true) {
+    if (umaVez) { if (vistos.has(nome)) return; vistos.add(nome); }
+    beacon({ e: 'evento', nome });
+  }
+
+  // ---------------- estado ----------------
+  const SKEY = 'carta_v1';
+  const estado = { r: {}, nome: '', email: '', whats: '', token: null, numero: null, res: null, nota: null };
+  const salvar = () => { try { localStorage.setItem(SKEY, JSON.stringify({ r: estado.r, nome: estado.nome, token: estado.token, numero: estado.numero, nota: estado.nota, arq: estado.res ? estado.res.arq : null, ts: Date.now() })); } catch (e) {} };
+  const carregar = () => { try { return JSON.parse(localStorage.getItem(SKEY) || 'null'); } catch (e) { return null; } };
+
+  // ---------------- telas (a página nunca rola) ----------------
+  const TELAS = ['t-inicio', 't-teste', 't-res'];
+  const mostrarTela = (id) => TELAS.forEach((t) => { $('#' + t).hidden = t !== id; });
+
+  // ---------------- quiz ----------------
+  const PASSOS = [];
+  BLOCOS.forEach((b) => {
+    Q.filter((x) => x.b === b.k).forEach((x) => PASSOS.push({ tipo: 'q', q: x }));
+    if (INTER[b.k]) PASSOS.push({ tipo: 'inter', b: b.k });
+  });
+  PASSOS.push({ tipo: 'contato' }, { tipo: 'forja' });
+  const blocoDo = (p) => (p.tipo === 'q' ? p.q.b : p.tipo === 'inter' ? p.b : 'destino');
+
+  const qbody = $('#quiz-body');
+  let passo = 0, enviando = false, aberto = false;
+
+  function progresso() {
+    const p = PASSOS[passo];
+    const bk = blocoDo(p);
+    const bi = BLOCOS.findIndex((b) => b.k === bk);
+    const doBloco = PASSOS.filter((x) => (x.tipo === 'q' || x.tipo === 'nome' || x.tipo === 'contato') && blocoDo(x) === bk);
+    const feitos = doBloco.filter((x) => PASSOS.indexOf(x) < passo).length;
+    document.querySelectorAll('#segs-quiz b').forEach((el, i) => { el.style.width = i < bi ? '100%' : i === bi ? `${(feitos / doBloco.length) * 100}%` : '0%'; });
+    const pos = doBloco.indexOf(p);
+    $('#meta-bloco').textContent = BLOCOS[bi].nome;
+    $('#meta-n').textContent = pos >= 0 ? `${pos + 1} de ${doBloco.length}` : '';
+    $('#quiz-voltar').disabled = passo === 0 || p.tipo === 'forja';
+  }
+
+  function abrirQuiz(em) {
+    if (typeof em === 'number') passo = em;
+    mostrarTela('t-teste'); aberto = true;
+    try { history.pushState({ quiz: 1 }, ''); } catch (e) {}
+    render();
+  }
+  function fecharQuiz(viaHistorico) {
+    if (!aberto) return;
+    aberto = false;
+    mostrarTela('t-inicio');
+    if (!viaHistorico) { try { if (history.state && history.state.quiz) history.back(); } catch (e) {} }
+    if (Object.keys(estado.r).length) $('#btn-continuar').hidden = false;
+  }
+  window.addEventListener('popstate', () => {
+    if (!aberto) return;
+    if (passo > 0 && PASSOS[passo].tipo !== 'forja') { voltar(); try { history.pushState({ quiz: 1 }, ''); } catch (e) {} }
+    else fecharQuiz(true);
   });
 
-  // ---------- funil: quiz → diagnóstico → vídeo → planos ----------
-  const track = (nome) => beacon({ e: 'evento', nome });
-  const QUIZ = [
-    { k: 'situacao', q: 'Qual é a sua situação hoje?', o: [['clt', 'Sou CLT'], ['proprio', 'Tenho um negócio meu'], ['familia', 'Trabalho no negócio da família'], ['autonomo', 'Sou freelancer ou autônomo'], ['buscando', 'Estou buscando uma nova forma de fazer dinheiro'], ['estudante', 'Sou estudante']] },
-    { k: 'renda', q: 'Quanto você ganha por mês hoje?', hint: 'Só pra montar o seu caminho. Ninguém vê além do Condz.', o: [['ate3', 'Até R$ 3 mil'], ['3a6', 'R$ 3 a 6 mil'], ['6a10', 'R$ 6 a 10 mil'], ['10a20', 'R$ 10 a 20 mil'], ['mais20', 'Mais de R$ 20 mil']] },
-    { k: 'conteudo', q: 'Você já cria conteúdo na internet?', o: [['nao', 'Ainda não'], ['agora', 'Comecei agora'], ['vezes', 'Posto de vez em quando'], ['frequente', 'Posto com frequência']] },
-    { k: 'trava', q: 'O que mais te trava hoje?', o: [['comeco', 'Não sei por onde começar'], ['tempo', 'Falta tempo ou energia'], ['vergonha', 'Vergonha de me expor'], ['paro', 'Começo e paro'], ['dinheiro', 'Não sei como isso vira dinheiro'], ['cabeca', 'Minha cabeça: foco e ansiedade']] },
-    { k: 'objetivo', q: 'O que você quer pros próximos 90 dias?', o: [['postar', 'Começar a postar com constância'], ['extra', 'Ter uma renda extra'], ['sairclt', 'Sair do CLT'], ['negocio', 'Fazer meu negócio crescer'], ['clareza', 'Ter mais clareza e controle da cabeça']] },
-    { k: 'meta', q: 'Quanto você quer ganhar por mês?', hint: 'A meta é sua. O caminho a gente monta junto.', o: [['5', 'R$ 5 mil por mês'], ['10', 'R$ 10 mil por mês'], ['15', 'R$ 15 mil por mês'], ['30', 'R$ 30 mil por mês ou mais']] },
-  ];
-  const META = { '5': 'R$ 5 mil por mês', '10': 'R$ 10 mil por mês', '15': 'R$ 15 mil por mês', '30': 'R$ 30 mil por mês' };
-  const OBJETIVO = { postar: 'começar a postar com constância', extra: 'ter uma renda extra', sairclt: 'sair do CLT', negocio: 'fazer seu negócio crescer', clareza: 'ter mais clareza e controle da cabeça' };
-  const SEG = {
-    primeiro: { fase: 'primeiro passo', titulo: 'Você não precisa estar pronto. Precisa começar.', a: 'Criar em vez de consumir: postar pro mundo te obriga a aprender o assunto. Foi assim que o Condz cresceu.', c: 'Fale do que você vive e do que sabe fazer. É o que você mais domina e o que atrai quem pode te pagar depois.' },
-    constancia: { fase: 'constância', titulo: 'Você já começou. Agora é não parar.', a: 'Constância vem de ambiente: prazo, grupo e alguém revisando o seu rascunho.', c: 'Repetição é estratégia: a mente aprende por intensidade ou por repetição, e nas redes é difícil ter intensidade.' },
-    crescer: { fase: 'crescimento', titulo: 'Você já posta. Agora é transformar em renda.', a: 'Dinheiro vem como consequência de gerar valor de verdade pra quem tem dinheiro. Cada post precisa levar a um próximo passo.', c: 'Número dentro de uma história (o que era, o que você fez, o que aconteceu) é um dos formatos que mais performaram no perfil do Condz.' },
-  };
-  const TRAVA = {
-    comeco: 'Por onde começar: na Built o bot te manda todo dia às 9h uma ideia de post pro seu momento, e o Condz revisa rascunho em dia útil.',
-    tempo: 'Tempo e energia: dá pra fazer em 20 a 30 minutos por dia. Energia alta vem de meditar, respirar antes de decidir, comer decente e ter tempo pra si.',
-    vergonha: 'Vergonha de se expor: comece contando o que você está aprendendo, em público. No grupo, feedback é sobre o post, nunca sobre a pessoa.',
-    paro: 'Começar e parar: grupo, prazo e feedback. Quem posta o rascunho no Chat publica.',
-    dinheiro: 'Virar dinheiro: oferta clara, chamada e conversa. É um bloco fixo de toda call ao vivo da Built.',
-    cabeca: 'Cabeça: o Condz medita todo dia desde 2016, 5 minutos no mesmo horário. Pra ele, mudou como reage à pressão. Não substitui acompanhamento profissional.',
-  };
-  const segmentOf = (r) => (r.conteudo === 'frequente' ? 'crescer' : r.conteudo === 'vezes' ? 'constancia' : 'primeiro');
-  const esc = (t) => String(t).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
-  const QKEY = 'built_quiz';
-  const loadQ = () => { try { return JSON.parse(localStorage.getItem(QKEY) || 'null'); } catch (e) { return null; } };
-  const saveQ = (v) => { try { localStorage.setItem(QKEY, JSON.stringify(v)); } catch (e) {} };
-  const quiz = $('#quiz'), qbody = $('#quiz-body'), qprog = $('#quiz-prog'), qcount = $('#quiz-count'), qback = $('#quiz-back');
-  let resp = {}, step = 0, abriu = false, contato = false, enviando = false, lastFocus = null;
-  const passos = () => QUIZ.filter((x) => !x.se || x.se(resp));
+  function voltar() {
+    let p = passo - 1;
+    while (p > 0 && PASSOS[p].tipo === 'inter') p--;
+    passo = Math.max(0, p); render();
+  }
+  function avancar() { passo = Math.min(PASSOS.length - 1, passo + 1); render(); }
 
-  function abrirQuiz() {
-    lastFocus = document.activeElement;
-    quiz.hidden = false;
-    document.documentElement.style.overflow = 'hidden';
-    if (!abriu) { abriu = true; track('quiz_abriu'); }
-    renderPasso();
-  }
-  function fecharQuiz() {
-    quiz.hidden = true;
-    document.documentElement.style.overflow = '';
-    if (lastFocus && lastFocus.focus) lastFocus.focus({ preventScroll: true });
-  }
-  function renderPasso() {
-    const lista = passos();
-    const total = lista.length + 1;
-    const i = Math.min(step, lista.length);
-    qprog.style.width = (i / total) * 100 + '%';
-    qcount.textContent = `${i + 1}/${total}`;
-    qback.style.visibility = i ? 'visible' : 'hidden';
-    if (i < lista.length) {
-      const p = lista[i];
-      qbody.innerHTML = `<div class="quiz-step"><h2 class="quiz-q" id="quiz-q">${p.q}</h2>${p.hint ? `<p class="quiz-hint">${p.hint}</p>` : ''}<div class="quiz-opts" role="radiogroup" aria-labelledby="quiz-q">${p.o.map(([v, l]) => `<button type="button" class="quiz-opt" role="radio" aria-checked="${resp[p.k] === v}" data-v="${v}">${l}</button>`).join('')}</div></div>`;
-      const opts = qbody.querySelectorAll('.quiz-opt');
-      opts.forEach((b) => b.addEventListener('click', () => {
-        resp[p.k] = b.dataset.v;
-        opts.forEach((x) => x.setAttribute('aria-checked', String(x === b)));
-        setTimeout(() => { step = i + 1; renderPasso(); }, 170);
-      }));
-      (qbody.querySelector('[aria-checked="true"]') || opts[0]).focus({ preventScroll: true });
-      return;
+  function miniMisterio(blur) { return `<div class="mini" style="filter:blur(${blur}px) drop-shadow(0 16px 30px rgba(0,0,0,.6))">${cartaMisterio()}</div>`; }
+
+  // medidor em arco, em segmentos (vermelho → laranja → amarelo → verde), como um score
+  const CORES_GAUGE = ['#F0544F', '#F28C38', '#F5C518', '#3CCB7F'];
+  function gaugeHTML(valor, min, max, rotulo) {
+    const N = 30, R = 96, cx = 120, cy = 120, ini = 150, fim = 390;
+    const acesos = Math.round(Math.max(0, Math.min(1, (valor - min) / (max - min))) * N);
+    let segs = '';
+    for (let i = 0; i < N; i++) {
+      const g = ini + (fim - ini) * (i + .5) / N, a = g * Math.PI / 180;
+      const x = (cx + Math.cos(a) * R).toFixed(1), y = (cy + Math.sin(a) * R).toFixed(1);
+      const cor = i < acesos ? CORES_GAUGE[Math.min(3, Math.floor((i / N) * 4))] : 'rgba(255,255,255,.14)';
+      segs += `<rect class="sg${i < acesos ? ' ok' : ''}" x="${(x - 3).toFixed(1)}" y="${(y - 11).toFixed(1)}" width="6" height="22" rx="3" fill="${cor}" transform="rotate(${(g - 90).toFixed(1)} ${x} ${y})" style="--i:${i}"/>`;
     }
-    if (!contato) { contato = true; track('quiz_contato'); }
-    const salvo = loadQ() || {};
-    qbody.innerHTML = `<div class="quiz-step"><h2 class="quiz-q" id="quiz-q">Pra onde mando seu diagnóstico?</h2><p class="quiz-hint">Ele aparece aqui na hora e uma cópia vai pro seu email. O WhatsApp é pra eu te chamar se você tiver dúvida.</p>
-      <form class="quiz-form" novalidate>
-        <label><span>Seu nome</span><input name="nome" autocomplete="given-name" required maxlength="60" value="${esc(salvo.nome || '')}"></label>
-        <label><span>WhatsApp com DDD</span><input name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" placeholder="(11) 98765-4321" required maxlength="20"></label>
-        <label><span>Seu email</span><input name="email" type="email" inputmode="email" autocomplete="email" placeholder="voce@email.com" required maxlength="254"></label>
-        <label><span>Seu @ no X <i>(opcional)</i></span><input name="x" autocapitalize="off" autocomplete="off" spellcheck="false" placeholder="@seuuser" maxlength="16"></label>
-        <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
-        <p class="quiz-err" role="alert"></p>
-        <button class="quiz-submit" type="submit">Ver meu diagnóstico</button>
-        <small>Ao enviar, você aceita receber mensagens sobre a Built no WhatsApp e por email. É só pedir pra parar. <a href="privacidade.html" target="_blank" rel="noopener">Privacidade</a></small>
+    return `<svg viewBox="0 0 240 182" aria-hidden="true">${segs}</svg><div class="gauge-val"><b data-alvo="${valor}">${valor}</b><span class="rotulo">${esc(rotulo)}</span></div>`;
+  }
+  function animarGauge(box) {
+    if (!box || !box.querySelector('b')) return;
+    const b = box.querySelector('b'), alvo = +b.dataset.alvo;
+    box.classList.remove('on');
+    if (reduced) { box.classList.add('on'); b.textContent = alvo; return; }
+    b.textContent = '0';
+    requestAnimationFrame(() => requestAnimationFrame(() => box.classList.add('on')));
+    const t0 = performance.now(), dur = 900;
+    const quadro = (t) => { const k = Math.min(1, (t - t0) / dur); b.textContent = Math.round(alvo * (1 - Math.pow(1 - k, 3))); if (k < 1) requestAnimationFrame(quadro); };
+    requestAnimationFrame(quadro);
+  }
+
+  function render() {
+    const p = PASSOS[passo];
+    progresso();
+    if (p.tipo === 'q') return renderPergunta(p.q);
+    if (p.tipo === 'inter') return renderInter(p.b);
+    if (p.tipo === 'contato') return renderContato();
+    if (p.tipo === 'forja') return renderForja();
+  }
+
+  function renderPergunta(x) {
+    const duas = x.o.length >= 6 && x.o.every((o) => o[1].length <= 26);
+    qbody.innerHTML = `<div class="quiz-step"><h2 class="quiz-q h-serif" id="qq">${esc(x.q)}</h2>${x.hint ? `<p class="quiz-hint">${esc(x.hint)}</p>` : ''}<div class="opts${duas ? ' duas' : ''}" role="radiogroup" aria-labelledby="qq">${x.o.map((o) => `<button type="button" class="opt" role="radio" aria-checked="${estado.r[x.k] === o[0]}" data-v="${esc(o[0])}">${esc(o[1])}</button>`).join('')}</div></div>`;
+    qbody.querySelectorAll('.opt').forEach((b) => b.addEventListener('click', () => {
+      if (qbody.dataset.trava) return;
+      qbody.dataset.trava = '1';
+      estado.r[x.k] = b.dataset.v;
+      qbody.querySelectorAll('.opt').forEach((o) => o.setAttribute('aria-checked', String(o === b)));
+      track('carta_inicio');
+      if (x.k === 'semana') track('carta_meio');
+      salvar();
+      setTimeout(() => { delete qbody.dataset.trava; avancar(); }, reduced ? 60 : 230);
+    }));
+    const sel = qbody.querySelector('.opt[aria-checked="true"]') || qbody.querySelector('.opt');
+    if (sel && matchMedia('(hover:hover)').matches) sel.focus({ preventScroll: true });
+  }
+
+  function renderInter(bk) {
+    const I = INTER[bk];
+    const bi = BLOCOS.findIndex((b) => b.k === bk);
+    const visual = I.hp ? `<div class="gauge-box">${gaugeHTML(calcHP(estado.r), 40, 130, 'HP')}</div>` : miniMisterio(I.blur);
+    qbody.innerHTML = `<div class="quiz-step inter"><p class="status"><i class="ponto-verde"></i>${I.hp ? 'Energia medida' : 'Perfil em formação'}</p><h2 class="h-serif">${esc(I.t)}</h2>${visual}
+      <div class="notif"><img class="ico-n" src="img/conrado.webp" alt="" width="32" height="32"><p><b>Conrado</b> · ${esc(I.p)} Faltam ${PASSOS.slice(passo + 1).filter((x) => x.tipo === 'q').length} perguntas.</p><small>agora</small></div>
+      <div class="check">${CHECK.map(([k, t], i) => `<div class="${i <= bi ? 'ok' : ''}">${esc(t)}</div>`).join('')}</div>
+      <button type="button" class="btn">Continuar ${SETA}</button></div>`;
+    qbody.querySelector('.btn').addEventListener('click', avancar);
+    qbody.querySelector('.btn').focus({ preventScroll: true });
+    animarGauge(qbody.querySelector('.gauge-box'));
+  }
+
+  const EMAIL = /^[^\s@<>"',;]{1,64}@[^\s@<>"',;]{1,190}\.[a-z]{2,24}$/i;
+  function zapOk(v) {
+    let d = String(v || '').replace(/\D/g, '');
+    if (/^55\d{10,11}$/.test(d)) d = d.slice(2);
+    return d.length === 11 ? d[2] === '9' : d.length === 10;
+  }
+  function renderContato() {
+    track('carta_contato');
+    qbody.innerHTML = `<div class="quiz-step"><h2 class="quiz-q h-serif">Pra onde mando seu perfil?</h2><p class="quiz-hint">Ele aparece aqui na hora. No email vai a imagem em alta e a sua rota.</p>
+      <form novalidate>
+        <label class="campo"><span>Seu nome <i>(vai na carta)</i></span><input name="nome" autocomplete="given-name" maxlength="16" value="${esc(estado.nome)}" required></label>
+        <label class="campo"><span>Seu email</span><input name="email" type="email" inputmode="email" autocomplete="email" maxlength="120" value="${esc(estado.email)}" required></label>
+        <label class="campo"><span>WhatsApp ${CFG.whatsappObrigatorio ? '' : '<i>(opcional)</i>'}</span><input name="whats" type="tel" inputmode="tel" autocomplete="tel-national" maxlength="20" placeholder="(11) 98765-4321" value="${esc(estado.whats)}"${CFG.whatsappObrigatorio ? ' required' : ''}></label>
+        <label class="hp-field" aria-hidden="true">Site<input name="website" tabindex="-1" autocomplete="off"></label>
+        <p class="erro" role="alert"></p>
+        <button class="btn" type="submit">Revelar meu perfil ${SETA}</button>
+        <p class="miudo">Ao continuar, você aceita receber o seu perfil e mensagens minhas por email e WhatsApp sobre o Mapa e a Built. Dá pra sair quando quiser. <a href="privacidade.html" target="_blank" rel="noopener">Privacidade</a>.</p>
       </form></div>`;
-    const form = qbody.querySelector('form'), err = qbody.querySelector('.quiz-err'), btn = qbody.querySelector('.quiz-submit');
-    form.nome.focus({ preventScroll: true });
-    form.addEventListener('submit', (ev) => {
+    const f = qbody.querySelector('form'), err = qbody.querySelector('.erro');
+    setTimeout(() => (estado.nome ? f.email : f.nome).focus({ preventScroll: true }), 50);
+    f.addEventListener('submit', (ev) => {
       ev.preventDefault();
       if (enviando) return;
-      const nome = form.nome.value.trim(), whatsapp = form.whatsapp.value.trim(), email = form.email.value.trim();
-      const digitos = whatsapp.replace(/\D/g, '');
-      if (!nome) { err.textContent = 'Faltou o seu nome.'; form.nome.focus(); return; }
-      if (!/^(55)?\d{10,11}$/.test(digitos)) { err.textContent = 'Confere o WhatsApp com DDD.'; form.whatsapp.focus(); return; }
-      if (!email) { err.textContent = 'Coloca seu email: o diagnóstico também vai pra lá.'; form.email.focus(); return; }
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) { err.textContent = 'Confere o email.'; form.email.focus(); return; }
-      enviando = true; btn.disabled = true; btn.textContent = 'Montando seu diagnóstico…'; err.textContent = '';
-      fetch(CFG.quizUrl, { method: 'POST', headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({ nome, whatsapp, email, x: form.x.value.trim(), respostas: resp, src: fonte, utm, tg, website: form.website.value }) })
-        .then((r) => r.json().then((d) => ({ r, d })))
-        .then(({ r, d }) => {
-          if (!r.ok || !d.ok) throw new Error(d.error || 'erro');
-          const dados = { token: d.token, nome: nome.split(' ')[0], resp: { ...resp } };
-          saveQ(dados);
-          track('quiz_fim');
-          fecharQuiz();
-          mostrarDiagnostico(dados, true);
-        })
-        .catch((e) => { err.textContent = /DDD|email|nome|tentativas/.test(e.message) ? e.message : 'Não deu certo agora. Tenta de novo em instantes.'; })
-        .finally(() => { enviando = false; btn.disabled = false; btn.textContent = 'Ver meu diagnóstico'; });
+      const nome = f.nome.value.replace(/[<>"]/g, '').replace(/\s+/g, ' ').trim();
+      if (nome.length < 2) { err.textContent = 'Escreve o seu nome (pelo menos 2 letras).'; f.nome.focus(); return; }
+      estado.nome = nome.charAt(0).toUpperCase() + nome.slice(1);
+      const email = f.email.value.trim().toLowerCase(), whats = f.whats.value.trim();
+      if (!EMAIL.test(email)) { err.textContent = 'Confere o email.'; f.email.focus(); return; }
+      if (CFG.whatsappObrigatorio && !zapOk(whats)) { err.textContent = whats ? 'Confere o WhatsApp com DDD.' : 'Coloca o seu WhatsApp com DDD.'; f.whats.focus(); return; }
+      if (whats && !zapOk(whats)) { err.textContent = 'Confere o WhatsApp com DDD (ou deixa em branco).'; f.whats.focus(); return; }
+      estado.email = email; estado.whats = whats;
+      estado.res = calcular(estado.r);
+      enviarLead(f.website.value);
+      avancar();
     });
   }
-  qback.addEventListener('click', () => { if (step > 0) { step = Math.min(step, passos().length) - 1; renderPasso(); } });
-  $('#quiz-close').addEventListener('click', fecharQuiz);
-  quiz.addEventListener('click', (ev) => { if (ev.target === quiz) fecharQuiz(); });
-  document.addEventListener('keydown', (ev) => { if (ev.key === 'Escape' && !quiz.hidden) fecharQuiz(); });
 
-  // diagnóstico + vídeo
-  let feito = false;
-  function mostrarDiagnostico(dados, rolar) {
-    feito = true;
-    const r = dados.resp || {}, seg = SEG[segmentOf(r)];
-    $('#diag-pill').textContent = `Diagnóstico de ${dados.nome || 'você'} · fase: ${seg.fase}`;
-    $('#diag-titulo').textContent = seg.titulo;
-    $('#diag-meta').textContent = [r.meta && `Seu caminho até ${META[r.meta]}.`, r.objetivo && `Foco dos próximos 90 dias: ${OBJETIVO[r.objetivo]}.`].filter(Boolean).join(' ');
-    $('#diag-trava').textContent = TRAVA[r.trava] || seg.a;
-    $('#diagnostico').hidden = false;
-    $('#hero-cta-txt').textContent = 'Ver meu diagnóstico';
-    montarVideo();
-    renderPassos();
-    if (rolar) {
-      // quem chega pelo link (?q=) vai direto, sem animação; quem acabou o quiz desliza
-      const ir = () => $('#diagnostico').scrollIntoView({ behavior: rolar === 'link' || reduced ? 'instant' : 'smooth', block: 'start' });
-      setTimeout(ir, 60);
-      if (rolar === 'link' && document.readyState !== 'complete') window.addEventListener('load', () => setTimeout(ir, 60), { once: true });
-    }
-  }
-  // trilha em 3 passos (hero, diagnóstico e barra do celular): 1 diagnóstico → 2 vídeo → 3 entrar.
-  // O passo 2 conta como feito quando a pessoa chega na oferta do vídeo (ctaAt) ou vê o vídeo até o fim.
-  let videoVisto = false;
-  try { videoVisto = localStorage.getItem('built_video') === '1'; } catch (e) {}
-  const passoAtual = () => (!feito ? 1 : videoVisto ? 3 : 2);
-  function renderPassos() {
-    const n = passoAtual();
-    document.querySelectorAll('[data-passos] li').forEach((li) => {
-      const p = Number(li.dataset.p);
-      li.classList.toggle('feito', p < n);
-      li.classList.toggle('agora', p === n);
-      if (p === n) li.setAttribute('aria-current', 'step'); else li.removeAttribute('aria-current');
-    });
-    $('#access-label').textContent = feito ? 'Passo 3 de 3 · entrar no grupo' : 'Acesso de fundador';
-    atualizarBarra();
-  }
-  function marcarVisto() {
-    if (videoVisto) return;
-    videoVisto = true;
-    try { localStorage.setItem('built_video', '1'); } catch (e) {}
-    renderPassos();
-  }
-  let videoPronto = false;
-  function montarVideo() {
-    if (videoPronto) return;
-    videoPronto = true;
-    const box = $('#vsl'), v = CFG.video || {};
-    if (!v.src) {
-      box.innerHTML = '<div class="vsl-ph"><div><p>O vídeo em que eu explico tudo chega em breve.</p><small>Enquanto isso, o botão pra entrar está aqui embaixo.</small></div></div>';
-      return;
-    }
-    box.innerHTML = `<video controls playsinline preload="metadata"${v.poster ? ` poster="${esc(v.poster)}"` : ''}><source src="${esc(v.src)}" type="video/mp4"></video>`;
-    const vid = box.querySelector('video');
-    const marcos = { 25: 'video_25', 50: 'video_50', 75: 'video_75', 98: 'video_100' };
-    const vistos = new Set();
-    vid.addEventListener('play', () => { if (!vistos.has('play')) { vistos.add('play'); track('video_play'); } });
-    vid.addEventListener('timeupdate', () => {
-      if (v.ctaAt && vid.currentTime >= v.ctaAt && !vistos.has('oferta')) { vistos.add('oferta'); track('cta_video'); marcarVisto(); }
-      if (!vid.duration) return;
-      const pct = (vid.currentTime / vid.duration) * 100;
-      for (const [m, nome] of Object.entries(marcos)) if (pct >= Number(m) && !vistos.has(nome)) { vistos.add(nome); track(nome); }
-    });
-    vid.addEventListener('ended', marcarVisto);
+  let leadPromise = Promise.resolve();
+  function enviarLead(robo) {
+    if (robo || local) return; // no teste local não manda contato pro bot de verdade
+    const post = (url, body) => {
+      const ctl = new AbortController(); const t = setTimeout(() => ctl.abort(), 12000);
+      return fetch(url, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(body), signal: ctl.signal })
+        .then((r) => r.json()).finally(() => clearTimeout(t));
+    };
+    const respostas = { situacao: estado.r.situacao, trava: estado.r.trava, perfil: estado.res.arq };
+    leadPromise = post(CFG.quizUrl, { nome: estado.nome, whatsapp: estado.whats, email: estado.email, respostas, src: fonte, utm, tg })
+      .then((d) => { if (d && d.ok) { estado.token = d.token || null; salvar(); } })
+      .catch(() => {});
+    post(CFG.leadUrl, { email: estado.email, source: 'perfil', utm, tg }).catch(() => {});
   }
 
-  document.querySelectorAll('[data-quiz]').forEach((b) => b.addEventListener('click', () => {
-    if (feito) $('#diagnostico').scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start' });
-    else abrirQuiz();
-  }));
-  document.querySelectorAll('[data-skip]').forEach((a) => a.addEventListener('click', () => track('pulou_quiz')));
-  document.querySelectorAll('[data-planos]').forEach((a) => a.addEventListener('click', () => track('planos')));
-  $('#diag-refazer').addEventListener('click', () => { resp = {}; step = 0; contato = false; abrirQuiz(); });
-
-  // barra do celular: sempre o próximo passo da trilha
-  const barTxt = $('#mobile-bar-text'), barBtn = $('#mobile-bar-btn');
-  let barPreco = 'R$ 147/mês · até 30/10';
-  function atualizarBarra() {
-    const n = passoAtual();
-    if (n === 1) {
-      barTxt.textContent = 'Passo 1 de 3 · diagnóstico grátis';
-      barBtn.textContent = 'Começar';
-      barBtn.onclick = (ev) => { ev.preventDefault(); abrirQuiz(); };
-    } else if (n === 2) {
-      barTxt.textContent = 'Passo 2 de 3 · assista o vídeo';
-      barBtn.textContent = 'Assistir';
-      barBtn.onclick = (ev) => {
-        ev.preventDefault();
-        $('#vsl').scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'center' });
-        const vid = $('#vsl video');
-        if (vid && vid.paused) vid.play().catch(() => {});
-      };
-    } else {
-      barTxt.textContent = `Passo 3 de 3 · ${barPreco}`;
-      barBtn.textContent = 'Entrar';
-      barBtn.onclick = null;
-    }
-    barBtn.setAttribute('href', '#entrar');
+  function renderForja() {
+    const itens = ['Calculando seu HP', 'Descobrindo seu perfil', 'Escolhendo seus ataques', 'Achando seu ponto fraco', 'Traçando sua evolução'];
+    qbody.innerHTML = `<div class="quiz-step forja"><p class="status"><i class="ponto-verde"></i>Analisando suas respostas</p><div class="mini">${cartaMisterio()}</div><h2 class="h-serif">Montando seu perfil…</h2><div class="check">${itens.map((t) => `<div>${t}</div>`).join('')}</div></div>`;
+    const linhas = qbody.querySelectorAll('.check div');
+    const passoMs = reduced ? 100 : 380;
+    linhas.forEach((el, i) => setTimeout(() => el.classList.add('on', 'ok'), passoMs * (i + 1) - 300));
+    const minimo = new Promise((ok) => setTimeout(ok, passoMs * linhas.length + 250));
+    const limite = new Promise((ok) => setTimeout(ok, 4500));
+    Promise.all([minimo, Promise.race([leadPromise, limite])]).then(() => revelar(true));
   }
 
-  // volta de quem já fez (mesmo aparelho) ou link do WhatsApp com ?q=
-  const qtok = q.get('q');
-  const jaFez = loadQ();
-  if (qtok && /^[a-z2-9]{16}$/.test(qtok)) {
-    fetch(`${CFG.quizUrl}?t=${qtok}`).then((r) => r.json()).then((d) => {
-      if (!d.ok) return;
-      const dados = { token: qtok, nome: d.nome, resp: d.respostas };
-      saveQ(dados);
-      mostrarDiagnostico(dados, 'link');
-    }).catch(() => {});
-  } else if (jaFez && jaFez.resp) {
-    mostrarDiagnostico(jaFez, false);
+  // ---------------- resultado: 5 passos ----------------
+  function aplicarCor(A) {
+    const E = EL[A.el], s = document.documentElement.style;
+    s.setProperty('--el', E.base); s.setProperty('--el-dark', E.dark); s.setProperty('--el-light', E.light);
   }
-  renderPassos();
+  const faqBuilt = (P) => [
+    ['Por que no Telegram?', 'Porque lá o bot cuida da entrada e da assinatura sozinho, e o grupo fica organizado em dois espaços: Avisos e Chat. Se você não tem, é grátis e leva 1 minuto pra instalar.'],
+    ['Preciso ter seguidores?', 'Não. A Built é pra quem está começando: CLT, quem toca um negócio próprio ou da família, ou quem está buscando uma nova forma de fazer dinheiro.'],
+    ['Quanto tempo por dia?', 'De 20 a 30 minutos: postar e trocar com o grupo no Chat.'],
+    ['Como funciona o pagamento?', `Pelo Stripe. No cartão, ${reais(P.triTotal)} a cada 3 meses ou ${reais(P.mes)} por mês, renovando sozinho. No Pix, você paga o período (1 ou 3 meses) e o bot te avisa antes de vencer. O anual é um pagamento só de ${reais(P.anual)}, no cartão ou no Pix. Depois de pagar, você abre o bot no Telegram e entra no grupo na hora.`],
+    ['Posso cancelar?', 'Pode, quando quiser e sem multa: a assinatura só não renova no próximo período, e seu acesso vai até o fim do período pago. É só mandar /assinatura pro bot.'],
+    ['E se eu não gostar?', 'Você tem 7 dias pra pedir o dinheiro de volta, inteiro.'],
+  ];
 
-  // Prazo do preço de fundador. Depois dele a página vende pelo preço cheio.
-  const deadline = Date.parse(CFG.fundadorAte);
-  const temCheio = ['trimestralCartao', 'trimestralPix', 'anual'].every((k) => CFG.linksCheio[k]);
+  // ---------------- planos da Built ----------------
   const reais = (n) => 'R$ ' + n.toLocaleString('pt-BR');
-  let encerrado = false;
+  const deadline = Date.parse(CFG.fundadorAte);
+  let encerrado = Date.now() >= deadline;
   let bill = 'tri';
-  try { if (sessionStorage.getItem('built_bill') === 'mes') bill = 'mes'; } catch (e) {}
-
-  // Plano de 3 meses × mensal. O mensal só aparece quando os dois links dele existem.
+  try { const b = sessionStorage.getItem('built_bill'); if (b === 'mes' || b === 'anual') bill = b; } catch (e) {}
+  const VALOR = { trimestralCartao: (P) => P.triTotal, trimestralPix: (P) => P.triTotal, mensalCartao: (P) => P.mes, mensalPix: (P) => P.mes, anual: (P) => P.anual };
+  function decorar(url, plano, P) {
+    if (simular) return `checkout-teste.html?p=built&plano=${plano}&valor=${VALOR[plano](P)}`;
+    try {
+      const u = new URL(url);
+      if (tg) u.searchParams.set('client_reference_id', tg);
+      if (estado.email) u.searchParams.set('prefilled_email', estado.email);
+      Object.keys(utm).forEach((k) => u.searchParams.set(k, utm[k]));
+      return u.toString();
+    } catch (e) { return url; }
+  }
   function renderBill() {
-    if (encerrado && !temCheio) return;
     const P = CFG.precos[encerrado ? 'cheio' : 'fundador'];
     const links = encerrado ? CFG.linksCheio : CFG.links;
-    const mensalOk = !!(links.mensalCartao && links.mensalPix);
-    if (!mensalOk) bill = 'tri';
-    const mes = bill === 'mes';
     const desconto = Math.round((1 - P.tri / P.mes) * 100);
-    $('#bill').hidden = !mensalOk;
     $('#bill-tag').textContent = '−' + desconto + '%';
-    document.querySelectorAll('#bill button').forEach((b) => {
-      const on = b.dataset.bill === bill;
-      b.setAttribute('aria-checked', String(on));
-      b.tabIndex = on ? 0 : -1;
-    });
-    $('#btn-cartao').dataset.plan = mes ? 'mensalCartao' : 'trimestralCartao';
-    $('#btn-pix').dataset.plan = mes ? 'mensalPix' : 'trimestralPix';
-    setLinks(links);
-    $('#price-main').textContent = reais(mes ? P.mes : P.tri);
-    const riscado = mes ? P.mesRiscado : P.triRiscado;
+    document.querySelectorAll('#bill button').forEach((b) => { const on = b.dataset.bill === bill; b.setAttribute('aria-checked', String(on)); b.tabIndex = on ? 0 : -1; });
+    const cartao = $('#btn-cartao'), pix = $('#btn-pix');
+    const planoC = bill === 'mes' ? 'mensalCartao' : bill === 'anual' ? 'anual' : 'trimestralCartao';
+    const planoP = bill === 'mes' ? 'mensalPix' : 'trimestralPix';
+    cartao.dataset.plan = planoC; cartao.href = decorar(links[planoC], planoC, P);
+    cartao.firstChild.textContent = bill === 'anual' ? 'Entrar no anual ' : 'Entrar com cartão ';
+    pix.hidden = bill === 'anual';
+    pix.dataset.plan = planoP; pix.href = decorar(links[planoP], planoP, P);
+    pix.textContent = bill === 'mes' ? `ou pagar ${reais(P.mes)} no Pix (1 mês)` : `ou pagar ${reais(P.triTotal)} no Pix (3 meses)`;
+    const riscado = encerrado ? 0 : bill === 'mes' ? P.mesRiscado : bill === 'tri' ? P.triRiscado : 0;
     $('#price-strike').hidden = !riscado;
     if (riscado) $('#price-strike').textContent = reais(riscado);
-    $('#price-sub').textContent = mes
-      ? 'Mês a mês, sem fidelidade. Cancela quando quiser.'
-      : mensalOk
-        ? `Plano de 3 meses: ${reais(P.triTotal)} a cada 3 meses, ${desconto}% a menos que o mensal. Ou anual com desconto.`
-        : 'Mínimo de 3 meses. Ou anual com desconto.';
-    $('#note-cartao').textContent = mes
-      ? `${reais(P.mes)} agora. Renova sozinho todo mês. Cancela quando quiser e não renova.`
-      : `${reais(P.triTotal)} agora. Renova sozinho a cada 3 meses. Cancela quando quiser e não renova.`;
-    $('#note-pix').textContent = mes ? `${reais(P.mes)} por 1 mês. O bot te avisa antes de vencer.` : `${reais(P.triTotal)} por 3 meses. O bot te avisa antes de vencer.`;
-    $('#faq-pagamento').textContent =
-      `Pelo Stripe. No cartão, ${reais(P.triTotal)} a cada 3 meses${mensalOk ? ` ou ${reais(P.mes)} por mês` : ''}, renovando sozinho. ` +
-      `No Pix, você paga ${mensalOk ? 'o período (1 ou 3 meses)' : 'os 3 meses'} e o bot te avisa antes de vencer. ` +
-      `O anual é um pagamento só de ${reais(P.anual)}, no cartão ou no Pix. Depois de pagar, você abre o bot no Telegram e entra no grupo na hora.`;
-    barPreco = encerrado ? `a partir de ${reais(P.tri)}/mês` : `${reais(P.tri)}/mês até 30/10`;
-    atualizarBarra();
+    $('#price-main').textContent = reais(bill === 'mes' ? P.mes : bill === 'anual' ? P.anual : P.tri);
+    $('#price-per').textContent = bill === 'anual' ? ' à vista' : '/mês';
+    $('#note-plano').textContent = bill === 'mes'
+      ? 'Mês a mês, sem fidelidade. 7 dias de garantia.'
+      : bill === 'anual'
+        ? 'Pagamento único, cartão ou Pix. 2 meses grátis.'
+        : `${reais(P.triTotal)} a cada 3 meses. Cancela quando quiser. 7 dias de garantia.`;
+  }
+  let membros = 0;
+  function renderPhase() {
+    const left = deadline - Date.now();
+    if (left <= 0) {
+      if (!encerrado) { encerrado = true; renderBill(); }
+      $('#price-deadline').textContent = 'Pagamento seguro pelo Stripe · entra no grupo na hora';
+      return;
+    }
+    const d = Math.floor(left / 86400e3), h = Math.floor((left % 86400e3) / 3600e3), m = Math.floor((left % 3600e3) / 60e3);
+    const cd = d ? `${d}d ${String(h).padStart(2, '0')}h` : `${h}h ${String(m).padStart(2, '0')}min`;
+    $('#price-deadline').textContent = `Preço de fundador fecha em ${cd}` + (membros >= CFG.mostrarMembrosAPartirDe ? ` · ${membros} já entraram` : '');
   }
   document.querySelectorAll('#bill button').forEach((b) => b.addEventListener('click', () => {
     bill = b.dataset.bill;
@@ -645,175 +1236,278 @@ details[open]::details-content{block-size:auto}
   $('#bill').addEventListener('keydown', (e) => {
     if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
     e.preventDefault();
-    bill = bill === 'tri' ? 'mes' : 'tri';
+    const ordem = ['tri', 'mes', 'anual'];
+    bill = ordem[(ordem.indexOf(bill) + (e.key === 'ArrowRight' ? 1 : 2)) % 3];
     renderBill();
     $(`#bill [data-bill="${bill}"]`).focus();
   });
-
-  function renderPhase() {
-    const left = deadline - Date.now();
-    if (left <= 0) {
-      if (encerrado) return;
-      encerrado = true;
-      $('#price-strike').hidden = true;
-      $('#membros').hidden = true;
-      if (!temCheio) {
-        $('#price-main').textContent = 'R$ 197';
-        $('#price-main').style.color = '#1F1E1C';
-        $('#price-deadline').textContent = 'Preço de fundador encerrado.';
-        $('#price').classList.add('closed');
-        $('#closed-note').hidden = false;
-        barPreco = 'R$ 197/mês';
-        atualizarBarra();
-        return;
-      }
-      $('#price-deadline').hidden = true;
-      $('#anual-strong').textContent = 'Anual: R$ 1.970';
-      renderBill();
-      return;
-    }
-    // contagem até o fim do preço de fundador (prazo real, 30/10 23h59)
-    const d = Math.floor(left / 86400e3), h = Math.floor((left % 86400e3) / 3600e3), m = Math.floor((left % 3600e3) / 60e3);
-    const cd = d ? `${d}d ${String(h).padStart(2, '0')}h` : `${h}h ${String(m).padStart(2, '0')}min`;
-    $('#price-deadline').textContent = `Preço de fundador fecha em ${cd} (30/10, 23h59). Travado enquanto você ficar.`;
+  document.addEventListener('click', (ev) => {
+    const a = ev.target.closest && ev.target.closest('a[data-plan]');
+    if (a) { beacon({ e: 'clique', plan: a.dataset.plan }); track('carta_checkout', false); }
+  });
+  function carregarMembros() {
+    if (local || !CFG.membrosUrl) return;
+    const ac = new AbortController(); const t = setTimeout(() => ac.abort(), 4000);
+    fetch(CFG.membrosUrl, { signal: ac.signal, cache: 'no-store' }).then((r) => r.json())
+      .then((d) => { const n = Number(d.membros); if (Number.isFinite(n)) { membros = n; renderPhase(); } })
+      .catch(() => {}).finally(() => clearTimeout(t));
   }
-  renderPhase();
-  if (!encerrado) renderBill();
-  setInterval(renderPhase, 30000);
-
-  // Contador público de membros (só aparece a partir de 10)
-  function loadMembros() {
-    const ac = new AbortController();
-    const t = setTimeout(() => ac.abort(), 4000);
-    fetch(CFG.membrosUrl, { signal: ac.signal, cache: 'no-store' })
-      .then((r) => r.json())
-      .then((d) => {
-        const n = Number(d.membros);
-        if (Number.isFinite(n) && n >= CFG.mostrarMembrosAPartirDe && Date.now() < deadline) {
-          $('#membros-n').textContent = String(n);
-          $('#membros').hidden = false;
-        }
-      })
-      .catch(() => {})
-      .finally(() => clearTimeout(t));
-  }
-  loadMembros();
-  setInterval(() => { if (!document.hidden) loadMembros(); }, 60000);
-
-  // Cabeçalho com linha depois de rolar
-  const header = $('.header');
-  const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 8);
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
-
-  // Barra fixa no celular: aparece depois do hero e some quando o vídeo, o botão dele ou o preço estão na tela
-  const bar = $('#mobile-bar'), footer = $('#footer');
-  let heroOut = false, entrarIn = false;
-  const vistosNaTela = new Set();
-  const vistosIO = new IntersectionObserver((entries) => entries.forEach((en) => {
-    if (en.isIntersecting) vistosNaTela.add(en.target); else vistosNaTela.delete(en.target);
-    updateBar();
-  }));
-  ['#vsl', '#vsl-cta'].forEach((sel) => vistosIO.observe($(sel)));
-  const updateBar = () => {
-    const show = window.innerWidth < 768 && heroOut && !entrarIn && !vistosNaTela.size;
-    bar.hidden = !show;
-    footer.style.paddingBottom = show ? '112px' : '40px';
-  };
-  const hero = $('#hero'), entrar = $('#entrar');
-  new IntersectionObserver((entries) => entries.forEach((en) => {
-    if (en.target === hero) heroOut = !en.isIntersecting && en.boundingClientRect.top < 0;
-    if (en.target === entrar) entrarIn = en.isIntersecting;
-    updateBar();
-  })).observe(hero);
-  new IntersectionObserver((entries) => entries.forEach((en) => { entrarIn = en.isIntersecting; updateBar(); })).observe(entrar);
-  window.addEventListener('resize', updateBar);
-
-  // Entrada suave dos blocos
-  const ease = 'cubic-bezier(.2,.7,.2,1)';
-  const reveals = root.querySelectorAll('[data-reveal]');
-  if (!reduced && 'IntersectionObserver' in window) {
-    reveals.forEach((el) => { el.style.opacity = '0'; el.style.transform = 'translateY(12px)'; });
-    const io = new IntersectionObserver((entries) => {
-      let i = 0;
-      entries.forEach((en) => {
-        if (!en.isIntersecting) return;
-        const el = en.target, d = (i++) * 60;
-        const go = () => { el.style.transition = `opacity .6s ${ease} ${d}ms, transform .6s ${ease} ${d}ms`; el.style.opacity = '1'; el.style.transform = 'none'; };
-        const imgs = [...el.querySelectorAll('img')].filter((im) => !im.complete);
-        if (!imgs.length) go(); else Promise.race([Promise.all(imgs.map((im) => (im.decode ? im.decode().catch(() => {}) : null))), new Promise((r) => setTimeout(r, 900))]).then(go);
-        io.unobserve(el);
-      });
-    }, { rootMargin: '0px 0px -6% 0px' });
-    reveals.forEach((el) => io.observe(el));
+  function montarOferta(A) {
+    $('#built-t').textContent = A ? `De ${A.nome} a ${A.evo}, com gente junto` : 'O que você leva';
+    renderBill(); renderPhase();
   }
 
-  // Círculos do hero se desenhando
-  root.querySelectorAll('svg[data-draw]').forEach((svg) => {
-    const shapes = svg.querySelectorAll('path,line,circle,rect');
-    shapes.forEach((s) => { s.setAttribute('pathLength', '1'); if (!reduced) { s.style.strokeDasharray = '1'; s.style.strokeDashoffset = '1'; } });
-    if (reduced) return;
-    const io = new IntersectionObserver((entries) => entries.forEach((en) => {
-      if (!en.isIntersecting) return;
-      shapes.forEach((s, i) => { s.style.transition = `stroke-dashoffset 1.6s cubic-bezier(.16,1,.3,1) ${i * 80}ms`; s.style.strokeDashoffset = '0'; });
-      io.unobserve(en.target);
-    }), { threshold: 0.15 });
-    io.observe(svg);
+  function montarResultado() {
+    const c = cartaAtual();
+    const A = ARQ[c.arq], E = EL[A.el];
+    aplicarCor(A);
+    $('#res-titulo').innerHTML = `${esc(c.nome)}, seu perfil é <em>${esc(A.nome)}</em>.`;
+    $('#face-frente').innerHTML = cartaFrente(c);
+    $('#leitura-titulo').innerHTML = `O que o perfil <em>${esc(A.nome)}</em> diz.`;
+    $('#l-forte').textContent = A.forte;
+    $('#l-cego').textContent = A.cego;
+    $('#l-ia').textContent = A.ia;
+    montarOferta(A);
+  }
+
+  const NSLIDES = 3;
+  const EV_SLIDE = ['carta_revelou', 'carta_leitura', 'carta_oferta'];
+  const FUNDOS = ['brilho', 'pontos', 'pontos'];
+  let slide = 0;
+  function irSlide(i) {
+    slide = Math.max(0, Math.min(NSLIDES - 1, i));
+    document.querySelectorAll('.slide').forEach((el, j) => {
+      el.classList.toggle('ativo', j === slide);
+      el.classList.toggle('antes', j < slide);
+      el.setAttribute('aria-hidden', String(j !== slide));
+      el.inert = j !== slide;
+    });
+    document.querySelectorAll('#segs-res b').forEach((b, j) => { b.style.width = j <= slide ? '100%' : '0%'; });
+    $('#res-voltar').disabled = slide === 0;
+    $('#t-res').dataset.fundo = FUNDOS[slide];
+    track(EV_SLIDE[slide]);
+  }
+  document.querySelectorAll('[data-prox]').forEach((b) => b.addEventListener('click', () => irSlide(slide + 1)));
+  $('#res-voltar').addEventListener('click', () => irSlide(slide - 1));
+  // deslizar pro lado no celular
+  let toqueX = null, toqueY = null;
+  $('#slides').addEventListener('touchstart', (ev) => { const t = ev.touches[0]; toqueX = t.clientX; toqueY = t.clientY; }, { passive: true });
+  $('#slides').addEventListener('touchend', (ev) => {
+    if (toqueX === null) return;
+    const t = ev.changedTouches[0], dx = t.clientX - toqueX, dy = t.clientY - toqueY;
+    toqueX = null;
+    if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.5) irSlide(slide + (dx < 0 ? 1 : -1));
   });
 
-  // Partículas ASCII subindo no hero
-  (function particles() {
-    const cv = $('#hero-particles');
-    if (!cv || reduced) return;
-    const ctx = cv.getContext('2d');
-    const dpr = Math.min(2, window.devicePixelRatio || 1);
-    let W = 0, H = 0;
-    const size = () => { W = cv.clientWidth; H = cv.clientHeight; cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0); };
-    size(); window.addEventListener('resize', size);
-    const P = [], chars = '#/\\|_-=+*:.01';
-    let running = false, last = 0, acc = 0, raf = 0;
-    const loop = (t) => {
-      if (!running) return;
-      const dt = Math.min(50, last ? t - last : 16); last = t; acc += dt;
-      if (P.length < 46 && acc > 220) {
-        acc = 0;
-        P.push({ x: W * (0.1 + Math.random() * 0.88), y: H * (0.3 + Math.random() * 0.65), vy: -(6 + Math.random() * 12), life: 0, max: 3500 + Math.random() * 3500, c: Math.random() < 0.2 ? chars[(Math.random() * chars.length) | 0] : null });
-      }
-      ctx.clearRect(0, 0, W, H);
-      ctx.font = '11px ui-monospace, Menlo, monospace';
-      for (let i = P.length - 1; i >= 0; i--) {
-        const p = P[i]; p.life += dt; p.y += p.vy * dt / 1000;
-        const k = p.life / p.max;
-        if (k >= 1) { P.splice(i, 1); continue; }
-        ctx.fillStyle = `rgba(29,27,23,${(Math.sin(Math.PI * k) * 0.5).toFixed(3)})`;
-        if (p.c) { if (Math.random() < 0.015) p.c = chars[(Math.random() * chars.length) | 0]; ctx.fillText(p.c, p.x, p.y); }
-        else ctx.fillRect(p.x | 0, p.y | 0, 2, 2);
-      }
-      raf = requestAnimationFrame(loop);
-    };
-    new IntersectionObserver(([en]) => {
-      if (en.isIntersecting && !running) { running = true; last = 0; size(); raf = requestAnimationFrame(loop); }
-      else if (!en.isIntersecting) { running = false; cancelAnimationFrame(raf); }
-    }).observe(cv);
-  })();
+  function revelar(animado) {
+    if (!estado.res) estado.res = calcular(estado.r);
+    salvar();
+    montarResultado();
+    if (aberto) { aberto = false; try { if (history.state && history.state.quiz) history.back(); } catch (e) {} }
+    mostrarTela('t-res');
+    irSlide(0);
+    const flip = $('#flip'), verso = $('#face-verso');
+    const c = cartaAtual();
+    if (animado && !reduced) {
+      verso.innerHTML = cartaMisterio();
+      flip.classList.add('virada');
+      const flash = document.createElement('div'); flash.className = 'flash'; $('#stage').prepend(flash);
+      setTimeout(() => { flip.classList.remove('virada'); setTimeout(() => flash.classList.add('on'), 420); }, 650);
+      setTimeout(() => { verso.innerHTML = cartaVerso(c); }, 1800);
+    } else {
+      flip.classList.remove('virada');
+      verso.innerHTML = cartaVerso(c);
+    }
+    setTimeout(() => { gerarPNG().catch(() => {}); }, 2400);
+  }
 
-  // Mãos do hero: entram dos lados e seguem o mouse
-  (function hands() {
-    const hs = root.querySelectorAll('[data-hand]');
-    if (!hs.length || reduced) return;
-    let mx = 0, my = 0, sy = 0, live = false;
-    const apply = () => {
-      if (!live) return;
-      hs.forEach((el) => { const s = el.dataset.hand === 'l' ? 1 : -1; const close = Math.min(1, sy / 520) * 36; el.style.transform = `translate(${s * (close + Math.max(0, s * mx) * 20)}px,${my * 10}px)`; });
-    };
-    hs.forEach((el) => { const s = el.dataset.hand === 'l' ? -1 : 1; el.style.opacity = '0'; el.style.transform = `translateX(${s * 60}px)`; });
-    requestAnimationFrame(() => requestAnimationFrame(() => {
-      hs.forEach((el) => { el.style.transition = 'opacity 1.4s cubic-bezier(.16,1,.3,1), transform 2s cubic-bezier(.16,1,.3,1)'; el.style.opacity = '1'; el.style.transform = 'none'; });
-      setTimeout(() => { hs.forEach((el) => { el.style.transition = 'transform 1s cubic-bezier(.16,1,.3,1)'; }); live = true; apply(); }, 2000);
-    }));
-    hero.addEventListener('mousemove', (e) => { const b = hero.getBoundingClientRect(); mx = (e.clientX - b.left) / b.width - 0.5; my = (e.clientY - b.top) / b.height - 0.5; apply(); });
-    window.addEventListener('scroll', () => { sy = window.scrollY; apply(); }, { passive: true });
+  // ---------------- gaveta: o que tem dentro, perguntas, quem é o Conrado ----------------
+  const LAURO = (() => {
+    let f = '';
+    [[10.5, 41, -40], [7.6, 33.5, -28], [5.9, 25.5, -14], [5.6, 17.5, 0], [6.8, 9.8, 14]].forEach(([x, y, g]) => {
+      f += `<ellipse cx="${x - 2.4}" cy="${y}" rx="1.8" ry="4" transform="rotate(${g - 18} ${x - 2.4} ${y})"/><ellipse cx="${x + 2.3}" cy="${y - 1.2}" rx="1.6" ry="3.6" transform="rotate(${g + 28} ${x + 2.3} ${y - 1.2})"/>`;
+    });
+    return `<path d="M12.5 45.5C6.5 37 4.8 23 7.6 5" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/>${f}`;
   })();
+  const lauro = (dir) => `<svg viewBox="0 0 16 46" class="${dir ? 'dir' : ''}" aria-hidden="true">${LAURO}</svg>`;
+  let sheetAberto = false;
+  function abrirSheet(tipo) {
+    const A = estado.res ? ARQ[estado.res.arq] : null;
+    let h = '';
+    if (tipo === 'mods') {
+      h = `<h3>O que tem dentro da Built</h3><ul class="mods">${[['Chat diário no Telegram', 'com uma galera no mesmo caminho'], ['Feedback do Conrado', 'nos seus rascunhos, todo dia útil'], ['Call ao vivo todo mês', 'gravada, pra quem não puder ir'], ['Bot com uma ideia de post', 'pro seu momento, todo dia às 9h'], ['Grupo organizado', 'em dois espaços: Avisos e Chat']].map(([t, d]) => `<li class="dest"><span><b>${t}</b> ${d}</span></li>`).join('')}</ul><p>${A ? `Pra quem é ${esc(A.nome)}, o foco lá dentro é virar ${esc(A.evo)}: prazo, grupo e alguém revisando o seu rascunho. ` : ''}Pagou, você abre o bot no Telegram e entra no grupo na hora.</p>`;
+    } else if (tipo === 'faq') {
+      h = `<h3>Perguntas</h3><div class="faq">${faqBuilt(CFG.precos[encerrado ? 'cheio' : 'fundador']).map(([pp, r]) => `<details><summary>${esc(pp)}</summary><p>${esc(r)}</p></details>`).join('')}</div><p class="aviso">A minha trajetória não é promessa de resultado: o que você vai construir depende do seu trabalho. <a href="termos.html" target="_blank" rel="noopener">Termos</a> · <a href="privacidade.html" target="_blank" rel="noopener">Privacidade</a></p>`;
+    } else if (tipo === 'sobre') {
+      h = `<div class="sobre-topo"><img src="img/conrado.webp" alt="Conrado de Sá" width="68" height="68"><h3>Eu sou o Conrado.</h3></div><p>Empreendo desde os 17. Passei por 11 escolas até os 10 anos, vendi mate numa praça em Vancouver pra pagar as contas, quase quebrei um estúdio de games e ajudei minha família a sair de uma dívida de R$ 300 mil. Hoje toco a DOTI, uma empresa de IA, e medito todo dia desde 2016.</p><p>O que me tirou do zero não foi uma técnica. Foi mudar como eu penso, cuidar da minha energia e aprender a vender. É isso que a gente pratica na Built.</p><div class="lauros">${[['41 mil', 'seguidores no X'], ['Desde 2016', 'medita todo dia'], ['Desde os 17', 'empreendendo']].map(([v, t]) => `<div class="lauro">${lauro(false)}<div><b>${v}</b>${t}</div>${lauro(true)}</div>`).join('')}</div><p class="aviso">Este teste é uma ferramenta de autoconhecimento, não um diagnóstico profissional. A minha trajetória não é promessa de resultado.</p>`;
+    } else if (tipo === 'video') {
+      h = `<h3>Como funciona a Built</h3><p>Em 5 minutos, eu explico o que a gente faz lá dentro e pra quem é.</p><video controls playsinline preload="metadata" poster="video/vsl.jpg"><source src="video/vsl.mp4" type="video/mp4"></video>`;
+    }
+    $('#sheet-body').innerHTML = h;
+    const vid = $('#sheet-body video');
+    if (vid) vid.addEventListener('play', () => track('carta_video'), { once: true });
+    $('#sheet').hidden = false; sheetAberto = true;
+    $('#sheet-x').focus({ preventScroll: true });
+    track(`carta_sheet_${tipo}`);
+  }
+  function fecharSheet() { const v = $('#sheet-body video'); if (v) v.pause(); $('#sheet').hidden = true; sheetAberto = false; }
+  document.querySelectorAll('[data-sheet]').forEach((b) => b.addEventListener('click', () => abrirSheet(b.dataset.sheet)));
+  $('#sheet-x').addEventListener('click', fecharSheet);
+  $('#sheet').addEventListener('click', (ev) => { if (ev.target === $('#sheet')) fecharSheet(); });
+
+  // ---------------- interações da carta ----------------
+  const flip = $('#flip'), stage = $('#stage'), tilt = $('#tilt');
+  const virar = () => { flip.classList.toggle('virada'); $('#virar').textContent = flip.classList.contains('virada') ? 'Toque pra voltar pra frente' : 'Toque na carta pra ver seus números'; };
+  flip.addEventListener('click', virar);
+  flip.addEventListener('keydown', (ev) => { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); virar(); } });
+  if (matchMedia('(hover:hover) and (pointer:fine)').matches && !reduced) {
+    stage.addEventListener('pointermove', (ev) => {
+      const r = stage.getBoundingClientRect();
+      const x = (ev.clientX - r.left) / r.width - .5, y = (ev.clientY - r.top) / r.height - .5;
+      tilt.style.setProperty('--ry', `${x * 14}deg`); tilt.style.setProperty('--rx', `${-y * 12}deg`);
+      stage.classList.add('mexendo');
+      $('.holo').style.backgroundPosition = `${50 - x * 160}% 0`;
+    });
+    stage.addEventListener('pointerleave', () => { tilt.style.setProperty('--ry', '0deg'); tilt.style.setProperty('--rx', '0deg'); stage.classList.remove('mexendo'); $('.holo').style.backgroundPosition = ''; });
+  }
+
+  $('#btn-share').addEventListener('click', async () => {
+    try {
+      const blob = pngCache || await gerarPNG();
+      const file = new File([blob], 'meu-perfil-method.jpg', { type: 'image/jpeg' });
+      const A = ARQ[estado.res.arq];
+      if (navigator.canShare && navigator.canShare({ files: [file] })) {
+        try { await navigator.share({ files: [file], title: 'Meu perfil', text: `Meu perfil: ${A.nome}. E o seu? ${CFG.site}` }); track('carta_compartilhou'); return; }
+        catch (e) { if (e && e.name === 'AbortError') return; }
+      }
+      baixar(blob); track('carta_salvou'); toast('Imagem salva. Posta no story e me marca!');
+    } catch (e) { toast('Não deu pra gerar a imagem. Tenta de novo.'); }
+  });
+
+  $('#btn-refazer').addEventListener('click', () => {
+    try { localStorage.removeItem(SKEY); } catch (e) {}
+    location.href = aqui();
+  });
+
+  // ---------------- tela inicial ----------------
+  function montarHero() {
+    const opts = $('#q1-opts');
+    opts.innerHTML = Q[0].o.map((o) => `<button type="button" class="opt" role="radio" aria-checked="${estado.r.situacao === o[0]}" data-v="${o[0]}">${esc(o[1])}</button>`).join('');
+    opts.querySelectorAll('.opt').forEach((b) => b.addEventListener('click', () => {
+      estado.r.situacao = b.dataset.v;
+      opts.querySelectorAll('.opt').forEach((o) => o.setAttribute('aria-checked', String(o === b)));
+      track('carta_inicio'); salvar();
+      setTimeout(() => abrirQuiz(1), reduced ? 0 : 180);
+    }));
+    // continua de onde parou: primeira pergunta sem resposta (ou o nome, ou o contato)
+    const continuar = () => {
+      const i = PASSOS.findIndex((p) => (p.tipo === 'q' && !estado.r[p.q.k]) || p.tipo === 'contato');
+      abrirQuiz(Math.max(0, i));
+    };
+    $('#btn-continuar').addEventListener('click', continuar);
+    $('#btn-comecar').addEventListener('click', continuar);
+    const exemplo = (nome, arq, st) => { const r = { stats: st, arq, hp: 90, nivel: Math.round(Object.values(st).reduce((a, b) => a + b, 0) / 6) }; return cartaFrente({ nome, ...r }); };
+    $('#fan').innerHTML = `<div class="fc f1">${exemplo('Doti', 'faisca', { ENE: 62, CAL: 35, ACA: 80, FOC: 28, COR: 88, VAL: 44 })}</div><div class="fc f2">${exemplo('Duda', 'ancora', { ENE: 55, CAL: 60, ACA: 40, FOC: 86, COR: 22, VAL: 38 })}</div><div class="fc f3">${cartaMisterio('Seu perfil')}</div>`;
+    // no celular, as cartas só aparecem inteiras: sem espaço, elas somem e o conteúdo fica no meio
+    const hero = $('.hero'), inicio = $('.inicio');
+    const ajustarHero = () => {
+      const lado = matchMedia('(min-width:1000px) and (min-height:600px)').matches;
+      hero.classList.toggle('sem-cartas', !lado && hero.clientHeight - inicio.offsetHeight < 230);
+    };
+    if ('ResizeObserver' in window) new ResizeObserver(ajustarHero).observe(inicio);
+    addEventListener('resize', ajustarHero);
+    ajustarHero();
+  }
+
+  $('#quiz-voltar').addEventListener('click', voltar);
+  $('#quiz-fechar').addEventListener('click', () => fecharQuiz());
+  document.addEventListener('keydown', (ev) => {
+    if (ev.key === 'Escape') {
+      if (sheetAberto) { fecharSheet(); return; }
+      if (aberto && PASSOS[passo].tipo !== 'forja') { fecharQuiz(); return; }
+    }
+    if ($('#t-res').hidden || sheetAberto) return;
+    if (ev.key === 'ArrowRight') irSlide(slide + 1);
+    if (ev.key === 'ArrowLeft') irSlide(slide - 1);
+  });
+
+  // ---------------- início ----------------
+  if (local) {
+    $('#teste-local').hidden = false; document.body.classList.add('local');
+    if (simular) $('#teste-local').firstChild.textContent = 'teste local · pagamento simulado · ';
+    $('#btn-zerar').addEventListener('click', () => { try { localStorage.removeItem(SKEY); } catch (e) {} location.href = aqui(); });
+  }
+  // ?og=1 desenha a imagem de prévia do link (1200x630) pra capturar com o Chrome headless (ver README)
+  function renderOG() {
+    const ex = (nome, arq, st, hp) => cartaFrente({ nome, arq, stats: st, hp, nivel: Math.round(Object.values(st).reduce((a, b) => a + b, 0) / 6) });
+    const enc = (svg, w) => svg.replace('width="600" height="840"', `x="${-w / 2}" y="${-w * .7}" width="${w}" height="${w * 1.4}"`);
+    const c1 = enc(ex('Doti', 'faisca', { ENE: 62, CAL: 35, ACA: 80, FOC: 28, COR: 88, VAL: 44 }, 80), 222);
+    const c2 = enc(ex('Duda', 'ancora', { ENE: 55, CAL: 60, ACA: 40, FOC: 86, COR: 22, VAL: 38 }, 90), 222);
+    const c3 = enc(cartaMisterio(), 248);
+    const tam = caber('Descubra seu perfil e', 400, "'Newsreader', serif", 600, 74, 54);
+    document.body.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" style="display:block">
+<defs><linearGradient id="ogv" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#031C3C" stop-opacity=".5"/><stop offset=".55" stop-color="#031C3C" stop-opacity=".12"/><stop offset="1" stop-color="#031C3C" stop-opacity=".18"/></linearGradient>
+<filter id="ogs" x="-30%" y="-20%" width="160%" height="140%"><feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#00142B" flood-opacity=".45"/></filter></defs>
+<rect width="1200" height="630" fill="#0B5AA5"/>
+<image href="img/montanha-h.webp" x="0" y="0" width="1200" height="630" preserveAspectRatio="xMidYMid slice"/>
+<rect width="1200" height="630" fill="url(#ogv)"/>
+<text x="72" y="130" font-family="'JetBrains Mono', monospace" font-weight="500" font-size="20" letter-spacing="4" fill="#FFFFFF" fill-opacity=".88">TESTE GRÁTIS · 1 MINUTO</text>
+<text x="68" y="222" font-family="'Newsreader', serif" font-size="${tam}" letter-spacing="-1.5" fill="#FFFFFF">Descubra seu <tspan font-style="italic">perfil</tspan> e</text>
+<text x="68" y="${222 + tam * 1.08}" font-family="'Newsreader', serif" font-size="${tam}" letter-spacing="-1.5" fill="#FFFFFF">como crescer seu</text>
+<text x="68" y="${222 + tam * 2.16}" font-family="'Newsreader', serif" font-size="${tam}" letter-spacing="-1.5" fill="#FFFFFF">negócio com IA</text>
+<text x="72" y="${262 + tam * 2.16 + 20}" font-family="Inter, sans-serif" font-weight="500" font-size="23" fill="#FFFFFF" fill-opacity=".92">8 perguntas. No fim, o seu perfil, o que te trava</text>
+<text x="72" y="${262 + tam * 2.16 + 52}" font-family="Inter, sans-serif" font-weight="500" font-size="23" fill="#FFFFFF" fill-opacity=".92">e onde a IA entra no seu caso.</text>
+<rect x="72" y="${262 + tam * 2.16 + 86}" width="356" height="58" rx="10" fill="#FFFFFF"/>
+<text x="250" y="${262 + tam * 2.16 + 122}" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-weight="600" font-size="19" letter-spacing="1.5" fill="#0A0A0A">${X(CFG.site.toUpperCase())}</text>
+<g filter="url(#ogs)"><g transform="translate(838 330) rotate(-11)">${c1}</g>
+<g transform="translate(1058 330) rotate(11)">${c2}</g>
+<g transform="translate(948 316)">${c3}</g></g>
+</svg>`;
+    document.body.style.cssText = 'margin:0;background:#0B5AA5;overflow:hidden;width:1200px;height:630px';
+    document.body.dataset.pronto = '1';
+  }
+
+  function abrirSoOferta() {
+    document.body.classList.add('so-oferta');
+    $('#btn-refazer').textContent = 'Fazer o teste';
+    montarOferta(estado.res ? ARQ[estado.res.arq] : null);
+    mostrarTela('t-res');
+    irSlide(2);
+    // o email da Built promete o vídeo junto: quem chega pelo link (?q=) já vê o vídeo aberto
+    if (q.get('q')) setTimeout(() => abrirSheet('video'), 500);
+  }
+
+  async function iniciar() {
+    try { await Promise.race([document.fonts.ready, new Promise((ok) => setTimeout(ok, 1500))]); } catch (e) {}
+    if (q.get('og') === '1') { renderOG(); return; }
+    beacon({ e: 'visita' }); track('carta_visita');
+    carregarMembros(); setInterval(renderPhase, 30000);
+    const salvo = carregar();
+    if (salvo && salvo.r) { estado.r = salvo.r; estado.nome = salvo.nome || ''; estado.token = salvo.token || null; estado.numero = salvo.numero || null; estado.nota = salvo.nota || null; }
+    montarHero();
+    // link do email (?t=TOKEN): o worker devolve só nome, tipo e números da carta (sem as respostas)
+    const tk = q.get('t');
+    if (tk && /^[a-z2-9]{16}$/.test(tk) && CFG.cartaUrl && tk !== estado.token) {
+      try {
+        const d = await fetch(`${CFG.cartaUrl}?t=${tk}`).then((r) => r.json());
+        if (d && d.ok && ARQ[d.arq]) {
+          estado.nome = d.nome; estado.numero = d.numero || null; estado.token = tk;
+          estado.res = { arq: d.arq, stats: d.stats, hp: d.hp, nivel: d.nivel };
+          revelar(false); return;
+        }
+      } catch (e) {}
+    }
+    // link antigo dos emails da Built (?q=TOKEN) ou #entrar: vai direto pros planos
+    if ((q.get('q') && /^[a-z2-9]{16}$/.test(q.get('q'))) || location.hash === '#entrar') { abrirSoOferta(); return; }
+    const completo = estado.nome && Q.every((x) => estado.r[x.k]);
+    if (completo && q.get('novo') !== '1') { estado.res = calcular(estado.r); revelar(false); return; }
+    if (Object.keys(estado.r).length > 1) $('#btn-continuar').hidden = false;
+    if (q.get('teste') === '1') abrirQuiz(0);
+  }
+  iniciar();
+
+  // pra testar no console: window.__carta
+  window.__carta = { calcular, ARQ, Q, estado, cartaFrente, cartaVerso, storySVG, gerarPNG, abrirQuiz, fecharQuiz, irSlide, abrirSheet, fecharSheet, revelar, PASSOS };
 })();
 </script>
 </body>
