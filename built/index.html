@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Descubra seu perfil e como crescer seu negócio com IA · Method</title>
-<meta name="description" content="Teste grátis de 1 minuto: 8 perguntas sobre como você trabalha, vende e decide. No fim, você vê o seu perfil, o que te trava e como usar IA pra crescer o seu negócio.">
+<meta name="description" content="Teste grátis de 1 minuto: 9 perguntas sobre como você trabalha, vende e decide. No fim, você vê o seu perfil, o que te trava e como usar IA pra crescer o seu negócio.">
 <link rel="canonical" href="https://condzmethod.com/built/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://condzmethod.com/built/">
 <meta property="og:title" content="Descubra seu perfil e como crescer seu negócio com IA">
-<meta property="og:description" content="8 perguntas rápidas. No fim, o seu perfil, o que te trava e onde a IA entra no seu caso.">
+<meta property="og:description" content="9 perguntas rápidas. No fim, o seu perfil, o que te trava e onde a IA entra no seu caso.">
 <meta property="og:image" content="https://condzmethod.com/built/og.jpg">
 <meta property="og:locale" content="pt_BR">
 <meta name="twitter:card" content="summary_large_image">
@@ -356,7 +356,7 @@ h1,h2,h3,p{margin:0}
       <div class="inicio">
         <p class="rotulo eyebrow">Teste grátis · 1 minuto</p>
         <h1 class="h-serif hero-h1">Descubra seu <em>perfil</em> e como crescer seu negócio com IA</h1>
-        <p class="hero-sub">8 perguntas rápidas. No fim, você vê o que te trava, onde a IA entra no seu caso e por onde começar, mesmo que o negócio ainda esteja no papel.</p>
+        <p class="hero-sub">9 perguntas rápidas. No fim, você vê o que te trava, onde a IA entra no seu caso e por onde começar, mesmo que o negócio ainda esteja no papel.</p>
         <p class="q1-label" id="q1-label">Pra começar: hoje, você é…</p>
         <div class="opts duas" role="radiogroup" aria-labelledby="q1-label" id="q1-opts"></div>
         <button type="button" class="btn escuro" id="btn-continuar" hidden>Continuar meu teste <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
@@ -652,6 +652,8 @@ h1,h2,h3,p{margin:0}
     { k: 'reage', b: 'energia', q: 'Um cliente, ou o chefe, te responde mal. O que acontece?', o: [['a', 'Respiro, entendo o lado dele e sigo', { CAL: 3 }, { farol: 3 }], ['b', 'Fico irritado um tempo, depois passa', { CAL: 2 }], ['c', 'Estraga o meu dia inteiro', {}, { ancora: 2, joia: 1 }], ['d', 'Respondo na hora e depois me arrependo', { ACA: 1 }, { trator: 3, faisca: 1 }]] },
     { k: 'ideia', b: 'acao', q: 'Você teve uma ideia boa de negócio. O que acontece?', o: [['a', 'Começo no mesmo dia, nem que seja pequeno', { ACA: 3, COR: 1 }, { trator: 1, faisca: 1 }], ['b', 'Pesquiso, planejo e fica pra depois', { FOC: 1 }, { estrategista: 3 }], ['c', 'Começo animado e largo na segunda semana', { ACA: 2 }, { faisca: 3 }], ['d', 'Penso que alguém já deve ter feito melhor', {}, { joia: 1, ancora: 1, estrategista: 1 }]] },
     { k: 'semana', b: 'acao', q: 'A sua semana é mais…', o: [['a', 'Planejada: sei o que faço em cada dia', { FOC: 3 }, { ancora: 2, joia: 1 }], ['b', 'Apagando incêndio o tempo todo', { ACA: 2 }, { trator: 3 }], ['c', 'Cheia de ideia e pouca entrega', { ACA: 1 }, { faisca: 2, estrategista: 2 }], ['d', 'Igual toda semana, no automático', { FOC: 1 }, { ancora: 1 }]] },
+    // faturamento (pedido de 28/10): soma salário, faturamento e dividendos; as chaves batem com o bot (OPCOES.renda) e não mexem no perfil
+    { k: 'renda', b: 'coragem', q: 'Hoje, quanto entra por mês?', hint: 'Somando tudo: salário, faturamento, dividendos.', o: [['ate3', 'Até R$\u00a03\u00a0mil'], ['3a6', 'R$\u00a03 a 6\u00a0mil'], ['6a10', 'R$\u00a06 a 10\u00a0mil'], ['10a20', 'R$\u00a010 a 20\u00a0mil'], ['20a50', 'R$\u00a020 a 50\u00a0mil'], ['mais50', 'Mais de R$\u00a050\u00a0mil']] }, // \u00a0: o valor não quebra no meio
     { k: 'caro', b: 'coragem', q: 'Um cliente diz: "tá caro". Você…', o: [['a', 'Explico o valor e mantenho o preço', { VAL: 3, COR: 1 }], ['b', 'Dou desconto na hora pra não perder', { VAL: 1 }, { joia: 3 }], ['c', 'Fico sem graça e travo', {}, { joia: 1, farol: 3 }], ['d', 'Nunca vendi nada pra ninguém', {}, { estrategista: 2, ancora: 1 }]] },
     { k: 'risco', b: 'coragem', q: 'Uma oportunidade boa, mas sem garantia nenhuma. Você…', o: [['a', 'Vou com tudo', { COR: 3, ACA: 1 }, { faisca: 2 }], ['b', 'Testo pequeno antes de apostar', { COR: 2, CAL: 1 }, { farol: 2 }], ['c', 'Preciso de muita certeza pra ir', { COR: 1 }, { estrategista: 1, ancora: 1 }], ['d', 'Prefiro o certo, mesmo ganhando pouco', {}, { ancora: 2 }]] },
     { k: 'trava', b: 'coragem', q: 'No fim das contas, o que mais te trava hoje?', o: [['comeco', 'Não sei por onde começar', { ENE: 1, FOC: 1 }, { estrategista: 3, ancora: 1 }], ['tempo', 'Falta tempo ou energia', { FOC: 1 }, { trator: 1, ancora: 1 }], ['vergonha', 'Vergonha de me expor', { ENE: 1, FOC: 1 }, { joia: 4 }], ['paro', 'Começo e paro', { ENE: 1 }, { faisca: 2 }], ['dinheiro', 'Não sei transformar o que sei em dinheiro', { ENE: 1, FOC: 1 }, { farol: 2, joia: 1 }], ['cabeca', 'A cabeça: foco e ansiedade', {}, { faisca: 1 }]] },
@@ -1132,7 +1134,7 @@ ${raios}
       return fetch(url, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(body), signal: ctl.signal })
         .then((r) => r.json()).finally(() => clearTimeout(t));
     };
-    const respostas = { situacao: estado.r.situacao, trava: estado.r.trava, perfil: estado.res.arq };
+    const respostas = { situacao: estado.r.situacao, renda: estado.r.renda, trava: estado.r.trava, perfil: estado.res.arq };
     leadPromise = post(CFG.quizUrl, { nome: estado.nome, whatsapp: estado.whats, email: estado.email, respostas, src: fonte, utm, tg })
       .then((d) => { if (d && d.ok) { estado.token = d.token || null; salvar(); } })
       .catch(() => {});
@@ -1435,7 +1437,7 @@ ${raios}
 <text x="68" y="222" font-family="'Newsreader', serif" font-size="${tam}" letter-spacing="-1.5" fill="#FFFFFF">Descubra seu <tspan font-style="italic">perfil</tspan> e</text>
 <text x="68" y="${222 + tam * 1.08}" font-family="'Newsreader', serif" font-size="${tam}" letter-spacing="-1.5" fill="#FFFFFF">como crescer seu</text>
 <text x="68" y="${222 + tam * 2.16}" font-family="'Newsreader', serif" font-size="${tam}" letter-spacing="-1.5" fill="#FFFFFF">negócio com IA</text>
-<text x="72" y="${262 + tam * 2.16 + 20}" font-family="Inter, sans-serif" font-weight="500" font-size="23" fill="#FFFFFF" fill-opacity=".92">8 perguntas. No fim, o seu perfil, o que te trava</text>
+<text x="72" y="${262 + tam * 2.16 + 20}" font-family="Inter, sans-serif" font-weight="500" font-size="23" fill="#FFFFFF" fill-opacity=".92">9 perguntas. No fim, o seu perfil, o que te trava</text>
 <text x="72" y="${262 + tam * 2.16 + 52}" font-family="Inter, sans-serif" font-weight="500" font-size="23" fill="#FFFFFF" fill-opacity=".92">e onde a IA entra no seu caso.</text>
 <rect x="72" y="${262 + tam * 2.16 + 86}" width="356" height="58" rx="10" fill="#FFFFFF"/>
 <text x="250" y="${262 + tam * 2.16 + 122}" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-weight="600" font-size="19" letter-spacing="1.5" fill="#0A0A0A">${X(CFG.site.toUpperCase())}</text>
