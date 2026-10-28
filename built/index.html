@@ -268,7 +268,6 @@ h1,h2,h3,p{margin:0}
 .bill button[aria-checked="true"]{background:#fff;color:#0A0A0A}
 .bill button[aria-checked="true"] span{color:#1a7a48}
 .bill button:focus-visible{outline:3px solid #8AB4FF;outline-offset:2px}
-.preco .valor s{font:400 clamp(18px,2.6vh,24px)/1 var(--serif);color:var(--txt3);margin-right:10px;vertical-align:.5em}
 .preco .valor small{font:400 clamp(16px,2.4vh,22px)/1 var(--serif);color:var(--txt2);margin-left:4px}
 .preco .linkzinho{padding:6px 8px}
 .lista-rota{padding:12px 14px 6px}
@@ -443,8 +442,8 @@ h1,h2,h3,p{margin:0}
         <div class="espaco"></div>
         <div class="preco">
           <div class="bill" id="bill" role="radiogroup" aria-label="Plano"><button type="button" role="radio" aria-checked="true" data-bill="tri">3 meses <span id="bill-tag">−23%</span></button><button type="button" role="radio" aria-checked="false" data-bill="mes">Mensal</button><button type="button" role="radio" aria-checked="false" data-bill="anual">Anual</button></div>
-          <div class="valor"><s id="price-strike">R$ 197</s><span id="price-main">R$ 147</span><small id="price-per">/mês</small></div>
-          <p class="rotulo" id="price-deadline">Preço de fundador até 30/10, 23h59</p>
+          <div class="valor"><span id="price-main">R$ 147</span><small id="price-per">/mês</small></div>
+          <p class="rotulo" id="price-info">Pagamento seguro pelo Stripe · entra no grupo na hora</p>
           <a class="btn" data-plan="trimestralCartao" id="btn-cartao" href="#" rel="noopener">Entrar com cartão <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
           <a class="linkzinho" data-plan="trimestralPix" id="btn-pix" href="#" rel="noopener">ou pagar no Pix</a>
           <p class="gatilho" id="note-plano"></p>
@@ -470,8 +469,8 @@ h1,h2,h3,p{margin:0}
 
   // ================== CONFIG (edite aqui) ==================
   const CFG = {
-    // Built (preços e links iguais aos da landing antiga da Built; trocam sozinhos depois do prazo de fundador)
-    fundadorAte: '2026-10-30T23:59:00-03:00',
+    // Built: preço de fundador sem prazo (pedido de 28/10: "mantém o preço"). Links iguais aos da landing antiga.
+    // Os links de preço cheio (R$ 197/mês) continuam no Stripe, sem uso: ids em ~/Otto/comunidade-bip/stripe-config.md.
     links: {
       trimestralCartao: 'https://buy.stripe.com/8x228sg2w1KW309142bsc00',
       trimestralPix: 'https://buy.stripe.com/fZueVeg2w9do309fYWbsc01',
@@ -479,17 +478,7 @@ h1,h2,h3,p{margin:0}
       mensalCartao: 'https://buy.stripe.com/cNi9AU9E8blw8kt3cabsc07',
       mensalPix: 'https://buy.stripe.com/4gM28s17C4X87gph30bsc08',
     },
-    linksCheio: {
-      trimestralCartao: 'https://buy.stripe.com/4gM28saIc4X8cAJdQObsc04',
-      trimestralPix: 'https://buy.stripe.com/eVqaEYeYsexIcAJbIGbsc05',
-      anual: 'https://buy.stripe.com/4gMaEY4jO89kfMVcMKbsc06',
-      mensalCartao: 'https://buy.stripe.com/7sYfZi9E8dtEdENfYWbsc09',
-      mensalPix: 'https://buy.stripe.com/9B6bJ2bMggFQcAJfYWbsc0a',
-    },
-    precos: {
-      fundador: { tri: 147, triTotal: 441, triRiscado: 197, mes: 191, mesRiscado: 256, anual: 1470 },
-      cheio: { tri: 197, triTotal: 591, mes: 256, anual: 1970 },
-    },
+    precos: { tri: 147, triTotal: 441, mes: 191, anual: 1470 },
     quizUrl: 'https://built-bot.built-bot.workers.dev/quiz',   // contato + respostas vão pro bot (mesmo funil de emails e WhatsApp da Built)
     leadUrl: 'https://built-bot.built-bot.workers.dev/lead',   // reserva: guarda pelo menos o email
     membrosUrl: 'https://built-bot.built-bot.workers.dev/membros',
@@ -1177,8 +1166,6 @@ ${raios}
 
   // ---------------- planos da Built ----------------
   const reais = (n) => 'R$ ' + n.toLocaleString('pt-BR');
-  const deadline = Date.parse(CFG.fundadorAte);
-  let encerrado = Date.now() >= deadline;
   let bill = 'tri';
   try { const b = sessionStorage.getItem('built_bill'); if (b === 'mes' || b === 'anual') bill = b; } catch (e) {}
   const VALOR = { trimestralCartao: (P) => P.triTotal, trimestralPix: (P) => P.triTotal, mensalCartao: (P) => P.mes, mensalPix: (P) => P.mes, anual: (P) => P.anual };
@@ -1193,8 +1180,8 @@ ${raios}
     } catch (e) { return url; }
   }
   function renderBill() {
-    const P = CFG.precos[encerrado ? 'cheio' : 'fundador'];
-    const links = encerrado ? CFG.linksCheio : CFG.links;
+    const P = CFG.precos;
+    const links = CFG.links;
     const desconto = Math.round((1 - P.tri / P.mes) * 100);
     $('#bill-tag').textContent = '−' + desconto + '%';
     document.querySelectorAll('#bill button').forEach((b) => { const on = b.dataset.bill === bill; b.setAttribute('aria-checked', String(on)); b.tabIndex = on ? 0 : -1; });
@@ -1206,9 +1193,6 @@ ${raios}
     pix.hidden = bill === 'anual';
     pix.dataset.plan = planoP; pix.href = decorar(links[planoP], planoP, P);
     pix.textContent = bill === 'mes' ? `ou pagar ${reais(P.mes)} no Pix (1 mês)` : `ou pagar ${reais(P.triTotal)} no Pix (3 meses)`;
-    const riscado = encerrado ? 0 : bill === 'mes' ? P.mesRiscado : bill === 'tri' ? P.triRiscado : 0;
-    $('#price-strike').hidden = !riscado;
-    if (riscado) $('#price-strike').textContent = reais(riscado);
     $('#price-main').textContent = reais(bill === 'mes' ? P.mes : bill === 'anual' ? P.anual : P.tri);
     $('#price-per').textContent = bill === 'anual' ? ' à vista' : '/mês';
     $('#note-plano').textContent = bill === 'mes'
@@ -1218,16 +1202,10 @@ ${raios}
         : `${reais(P.triTotal)} a cada 3 meses. Cancela quando quiser. 7 dias de garantia.`;
   }
   let membros = 0;
-  function renderPhase() {
-    const left = deadline - Date.now();
-    if (left <= 0) {
-      if (!encerrado) { encerrado = true; renderBill(); }
-      $('#price-deadline').textContent = 'Pagamento seguro pelo Stripe · entra no grupo na hora';
-      return;
-    }
-    const d = Math.floor(left / 86400e3), h = Math.floor((left % 86400e3) / 3600e3), m = Math.floor((left % 3600e3) / 60e3);
-    const cd = d ? `${d}d ${String(h).padStart(2, '0')}h` : `${h}h ${String(m).padStart(2, '0')}min`;
-    $('#price-deadline').textContent = `Preço de fundador fecha em ${cd}` + (membros >= CFG.mostrarMembrosAPartirDe ? ` · ${membros} já entraram` : '');
+  function renderInfo() {
+    $('#price-info').textContent = membros >= CFG.mostrarMembrosAPartirDe
+      ? `${membros} já entraram · pagamento seguro pelo Stripe`
+      : 'Pagamento seguro pelo Stripe · entra no grupo na hora';
   }
   document.querySelectorAll('#bill button').forEach((b) => b.addEventListener('click', () => {
     bill = b.dataset.bill;
@@ -1250,12 +1228,12 @@ ${raios}
     if (local || !CFG.membrosUrl) return;
     const ac = new AbortController(); const t = setTimeout(() => ac.abort(), 4000);
     fetch(CFG.membrosUrl, { signal: ac.signal, cache: 'no-store' }).then((r) => r.json())
-      .then((d) => { const n = Number(d.membros); if (Number.isFinite(n)) { membros = n; renderPhase(); } })
+      .then((d) => { const n = Number(d.membros); if (Number.isFinite(n)) { membros = n; renderInfo(); } })
       .catch(() => {}).finally(() => clearTimeout(t));
   }
   function montarOferta(A) {
     $('#built-t').textContent = A ? `De ${A.nome} a ${A.evo}, com gente junto` : 'O que você leva';
-    renderBill(); renderPhase();
+    renderBill(); renderInfo();
   }
 
   function montarResultado() {
@@ -1338,7 +1316,7 @@ ${raios}
     if (tipo === 'mods') {
       h = `<h3>O que tem dentro da Built</h3><ul class="mods">${[['Chat diário no Telegram', 'com uma galera no mesmo caminho'], ['Feedback do Conrado', 'nos seus rascunhos, todo dia útil'], ['Call ao vivo todo mês', 'gravada, pra quem não puder ir'], ['Bot com uma ideia de post', 'pro seu momento, todo dia às 9h'], ['Grupo organizado', 'em dois espaços: Avisos e Chat']].map(([t, d]) => `<li class="dest"><span><b>${t}</b> ${d}</span></li>`).join('')}</ul><p>${A ? `Pra quem é ${esc(A.nome)}, o foco lá dentro é virar ${esc(A.evo)}: prazo, grupo e alguém revisando o seu rascunho. ` : ''}Pagou, você abre o bot no Telegram e entra no grupo na hora.</p>`;
     } else if (tipo === 'faq') {
-      h = `<h3>Perguntas</h3><div class="faq">${faqBuilt(CFG.precos[encerrado ? 'cheio' : 'fundador']).map(([pp, r]) => `<details><summary>${esc(pp)}</summary><p>${esc(r)}</p></details>`).join('')}</div><p class="aviso">A minha trajetória não é promessa de resultado: o que você vai construir depende do seu trabalho. <a href="termos.html" target="_blank" rel="noopener">Termos</a> · <a href="privacidade.html" target="_blank" rel="noopener">Privacidade</a></p>`;
+      h = `<h3>Perguntas</h3><div class="faq">${faqBuilt(CFG.precos).map(([pp, r]) => `<details><summary>${esc(pp)}</summary><p>${esc(r)}</p></details>`).join('')}</div><p class="aviso">A minha trajetória não é promessa de resultado: o que você vai construir depende do seu trabalho. <a href="termos.html" target="_blank" rel="noopener">Termos</a> · <a href="privacidade.html" target="_blank" rel="noopener">Privacidade</a></p>`;
     } else if (tipo === 'sobre') {
       h = `<div class="sobre-topo"><img src="img/conrado.webp" alt="Conrado de Sá" width="68" height="68"><h3>Eu sou o Conrado.</h3></div><p>Empreendo desde os 17. Passei por 11 escolas até os 10 anos, vendi mate numa praça em Vancouver pra pagar as contas, quase quebrei um estúdio de games e ajudei minha família a sair de uma dívida de R$ 300 mil. Hoje toco a DOTI, uma empresa de IA, e medito todo dia desde 2016.</p><p>O que me tirou do zero não foi uma técnica. Foi mudar como eu penso, cuidar da minha energia e aprender a vender. É isso que a gente pratica na Built.</p><div class="lauros">${[['41 mil', 'seguidores no X'], ['Desde 2016', 'medita todo dia'], ['Desde os 17', 'empreendendo']].map(([v, t]) => `<div class="lauro">${lauro(false)}<div><b>${v}</b>${t}</div>${lauro(true)}</div>`).join('')}</div><p class="aviso">Este teste é uma ferramenta de autoconhecimento, não um diagnóstico profissional. A minha trajetória não é promessa de resultado.</p>`;
     } else if (tipo === 'video') {
@@ -1483,7 +1461,7 @@ ${raios}
     try { await Promise.race([document.fonts.ready, new Promise((ok) => setTimeout(ok, 1500))]); } catch (e) {}
     if (q.get('og') === '1') { renderOG(); return; }
     beacon({ e: 'visita' }); track('carta_visita');
-    carregarMembros(); setInterval(renderPhase, 30000);
+    carregarMembros();
     const salvo = carregar();
     if (salvo && salvo.r) { estado.r = salvo.r; estado.nome = salvo.nome || ''; estado.token = salvo.token || null; estado.numero = salvo.numero || null; estado.nota = salvo.nota || null; }
     montarHero();
