@@ -1014,6 +1014,7 @@ ${raios}
     if (!aberto) return;
     aberto = false;
     mostrarTela('t-inicio');
+    document.querySelectorAll('#q1-opts .opt').forEach((o) => o.setAttribute('aria-checked', 'false')); // o preto do clique é só retorno rápido, não fica
     if (!viaHistorico) { try { if (history.state && history.state.quiz) history.back(); } catch (e) {} }
     if (Object.keys(estado.r).length) $('#btn-continuar').hidden = false;
   }
@@ -1105,7 +1106,7 @@ ${raios}
   }
   function renderContato() {
     track('carta_contato');
-    qbody.innerHTML = `<div class="quiz-step"><h2 class="quiz-q h-serif">Pra onde mando seu perfil?</h2><p class="quiz-hint">Ele aparece aqui na hora. No email vai a imagem em alta e a sua rota.</p>
+    qbody.innerHTML = `<div class="quiz-step"><h2 class="quiz-q h-serif">Pra onde mando seu perfil?</h2><p class="quiz-hint">Ele aparece aqui na hora. No email vai o resumo e por onde começar.</p>
       <form novalidate>
         <label class="campo"><span>Seu nome <i>(vai na carta)</i></span><input name="nome" autocomplete="given-name" maxlength="16" value="${esc(estado.nome)}" required></label>
         <label class="campo"><span>Seu email</span><input name="email" type="email" inputmode="email" autocomplete="email" maxlength="120" value="${esc(estado.email)}" required></label>
@@ -1113,7 +1114,7 @@ ${raios}
         <label class="hp-field" aria-hidden="true">Site<input name="website" tabindex="-1" autocomplete="off"></label>
         <p class="erro" role="alert"></p>
         <button class="btn" type="submit">Revelar meu perfil ${SETA}</button>
-        <p class="miudo">Ao continuar, você aceita receber o seu perfil e mensagens minhas por email e WhatsApp sobre o Mapa e a Built. Dá pra sair quando quiser. <a href="privacidade.html" target="_blank" rel="noopener">Privacidade</a>.</p>
+        <p class="miudo">Ao continuar, você aceita receber o seu perfil e mensagens minhas por email e WhatsApp sobre a Built. Dá pra sair quando quiser. <a href="privacidade.html" target="_blank" rel="noopener">Privacidade</a>.</p>
       </form></div>`;
     const f = qbody.querySelector('form'), err = qbody.querySelector('.erro');
     setTimeout(() => (estado.nome ? f.email : f.nome).focus({ preventScroll: true }), 50);
@@ -1392,7 +1393,8 @@ ${raios}
   // ---------------- tela inicial ----------------
   function montarHero() {
     const opts = $('#q1-opts');
-    opts.innerHTML = Q[0].o.map((o) => `<button type="button" class="opt" role="radio" aria-checked="${estado.r.situacao === o[0]}" data-v="${o[0]}">${esc(o[1])}</button>`).join('');
+    // a resposta salva não fica marcada aqui (28/10): no fundo da montanha, a opção preta parecia outro tipo de botão. Quem volta usa "Continuar meu teste".
+    opts.innerHTML = Q[0].o.map((o) => `<button type="button" class="opt" role="radio" aria-checked="false" data-v="${o[0]}">${esc(o[1])}</button>`).join('');
     opts.querySelectorAll('.opt').forEach((b) => b.addEventListener('click', () => {
       estado.r.situacao = b.dataset.v;
       opts.querySelectorAll('.opt').forEach((o) => o.setAttribute('aria-checked', String(o === b)));
@@ -1497,8 +1499,9 @@ ${raios}
         }
       } catch (e) {}
     }
-    // link antigo dos emails da Built (?q=TOKEN) ou #entrar: vai direto pros planos
-    if ((q.get('q') && /^[a-z2-9]{16}$/.test(q.get('q'))) || location.hash === '#entrar') { abrirSoOferta(); return; }
+    // direto pros planos: link dos emails do bot (?q=TOKEN), botão "ver planos e entrar" do bot no Telegram (?tg=ID) ou #entrar
+    const doBot = /^\d{1,15}$/.test(q.get('tg') || '');
+    if ((q.get('q') && /^[a-z2-9]{16}$/.test(q.get('q'))) || doBot || location.hash === '#entrar') { abrirSoOferta(); return; }
     const completo = estado.nome && Q.every((x) => estado.r[x.k]);
     if (completo && q.get('novo') !== '1') { estado.res = calcular(estado.r); revelar(false); return; }
     if (Object.keys(estado.r).length > 1) $('#btn-continuar').hidden = false;
