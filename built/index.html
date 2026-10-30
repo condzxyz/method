@@ -177,7 +177,7 @@ h1,h2,h3,p{margin:0}
 #t-res .camada{opacity:0}
 #t-res[data-fundo="brilho"] .camada.brilho,#t-res[data-fundo="pontos"] .camada.pontos,#t-res[data-fundo="ceu"] .camada.ceu{opacity:1}
 .res-topo{position:relative;z-index:2;flex:none;display:flex;align-items:center;gap:8px;height:56px;padding:0 10px;width:100%;max-width:620px;margin:0 auto}
-.res-topo .segs{grid-template-columns:repeat(3,1fr)}
+.res-topo .segs{grid-template-columns:repeat(2,1fr)}
 .res-topo .linkzinho{padding:8px 6px;text-decoration:none}
 .so-oferta #res-voltar,.so-oferta #segs-res{visibility:hidden}
 .slides{position:relative;z-index:1;flex:1;min-height:0;width:100%;max-width:620px;margin:0 auto}
@@ -185,7 +185,7 @@ h1,h2,h3,p{margin:0}
 .slide.antes{transform:translateX(-26px)}
 .slide.ativo{opacity:1;visibility:visible;transform:none;transition:opacity .35s,transform .35s,visibility 0s}
 .espaco{flex:1;min-height:8px}
-@media (min-width:920px) and (min-height:640px){.slide:not([data-s="0"]){justify-content:center}.slide:not([data-s="0"]) .espaco{flex:0 0 26px}}
+@media (min-width:920px) and (min-height:640px){.slide-oferta > :first-child{margin-top:auto}.slide-oferta > :last-child{margin-bottom:auto}.slide-oferta .espaco{flex:0 0 22px}}
 .slide .btn{width:100%}
 .h2{margin-top:6px;font-size:clamp(24px,min(7vw,4.2vh),38px);line-height:1.06}
 .res-h1{text-align:center;font-size:clamp(24px,min(7vw,4.2vh),40px);line-height:1.06}
@@ -213,11 +213,37 @@ h1,h2,h3,p{margin:0}
 .pilula i.verde{background:var(--verde)}
 .pilula i.vermelho{background:var(--vermelho)}
 .pilula i.azul{background:#5B8CFF}
-@media (max-height:700px){.slide[data-s="1"] > .rotulo{display:none}.slide[data-s="1"] .ui{margin-top:8px;padding:9px 12px}.slide[data-s="1"] .pilula{padding:4px 10px;font-size:12px}.slide[data-s="1"] .ui-txt{margin-top:6px;font-size:13.5px;line-height:1.42}}
+@media (max-height:700px){.leitura .ui{margin-top:8px;padding:9px 12px}.leitura .pilula{padding:4px 10px;font-size:12px}.leitura .ui-txt{margin-top:6px;font-size:13.5px;line-height:1.42}}
 .ui-txt{margin-top:8px;font-size:clamp(14px,1.95vh,16px);line-height:1.48;color:var(--txt2)}
 .vidro{margin-top:12px;background:rgba(6,14,30,.42);border:1px solid rgba(255,255,255,.22);border-radius:22px;-webkit-backdrop-filter:blur(18px) saturate(1.1);backdrop-filter:blur(18px) saturate(1.1);padding:clamp(14px,2.2vh,20px) 18px}
 .vidro .rotulo{color:rgba(255,255,255,.8)}
-.slide[data-s="2"] > .rotulo{color:rgba(255,255,255,.88)}
+.slide-oferta > .rotulo{color:rgba(255,255,255,.88)}
+/* tela 1 (30/10): carta grande + leitura juntas. No celular rola, com os botões presos embaixo; no computador, carta à esquerda e texto à direita */
+.slide-carta,.slide-oferta{overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;scrollbar-width:none}
+.slide-carta::-webkit-scrollbar,.slide-oferta::-webkit-scrollbar{display:none}
+.slide-carta > *,.slide-oferta > *{flex:none}
+.slide-oferta .espaco{flex:1 0 14px}
+.slide-carta{padding-bottom:0}
+.slide-carta .palco{padding:14px 0 4px}
+.slide-carta .stage{height:auto;width:min(calc(100vw - 48px),420px,max(230px,calc((100vh - 270px) * 600 / 840)));width:min(calc(100vw - 48px),420px,max(230px,calc((100dvh - 270px) * 600 / 840)))}
+.leitura{margin-top:16px}
+.leitura .ui:first-child{margin-top:0}
+.slide-carta .acoes{position:sticky;bottom:0;z-index:3;margin-top:auto;padding:24px 0 calc(14px + env(safe-area-inset-bottom));background:linear-gradient(180deg,rgba(5,5,5,0) 0%,rgba(5,5,5,.94) 40%)}
+.slide-carta .acoes .btn[data-prox]{line-height:1.3;text-wrap:balance}
+@media (max-width:520px){.share-txt{display:none}#btn-share{width:56px;padding:0}.slide-carta .acoes .btn[data-prox]{min-height:56px;padding:6px 14px;letter-spacing:.05em}}
+@media (min-width:920px){
+  .slides{max-width:1180px}
+  .slide-oferta{max-width:640px;margin:0 auto}
+  .slide-carta{display:grid;grid-template-columns:auto minmax(320px,480px);grid-template-rows:minmax(0,1fr) auto auto auto minmax(0,1fr);grid-template-areas:"carta ." "carta titulo" "carta leitura" "carta acoes" "carta .";column-gap:clamp(36px,5vw,80px);justify-content:center;padding:0 24px 20px}
+  .slide-carta .res-h1{grid-area:titulo;text-align:left;font-size:clamp(32px,4.6vh,48px)}
+  .slide-carta .carta-col{grid-area:carta;align-self:center}
+  .slide-carta .palco{padding:0}
+  .slide-carta .stage{width:auto;height:clamp(360px,min(720px,calc(100vh - 170px),calc((100vw - 540px) * 1.4)),720px)}
+  .slide-carta .leitura{grid-area:leitura;margin-top:18px}
+  .slide-carta .acoes{grid-area:acoes;position:static;margin-top:18px;padding:0;background:none}
+}
+.vsl{margin:12px auto 0;width:min(100%,max(300px,calc((100vh - 430px) * 16 / 9)));aspect-ratio:16/9;border-radius:14px;overflow:hidden;background:#000;border:1px solid var(--linha2)}
+.vsl video{display:block;width:100%;height:100%;background:#000}
 .tarefa h3{margin-top:8px;font-size:clamp(21px,3.2vh,28px);line-height:1.18}
 .tarefa .semana{margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,.18)}
 .tarefa .semana p:last-child{margin-top:6px;font-size:clamp(14.5px,2vh,16px);line-height:1.5;color:rgba(255,255,255,.92)}
@@ -385,69 +411,54 @@ h1,h2,h3,p{margin:0}
     <div class="camada brilho"></div><div class="camada pontos"></div>
     <div class="res-topo">
       <button type="button" class="ico" id="res-voltar" aria-label="Voltar"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M13 8H3M7 4L3 8l4 4"/></svg></button>
-      <div class="segs" id="segs-res" aria-hidden="true"><i><b></b></i><i><b></b></i><i><b></b></i></div>
+      <div class="segs" id="segs-res" aria-hidden="true"><i><b></b></i><i><b></b></i></div>
       <button type="button" class="linkzinho" id="btn-refazer">Refazer</button>
     </div>
     <div class="slides" id="slides">
 
-      <div class="slide" data-s="0">
+      <!-- carta + leitura na mesma tela (30/10, pedido do Conrado) -->
+      <div class="slide slide-carta" data-s="0">
         <h1 class="h-serif res-h1" id="res-titulo"></h1>
-        <div class="palco">
-          <div class="brilho-carta" aria-hidden="true"></div>
-          <div class="stage" id="stage">
-            <div class="tilt" id="tilt">
-              <div class="flip virada" id="flip" role="button" tabindex="0" aria-label="Virar a carta">
-                <div class="face frente" id="face-frente"></div>
-                <div class="face verso" id="face-verso"></div>
-                <div class="holo" aria-hidden="true"></div>
+        <div class="carta-col">
+          <div class="palco">
+            <div class="brilho-carta" aria-hidden="true"></div>
+            <div class="stage" id="stage">
+              <div class="tilt" id="tilt">
+                <div class="flip virada" id="flip" role="button" tabindex="0" aria-label="Virar a carta">
+                  <div class="face frente" id="face-frente"></div>
+                  <div class="face verso" id="face-verso"></div>
+                  <div class="holo" aria-hidden="true"></div>
+                </div>
               </div>
             </div>
           </div>
+          <p class="rotulo virar" id="virar">Toque na carta pra ver seus números</p>
         </div>
-        <p class="rotulo virar" id="virar">Toque na carta pra ver seus números</p>
+        <div class="leitura">
+          <div class="ui"><span class="pilula"><i class="verde"></i>Seu superpoder</span><p class="ui-txt" id="l-forte"></p></div>
+          <div class="ui"><span class="pilula"><i class="vermelho"></i>Seu ponto cego</span><p class="ui-txt" id="l-cego"></p></div>
+          <div class="ui"><span class="pilula"><i class="azul"></i>Onde a IA entra</span><p class="ui-txt" id="l-ia"></p></div>
+        </div>
         <div class="acoes">
-          <button type="button" class="btn escuro" id="btn-share" aria-label="Compartilhar no story"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 10V2M5 5l3-3 3 3M3 8v5h10V8"/></svg>Story</button>
-          <button type="button" class="btn" data-prox>Ver o que ela diz <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
+          <button type="button" class="btn escuro" id="btn-share" aria-label="Compartilhar no story"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 10V2M5 5l3-3 3 3M3 8v5h10V8"/></svg><span class="share-txt">Story</span></button>
+          <button type="button" class="btn" data-prox>Ver mais sobre a comunidade de criadores <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
         </div>
       </div>
 
-      <div class="slide" data-s="1">
-        <p class="rotulo">Lendo o seu perfil</p>
-        <h2 class="h-serif h2" id="leitura-titulo"></h2>
-        <div class="ui"><span class="pilula"><i class="verde"></i>Seu superpoder</span><p class="ui-txt" id="l-forte"></p></div>
-        <div class="ui"><span class="pilula"><i class="vermelho"></i>Seu ponto cego</span><p class="ui-txt" id="l-cego"></p></div>
-        <div class="ui"><span class="pilula"><i class="azul"></i>Onde a IA entra</span><p class="ui-txt" id="l-ia"></p></div>
-        <div class="espaco"></div>
-        <button type="button" class="btn" data-prox>Ver a comunidade · R$ 120/mês <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
-      </div>
-
-      <div class="slide" data-s="2" id="oferta">
-        <div class="curso-card">
-          <img class="curso-foto" src="img/conrado.webp" alt="" width="1000" height="1000">
-          <div class="curso-txt">
-            <p class="rotulo">Comunidade paga no Telegram</p>
-            <h2 class="h-serif">Built</h2>
-            <p class="curso-desc">A comunidade de criadores que te ajuda a criar mais conteúdo e montar seu negócio digital com IA.</p>
-          </div>
-        </div>
-        <div class="ui built-box">
-          <p class="rotulo" id="built-t">O que você leva</p>
-          <ul class="built-lista">
-            <li>Chat diário com a galera no mesmo caminho</li>
-            <li>Feedback do Conrado nos seus rascunhos</li>
-            <li>Call ao vivo todo mês, gravada</li>
-            <li>Uma ideia de post por dia, às 9h</li>
-          </ul>
-        </div>
+      <!-- vídeo de 5 min + pagar e entrar no Telegram -->
+      <div class="slide slide-oferta" data-s="1" id="oferta">
+        <p class="rotulo">Comunidade de criadores no Telegram</p>
+        <h2 class="h-serif h2">Como funciona a Built, em 5 minutos.</h2>
+        <div class="vsl"><video id="vsl" controls playsinline preload="metadata" poster="video/vsl.jpg"><source src="video/vsl.mp4" type="video/mp4"></video></div>
         <div class="espaco"></div>
         <div class="preco">
           <div class="valor"><span id="price-main">R$ 120</span><small id="price-per">/mês</small></div>
           <p class="gatilho" id="note-comparacao">Netflix Premium + Amazon Prime: R$ 91,80 por mês pra você assistir. A Built: R$ 120 pra você criar.</p>
-          <a class="btn" data-plan="mensalCartao" id="btn-cartao" href="#" rel="noopener">Entrar na comunidade <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          <a class="btn" data-plan="mensalCartao" id="btn-cartao" href="#" rel="noopener">Pagar e entrar no Telegram <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
           <a class="linkzinho" data-plan="mensalPix" id="btn-pix" href="#" rel="noopener">ou pagar R$ 120 no Pix (1 mês)</a>
           <p class="rotulo" id="price-info">Pagou, entra no grupo do Telegram na hora · cancela quando quiser</p>
         </div>
-        <p class="of-links"><button type="button" class="linkzinho" data-sheet="mods">O que tem dentro</button><button type="button" class="linkzinho" data-sheet="faq">Perguntas</button><button type="button" class="linkzinho" data-sheet="video">Vídeo · 5 min</button><button type="button" class="linkzinho" data-sheet="sobre">Quem conduz</button></p>
+        <p class="of-links"><button type="button" class="linkzinho" data-sheet="mods">O que tem dentro</button><button type="button" class="linkzinho" data-sheet="faq">Perguntas</button><button type="button" class="linkzinho" data-sheet="sobre">Quem conduz</button></p>
       </div>
     </div>
   </section>
@@ -1203,7 +1214,6 @@ ${raios}
       .catch(() => {}).finally(() => clearTimeout(t));
   }
   function montarOferta(A) {
-    $('#built-t').textContent = A ? `De ${A.nome} a ${A.evo}, com gente junto` : 'O que você leva';
     renderBill(); renderInfo();
   }
 
@@ -1213,16 +1223,16 @@ ${raios}
     aplicarCor(A);
     $('#res-titulo').innerHTML = `${esc(c.nome)}, seu perfil é <em>${esc(A.nome)}</em>.`;
     $('#face-frente').innerHTML = cartaFrente(c);
-    $('#leitura-titulo').innerHTML = `O que o perfil <em>${esc(A.nome)}</em> diz.`;
     $('#l-forte').textContent = A.forte;
     $('#l-cego').textContent = A.cego;
     $('#l-ia').textContent = A.ia;
     montarOferta(A);
   }
 
-  const NSLIDES = 3;
-  const EV_SLIDE = ['carta_revelou', 'carta_leitura', 'carta_oferta'];
-  const FUNDOS = ['brilho', 'pontos', 'pontos'];
+  // 2 telas (30/10): carta + leitura, depois vídeo + pagamento
+  const NSLIDES = 2;
+  const EV_SLIDE = ['carta_revelou', 'carta_oferta'];
+  const FUNDOS = ['brilho', 'pontos'];
   let slide = 0;
   function irSlide(i) {
     slide = Math.max(0, Math.min(NSLIDES - 1, i));
@@ -1235,8 +1245,10 @@ ${raios}
     document.querySelectorAll('#segs-res b').forEach((b, j) => { b.style.width = j <= slide ? '100%' : '0%'; });
     $('#res-voltar').disabled = slide === 0;
     $('#t-res').dataset.fundo = FUNDOS[slide];
+    if (slide !== 1) $('#vsl').pause();
     track(EV_SLIDE[slide]);
   }
+  $('#vsl').addEventListener('play', () => track('carta_video'), { once: true });
   document.querySelectorAll('[data-prox]').forEach((b) => b.addEventListener('click', () => irSlide(slide + 1)));
   $('#res-voltar').addEventListener('click', () => irSlide(slide - 1));
   // deslizar pro lado no celular
@@ -1378,6 +1390,7 @@ ${raios}
       if (aberto && PASSOS[passo].tipo !== 'forja') { fecharQuiz(); return; }
     }
     if ($('#t-res').hidden || sheetAberto) return;
+    if (ev.target && ev.target.tagName === 'VIDEO') return; // setas no vídeo avançam o vídeo, não a tela
     if (ev.key === 'ArrowRight') irSlide(slide + 1);
     if (ev.key === 'ArrowLeft') irSlide(slide - 1);
   });
@@ -1423,9 +1436,8 @@ ${raios}
     $('#btn-refazer').textContent = 'Fazer o teste';
     montarOferta(estado.res ? ARQ[estado.res.arq] : null);
     mostrarTela('t-res');
-    irSlide(2);
-    // o email da Built promete o vídeo junto: quem chega pelo link (?q=) já vê o vídeo aberto
-    if (q.get('q')) setTimeout(() => abrirSheet('video'), 500);
+    // o email da Built promete o vídeo junto: ele já está no topo dessa tela
+    irSlide(1);
   }
 
   async function iniciar() {
