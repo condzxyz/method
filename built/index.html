@@ -418,16 +418,16 @@ h1,h2,h3,p{margin:0}
         <div class="ui"><span class="pilula"><i class="vermelho"></i>Seu ponto cego</span><p class="ui-txt" id="l-cego"></p></div>
         <div class="ui"><span class="pilula"><i class="azul"></i>Onde a IA entra</span><p class="ui-txt" id="l-ia"></p></div>
         <div class="espaco"></div>
-        <button type="button" class="btn" data-prox>Como evoluir isso <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
+        <button type="button" class="btn" data-prox>Ver a comunidade · R$ 120/mês <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
       </div>
 
       <div class="slide" data-s="2" id="oferta">
         <div class="curso-card">
           <img class="curso-foto" src="img/conrado.webp" alt="" width="1000" height="1000">
           <div class="curso-txt">
-            <p class="rotulo">Grupo no Telegram</p>
+            <p class="rotulo">Comunidade paga no Telegram</p>
             <h2 class="h-serif">Built</h2>
-            <p class="curso-desc">Evolua. O dinheiro vem como consequência.</p>
+            <p class="curso-desc">A comunidade de criadores que te ajuda a criar mais conteúdo e montar seu negócio digital com IA.</p>
           </div>
         </div>
         <div class="ui built-box">
@@ -441,12 +441,11 @@ h1,h2,h3,p{margin:0}
         </div>
         <div class="espaco"></div>
         <div class="preco">
-          <div class="bill" id="bill" role="radiogroup" aria-label="Plano"><button type="button" role="radio" aria-checked="true" data-bill="tri">3 meses <span id="bill-tag">−23%</span></button><button type="button" role="radio" aria-checked="false" data-bill="mes">Mensal</button><button type="button" role="radio" aria-checked="false" data-bill="anual">Anual</button></div>
-          <div class="valor"><span id="price-main">R$ 147</span><small id="price-per">/mês</small></div>
-          <p class="rotulo" id="price-info">Pagamento seguro pelo Stripe · entra no grupo na hora</p>
-          <a class="btn" data-plan="trimestralCartao" id="btn-cartao" href="#" rel="noopener">Entrar com cartão <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-          <a class="linkzinho" data-plan="trimestralPix" id="btn-pix" href="#" rel="noopener">ou pagar no Pix</a>
-          <p class="gatilho" id="note-plano"></p>
+          <div class="valor"><span id="price-main">R$ 120</span><small id="price-per">/mês</small></div>
+          <p class="gatilho" id="note-comparacao">Netflix Premium + Amazon Prime: R$ 91,80 por mês pra você assistir. A Built: R$ 120 pra você criar.</p>
+          <a class="btn" data-plan="mensalCartao" id="btn-cartao" href="#" rel="noopener">Entrar na comunidade <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          <a class="linkzinho" data-plan="mensalPix" id="btn-pix" href="#" rel="noopener">ou pagar R$ 120 no Pix (1 mês)</a>
+          <p class="rotulo" id="price-info">Pagou, entra no grupo do Telegram na hora · cancela quando quiser</p>
         </div>
         <p class="of-links"><button type="button" class="linkzinho" data-sheet="mods">O que tem dentro</button><button type="button" class="linkzinho" data-sheet="faq">Perguntas</button><button type="button" class="linkzinho" data-sheet="video">Vídeo · 5 min</button><button type="button" class="linkzinho" data-sheet="sobre">Quem conduz</button></p>
       </div>
@@ -469,16 +468,13 @@ h1,h2,h3,p{margin:0}
 
   // ================== CONFIG (edite aqui) ==================
   const CFG = {
-    // Built: preço de fundador sem prazo (pedido de 28/10: "mantém o preço"). Links iguais aos da landing antiga.
-    // Os links de preço cheio (R$ 197/mês) continuam no Stripe, sem uso: ids em ~/Otto/comunidade-bip/stripe-config.md.
+    // Built: mensal de R$ 120 (pedido de 30/10: deixar claro que é comunidade paga, "R$ 120 por mês").
+    // Os links antigos (3 meses R$ 441, mensal R$ 191, anual R$ 1.470) continuam no Stripe, sem uso na página: ids em ~/Otto/comunidade-bip/stripe-config.md.
     links: {
-      trimestralCartao: 'https://buy.stripe.com/8x228sg2w1KW309142bsc00',
-      trimestralPix: 'https://buy.stripe.com/fZueVeg2w9do309fYWbsc01',
-      anual: 'https://buy.stripe.com/00wcN66rWblw58heUSbsc02',
-      mensalCartao: 'https://buy.stripe.com/cNi9AU9E8blw8kt3cabsc07',
-      mensalPix: 'https://buy.stripe.com/4gM28s17C4X87gph30bsc08',
+      mensalCartao: 'https://buy.stripe.com/00w6oIaIccpA8kt6ombsc0c',
+      mensalPix: 'https://buy.stripe.com/6oUcN67w0ahs8kt142bsc0d',
     },
-    precos: { tri: 147, triTotal: 441, mes: 191, anual: 1470 },
+    precos: { mes: 120 },
     quizUrl: 'https://built-bot.built-bot.workers.dev/quiz',   // contato + respostas vão pro bot (mesmo funil de emails e WhatsApp da Built)
     leadUrl: 'https://built-bot.built-bot.workers.dev/lead',   // reserva: guarda pelo menos o email
     membrosUrl: 'https://built-bot.built-bot.workers.dev/membros',
@@ -1161,16 +1157,15 @@ ${raios}
     ['Por que no Telegram?', 'Porque lá o bot cuida da entrada e da assinatura sozinho, e o grupo fica organizado em dois espaços: Avisos e Chat. Se você não tem, é grátis e leva 1 minuto pra instalar.'],
     ['Preciso ter seguidores?', 'Não. A Built é pra quem está começando: CLT, quem toca um negócio próprio ou da família, ou quem está buscando uma nova forma de fazer dinheiro.'],
     ['Quanto tempo por dia?', 'De 20 a 30 minutos: postar e trocar com o grupo no Chat.'],
-    ['Como funciona o pagamento?', `Pelo Stripe. No cartão, ${reais(P.triTotal)} a cada 3 meses ou ${reais(P.mes)} por mês, renovando sozinho. No Pix, você paga o período (1 ou 3 meses) e o bot te avisa antes de vencer. O anual é um pagamento só de ${reais(P.anual)}, no cartão ou no Pix. Depois de pagar, você abre o bot no Telegram e entra no grupo na hora.`],
+    ['O que é a Built?', `Uma comunidade paga no Telegram de gente que cria conteúdo e monta o próprio negócio com IA, junto. Tem o Chat do dia a dia, feedback do Conrado nos seus rascunhos, call ao vivo todo mês e o bot que te manda uma ideia de post todo dia às 9h. Custa ${reais(P.mes)} por mês.`],
+    ['Como funciona o pagamento?', `Pelo Stripe. No cartão, ${reais(P.mes)} por mês, renovando sozinho. No Pix, você paga 1 mês e o bot te avisa antes de vencer. Depois de pagar, você abre o bot no Telegram e entra no grupo na hora.`],
     ['Posso cancelar?', 'Pode, quando quiser e sem multa: a assinatura só não renova no próximo período, e seu acesso vai até o fim do período pago. É só mandar /assinatura pro bot.'],
     ['E se eu não gostar?', 'Você tem 7 dias pra pedir o dinheiro de volta, inteiro.'],
   ];
 
   // ---------------- planos da Built ----------------
   const reais = (n) => 'R$ ' + n.toLocaleString('pt-BR');
-  let bill = 'tri';
-  try { const b = sessionStorage.getItem('built_bill'); if (b === 'mes' || b === 'anual') bill = b; } catch (e) {}
-  const VALOR = { trimestralCartao: (P) => P.triTotal, trimestralPix: (P) => P.triTotal, mensalCartao: (P) => P.mes, mensalPix: (P) => P.mes, anual: (P) => P.anual };
+  const VALOR = { mensalCartao: (P) => P.mes, mensalPix: (P) => P.mes };
   function decorar(url, plano, P) {
     if (simular) return `checkout-teste.html?p=built&plano=${plano}&valor=${VALOR[plano](P)}`;
     try {
@@ -1181,47 +1176,21 @@ ${raios}
       return u.toString();
     } catch (e) { return url; }
   }
+  // um plano só (30/10): mensal de R$ 120, cartão (renova) ou Pix (1 mês)
   function renderBill() {
     const P = CFG.precos;
-    const links = CFG.links;
-    const desconto = Math.round((1 - P.tri / P.mes) * 100);
-    $('#bill-tag').textContent = '−' + desconto + '%';
-    document.querySelectorAll('#bill button').forEach((b) => { const on = b.dataset.bill === bill; b.setAttribute('aria-checked', String(on)); b.tabIndex = on ? 0 : -1; });
     const cartao = $('#btn-cartao'), pix = $('#btn-pix');
-    const planoC = bill === 'mes' ? 'mensalCartao' : bill === 'anual' ? 'anual' : 'trimestralCartao';
-    const planoP = bill === 'mes' ? 'mensalPix' : 'trimestralPix';
-    cartao.dataset.plan = planoC; cartao.href = decorar(links[planoC], planoC, P);
-    cartao.firstChild.textContent = bill === 'anual' ? 'Entrar no anual ' : 'Entrar com cartão ';
-    pix.hidden = bill === 'anual';
-    pix.dataset.plan = planoP; pix.href = decorar(links[planoP], planoP, P);
-    pix.textContent = bill === 'mes' ? `ou pagar ${reais(P.mes)} no Pix (1 mês)` : `ou pagar ${reais(P.triTotal)} no Pix (3 meses)`;
-    $('#price-main').textContent = reais(bill === 'mes' ? P.mes : bill === 'anual' ? P.anual : P.tri);
-    $('#price-per').textContent = bill === 'anual' ? ' à vista' : '/mês';
-    $('#note-plano').textContent = bill === 'mes'
-      ? 'Mês a mês, sem fidelidade. 7 dias de garantia.'
-      : bill === 'anual'
-        ? 'Pagamento único, cartão ou Pix. 2 meses grátis.'
-        : `${reais(P.triTotal)} a cada 3 meses. Cancela quando quiser. 7 dias de garantia.`;
+    cartao.href = decorar(CFG.links.mensalCartao, 'mensalCartao', P);
+    pix.href = decorar(CFG.links.mensalPix, 'mensalPix', P);
+    pix.textContent = `ou pagar ${reais(P.mes)} no Pix (1 mês)`;
+    $('#price-main').textContent = reais(P.mes);
   }
   let membros = 0;
   function renderInfo() {
     $('#price-info').textContent = membros >= CFG.mostrarMembrosAPartirDe
-      ? `${membros} já entraram · pagamento seguro pelo Stripe`
-      : 'Pagamento seguro pelo Stripe · entra no grupo na hora';
+      ? `${membros} já estão lá dentro · pagou, entra no grupo na hora`
+      : 'Pagou, entra no grupo do Telegram na hora · cancela quando quiser';
   }
-  document.querySelectorAll('#bill button').forEach((b) => b.addEventListener('click', () => {
-    bill = b.dataset.bill;
-    try { sessionStorage.setItem('built_bill', bill); } catch (e) {}
-    renderBill();
-  }));
-  $('#bill').addEventListener('keydown', (e) => {
-    if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
-    e.preventDefault();
-    const ordem = ['tri', 'mes', 'anual'];
-    bill = ordem[(ordem.indexOf(bill) + (e.key === 'ArrowRight' ? 1 : 2)) % 3];
-    renderBill();
-    $(`#bill [data-bill="${bill}"]`).focus();
-  });
   document.addEventListener('click', (ev) => {
     const a = ev.target.closest && ev.target.closest('a[data-plan]');
     if (a) { beacon({ e: 'clique', plan: a.dataset.plan }); track('carta_checkout', false); }
