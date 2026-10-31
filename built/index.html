@@ -185,7 +185,7 @@ h1,h2,h3,p{margin:0}
 .slide.antes{transform:translateX(-26px)}
 .slide.ativo{opacity:1;visibility:visible;transform:none;transition:opacity .35s,transform .35s,visibility 0s}
 .espaco{flex:1;min-height:8px}
-@media (min-width:920px) and (min-height:640px){.slide-oferta > :first-child{margin-top:auto}.slide-oferta > :last-child{margin-bottom:auto}.slide-oferta .espaco{flex:0 0 22px}}
+@media (min-width:920px) and (min-height:640px){.slide-oferta > :first-child,.slide-curso > :first-child{margin-top:auto}.slide-oferta > :last-child,.slide-curso > :last-child{margin-bottom:auto}.slide-oferta .espaco,.slide-curso .espaco{flex:0 0 22px}}
 .slide .btn{width:100%}
 .h2{margin-top:6px;font-size:clamp(24px,min(7vw,4.2vh),38px);line-height:1.06}
 .res-h1{text-align:center;font-size:clamp(24px,min(7vw,4.2vh),40px);line-height:1.06}
@@ -219,21 +219,44 @@ h1,h2,h3,p{margin:0}
 .vidro .rotulo{color:rgba(255,255,255,.8)}
 .slide-oferta > .rotulo{color:rgba(255,255,255,.88)}
 /* tela 1 (30/10): carta grande + leitura juntas. No celular rola, com os botões presos embaixo; no computador, carta à esquerda e texto à direita */
-.slide-carta,.slide-oferta{overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;scrollbar-width:none}
-.slide-carta::-webkit-scrollbar,.slide-oferta::-webkit-scrollbar{display:none}
-.slide-carta > *,.slide-oferta > *{flex:none}
-.slide-oferta .espaco{flex:1 0 14px}
+.slide-carta,.slide-oferta,.slide-curso{overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;scrollbar-width:none}
+.slide-carta::-webkit-scrollbar,.slide-oferta::-webkit-scrollbar,.slide-curso::-webkit-scrollbar{display:none}
+.slide-carta > *,.slide-oferta > *,.slide-curso > *{flex:none}
+.slide-oferta .espaco,.slide-curso .espaco{flex:1 0 14px}
 .slide-carta{padding-bottom:0}
 .slide-carta .palco{padding:14px 0 4px}
 .slide-carta .stage{height:auto;width:min(calc(100vw - 48px),420px,max(230px,calc((100vh - 270px) * 600 / 840)));width:min(calc(100vw - 48px),420px,max(230px,calc((100dvh - 270px) * 600 / 840)))}
 .leitura{margin-top:16px}
 .leitura .ui:first-child{margin-top:0}
-.slide-carta .acoes{position:sticky;bottom:0;z-index:3;margin-top:auto;padding:24px 0 calc(14px + env(safe-area-inset-bottom));background:linear-gradient(180deg,rgba(5,5,5,0) 0%,rgba(5,5,5,.94) 40%)}
-.slide-carta .acoes .btn[data-prox]{line-height:1.3;text-wrap:balance}
-@media (max-width:520px){.share-txt{display:none}#btn-share{width:56px;padding:0}.slide-carta .acoes .btn[data-prox]{min-height:56px;padding:6px 14px;letter-spacing:.05em}}
+.slide-carta .acoes{position:sticky;bottom:0;z-index:3;margin-top:auto;padding:26px 0 calc(14px + env(safe-area-inset-bottom));background:linear-gradient(180deg,rgba(5,5,5,0) 0,rgba(5,5,5,.96) 24px)}
+@media (max-width:919px){.escolha-t{display:none}}
+/* fim do teste (30/10): duas saídas — Negociação profunda ou a Built */
+.escolha-t{grid-column:1/-1;margin:0 0 -2px;color:rgba(255,255,255,.62)}
+.opcao{justify-content:space-between;gap:12px;min-height:60px;padding:8px 14px 8px 16px;text-align:left}
+.opcao[data-ir="2"]{grid-column:1/-1}
+.op-txt{display:grid;gap:4px;min-width:0}
+.op-txt b{font:600 12.5px/1.2 var(--mono);letter-spacing:.07em;text-transform:uppercase}
+.op-txt small{font:400 12.5px/1.25 var(--sans);letter-spacing:0;text-transform:none;opacity:.7}
+#btn-share{align-self:stretch}
+@media (max-width:520px){.share-txt{display:none}#btn-share{width:56px;padding:0}.opcao{padding:8px 12px 8px 14px}.op-txt b{font-size:12px;letter-spacing:.05em}}
+/* tela do curso Negociação profunda (em breve) */
+.slide-curso .capa{flex:none;height:clamp(140px,25vh,240px);border-radius:16px;border:1px solid var(--linha2);background:#0b1020 center 40%/cover;box-shadow:0 24px 50px -24px rgba(0,0,0,.8)}
+.curso-tag{display:inline-flex;align-items:center;gap:8px;margin-top:16px;color:rgba(255,255,255,.82)}
+.curso-tag i{width:7px;height:7px;border-radius:50%;background:#E8622F;animation:vivo 2.4s ease-out infinite}
+@keyframes vivo{0%{box-shadow:0 0 0 0 rgba(232,98,47,.6)}70%,100%{box-shadow:0 0 0 9px rgba(232,98,47,0)}}
+.neg-txt{margin-top:8px;font-size:clamp(15px,2vh,17px);line-height:1.5;color:var(--txt2)}
+.slide-curso .preco{gap:10px}
+.slide-curso .espaco{flex:0 0 20px}
+.slide-curso .preco .valor small{display:block;margin:8px 0 0;font:500 11px/1.3 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--txt3)}
+.curso-form{display:grid;gap:8px;width:100%}
+.curso-campos{display:grid;gap:8px}
+.curso-form .campo{margin-top:0}
+.curso-form .erro{min-height:0;margin:0}
+.curso-ok{margin:0;width:100%;padding:14px 16px;border-radius:12px;border:1px solid var(--linha2);background:rgba(255,255,255,.05);font:500 14px/1.45 var(--sans);color:#fff;text-align:center}
+.curso-ok::before{content:"✓  ";color:var(--verde)}
 @media (min-width:920px){
   .slides{max-width:1180px}
-  .slide-oferta{max-width:640px;margin:0 auto}
+  .slide-oferta,.slide-curso{max-width:640px;margin:0 auto}
   .slide-carta{display:grid;grid-template-columns:auto minmax(320px,480px);grid-template-rows:minmax(0,1fr) auto auto auto minmax(0,1fr);grid-template-areas:"carta ." "carta titulo" "carta leitura" "carta acoes" "carta .";column-gap:clamp(36px,5vw,80px);justify-content:center;padding:0 24px 20px}
   .slide-carta .res-h1{grid-area:titulo;text-align:left;font-size:clamp(32px,4.6vh,48px)}
   .slide-carta .carta-col{grid-area:carta;align-self:center}
@@ -439,9 +462,12 @@ h1,h2,h3,p{margin:0}
           <div class="ui"><span class="pilula"><i class="vermelho"></i>Seu ponto cego</span><p class="ui-txt" id="l-cego"></p></div>
           <div class="ui"><span class="pilula"><i class="azul"></i>Onde a IA entra</span><p class="ui-txt" id="l-ia"></p></div>
         </div>
+        <!-- 30/10 (pedido do Conrado): duas saídas no fim do teste. Aprender a negociar → Negociação profunda; ou a Built -->
         <div class="acoes">
+          <p class="rotulo escolha-t">Seu próximo passo</p>
+          <button type="button" class="btn opcao" data-ir="2"><span class="op-txt"><b>Aprender a negociar e melhorar</b><small>Negociação profunda · R$ 27,90 · em breve</small></span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
           <button type="button" class="btn escuro" id="btn-share" aria-label="Compartilhar no story"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 10V2M5 5l3-3 3 3M3 8v5h10V8"/></svg><span class="share-txt">Story</span></button>
-          <button type="button" class="btn" data-prox>Ver mais sobre a comunidade de criadores <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
+          <button type="button" class="btn escuro opcao" data-ir="1"><span class="op-txt"><b>Entrar na comunidade</b><small>Built no Telegram · R$ 120/mês</small></span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
         </div>
       </div>
 
@@ -459,6 +485,30 @@ h1,h2,h3,p{margin:0}
           <p class="rotulo" id="price-info">Pagou, entra no grupo do Telegram na hora · cancela quando quiser</p>
         </div>
         <p class="of-links"><button type="button" class="linkzinho" data-sheet="mods">O que tem dentro</button><button type="button" class="linkzinho" data-sheet="faq">Perguntas</button><button type="button" class="linkzinho" data-sheet="sobre">Quem conduz</button></p>
+      </div>
+
+      <!-- Negociação profunda (curso, em breve): entra na lista de espera com o WhatsApp e o email que a pessoa já deixou no teste.
+           Vai pro built-bot (/lead, origem "curso-negociacao") e o Conrado recebe o aviso no Telegram. Quando abrir, troque o form pelo link de compra. -->
+      <div class="slide slide-curso" data-s="2" id="curso">
+        <div class="capa" aria-hidden="true"></div>
+        <p class="rotulo curso-tag"><i></i>Curso · em breve</p>
+        <h2 class="h-serif h2">Negociação profunda</h2>
+        <p class="neg-txt">Negociar com calma e inteligência emocional. Abre nos próximos dias.</p>
+        <div class="espaco"></div>
+        <div class="preco">
+          <div class="valor">R$ 27,90<small>preço de lançamento</small></div>
+          <form class="curso-form" novalidate>
+            <div class="curso-campos" hidden>
+              <label class="campo"><span>WhatsApp</span><input name="whats" type="tel" inputmode="tel" autocomplete="tel-national" maxlength="20" placeholder="(11) 98765-4321"></label>
+              <label class="campo"><span>Email</span><input name="email" type="email" inputmode="email" autocomplete="email" maxlength="120" placeholder="seu@email.com"></label>
+            </div>
+            <button class="btn" type="submit" id="btn-curso">Me avisa quando abrir <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
+            <p class="gatilho" id="curso-info">Te aviso no WhatsApp e no email que você deixou.</p>
+            <p class="erro" role="alert"></p>
+          </form>
+          <p class="curso-ok" hidden role="status"></p>
+          <button type="button" class="linkzinho" data-ir="1">ou entrar na comunidade · R$ 120/mês</button>
+        </div>
       </div>
     </div>
   </section>
@@ -1229,36 +1279,87 @@ ${raios}
     montarOferta(A);
   }
 
-  // 2 telas (30/10): carta + leitura, depois vídeo + pagamento
-  const NSLIDES = 2;
-  const EV_SLIDE = ['carta_revelou', 'carta_oferta'];
-  const FUNDOS = ['brilho', 'pontos'];
+  // 3 telas (30/10): carta + leitura com duas saídas → (1) Built: vídeo + pagamento, ou (2) curso Negociação profunda.
+  // As duas saídas são ramos: voltar (botão, deslizar ou seta) sempre leva pra carta.
+  const NSLIDES = 3;
+  const EV_SLIDE = ['carta_revelou', 'carta_oferta', 'carta_curso'];
+  const FUNDOS = ['brilho', 'pontos', 'pontos'];
   let slide = 0;
   function irSlide(i) {
     slide = Math.max(0, Math.min(NSLIDES - 1, i));
     document.querySelectorAll('.slide').forEach((el, j) => {
       el.classList.toggle('ativo', j === slide);
-      el.classList.toggle('antes', j < slide);
+      el.classList.toggle('antes', slide > 0 && j === 0);
       el.setAttribute('aria-hidden', String(j !== slide));
       el.inert = j !== slide;
     });
-    document.querySelectorAll('#segs-res b').forEach((b, j) => { b.style.width = j <= slide ? '100%' : '0%'; });
+    document.querySelectorAll('#segs-res b').forEach((b, j) => { b.style.width = j <= Math.min(slide, 1) ? '100%' : '0%'; });
     $('#res-voltar').disabled = slide === 0;
     $('#t-res').dataset.fundo = FUNDOS[slide];
     if (slide !== 1) $('#vsl').pause();
+    if (slide === 2) prepararCurso();
     track(EV_SLIDE[slide]);
   }
   $('#vsl').addEventListener('play', () => track('carta_video'), { once: true });
-  document.querySelectorAll('[data-prox]').forEach((b) => b.addEventListener('click', () => irSlide(slide + 1)));
-  $('#res-voltar').addEventListener('click', () => irSlide(slide - 1));
-  // deslizar pro lado no celular
+  document.querySelectorAll('[data-prox]').forEach((b) => b.addEventListener('click', () => irSlide(1)));
+  document.querySelectorAll('[data-ir]').forEach((b) => b.addEventListener('click', () => irSlide(Number(b.dataset.ir))));
+  $('#res-voltar').addEventListener('click', () => irSlide(0));
+  // deslizar pra direita no celular volta pra carta (pra frente, a pessoa escolhe nos botões)
   let toqueX = null, toqueY = null;
   $('#slides').addEventListener('touchstart', (ev) => { const t = ev.touches[0]; toqueX = t.clientX; toqueY = t.clientY; }, { passive: true });
   $('#slides').addEventListener('touchend', (ev) => {
     if (toqueX === null) return;
     const t = ev.changedTouches[0], dx = t.clientX - toqueX, dy = t.clientY - toqueY;
     toqueX = null;
-    if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.5) irSlide(slide + (dx < 0 ? 1 : -1));
+    if (dx > 60 && Math.abs(dx) > Math.abs(dy) * 1.5 && slide > 0 && !document.body.classList.contains('so-oferta')) irSlide(0);
+  });
+
+  // ---------------- curso Negociação profunda (em breve): lista de espera ----------------
+  // Quem acabou de fazer o teste já deixou WhatsApp e email: entra na lista com 1 clique. Quem volta outro dia
+  // (o contato não fica salvo no aparelho) preenche os dois campos.
+  const CURSO_KEY = 'carta_curso_lista';
+  const foneBR = (w) => { let d = String(w || '').replace(/\D/g, ''); if (/^55\d{10,11}$/.test(d)) d = d.slice(2); return d.length >= 10 ? `(${d.slice(0, 2)}) ${d.slice(2, d.length - 4)}-${d.slice(-4)}` : String(w || ''); };
+  const naListaCurso = () => { try { return localStorage.getItem(CURSO_KEY) === '1'; } catch (e) { return false; } };
+  function prepararCurso() {
+    const capa = $('.slide-curso .capa');
+    if (capa && !capa.style.backgroundImage) capa.style.backgroundImage = 'url(img/negociacao.webp)';   // só carrega quando abre
+    const form = $('.curso-form'), ok = $('.curso-ok');
+    if (naListaCurso()) { form.hidden = true; ok.hidden = false; ok.textContent = 'Você já está na lista. Te aviso no WhatsApp e no email quando abrir.'; return; }
+    form.hidden = false; ok.hidden = true;
+    const temContato = EMAIL.test(estado.email) && zapOk(estado.whats);
+    $('.curso-campos').hidden = temContato;
+    $('#curso-info').textContent = temContato
+      ? `Te aviso no WhatsApp ${foneBR(estado.whats)} e no email ${estado.email}.`
+      : 'Deixa seu WhatsApp e email que eu te aviso quando abrir.';
+  }
+  $('.curso-form').addEventListener('submit', async (ev) => {
+    ev.preventDefault();
+    const f = ev.currentTarget, err = f.querySelector('.erro'), btn = $('#btn-curso'), textoBtn = btn.innerHTML;
+    let email = estado.email, whats = estado.whats;
+    if (!$('.curso-campos').hidden) { email = f.email.value.trim().toLowerCase(); whats = f.whats.value.trim(); }
+    if (!zapOk(whats)) { err.textContent = 'Confere o WhatsApp com DDD.'; if (!$('.curso-campos').hidden) f.whats.focus(); return; }
+    if (!EMAIL.test(email)) { err.textContent = 'Confere o email.'; if (!$('.curso-campos').hidden) f.email.focus(); return; }
+    err.textContent = ''; btn.disabled = true; btn.textContent = 'Enviando…';
+    try {
+      if (!local) {
+        const ctl = new AbortController(); const t = setTimeout(() => ctl.abort(), 12000);
+        const r = await fetch(CFG.leadUrl, {
+          method: 'POST', headers: { 'content-type': 'application/json' }, signal: ctl.signal,
+          body: JSON.stringify({ email, whatsapp: whats, source: 'curso-negociacao', utm: { utm_source: utm.utm_source || 'direto', utm_medium: 'teste-perfil', utm_campaign: 'teste-perfil' }, tg }),
+        }).finally(() => clearTimeout(t));
+        const j = await r.json().catch(() => ({}));
+        if (!r.ok || !j.ok) throw new Error(j.error || 'erro');
+      }
+      try { localStorage.setItem(CURSO_KEY, '1'); } catch (e) {}
+      track('carta_curso_lista');
+      f.hidden = true;
+      const ok = $('.curso-ok'); ok.hidden = false;
+      ok.textContent = `Pronto${estado.nome ? ', ' + estado.nome : ''}. Te aviso no WhatsApp e no email quando abrir.${local ? ' (teste local: nada foi enviado)' : ''}`;
+    } catch (e) {
+      const m = (e && e.message) || '';
+      err.textContent = /muitas/.test(m) ? 'Muitas tentativas. Tenta de novo daqui a pouco.' : /whats/i.test(m) ? 'Confere o WhatsApp com DDD (celular começa com 9).' : 'Não deu certo. Tenta de novo?';
+      btn.disabled = false; btn.innerHTML = textoBtn;
+    }
   });
 
   function revelar(animado) {
@@ -1391,8 +1492,8 @@ ${raios}
     }
     if ($('#t-res').hidden || sheetAberto) return;
     if (ev.target && ev.target.tagName === 'VIDEO') return; // setas no vídeo avançam o vídeo, não a tela
-    if (ev.key === 'ArrowRight') irSlide(slide + 1);
-    if (ev.key === 'ArrowLeft') irSlide(slide - 1);
+    if (ev.target && /INPUT|TEXTAREA/.test(ev.target.tagName)) return;
+    if (ev.key === 'ArrowLeft' && slide > 0 && !document.body.classList.contains('so-oferta')) irSlide(0);
   });
 
   // ---------------- início ----------------
