@@ -7,12 +7,12 @@
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#0b1020">
 <title>Conrado de Sá</title>
-<meta name="description" content="Comunidade Built, mentoria Method e curso. Mentalidade, evolução e IA.">
+<meta name="description" content="Negociação profunda (curso, em breve) e a comunidade Built. Te ajudo a focar no que importa.">
 <link rel="canonical" href="https://condzmethod.com/links/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://condzmethod.com/links/">
 <meta property="og:title" content="Conrado de Sá">
-<meta property="og:description" content="Comunidade Built, mentoria Method e curso. Mentalidade, evolução e IA.">
+<meta property="og:description" content="Negociação profunda (curso, em breve) e a comunidade Built.">
 <meta property="og:image" content="https://condzmethod.com/links/img/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -22,7 +22,7 @@
 <link rel="apple-touch-icon" href="img/icone-180.png">
 <link rel="preload" href="fonts/instrument-serif.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/jetbrains-mono.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" as="image" imagesrcset="img/hero-trio-720.webp 720w, img/hero-trio.webp 1024w" imagesizes="(min-width: 720px) 460px, 100vw" fetchpriority="high">
+<link rel="preload" as="image" imagesrcset="img/hero-trio-720.webp 720w, img/hero-trio.webp 1024w" imagesizes="(min-width: 960px) 48vw, 100vw" fetchpriority="high">
 <style>
 @font-face{font-family:'Instrument Serif';src:url(fonts/instrument-serif.woff2) format('woff2');font-weight:400;font-style:normal;font-display:swap}
 @font-face{font-family:'Instrument Serif';src:url(fonts/instrument-serif-italic.woff2) format('woff2');font-weight:400;font-style:italic;font-display:swap}
@@ -30,9 +30,9 @@
 @font-face{font-family:'JetBrains Mono';src:url(fonts/jetbrains-mono.woff2) format('woff2');font-weight:100 900;font-style:normal;font-display:swap}
 
 :root{
-  --paper:#f4efe6; --paper-2:#ece5d8; --line:#dbd1c1;
+  --paper:#f4efe6; --paper-2:#ece5d8; --card:#fbf8f2; --line:#dbd1c1;
   --ink:#1c1a16; --ink-2:#3b372f; --muted:#6c665b;
-  --night:#0b1020; --ivory:#f6f1e7; --ember:#b4532f;
+  --night:#0b1020; --ivory:#f6f1e7; --ember:#b4532f; --ember-2:#d06a40;
   --serif:'Instrument Serif',Georgia,'Times New Roman',serif;
   --sans:Inter,system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
   --mono:'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;
@@ -42,30 +42,31 @@
 html{-webkit-text-size-adjust:100%;text-size-adjust:100%;background:var(--paper)}
 body{margin:0;background:var(--paper);color:var(--ink);font:400 15px/1.5 var(--sans);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
 a{color:inherit;text-decoration:none;-webkit-tap-highlight-color:transparent}
-button{font:inherit;color:inherit;-webkit-tap-highlight-color:transparent}
+button,input{font:inherit;color:inherit}
+button{-webkit-tap-highlight-color:transparent}
 svg{display:block}
-:focus-visible{outline:2px solid var(--ember);outline-offset:3px;border-radius:6px}
+:focus-visible{outline:2px solid var(--ember);outline-offset:3px;border-radius:8px}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}
+[hidden]{display:none!important}
 
-.page{position:relative;max-width:460px;min-height:100vh;min-height:100svh;margin:0 auto;background:var(--paper);overflow:hidden;container-type:inline-size;padding-bottom:calc(28px + env(safe-area-inset-bottom))}
-
-/* grão do papel por cima de tudo */
+.page{position:relative;max-width:520px;min-height:100vh;min-height:100svh;margin:0 auto;background:var(--paper);overflow:hidden;container-type:inline-size}
 .grain{position:absolute;inset:0;pointer-events:none;z-index:5;opacity:.07;mix-blend-mode:multiply;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1.1 0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E")}
 
-/* ---------- hero: pintura que vira texto datilografado ---------- */
+/* ---------- hero: a pintura vira texto datilografado ---------- */
 .hero{
   --s:calc(100vw / 1024);
-  --h:clamp(320px, min(106vw, 60svh), 520px);
-  --corte:800;              /* onde a pintura vira papel, em px da arte (1024 de largura) */
-  --t:clamp(calc(40 * var(--s)), calc(var(--corte) * var(--s) - .66 * var(--h)), calc(230 * var(--s)));
+  --h:clamp(250px, 78vw, 340px);
+  --corte:780;                 /* celular: linha onde a pintura vira papel (px da arte, 1024 de largura) */
+  --faixa:.28;                 /* parte do hero que é papel datilografado */
+  --t:clamp(calc(30 * var(--s)), calc(var(--corte) * var(--s) - (1 - var(--faixa)) * var(--h)), calc(260 * var(--s)));
   position:relative;height:var(--h);overflow:hidden;
-  background:linear-gradient(var(--night) 0 62%, var(--paper) 62%)
+  background:linear-gradient(var(--night) 0 60%, var(--paper) 60%)
 }
 @supports (container-type:inline-size){
-  .hero{--s:calc(100cqw / 1024);--h:clamp(320px, min(106cqw, 60svh), 520px)}
+  .hero{--s:calc(100cqw / 1024);--h:clamp(250px, 78cqw, 340px)}
 }
 .hero img{position:absolute;left:0;top:calc(-1 * var(--t));width:100%;height:auto;user-select:none;-webkit-user-select:none}
-/* os raios pintados acendem: camada só com os raios, somada à pintura, revelada da esfera pro cérebro */
 .hero .raios{pointer-events:none;opacity:0;mix-blend-mode:screen;
   -webkit-mask-image:linear-gradient(90deg,#000 0 45%,transparent 56%);mask-image:linear-gradient(90deg,#000 0 45%,transparent 56%);
   -webkit-mask-size:220% 100%;mask-size:220% 100%;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-position:100% 0;mask-position:100% 0}
@@ -80,7 +81,7 @@ svg{display:block}
 }
 .hero canvas{position:absolute;inset:0;width:100%;height:100%;opacity:0;transition:opacity .35s var(--ease)}
 .hero.pronto canvas{opacity:1}
-html:not(.js) .hero::after{content:"";position:absolute;inset:auto 0 0;height:34%;background:linear-gradient(transparent,var(--paper) 78%)}
+html:not(.js) .hero::after{content:"";position:absolute;inset:auto 0 0;height:30%;background:linear-gradient(transparent,var(--paper) 78%)}
 .orbe{position:absolute;width:150px;height:150px;margin:-75px 0 0 -75px;border-radius:50%;pointer-events:none;mix-blend-mode:screen;opacity:0;
   background:radial-gradient(circle,rgba(255,246,222,.55) 0,rgba(255,232,180,.18) 32%,transparent 66%)}
 .hero.pronto .orbe{animation:pulso 5.2s ease-in-out infinite}
@@ -88,85 +89,73 @@ html:not(.js) .hero::after{content:"";position:absolute;inset:auto 0 0;height:34
 
 .share{position:absolute;z-index:6;top:calc(12px + env(safe-area-inset-top));right:12px;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;cursor:pointer;
   border:1px solid rgba(246,241,231,.22);background:rgba(11,16,32,.38);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);color:var(--ivory);transition:transform .2s var(--ease),background .2s}
-.share:active{transform:scale(.92);background:rgba(11,16,32,.6)}
+.share:active{transform:scale(.92)}
 .share svg{width:18px;height:18px}
 
-/* ---------- quem ---------- */
-.quem{position:relative;z-index:2;margin-top:4px;padding:0 var(--gut)}
+/* ---------- conteúdo ---------- */
+.conteudo{position:relative;z-index:2;padding:0 var(--gut) calc(28px + env(safe-area-inset-bottom))}
+.quem{margin-top:4px}
 .assina{display:flex;align-items:center;gap:14px}
-.avatar{width:54px;height:54px;flex:none;border-radius:50%;overflow:hidden;background:var(--paper-2);box-shadow:0 0 0 1px rgba(28,26,22,.12),0 6px 18px -8px rgba(28,26,22,.45)}
+.avatar{width:56px;height:56px;flex:none;border-radius:50%;overflow:hidden;background:var(--paper-2);box-shadow:0 0 0 1px rgba(28,26,22,.12),0 6px 18px -8px rgba(28,26,22,.45)}
 .avatar img{width:100%;height:100%;object-fit:cover;display:block}
 .nome{margin:0;font:400 40px/1.02 var(--serif);letter-spacing:-.01em;text-shadow:0 0 14px var(--paper),0 0 4px var(--paper)}
-.arroba{display:block;margin-top:6px;font:500 10.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
-.bio{margin:14px 0 0;max-width:34ch;font-size:16px;line-height:1.45;color:var(--ink-2);text-wrap:pretty}
+.arroba{display:block;margin-top:5px;font:500 10.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.bio{margin:14px 0 0;font-size:16px;line-height:1.5;color:var(--ink-2)}
 
-/* ---------- links ---------- */
-.links{padding:22px var(--gut) 0}
-.destaque{position:relative;display:block;border-radius:18px;overflow:hidden;color:var(--ivory);background:var(--night);isolation:isolate;
-  box-shadow:0 18px 40px -22px rgba(11,16,32,.75);transition:transform .25s var(--ease)}
-.destaque::before{content:"";position:absolute;inset:0;z-index:-1;background:url(img/ceu.webp) center/cover}
-.destaque::after{content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;box-shadow:inset 0 0 0 1px rgba(246,241,231,.1);
-  background:linear-gradient(180deg,rgba(11,16,32,.15),rgba(11,16,32,.72) 70%)}
-.destaque:active{transform:scale(.985)}
-.d-in{display:block;padding:16px 16px 14px}
-.d-top{display:flex;justify-content:space-between;gap:12px;font:500 10px/1.2 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:rgba(246,241,231,.72)}
-.d-titulo{display:block;margin-top:22px;font:400 46px/.9 var(--serif);letter-spacing:-.01em}
-.d-texto{display:block;margin-top:8px;font-size:14.5px;line-height:1.4;color:rgba(246,241,231,.82)}
-.d-cta{margin-top:16px;display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:50px;padding:0 8px 0 16px;border-radius:12px;
-  background:var(--ivory);color:var(--ink);font:500 15px/1.2 var(--sans)}
-.d-cta i{display:grid;place-items:center;width:36px;height:36px;border-radius:9px;background:var(--ink);color:var(--ivory)}
-.d-cta svg{width:16px;height:16px;transition:transform .25s var(--ease)}
-.destaque:active .d-cta svg{transform:translateX(3px)}
+/* ---------- links: cartões ---------- */
+.links{display:grid;gap:12px;margin-top:22px}
+.card{position:relative;display:block;border-radius:20px;overflow:hidden;isolation:isolate}
+.c-in{display:block;padding:18px}
+.c-top{display:flex;justify-content:space-between;align-items:center;gap:12px;font:500 10px/1.2 var(--mono);letter-spacing:.14em;text-transform:uppercase}
 
-.lista{margin-top:8px}
-.item{display:grid;grid-template-columns:30px 1fr 34px;align-items:center;gap:10px;min-height:76px;padding:14px 0;border-top:1px solid var(--line);position:relative}
-.item:first-child{border-top:0}
-.item::before{content:"";position:absolute;inset:0 calc(-1 * var(--gut));background:var(--paper-2);opacity:0;transition:opacity .15s}
-.item:active::before{opacity:1}
-.item>*{position:relative}
-.n{align-self:start;padding-top:7px;font:500 11px/1 var(--mono);color:var(--muted);letter-spacing:.04em}
-.t{display:block;font:400 25px/1.05 var(--serif);letter-spacing:-.005em}
-.x{display:block;margin-top:4px;font-size:13.5px;line-height:1.35;color:var(--muted)}
-.go{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--line);color:var(--ink);transition:transform .25s var(--ease),background .2s,color .2s}
-.go svg{width:14px;height:14px}
-.item:active .go{background:var(--ink);color:var(--ivory);transform:translate(2px,-2px)}
-/* curso em breve: lista de espera */
-.item.espera{display:block;padding:0}
-.item.espera::before{content:none}
-.abre{display:grid;grid-template-columns:30px 1fr 34px;align-items:center;gap:10px;width:100%;min-height:76px;padding:14px 0;border:0;background:none;text-align:left;cursor:pointer;position:relative}
-.abre::before{content:"";position:absolute;inset:0 calc(-1 * var(--gut));background:var(--paper-2);opacity:0;transition:opacity .15s}
-.abre:active::before{opacity:1}
-.abre>*{position:relative}
-.abre .go svg{transition:transform .3s var(--ease)}
-.abre[aria-expanded="true"] .go{background:var(--ink);color:var(--ivory)}
-.abre[aria-expanded="true"] .go svg{transform:rotate(45deg)}
-.breve{display:inline-block;margin-left:8px;padding:4px 7px 3px;border:1px solid currentColor;border-radius:999px;color:var(--ember);font:500 9px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;vertical-align:5px}
-.espera-form{padding:0 0 18px 40px}
-.campo{display:flex;gap:8px}
-.campo input{flex:1;min-width:0;height:48px;padding:0 14px;border:1px solid var(--line);border-radius:12px;background:#fbf8f2;color:var(--ink);font:400 16px/1 var(--sans);outline:none;-webkit-appearance:none;appearance:none;transition:border-color .2s}
-.campo input::placeholder{color:#9a9386}
-.campo input:focus{border-color:var(--ink)}
-.campo button{flex:none;height:48px;padding:0 16px;border:0;border-radius:12px;background:var(--ink);color:var(--ivory);font:500 15px/1 var(--sans);cursor:pointer;transition:opacity .2s,transform .2s var(--ease)}
-.campo button:active{transform:scale(.97)}
-.campo button:disabled{opacity:.55}
-.nota{margin:10px 0 0;font-size:12.5px;line-height:1.4;color:var(--muted)}
-.nota a{text-decoration:underline;text-underline-offset:2px}
-.nota.erro{color:var(--ember)}
-.espera-ok{margin:0;padding:0 0 18px 40px;font:500 10.5px/1.5 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2)}
-.espera-ok::before{content:"";display:inline-block;width:7px;height:7px;margin-right:8px;border-radius:50%;background:var(--ember);vertical-align:1px}
+/* curso de negociação: o foco */
+.curso{color:var(--ivory);background:var(--night);box-shadow:0 24px 50px -28px rgba(11,16,32,.85)}
+.curso::before{content:"";position:absolute;inset:0;z-index:-1;background:url(img/ceu.webp) center/cover}
+.curso::after{content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;box-shadow:inset 0 0 0 1px rgba(246,241,231,.1);background:linear-gradient(180deg,rgba(11,16,32,.12),rgba(11,16,32,.8) 72%)}
+.curso .c-top{color:rgba(246,241,231,.7)}
+.vivo{display:inline-flex;align-items:center;gap:8px;color:var(--ivory)}
+.vivo::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--ember-2);animation:vivo 2.4s ease-out infinite}
+@keyframes vivo{0%{box-shadow:0 0 0 0 rgba(208,106,64,.6)}70%,100%{box-shadow:0 0 0 9px rgba(208,106,64,0)}}
+.c-titulo{margin:22px 0 0;font:400 44px/.98 var(--serif);letter-spacing:-.01em}
+.c-texto{margin:10px 0 0;font-size:15px;line-height:1.45;color:rgba(246,241,231,.84)}
+.preco{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 12px;margin:16px 0 0;padding-top:14px;border-top:1px solid rgba(246,241,231,.12)}
+.preco b{font:400 34px/1 var(--serif);letter-spacing:-.01em;color:var(--ivory)}
+.preco span{font:500 10px/1.2 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:rgba(246,241,231,.7)}
+.c-form{margin-top:16px}
+.campos{display:grid;gap:8px}
+.c-form input:not(.isca){width:100%;min-width:0;height:52px;padding:0 16px;border:1px solid transparent;border-radius:13px;background:var(--ivory);color:var(--ink);font:400 16px/1 var(--sans);outline:none;-webkit-appearance:none;appearance:none;transition:box-shadow .2s,border-color .2s}
+.c-form input::placeholder{color:#968f82}
+.c-form input:focus{border-color:var(--ember-2);box-shadow:0 0 0 3px rgba(208,106,64,.35)}
+.c-form input[aria-invalid="true"]{border-color:#f3a888}
+.c-form button{display:block;width:100%;height:52px;margin-top:8px;padding:0 18px;border:0;border-radius:13px;background:var(--ember);color:#fff;font:500 15.5px/1 var(--sans);cursor:pointer;transition:background .2s,transform .2s var(--ease)}
+.c-form button:active{transform:scale(.985)}
+.c-form button:disabled{opacity:.6}
+.nota{margin:10px 0 0;font-size:12.5px;line-height:1.4;color:rgba(246,241,231,.6)}
+.nota a{color:inherit;text-decoration:underline;text-underline-offset:2px}
+.nota.erro{color:#f3a888}
+.ok{display:flex;align-items:center;gap:10px;margin:16px 0 0;padding:15px 16px;border-radius:13px;background:rgba(246,241,231,.07);border:1px solid rgba(246,241,231,.14);font:500 11px/1.45 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--ivory)}
+.ok::before{content:"";flex:none;width:8px;height:8px;border-radius:50%;background:var(--ember-2)}
 .isca{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
-.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}
-.falta{display:inline-block;margin-left:6px;padding:2px 6px;border-radius:4px;background:var(--ember);color:#fff;font:500 9px/1.3 var(--mono);letter-spacing:.08em;vertical-align:middle;text-transform:uppercase}
 
-/* ---------- redes ---------- */
-.redes{margin:26px var(--gut) 0;padding-top:20px;border-top:1px solid var(--line)}
+/* built: segundo link, claro e evidente */
+.built{background:var(--card);border:1px solid var(--line);color:var(--ink);transition:transform .25s var(--ease),box-shadow .25s,border-color .25s}
+.built .c-top{color:var(--muted)}
+.b-titulo{display:block;margin-top:14px;font:400 36px/1 var(--serif);letter-spacing:-.005em}
+.b-texto{display:block;margin-top:6px;font-size:14.5px;line-height:1.4;color:var(--muted)}
+.b-cta{margin-top:16px;display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:52px;padding:0 9px 0 16px;border-radius:13px;background:var(--ink);color:var(--ivory);font:500 15px/1.2 var(--sans)}
+.b-cta i{display:grid;place-items:center;width:34px;height:34px;border-radius:9px;background:rgba(246,241,231,.12)}
+.b-cta svg{width:16px;height:16px;transition:transform .25s var(--ease)}
+.built:active{transform:scale(.985)}
+.falta{display:inline-block;margin:10px 0 0;padding:2px 6px;border-radius:4px;background:var(--ember);color:#fff;font:500 9px/1.3 var(--mono);letter-spacing:.08em;text-transform:uppercase}
+
+/* ---------- redes e rodapé ---------- */
+.redes{margin-top:26px;padding-top:20px;border-top:1px solid var(--line)}
 .rotulo{font:500 10px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
 .icones{display:flex;gap:10px;margin-top:14px}
 .icones a{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--line);transition:background .2s,color .2s,transform .2s var(--ease)}
 .icones a:active{background:var(--ink);color:var(--ivory);transform:scale(.94)}
 .icones svg{width:19px;height:19px}
-
-.rodape{display:flex;justify-content:space-between;gap:12px;margin:34px var(--gut) 0;font:500 9.5px/1.4 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.rodape{display:flex;justify-content:space-between;gap:12px;margin-top:30px;font:500 9.5px/1.4 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
 .rodape b{font-weight:500;color:var(--ink-2)}
 .rodape .pd{display:inline-flex;align-items:center;gap:6px}
 
@@ -174,17 +163,79 @@ html:not(.js) .hero::after{content:"";position:absolute;inset:auto 0 0;height:34
   padding:10px 16px;border-radius:999px;background:var(--ink);color:var(--ivory);font:500 13px/1 var(--sans);transition:opacity .25s,transform .25s var(--ease)}
 .toast.on{opacity:1;transform:translate(-50%,0)}
 
+/* entrada do conteúdo */
+@keyframes sobe{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.js .quem,.js .links>*,.js .redes,.js .rodape{animation:sobe .9s var(--ease) backwards}
+.js .quem{animation-delay:.12s}
+.js .links>:nth-child(1){animation-delay:.24s}
+.js .links>:nth-child(2){animation-delay:.34s}
+.js .redes{animation-delay:.44s}
+.js .rodape{animation-delay:.52s}
+
 @media (hover:hover) and (pointer:fine){
-  .item:hover::before{opacity:.6}
-  .item:hover .go{background:var(--ink);color:var(--ivory)}
-  .destaque:hover{transform:translateY(-2px)}
-  .icones a:hover{background:var(--ink);color:var(--ivory)}
+  .built:hover{transform:translateY(-3px);border-color:#cdbfa9;box-shadow:0 22px 44px -28px rgba(28,26,22,.5)}
+  .built:hover .b-cta svg{transform:translateX(3px)}
+  .c-form button:hover{background:#9e4626}
+  .icones a:hover{background:var(--ink);color:var(--ivory);transform:translateY(-2px)}
+  .share:hover{transform:scale(1.06)}
 }
-@media (min-width:720px){
-  html,body{background:var(--night)}
-  body{background:radial-gradient(1200px 700px at 50% -10%,#1a2546 0,var(--night) 60%) fixed}
-  .page{margin:48px auto;min-height:0;border-radius:24px;box-shadow:0 40px 120px -30px rgba(0,0,0,.7),0 0 0 1px rgba(246,241,231,.06)}
-  .share{top:14px}
+
+/* ---------- computador: a pintura vira um quadro no papel, o conteúdo ao lado ---------- */
+@media (min-width:960px) and (min-aspect-ratio:5/4){
+  .page{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:minmax(0,560px) minmax(0,540px);justify-content:center;align-items:center;column-gap:clamp(40px,5.5vw,88px);min-height:100vh;padding:28px clamp(24px,4vw,56px);container-type:normal;overflow:visible}
+  .grain{position:fixed}
+  .hero{height:min(84vh,800px);border-radius:22px;background:var(--night);box-shadow:0 50px 90px -50px rgba(28,26,22,.6),0 0 0 1px rgba(28,26,22,.08);animation:placa 1.1s var(--ease) backwards}
+  .hero img{inset:0;width:100%;height:100%;object-fit:cover;object-position:30% 25%;scale:1.03;translate:var(--px,0px) var(--py,0px)}
+  .orbe{translate:var(--px,0px) var(--py,0px)}
+  .share{top:14px;right:14px}
+  .conteudo{padding:0}
+  .quem{margin-top:0}
+  .assina{gap:16px}
+  .avatar{width:60px;height:60px}
+  .nome{font-size:clamp(44px,3.8vw,54px)}
+  .arroba{margin-top:7px;font-size:11px}
+  .bio{font-size:17px;margin-top:14px}
+  .links{margin-top:22px;gap:12px}
+  .c-in{padding:20px}
+  .c-titulo{font-size:48px;margin-top:16px}
+  .c-texto{font-size:15.5px;margin-top:8px}
+  .preco{margin-top:12px;padding-top:12px}
+  .c-form{margin-top:12px}
+  .campos{grid-template-columns:1fr 1fr}
+  .built .c-in{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:20px;align-items:end}
+  .built .c-top{grid-column:1/-1}
+  .b-titulo,.b-texto{grid-column:1}
+  .b-titulo{font-size:40px}
+  .b-cta{grid-column:2;grid-row:2/span 2;margin-top:0;min-height:50px;gap:14px}
+  .redes{margin-top:18px;padding-top:0;border-top:0}
+  .redes .rotulo{display:none}
+  .icones{margin-top:0}
+  .icones a{width:44px;height:44px}
+  .rodape{margin-top:14px}
+}
+@keyframes placa{from{opacity:0;transform:translateY(18px) scale(.985)}to{opacity:1;transform:none}}
+/* computador com tela baixa (notebook 1280x800 etc.): tudo um pouco mais compacto pra caber sem rolar */
+@media (min-width:960px) and (min-aspect-ratio:5/4) and (max-height:860px){
+  .page{padding-top:18px;padding-bottom:18px}
+  .avatar{width:52px;height:52px}
+  .nome{font-size:44px}
+  .bio{font-size:15.5px;line-height:1.45;margin-top:10px}
+  .links{margin-top:16px;gap:10px}
+  .c-in{padding:17px 18px}
+  .c-titulo{font-size:40px;margin-top:10px}
+  .c-texto{font-size:14.5px}
+  .preco{margin-top:10px;padding-top:10px}
+  .preco b{font-size:28px}
+  .c-form{margin-top:10px}
+  .c-form input:not(.isca),.c-form button{height:46px}
+  .c-form button{margin-top:6px}
+  .nota{margin-top:8px}
+  .b-titulo{font-size:32px;margin-top:10px}
+  .b-texto{font-size:14px}
+  .b-cta{min-height:46px}
+  .redes{margin-top:14px}
+  .icones a{width:40px;height:40px}
+  .rodape{margin-top:10px}
 }
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{transition:none!important;animation:none!important}
@@ -197,7 +248,7 @@ html:not(.js) .hero::after{content:"";position:absolute;inset:auto 0 0;height:34
   <div class="grain" aria-hidden="true"></div>
 
   <header class="hero" data-arte="trio">
-    <img src="img/hero-trio.webp" srcset="img/hero-trio-720.webp 720w, img/hero-trio.webp 1024w" sizes="(min-width: 720px) 460px, 100vw"
+    <img src="img/hero-trio.webp" srcset="img/hero-trio-720.webp 720w, img/hero-trio.webp 1024w" sizes="(min-width: 960px) 48vw, 100vw"
       width="1024" height="1280" alt="Pintura a óleo: Tesla com uma esfera de energia, um macaco pensativo e Einstein no cosmos, ligados por raios" fetchpriority="high" decoding="async">
     <img class="raios" src="img/raios-trio.webp" width="768" height="960" alt="" aria-hidden="true" decoding="async" fetchpriority="low">
     <span class="orbe" aria-hidden="true"></span>
@@ -207,69 +258,65 @@ html:not(.js) .hero::after{content:"";position:absolute;inset:auto 0 0;height:34
     </button>
   </header>
 
-  <section class="quem">
-    <div class="assina">
-      <span class="avatar"><img src="img/avatar.webp" width="192" height="192" alt="Foto do Conrado"></span>
-      <div>
-        <h1 class="nome">Conrado de Sá</h1>
-        <span class="arroba">@condzxyz · mentalidade e IA</span>
+  <div class="conteudo">
+    <section class="quem">
+      <div class="assina">
+        <span class="avatar"><img src="img/avatar.webp" width="192" height="192" alt="Foto do Conrado"></span>
+        <div>
+          <h1 class="nome">Conrado de Sá</h1>
+          <span class="arroba">@condzxyz</span>
+        </div>
       </div>
-    </div>
-    <p class="bio">Fui de −R$ 300 mil a R$ 5 mi de patrimônio. Te ajudo a sair do zero evoluindo sua mente.</p>
-  </section>
+      <p class="bio">Exited Founder |<br>Te ajudo a focar no que importa 🧠<br>Comunidade de criadores ↓</p>
+    </section>
 
-  <nav class="links" aria-label="Links">
-    <!-- DESTAQUE: o link principal (só um) -->
-    <a class="destaque" href="https://condzmethod.com/built/" data-id="built">
-      <span class="d-in">
-        <span class="d-top"><span>Comunidade de criadores</span><span>Telegram</span></span>
-        <span class="d-titulo">Built</span>
-        <span class="d-texto">Quem constrói junto cresce mais rápido.</span>
-        <span class="d-cta">Fazer o teste de perfil <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></span>
-      </span>
-    </a>
-
-    <div class="lista">
-      <!-- CURSO EM BREVE: lista de espera. O email vai pro built-bot (/lead) com origem "curso-negociacao".
-           Quando o curso abrir, troque este bloco por um <a class="item"> normal com o link de compra. -->
-      <div class="item espera" data-id="curso-negociacao">
-        <button class="abre" type="button" aria-expanded="false" aria-controls="espera-negociacao">
-          <span class="n"></span>
-          <span><span class="t">Curso de negociação <span class="breve">em breve</span></span><span class="x">Negociar com calma e inteligência emocional. Abre nos próximos dias.</span></span>
-          <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 6v12M6 12h12"/></svg></span>
-        </button>
-        <form class="espera-form" id="espera-negociacao" hidden novalidate>
-          <label class="vh" for="espera-email">Seu email</label>
-          <div class="campo">
-            <input id="espera-email" name="email" type="email" inputmode="email" autocomplete="email" autocapitalize="off" spellcheck="false" placeholder="seu@email.com" required>
-            <button type="submit">Me avisa</button>
-          </div>
-          <input class="isca" name="website" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
-          <p class="nota" aria-live="polite">Só pra te avisar quando abrir. <a href="https://condzmethod.com/built/privacidade.html">Privacidade</a></p>
-        </form>
-        <p class="espera-ok" hidden role="status">Pronto. Te aviso quando abrir.</p>
+    <nav class="links" aria-label="Links">
+      <!-- FOCO: curso de negociação, ainda sem link de compra. Lista de espera: o email vai pro built-bot (/lead),
+           origem "curso-negociacao". Quando abrir, troque o <form> por um botão com o link de compra. -->
+      <div class="card curso espera" data-id="curso-negociacao">
+        <div class="c-in">
+          <div class="c-top"><span>Curso</span><span class="vivo">Em breve</span></div>
+          <h2 class="c-titulo">Negociação profunda</h2>
+          <p class="c-texto">Negociar com calma e inteligência emocional. Abre nos próximos dias.</p>
+          <p class="preco"><b>R$ 27,90</b><span>preço de lançamento</span></p>
+          <form class="c-form" novalidate>
+            <div class="campos">
+              <label class="vh" for="espera-wa">Seu WhatsApp com DDD</label>
+              <input id="espera-wa" name="whatsapp" type="tel" inputmode="tel" autocomplete="tel-national" placeholder="WhatsApp com DDD" required>
+              <label class="vh" for="espera-email">Seu email</label>
+              <input id="espera-email" name="email" type="email" inputmode="email" autocomplete="email" autocapitalize="off" spellcheck="false" placeholder="seu@email.com" required>
+            </div>
+            <button type="submit">Me avisa quando abrir</button>
+            <input class="isca" name="website" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <p class="nota" aria-live="polite">Te aviso no WhatsApp e no email. <a href="https://condzmethod.com/built/privacidade.html">Privacidade</a></p>
+          </form>
+          <p class="ok" hidden role="status"><span>Pronto. Te aviso quando abrir.</span></p>
+        </div>
       </div>
 
-      <!-- LINK: pra adicionar outro, copie um bloco <a class="item"> inteiro e troque href, data-id, título e texto -->
-      <a class="item" href="https://condzmethod.com/" data-id="method">
-        <span class="n"></span>
-        <span><span class="t">Mentoria Method</span><span class="x">Em grupo, até 15 pessoas, 30 dias.</span></span>
-        <span class="go"></span>
+      <!-- LINK: pra adicionar outro, copie este bloco <a class="card built"> e troque href, data-id e textos -->
+      <a class="card built" href="https://condzmethod.com/built/" data-id="built">
+        <span class="c-in">
+          <span class="c-top"><span>Comunidade de criadores</span><span>Telegram</span></span>
+          <span class="b-titulo">Built</span>
+          <span class="b-texto">Quem constrói junto cresce mais rápido.</span>
+          <span class="b-cta">Fazer o teste de perfil <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></span>
+        </span>
       </a>
-    </div>
-  </nav>
+    </nav>
 
-  <nav class="redes" aria-label="Redes">
-    <span class="rotulo">Redes</span>
-    <div class="icones">
-      <a href="https://www.instagram.com/conrado_desa/" data-rede="instagram" aria-label="Instagram @conrado_desa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5.2"/><circle cx="12" cy="12" r="4.1"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg></a>
-      <a href="https://x.com/condzxyz" data-rede="x" aria-label="X @condzxyz"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.75 3h3.07l-6.7 7.66L22 21h-6.17l-4.83-6.32L5.47 21H2.4l7.17-8.2L2 3h6.33l4.37 5.78L17.75 3Zm-1.08 16.18h1.7L7.4 4.73H5.58l11.09 14.45Z"/></svg></a>
-      <a href="https://www.youtube.com/@conradodesa3" data-rede="youtube" aria-label="YouTube Conrado de Sá"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .6 12c0 1.6.1 3.2.4 4.8a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1c.3-1.6.4-3.2.4-4.8s-.1-3.2-.4-4.8ZM9.8 15.1V8.9l5.4 3.1-5.4 3.1Z"/></svg></a>
-      <a href="https://www.tiktok.com/@condzxyz" data-rede="tiktok" aria-label="TikTok @condzxyz"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 5.8A4.3 4.3 0 0 1 15.5 3h-3.1v12.4a2.6 2.6 0 0 1-2.6 2.5 2.6 2.6 0 0 1-2.6-2.6c0-1.7 1.7-3 3.4-2.5V9.7c-3.5-.5-6.5 2.2-6.5 5.6 0 3.3 2.8 5.7 5.7 5.7 3.1 0 5.7-2.6 5.7-5.7V9a7.4 7.4 0 0 0 4.3 1.4V7.3s-1.9.1-3.2-1.5Z"/></svg></a>
-    </div>
-  </nav>
+    <nav class="redes" aria-label="Redes">
+      <span class="rotulo">Redes</span>
+      <div class="icones">
+        <a href="https://www.instagram.com/conrado_desa/" aria-label="Instagram @conrado_desa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5.2"/><circle cx="12" cy="12" r="4.1"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg></a>
+        <a href="https://x.com/condzxyz" aria-label="X @condzxyz"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.75 3h3.07l-6.7 7.66L22 21h-6.17l-4.83-6.32L5.47 21H2.4l7.17-8.2L2 3h6.33l4.37 5.78L17.75 3Zm-1.08 16.18h1.7L7.4 4.73H5.58l11.09 14.45Z"/></svg></a>
+        <a href="https://www.youtube.com/@conradodesa3" aria-label="YouTube Conrado de Sá"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .6 12c0 1.6.1 3.2.4 4.8a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1c.3-1.6.4-3.2.4-4.8s-.1-3.2-.4-4.8ZM9.8 15.1V8.9l5.4 3.1-5.4 3.1Z"/></svg></a>
+        <a href="https://www.tiktok.com/@condzxyz" aria-label="TikTok @condzxyz"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 5.8A4.3 4.3 0 0 1 15.5 3h-3.1v12.4a2.6 2.6 0 0 1-2.6 2.5 2.6 2.6 0 0 1-2.6-2.6c0-1.7 1.7-3 3.4-2.5V9.7c-3.5-.5-6.5 2.2-6.5 5.6 0 3.3 2.8 5.7 5.7 5.7 3.1 0 5.7-2.6 5.7-5.7V9a7.4 7.4 0 0 0 4.3 1.4V7.3s-1.9.1-3.2-1.5Z"/></svg></a>
+      </div>
+    </nav>
 
-  <footer class="rodape"><span>© 2026 <b>Conrado de Sá</b></span><span class="pd">pintura <svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="vira"><path d="M5 12h14M13 6l6 6-6 6"/></svg> dados</span></footer>
+    <footer class="rodape"><span>© 2026 <b>Conrado de Sá</b></span><span class="pd">pintura <svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="vira"><path d="M5 12h14M13 6l6 6-6 6"/></svg> dados</span></footer>
+  </div>
 </main>
 <div class="toast" role="status" aria-live="polite"></div>
 
@@ -281,9 +328,9 @@ html:not(.js) .hero::after{content:"";position:absolute;inset:auto 0 0;height:34
   // ?parado=1 mostra o estado final sem animação (útil pra print)
   const reduz = matchMedia('(prefers-reduced-motion: reduce)').matches || q.get('parado') === '1';
   if (reduz) document.documentElement.classList.add('parado');
+  const DESK = matchMedia('(min-width: 960px) and (min-aspect-ratio: 5/4)');
 
-  /* ========== 1. links: numeração, origem (utm) e seta ========== */
-  const SETA = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg>';
+  /* ========== 1. links: origem (utm) ========== */
   const origemRef = () => {
     try {
       const h = new URL(document.referrer).hostname;
@@ -295,14 +342,10 @@ html:not(.js) .hero::after{content:"";position:absolute;inset:auto 0 0;height:34
   // na bio de cada rede, use ?s=ig, ?s=x, ?s=tiktok... pra saber de onde veio
   const origem = (q.get('s') || q.get('utm_source') || origemRef() || 'links').toLowerCase().replace(/[^a-z0-9_-]/g, '').slice(0, 30);
   const PROPRIOS = /(^|\.)condzmethod\.com$|(^|\.)doti\.gg$/;
-
-  document.querySelectorAll('.links [data-id]').forEach((a, i) => {
-    const n = a.querySelector('.n'); if (n) n.textContent = String(i + 1).padStart(2, '0');
-    if (a.tagName !== 'A') return;          // lista de espera não é link
-    const go = a.querySelector('.go'); if (go) go.innerHTML = SETA;
+  document.querySelectorAll('.links a[data-id]').forEach((a) => {
     const bruto = a.getAttribute('href');
     if (!bruto || bruto === '#') {
-      if (local) a.querySelector('.t').insertAdjacentHTML('beforeend', ' <span class="falta">sem link</span>');
+      if (local) (a.querySelector('.c-in') || a).insertAdjacentHTML('beforeend', '<span class="falta">sem link</span>');
       a.setAttribute('href', '#');
       a.addEventListener('click', (e) => e.preventDefault());
       return;
@@ -322,43 +365,62 @@ html:not(.js) .hero::after{content:"";position:absolute;inset:auto 0 0;height:34
   /* ========== 1b. curso em breve: "me avisa quando abrir" ========== */
   // vai pra lista de emails da Built (D1). Só aceita envio de condzmethod.com (LEAD_ORIGINS no bot).
   const LEAD_URL = 'https://built-bot.built-bot.workers.dev/lead';
+  // WhatsApp: mesma regra do bot (quiz.ts normalizePhone): DDD que existe, celular com 9; sem o 9 ganha o 9
+  const DDDS = new Set('11 12 13 14 15 16 17 18 19 21 22 24 27 28 31 32 33 34 35 37 38 41 42 43 44 45 46 47 48 49 51 53 54 55 61 62 63 64 65 66 67 68 69 71 73 74 75 77 79 81 82 83 84 85 86 87 88 89 91 92 93 94 95 96 97 98 99'.split(' '));
+  const telefone = (s) => {
+    let d = String(s || '').replace(/\D/g, '');
+    if (/^55\d{10,11}$/.test(d)) d = d.slice(2);
+    if (!DDDS.has(d.slice(0, 2))) return null;
+    if (d.length === 11) return d[2] === '9' ? '55' + d : null;
+    if (d.length !== 10) return null;
+    if (/[6-9]/.test(d[2])) return `55${d.slice(0, 2)}9${d.slice(2)}`;
+    return /[2-5]/.test(d[2]) ? '55' + d : null;
+  };
+  // (11) 98765-4321 enquanto digita
+  const formata = (v) => {
+    let d = v.replace(/\D/g, ''); if (/^55\d{11}/.test(d)) d = d.slice(2); d = d.slice(0, 11);
+    if (d.length <= 2) return d.length ? `(${d}` : '';
+    const meio = d.length > 10 ? 7 : 6;
+    return `(${d.slice(0, 2)}) ${d.slice(2, meio)}${d.length > meio ? '-' + d.slice(meio) : ''}`;
+  };
   document.querySelectorAll('.espera').forEach((bloco) => {
-    const abre = bloco.querySelector('.abre'), form = bloco.querySelector('form'), ok = bloco.querySelector('.espera-ok');
-    const campo = form.querySelector('input[type=email]'), botao = form.querySelector('button'), nota = form.querySelector('.nota');
-    const chave = 'espera:' + bloco.dataset.id, textoNota = nota.innerHTML;
+    const form = bloco.querySelector('form'), ok = bloco.querySelector('.ok');
+    const campo = form.querySelector('input[type=email]'), wa = form.querySelector('input[type=tel]');
+    const botao = form.querySelector('button'), nota = form.querySelector('.nota');
+    const chave = 'espera:' + bloco.dataset.id, textoNota = nota.innerHTML, textoBotao = botao.textContent;
     const naLista = () => { try { return localStorage.getItem(chave) === '1'; } catch (e) { return false; } };
-    abre.addEventListener('click', () => {
-      const aberto = abre.getAttribute('aria-expanded') === 'true';
-      abre.setAttribute('aria-expanded', String(!aberto));
-      if (naLista()) { ok.hidden = aberto; form.hidden = true; return; }
-      form.hidden = aberto;
-      if (!aberto) campo.focus({ preventScroll: true });
+    const mostraOk = (txt) => { form.hidden = true; ok.hidden = false; if (txt) ok.querySelector('span').textContent = txt; };
+    const erro = (txt, el) => { nota.classList.add('erro'); nota.textContent = txt; if (el) { el.setAttribute('aria-invalid', 'true'); el.focus(); } };
+    if (naLista()) mostraOk('Você já está na lista. Te aviso quando abrir.');
+    if (wa) wa.addEventListener('input', () => {
+      wa.removeAttribute('aria-invalid');
+      if (wa.selectionStart === wa.value.length) wa.value = formata(wa.value);   // só formata digitando no fim
     });
+    campo.addEventListener('input', () => campo.removeAttribute('aria-invalid'));
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
+      const whatsapp = wa ? telefone(wa.value) : null;
       const email = campo.value.trim().toLowerCase();
-      if (!/^[^\s@<>"',;]+@[^\s@<>"',;]+\.[a-z]{2,24}$/i.test(email)) {
-        nota.classList.add('erro'); nota.textContent = 'Confere o email.'; campo.focus(); return;
-      }
+      if (wa && !whatsapp) return erro('Confere o WhatsApp com DDD (celular começa com 9).', wa);
+      if (!/^[^\s@<>"',;]+@[^\s@<>"',;]+\.[a-z]{2,24}$/i.test(email)) return erro('Confere o email.', campo);
       botao.disabled = true; botao.textContent = 'Enviando…';
       nota.classList.remove('erro'); nota.innerHTML = textoNota;
       try {
         if (!local) {
           const r = await fetch(LEAD_URL, {
             method: 'POST', headers: { 'content-type': 'application/json' },
-            body: JSON.stringify({ email, source: bloco.dataset.id, utm: { utm_source: origem, utm_medium: 'bio', utm_campaign: 'links' }, website: form.website.value }),
+            body: JSON.stringify({ email, whatsapp, source: bloco.dataset.id, utm: { utm_source: origem, utm_medium: 'bio', utm_campaign: 'links' }, website: form.website.value }),
           });
           const j = await r.json().catch(() => ({}));
           if (!r.ok || !j.ok) throw new Error(j.error || 'erro');
         }
         try { localStorage.setItem(chave, '1'); } catch (er) {}
-        form.hidden = true; ok.hidden = false;
-        if (local) ok.textContent = 'Pronto. Te aviso quando abrir. (teste local: nada foi enviado)';
+        mostraOk(local ? 'Pronto. Te aviso quando abrir. (teste local: nada foi enviado)' : '');
         dispatchEvent(new Event('raio'));
       } catch (er) {
-        nota.classList.add('erro');
-        nota.textContent = /muitas tentativas/.test(er.message) ? 'Muitas tentativas. Tenta de novo daqui a pouco.' : /email/.test(er.message) ? 'Confere o email.' : 'Não deu certo. Tenta de novo?';
-        botao.disabled = false; botao.textContent = 'Me avisa';
+        const m = er.message || '';
+        erro(/muitas tentativas/.test(m) ? 'Muitas tentativas. Tenta de novo daqui a pouco.' : /whats/i.test(m) ? 'Confere o WhatsApp com DDD (celular começa com 9).' : /email/.test(m) ? 'Confere o email.' : 'Não deu certo. Tenta de novo?');
+        botao.disabled = false; botao.textContent = textoBotao;
       }
     });
   });
@@ -373,15 +435,15 @@ html:not(.js) .hero::after{content:"";position:absolute;inset:auto 0 0;height:34
   });
 
   /* ========== 3. hero: a pintura vira texto datilografado ========== */
+  // corte: linha (px da arte) onde a pintura vira papel. corteD = no computador (quadro mais alto)
   const ARTES = {
-    trio:   { img: 'img/hero-trio',   dens: 'img/dens-trio.webp',   corte: 800, orbe: [116, 349] },
-    macaco: { img: 'img/hero-macaco', dens: 'img/dens-macaco.webp', corte: 905, orbe: [108, 240] },
+    trio:   { img: 'img/hero-trio',   dens: 'img/dens-trio.webp',   corte: 780, corteD: 840, orbe: [116, 349] },
+    macaco: { img: 'img/hero-macaco', dens: 'img/dens-macaco.webp', corte: 905, corteD: 960, orbe: [108, 240] },
   };
   const PALAVRAS = ['PROMPTS', 'DADOS', 'AGENTE', 'IA', 'BUILD', 'PROMPTS', 'DADOS', 'IA', 'AGENTE', 'FOCO', 'MENTE'];
   const PAPEL = '#f4efe6', TINTA = '#1c1a16', BRASA = '#b4532f';
-  // emenda em células: perto do corte, umas células da pintura viram papel datilografado
-  // (até 3 linhas acima). PROB_FURO > 0 deixa buracos de pintura na 1ª linha (fica com cara de glitch)
-  const PROB_ACIMA = [0.38, 0.13, 0.04], PROB_FURO = 0;
+  // emenda em células: perto do corte, umas células da pintura viram papel datilografado (até 3 linhas/colunas)
+  const PROB_BORDA = [0.38, 0.13, 0.04];
   const BORDA_PAPEL = q.get('borda') === 'papel';   // alternativa: papel rasgado com lascas, sem células
 
   const hero = document.querySelector('.hero');
@@ -392,7 +454,7 @@ html:not(.js) .hero::after{content:"";position:absolute;inset:auto 0 0;height:34
   const ctx = cv.getContext('2d');
   if (!ctx) return;
 
-  let nomeArte = q.get('arte') in ARTES ? q.get('arte') : hero.dataset.arte;
+  const nomeArte = q.get('arte') in ARTES ? q.get('arte') : hero.dataset.arte;
   const A = ARTES[nomeArte];
   if (nomeArte !== hero.dataset.arte) {
     foto.srcset = `${A.img}-720.webp 720w, ${A.img}.webp 1024w`; foto.src = `${A.img}.webp`;
@@ -403,6 +465,7 @@ html:not(.js) .hero::after{content:"";position:absolute;inset:auto 0 0;height:34
 
   // gerador aleatório com semente (o desenho fica igual a cada redesenho)
   const semente = (s) => () => { s |= 0; s = s + 0x6D2B79F5 | 0; let t = Math.imul(s ^ s >>> 15, 1 | s); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; };
+  const suave = (a, b, x) => { const t = Math.min(1, Math.max(0, (x - a) / (b - a))); return t * t * (3 - 2 * t); };
 
   let dens = null, DW = 0, DH = 0;      // mapa de tinta (branco = tinta cheia, preto = papel)
   let G = null;                           // geometria atual
@@ -430,37 +493,41 @@ html:not(.js) .hero::after{content:"";position:absolute;inset:auto 0 0;height:34
     }
     return soma / 4;
   };
-  const suave = (a, b, x) => { const t = Math.min(1, Math.max(0, (x - a) / (b - a))); return t * t * (3 - 2 * t); };
 
   function mede() {
     const r = hero.getBoundingClientRect(), f = foto.getBoundingClientRect();
-    const W = r.width, H = r.height, s = f.width / 1024, topo = f.top - r.top;
+    const W = r.width, H = r.height, desk = DESK.matches;
+    // celular: a arte ocupa a caixa do <img> inteira. computador: object-fit cover, object-position 30% 25%
+    const s = Math.max(f.width / 1024, f.height / 1280);
+    const esq = f.left - r.left + (f.width - 1024 * s) * (desk ? 0.3 : 0);
+    const topo = f.top - r.top + (f.height - 1280 * s) * (desk ? 0.25 : 0);
     const dpr = Math.min(2.5, window.devicePixelRatio || 1);
-    const corte = topo + A.corte * s;
-    const fs = W < 380 ? 6 : 6.4;           // letra miúda: de longe vira imagem, de perto dá pra ler
+    const fs = desk ? 7 : (W < 380 ? 6 : 6.4);   // letra miúda: de longe vira imagem, de perto dá pra ler
     ctx.font = `600 ${fs}px "JetBrains Mono", ui-monospace, monospace`;
     const cw = ctx.measureText('M').width || fs * 0.6;
-    return { W, H, s, topo, dpr, corte, fs, cw, lh: Math.round(fs * 1.18 * 100) / 100 };
+    const lh = Math.round(fs * 1.18 * 100) / 100;
+    const corte = topo + (desk ? A.corteD : A.corte) * s;
+    return { W, H, s, topo, esq, dpr, corte, fs, cw, lh };
   }
 
   function montaCelulas() {
-    const { W, H, s, topo, corte, cw, lh } = G;
-    const rnd = semente(7), borda = semente(5);
+    const { W, H, s, topo, esq, corte, cw, lh } = G;
+    const rnd = semente(7), borda = semente(5), ritmo = semente(11);
+    const cand = [];                       // [x, y, letra, tinta da pintura, queda, atraso da datilografia]
+    const acima = [];                      // células de papel do lado da pintura (borda "digitalizada")
     const linhas = Math.ceil((H - corte) / lh), cols = Math.ceil(W / cw) + 1;
-    const cand = [];                       // [x, y, letra, tinta da pintura, queda]
-    const acima = [], furos = [];          // células de papel acima do corte / furos de pintura abaixo
     for (let r = BORDA_PAPEL ? 0 : -3; r < linhas; r++) {
-      let fila = ''; while (fila.length < cols + 40) fila += PALAVRAS[(rnd() * PALAVRAS.length) | 0] + ' ';
+      let f = ''; while (f.length < cols + 40) f += PALAVRAS[(rnd() * PALAVRAS.length) | 0] + ' ';
       const desl = (rnd() * 30) | 0;
       const cy = corte + r * lh;
       const t = Math.max(0, (cy + lh / 2 - corte) / (H - corte));
       const queda = 1 - suave(0.5, 0.96, t);
+      const atrasoLinha = 60 + (r + 3) * 26 + ritmo() * 60;
       for (let c = 0; c < cols; c++) {
         const cx = c * cw;
-        if (r < 0) { if (borda() >= PROB_ACIMA[-r - 1]) continue; acima.push([cx, cy]); }
-        else if (r === 0 && borda() < PROB_FURO) { furos.push([cx, cy]); continue; }
-        const letra = fila[c + desl]; if (letra === ' ') continue;
-        cand.push([cx, cy, letra, amostra((cx + cw / 2) / s, (cy + lh / 2 - topo) / s), queda]);
+        if (r < 0) { if (borda() >= PROB_BORDA[-r - 1]) continue; acima.push([cx, cy]); }
+        const letra = f[c + desl]; if (letra === ' ') continue;
+        cand.push([cx, cy, letra, amostra((cx + cw / 2 - esq) / s, (cy + lh / 2 - topo) / s), queda, atrasoLinha + c * 1.7 + ritmo() * 20]);
       }
     }
     // contraste automático medido na própria faixa: o tom mais claro dela vira papel,
@@ -468,14 +535,14 @@ html:not(.js) .hero::after{content:"";position:absolute;inset:auto 0 0;height:34
     const tons = cand.map((k) => k[3]).sort((p, q) => p - q);
     const pct = (p) => tons[Math.min(tons.length - 1, Math.floor(p * tons.length))] || 0;
     const lo = pct(0.14), hi = Math.max(lo + 0.08, pct(0.96));
-    const x = [], y = [], ch = [], a = [];
-    for (const [cx, cy, letra, d, queda] of cand) {
-      let al = Math.pow(suave(lo, hi, d), 0.95) * queda; if (al < 0.08) continue;
+    const x = [], y = [], ch = [], a = [], d = [];
+    for (const [cx, cy, letra, tinta, queda, atraso] of cand) {
+      let al = Math.pow(suave(lo, hi, tinta), 0.95) * queda; if (al < 0.08) continue;
       al = Math.round(al * 12) / 12;
-      x.push(cx); y.push(cy); ch.push(letra); a.push(al);
+      x.push(cx); y.push(cy); ch.push(letra); a.push(al); d.push(atraso);
     }
     const n = x.length;
-    return { n, x, y, ch, a, ocupado: new Uint8Array(n), linhas: linhas + 3, acima, furos };
+    return { n, x, y, ch, a, d, ocupado: new Uint8Array(n), acima };
   }
 
   function papel() {
@@ -483,22 +550,21 @@ html:not(.js) .hero::after{content:"";position:absolute;inset:auto 0 0;height:34
     ctx.globalAlpha = 1; ctx.clearRect(0, 0, W, H);
     ctx.fillStyle = PAPEL;
     if (BORDA_PAPEL) {
-      // papel rasgado + lascas subindo pela pintura
+      // papel rasgado + lascas entrando na pintura
       const rnd = semente(3);
-      ctx.beginPath(); ctx.moveTo(0, H + 4);
-      for (let x = 0; x <= W + 2; x += 2) ctx.lineTo(x, corte - 1 + Math.sin(x * 0.13 + 1.7) * 0.7 + Math.sin(x * 0.029) * 1.1 + (rnd() - 0.5) * 1.6);
-      ctx.lineTo(W + 2, H + 4); ctx.closePath(); ctx.fill();
+      ctx.beginPath(); ctx.moveTo(-4, H + 4);
+      for (let xx = 0; xx <= W + 2; xx += 2) ctx.lineTo(xx, corte - 1 + Math.sin(xx * 0.13 + 1.7) * 0.7 + Math.sin(xx * 0.029) * 1.1 + (rnd() - 0.5) * 1.6);
+      ctx.lineTo(W + 4, H + 4); ctx.closePath(); ctx.fill();
       for (let k = 0; k < W * 0.7; k++) {
-        const d = Math.pow(rnd(), 2.4) * 12, tam = 0.7 + rnd() * 1.6 * (1 - d / 12);
-        ctx.globalAlpha = 0.5 + rnd() * 0.45; ctx.fillRect(rnd() * W, corte - d, tam, tam);
+        const dd = Math.pow(rnd(), 2.4) * 12, tam = 0.7 + rnd() * 1.6 * (1 - dd / 12);
+        ctx.globalAlpha = 0.5 + rnd() * 0.45; ctx.fillRect(rnd() * W, corte - dd, tam, tam);
       }
       ctx.globalAlpha = 1;
       return;
     }
-    ctx.fillRect(0, corte, W + 2, H - corte + 4);
+    ctx.fillRect(-2, corte, W + 4, H - corte + 4);
     // borda "digitalizada": a pintura vira papel célula a célula
-    for (const [x, y] of C.acima) ctx.fillRect(x, y, cw + 0.6, lh + 0.6);
-    for (const [x, y] of C.furos) ctx.clearRect(x, y, cw, lh);
+    for (const [xx, yy] of C.acima) ctx.fillRect(xx, yy, cw + 0.6, lh + 0.6);
   }
   const letra = (i, cor, al) => { ctx.globalAlpha = al || C.a[i]; ctx.fillStyle = cor; ctx.fillText(C.ch[i], C.x[i], C.y[i]); };
   const limpa = (i) => { ctx.globalAlpha = 1; ctx.fillStyle = PAPEL; ctx.fillRect(C.x[i] - 0.5, C.y[i] - 0.5, G.cw + 1, G.lh + 0.5); };
@@ -513,9 +579,9 @@ html:not(.js) .hero::after{content:"";position:absolute;inset:auto 0 0;height:34
     ctx.globalAlpha = 1;
   }
 
-  // fila de tarefas: [quando, célula, tipo, glifo]
+  // fila de tarefas: [quando, célula, tipo]
   let tarefas = [];
-  const agenda = (quando, i, tipo, g) => tarefas.push([quando, i, tipo, g]);
+  const agenda = (quando, i, tipo) => tarefas.push([quando, i, tipo]);
 
   function prepara() {
     G = mede();
@@ -524,21 +590,15 @@ html:not(.js) .hero::after{content:"";position:absolute;inset:auto 0 0;height:34
     ctx.font = `600 ${G.fs}px "JetBrains Mono", ui-monospace, monospace`;
     ctx.textBaseline = 'top';
     C = montaCelulas();
-    orbe.style.left = (A.orbe[0] * G.s) + 'px';
+    orbe.style.left = (G.esq + A.orbe[0] * G.s) + 'px';
     orbe.style.top = (G.topo + A.orbe[1] * G.s) + 'px';
   }
 
   function comecaIntro() {
     papel(); ctx.textBaseline = 'top';
     tarefas = [];
-    const t0 = performance.now(), rnd = semente(11);
-    const atrasoLinha = [];
-    for (let r = 0; r <= C.linhas; r++) atrasoLinha.push(60 + r * 26 + rnd() * 60);
-    for (let i = 0; i < C.n; i++) {
-      const r = Math.round((C.y[i] - G.corte) / G.lh) + 3;
-      const quando = t0 + atrasoLinha[r] + (C.x[i] / G.cw) * 1.7 + rnd() * 20;
-      agenda(quando, i, 'tipo');
-    }
+    const t0 = performance.now();
+    for (let i = 0; i < C.n; i++) agenda(t0 + C.d[i], i, 'tipo');
     tarefas.sort((p, q) => p[0] - q[0]);
     intro = false;
   }
@@ -577,23 +637,23 @@ html:not(.js) .hero::after{content:"";position:absolute;inset:auto 0 0;height:34
   }
   const pede = () => { if (!raf && visivel && !reduz) raf = requestAnimationFrame(quadro); };
 
-  // raio: acende os raios pintados (uma vez ao abrir, ao tocar no destaque e a cada ~22 s)
+  // raio: acende os raios pintados (uma vez ao abrir, ao tocar na Built, ao entrar na lista e a cada ~22 s)
   const raio = () => {
     if (reduz || !visivel || document.hidden) return;
     hero.classList.remove('raio'); void hero.offsetWidth; hero.classList.add('raio');
   };
   raios.addEventListener('animationend', () => hero.classList.remove('raio'));
-  const destaque = document.querySelector('.destaque');
-  if (destaque) destaque.addEventListener('pointerdown', raio, { passive: true });
-  addEventListener('raio', raio);          // ex.: quem entra na lista de espera
+  const built = document.querySelector('.built');
+  if (built) built.addEventListener('pointerdown', raio, { passive: true });
+  addEventListener('raio', raio);
   setInterval(raio, 22000);
 
-  // dedo/mouse passando: as letras perto "redigitam"
+  // dedo/mouse passando: as letras perto levam uma batida em tinta quente
   const toque = (e) => {
     if (reduz || !C) return;
     const r = cv.getBoundingClientRect(), px = e.clientX - r.left, py = e.clientY - r.top;
     if (py < G.corte - 40) return;
-    const agora = performance.now(), R = 30;
+    const agora = performance.now(), R = DESK.matches ? 38 : 30;
     if (agora - (toque.ult || 0) < 24) return;
     toque.ult = agora;
     for (let i = 0; i < C.n; i++) {
@@ -611,20 +671,38 @@ html:not(.js) .hero::after{content:"";position:absolute;inset:auto 0 0;height:34
   new IntersectionObserver(([e]) => { visivel = e.isIntersecting; if (visivel) pede(); }).observe(hero);
   document.addEventListener('visibilitychange', () => { visivel = !document.hidden; if (visivel) acorda(3000); });
 
-  let espera = 0, larguraAnt = 0;
+  // computador: a pintura acompanha o mouse de leve (profundidade)
+  if (!reduz && matchMedia('(pointer: fine)').matches) {
+    let alvo = [0, 0], atual = [0, 0], rp = 0;
+    const passo = () => {
+      rp = 0;
+      atual = atual.map((v, k) => v + (alvo[k] - v) * 0.07);
+      hero.style.setProperty('--px', atual[0].toFixed(2) + 'px');
+      hero.style.setProperty('--py', atual[1].toFixed(2) + 'px');
+      if (Math.abs(alvo[0] - atual[0]) + Math.abs(alvo[1] - atual[1]) > 0.05) rp = requestAnimationFrame(passo);
+    };
+    addEventListener('pointermove', (e) => {
+      if (!DESK.matches) return;
+      alvo = [(e.clientX / innerWidth - 0.5) * -12, (e.clientY / innerHeight - 0.5) * -9];
+      if (!rp) rp = requestAnimationFrame(passo);
+    }, { passive: true });
+  }
+
+  let espera = 0, ult = '';
   addEventListener('resize', () => {
     clearTimeout(espera);
     espera = setTimeout(() => {
-      const w = hero.getBoundingClientRect().width;
-      if (!C || (Math.abs(w - larguraAnt) < 1 && Math.abs(hero.getBoundingClientRect().height - G.H) < 1)) return;
-      larguraAnt = w; tarefas = []; prepara(); desenhaTudo();
+      const r = hero.getBoundingClientRect(), chave = [Math.round(r.width), Math.round(r.height), DESK.matches].join('x');
+      if (!C || chave === ult) return;
+      ult = chave; tarefas = []; prepara(); desenhaTudo();
     }, 150);
   });
 
-  const fonte = document.fonts && document.fonts.load ? document.fonts.load('600 7px "JetBrains Mono"') : Promise.resolve();
   // não espera a pintura: a geometria vem do width/height do <img>, então a faixa já sai certa
+  const fonte = document.fonts && document.fonts.load ? document.fonts.load('600 7px "JetBrains Mono"') : Promise.resolve();
   Promise.all([carregaDens(), fonte]).then(() => {
-    prepara(); larguraAnt = G.W;
+    prepara();
+    const r = hero.getBoundingClientRect(); ult = [Math.round(r.width), Math.round(r.height), DESK.matches].join('x');
     if (intro) comecaIntro(); else desenhaTudo();
     hero.classList.add('pronto');
     acorda(9000);
