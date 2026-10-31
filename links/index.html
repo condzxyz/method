@@ -87,10 +87,6 @@ html:not(.js) .hero::after{content:"";position:absolute;inset:auto 0 0;height:30
 .hero.pronto .orbe{animation:pulso 5.2s ease-in-out infinite}
 @keyframes pulso{0%,100%{opacity:.18;transform:scale(.92)}50%{opacity:.75;transform:scale(1.06)}}
 
-.share{position:absolute;z-index:6;top:calc(12px + env(safe-area-inset-top));right:12px;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;cursor:pointer;
-  border:1px solid rgba(246,241,231,.22);background:rgba(11,16,32,.38);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);color:var(--ivory);transition:transform .2s var(--ease),background .2s}
-.share:active{transform:scale(.92)}
-.share svg{width:18px;height:18px}
 
 /* ---------- conteúdo ---------- */
 .conteudo{position:relative;z-index:2;padding:0 var(--gut) calc(28px + env(safe-area-inset-bottom))}
@@ -108,10 +104,30 @@ html:not(.js) .hero::after{content:"";position:absolute;inset:auto 0 0;height:30
 .c-in{display:block;padding:18px}
 .c-top{display:flex;justify-content:space-between;align-items:center;gap:12px;font:500 10px/1.2 var(--mono);letter-spacing:.14em;text-transform:uppercase}
 
-/* curso de negociação: o foco */
-.curso{color:var(--ivory);background:var(--night);box-shadow:0 24px 50px -28px rgba(11,16,32,.85)}
-.curso::before{content:"";position:absolute;inset:0;z-index:-1;background:url(img/ceu.webp) center/cover}
-.curso::after{content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;box-shadow:inset 0 0 0 1px rgba(246,241,231,.1);background:linear-gradient(180deg,rgba(11,16,32,.12),rgba(11,16,32,.8) 72%)}
+/* curso de negociação: o foco. Camadas (de trás pra frente): luz correndo na borda, céu, aurora + código
+   passando, véu escuro (leitura), brilho varrendo, conteúdo */
+.curso{color:var(--ivory);background:var(--night);box-shadow:0 24px 50px -28px rgba(11,16,32,.85),0 0 0 1px rgba(11,16,32,.4)}
+.c-borda{position:absolute;left:50%;top:50%;z-index:-5;width:220%;aspect-ratio:1;translate:-50% -50%;will-change:transform;
+  background:conic-gradient(from 0deg,transparent 0 60%,rgba(208,106,64,.0) 62%,rgba(208,106,64,.9) 72%,#ffe7cf 77%,rgba(127,178,255,.75) 81%,transparent 86% 100%);
+  animation:girar 5s linear infinite}
+@keyframes girar{to{transform:rotate(1turn)}}
+.curso::before{content:"";position:absolute;inset:1.5px;z-index:-4;border-radius:18.5px;background:url(img/ceu.webp) center/cover}
+.c-fx{position:absolute;inset:1.5px;z-index:-3;border-radius:18.5px;overflow:hidden;pointer-events:none}
+.c-aurora{position:absolute;inset:-25%;mix-blend-mode:screen;animation:aurora 13s ease-in-out infinite alternate;
+  background:radial-gradient(38% 32% at 22% 28%,rgba(208,106,64,.42),transparent 70%),radial-gradient(42% 38% at 82% 72%,rgba(127,178,255,.26),transparent 70%),radial-gradient(30% 26% at 60% 20%,rgba(255,231,207,.12),transparent 70%)}
+@keyframes aurora{0%{transform:translate(-5%,-4%) scale(1)}50%{transform:translate(3%,2%) scale(1.08)}100%{transform:translate(6%,5%) scale(1.14)}}
+.c-codigo{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-around;padding:6px 0;font:500 10px/1 var(--mono);letter-spacing:.08em;color:rgba(246,241,231,.12);white-space:nowrap;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 14%,#000 86%,transparent);mask-image:linear-gradient(90deg,transparent,#000 14%,#000 86%,transparent)}
+.c-codigo span{display:block;width:max-content;will-change:transform;animation:corre 34s linear infinite}
+.c-codigo span:nth-child(2n){animation-direction:reverse;animation-duration:46s}
+.c-codigo span:nth-child(3n){animation-duration:27s}
+.c-codigo b{font-weight:500;color:rgba(232,140,98,.5)}
+@keyframes corre{to{transform:translateX(-50%)}}
+.curso::after{content:"";position:absolute;inset:1.5px;z-index:-2;border-radius:18.5px;box-shadow:inset 0 0 0 1px rgba(246,241,231,.1);background:linear-gradient(180deg,rgba(11,16,32,.08),rgba(11,16,32,.74) 70%)}
+.c-brilho{position:absolute;inset:1.5px;z-index:-1;border-radius:18.5px;overflow:hidden;pointer-events:none}
+.c-brilho::before{content:"";position:absolute;top:-20%;bottom:-20%;left:0;width:38%;background:linear-gradient(100deg,transparent,rgba(255,236,214,.08) 42%,rgba(255,255,255,.16) 50%,rgba(255,236,214,.08) 58%,transparent);
+  transform:translateX(-160%) skewX(-14deg);animation:varre 6s cubic-bezier(.45,.05,.3,1) infinite 1.5s}
+@keyframes varre{0%,52%{transform:translateX(-160%) skewX(-14deg)}100%{transform:translateX(330%) skewX(-14deg)}}
 .curso .c-top{color:rgba(246,241,231,.7)}
 .vivo{display:inline-flex;align-items:center;gap:8px;color:var(--ivory)}
 .vivo::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--ember-2);animation:vivo 2.4s ease-out infinite}
@@ -127,7 +143,9 @@ html:not(.js) .hero::after{content:"";position:absolute;inset:auto 0 0;height:30
 .c-form input::placeholder{color:#968f82}
 .c-form input:focus{border-color:var(--ember-2);box-shadow:0 0 0 3px rgba(208,106,64,.35)}
 .c-form input[aria-invalid="true"]{border-color:#f3a888}
-.c-form button{display:block;width:100%;height:50px;margin-top:8px;padding:0 18px;border:0;border-radius:13px;background:var(--ember);color:#fff;font:500 15.5px/1 var(--sans);cursor:pointer;transition:background .2s,transform .2s var(--ease)}
+.c-form button{position:relative;overflow:hidden;display:block;width:100%;height:50px;margin-top:8px;padding:0 18px;border:0;border-radius:13px;background:var(--ember);color:#fff;font:500 15.5px/1 var(--sans);cursor:pointer;transition:background .2s,transform .2s var(--ease);box-shadow:0 10px 26px -12px rgba(208,106,64,.8)}
+.c-form button::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,transparent 30%,rgba(255,255,255,.38) 50%,transparent 70%);transform:translateX(-120%);animation:brilhoBotao 3.6s ease-in-out infinite 1.2s}
+@keyframes brilhoBotao{0%,58%{transform:translateX(-120%)}100%{transform:translateX(120%)}}
 .c-form button:active{transform:scale(.985)}
 .c-form button:disabled{opacity:.6}
 .nota{margin:10px 0 0;font-size:12.5px;line-height:1.4;color:rgba(246,241,231,.6)}
@@ -159,9 +177,6 @@ html:not(.js) .hero::after{content:"";position:absolute;inset:auto 0 0;height:30
 .rodape b{font-weight:500;color:var(--ink-2)}
 .rodape .pd{display:inline-flex;align-items:center;gap:6px}
 
-.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom));z-index:9;transform:translate(-50%,20px);opacity:0;pointer-events:none;
-  padding:10px 16px;border-radius:999px;background:var(--ink);color:var(--ivory);font:500 13px/1 var(--sans);transition:opacity .25s,transform .25s var(--ease)}
-.toast.on{opacity:1;transform:translate(-50%,0)}
 
 /* entrada do conteúdo */
 @keyframes sobe{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
@@ -177,17 +192,33 @@ html:not(.js) .hero::after{content:"";position:absolute;inset:auto 0 0;height:30
   .built:hover .b-cta svg{transform:translateX(3px)}
   .c-form button:hover{background:#9e4626}
   .icones a:hover{background:var(--ink);color:var(--ivory);transform:translateY(-2px)}
-  .share:hover{transform:scale(1.06)}
 }
 
 /* ---------- computador: a pintura vira um quadro no papel, o conteúdo ao lado ---------- */
+.fundo{display:none}
 @media (min-width:960px) and (min-aspect-ratio:5/4){
+  /* fundo do computador: pontos andando + linhas de código passando (some atrás do texto) */
+  .fundo{display:block;position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;
+    background-image:radial-gradient(rgba(28,26,22,.2) 1px,transparent 1.5px);background-size:22px 22px;animation:pontos 8s linear infinite}
+  .fundo-codigo{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;padding:14px 0;font:500 11px/1 var(--mono);letter-spacing:.08em;color:rgba(28,26,22,.15);white-space:nowrap;
+    -webkit-mask-image:radial-gradient(ellipse 30% 46% at 71% 50%,transparent 52%,#000 100%);mask-image:radial-gradient(ellipse 30% 46% at 71% 50%,transparent 52%,#000 100%)}
+  .fundo-codigo span{display:block;width:max-content;will-change:transform;animation:corre 95s linear infinite}
+  .fundo-codigo span:nth-child(2n){animation-direction:reverse;animation-duration:125s}
+  .fundo-codigo span:nth-child(3n){animation-duration:72s}
+  .fundo-codigo b{font-weight:500;color:rgba(180,83,47,.55)}
+  .page{position:relative;z-index:1;background:transparent}
+  /* halo de papel atrás dos textos soltos, pro código passando não atrapalhar a leitura */
+  .bio,.arroba,.rodape{text-shadow:0 0 10px var(--paper),0 0 4px var(--paper),0 0 2px var(--paper)}
+  /* raio mais vivo no quadro: zumbido elétrico leve sempre, flash forte com brilho azul na moldura */
+  .hero{transition:box-shadow .45s ease-out}
+  .hero.brilha{box-shadow:0 50px 90px -50px rgba(28,26,22,.6),0 0 0 1px rgba(127,178,255,.55),0 0 90px -4px rgba(127,178,255,.6)}
+  .hero.pronto .raios{-webkit-mask-position:0 0;mask-position:0 0;animation:zumbido 4.2s steps(1,end) infinite}
+  .hero.pronto.raio .raios{animation:raio 1.5s cubic-bezier(.25,.6,.25,1) both;filter:brightness(1.45) saturate(1.15)}
   .page{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:minmax(0,560px) minmax(0,540px);justify-content:center;align-items:center;column-gap:clamp(40px,5.5vw,88px);min-height:100vh;padding:28px clamp(24px,4vw,56px);container-type:normal;overflow:visible}
   .grain{position:fixed}
   .hero{height:min(84vh,800px);border-radius:22px;background:var(--night);box-shadow:0 50px 90px -50px rgba(28,26,22,.6),0 0 0 1px rgba(28,26,22,.08);animation:placa 1.1s var(--ease) backwards}
   .hero img{inset:0;width:100%;height:100%;object-fit:cover;object-position:30% 25%;scale:1.03;translate:var(--px,0px) var(--py,0px)}
   .orbe{translate:var(--px,0px) var(--py,0px)}
-  .share{top:14px;right:14px}
   .conteudo{padding:0}
   .quem{margin-top:0}
   .assina{gap:16px}
@@ -216,6 +247,8 @@ html:not(.js) .hero::after{content:"";position:absolute;inset:auto 0 0;height:30
   .rodape{margin-top:14px}
 }
 @keyframes placa{from{opacity:0;transform:translateY(18px) scale(.985)}to{opacity:1;transform:none}}
+@keyframes pontos{to{background-position:22px 22px}}
+@keyframes zumbido{0%{opacity:.1}11%{opacity:.26}14%{opacity:.07}37%{opacity:.18}40%{opacity:.34}43%{opacity:.12}68%{opacity:.2}71%{opacity:.08}100%{opacity:.14}}
 /* computador com tela baixa (notebook 1280x800 etc.): tudo um pouco mais compacto pra caber sem rolar */
 @media (min-width:960px) and (min-aspect-ratio:5/4) and (max-height:860px){
   .page{padding-top:18px;padding-bottom:18px}
@@ -246,6 +279,7 @@ html:not(.js) .hero::after{content:"";position:absolute;inset:auto 0 0;height:30
 </style>
 </head>
 <body>
+<div class="fundo" aria-hidden="true"><div class="fundo-codigo"></div></div>
 <main class="page">
   <div class="grain" aria-hidden="true"></div>
 
@@ -255,9 +289,6 @@ html:not(.js) .hero::after{content:"";position:absolute;inset:auto 0 0;height:30
     <img class="raios" src="img/raios-trio.webp" width="768" height="960" alt="" aria-hidden="true" decoding="async" fetchpriority="low">
     <span class="orbe" aria-hidden="true"></span>
     <canvas aria-hidden="true"></canvas>
-    <button class="share" type="button" aria-label="Compartilhar esta página">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M8 7l4-4 4 4"/><path d="M5 12v6.5A2.5 2.5 0 0 0 7.5 21h9a2.5 2.5 0 0 0 2.5-2.5V12"/></svg>
-    </button>
   </header>
 
   <div class="conteudo">
@@ -276,6 +307,9 @@ html:not(.js) .hero::after{content:"";position:absolute;inset:auto 0 0;height:30
       <!-- FOCO: curso de negociação, ainda sem link de compra. Lista de espera: o email vai pro built-bot (/lead),
            origem "curso-negociacao". Quando abrir, troque o <form> por um botão com o link de compra. -->
       <div class="card curso espera" data-id="curso-negociacao">
+        <span class="c-borda" aria-hidden="true"></span>
+        <div class="c-fx" aria-hidden="true"><div class="c-aurora"></div><div class="c-codigo"></div></div>
+        <span class="c-brilho" aria-hidden="true"></span>
         <div class="c-in">
           <div class="c-top"><span>Curso</span><span class="vivo">Em breve</span></div>
           <h2 class="c-titulo">Negociação profunda</h2>
@@ -320,7 +354,6 @@ html:not(.js) .hero::after{content:"";position:absolute;inset:auto 0 0;height:30
     <footer class="rodape"><span>© 2026 <b>Conrado de Sá</b></span><span class="pd">pintura <svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="vira"><path d="M5 12h14M13 6l6 6-6 6"/></svg> dados</span></footer>
   </div>
 </main>
-<div class="toast" role="status" aria-live="polite"></div>
 
 <script>
 (() => {
@@ -427,14 +460,24 @@ html:not(.js) .hero::after{content:"";position:absolute;inset:auto 0 0;height:30
     });
   });
 
-  /* ========== 2. compartilhar ========== */
-  const toast = document.querySelector('.toast');
-  const aviso = (txt) => { toast.textContent = txt; toast.classList.add('on'); clearTimeout(aviso.t); aviso.t = setTimeout(() => toast.classList.remove('on'), 1800); };
-  document.querySelector('.share').addEventListener('click', async () => {
-    const url = location.origin + location.pathname;
-    if (navigator.share) { try { await navigator.share({ title: 'Conrado de Sá', url }); return; } catch (e) { if (e && e.name === 'AbortError') return; } }
-    try { await navigator.clipboard.writeText(url); aviso('Link copiado'); } catch (e) { aviso(url); }
-  });
+  /* ========== 1c. código passando (cartão do curso e fundo do computador) ========== */
+  const TOKENS_CURSO = ['NEGOCIAÇÃO', 'CALMA', 'PRESSÃO', 'LEITURA', 'CONTRATO', 'RESPIRA', 'FOCO', 'deal.close()', 'if(pressão) respira()', 'return calma', 'ouvir()', '<b>R$ 27,90</b>', '<b>EM BREVE</b>', '0101', '{ }'];
+  const TOKENS_FUNDO = ['PROMPTS', 'DADOS', 'AGENTE', 'IA', 'BUILD', 'agent.run()', 'prompt()', 'if(input)', 'return data', '{ }', '0101', 'await', 'deploy()', 'FOCO', 'MENTE', '<b>NEGOCIAÇÃO</b>'];
+  const linhas = (el, tokens, n, tam) => {
+    if (!el) return;
+    let html = '';
+    for (let k = 0; k < n; k++) {
+      const p = []; let len = 0;
+      while (len < tam) { const t = tokens[(Math.random() * tokens.length) | 0]; p.push(t); len += t.replace(/<[^>]+>/g, '').length + 3; }
+      const s = p.join('&nbsp;&nbsp;&nbsp;') + '&nbsp;&nbsp;&nbsp;';
+      html += `<span>${s}${s}</span>`;              // repetido: o loop de -50% fica sem emenda
+    }
+    el.innerHTML = html;
+  };
+  linhas(document.querySelector('.c-codigo'), TOKENS_CURSO, 9, 120);
+  if (DESK.matches) linhas(document.querySelector('.fundo-codigo'), TOKENS_FUNDO, 26, Math.ceil(innerWidth / 6.5));
+  DESK.addEventListener && DESK.addEventListener('change', (e) => { if (e.matches && !document.querySelector('.fundo-codigo').children.length) linhas(document.querySelector('.fundo-codigo'), TOKENS_FUNDO, 26, Math.ceil(innerWidth / 6.5)); });
+
 
   /* ========== 3. hero: a pintura vira texto datilografado ========== */
   // corte: linha (px da arte) onde a pintura vira papel. corteD = no computador (quadro mais alto)
@@ -643,12 +686,31 @@ html:not(.js) .hero::after{content:"";position:absolute;inset:auto 0 0;height:30
   const raio = () => {
     if (reduz || !visivel || document.hidden) return;
     hero.classList.remove('raio'); void hero.offsetWidth; hero.classList.add('raio');
+    hero.classList.add('brilha'); clearTimeout(raio.t); raio.t = setTimeout(() => hero.classList.remove('brilha'), 520);
   };
-  raios.addEventListener('animationend', () => hero.classList.remove('raio'));
+  raios.addEventListener('animationend', (e) => { if (e.animationName === 'raio') hero.classList.remove('raio'); });
   const built = document.querySelector('.built');
   if (built) built.addEventListener('pointerdown', raio, { passive: true });
   addEventListener('raio', raio);
-  setInterval(raio, 22000);
+  // computador: raio a cada ~7,5 s e quando o mouse entra no quadro. celular: a cada ~22 s
+  let tique = 0;
+  setInterval(() => { tique++; if (DESK.matches || tique % 3 === 0) raio(); }, 7500);
+  hero.addEventListener('pointerenter', () => { if (DESK.matches && performance.now() - (raio.ult || 0) > 3000) { raio.ult = performance.now(); raio(); } });
+
+  // computador: de tempos em tempos uma "cabeça de impressão" passa pela faixa e as letras acendem em tinta quente
+  const varredura = () => {
+    if (reduz || !visivel || document.hidden || !C || !DESK.matches) return;
+    const agora = performance.now(), dur = 1600, faixa = G.H - G.corte;
+    for (let i = 0; i < C.n; i++) {
+      if (C.ocupado[i]) continue;
+      const t = (C.y[i] - G.corte) / faixa; if (t < 0) continue;
+      C.ocupado[i] = 1;
+      agenda(agora + t * dur, i, 'quente');
+      agenda(agora + t * dur + 260, i, 'volta');
+    }
+    acorda(dur + 600);
+  };
+  setInterval(varredura, 6800);
 
   // dedo/mouse passando: as letras perto levam uma batida em tinta quente
   const toque = (e) => {
