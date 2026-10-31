@@ -56,15 +56,15 @@ svg{display:block}
 /* ---------- hero: a pintura vira texto datilografado ---------- */
 .hero{
   --s:calc(100vw / 1024);
-  --h:clamp(250px, 78vw, 340px);
-  --corte:780;                 /* celular: linha onde a pintura vira papel (px da arte, 1024 de largura) */
-  --faixa:.28;                 /* parte do hero que é papel datilografado */
-  --t:clamp(calc(30 * var(--s)), calc(var(--corte) * var(--s) - (1 - var(--faixa)) * var(--h)), calc(260 * var(--s)));
+  --h:clamp(190px, 56vw, 250px);  /* celular: faixa baixa, só os rostos; o foco é o curso */
+  --corte:730;                 /* celular: linha onde a pintura vira papel (px da arte, 1024 de largura) */
+  --faixa:.2;                  /* parte do hero que é papel datilografado */
+  --t:clamp(calc(30 * var(--s)), calc(var(--corte) * var(--s) - (1 - var(--faixa)) * var(--h)), calc(270 * var(--s)));
   position:relative;height:var(--h);overflow:hidden;
   background:linear-gradient(var(--night) 0 60%, var(--paper) 60%)
 }
 @supports (container-type:inline-size){
-  .hero{--s:calc(100cqw / 1024);--h:clamp(250px, 78cqw, 340px)}
+  .hero{--s:calc(100cqw / 1024);--h:clamp(190px, 56cqw, 250px)}
 }
 .hero img{position:absolute;left:0;top:calc(-1 * var(--t));width:100%;height:auto;user-select:none;-webkit-user-select:none}
 .hero .raios{pointer-events:none;opacity:0;mix-blend-mode:screen;
@@ -94,16 +94,16 @@ html:not(.js) .hero::after{content:"";position:absolute;inset:auto 0 0;height:30
 
 /* ---------- conteúdo ---------- */
 .conteudo{position:relative;z-index:2;padding:0 var(--gut) calc(28px + env(safe-area-inset-bottom))}
-.quem{margin-top:4px}
-.assina{display:flex;align-items:center;gap:14px}
-.avatar{width:56px;height:56px;flex:none;border-radius:50%;overflow:hidden;background:var(--paper-2);box-shadow:0 0 0 1px rgba(28,26,22,.12),0 6px 18px -8px rgba(28,26,22,.45)}
+.quem{margin-top:2px}
+.assina{display:flex;align-items:center;gap:12px}
+.avatar{width:46px;height:46px;flex:none;border-radius:50%;overflow:hidden;background:var(--paper-2);box-shadow:0 0 0 1px rgba(28,26,22,.12),0 6px 18px -8px rgba(28,26,22,.45)}
 .avatar img{width:100%;height:100%;object-fit:cover;display:block}
-.nome{margin:0;font:400 40px/1.02 var(--serif);letter-spacing:-.01em;text-shadow:0 0 14px var(--paper),0 0 4px var(--paper)}
-.arroba{display:block;margin-top:5px;font:500 10.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
-.bio{margin:14px 0 0;font-size:16px;line-height:1.5;color:var(--ink-2)}
+.nome{margin:0;font:400 32px/1.02 var(--serif);letter-spacing:-.01em;text-shadow:0 0 14px var(--paper),0 0 4px var(--paper)}
+.arroba{display:block;margin-top:4px;font:500 10px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.bio{margin:10px 0 0;font-size:15px;line-height:1.45;color:var(--ink-2)}
 
 /* ---------- links: cartões ---------- */
-.links{display:grid;gap:12px;margin-top:22px}
+.links{display:grid;gap:12px;margin-top:16px}
 .card{position:relative;display:block;border-radius:20px;overflow:hidden;isolation:isolate}
 .c-in{display:block;padding:18px}
 .c-top{display:flex;justify-content:space-between;align-items:center;gap:12px;font:500 10px/1.2 var(--mono);letter-spacing:.14em;text-transform:uppercase}
@@ -116,18 +116,18 @@ html:not(.js) .hero::after{content:"";position:absolute;inset:auto 0 0;height:30
 .vivo{display:inline-flex;align-items:center;gap:8px;color:var(--ivory)}
 .vivo::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--ember-2);animation:vivo 2.4s ease-out infinite}
 @keyframes vivo{0%{box-shadow:0 0 0 0 rgba(208,106,64,.6)}70%,100%{box-shadow:0 0 0 9px rgba(208,106,64,0)}}
-.c-titulo{margin:22px 0 0;font:400 44px/.98 var(--serif);letter-spacing:-.01em}
-.c-texto{margin:10px 0 0;font-size:15px;line-height:1.45;color:rgba(246,241,231,.84)}
-.preco{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 12px;margin:16px 0 0;padding-top:14px;border-top:1px solid rgba(246,241,231,.12)}
-.preco b{font:400 34px/1 var(--serif);letter-spacing:-.01em;color:var(--ivory)}
+.c-titulo{margin:14px 0 0;font:400 39px/.98 var(--serif);letter-spacing:-.01em}
+.c-texto{margin:8px 0 0;font-size:14.5px;line-height:1.42;color:rgba(246,241,231,.84)}
+.preco{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 12px;margin:12px 0 0;padding-top:12px;border-top:1px solid rgba(246,241,231,.12)}
+.preco b{font:400 30px/1 var(--serif);letter-spacing:-.01em;color:var(--ivory)}
 .preco span{font:500 10px/1.2 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:rgba(246,241,231,.7)}
-.c-form{margin-top:16px}
+.c-form{margin-top:12px}
 .campos{display:grid;gap:8px}
-.c-form input:not(.isca){width:100%;min-width:0;height:52px;padding:0 16px;border:1px solid transparent;border-radius:13px;background:var(--ivory);color:var(--ink);font:400 16px/1 var(--sans);outline:none;-webkit-appearance:none;appearance:none;transition:box-shadow .2s,border-color .2s}
+.c-form input:not(.isca){width:100%;min-width:0;height:50px;padding:0 16px;border:1px solid transparent;border-radius:13px;background:var(--ivory);color:var(--ink);font:400 16px/1 var(--sans);outline:none;-webkit-appearance:none;appearance:none;transition:box-shadow .2s,border-color .2s}
 .c-form input::placeholder{color:#968f82}
 .c-form input:focus{border-color:var(--ember-2);box-shadow:0 0 0 3px rgba(208,106,64,.35)}
 .c-form input[aria-invalid="true"]{border-color:#f3a888}
-.c-form button{display:block;width:100%;height:52px;margin-top:8px;padding:0 18px;border:0;border-radius:13px;background:var(--ember);color:#fff;font:500 15.5px/1 var(--sans);cursor:pointer;transition:background .2s,transform .2s var(--ease)}
+.c-form button{display:block;width:100%;height:50px;margin-top:8px;padding:0 18px;border:0;border-radius:13px;background:var(--ember);color:#fff;font:500 15.5px/1 var(--sans);cursor:pointer;transition:background .2s,transform .2s var(--ease)}
 .c-form button:active{transform:scale(.985)}
 .c-form button:disabled{opacity:.6}
 .nota{margin:10px 0 0;font-size:12.5px;line-height:1.4;color:rgba(246,241,231,.6)}
@@ -200,7 +200,9 @@ html:not(.js) .hero::after{content:"";position:absolute;inset:auto 0 0;height:30
   .c-titulo{font-size:48px;margin-top:16px}
   .c-texto{font-size:15.5px;margin-top:8px}
   .preco{margin-top:12px;padding-top:12px}
+  .preco b{font-size:34px}
   .c-form{margin-top:12px}
+  .c-form input:not(.isca),.c-form button{height:52px}
   .campos{grid-template-columns:1fr 1fr}
   .built .c-in{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:20px;align-items:end}
   .built .c-top{grid-column:1/-1}
@@ -267,7 +269,7 @@ html:not(.js) .hero::after{content:"";position:absolute;inset:auto 0 0;height:30
           <span class="arroba">@condzxyz</span>
         </div>
       </div>
-      <p class="bio">Exited Founder |<br>Te ajudo a focar no que importa 🧠<br>Comunidade de criadores ↓</p>
+      <p class="bio">Exited Founder |<br>Te ajudo a focar no que importa 🧠</p>
     </section>
 
     <nav class="links" aria-label="Links">
@@ -437,7 +439,7 @@ html:not(.js) .hero::after{content:"";position:absolute;inset:auto 0 0;height:30
   /* ========== 3. hero: a pintura vira texto datilografado ========== */
   // corte: linha (px da arte) onde a pintura vira papel. corteD = no computador (quadro mais alto)
   const ARTES = {
-    trio:   { img: 'img/hero-trio',   dens: 'img/dens-trio.webp',   corte: 780, corteD: 840, orbe: [116, 349] },
+    trio:   { img: 'img/hero-trio',   dens: 'img/dens-trio.webp',   corte: 730, corteD: 840, orbe: [116, 349] },
     macaco: { img: 'img/hero-macaco', dens: 'img/dens-macaco.webp', corte: 905, corteD: 960, orbe: [108, 240] },
   };
   const PALAVRAS = ['PROMPTS', 'DADOS', 'AGENTE', 'IA', 'BUILD', 'PROMPTS', 'DADOS', 'IA', 'AGENTE', 'FOCO', 'MENTE'];
