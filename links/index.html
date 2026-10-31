@@ -197,18 +197,16 @@ html:not(.js) .hero::after{content:"";position:absolute;inset:auto 0 0;height:30
 /* ---------- computador: a pintura vira um quadro no papel, o conteúdo ao lado ---------- */
 .fundo{display:none}
 @media (min-width:960px) and (min-aspect-ratio:5/4){
-  /* fundo do computador: pontos andando + linhas de código passando (some atrás do texto) */
-  .fundo{display:block;position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;
-    background-image:radial-gradient(rgba(28,26,22,.2) 1px,transparent 1.5px);background-size:22px 22px;animation:pontos 8s linear infinite}
-  .fundo-codigo{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;padding:14px 0;font:500 11px/1 var(--mono);letter-spacing:.08em;color:rgba(28,26,22,.15);white-space:nowrap;
-    -webkit-mask-image:radial-gradient(ellipse 30% 46% at 71% 50%,transparent 52%,#000 100%);mask-image:radial-gradient(ellipse 30% 46% at 71% 50%,transparent 52%,#000 100%)}
-  .fundo-codigo span{display:block;width:max-content;will-change:transform;animation:corre 95s linear infinite}
-  .fundo-codigo span:nth-child(2n){animation-direction:reverse;animation-duration:125s}
-  .fundo-codigo span:nth-child(3n){animation-duration:72s}
-  .fundo-codigo b{font-weight:500;color:rgba(180,83,47,.55)}
+  /* fundo do computador: pontos parados sobre um degradê leve de papel (claro no meio, mais fundo nas bordas,
+     um toque quente embaixo à direita e frio em cima à esquerda). Sem animação e sem palavras (pedido dele). */
+  .fundo{display:block;position:fixed;inset:0;z-index:0;pointer-events:none;
+    background-image:
+      radial-gradient(rgba(28,26,22,.15) 1px,transparent 1.5px),
+      radial-gradient(55% 45% at 86% 106%,rgba(180,83,47,.07),transparent 70%),
+      radial-gradient(50% 45% at 6% -6%,rgba(11,16,32,.05),transparent 70%),
+      radial-gradient(130% 95% at 50% 38%,#f9f6ef 0%,#f1ebe0 50%,#e5dccb 100%);
+    background-size:22px 22px,100% 100%,100% 100%,100% 100%}
   .page{position:relative;z-index:1;background:transparent}
-  /* halo de papel atrás dos textos soltos, pro código passando não atrapalhar a leitura */
-  .bio,.arroba,.rodape{text-shadow:0 0 10px var(--paper),0 0 4px var(--paper),0 0 2px var(--paper)}
   /* raio mais vivo no quadro: zumbido elétrico leve sempre, flash forte com brilho azul na moldura */
   .hero{transition:box-shadow .45s ease-out}
   .hero.brilha{box-shadow:0 50px 90px -50px rgba(28,26,22,.6),0 0 0 1px rgba(127,178,255,.55),0 0 90px -4px rgba(127,178,255,.6)}
@@ -247,7 +245,6 @@ html:not(.js) .hero::after{content:"";position:absolute;inset:auto 0 0;height:30
   .rodape{margin-top:14px}
 }
 @keyframes placa{from{opacity:0;transform:translateY(18px) scale(.985)}to{opacity:1;transform:none}}
-@keyframes pontos{to{background-position:22px 22px}}
 @keyframes zumbido{0%{opacity:.1}11%{opacity:.26}14%{opacity:.07}37%{opacity:.18}40%{opacity:.34}43%{opacity:.12}68%{opacity:.2}71%{opacity:.08}100%{opacity:.14}}
 /* computador com tela baixa (notebook 1280x800 etc.): tudo um pouco mais compacto pra caber sem rolar */
 @media (min-width:960px) and (min-aspect-ratio:5/4) and (max-height:860px){
@@ -279,7 +276,7 @@ html:not(.js) .hero::after{content:"";position:absolute;inset:auto 0 0;height:30
 </style>
 </head>
 <body>
-<div class="fundo" aria-hidden="true"><div class="fundo-codigo"></div></div>
+<div class="fundo" aria-hidden="true"></div>
 <main class="page">
   <div class="grain" aria-hidden="true"></div>
 
@@ -460,9 +457,8 @@ html:not(.js) .hero::after{content:"";position:absolute;inset:auto 0 0;height:30
     });
   });
 
-  /* ========== 1c. código passando (cartão do curso e fundo do computador) ========== */
+  /* ========== 1c. código passando (cartão do curso) ========== */
   const TOKENS_CURSO = ['NEGOCIAÇÃO', 'CALMA', 'PRESSÃO', 'LEITURA', 'CONTRATO', 'RESPIRA', 'FOCO', 'deal.close()', 'if(pressão) respira()', 'return calma', 'ouvir()', '<b>R$ 27,90</b>', '<b>EM BREVE</b>', '0101', '{ }'];
-  const TOKENS_FUNDO = ['PROMPTS', 'DADOS', 'AGENTE', 'IA', 'BUILD', 'agent.run()', 'prompt()', 'if(input)', 'return data', '{ }', '0101', 'await', 'deploy()', 'FOCO', 'MENTE', '<b>NEGOCIAÇÃO</b>'];
   const linhas = (el, tokens, n, tam) => {
     if (!el) return;
     let html = '';
@@ -475,8 +471,6 @@ html:not(.js) .hero::after{content:"";position:absolute;inset:auto 0 0;height:30
     el.innerHTML = html;
   };
   linhas(document.querySelector('.c-codigo'), TOKENS_CURSO, 9, 120);
-  if (DESK.matches) linhas(document.querySelector('.fundo-codigo'), TOKENS_FUNDO, 26, Math.ceil(innerWidth / 6.5));
-  DESK.addEventListener && DESK.addEventListener('change', (e) => { if (e.matches && !document.querySelector('.fundo-codigo').children.length) linhas(document.querySelector('.fundo-codigo'), TOKENS_FUNDO, 26, Math.ceil(innerWidth / 6.5)); });
 
 
   /* ========== 3. hero: a pintura vira texto datilografado ========== */
