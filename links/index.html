@@ -215,8 +215,7 @@ html:not(.js) .hero::after{content:"";position:absolute;inset:auto 0 0;height:30
   .page{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:minmax(0,560px) minmax(0,540px);justify-content:center;align-items:center;column-gap:clamp(40px,5.5vw,88px);min-height:100vh;padding:28px clamp(24px,4vw,56px);container-type:normal;overflow:visible}
   .grain{position:fixed}
   .hero{height:min(84vh,800px);border-radius:22px;background:var(--night);box-shadow:0 50px 90px -50px rgba(28,26,22,.6),0 0 0 1px rgba(28,26,22,.08);animation:placa 1.1s var(--ease) backwards}
-  .hero img{inset:0;width:100%;height:100%;object-fit:cover;object-position:30% 25%;scale:1.03;translate:var(--px,0px) var(--py,0px)}
-  .orbe{translate:var(--px,0px) var(--py,0px)}
+  .hero img{inset:0;width:100%;height:100%;object-fit:cover;object-position:30% 25%}
   .conteudo{padding:0}
   .quem{margin-top:0}
   .assina{gap:16px}
@@ -729,22 +728,6 @@ html:not(.js) .hero::after{content:"";position:absolute;inset:auto 0 0;height:30
   new IntersectionObserver(([e]) => { visivel = e.isIntersecting; if (visivel) pede(); }).observe(hero);
   document.addEventListener('visibilitychange', () => { visivel = !document.hidden; if (visivel) acorda(3000); });
 
-  // computador: a pintura acompanha o mouse de leve (profundidade)
-  if (!reduz && matchMedia('(pointer: fine)').matches) {
-    let alvo = [0, 0], atual = [0, 0], rp = 0;
-    const passo = () => {
-      rp = 0;
-      atual = atual.map((v, k) => v + (alvo[k] - v) * 0.07);
-      hero.style.setProperty('--px', atual[0].toFixed(2) + 'px');
-      hero.style.setProperty('--py', atual[1].toFixed(2) + 'px');
-      if (Math.abs(alvo[0] - atual[0]) + Math.abs(alvo[1] - atual[1]) > 0.05) rp = requestAnimationFrame(passo);
-    };
-    addEventListener('pointermove', (e) => {
-      if (!DESK.matches) return;
-      alvo = [(e.clientX / innerWidth - 0.5) * -12, (e.clientY / innerHeight - 0.5) * -9];
-      if (!rp) rp = requestAnimationFrame(passo);
-    }, { passive: true });
-  }
 
   let espera = 0, ult = '';
   addEventListener('resize', () => {
