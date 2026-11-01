@@ -239,7 +239,7 @@ h1,h2,h3,p{margin:0}
 .op-txt small{font:400 12.5px/1.25 var(--sans);letter-spacing:0;text-transform:none;opacity:.7}
 #btn-share{align-self:stretch}
 @media (max-width:520px){.share-txt{display:none}#btn-share{width:56px;padding:0}.opcao{padding:8px 12px 8px 14px}.op-txt b{font-size:12px;letter-spacing:.05em}}
-/* tela do curso Negociação profunda (em breve) */
+/* tela do curso Negociação profunda (aberto desde 31/10: o botão leva pra página de vendas) */
 .slide-curso .capa{flex:none;height:clamp(140px,25vh,240px);border-radius:16px;border:1px solid var(--linha2);background:#0b1020 center 40%/cover;box-shadow:0 24px 50px -24px rgba(0,0,0,.8)}
 .curso-tag{display:inline-flex;align-items:center;gap:8px;margin-top:16px;color:rgba(255,255,255,.82)}
 .curso-tag i{width:7px;height:7px;border-radius:50%;background:#E8622F;animation:vivo 2.4s ease-out infinite}
@@ -465,7 +465,7 @@ h1,h2,h3,p{margin:0}
         <!-- 30/10 (pedido do Conrado): duas saídas no fim do teste. Aprender a negociar → Negociação profunda; ou a Built -->
         <div class="acoes">
           <p class="rotulo escolha-t">Seu próximo passo</p>
-          <button type="button" class="btn opcao" data-ir="2"><span class="op-txt"><b>Aprender a negociar e melhorar</b><small>Negociação profunda · R$ 27,90 · em breve</small></span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
+          <button type="button" class="btn opcao" data-ir="2"><span class="op-txt"><b>Aprender a negociar e melhorar</b><small>Negociação profunda · R$ 27,90 · aberto</small></span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
           <button type="button" class="btn escuro" id="btn-share" aria-label="Compartilhar no story"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 10V2M5 5l3-3 3 3M3 8v5h10V8"/></svg><span class="share-txt">Story</span></button>
           <button type="button" class="btn escuro opcao" data-ir="1"><span class="op-txt"><b>Entrar na comunidade</b><small>Built no Telegram · R$ 120/mês</small></span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
         </div>
@@ -487,26 +487,18 @@ h1,h2,h3,p{margin:0}
         <p class="of-links"><button type="button" class="linkzinho" data-sheet="mods">O que tem dentro</button><button type="button" class="linkzinho" data-sheet="faq">Perguntas</button><button type="button" class="linkzinho" data-sheet="sobre">Quem conduz</button></p>
       </div>
 
-      <!-- Negociação profunda (curso, em breve): entra na lista de espera com o WhatsApp e o email que a pessoa já deixou no teste.
-           Vai pro built-bot (/lead, origem "curso-negociacao") e o Conrado recebe o aviso no Telegram. Quando abrir, troque o form pelo link de compra. -->
+      <!-- Negociação profunda (curso aberto desde 31/10/2026): o botão leva pra página de vendas em /negociacao/ (chamada de 1 min
+           + checkout da Hubla), com utm_medium/utm_campaign "teste-perfil". A lista de espera saiu (pedido do Conrado). -->
       <div class="slide slide-curso" data-s="2" id="curso">
         <div class="capa" aria-hidden="true"></div>
-        <p class="rotulo curso-tag"><i></i>Curso · em breve</p>
+        <p class="rotulo curso-tag"><i></i>Curso · aberto</p>
         <h2 class="h-serif h2">Negociação profunda</h2>
-        <p class="neg-txt">Negociar com calma e inteligência emocional. Abre nos próximos dias.</p>
+        <p class="neg-txt">Negociar com calma e inteligência emocional. 10 módulos em vídeo, 11 exercícios em PDF e uma jornada de 30 dias.</p>
         <div class="espaco"></div>
         <div class="preco">
           <div class="valor">R$ 27,90<small>preço de lançamento</small></div>
-          <form class="curso-form" novalidate>
-            <div class="curso-campos" hidden>
-              <label class="campo"><span>WhatsApp</span><input name="whats" type="tel" inputmode="tel" autocomplete="tel-national" maxlength="20" placeholder="(11) 98765-4321"></label>
-              <label class="campo"><span>Email</span><input name="email" type="email" inputmode="email" autocomplete="email" maxlength="120" placeholder="seu@email.com"></label>
-            </div>
-            <button class="btn" type="submit" id="btn-curso">Me avisa quando abrir <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
-            <p class="gatilho" id="curso-info">Te aviso no WhatsApp e no email que você deixou.</p>
-            <p class="erro" role="alert"></p>
-          </form>
-          <p class="curso-ok" hidden role="status"></p>
+          <a class="btn" id="btn-curso" href="/negociacao/">Ver o curso <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          <p class="gatilho">Acesso na hora pela Hubla. Pix, cartão ou boleto.</p>
           <button type="button" class="linkzinho" data-ir="1">ou entrar na comunidade · R$ 120/mês</button>
         </div>
       </div>
@@ -1314,53 +1306,20 @@ ${raios}
     if (dx > 60 && Math.abs(dx) > Math.abs(dy) * 1.5 && slide > 0 && !document.body.classList.contains('so-oferta')) irSlide(0);
   });
 
-  // ---------------- curso Negociação profunda (em breve): lista de espera ----------------
-  // Quem acabou de fazer o teste já deixou WhatsApp e email: entra na lista com 1 clique. Quem volta outro dia
-  // (o contato não fica salvo no aparelho) preenche os dois campos.
-  const CURSO_KEY = 'carta_curso_lista';
-  const foneBR = (w) => { let d = String(w || '').replace(/\D/g, ''); if (/^55\d{10,11}$/.test(d)) d = d.slice(2); return d.length >= 10 ? `(${d.slice(0, 2)}) ${d.slice(2, d.length - 4)}-${d.slice(-4)}` : String(w || ''); };
-  const naListaCurso = () => { try { return localStorage.getItem(CURSO_KEY) === '1'; } catch (e) { return false; } };
+  // ---------------- curso Negociação profunda (aberto desde 31/10): leva pra página de vendas ----------------
   function prepararCurso() {
     const capa = $('.slide-curso .capa');
     if (capa && !capa.style.backgroundImage) capa.style.backgroundImage = 'url(img/negociacao.webp)';   // só carrega quando abre
-    const form = $('.curso-form'), ok = $('.curso-ok');
-    if (naListaCurso()) { form.hidden = true; ok.hidden = false; ok.textContent = 'Você já está na lista. Te aviso no WhatsApp e no email quando abrir.'; return; }
-    form.hidden = false; ok.hidden = true;
-    const temContato = EMAIL.test(estado.email) && zapOk(estado.whats);
-    $('.curso-campos').hidden = temContato;
-    $('#curso-info').textContent = temContato
-      ? `Te aviso no WhatsApp ${foneBR(estado.whats)} e no email ${estado.email}.`
-      : 'Deixa seu WhatsApp e email que eu te aviso quando abrir.';
-  }
-  $('.curso-form').addEventListener('submit', async (ev) => {
-    ev.preventDefault();
-    const f = ev.currentTarget, err = f.querySelector('.erro'), btn = $('#btn-curso'), textoBtn = btn.innerHTML;
-    let email = estado.email, whats = estado.whats;
-    if (!$('.curso-campos').hidden) { email = f.email.value.trim().toLowerCase(); whats = f.whats.value.trim(); }
-    if (!zapOk(whats)) { err.textContent = 'Confere o WhatsApp com DDD.'; if (!$('.curso-campos').hidden) f.whats.focus(); return; }
-    if (!EMAIL.test(email)) { err.textContent = 'Confere o email.'; if (!$('.curso-campos').hidden) f.email.focus(); return; }
-    err.textContent = ''; btn.disabled = true; btn.textContent = 'Enviando…';
-    try {
-      if (!local) {
-        const ctl = new AbortController(); const t = setTimeout(() => ctl.abort(), 12000);
-        const r = await fetch(CFG.leadUrl, {
-          method: 'POST', headers: { 'content-type': 'application/json' }, signal: ctl.signal,
-          body: JSON.stringify({ email, whatsapp: whats, source: 'curso-negociacao', utm: { utm_source: utm.utm_source || 'direto', utm_medium: 'teste-perfil', utm_campaign: 'teste-perfil' }, tg }),
-        }).finally(() => clearTimeout(t));
-        const j = await r.json().catch(() => ({}));
-        if (!r.ok || !j.ok) throw new Error(j.error || 'erro');
-      }
-      try { localStorage.setItem(CURSO_KEY, '1'); } catch (e) {}
-      track('carta_curso_lista');
-      f.hidden = true;
-      const ok = $('.curso-ok'); ok.hidden = false;
-      ok.textContent = `Pronto${estado.nome ? ', ' + estado.nome : ''}. Te aviso no WhatsApp e no email quando abrir.${local ? ' (teste local: nada foi enviado)' : ''}`;
-    } catch (e) {
-      const m = (e && e.message) || '';
-      err.textContent = /muitas/.test(m) ? 'Muitas tentativas. Tenta de novo daqui a pouco.' : /whats/i.test(m) ? 'Confere o WhatsApp com DDD (celular começa com 9).' : 'Não deu certo. Tenta de novo?';
-      btn.disabled = false; btn.innerHTML = textoBtn;
+    const a = $('#btn-curso');
+    if (a && !a.dataset.pronto) {
+      const u = new URL(a.getAttribute('href'), location.href);
+      u.searchParams.set('utm_source', utm.utm_source || (tg ? 'bot' : 'direto'));
+      u.searchParams.set('utm_medium', 'teste-perfil');
+      u.searchParams.set('utm_campaign', 'teste-perfil');
+      a.href = u.toString(); a.dataset.pronto = '1';
     }
-  });
+  }
+  $('#btn-curso').addEventListener('click', () => track('carta_curso_clique'));
 
   function revelar(animado) {
     if (!estado.res) estado.res = calcular(estado.r);
