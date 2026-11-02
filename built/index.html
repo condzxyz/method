@@ -233,11 +233,20 @@ h1,h2,h3,p{margin:0}
 /* fim do teste (30/10): duas saídas — Negociação profunda ou a Built */
 .escolha-t{grid-column:1/-1;margin:0 0 -2px;color:rgba(255,255,255,.62)}
 .opcao{justify-content:space-between;gap:12px;min-height:60px;padding:8px 14px 8px 16px;text-align:left}
-.opcao[data-ir="2"]{grid-column:1/-1}
+.opcao[data-ir="1"]{grid-column:1/-1}
 .op-txt{display:grid;gap:4px;min-width:0}
 .op-txt b{font:600 12.5px/1.2 var(--mono);letter-spacing:.07em;text-transform:uppercase}
 .op-txt small{font:400 12.5px/1.25 var(--sans);letter-spacing:0;text-transform:none;opacity:.7}
 #btn-share{align-self:stretch}
+/* 02/11: quadro "o que é / pra quem" da Built na tela da carta + topo da tela da comunidade */
+.built-pitch{border-color:rgba(155,140,255,.28);background:linear-gradient(180deg,rgba(155,140,255,.08),rgba(14,14,14,.92) 60%)}
+.pilula i.roxo{background:var(--roxo)}
+.built-pitch .ui-txt b{color:#fff;font-weight:600}
+.built-pitch .ui-txt + .ui-txt{margin-top:6px}
+.built-perfil{color:rgba(255,255,255,.9)!important;font-style:italic}
+.built-perfil:empty{display:none}
+.of-lead{margin-top:8px;font-size:clamp(14.5px,2vh,16px);line-height:1.5;color:var(--txt2)}
+.of-lista{margin-top:14px}
 @media (max-width:520px){.share-txt{display:none}#btn-share{width:56px;padding:0}.opcao{padding:8px 12px 8px 14px}.op-txt b{font-size:12px;letter-spacing:.05em}}
 /* tela do curso Negociação profunda (aberto desde 31/10: o botão leva pra página de vendas) */
 .slide-curso .capa{flex:none;height:clamp(140px,25vh,240px);border-radius:16px;border:1px solid var(--linha2);background:#0b1020 center 40%/cover;box-shadow:0 24px 50px -24px rgba(0,0,0,.8)}
@@ -257,16 +266,42 @@ h1,h2,h3,p{margin:0}
 @media (min-width:920px){
   .slides{max-width:1180px}
   .slide-oferta,.slide-curso{max-width:640px;margin:0 auto}
-  .slide-carta{display:grid;grid-template-columns:auto minmax(320px,480px);grid-template-rows:minmax(0,1fr) auto auto auto minmax(0,1fr);grid-template-areas:"carta ." "carta titulo" "carta leitura" "carta acoes" "carta .";column-gap:clamp(36px,5vw,80px);justify-content:center;padding:0 24px 20px}
+  .slide-carta{display:grid;grid-template-columns:auto minmax(320px,480px);grid-template-rows:minmax(0,1fr) auto auto auto auto minmax(0,1fr);grid-template-areas:"carta ." "carta titulo" "carta leitura" "carta built" "carta acoes" "carta .";column-gap:clamp(36px,5vw,80px);justify-content:center;padding:0 24px 20px}
   .slide-carta .res-h1{grid-area:titulo;text-align:left;font-size:clamp(32px,4.6vh,48px)}
   .slide-carta .carta-col{grid-area:carta;align-self:center}
   .slide-carta .palco{padding:0}
-  .slide-carta .stage{width:auto;height:clamp(360px,min(720px,calc(100vh - 170px),calc((100vw - 540px) * 1.4)),720px)}
+  .slide-carta .stage{width:auto;height:clamp(360px,min(720px,calc(100vh - 170px),calc((100vw - 600px) * 1.4)),720px)}
   .slide-carta .leitura{grid-area:leitura;margin-top:18px}
-  .slide-carta .acoes{grid-area:acoes;position:static;margin-top:18px;padding:0;background:none}
+  .slide-carta .built-pitch{grid-area:built;margin-top:10px}
+  /* 02/11: coluna da direita compacta pra caber carta + leitura + Built + botões em ~800 px; se não couber, os botões ficam presos embaixo */
+  .slide-carta{grid-template-columns:auto minmax(320px,540px)}
+  .slide-carta .res-h1{font-size:clamp(30px,4.2vh,44px)}
+  .slide-carta .leitura .ui,.slide-carta .built-pitch{margin-top:8px;padding:10px 14px}
+  .slide-carta .leitura .ui:first-child{margin-top:0}
+  .slide-carta .leitura .pilula,.slide-carta .built-pitch .pilula{padding:4px 10px;font-size:12px}
+  .slide-carta .leitura .ui-txt,.slide-carta .built-pitch .ui-txt{margin-top:6px;font-size:14px;line-height:1.45}
+  .slide-carta .built-pitch .ui-txt + .ui-txt{margin-top:4px}
+  .slide-carta .leitura .pilula,.slide-carta .built-pitch .pilula{float:left;margin:0 10px 2px 0}
+  .slide-carta .leitura .ui-txt,.slide-carta .built-pitch .ui-txt:first-of-type{margin-top:0}
+  .slide-carta .leitura .ui::after,.slide-carta .built-pitch::after{content:"";display:block;clear:both}
+  .slide-carta .acoes{position:sticky;bottom:0;z-index:3;margin-top:12px;padding:14px 0 16px;background:linear-gradient(180deg,rgba(5,5,5,0) 0,rgba(5,5,5,.96) 14px)}
+  .slide-carta .carta-col{position:sticky;top:12px}
+  .slide-carta .acoes{grid-area:acoes}
 }
 .vsl{margin:12px auto 0;width:min(100%,max(300px,calc((100vh - 430px) * 16 / 9)));aspect-ratio:16/9;border-radius:14px;overflow:hidden;background:#000;border:1px solid var(--linha2)}
 .vsl video{display:block;width:100%;height:100%;background:#000}
+/* 02/11: no computador, vídeo à esquerda e "o que é / pra quem" + preço + botão à direita, tudo sem rolar */
+@media (min-width:920px){
+  .slide-oferta{max-width:1140px;display:grid;grid-template-columns:minmax(0,1fr) minmax(340px,420px);grid-template-rows:minmax(0,1fr) auto auto auto auto auto auto minmax(0,1fr);grid-template-areas:"vsl ." "vsl rot" "vsl h2" "vsl lead" "vsl lista" "vsl preco" "vsl links" "vsl .";column-gap:clamp(28px,4vw,56px);padding:0 24px 20px}
+  .slide-oferta > .rotulo{grid-area:rot;margin-top:0}
+  .slide-oferta > .h2{grid-area:h2}
+  .slide-oferta > .of-lead{grid-area:lead}
+  .slide-oferta > .vsl{grid-area:vsl;align-self:center;width:100%;margin:0}
+  .slide-oferta > .of-lista{grid-area:lista}
+  .slide-oferta > .espaco{display:none}
+  .slide-oferta > .preco{grid-area:preco;margin-top:18px}
+  .slide-oferta > .of-links{grid-area:links;margin-bottom:0}
+}
 .tarefa h3{margin-top:8px;font-size:clamp(21px,3.2vh,28px);line-height:1.18}
 .tarefa .semana{margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,.18)}
 .tarefa .semana p:last-child{margin-top:6px;font-size:clamp(14.5px,2vh,16px);line-height:1.5;color:rgba(255,255,255,.92)}
@@ -462,20 +497,34 @@ h1,h2,h3,p{margin:0}
           <div class="ui"><span class="pilula"><i class="vermelho"></i>Seu ponto cego</span><p class="ui-txt" id="l-cego"></p></div>
           <div class="ui"><span class="pilula"><i class="azul"></i>Onde a IA entra</span><p class="ui-txt" id="l-ia"></p></div>
         </div>
-        <!-- 30/10 (pedido do Conrado): duas saídas no fim do teste. Aprender a negociar → Negociação profunda; ou a Built -->
+        <!-- 02/11 (pedido do Conrado): deixar claro o que é a Built e pra quem, ainda na tela da carta -->
+        <div class="ui built-pitch">
+          <span class="pilula"><i class="roxo"></i>A Built</span>
+          <p class="ui-txt"><b>O que é:</b> a comunidade paga de criadores do Conrado, no Telegram. Chat todo dia, feedback nos seus rascunhos, call ao vivo todo mês e uma ideia de post por dia.</p>
+          <p class="ui-txt"><b>Pra quem:</b> quem é CLT, toca um negócio ou busca uma nova renda e quer criar conteúdo e montar o próprio negócio com IA, sem fazer isso sozinho.</p>
+          <p class="ui-txt built-perfil" id="built-perfil"></p>
+        </div>
+        <!-- 30/10: duas saídas no fim do teste. 02/11: a comunidade é a saída principal (botão branco); o curso fica embaixo -->
         <div class="acoes">
           <p class="rotulo escolha-t">Seu próximo passo</p>
-          <button type="button" class="btn opcao" data-ir="2"><span class="op-txt"><b>Aprender a negociar e melhorar</b><small>Negociação profunda · R$ 27,90 · aberto</small></span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
+          <button type="button" class="btn opcao" data-ir="1"><span class="op-txt"><b>Entrar na comunidade</b><small>Built · criadores no Telegram · R$ 120/mês</small></span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
           <button type="button" class="btn escuro" id="btn-share" aria-label="Compartilhar no story"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 10V2M5 5l3-3 3 3M3 8v5h10V8"/></svg><span class="share-txt">Story</span></button>
-          <button type="button" class="btn escuro opcao" data-ir="1"><span class="op-txt"><b>Entrar na comunidade</b><small>Built no Telegram · R$ 120/mês</small></span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
+          <button type="button" class="btn escuro opcao" data-ir="2"><span class="op-txt"><b>Aprender a negociar</b><small>Negociação profunda · R$ 27,90</small></span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
         </div>
       </div>
 
       <!-- vídeo de 5 min + pagar e entrar no Telegram -->
       <div class="slide slide-oferta" data-s="1" id="oferta">
-        <p class="rotulo">Comunidade de criadores no Telegram</p>
-        <h2 class="h-serif h2">Como funciona a Built, em 5 minutos.</h2>
+        <p class="rotulo">Comunidade paga no Telegram</p>
+        <h2 class="h-serif h2">Built, a comunidade de criadores do Conrado.</h2>
+        <p class="of-lead">Uma galera criando conteúdo e montando o próprio negócio com IA, junto. Pra quem é CLT, toca um negócio ou busca uma nova renda.</p>
         <div class="vsl"><video id="vsl" controls playsinline preload="metadata" poster="video/vsl.jpg"><source src="video/vsl.mp4" type="video/mp4"></video></div>
+        <ul class="built-lista of-lista">
+          <li>Chat no Telegram com a galera, todo dia</li>
+          <li>Feedback do Conrado nos seus rascunhos</li>
+          <li>Call ao vivo todo mês, gravada</li>
+          <li>Uma ideia de post por dia, às 9h</li>
+        </ul>
         <div class="espaco"></div>
         <div class="preco">
           <div class="valor"><span id="price-main">R$ 120</span><small id="price-per">/mês</small></div>
@@ -1268,6 +1317,7 @@ ${raios}
     $('#l-forte').textContent = A.forte;
     $('#l-cego').textContent = A.cego;
     $('#l-ia').textContent = A.ia;
+    $('#built-perfil').textContent = `Pra quem é ${A.nome}, o foco lá dentro é virar ${A.evo}: prazo, grupo e alguém revisando o seu rascunho.`;
     montarOferta(A);
   }
 
