@@ -197,16 +197,26 @@ html:not(.js) .hero::after{content:"";position:absolute;inset:auto 0 0;height:30
 
 /* ---------- 04/11 v2: one-pager compacto ---------- */
 .news{margin-top:16px}
-.news .c-titulo{font-size:42px;margin-top:12px}
-.news .c-texto{margin-top:6px}
-.pilulas{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 0;padding:0;list-style:none}
-.pilulas li{padding:6px 10px;border-radius:999px;border:1px solid rgba(246,241,231,.18);background:rgba(246,241,231,.06);font:500 10px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:rgba(246,241,231,.88)}
+/* 04/11 v3 (pedido dele: "deixar mais claro que é newsletter, tudo muito pequeno"): selo claro, letras maiores, sem o código passando atrás do texto */
+.news .c-codigo{display:none}
+.news .c-top{font-size:11.5px;color:rgba(246,241,231,.85)}
+.selo-news{display:inline-flex;align-items:center;gap:7px;padding:7px 12px 7px 10px;border-radius:999px;background:var(--ivory);color:var(--night);font:600 12px/1 var(--mono);letter-spacing:.14em}
+.selo-news svg{width:15px;height:15px}
+.news .vivo{white-space:nowrap}
+@media (max-width:479px){.so-pc{display:none}}
+.news .c-titulo{font-size:44px;margin-top:14px}
+.news .c-texto{margin-top:8px;font-size:16.5px;line-height:1.45;color:rgba(246,241,231,.94)}
+.pilulas{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 0;padding:0;list-style:none}
+.pilulas li{padding:7px 12px;border-radius:999px;border:1px solid rgba(246,241,231,.24);background:rgba(246,241,231,.08);font:500 13.5px/1.1 var(--sans);color:var(--ivory)}
+.news .c-form input:not(.isca){height:54px;font-size:16.5px}
+.news .c-form button{height:54px;font-size:16px;font-weight:600}
+.news .nota{font-size:13.5px;color:rgba(246,241,231,.78)}
 .news .c-form{margin-top:14px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px}
 .news .c-form .campos{grid-column:1}
 .news .c-form button{grid-column:2;margin-top:0;width:auto;padding:0 18px}
 .news .c-form .nota{grid-column:1/-1;margin-top:2px}
 .news .ok{margin-top:14px}
-@media (max-width:479px){.news .c-form{grid-template-columns:1fr}.news .c-form button{grid-column:1;width:100%}.pilulas li{padding:5px 9px;letter-spacing:.08em}.duo .b-cta i,.duo .o-cta i{display:none}.duo .b-cta,.duo .o-cta{justify-content:center;padding:0 10px}}
+@media (max-width:479px){.news .c-form{grid-template-columns:1fr}.news .c-form button{grid-column:1;width:100%}.pilulas li{padding:6px 10px;font-size:13px}.duo .b-cta i,.duo .o-cta i{display:none}.duo .b-cta,.duo .o-cta{justify-content:center;padding:0 10px}}
 /* Built e Otto lado a lado, mesma altura */
 .duo{grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
 .duo .card .c-in{display:flex;flex-direction:column;align-items:stretch;height:100%;padding:14px}
@@ -261,6 +271,8 @@ html:not(.js) .hero::after{content:"";position:absolute;inset:auto 0 0;height:30
   .page{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:minmax(0,560px) minmax(0,540px);justify-content:center;align-items:center;column-gap:clamp(40px,5.5vw,88px);min-height:100vh;padding:28px clamp(24px,4vw,56px);container-type:normal;overflow:visible}
   /* 04/11 v2: tudo numa tela só, pintura à esquerda e conteúdo à direita */
   .news .c-titulo{font-size:56px}
+  .news .c-texto{font-size:17.5px}
+  .news .c-in{padding:22px}
   .news .campos{grid-template-columns:1fr}
   .news .c-form button{padding:0 24px}
   .pilulas{margin-top:14px}
@@ -314,13 +326,61 @@ html:not(.js) .hero::after{content:"";position:absolute;inset:auto 0 0;height:30
   .c-form input:not(.isca),.c-form button,.c-cta{height:46px}
   .c-form button{margin-top:6px}
   .nota{margin-top:8px}
-  .news .c-titulo{font-size:46px}
+  .news .c-titulo{font-size:50px}
+  .news .c-texto{font-size:16.5px}
+  .news .c-in{padding:20px}
+  .news .c-form input:not(.isca),.news .c-form button{height:50px}
   .duo .card .c-in{padding:15px 16px}
   .duo .b-titulo{font-size:32px}
   .duo .b-cta,.duo .o-cta{min-height:42px}
   .redes{margin-top:14px}
   .icones a{width:40px;height:40px}
   .rodape{margin-top:10px}
+}
+/* ---------- 04/11 v3: o site todo maior e mais legível (pedido dele: "tudo muito pequeno e difícil de ler") ---------- */
+.nome{font-size:36px}
+.avatar{width:50px;height:50px}
+.arroba{font-size:10.5px}
+.bio{font-size:16.5px;line-height:1.45}
+.duo .c-top{font-size:10px}
+.duo .b-titulo{font-size:34px}
+.duo .o-titulo{font-size:28px}
+.duo .b-texto,.duo .o-texto{font-size:14.5px;line-height:1.4}
+.duo .b-cta,.duo .o-cta{min-height:46px;font-size:14.5px}
+.redes .rotulo{font-size:11px}
+.icones a{width:48px;height:48px}
+.rodape{font-size:10.5px}
+@media (min-width:960px) and (min-aspect-ratio:5/4){
+  .page{grid-template-columns:minmax(0,500px) minmax(0,620px);column-gap:clamp(40px,5vw,80px)}
+  .avatar{width:66px;height:66px}
+  .nome{font-size:clamp(50px,4vw,56px)}
+  .page{padding-top:20px;padding-bottom:20px}
+  .arroba{font-size:12px}
+  .bio{font-size:19px;margin-top:14px}
+  .news{margin-top:20px}
+  .duo{gap:14px;margin-top:14px}
+  .duo .card .c-in{padding:18px 20px}
+  .duo .c-top{font-size:11px}
+  .duo .b-titulo{font-size:40px}
+  .duo .o-titulo{font-size:34px}
+  .duo .o-icone{width:38px;height:38px}
+  .duo .b-texto,.duo .o-texto{font-size:16px}
+  .duo .b-cta,.duo .o-cta{min-height:52px;font-size:16px;padding:0 8px 0 16px}
+  .icones a{width:48px;height:48px}
+  .rodape{font-size:11px}
+}
+@media (min-width:960px) and (min-aspect-ratio:5/4) and (max-height:860px){
+  .avatar{width:56px;height:56px}
+  .nome{font-size:48px}
+  .bio{font-size:17px;margin-top:10px}
+  .news{margin-top:14px}
+  .duo{gap:12px;margin-top:12px}
+  .duo .card .c-in{padding:16px 18px}
+  .duo .b-titulo{font-size:36px}
+  .duo .o-titulo{font-size:30px}
+  .duo .b-texto,.duo .o-texto{font-size:15px}
+  .duo .b-cta,.duo .o-cta{min-height:46px;font-size:15px}
+  .icones a{width:42px;height:42px}
 }
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{transition:none!important;animation:none!important}
@@ -360,9 +420,9 @@ html:not(.js) .hero::after{content:"";position:absolute;inset:auto 0 0;height:30
       <div class="c-fx" aria-hidden="true"><div class="c-aurora"></div><div class="c-codigo"></div></div>
       <span class="c-brilho" aria-hidden="true"></span>
       <div class="c-in">
-        <div class="c-top"><span>Newsletter grátis</span><span class="vivo">A cada 2 dias</span></div>
+        <div class="c-top"><span class="selo-news"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m4 7 8 6 8-6"/></svg>Newsletter</span><span class="vivo"><span class="so-pc">Grátis · </span>A cada 2 dias</span></div>
         <h2 class="c-titulo" id="news-t">Dimensão acima</h2>
-        <p class="c-texto">O que importa no mercado de IA pro Brasil, o que eu acho disso e mentalidade pra evoluir.</p>
+        <p class="c-texto">Uma newsletter no seu email com o que importa no mercado de IA pro Brasil, o que eu acho disso e mentalidade pra evoluir.</p>
         <ul class="pilulas" aria-label="O que vem em cada edição"><li>Mercado de IA</li><li>Minha leitura</li><li>Mentalidade</li></ul>
         <form class="c-form" novalidate>
           <div class="campos">
@@ -370,8 +430,8 @@ html:not(.js) .hero::after{content:"";position:absolute;inset:auto 0 0;height:30
             <input id="news-email" type="email" name="email" inputmode="email" autocomplete="email" placeholder="seu@email.com" required>
           </div>
           <input class="isca" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
-          <button type="submit">Quero receber</button>
-          <p class="nota">Grátis, sai quando quiser. <a href="https://condzmethod.com/privacidade.html">Privacidade</a>.</p>
+          <button type="submit">Assinar a newsletter</button>
+          <p class="nota">Grátis. Sai quando quiser, com um clique. <a href="https://condzmethod.com/privacidade.html">Privacidade</a>.</p>
         </form>
         <p class="ok" hidden role="status"><span>Pronto. A primeira edição chega no seu email.</span></p>
       </div>
