@@ -195,40 +195,35 @@ html:not(.js) .hero::after{content:"";position:absolute;inset:auto 0 0;height:30
 .rodape .pd{display:inline-flex;align-items:center;gap:6px}
 
 
-/* ---------- 04/11: one-pager da newsletter ---------- */
-.news{margin-top:18px}
-.news .c-titulo{font-size:44px}
-.news .c-form{margin-top:14px}
+/* ---------- 04/11 v2: one-pager compacto ---------- */
+.news{margin-top:16px}
+.news .c-titulo{font-size:42px;margin-top:12px}
+.news .c-texto{margin-top:6px}
+.pilulas{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 0;padding:0;list-style:none}
+.pilulas li{padding:6px 10px;border-radius:999px;border:1px solid rgba(246,241,231,.18);background:rgba(246,241,231,.06);font:500 10px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:rgba(246,241,231,.88)}
+.news .c-form{margin-top:14px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px}
+.news .c-form .campos{grid-column:1}
+.news .c-form button{grid-column:2;margin-top:0;width:auto;padding:0 18px}
+.news .c-form .nota{grid-column:1/-1;margin-top:2px}
 .news .ok{margin-top:14px}
-.bloco{margin-top:30px}
-.itens{list-style:none;margin:12px 0 0;padding:0;border-top:1px solid var(--line)}
-.itens li{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--line)}
-.itens .n{flex:none;width:24px;padding-top:4px;font:500 11px/1 var(--mono);letter-spacing:.08em;color:var(--ember)}
-.itens b{display:block;font:400 25px/1.05 var(--serif);letter-spacing:-.005em;color:var(--ink)}
-.itens li span:not(.n){display:block;margin-top:4px;font-size:14.5px;line-height:1.45;color:var(--muted)}
-.pra{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
-.pra>div{padding:14px;border-radius:16px;background:var(--card);border:1px solid var(--line)}
-.pra b{display:block;font:400 22px/1.05 var(--serif);color:var(--ink)}
-.pra span{display:block;margin-top:6px;font-size:13.5px;line-height:1.4;color:var(--muted)}
-.escreve-txt{margin:12px 0 0;font:400 21px/1.3 var(--serif);letter-spacing:-.003em;color:var(--ink-2)}
-.links{margin-top:30px}
-.links>.rotulo{margin:0 0 2px}
-/* curso: cartão secundário, uma linha */
-.mini{background:transparent;border:1px solid var(--line);color:var(--ink);transition:transform .25s var(--ease),border-color .25s,background .25s}
-.mini .c-in{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px 16px}
-.m-tag{display:block;font:500 10px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
-.m-titulo{display:block;margin-top:6px;font:400 24px/1.05 var(--serif)}
-.m-texto{display:block;margin-top:4px;font-size:13.5px;line-height:1.4;color:var(--muted)}
-.m-seta i{display:grid;place-items:center;width:38px;height:38px;border-radius:11px;border:1px solid var(--line);background:var(--card)}
-.m-seta svg{width:16px;height:16px;transition:transform .25s var(--ease)}
-.mini:active{transform:scale(.985)}
-@media (hover:hover) and (pointer:fine){.mini:hover{background:var(--card);border-color:#cdbfa9}.mini:hover .m-seta svg{transform:translateX(3px)}}
+@media (max-width:479px){.news .c-form{grid-template-columns:1fr}.news .c-form button{grid-column:1;width:100%}.pilulas li{padding:5px 9px;letter-spacing:.08em}.duo .b-cta i,.duo .o-cta i{display:none}.duo .b-cta,.duo .o-cta{justify-content:center;padding:0 10px}}
+/* Built e Otto lado a lado, mesma altura */
+.duo{grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.duo .card .c-in{display:flex;flex-direction:column;align-items:stretch;height:100%;padding:14px}
+.duo .c-top{font-size:9px;letter-spacing:.12em}
+.duo .b-titulo{margin-top:10px;font-size:30px}
+.duo .b-texto,.duo .o-texto{flex:1;margin-top:4px;font-size:13px;line-height:1.35}
+.duo .b-cta,.duo .o-cta{margin-top:12px;min-height:42px;padding:0 6px 0 12px;border-radius:11px;font-size:13.5px}
+.duo .b-cta i,.duo .o-cta i{width:30px;height:30px;border-radius:8px}
+.otto .c-top{color:rgba(244,246,244,.6)}
+.o-linha{display:flex;align-items:center;gap:8px;margin-top:10px}
+.duo .o-icone{width:30px;height:30px;border-radius:8px}
+.duo .o-titulo{font-size:26px;line-height:1}
 
 /* entrada do conteúdo */
 @keyframes sobe{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
-.js .quem,.js .news,.js .bloco,.js .links>*,.js .redes,.js .rodape{animation:sobe .9s var(--ease) backwards}
+.js .quem,.js .news,.js .links>*,.js .redes,.js .rodape{animation:sobe .9s var(--ease) backwards}
 .js .news{animation-delay:.2s}
-.js .bloco{animation-delay:.32s}
 .js .quem{animation-delay:.12s}
 .js .links>:nth-child(1){animation-delay:.24s}
 .js .links>:nth-child(2){animation-delay:.34s}
@@ -263,20 +258,19 @@ html:not(.js) .hero::after{content:"";position:absolute;inset:auto 0 0;height:30
   .hero.brilha{box-shadow:0 50px 90px -50px rgba(28,26,22,.6),0 0 0 1px rgba(127,178,255,.55),0 0 90px -4px rgba(127,178,255,.6)}
   .hero.pronto .raios{-webkit-mask-position:0 0;mask-position:0 0;animation:zumbido 4.2s steps(1,end) infinite}
   .hero.pronto.raio .raios{animation:raio 1.5s cubic-bezier(.25,.6,.25,1) both;filter:brightness(1.45) saturate(1.15)}
-  .page{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:minmax(0,560px) minmax(0,540px);justify-content:center;align-items:start;column-gap:clamp(40px,5.5vw,88px);min-height:100vh;padding:28px clamp(24px,4vw,56px);container-type:normal;overflow:visible}
-  /* 04/11: one-pager mais longo; a pintura fica presa à esquerda e o conteúdo rola do lado */
-  .hero{position:sticky;top:28px}
-  .conteudo{padding-bottom:28px}
-  .news .c-titulo{font-size:54px}
+  .page{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:minmax(0,560px) minmax(0,540px);justify-content:center;align-items:center;column-gap:clamp(40px,5.5vw,88px);min-height:100vh;padding:28px clamp(24px,4vw,56px);container-type:normal;overflow:visible}
+  /* 04/11 v2: tudo numa tela só, pintura à esquerda e conteúdo à direita */
+  .news .c-titulo{font-size:56px}
   .news .campos{grid-template-columns:1fr}
-  .news .c-form{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;align-items:start}
-  .news .c-form .campos{grid-column:1}
-  .news .c-form button{grid-column:2;margin-top:0;width:auto;padding:0 22px}
-  .news .c-form .nota{grid-column:1/-1;margin-top:4px}
-  .bloco{margin-top:36px}
-  .itens b{font-size:27px}
-  .escreve-txt{font-size:23px}
-  .links{margin-top:36px}
+  .news .c-form button{padding:0 24px}
+  .pilulas{margin-top:14px}
+  .duo{gap:12px;margin-top:12px}
+  .duo .card .c-in{padding:18px}
+  .duo .b-titulo{font-size:36px}
+  .duo .o-titulo{font-size:30px}
+  .duo .o-icone{width:34px;height:34px}
+  .duo .b-texto,.duo .o-texto{font-size:14px}
+  .duo .b-cta,.duo .o-cta{min-height:46px;font-size:14.5px;padding:0 7px 0 14px}
   .grain{position:fixed}
   .hero{height:min(84vh,800px);border-radius:22px;background:var(--night);box-shadow:0 50px 90px -50px rgba(28,26,22,.6),0 0 0 1px rgba(28,26,22,.08);animation:placa 1.1s var(--ease) backwards}
   .hero img{inset:0;width:100%;height:100%;object-fit:cover;object-position:30% 25%}
@@ -296,13 +290,6 @@ html:not(.js) .hero::after{content:"";position:absolute;inset:auto 0 0;height:30
   .c-form{margin-top:12px}
   .c-form input:not(.isca),.c-form button,.c-cta{height:52px}
   .campos{grid-template-columns:1fr 1fr}
-  .built .c-in{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:20px;align-items:end}
-  .built .c-top{grid-column:1/-1}
-  .b-titulo,.b-texto{grid-column:1}
-  .b-titulo{font-size:40px}
-  .b-cta{grid-column:2;grid-row:2/span 2;margin-top:0;min-height:50px;gap:14px}
-  .otto .c-in{grid-template-columns:auto minmax(0,1fr) auto;column-gap:16px}
-  .o-cta{grid-column:3;margin-top:0;min-height:48px;gap:14px}
   .redes{margin-top:18px;padding-top:0;border-top:0}
   .redes .rotulo{display:none}
   .icones{margin-top:0}
@@ -327,13 +314,10 @@ html:not(.js) .hero::after{content:"";position:absolute;inset:auto 0 0;height:30
   .c-form input:not(.isca),.c-form button,.c-cta{height:46px}
   .c-form button{margin-top:6px}
   .nota{margin-top:8px}
-  .b-titulo{font-size:32px;margin-top:10px}
-  .b-texto{font-size:14px}
-  .b-cta{min-height:46px}
-  .otto .c-in{padding-top:14px;padding-bottom:14px}
-  .o-icone{width:42px;height:42px}
-  .o-titulo{font-size:20px}
-  .o-cta{min-height:44px}
+  .news .c-titulo{font-size:46px}
+  .duo .card .c-in{padding:15px 16px}
+  .duo .b-titulo{font-size:32px}
+  .duo .b-cta,.duo .o-cta{min-height:42px}
   .redes{margin-top:14px}
   .icones a{width:40px;height:40px}
   .rodape{margin-top:10px}
@@ -369,16 +353,17 @@ html:not(.js) .hero::after{content:"";position:absolute;inset:auto 0 0;height:30
       <p class="bio">Exited Founder |<br>Te ajudo a focar no que importa 🧠</p>
     </section>
 
-    <!-- 04/11 (pedido do Conrado): one-pager com foco na newsletter. Inscrição vai pro /lead do built-bot com source "newsletter".
-         Nome da newsletter ("Dimensão acima") é proposta: trocar aqui, no <title> e no og se ele escolher outro. -->
+    <!-- 04/11 v2 (pedido do Conrado: "one-pager, tudo melhor encaixado, menos ladainha"): newsletter em cima, Built e Otto lado a lado.
+         Inscrição vai pro /lead do built-bot com source "newsletter". -->
     <section class="card curso espera news" data-id="newsletter" data-ja="Você já está na lista. A próxima edição chega no seu email." aria-labelledby="news-t">
       <span class="c-borda" aria-hidden="true"></span>
       <div class="c-fx" aria-hidden="true"><div class="c-aurora"></div><div class="c-codigo"></div></div>
       <span class="c-brilho" aria-hidden="true"></span>
       <div class="c-in">
-        <div class="c-top"><span>Newsletter · grátis</span><span class="vivo">A cada 2 dias</span></div>
+        <div class="c-top"><span>Newsletter grátis</span><span class="vivo">A cada 2 dias</span></div>
         <h2 class="c-titulo" id="news-t">Dimensão acima</h2>
-        <p class="c-texto">O que muda no mercado de IA pra quem empreende ou trabalha no Brasil, o que eu acho disso e uma ideia de mentalidade pra você evoluir. Direto no seu email.</p>
+        <p class="c-texto">O que importa no mercado de IA pro Brasil, o que eu acho disso e mentalidade pra evoluir.</p>
+        <ul class="pilulas" aria-label="O que vem em cada edição"><li>Mercado de IA</li><li>Minha leitura</li><li>Mentalidade</li></ul>
         <form class="c-form" novalidate>
           <div class="campos">
             <label class="vh" for="news-email">Seu email</label>
@@ -386,54 +371,27 @@ html:not(.js) .hero::after{content:"";position:absolute;inset:auto 0 0;height:30
           </div>
           <input class="isca" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
           <button type="submit">Quero receber</button>
-          <p class="nota">Grátis. Sai quando quiser, com um clique. Ao se inscrever, você aceita a <a href="https://condzmethod.com/privacidade.html">privacidade</a>.</p>
+          <p class="nota">Grátis, sai quando quiser. <a href="https://condzmethod.com/privacidade.html">Privacidade</a>.</p>
         </form>
         <p class="ok" hidden role="status"><span>Pronto. A primeira edição chega no seu email.</span></p>
       </div>
     </section>
 
-    <section class="bloco" aria-labelledby="chega-t">
-      <p class="rotulo" id="chega-t">O que chega no seu email</p>
-      <ol class="itens">
-        <li><span class="n">01</span><div><b>Mercado de IA</b><span>O que saiu de novo e muda o jogo pra negócio brasileiro. Só o que importa, sem hype.</span></div></li>
-        <li><span class="n">02</span><div><b>O que eu acho</b><span>Minha leitura de cada novidade: o que eu faria com ela e o que eu ignoraria.</span></div></li>
-        <li><span class="n">03</span><div><b>Mentalidade e evolução</b><span>Calma, foco, meditação e o lado de dentro de quem constrói. É dali que vem a energia pro resto.</span></div></li>
-      </ol>
-    </section>
-
-    <section class="bloco" aria-labelledby="pra-t">
-      <p class="rotulo" id="pra-t">Pra quem é</p>
-      <div class="pra">
-        <div><b>Quem empreende</b><span>e quer crescer usando IA com os pés no chão.</span></div>
-        <div><b>Quem é CLT</b><span>e quer evoluir, ganhar espaço e pensar mais longe.</span></div>
-      </div>
-    </section>
-
-    <section class="bloco escreve" aria-labelledby="escreve-t">
-      <p class="rotulo" id="escreve-t">Quem escreve</p>
-      <p class="escreve-txt">Empreendo desde os 17. Comecei como designer, passei por games, fintech e cripto, e hoje toco a DOTI, uma empresa de IA. Já estive devendo milhares de reais. Hoje medito 10 minutos todo dia e escrevo aqui o que aprendo no caminho.</p>
-    </section>
-
-    <nav class="links" aria-label="Links">
-      <p class="rotulo">Mais coisas minhas</p>
-      <!-- LINK: pra adicionar outro, copie este bloco <a class="card built"> e troque href, data-id e textos -->
+    <nav class="links duo" aria-label="Links">
       <a class="card built" href="https://condzmethod.com/built/" data-id="built">
         <span class="c-in">
-          <span class="c-top"><span>Comunidade de criadores</span><span>Telegram</span></span>
+          <span class="c-top"><span>Comunidade</span><span>Telegram</span></span>
           <span class="b-titulo">Built</span>
-          <span class="b-texto">Quem constrói junto cresce mais rápido.</span>
-          <span class="b-cta">Fazer o teste de perfil <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></span>
+          <span class="b-texto">Criadores construindo junto.</span>
+          <span class="b-cta">Fazer o teste <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></span>
         </span>
       </a>
-
-      <!-- 03/11: banner do Otto com o link de indicação dele. Sem utm (data-sem-utm): o /r/ já marca a indicação -->
+      <!-- link de indicação do Otto, sem utm (data-sem-utm): o /r/ já marca a indicação -->
       <a class="card otto" href="https://otto.doti.gg/r/condz" data-id="otto" data-sem-utm>
         <span class="c-in">
-          <img class="o-icone" src="img/otto-icone.webp" width="96" height="96" alt="" decoding="async">
-          <span class="o-txt">
-            <span class="o-titulo">Otto</span>
-            <span class="o-texto">Automatize suas redes sociais: X, LinkedIn e Threads.</span>
-          </span>
+          <span class="c-top"><span>Ferramenta</span><span>IA</span></span>
+          <span class="o-linha"><img class="o-icone" src="img/otto-icone.webp" width="96" height="96" alt="" decoding="async"><span class="o-titulo">Otto</span></span>
+          <span class="o-texto">Automatize X, LinkedIn e Threads.</span>
           <span class="o-cta">Testar o Otto <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></span>
         </span>
       </a>
