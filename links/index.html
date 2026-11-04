@@ -7,12 +7,12 @@
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#0b1020">
 <title>Conrado de Sá</title>
-<meta name="description" content="Negociação profunda (curso, aberto) e a comunidade Built. Te ajudo a focar no que importa.">
+<meta name="description" content="Dimensão acima: a newsletter do Conrado de Sá. A cada 2 dias, o que muda no mercado de IA pra negócio brasileiro, o que ele acha disso e mentalidade pra evoluir.">
 <link rel="canonical" href="https://condzmethod.com/links/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://condzmethod.com/links/">
-<meta property="og:title" content="Conrado de Sá">
-<meta property="og:description" content="Negociação profunda (curso, aberto) e a comunidade Built.">
+<meta property="og:title" content="Dimensão acima · newsletter do Conrado de Sá">
+<meta property="og:description" content="A cada 2 dias: mercado de IA pra negócio brasileiro, o que eu acho disso e mentalidade pra evoluir. Grátis.">
 <meta property="og:image" content="https://condzmethod.com/links/img/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -195,9 +195,40 @@ html:not(.js) .hero::after{content:"";position:absolute;inset:auto 0 0;height:30
 .rodape .pd{display:inline-flex;align-items:center;gap:6px}
 
 
+/* ---------- 04/11: one-pager da newsletter ---------- */
+.news{margin-top:18px}
+.news .c-titulo{font-size:44px}
+.news .c-form{margin-top:14px}
+.news .ok{margin-top:14px}
+.bloco{margin-top:30px}
+.itens{list-style:none;margin:12px 0 0;padding:0;border-top:1px solid var(--line)}
+.itens li{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--line)}
+.itens .n{flex:none;width:24px;padding-top:4px;font:500 11px/1 var(--mono);letter-spacing:.08em;color:var(--ember)}
+.itens b{display:block;font:400 25px/1.05 var(--serif);letter-spacing:-.005em;color:var(--ink)}
+.itens li span:not(.n){display:block;margin-top:4px;font-size:14.5px;line-height:1.45;color:var(--muted)}
+.pra{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.pra>div{padding:14px;border-radius:16px;background:var(--card);border:1px solid var(--line)}
+.pra b{display:block;font:400 22px/1.05 var(--serif);color:var(--ink)}
+.pra span{display:block;margin-top:6px;font-size:13.5px;line-height:1.4;color:var(--muted)}
+.escreve-txt{margin:12px 0 0;font:400 21px/1.3 var(--serif);letter-spacing:-.003em;color:var(--ink-2)}
+.links{margin-top:30px}
+.links>.rotulo{margin:0 0 2px}
+/* curso: cartão secundário, uma linha */
+.mini{background:transparent;border:1px solid var(--line);color:var(--ink);transition:transform .25s var(--ease),border-color .25s,background .25s}
+.mini .c-in{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px 16px}
+.m-tag{display:block;font:500 10px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.m-titulo{display:block;margin-top:6px;font:400 24px/1.05 var(--serif)}
+.m-texto{display:block;margin-top:4px;font-size:13.5px;line-height:1.4;color:var(--muted)}
+.m-seta i{display:grid;place-items:center;width:38px;height:38px;border-radius:11px;border:1px solid var(--line);background:var(--card)}
+.m-seta svg{width:16px;height:16px;transition:transform .25s var(--ease)}
+.mini:active{transform:scale(.985)}
+@media (hover:hover) and (pointer:fine){.mini:hover{background:var(--card);border-color:#cdbfa9}.mini:hover .m-seta svg{transform:translateX(3px)}}
+
 /* entrada do conteúdo */
 @keyframes sobe{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
-.js .quem,.js .links>*,.js .redes,.js .rodape{animation:sobe .9s var(--ease) backwards}
+.js .quem,.js .news,.js .bloco,.js .links>*,.js .redes,.js .rodape{animation:sobe .9s var(--ease) backwards}
+.js .news{animation-delay:.2s}
+.js .bloco{animation-delay:.32s}
 .js .quem{animation-delay:.12s}
 .js .links>:nth-child(1){animation-delay:.24s}
 .js .links>:nth-child(2){animation-delay:.34s}
@@ -232,7 +263,20 @@ html:not(.js) .hero::after{content:"";position:absolute;inset:auto 0 0;height:30
   .hero.brilha{box-shadow:0 50px 90px -50px rgba(28,26,22,.6),0 0 0 1px rgba(127,178,255,.55),0 0 90px -4px rgba(127,178,255,.6)}
   .hero.pronto .raios{-webkit-mask-position:0 0;mask-position:0 0;animation:zumbido 4.2s steps(1,end) infinite}
   .hero.pronto.raio .raios{animation:raio 1.5s cubic-bezier(.25,.6,.25,1) both;filter:brightness(1.45) saturate(1.15)}
-  .page{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:minmax(0,560px) minmax(0,540px);justify-content:center;align-items:center;column-gap:clamp(40px,5.5vw,88px);min-height:100vh;padding:28px clamp(24px,4vw,56px);container-type:normal;overflow:visible}
+  .page{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:minmax(0,560px) minmax(0,540px);justify-content:center;align-items:start;column-gap:clamp(40px,5.5vw,88px);min-height:100vh;padding:28px clamp(24px,4vw,56px);container-type:normal;overflow:visible}
+  /* 04/11: one-pager mais longo; a pintura fica presa à esquerda e o conteúdo rola do lado */
+  .hero{position:sticky;top:28px}
+  .conteudo{padding-bottom:28px}
+  .news .c-titulo{font-size:54px}
+  .news .campos{grid-template-columns:1fr}
+  .news .c-form{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;align-items:start}
+  .news .c-form .campos{grid-column:1}
+  .news .c-form button{grid-column:2;margin-top:0;width:auto;padding:0 22px}
+  .news .c-form .nota{grid-column:1/-1;margin-top:4px}
+  .bloco{margin-top:36px}
+  .itens b{font-size:27px}
+  .escreve-txt{font-size:23px}
+  .links{margin-top:36px}
   .grain{position:fixed}
   .hero{height:min(84vh,800px);border-radius:22px;background:var(--night);box-shadow:0 50px 90px -50px rgba(28,26,22,.6),0 0 0 1px rgba(28,26,22,.08);animation:placa 1.1s var(--ease) backwards}
   .hero img{inset:0;width:100%;height:100%;object-fit:cover;object-position:30% 25%}
@@ -325,24 +369,53 @@ html:not(.js) .hero::after{content:"";position:absolute;inset:auto 0 0;height:30
       <p class="bio">Exited Founder |<br>Te ajudo a focar no que importa 🧠</p>
     </section>
 
-    <nav class="links" aria-label="Links">
-      <!-- FOCO: curso de negociação, aberto desde 31/10/2026. O botão leva pra página de vendas (condzmethod.com/negociacao/),
-           que tem a chamada de 1 min e o checkout da Hubla. O utm sai com utm_content=curso-negociacao (script "1. links").
-           A lista de espera saiu daqui; o código dela (1b) ficou parado, só roda num cartão com a classe "espera". -->
-      <div class="card curso" data-id="curso-negociacao">
-        <span class="c-borda" aria-hidden="true"></span>
-        <div class="c-fx" aria-hidden="true"><div class="c-aurora"></div><div class="c-codigo"></div></div>
-        <span class="c-brilho" aria-hidden="true"></span>
-        <div class="c-in">
-          <div class="c-top"><span>Curso</span><span class="vivo">Aberto</span></div>
-          <h2 class="c-titulo">Negociação profunda</h2>
-          <p class="c-texto">Negociar com calma e inteligência emocional. 10 módulos em vídeo e 11 exercícios em PDF.</p>
-          <p class="preco"><b>R$ 27,90</b><span>preço de lançamento</span></p>
-          <a class="c-cta" href="https://condzmethod.com/negociacao/" data-id="curso-negociacao">Ver o curso <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></a>
-          <p class="nota">Acesso na hora pela Hubla. Pix, cartão ou boleto.</p>
-        </div>
+    <!-- 04/11 (pedido do Conrado): one-pager com foco na newsletter. Inscrição vai pro /lead do built-bot com source "newsletter".
+         Nome da newsletter ("Dimensão acima") é proposta: trocar aqui, no <title> e no og se ele escolher outro. -->
+    <section class="card curso espera news" data-id="newsletter" data-ja="Você já está na lista. A próxima edição chega no seu email." aria-labelledby="news-t">
+      <span class="c-borda" aria-hidden="true"></span>
+      <div class="c-fx" aria-hidden="true"><div class="c-aurora"></div><div class="c-codigo"></div></div>
+      <span class="c-brilho" aria-hidden="true"></span>
+      <div class="c-in">
+        <div class="c-top"><span>Newsletter · grátis</span><span class="vivo">A cada 2 dias</span></div>
+        <h2 class="c-titulo" id="news-t">Dimensão acima</h2>
+        <p class="c-texto">O que muda no mercado de IA pra quem empreende ou trabalha no Brasil, o que eu acho disso e uma ideia de mentalidade pra você evoluir. Direto no seu email.</p>
+        <form class="c-form" novalidate>
+          <div class="campos">
+            <label class="vh" for="news-email">Seu email</label>
+            <input id="news-email" type="email" name="email" inputmode="email" autocomplete="email" placeholder="seu@email.com" required>
+          </div>
+          <input class="isca" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <button type="submit">Quero receber</button>
+          <p class="nota">Grátis. Sai quando quiser, com um clique. Ao se inscrever, você aceita a <a href="https://condzmethod.com/privacidade.html">privacidade</a>.</p>
+        </form>
+        <p class="ok" hidden role="status"><span>Pronto. A primeira edição chega no seu email.</span></p>
       </div>
+    </section>
 
+    <section class="bloco" aria-labelledby="chega-t">
+      <p class="rotulo" id="chega-t">O que chega no seu email</p>
+      <ol class="itens">
+        <li><span class="n">01</span><div><b>Mercado de IA</b><span>O que saiu de novo e muda o jogo pra negócio brasileiro. Só o que importa, sem hype.</span></div></li>
+        <li><span class="n">02</span><div><b>O que eu acho</b><span>Minha leitura de cada novidade: o que eu faria com ela e o que eu ignoraria.</span></div></li>
+        <li><span class="n">03</span><div><b>Mentalidade e evolução</b><span>Calma, foco, meditação e o lado de dentro de quem constrói. É dali que vem a energia pro resto.</span></div></li>
+      </ol>
+    </section>
+
+    <section class="bloco" aria-labelledby="pra-t">
+      <p class="rotulo" id="pra-t">Pra quem é</p>
+      <div class="pra">
+        <div><b>Quem empreende</b><span>e quer crescer usando IA com os pés no chão.</span></div>
+        <div><b>Quem é CLT</b><span>e quer evoluir, ganhar espaço e pensar mais longe.</span></div>
+      </div>
+    </section>
+
+    <section class="bloco escreve" aria-labelledby="escreve-t">
+      <p class="rotulo" id="escreve-t">Quem escreve</p>
+      <p class="escreve-txt">Empreendo desde os 17. Comecei como designer, passei por games, fintech e cripto, e hoje toco a DOTI, uma empresa de IA. Já estive devendo milhares de reais. Hoje medito 10 minutos todo dia e escrevo aqui o que aprendo no caminho.</p>
+    </section>
+
+    <nav class="links" aria-label="Links">
+      <p class="rotulo">Mais coisas minhas</p>
       <!-- LINK: pra adicionar outro, copie este bloco <a class="card built"> e troque href, data-id e textos -->
       <a class="card built" href="https://condzmethod.com/built/" data-id="built">
         <span class="c-in">
@@ -353,7 +426,7 @@ html:not(.js) .hero::after{content:"";position:absolute;inset:auto 0 0;height:30
         </span>
       </a>
 
-      <!-- 03/11 (pedido do Conrado): banner do Otto com o link de indicação dele. Sem utm (data-sem-utm): o /r/ já marca a indicação -->
+      <!-- 03/11: banner do Otto com o link de indicação dele. Sem utm (data-sem-utm): o /r/ já marca a indicação -->
       <a class="card otto" href="https://otto.doti.gg/r/condz" data-id="otto" data-sem-utm>
         <span class="c-in">
           <img class="o-icone" src="img/otto-icone.webp" width="96" height="96" alt="" decoding="async">
@@ -451,7 +524,7 @@ html:not(.js) .hero::after{content:"";position:absolute;inset:auto 0 0;height:30
     const naLista = () => { try { return localStorage.getItem(chave) === '1'; } catch (e) { return false; } };
     const mostraOk = (txt) => { form.hidden = true; ok.hidden = false; if (txt) ok.querySelector('span').textContent = txt; };
     const erro = (txt, el) => { nota.classList.add('erro'); nota.textContent = txt; if (el) { el.setAttribute('aria-invalid', 'true'); el.focus(); } };
-    if (naLista()) mostraOk('Você já está na lista. Te aviso quando abrir.');
+    if (naLista()) mostraOk(bloco.dataset.ja || 'Você já está na lista. Te aviso quando abrir.');
     if (wa) wa.addEventListener('input', () => {
       wa.removeAttribute('aria-invalid');
       if (wa.selectionStart === wa.value.length) wa.value = formata(wa.value);   // só formata digitando no fim
@@ -475,7 +548,7 @@ html:not(.js) .hero::after{content:"";position:absolute;inset:auto 0 0;height:30
           if (!r.ok || !j.ok) throw new Error(j.error || 'erro');
         }
         try { localStorage.setItem(chave, '1'); } catch (er) {}
-        mostraOk(local ? 'Pronto. Te aviso quando abrir. (teste local: nada foi enviado)' : '');
+        mostraOk(local ? 'Pronto. (teste local: nada foi enviado)' : '');
         dispatchEvent(new Event('raio'));
       } catch (er) {
         const m = er.message || '';
@@ -486,7 +559,8 @@ html:not(.js) .hero::after{content:"";position:absolute;inset:auto 0 0;height:30
   });
 
   /* ========== 1c. código passando (cartão do curso) ========== */
-  const TOKENS_CURSO = ['NEGOCIAÇÃO', 'CALMA', 'PRESSÃO', 'LEITURA', 'CONTRATO', 'RESPIRA', 'FOCO', 'deal.close()', 'if(pressão) respira()', 'return calma', 'ouvir()', '<b>R$ 27,90</b>', '<b>ABERTO</b>', '0101', '{ }'];
+  // 04/11: o cartão em destaque é a newsletter
+  const TOKENS_CURSO = ['IA', 'MERCADO', 'MENTALIDADE', 'EVOLUÇÃO', 'NEGÓCIOS', 'CALMA', 'FOCO', 'news.send()', 'if(correria) respira()', 'return energia', 'ler()', '<b>A CADA 2 DIAS</b>', '<b>GRÁTIS</b>', '0101', '{ }'];
   const linhas = (el, tokens, n, tam) => {
     if (!el) return;
     let html = '';
