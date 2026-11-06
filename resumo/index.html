@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>O resumo das 7h · Conrado de Sá</title>
+<meta name="description" content="O prompt que eu uso todo dia: a IA lê minha agenda, meu e-mail e meu Drive e me manda só o que importa.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://condzmethod.com/resumo/">
+<meta property="og:title" content="O resumo das 7h">
+<meta property="og:description" content="O prompt que eu uso todo dia: a IA lê agenda, e-mail e Drive e me manda só o que importa.">
+<meta property="og:image" content="https://condzmethod.com/links/img/og.jpg">
+<meta name="robots" content="noindex">
+<link rel="icon" href="/links/img/icone-180.png">
+<style>
+@font-face{font-family:'Geist';src:url(/links/fonts/geist.woff2) format('woff2');font-weight:100 900;font-display:swap}
+@font-face{font-family:'Geist Mono';src:url(/links/fonts/geist-mono.woff2) format('woff2');font-weight:100 900;font-display:swap}
+@font-face{font-family:'Instrument Serif';src:url(/links/fonts/instrument-serif-italic.woff2) format('woff2');font-style:italic;font-display:swap}
+:root{--fundo:#ecebe8;--cartao:#f7f6f4;--linha:#dad7d1;--tinta:#1d1c1a;--tinta2:#5c5852;--cinza:#8d8880;--acento:#8a3324}
+*{box-sizing:border-box}a{color:inherit}
+body{margin:0;background:var(--fundo);color:var(--tinta);font-family:'Geist',system-ui,sans-serif;font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1180px;margin:0 auto;padding:40px 40px 64px;display:grid;grid-template-columns:1fr 1.15fr;gap:48px;align-items:start}
+header{grid-column:1/-1;display:flex;align-items:center;gap:12px}
+header img{width:40px;height:40px;border-radius:50%;object-fit:cover}
+header a{text-decoration:none;font-weight:600}
+header span{color:var(--cinza);font-size:15px}
+.selo{display:inline-block;background:var(--tinta);color:var(--fundo);font-weight:600;font-size:14px;padding:6px 12px;border-radius:999px;letter-spacing:.01em}
+h1{font-size:56px;line-height:1.02;letter-spacing:-.03em;margin:18px 0 14px;font-weight:700}
+h1 em{font-family:'Instrument Serif',serif;font-weight:400;color:var(--acento)}
+.lead{font-size:19px;color:var(--tinta2);margin:0 0 28px;max-width:30em}
+.passos{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.passos li{background:var(--cartao);border:1px solid var(--linha);border-radius:14px;padding:16px 18px;display:grid;grid-template-columns:34px 1fr;gap:12px;animation:sobe .5s ease backwards}
+.passos li:nth-child(2){animation-delay:.08s}.passos li:nth-child(3){animation-delay:.16s}.passos li:nth-child(4){animation-delay:.24s}
+.passos b{display:block;font-size:17px}
+.passos p{margin:2px 0 0;color:var(--tinta2);font-size:16px}
+.n{width:34px;height:34px;border-radius:50%;background:var(--tinta);color:var(--fundo);display:grid;place-items:center;font-weight:600;font-size:15px}
+.nota{margin:22px 0 0;font-size:16px;color:var(--tinta2)}
+.prompt{background:#1d1c1a;color:#f1efea;border-radius:18px;padding:22px 22px 18px;position:relative;box-shadow:0 1px 0 rgba(0,0,0,.04),0 20px 50px -24px rgba(29,28,26,.45)}
+.prompt-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;gap:12px}
+.prompt-top span{font-weight:600;font-size:16px}
+button{white-space:nowrap;flex-shrink:0;font:inherit;font-weight:600;font-size:15px;background:#f1efea;color:#1d1c1a;border:0;border-radius:999px;padding:9px 16px;cursor:pointer;transition:transform .15s ease,background .15s ease}
+button:hover{transform:translateY(-1px);background:#fff}
+pre{margin:0;white-space:pre-wrap;word-wrap:break-word;font-family:'Geist Mono',ui-monospace,monospace;font-size:14.5px;line-height:1.6;color:#e6e3dc;max-height:62vh;overflow:auto;-webkit-user-select:all;user-select:text}
+pre .c{color:#d9a089}
+.dica{font-size:14px;color:#a8a39a;margin:12px 0 0}
+.fim{grid-column:1/-1;border-top:1px solid var(--linha);padding-top:26px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between}
+.fim p{margin:0;font-size:18px}
+.fim .bts{display:flex;gap:10px;flex-wrap:wrap}
+.bt{display:inline-block;text-decoration:none;font-weight:600;font-size:16px;padding:12px 18px;border-radius:12px;border:1px solid var(--tinta)}
+.bt.cheio{background:var(--tinta);color:var(--fundo)}
+@keyframes sobe{from{transform:translateY(10px)}}
+@media (prefers-reduced-motion:reduce){.passos li{animation:none}}
+@media (max-width:900px){
+ body{font-size:15.5px}
+ .wrap{grid-template-columns:1fr;padding:22px 16px 48px;gap:28px}
+ h1{font-size:40px}
+ .lead{font-size:17px}
+ pre{font-size:13.5px;max-height:none}
+ .fim{flex-direction:column;align-items:flex-start}
+ .prompt{padding:18px 16px 16px}
+ .prompt-top span{font-size:15px}
+ button{font-size:14px;padding:8px 14px}
+}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <header>
+    <img src="/links/img/avatar.webp" alt="Conrado de Sá">
+    <div><a href="https://www.instagram.com/conrado_desa/">Conrado de Sá</a><br><span>A IA trabalha, eu vivo.</span></div>
+  </header>
+
+  <section>
+    <span class="selo">Prompt grátis</span>
+    <h1>O resumo <em>das 7h</em></h1>
+    <p class="lead">Todo dia às sete da manhã uma IA lê a minha agenda, o meu e-mail e o meu Drive e me manda só o que importa. Eu não abro o e-mail pra saber o que tem no dia. Esse é o prompt.</p>
+    <ol class="passos">
+      <li><span class="n">1</span><div><b>Conecta o Google no Claude</b><p>Nas configurações do Claude, em Conectores, liga o Gmail, o Google Agenda e o Google Drive.</p></div></li>
+      <li><span class="n">2</span><div><b>Preenche o seu contexto</b><p>No fim do prompt tem 3 linhas pra você dizer o que faz, seus projetos e quem é prioridade. É isso que deixa o resumo bom.</p></div></li>
+      <li><span class="n">3</span><div><b>Agenda pra todo dia às 7h</b><p>Cria uma tarefa agendada no Claude com o prompt. Se a sua versão não tiver agendamento, cola o prompt quando acordar: o resultado é o mesmo.</p></div></li>
+      <li><span class="n">4</span><div><b>Lê em 1 minuto e vai viver</b><p>O tempo que você gastava abrindo e-mail pra descobrir o que tem no dia volta pra você.</p></div></li>
+    </ol>
+    <p class="nota">O prompt só lê. Ele não envia, não apaga e não responde nada por você.</p>
+  </section>
+
+  <section class="prompt" aria-label="Prompt do resumo das 7h">
+    <div class="prompt-top"><span>Prompt do resumo das 7h</span><button type="button" id="copiar">Copiar prompt</button></div>
+<pre id="texto">Você é o meu assistente da manhã. Faça SÓ leitura: não envie, não apague, não arquive e não responda nada.
+
+1. AGENDA
+Leia o meu Google Agenda de hoje. Liste os compromissos com horário, quem participa e o que eu preciso preparar. Avise se houver conflito de horário ou menos de 30 minutos livres entre reuniões.
+
+2. E-MAIL
+Leia os e-mails das últimas 24 horas. Ignore newsletter, promoção e notificação automática. Separe só o que precisa de mim: quem mandou, o que pede e até quando. No máximo 5, o mais urgente primeiro.
+
+3. DRIVE
+Veja os arquivos que outras pessoas criaram, editaram ou comentaram desde ontem. Diga o que mudou e se alguém me marcou.
+
+4. RESUMO
+Junte tudo numa mensagem que eu leia em 1 minuto no celular:
+- Uma linha sobre o meu dia (leve, cheio ou apertado)
+- Compromissos
+- O que precisa de mim hoje (no máximo 5)
+- O que pode esperar
+- Um horário livre no dia pra eu fazer algo que importa pra mim
+
+Português, frases curtas, sem enrolação. Se não achar nada numa parte, escreva "nada novo". Nunca invente: se não tiver certeza, diga que não tem.
+
+<span class="c">MEU CONTEXTO (preencha):
+- O que eu faço: [ex.: tenho uma loja, sou advogado, sou estudante]
+- Meus projetos principais agora: [...]
+- Pessoas que são sempre prioridade: [nomes ou e-mails]</span></pre>
+    <p class="dica">No celular: toca e segura no texto pra copiar.</p>
+  </section>
+
+  <section class="fim">
+    <p>Toda semana eu mostro uma IA que eu uso de verdade.</p>
+    <div class="bts">
+      <a class="bt cheio" href="https://www.instagram.com/conrado_desa/">Seguir no Instagram</a>
+      <a class="bt" href="/links/">Receber a newsletter</a>
+    </div>
+  </section>
+</main>
+<script>
+document.getElementById('copiar').addEventListener('click',function(){
+  var t=document.getElementById('texto').innerText,b=this;
+  function ok(){b.textContent='Copiado ✓';setTimeout(function(){b.textContent='Copiar prompt'},1800)}
+  if(navigator.clipboard){navigator.clipboard.writeText(t).then(ok,function(){fallback()})}else{fallback()}
+  function fallback(){var r=document.createRange();r.selectNodeContents(document.getElementById('texto'));var s=getSelection();s.removeAllRanges();s.addRange(r);try{document.execCommand('copy');ok()}catch(e){}}
+});
+</script>
+</body>
+</html>
