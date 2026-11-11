@@ -500,7 +500,7 @@ h1,h2,h3,p{margin:0}
         <!-- 02/11 (pedido do Conrado): deixar claro o que é a Built e pra quem, ainda na tela da carta -->
         <div class="ui built-pitch">
           <span class="pilula"><i class="roxo"></i>A Built</span>
-          <p class="ui-txt"><b>O que é:</b> a comunidade paga de criadores do Conrado, no Telegram. Chat todo dia, feedback nos seus rascunhos, call ao vivo todo mês e uma ideia de post por dia.</p>
+          <p class="ui-txt"><b>O que é:</b> a comunidade paga de criadores do Conrado, no Telegram. Chat todo dia, feedback nos seus rascunhos, call ao vivo a cada 3 semanas e uma ideia de post por dia.</p>
           <p class="ui-txt"><b>Pra quem:</b> quem é CLT, toca um negócio ou busca uma nova renda e quer criar conteúdo e montar o próprio negócio com IA, sem fazer isso sozinho.</p>
           <p class="ui-txt built-perfil" id="built-perfil"></p>
         </div>
@@ -522,7 +522,7 @@ h1,h2,h3,p{margin:0}
         <ul class="built-lista of-lista">
           <li>Chat no Telegram com a galera, todo dia</li>
           <li>Feedback do Conrado nos seus rascunhos</li>
-          <li>Call ao vivo todo mês, gravada</li>
+          <li>Call ao vivo a cada 3 semanas, gravada</li>
           <li>Uma ideia de post por dia, às 9h</li>
         </ul>
         <div class="espaco"></div>
@@ -1259,7 +1259,7 @@ ${raios}
     ['Por que no Telegram?', 'Porque lá o bot cuida da entrada e da assinatura sozinho, e o grupo fica organizado em dois espaços: Avisos e Chat. Se você não tem, é grátis e leva 1 minuto pra instalar.'],
     ['Preciso ter seguidores?', 'Não. A Built é pra quem está começando: CLT, quem toca um negócio próprio ou da família, ou quem está buscando uma nova forma de fazer dinheiro.'],
     ['Quanto tempo por dia?', 'De 20 a 30 minutos: postar e trocar com o grupo no Chat.'],
-    ['O que é a Built?', `Uma comunidade paga no Telegram de gente que cria conteúdo e monta o próprio negócio com IA, junto. Tem o Chat do dia a dia, feedback do Conrado nos seus rascunhos, call ao vivo todo mês e o bot que te manda uma ideia de post todo dia às 9h. Custa ${reais(P.mes)} por mês.`],
+    ['O que é a Built?', `Uma comunidade paga no Telegram de gente que cria conteúdo e monta o próprio negócio com IA, junto. Tem o Chat do dia a dia, feedback do Conrado nos seus rascunhos, call ao vivo a cada 3 semanas e o bot que te manda uma ideia de post todo dia às 9h. Custa ${reais(P.mes)} por mês.`],
     ['Como funciona o pagamento?', `Pelo Stripe. No cartão, ${reais(P.mes)} por mês, renovando sozinho. No Pix, você paga 1 mês e o bot te avisa antes de vencer. Depois de pagar, você abre o bot no Telegram e entra no grupo na hora.`],
     ['Posso cancelar?', 'Pode, quando quiser e sem multa: a assinatura só não renova no próximo período, e seu acesso vai até o fim do período pago. É só mandar /assinatura pro bot.'],
     ['E se eu não gostar?', 'Você tem 7 dias pra pedir o dinheiro de volta, inteiro.'],
@@ -1407,7 +1407,7 @@ ${raios}
     const A = estado.res ? ARQ[estado.res.arq] : null;
     let h = '';
     if (tipo === 'mods') {
-      h = `<h3>O que tem dentro da Built</h3><ul class="mods">${[['Chat diário no Telegram', 'com uma galera no mesmo caminho'], ['Feedback do Conrado', 'nos seus rascunhos, todo dia útil'], ['Call ao vivo todo mês', 'gravada, pra quem não puder ir'], ['Bot com uma ideia de post', 'pro seu momento, todo dia às 9h'], ['Grupo organizado', 'em dois espaços: Avisos e Chat']].map(([t, d]) => `<li class="dest"><span><b>${t}</b> ${d}</span></li>`).join('')}</ul><p>${A ? `Pra quem é ${esc(A.nome)}, o foco lá dentro é virar ${esc(A.evo)}: prazo, grupo e alguém revisando o seu rascunho. ` : ''}Pagou, você abre o bot no Telegram e entra no grupo na hora.</p>`;
+      h = `<h3>O que tem dentro da Built</h3><ul class="mods">${[['Chat diário no Telegram', 'com uma galera no mesmo caminho'], ['Feedback do Conrado', 'nos seus rascunhos, todo dia útil'], ['Call ao vivo a cada 3 semanas', 'gravada, pra quem não puder ir'], ['Bot com uma ideia de post', 'pro seu momento, todo dia às 9h'], ['Grupo organizado', 'em dois espaços: Avisos e Chat']].map(([t, d]) => `<li class="dest"><span><b>${t}</b> ${d}</span></li>`).join('')}</ul><p>${A ? `Pra quem é ${esc(A.nome)}, o foco lá dentro é virar ${esc(A.evo)}: prazo, grupo e alguém revisando o seu rascunho. ` : ''}Pagou, você abre o bot no Telegram e entra no grupo na hora.</p>`;
     } else if (tipo === 'faq') {
       h = `<h3>Perguntas</h3><div class="faq">${faqBuilt(CFG.precos).map(([pp, r]) => `<details><summary>${esc(pp)}</summary><p>${esc(r)}</p></details>`).join('')}</div><p class="aviso">A minha trajetória não é promessa de resultado: o que você vai construir depende do seu trabalho. <a href="termos.html" target="_blank" rel="noopener">Termos</a> · <a href="privacidade.html" target="_blank" rel="noopener">Privacidade</a></p>`;
     } else if (tipo === 'sobre') {
