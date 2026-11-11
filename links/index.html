@@ -89,33 +89,22 @@ background-image:radial-gradient(rgba(29,28,26,.07) 1px,transparent 1.4px);backg
 .paises{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
 .paises span{padding:7px 12px;border-radius:999px;border:1px solid var(--linha);background:var(--fundo);font-size:14px}
 .paises span.morei{background:var(--tinta);color:var(--cartao);border-color:var(--tinta)}
-.ed{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:22px 24px;align-items:start}
-.capa{border-radius:14px;overflow:hidden;background:#151412;color:#f7f2e8;box-shadow:0 22px 44px -30px rgba(0,0,0,.6)}
-.capa .slides{display:grid}
-.capa figure{grid-area:1/1;margin:0;opacity:0;visibility:hidden;transition:opacity 1s ease,visibility 0s 1s}
-.capa figure.on{opacity:1;visibility:visible;transition:opacity 1s ease}
-.capa img{width:100%;height:auto;aspect-ratio:1160/720;object-fit:cover;background:#151412}
-.capa .q{padding:0 20px 14px;margin-top:-4px}
-.capa .q::before{content:"“";display:block;height:22px;font:400 54px/.9 Georgia,'Times New Roman',serif;color:#c0563a}
-.capa blockquote{margin:4px 0 12px;font:italic 400 19px/1.42 Georgia,'Times New Roman',serif;text-wrap:pretty}
-.capa figcaption{font:600 11.5px/1.4 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:#d3a784}
-.capa .pontos{display:flex;gap:6px;padding:4px 20px 18px}
-.capa .pontos i{display:block;width:6px;height:6px;border-radius:3px;background:rgba(247,242,232,.22);transition:width .5s,background .5s}
-.capa .pontos i.on{width:18px;background:#d3a784}
-.partes{margin:0;padding:0;list-style:none;counter-reset:p;display:grid;gap:15px}
-.partes li{counter-increment:p;display:grid;grid-template-columns:30px minmax(0,1fr);column-gap:8px}
-.partes li::before{content:counter(p,decimal-leading-zero);font:500 14px/1.55 var(--mono);color:var(--acento)}
-.partes b{display:block;font:600 17.5px/1.3 var(--sans);letter-spacing:-.015em}
-.partes span{display:block;margin-top:2px;font-size:15px;line-height:1.45;color:var(--tinta2)}
-.ed-acoes{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding-top:16px;border-top:1px solid var(--linha)}
-.ed-acoes a{display:inline-flex;align-items:center;padding:11px 18px;border-radius:10px;font:600 15px var(--sans);transition:filter .2s,transform .2s}
-.ed-acoes a:hover{filter:brightness(1.08)}.ed-acoes a:active{transform:scale(.97)}
-.ed-acoes .p{background:var(--acento);color:#fff}
-.ed-acoes .s{background:var(--fundo);border:1px solid var(--linha);color:var(--tinta)}
-.ed-acoes small{font-size:14px;color:var(--cinza)}
+.news .capa{position:relative;margin-top:14px;border-radius:12px;overflow:hidden;background:#151412;box-shadow:inset 0 0 0 1px rgba(247,242,232,.06)}
+.news .slides{display:grid}
+.news .capa figure{grid-area:1/1;margin:0;display:grid;grid-template-columns:112px minmax(0,1fr);opacity:0;visibility:hidden;transition:opacity 1s ease,visibility 0s 1s}
+.news .capa figure.on{opacity:1;visibility:visible;transition:opacity 1s ease}
+.news .capa img{width:100%;height:100%;min-height:132px;object-fit:cover;object-position:50% 34%;
+-webkit-mask-image:linear-gradient(90deg,#000 55%,transparent);mask-image:linear-gradient(90deg,#000 55%,transparent)}
+.news .capa .q{align-self:center;padding:14px 16px 26px 4px}
+.news .capa blockquote{margin:0 0 9px;font:italic 400 16px/1.42 Georgia,'Times New Roman',serif;color:#f7f2e8;text-wrap:pretty}
+.news .capa blockquote::before{content:"“";margin-right:3px;font:400 1.35em/0 Georgia,serif;vertical-align:-.12em;color:#c0563a}
+.news .capa figcaption{font:600 11px/1.35 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:#d3a784}
+.news .capa .pontos{position:absolute;left:128px;bottom:12px;display:flex;gap:5px}
+.news .capa .pontos i{display:block;width:5px;height:5px;border-radius:3px;background:rgba(247,242,232,.22);transition:width .5s,background .5s}
+.news .capa .pontos i.on{width:15px;background:#d3a784}
 footer{max-width:1200px;margin:24px auto 36px;padding:0 32px;font:400 13.5px var(--sans);color:var(--cinza)}
 @media (max-width:900px){.wrap{grid-template-columns:minmax(0,1fr);gap:10px;padding:0 18px 30px}.perfil{position:static;margin-top:-34px}
-.negs,.inv,.yt,.stats,.ed{grid-template-columns:1fr}.banner{padding:0 18px;margin-top:16px}.banner .img{height:88px;border-radius:12px}.banner img{object-position:50% 18%}
+.negs,.inv,.yt,.stats{grid-template-columns:1fr}.banner{padding:0 18px;margin-top:16px}.banner .img{height:88px;border-radius:12px}.banner img{object-position:50% 18%}
 .avatar{width:84px;height:84px}.perfil h1{font-size:38px}.lead{font-size:18.5px}.yt-mais{grid-template-columns:1fr 1fr}.yt-mais a:last-child{display:none}footer{padding:0 18px}.redes{gap:10px 16px;font-size:15px}.redes svg{width:16px;height:16px}}
 
 
@@ -189,7 +178,7 @@ background:linear-gradient(180deg,transparent 42%,rgba(255,246,228,.32) 50%,tran
     <h1>Conrado de Sá</h1>
     <p class="lead">De <b>-R$ 300 mil</b> a <b>R$ 5 milhões</b>.<br>A virada foi mental.</p>
     <p class="lead">Fundador da <b>DOTI</b> e do <b>Otto</b>, investidor.<br>A IA trabalha, eu vivo.</p>
-    <div class="news" id="assinar"><div class="rot">NEWSLETTER · SEGUNDA E QUINTA</div><b>Dimensão <span class="acima">acima</span></b><p>Toda edição abre com uma frase de Sêneca, Buda ou Krishna e vira uma ideia pra sua semana. Depois, IA na prática: novidades, uma automação de conteúdo e um prompt pronto.</p><form class="campo" novalidate><input type="email" name="email" inputmode="email" autocomplete="email" placeholder="seu@email.com" aria-label="Seu email" required><input class="isca" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true"><button type="submit">Assinar</button></form><p class="nota" role="status" hidden></p><p class="ok" hidden>Pronto. A primeira edição chega no seu email.</p><small><i class="vivo"></i><span data-count="315">315</span> leitores · grátis · <a href="https://condzmethod.com/privacidade.html">privacidade</a></small></div>
+    <div class="news"><div class="rot">NEWSLETTER · SEGUNDA E QUINTA</div><b>Dimensão <span class="acima">acima</span></b><div class="capa" aria-label="Toda edição abre com uma frase e o retrato de quem disse"><div class="slides"><figure class="on"><img src="img/autores/buda.jpg" alt="Buda"><div class="q"><blockquote>Vencer mil homens mil vezes numa batalha é menos do que vencer a si mesmo.</blockquote><figcaption>buda · dhammapada 103</figcaption></div></figure><figure class=""><img src="img/autores/seneca.jpg" alt="Sêneca" loading="lazy"><div class="q"><blockquote>Quem está em toda parte não está em lugar nenhum.</blockquote><figcaption>sêneca · cartas a lucílio, 2</figcaption></div></figure><figure class=""><img src="img/autores/krishna.jpg" alt="Krishna e Arjuna" loading="lazy"><div class="q"><blockquote>Você tem direito à ação, mas nunca aos frutos dela.</blockquote><figcaption>krishna · bhagavad gita 2.47</figcaption></div></figure></div><div class="pontos" aria-hidden="true"><i class="on"></i><i class=""></i><i class=""></i></div></div><p>Uma frase pra abrir, uma ideia pra sua semana e IA na prática: novidades, automação de conteúdo e um prompt pronto.</p><form class="campo" novalidate><input type="email" name="email" inputmode="email" autocomplete="email" placeholder="seu@email.com" aria-label="Seu email" required><input class="isca" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true"><button type="submit">Assinar</button></form><p class="nota" role="status" hidden></p><p class="ok" hidden>Pronto. A primeira edição chega no seu email.</p><small><i class="vivo"></i><span data-count="315">315</span> leitores · grátis · <a href="https://condzmethod.com/privacidade.html">privacidade</a></small></div>
     <div class="redes"><a href="https://x.com/condzxyz"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.75 3h3.07l-6.7 7.66L22 21h-6.17l-4.83-6.32L5.47 21H2.4l7.17-8.2L2 3h6.33l4.37 5.78L17.75 3Z"/></svg><b data-count="42.3" data-dec="1" data-suf=" mil">42,3 mil</b><span>X</span></a><a href="https://www.youtube.com/@conradodesa3"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .6 12c0 1.6.1 3.2.4 4.8a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1c.3-1.6.4-3.2.4-4.8s-.1-3.2-.4-4.8ZM9.8 15.1V8.9l5.4 3.1-5.4 3.1Z"/></svg><b data-count="6.8" data-dec="1" data-suf=" mil">6,8 mil</b><span>YouTube</span></a><a href="https://www.linkedin.com/in/conradodesa/"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4V21H3V9.75Zm6.5 0h3.83v1.54h.06c.53-1 1.84-2.06 3.79-2.06 4.05 0 4.8 2.67 4.8 6.13V21h-4v-5.08c0-1.21-.02-2.77-1.69-2.77-1.69 0-1.95 1.32-1.95 2.68V21h-4V9.75Z"/></svg><b data-count="9.2" data-dec="1" data-suf=" mil">9,2 mil</b><span>LinkedIn</span></a><a href="https://www.instagram.com/conrado_desa/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg><b data-count="895">895</b><span>Instagram</span></a></div>
   </aside>
   <main class="col">
@@ -199,15 +188,6 @@ background:linear-gradient(180deg,transparent 42%,rgba(255,246,228,.32) 50%,tran
         <div class="leg"><span>DOTI <b data-count="150" data-pre="~R$ " data-suf=" mil">~R$ 150 mil</b></span><span>Otto <b data-count="10.5" data-dec="1" data-pre="R$ " data-suf=" mil MRR">R$ 10,5 mil MRR</b></span></div></div>
       <div class="stat rv"><div class="v"><span data-count="5" data-pre="+R$ " data-suf=" milhões">+R$ 5 milhões</span></div><div class="r">investidos</div>
         <div class="tags"><span>Investimentos líquidos</span><span>Imóveis</span></div></div>
-    </section>
-    <div class="sec"><h2>Dimensão acima</h2><span class="nota">o que chega no seu email</span></div>
-    <section class="cartao ed rv">
-      <div class="capa" aria-label="O topo de cada edição: uma frase com o retrato de quem disse">
-        <div class="slides"><figure class="on"><img src="img/autores/buda.jpg" alt="Buda" width="1160" height="720"><div class="q"><blockquote>Vencer mil homens mil vezes numa batalha é menos do que vencer a si mesmo.</blockquote><figcaption>buda · dhammapada 103</figcaption></div></figure><figure class=""><img src="img/autores/seneca.jpg" alt="Sêneca" loading="lazy" width="1160" height="720"><div class="q"><blockquote>Quem está em toda parte não está em lugar nenhum.</blockquote><figcaption>sêneca · cartas a lucílio, 2</figcaption></div></figure><figure class=""><img src="img/autores/krishna.jpg" alt="Krishna e Arjuna" loading="lazy" width="1160" height="720"><div class="q"><blockquote>Você tem direito à ação, mas nunca aos frutos dela.</blockquote><figcaption>krishna · bhagavad gita 2.47</figcaption></div></figure></div>
-        <div class="pontos" aria-hidden="true"><i class="on"></i><i class=""></i><i class=""></i></div>
-      </div>
-      <ol class="partes"><li><div><b>Uma frase pra abrir</b><span>Sêneca, Buda, Krishna, Rumi. Sempre com a fonte.</span></div></li><li><div><b>A ideia da semana</b><span>Um argumento só, ligado à frase, pra você levar pro seu dia.</span></div></li><li><div><b>O que mudou na IA</b><span>2 ou 3 novidades e o que eu faria com cada uma.</span></div></li><li><div><b>Uma automação de conteúdo</b><span>O passo a passo, do jeito que eu faço.</span></div></li><li><div><b>O prompt da edição</b><span>Pronto pra copiar e usar.</span></div></li></ol>
-      <div class="ed-acoes"><a class="p" href="#assinar">Assinar grátis</a><a class="s" href="https://built-bot.built-bot.workers.dev/news">Ler as edições</a><small>toda segunda e quinta</small></div>
     </section>
     <div class="sec"><h2>Meus negócios</h2></div>
     <section class="negs"><a class="neg rv" href="https://doti.gg/"><div class="arte"><img src="img/ia/doti.webp" alt="" style="object-position:50% 44%"></div>
@@ -239,6 +219,10 @@ nums.forEach(el=>io.observe(el));
 const figs=document.querySelectorAll('.capa figure'),pts=document.querySelectorAll('.capa .pontos i');let k=0;
 if(figs.length>1)setInterval(()=>{if(document.hidden)return;figs[k].classList.remove('on');pts[k].classList.remove('on');k=(k+1)%figs.length;figs[k].classList.add('on');pts[k].classList.add('on')},6500);})();</script>
 <script>(()=>{'use strict';
+// coluna da esquerda fixa: se for mais alta que a tela, gruda pelo pé (as redes não somem em notebook pequeno)
+const perfil=document.querySelector('.perfil');
+const ajusta=()=>{if(!perfil)return;perfil.style.top=innerWidth<=900?'':Math.min(24,innerHeight-perfil.offsetHeight-24)+'px'};
+ajusta();addEventListener('resize',ajusta);addEventListener('load',ajusta);document.fonts&&document.fonts.ready.then(ajusta);
 const q=new URLSearchParams(location.search);
 const local=location.protocol==='file:'||/^(localhost|127\.|192\.168\.|10\.)/.test(location.hostname);
 const ref=()=>{try{const h=new URL(document.referrer).hostname;for(const[re,n]of[[/instagram/,'ig'],[/(^|\.)t\.co$|twitter|(^|\.)x\.com$/,'x'],[/tiktok/,'tiktok'],[/youtube|youtu\.be/,'youtube'],[/threads/,'threads'],[/linkedin|lnkd/,'linkedin'],[/facebook|fb\.me/,'facebook']])if(re.test(h))return n}catch(e){}return''};
@@ -250,8 +234,6 @@ document.querySelectorAll('a[href]').forEach(a=>{try{const u=new URL(a.getAttrib
 // newsletter: vai pro /lead do built-bot com source "newsletter" (só aceita envio de condzmethod.com)
 const LEAD_URL='https://built-bot.built-bot.workers.dev/lead',CHAVE='espera:newsletter';
 const box=document.querySelector('.news');if(!box)return;
-document.querySelectorAll('a[href="#assinar"]').forEach(a=>a.addEventListener('click',e=>{const i=box.querySelector('input[type=email]');if(!i||box.querySelector('form').hidden)return;
- e.preventDefault();box.scrollIntoView({behavior:'smooth',block:'center'});setTimeout(()=>i.focus({preventScroll:true}),450)}));
 const form=box.querySelector('form'),campo=form.email,botao=form.querySelector('button'),nota=box.querySelector('.nota'),ok=box.querySelector('.ok');
 const mostraOk=t=>{form.hidden=true;nota.hidden=true;ok.hidden=false;if(t)ok.textContent=t};
 const erro=t=>{nota.hidden=false;nota.textContent=t;campo.setAttribute('aria-invalid','true');campo.focus()};
