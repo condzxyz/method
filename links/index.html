@@ -22,8 +22,8 @@ background-image:radial-gradient(rgba(29,28,26,.07) 1px,transparent 1.4px);backg
 .banner{max-width:1200px;margin:22px auto 0;padding:0 32px}
 .banner .img{height:112px;border-radius:14px;overflow:hidden;background:#1b1a18;box-shadow:inset 0 0 0 1px rgba(0,0,0,.08)}
 .banner img{width:100%;height:100%;object-fit:cover;object-position:50% 30%;filter:saturate(.8) contrast(.96)}
-.wrap{max-width:1200px;margin:0 auto;padding:0 32px 40px;display:grid;grid-template-columns:400px minmax(0,1fr);gap:52px}
-.perfil{position:sticky;top:24px;align-self:start;margin-top:-44px}
+.wrap{max-width:1200px;margin:0 auto;padding:44px 32px 40px;display:grid;grid-template-columns:400px minmax(0,1fr);gap:52px}
+.perfil{position:sticky;top:24px;align-self:start}
 .avatar{position:relative;z-index:2;width:104px;height:104px;border-radius:50%;overflow:hidden;border:4px solid var(--fundo);box-shadow:0 10px 24px -14px rgba(0,0,0,.5)}
 .avatar img{width:100%;height:100%;object-fit:cover}
 .perfil h1{margin:20px 0 0;font:700 44px/1.05 var(--sans);letter-spacing:-.035em}
@@ -45,7 +45,7 @@ background-image:radial-gradient(rgba(29,28,26,.07) 1px,transparent 1.4px);backg
 .redes{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:22px;font:500 16px var(--sans)}
 .redes a{display:inline-flex;align-items:center;gap:8px;color:var(--tinta2)}.redes svg{width:18px;height:18px;color:var(--tinta)}
 .redes b{color:var(--tinta);font-weight:500}.redes span{display:none}
-.col{display:grid;gap:16px;min-width:0;padding-top:36px}
+.col{display:grid;gap:16px;min-width:0}
 .sec{display:flex;align-items:baseline;gap:10px;margin-top:22px;padding-bottom:12px;border-bottom:1px solid var(--linha)}
 .sec h2{margin:0;font:600 21px/1.2 var(--sans);letter-spacing:-.02em}
 .sec .nota{font:400 14px var(--sans);color:var(--cinza)}
@@ -118,7 +118,7 @@ background-image:radial-gradient(rgba(29,28,26,.07) 1px,transparent 1.4px);backg
 .news .capa .pontos i{display:block;width:5px;height:5px;border-radius:3px;background:rgba(247,242,232,.22);transition:width .5s,background .5s}
 .news .capa .pontos i.on{width:15px;background:#d3a784}
 footer{max-width:1200px;margin:24px auto 36px;padding:0 32px;font:400 13.5px var(--sans);color:var(--cinza)}
-@media (max-width:900px){.wrap{grid-template-columns:minmax(0,1fr);gap:10px;padding:0 18px 30px}.perfil{position:static;margin-top:-34px}
+@media (max-width:900px){.wrap{grid-template-columns:minmax(0,1fr);gap:10px;padding:26px 18px 30px}.perfil{position:static}
 .negs,.inv,.yt,.stats{grid-template-columns:1fr}.neg{display:grid;grid-template-columns:118px minmax(0,1fr)}.neg .arte{height:auto;min-height:112px}.built .b-arte{height:190px}.built .b-txt{padding:18px 18px 20px}.built h2{font-size:28px}.built .b-lead{font-size:17px}.banner{padding:0 18px;margin-top:16px}.banner .img{height:88px;border-radius:12px}.banner img{object-position:50% 18%}
 .avatar{width:84px;height:84px}.perfil h1{font-size:38px}.lead{font-size:18.5px}.yt-mais{grid-template-columns:1fr 1fr}.yt-mais a:last-child{display:none}footer{padding:0 18px}.redes{gap:10px 16px;font-size:15px}.redes svg{width:16px;height:16px}}
 
@@ -186,7 +186,6 @@ background:linear-gradient(180deg,transparent 42%,rgba(255,246,228,.32) 50%,tran
 }
 </style></head>
 <body>
-<div class="banner"><div class="img"><img src="img/banner-x.webp" alt="Tesla, o macaco e Einstein em pintura a óleo"></div></div>
 <div class="wrap">
   <aside class="perfil">
     <div class="avatar"><img src="img/avatar.webp" alt=""></div>
@@ -203,7 +202,7 @@ background:linear-gradient(180deg,transparent 42%,rgba(255,246,228,.32) 50%,tran
         <div class="rot">COMUNIDADE DE CRIADORES · NO TELEGRAM</div>
         <h2>Built</h2>
         <p class="b-lead">A comunidade pra quem cria conteúdo criar junto e evoluir mentalmente.</p>
-        <ul><li>Calls comigo a cada 2 semanas</li><li>Placar dos posts: o melhor do mês ganha uma call 1:1 comigo</li><li>Raio-x do seu negócio e feedback nos seus posts</li></ul>
+        <ul><li>Calls comigo a cada 3 semanas</li><li>Exercícios mentais pra evolução física, espiritual e mental</li><li>Placar dos posts: o melhor do mês ganha uma call 1:1 comigo</li><li>Raio-x do seu negócio e feedback nos seus posts</li></ul>
         <div class="b-cta"><a class="btn" href="https://condzmethod.com/built/#entrar">Conhecer a Built</a><a class="alt" href="https://condzmethod.com/built/">ou faça o teste de perfil</a></div>
       </div>
     </section>
