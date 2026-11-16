@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Canal Diário · WhatsApp</title>
+<!-- Link curto da bio: condzmethod.com/canal → WhatsApp do bot com a mensagem pronta.
+     ?o=st (ou outra origem de até 6 letras) troca o "· IG" do fim da mensagem, pra saber de onde a pessoa veio. -->
+<noscript><meta http-equiv="refresh" content="0; url=https://wa.me/5511955079674?text=Oi!%20Quero%20conhecer%20o%20canal%20di%C3%A1rio%20%C2%B7%20IG"></noscript>
+<style>
+  body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #f4efe6; color: #1c1b19; font: 17px/1.5 -apple-system, system-ui, sans-serif; }
+  a { display: inline-block; padding: 14px 22px; border-radius: 12px; background: #2f5d4a; color: #fff; font-weight: 600; text-decoration: none; }
+  p { margin: 0 0 16px; text-align: center; }
+</style>
+</head>
+<body>
+<main>
+  <p>Abrindo o WhatsApp…</p>
+  <p><a id="ir" href="https://wa.me/5511955079674?text=Oi!%20Quero%20conhecer%20o%20canal%20di%C3%A1rio%20%C2%B7%20IG">Abrir o WhatsApp</a></p>
+</main>
+<script>
+  (function () {
+    var o = (new URLSearchParams(location.search).get('o') || 'IG').replace(/[^A-Za-z0-9]/g, '').slice(0, 6).toUpperCase() || 'IG';
+    var url = 'https://wa.me/5511955079674?text=' + encodeURIComponent('Oi! Quero conhecer o canal diário · ' + o);
+    document.getElementById('ir').href = url;
+    location.replace(url);
+  })();
+</script>
+</body>
+</html>
