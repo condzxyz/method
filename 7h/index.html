@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Canal Diário · 3 minutos pra acalmar a cabeça, às 7h no WhatsApp</title>
+<meta name="description" content="Uma frase, um aprendizado curto e um exercício de 2 a 5 minutos pra acalmar a cabeça. Toda manhã, às 7h, no seu WhatsApp. Grátis 1x por semana ou todo dia por R$ 27/mês.">
+<meta property="og:title" content="Canal Diário · às 7h no seu WhatsApp">
+<meta property="og:description" content="Uma frase, um aprendizado e um exercício de poucos minutos pra acalmar a cabeça. Grátis 1x por semana ou todo dia por R$ 27/mês.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@1,6..72,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --papel: #f3eee6;
+    --papel-2: #ebe4d8;
+    --tinta: #1d1b18;
+    --suave: #635d54;
+    --linha: #d9d0c2;
+    --cor: #2f5d4a;        /* a única cor da marca */
+    --cor-escura: #244a3b;
+    --branco: #fffdf9;
+    --raio: 18px;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: var(--papel); color: var(--tinta); font: 400 17px/1.55 Inter, system-ui, -apple-system, sans-serif; }
+  a { color: inherit; }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 28px; }
+
+  /* topo */
+  header { display: flex; align-items: center; justify-content: space-between; padding: 22px 0 0; }
+  .marca { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 18px; letter-spacing: -0.01em; }
+  .simbolo { width: 30px; height: 30px; border-radius: 9px; background: var(--cor); color: #fff; display: grid; place-items: center; font-size: 15px; font-weight: 700; }
+  .por { font-size: 14px; color: var(--suave); text-decoration: none; }
+  .por:hover { color: var(--tinta); }
+
+  /* primeira dobra */
+  .hero { display: grid; grid-template-columns: 1.08fr 0.92fr; gap: 56px; align-items: center; padding: 40px 0 56px; min-height: calc(100vh - 80px); max-height: 820px; }
+  .selo { display: inline-flex; align-items: center; gap: 8px; background: var(--branco); border: 1px solid var(--linha); border-radius: 99px; padding: 6px 14px; font-size: 15px; font-weight: 600; }
+  .selo i { width: 8px; height: 8px; border-radius: 50%; background: var(--cor); display: inline-block; }
+  h1 { font-size: clamp(34px, 4.2vw, 54px); line-height: 1.06; letter-spacing: -0.03em; margin: 18px 0 16px; font-weight: 700; }
+  .sub { font-size: 19px; color: var(--suave); margin: 0 0 30px; max-width: 34em; }
+  .sub b { color: var(--tinta); font-weight: 600; }
+
+  .planos { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .plano { background: var(--branco); border: 1px solid var(--linha); border-radius: var(--raio); padding: 20px 20px 18px; display: flex; flex-direction: column; gap: 6px; transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease; }
+  .plano:hover { transform: translateY(-2px); box-shadow: 0 10px 30px -12px rgba(29, 27, 24, .25); }
+  .plano.forte { border: 2px solid var(--cor); }
+  .plano.forte:hover { box-shadow: 0 0 0 4px rgba(47, 93, 74, .12), 0 14px 34px -14px rgba(47, 93, 74, .55); }
+  .rotulo { font-size: 13px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--suave); }
+  .plano.forte .rotulo { color: var(--cor); }
+  .preco { font-size: 28px; font-weight: 700; letter-spacing: -0.02em; }
+  .preco small { font-size: 16px; font-weight: 500; color: var(--suave); }
+  .plano p { margin: 0 0 10px; font-size: 16px; color: var(--suave); min-height: 3em; }
+  .botao { display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 52px; padding: 6px 14px; border-radius: 12px; font-weight: 600; font-size: 16px; line-height: 1.25; text-align: center; text-decoration: none; cursor: pointer; border: 0; width: 100%; font-family: inherit; transition: background .15s ease; }
+  .botao.cheio { background: var(--cor); color: #fff; }
+  .botao.cheio:hover { background: var(--cor-escura); }
+  .botao.contorno { background: transparent; color: var(--tinta); border: 1.5px solid var(--tinta); }
+  .botao.contorno:hover { background: var(--tinta); color: var(--branco); }
+  .alt { margin-top: 8px; text-align: center; font-size: 15px; }
+  .alt a { color: var(--suave); }
+  .nota { margin: 14px 0 0; font-size: 15px; color: var(--suave); }
+  .botao.desligado { background: transparent; color: var(--suave); border: 1.5px dashed var(--linha); cursor: default; }
+  [data-so-espera] { display: none; }
+  body.espera [data-so-espera] { display: revert; }
+
+  /* celular */
+  .celular { justify-self: center; width: 100%; max-width: 380px; background: #1d1b18; border-radius: 42px; padding: 12px; box-shadow: 0 40px 80px -40px rgba(29, 27, 24, .55); }
+  .tela { background: #e9e2d6; border-radius: 32px; overflow: hidden; }
+  .barra { background: var(--branco); padding: 14px 18px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid var(--linha); }
+  .barra .simbolo { width: 34px; height: 34px; border-radius: 50%; }
+  .barra b { font-size: 15px; display: block; line-height: 1.2; }
+  .barra span { font-size: 12.5px; color: var(--suave); }
+  .chat { padding: 16px 14px 20px; display: flex; flex-direction: column; gap: 8px; max-height: 560px; overflow: hidden; position: relative; }
+  .chat::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 60px; background: linear-gradient(to bottom, rgba(233, 226, 214, 0), #e9e2d6); }
+  .bolha { background: var(--branco); border-radius: 4px 14px 14px 14px; padding: 10px 12px 8px; font-size: 14.5px; line-height: 1.45; max-width: 92%; box-shadow: 0 1px 1px rgba(0, 0, 0, .06); }
+  .bolha.eu { align-self: flex-end; background: #d6eadc; border-radius: 14px 4px 14px 14px; max-width: 60%; }
+  .bolha .hora { display: block; text-align: right; font-size: 11px; color: var(--suave); margin-top: 2px; }
+  .bolha em { font-family: Newsreader, Georgia, serif; font-size: 16px; }
+  .bolha .t { font-weight: 700; }
+  .bolha p { margin: 0 0 8px; }
+
+  /* seções */
+  section { padding: 64px 0; border-top: 1px solid var(--linha); }
+  h2 { font-size: clamp(26px, 3vw, 36px); letter-spacing: -0.02em; margin: 0 0 28px; line-height: 1.15; }
+  .passos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .passo { background: var(--branco); border: 1px solid var(--linha); border-radius: var(--raio); padding: 22px; }
+  .passo b { display: inline-grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; background: var(--papel-2); font-size: 15px; margin-bottom: 12px; }
+  .passo h3 { margin: 0 0 6px; font-size: 19px; }
+  .passo p { margin: 0; color: var(--suave); font-size: 16px; }
+
+  .comparar { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: stretch; }
+  .lado { border-radius: var(--raio); padding: 26px; border: 1px solid var(--linha); background: var(--branco); }
+  .lado.nosso { background: var(--cor); color: #fff; border-color: var(--cor); }
+  .lado .v { font-size: 40px; font-weight: 700; letter-spacing: -0.03em; }
+  .lado .d { font-size: 18px; margin-top: 4px; }
+  .lado.nosso .d { color: #e3efe8; }
+  .fonte { font-size: 13.5px; color: var(--suave); margin-top: 12px; }
+
+  .faq { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 24px; }
+  details { background: var(--branco); border: 1px solid var(--linha); border-radius: 14px; padding: 16px 20px; }
+  summary { font-weight: 600; cursor: pointer; font-size: 17px; list-style: none; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; float: right; color: var(--suave); font-weight: 500; }
+  details[open] summary::after { content: "–"; }
+  details p { margin: 10px 0 0; color: var(--suave); font-size: 16px; }
+
+  .final { text-align: center; }
+  .final .planos { max-width: 720px; margin: 0 auto; text-align: left; }
+  footer { padding: 28px 0 40px; font-size: 14px; color: var(--suave); display: flex; flex-wrap: wrap; gap: 8px 20px; justify-content: space-between; border-top: 1px solid var(--linha); }
+
+  /* entrada suave */
+  .sobe { opacity: 0; transform: translateY(12px); animation: sobe .7s cubic-bezier(.2, .7, .2, 1) forwards; }
+  .sobe.d1 { animation-delay: .08s; } .sobe.d2 { animation-delay: .16s; } .sobe.d3 { animation-delay: .26s; }
+  @keyframes sobe { to { opacity: 1; transform: none; } }
+  @media (prefers-reduced-motion: reduce) { .sobe { animation: none; opacity: 1; transform: none; } .plano { transition: none; } }
+
+  /* troca de nome (só no computador do Conrado, pra escolher) */
+  .nomes { position: fixed; right: 16px; bottom: 16px; background: var(--tinta); color: #fff; border-radius: 14px; padding: 10px 12px; font-size: 13px; display: none; gap: 6px; flex-wrap: wrap; max-width: 330px; z-index: 9; }
+  .nomes button { font: inherit; background: #3a3732; color: #fff; border: 0; border-radius: 8px; padding: 6px 9px; cursor: pointer; }
+  .nomes button.on { background: var(--cor); }
+
+  @media (max-width: 960px) {
+    .hero { grid-template-columns: 1fr; gap: 36px; min-height: 0; max-height: none; padding: 26px 0 44px; }
+    .celular { max-width: 340px; }
+    .passos, .comparar, .faq { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 560px) {
+    body { font-size: 16px; }
+    .wrap { padding: 0 16px; }
+    .sub { font-size: 17px; margin-bottom: 22px; }
+    .planos { grid-template-columns: 1fr; }
+    .plano p { min-height: 0; }
+    section { padding: 48px 0; }
+    .bolha { font-size: 14.5px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="marca"><span class="simbolo">7</span><span data-nome>Canal Diário</span></div>
+    <a class="por" href="https://www.instagram.com/conrado_desa/" target="_blank" rel="noopener">por Conrado de Sá</a>
+  </header>
+
+  <main class="hero">
+    <div>
+      <span class="selo sobe"><i></i> No seu WhatsApp, às 7h</span>
+      <h1 class="sobe d1">3 minutos pra acalmar a cabeça antes do dia começar.</h1>
+      <p class="sub sobe d2">Uma frase de quem entendeu a mente antes da gente, um aprendizado de 3 linhas e <b>um exercício de 2 a 5 minutos</b>: respirar, prestar atenção no corpo, andar sem o celular. Chega sozinho, toda manhã.</p>
+      <div class="planos sobe d3" id="planos">
+        <div class="plano">
+          <span class="rotulo">Grátis</span>
+          <span class="preco">R$ 0</span>
+          <p data-espera="Uma mensagem por semana, toda segunda às 7h. As vagas abrem em turmas.">Uma mensagem por semana, toda segunda às 7h.</p>
+          <a class="botao contorno" data-acao="gratis" href="#">Receber 1x por semana grátis</a>
+        </div>
+        <div class="plano forte">
+          <span class="rotulo">Todo dia</span>
+          <span class="preco">R$ 27 <small>/mês</small></span>
+          <p>Uma por dia, começando por uma jornada de 30 dias.</p>
+          <a class="botao cheio" data-acao="cartao" href="#">Todo dia por R$ 27/mês</a>
+          <div class="alt"><a data-acao="pix" href="#">ou 1 mês no Pix</a></div>
+        </div>
+      </div>
+      <p class="nota sobe d3" data-espera="Abre o WhatsApp com a mensagem pronta, é só enviar. As vagas abrem em turmas pequenas; quando chegar a sua vez, a primeira mensagem chega lá.">Abre o WhatsApp com a mensagem pronta, é só enviar. Pra parar, manda SAIR.</p>
+    </div>
+
+    <div class="celular sobe d2" aria-label="Exemplo de mensagem">
+      <div class="tela">
+        <div class="barra"><span class="simbolo">7</span><div><b data-nome>Canal Diário</b><span>mensagem das 7h</span></div></div>
+        <div class="chat" id="exemplo">
+          <!-- EXEMPLO: a mensagem real do dia 1 (CONTEUDO.md, J01) -->
+          <div class="bolha">
+            <p><span class="t">Dia 1 de 30</span> · A cabeça não para</p>
+            <p><em id="ex-frase">“Tal como um peixe que retirado da água, salta e estrebucha, também assim é esta mente agitada.”</em><br>— <span id="ex-ref">Buda, Dhammapada 34</span></p>
+            <p><span class="t">O que fica</span><br>O Buda compara a mente agitada a um peixe fora d’água. Pular de um assunto pro outro não é defeito seu, é o jeito dela.<br>O problema não é pensar demais. É não perceber que tá pensando.<br>O primeiro passo é só esse: notar.</p>
+            <p><span class="t">Exercício de hoje · 3 min</span><br>Senta confortável, olho fechado ou olhando pro chão.<br>Conta cada vez que solta o ar: 1, 2, 3… até 10. Depois volta pro 1.</p>
+            <p>Fez? Responde <span class="t">1</span>.</p>
+            <span class="hora">07:00</span>
+          </div>
+          <div class="bolha eu">1<span class="hora">07:06</span></div>
+          <div class="bolha">Anotado. Primeiro dia da sequência.<span class="hora">07:06</span></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <section>
+    <h2>Como funciona</h2>
+    <div class="passos">
+      <div class="passo"><b>1</b><h3 data-espera="Você entra na lista">Você manda a primeira mensagem</h3><p data-espera="O botão abre o WhatsApp com o texto pronto. As vagas abrem em turmas pequenas; quando chegar a sua vez, a primeira chega sozinha. Ninguém te adiciona em grupo.">O botão abre o WhatsApp com o texto pronto. Ninguém te adiciona em grupo, e seu número não vai pra lista nenhuma.</p></div>
+      <div class="passo"><b>2</b><h3>Às 7h chega a do dia</h3><p>A frase com a fonte (livro e verso), o aprendizado e o exercício. Dá pra fazer sentado na cama.</p></div>
+      <div class="passo"><b>3</b><h3>Fez? Responde 1</h3><p>A sua sequência fica anotada. No plano diário, os primeiros 30 dias são uma jornada, um passo de cada vez.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Menos que uma Netflix</h2>
+    <div class="comparar">
+      <div class="lado"><div class="v">R$ 51,90</div><div class="d">por mês na Netflix Padrão, pra você assistir.</div></div>
+      <div class="lado nosso"><div class="v">R$ 27</div><div class="d">por mês no <span data-nome>Canal Diário</span>, pra você evoluir.</div></div>
+    </div>
+    <p class="fonte">Preço da Netflix Padrão (sem anúncios) na página de ajuda da Netflix Brasil em 16/11/2026.</p>
+  </section>
+
+  <section>
+    <h2>Perguntas</h2>
+    <div class="faq">
+      <details data-so-espera><summary>Por que lista de espera?</summary><p>As vagas abrem em turmas pequenas, pra dar tempo de ouvir quem entra e ajustar o que precisa. Quando chegar a sua vez, a primeira mensagem chega no seu WhatsApp, sem você fazer nada. Pra sair da lista, manda SAIR.</p></details>
+      <details><summary>Preciso saber meditar?</summary><p>Não. Os exercícios são simples e curtos: respirar mais devagar, prestar atenção no corpo, escutar os sons, andar alguns minutos sem o celular, escrever o que está sentindo.</p></details>
+      <details><summary>De onde vêm as frases?</summary><p>De livros, com o verso ou a página: Bhagavad-gītā (Krishna), Dhammapada (Buda), os Evangelhos de Lucas, Marcos e João (Jesus), Rumi, Sêneca, Sócrates e Platão. Nada de frase "atribuída" sem fonte.</p></details>
+      <details><summary>Como eu cancelo?</summary><p>Manda SAIR no WhatsApp. No cartão, a renovação é cancelada na hora e nada mais é cobrado. O Pix vale 1 mês e não renova sozinho.</p></details>
+      <details><summary>Vou receber muita mensagem?</summary><p>Uma por dia no plano diário, uma por semana no grátis. Fora isso, só quando você escreve. Seu número não é usado pra mais nada.</p></details>
+      <details><summary>Quem escreve?</summary><p>O Conrado de Sá (@conrado_desa). É o que ele pratica e estuda, num formato que cabe na manhã de qualquer pessoa.</p></details>
+      <details><summary>Isso é terapia?</summary><p>Não. É um hábito de poucos minutos por dia. Se você está passando por algo pesado, procure um profissional de saúde.</p></details>
+    </div>
+  </section>
+
+  <section class="final">
+    <h2 data-espera="Entra na lista. As vagas abrem em turmas.">Começa amanhã às 7h.</h2>
+    <div class="planos">
+      <div class="plano">
+        <span class="rotulo">Grátis</span>
+        <span class="preco">R$ 0</span>
+        <p data-espera="Toda segunda às 7h, quando abrir sua vaga.">Toda segunda às 7h.</p>
+        <a class="botao contorno" data-acao="gratis" href="#">Receber 1x por semana grátis</a>
+      </div>
+      <div class="plano forte">
+        <span class="rotulo">Todo dia</span>
+        <span class="preco">R$ 27 <small>/mês</small></span>
+        <p>Jornada de 30 dias, depois um por dia.</p>
+        <a class="botao cheio" data-acao="cartao" href="#">Todo dia por R$ 27/mês</a>
+        <div class="alt"><a data-acao="pix" href="#">ou 1 mês no Pix</a></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>© 2026 Web3growth · <span data-nome>Canal Diário</span></span>
+    <span><a href="privacidade.html">Privacidade e termos</a> · <a href="https://www.instagram.com/conrado_desa/" target="_blank" rel="noopener">@conrado_desa</a></span>
+  </footer>
+</div>
+
+<div class="nomes" id="nomes"></div>
+
+<script>
+  // ---------- configuração (preencher antes de publicar) ----------
+  const CFG = {
+    nome: 'Canal Diário',          // provisório (16/11); opções: Mente às 7 · Respiro · Presente · Ritual das 7 · Centro
+    whatsapp: '5511955079674',     // número do bot (Salvy, número virtual "Bot 7h" da Web3growth), só dígitos
+    listaDeEspera: true,           // fase de teste: o grátis vira "Entrar na lista de espera" (igual ao LISTA_ESPERA do worker)
+    pagoAberto: false,             // false: o plano diário aparece como "Abre em breve" (igual ao PAGO_ABERTO do worker)
+    pagoAbreEm: '2026-11-19T07:00:00-03:00', // abre sozinho nessa hora (igual ao PAGO_ABRE_EM do worker)
+    links: {
+      cartao: 'https://buy.stripe.com/fZu8wQeYs2P0bwFfYWbsc0e',  // R$ 27/mês recorrente (plink_1UcWsYIKgGxRhu8s1desGmDa)
+      pix: 'https://buy.stripe.com/7sY9AU7w061cgQZh30bsc0f',     // R$ 27 avulso, 30 dias (plink_1UcWtWIKgGxRhu8sUURbH0hW)
+    },
+  };
+  const NOMES = ['Canal Diário', 'Mente às 7', 'Respiro', 'Presente', 'Ritual das 7', 'Centro'];
+
+  const params = new URLSearchParams(location.search);
+  // código pessoal (vem do link "assinar" que o bot manda): vira client_reference_id no Stripe e liga o pagamento ao WhatsApp
+  const codigo = (params.get('c') || '').replace(/[^A-Za-z0-9]/g, '').slice(0, 12);
+  // origem pro ATIVAR (ex.: ?o=ig) só pra saber de onde a pessoa veio; até 6 letras (10 seria confundido com código de pagamento)
+  const origem = (params.get('o') || params.get('utm_source') || '').replace(/[^A-Za-z0-9]/g, '').slice(0, 6).toUpperCase();
+
+  function aplicarNome(n) {
+    document.querySelectorAll('[data-nome]').forEach((el) => { el.textContent = n; });
+    document.title = document.title.replace(/^[^·]+·/, n + ' ·');
+    const ini = n.trim()[0] && /[A-Za-z]/.test(n.trim()[0]) ? n.trim()[0].toUpperCase() : '7';
+    document.querySelectorAll('.simbolo').forEach((el) => { el.textContent = ini; });
+  }
+  aplicarNome(CFG.nome);
+
+  // fase de teste: lista de espera e diário ainda fechado
+  if (CFG.listaDeEspera) {
+    document.body.classList.add('espera');
+    document.querySelectorAll('[data-espera]').forEach((el) => { el.textContent = el.dataset.espera; });
+    document.querySelectorAll('[data-acao="gratis"]').forEach((a) => { a.textContent = 'Entrar na lista de espera'; });
+  }
+  const pagoAberto = CFG.pagoAberto || (CFG.pagoAbreEm && Date.now() >= Date.parse(CFG.pagoAbreEm));
+  if (!pagoAberto) {
+    document.querySelectorAll('[data-acao="cartao"]').forEach((a) => {
+      const s = document.createElement('span');
+      s.className = 'botao desligado';
+      s.textContent = 'Abre em breve';
+      a.replaceWith(s);
+    });
+    document.querySelectorAll('[data-acao="pix"]').forEach((a) => a.closest('.alt')?.remove());
+    // o grátis vira o plano principal (destaque e botão cheio)
+    document.querySelectorAll('[data-acao="gratis"]').forEach((a) => { a.classList.remove('contorno'); a.classList.add('cheio'); });
+    document.querySelectorAll('.plano').forEach((p) => p.classList.toggle('forte', !!p.querySelector('[data-acao="gratis"]')));
+  }
+
+  function linkStripe(base) {
+    if (!base) return '';
+    const u = new URL(base);
+    if (codigo) u.searchParams.set('client_reference_id', codigo);
+    return u.toString();
+  }
+  function linkWhats() {
+    if (!CFG.whatsapp) return '';
+    const texto = CFG.listaDeEspera ? 'Quero entrar na lista' + (origem ? ' · ' + origem : '') : 'ATIVAR' + (origem ? ' ' + origem : '');
+    return 'https://wa.me/' + CFG.whatsapp + '?text=' + encodeURIComponent(texto);
+  }
+
+  document.querySelectorAll('[data-acao]').forEach((a) => {
+    const acao = a.dataset.acao;
+    const url = acao === 'gratis' ? linkWhats() : linkStripe(CFG.links[acao]);
+    if (url) { a.href = url; if (acao === 'gratis') { a.target = '_blank'; a.rel = 'noopener'; } }
+    else a.addEventListener('click', (e) => { e.preventDefault(); alert('Ainda não configurado: ' + (acao === 'gratis' ? 'número do WhatsApp do bot' : 'link do Stripe (' + acao + ')') + '.'); });
+  });
+
+  // quem chega pelo link "assinar" do bot já cai nos planos
+  if (codigo) document.getElementById('planos').scrollIntoView({ block: 'center' });
+
+  // escolher o nome: só no computador dele (localhost) ou com ?nomes=1
+  if (location.protocol === 'file:' || /^(localhost|127\.0\.0\.1)$/.test(location.hostname) || params.get('nomes') === '1') {
+    const box = document.getElementById('nomes');
+    box.style.display = 'flex';
+    box.innerHTML = '<span style="width:100%;opacity:.7">ver com o nome:</span>' + NOMES.map((n) => `<button>${n}</button>`).join('');
+    box.querySelectorAll('button').forEach((b) => b.addEventListener('click', () => {
+      box.querySelectorAll('button').forEach((x) => x.classList.toggle('on', x === b));
+      aplicarNome(b.textContent);
+    }));
+  }
+</script>
+</body>
+</html>

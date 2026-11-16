@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Canal Diário · Privacidade e termos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; background: #f3eee6; color: #1d1b18; font: 400 17px/1.6 Inter, system-ui, sans-serif; }
+  main { max-width: 720px; margin: 0 auto; padding: 40px 20px 60px; }
+  h1 { font-size: 32px; letter-spacing: -0.02em; margin: 0 0 8px; }
+  h2 { font-size: 20px; margin: 32px 0 8px; }
+  p, li { color: #3d3933; }
+  a { color: #2f5d4a; }
+  .data { color: #635d54; font-size: 15px; }
+</style>
+</head>
+<body>
+<main>
+  <p><a href="./">← voltar</a></p>
+  <h1>Privacidade e termos</h1>
+  <p class="data">Versão de 16/11/2026 · <span data-nome>Canal Diário</span>, um produto da Web3growth (contato: conrado@doti.gg).</p>
+
+  <h2>O que é</h2>
+  <p>Uma mensagem no WhatsApp com uma frase (com a fonte), um aprendizado curto e um exercício de 2 a 5 minutos. No plano grátis, toda segunda às 7h. No plano diário (R$ 27 por mês), todo dia às 7h, começando por uma jornada de 30 dias. Não é terapia nem tratamento de saúde.</p>
+
+  <h2>Que dados a gente guarda</h2>
+  <ul>
+    <li>Seu número de WhatsApp e o nome do seu perfil, quando você manda a primeira mensagem.</li>
+    <li>As mensagens que você manda pro número (pra entender comandos como 1, SAIR e STATUS, e pra o Conrado ler o que você escreveu).</li>
+    <li>No plano diário: nome, email, telefone e a situação do pagamento, que vêm do Stripe. Os dados do cartão ficam só no Stripe; a gente não vê.</li>
+    <li>Sua sequência de dias e em que dia da jornada você está.</li>
+  </ul>
+
+  <h2>Pra que</h2>
+  <p>Só pra mandar as mensagens, responder você e cobrar o plano diário. Seu número não é vendido, compartilhado nem usado pra outra lista. Os dados ficam na Cloudflare (onde o sistema roda) e no Stripe (pagamento).</p>
+
+  <h2>Como parar e apagar</h2>
+  <p>Manda SAIR no WhatsApp e você não recebe mais nada. Pra apagar seus dados de vez, escreve pra conrado@doti.gg.</p>
+
+  <h2>Pagamento e cancelamento</h2>
+  <ul>
+    <li>Cartão: R$ 27 por mês, renova sozinho. Mandar SAIR cancela a renovação; o mês já pago continua valendo.</li>
+    <li>Pix: R$ 27, vale 30 dias e não renova sozinho.</li>
+    <li>Compra pela internet tem 7 dias de arrependimento (Código de Defesa do Consumidor, art. 49): pede o reembolso em conrado@doti.gg.</li>
+  </ul>
+
+  <h2>Mudanças</h2>
+  <p>Se estas regras mudarem, a data no topo muda junto.</p>
+</main>
+<script>document.querySelectorAll('[data-nome]').forEach((el) => { el.textContent = 'Canal Diário'; });</script>
+</body>
+</html>
