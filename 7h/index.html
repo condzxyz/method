@@ -154,7 +154,7 @@
         <div class="plano">
           <span class="rotulo">Grátis</span>
           <span class="preco">R$ 0</span>
-          <p data-espera="Uma mensagem por semana, toda segunda às 7h. As vagas abrem em turmas.">Uma mensagem por semana, toda segunda às 7h.</p>
+          <p data-espera="Uma mensagem por semana, toda segunda às 7h. A primeira turma começa na quinta, 19/11.">Uma mensagem por semana, toda segunda às 7h.</p>
           <a class="botao contorno" data-acao="gratis" href="#">Receber 1x por semana grátis</a>
         </div>
         <div class="plano forte">
@@ -165,7 +165,7 @@
           <div class="alt"><a data-acao="pix" href="#">ou 1 mês no Pix</a></div>
         </div>
       </div>
-      <p class="nota sobe d3" data-espera="Abre o WhatsApp com a mensagem pronta, é só enviar. As vagas abrem em turmas pequenas; quando chegar a sua vez, a primeira mensagem chega lá.">Abre o WhatsApp com a mensagem pronta, é só enviar. Pra parar, manda SAIR.</p>
+      <p class="nota sobe d3" data-espera="Abre o WhatsApp com a mensagem pronta, é só enviar. A primeira turma começa na quinta, 19/11, às 7h, e a primeira mensagem chega lá.">Abre o WhatsApp com a mensagem pronta, é só enviar. Pra parar, manda SAIR.</p>
     </div>
 
     <div class="celular sobe d2" aria-label="Exemplo de mensagem">
@@ -191,7 +191,7 @@
   <section>
     <h2>Como funciona</h2>
     <div class="passos">
-      <div class="passo"><b>1</b><h3 data-espera="Você entra na lista">Você manda a primeira mensagem</h3><p data-espera="O botão abre o WhatsApp com o texto pronto. As vagas abrem em turmas pequenas; quando chegar a sua vez, a primeira chega sozinha. Ninguém te adiciona em grupo.">O botão abre o WhatsApp com o texto pronto. Ninguém te adiciona em grupo, e seu número não vai pra lista nenhuma.</p></div>
+      <div class="passo"><b>1</b><h3 data-espera="Você entra na lista">Você manda a primeira mensagem</h3><p data-espera="O botão abre o WhatsApp com o texto pronto. A primeira turma começa na quinta, 19/11, às 7h, e a primeira mensagem chega sozinha. Ninguém te adiciona em grupo.">O botão abre o WhatsApp com o texto pronto. Ninguém te adiciona em grupo, e seu número não vai pra lista nenhuma.</p></div>
       <div class="passo"><b>2</b><h3>Às 7h chega a do dia</h3><p>A frase com a fonte (livro e verso), o aprendizado e o exercício. Dá pra fazer sentado na cama.</p></div>
       <div class="passo"><b>3</b><h3>Fez? Responde 1</h3><p>A sua sequência fica anotada. No plano diário, os primeiros 30 dias são uma jornada, um passo de cada vez.</p></div>
     </div>
@@ -209,7 +209,7 @@
   <section>
     <h2>Perguntas</h2>
     <div class="faq">
-      <details data-so-espera><summary>Por que lista de espera?</summary><p>As vagas abrem em turmas pequenas, pra dar tempo de ouvir quem entra e ajustar o que precisa. Quando chegar a sua vez, a primeira mensagem chega no seu WhatsApp, sem você fazer nada. Pra sair da lista, manda SAIR.</p></details>
+      <details data-so-espera><summary>Quando começa?</summary><p>A primeira turma começa na quinta, 19/11, às 7h. Quem entrar na lista até lá começa junto: a primeira mensagem chega no seu WhatsApp, sem você fazer nada. Pra sair da lista, manda SAIR.</p></details>
       <details><summary>Preciso saber meditar?</summary><p>Não. Os exercícios são simples e curtos: respirar mais devagar, prestar atenção no corpo, escutar os sons, andar alguns minutos sem o celular, escrever o que está sentindo.</p></details>
       <details><summary>De onde vêm as frases?</summary><p>De livros, com o verso ou a página: Bhagavad-gītā (Krishna), Dhammapada (Buda), os Evangelhos de Lucas, Marcos e João (Jesus), Rumi, Sêneca, Sócrates e Platão. Nada de frase "atribuída" sem fonte.</p></details>
       <details><summary>Como eu cancelo?</summary><p>Manda SAIR no WhatsApp. No cartão, a renovação é cancelada na hora e nada mais é cobrado. O Pix vale 1 mês e não renova sozinho.</p></details>
@@ -220,12 +220,12 @@
   </section>
 
   <section class="final">
-    <h2 data-espera="Entra na lista. As vagas abrem em turmas.">Começa amanhã às 7h.</h2>
+    <h2 data-espera="Entra na lista. A primeira turma começa na quinta, 19/11.">Começa amanhã às 7h.</h2>
     <div class="planos">
       <div class="plano">
         <span class="rotulo">Grátis</span>
         <span class="preco">R$ 0</span>
-        <p data-espera="Toda segunda às 7h, quando abrir sua vaga.">Toda segunda às 7h.</p>
+        <p data-espera="Toda segunda às 7h. A primeira turma começa na quinta, 19/11.">Toda segunda às 7h.</p>
         <a class="botao contorno" data-acao="gratis" href="#">Receber 1x por semana grátis</a>
       </div>
       <div class="plano forte">
@@ -252,6 +252,7 @@
     nome: 'Mente em Dia',          // nome definitivo, escolhido em 17/11 (antes: "Mente em Dia", provisório)
     whatsapp: '5511955079674',     // número do bot (Salvy, número virtual "Bot 7h" da Web3growth), só dígitos
     listaDeEspera: true,           // fase de teste: o grátis vira "Entrar na lista de espera" (igual ao LISTA_ESPERA do worker)
+    esperaAte: '2026-11-19T06:55:00-03:00', // a lista de espera acaba sozinha nessa hora (igual ao ESPERA_ATE do worker); depois o grátis começa na hora
     pagoAberto: false,             // false: o plano diário aparece como "Abre em breve" (igual ao PAGO_ABERTO do worker)
     pagoAbreEm: '2026-11-19T07:00:00-03:00', // abre sozinho nessa hora (igual ao PAGO_ABRE_EM do worker)
     links: {
@@ -276,7 +277,8 @@
   aplicarNome(CFG.nome);
 
   // fase de teste: lista de espera e diário ainda fechado
-  if (CFG.listaDeEspera) {
+  const emEspera = CFG.listaDeEspera && !(CFG.esperaAte && Date.now() >= Date.parse(CFG.esperaAte));
+  if (emEspera) {
     document.body.classList.add('espera');
     document.querySelectorAll('[data-espera]').forEach((el) => { el.textContent = el.dataset.espera; });
     document.querySelectorAll('[data-acao="gratis"]').forEach((a) => { a.textContent = 'Entrar na lista de espera'; });
@@ -303,7 +305,7 @@
   }
   function linkWhats() {
     if (!CFG.whatsapp) return '';
-    const texto = CFG.listaDeEspera ? 'Quero entrar na lista' + (origem ? ' · ' + origem : '') : 'ATIVAR' + (origem ? ' ' + origem : '');
+    const texto = emEspera ? 'Quero entrar na lista' + (origem ? ' · ' + origem : '') : 'ATIVAR' + (origem ? ' ' + origem : '');
     return 'https://wa.me/' + CFG.whatsapp + '?text=' + encodeURIComponent(texto);
   }
 
