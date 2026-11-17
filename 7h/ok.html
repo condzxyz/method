@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<title>Canal Diário · Último passo</title>
+<title>Mente em Dia · Último passo</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -25,15 +25,15 @@
   <div class="cartao">
     <div class="ok">✓</div>
     <h1 id="titulo">Pagamento recebido. Falta 1 passo.</h1>
-    <p id="texto">Manda a mensagem abaixo pro WhatsApp do <b data-nome>Canal Diário</b>. É ela que liga o seu pagamento ao seu número, e a boas-vindas chega na hora, já com o dia 1.</p>
+    <p id="texto">Manda a mensagem abaixo pro WhatsApp do <b data-nome>Mente em Dia</b>. É ela que liga o seu pagamento ao seu número, e a boas-vindas chega na hora, já com o dia 1.</p>
     <div class="codigo" id="codigo">ATIVAR …</div>
     <a class="botao" id="botao" href="#" target="_blank" rel="noopener">Abrir o WhatsApp e enviar</a>
     <small>Se o botão não abrir, manda o texto do quadro acima pro número <span id="numero">do bot</span>. Qualquer problema: conrado@doti.gg.</small>
   </div>
 <script>
-  const CFG = { nome: 'Canal Diário', whatsapp: '5511955079674' }; // mesmo número do index.html
+  const CFG = { nome: 'Mente em Dia', whatsapp: '5511955079674' }; // mesmo número do index.html
   document.querySelectorAll('[data-nome]').forEach((el) => { el.textContent = CFG.nome; });
-  document.title = document.title.replace('Canal Diário', CFG.nome);
+  document.title = document.title.replace('Mente em Dia', CFG.nome);
 
   const p = new URLSearchParams(location.search);
   const sessao = p.get('session_id') || '';
