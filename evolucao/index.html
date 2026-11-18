@@ -58,8 +58,8 @@ svg{display:block}
 
 /* ---------- topo ---------- */
 .topo{height:var(--topo);padding:0 var(--lado);display:flex;align-items:center;justify-content:space-between}
-.marca{display:flex;align-items:center;gap:10px;font:600 18px/1 var(--sans);letter-spacing:-.02em}
-.simbolo{width:28px;height:28px}
+/* Sem símbolo: a marca é só o nome, na mesma letra do título do site pessoal (Geist 700, bem fechada). */
+.marca{font:700 21px/1 var(--sans);letter-spacing:-.04em}
 .por{font:400 15px/1 var(--sans);color:var(--cinza)}
 
 /* ---------- peças ---------- */
@@ -315,8 +315,7 @@ svg{display:block}
 #folha h1,#folha h2,#folha h3,#folha p,#folha ul,#folha ol,#folha figure{margin:0;padding:0}
 #folha .f-barra{display:none}
 #folha .f-topo{display:flex;justify-content:space-between;align-items:center;gap:calc(8*var(--u));padding-bottom:calc(9*var(--u));border-bottom:calc(1.2*var(--u)) solid #1d1c1a;font:500 calc(8.8*var(--u))/1.2 var(--mono);letter-spacing:.05em;text-transform:uppercase}
-#folha .f-topo .marca{font:600 calc(11.5*var(--u))/1 var(--sans);letter-spacing:-.01em;text-transform:none;gap:calc(7*var(--u))}
-#folha .f-topo .simbolo{width:calc(17*var(--u));height:calc(17*var(--u))}
+#folha .f-topo .marca{font:700 calc(12.5*var(--u))/1 var(--sans);letter-spacing:-.035em;text-transform:none}
 #folha .f-topo > span:last-child{color:#6f6a63}
 #folha .f-capa{padding:calc(12*var(--u)) 0 0;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:calc(16*var(--u));align-items:center}
 #folha .f-capa .r{font:500 calc(8.6*var(--u))/1.2 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:#8a3324}
@@ -394,10 +393,7 @@ svg{display:block}
 <body>
 <div id="app">
   <header class="topo">
-    <div class="marca">
-      <svg class="simbolo" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#1d1c1a"/><g fill="#f7f6f4"><rect x="5" y="17" width="3.4" height="9" rx="1.2"/><rect x="10" y="12" width="3.4" height="14" rx="1.2"/><rect x="15" y="15" width="3.4" height="11" rx="1.2"/><rect x="25" y="10" width="3.4" height="16" rx="1.2"/></g><rect x="20" y="6" width="3.4" height="20" rx="1.2" fill="#c0563a"/></svg>
-      <span>Evolução Mental</span>
-    </div>
+    <div class="marca">Evolução Mental</div>
     <span class="por">por Conrado de Sá</span>
   </header>
 
@@ -500,9 +496,9 @@ svg{display:block}
   // Pra onde vão os contatos: FormSubmit, o mesmo serviço do formulário da mentoria Method. Entrega no e-mail do Conrado.
   // É o ÚNICO lugar pra onde sai algum dado. Vazio = nada sai do navegador.
   const ENDPOINT_LEAD = 'https://formsubmit.co/ajax/e9ba5025e418d3a78685795ffd36a308';
-  // PLACEHOLDER: link de compra do Desafio (Payment Link do Stripe). O produto ainda NÃO existe.
+  // Pra onde vai o botão de compra do Desafio: a página de vendas (condzmethod.com/desafio/), com a origem "teste".
   // Vazio = o botão vira "Quero ser avisado quando abrir" e só marca o interesse na tela (o clique não é enviado).
-  const LINK_DESAFIO = '';
+  const LINK_DESAFIO = 'https://condzmethod.com/desafio/?o=teste';
   // WhatsApp da mentoria (só dígitos, com 55). Só aparece dentro do link wa.me. Vazio = o botão some.
   const WHATS_MENTORIA = '5548998561417';
   const PRECO_DESAFIO = 'R$ 97';
@@ -512,7 +508,6 @@ svg{display:block}
   const $ = (s, r = document) => r.querySelector(s);
   const esc = (t) => String(t ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
   const SETA = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>';
-  const SIMBOLO = '<svg class="simbolo" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#1d1c1a"/><g fill="#f7f6f4"><rect x="5" y="17" width="3.4" height="9" rx="1.2"/><rect x="10" y="12" width="3.4" height="14" rx="1.2"/><rect x="15" y="15" width="3.4" height="11" rx="1.2"/><rect x="25" y="10" width="3.4" height="16" rx="1.2"/></g><rect x="20" y="6" width="3.4" height="20" rx="1.2" fill="#c0563a"/></svg>';
   const params = new URLSearchParams(location.search);
   if (params.has('parado')) document.documentElement.classList.add('parado');
   // De onde a pessoa veio: ?o=reel, ?o=stories... Só letras e números, até 12. Sem nada, "bio".
@@ -1041,7 +1036,7 @@ svg{display:block}
       ['Direção e ação', 'Escolher de propósito, resolver sem alarde e dizer o que você pensa.'],
     ];
     const botaoCompra = LINK_DESAFIO
-      ? `<a class="btn" id="btn-desafio" href="${esc(LINK_DESAFIO)}">Quero o desafio de 21 dias ${SETA}</a><p class="miudo">Pagamento seguro pelo Stripe.</p>`
+      ? `<a class="btn" id="btn-desafio" href="${esc(LINK_DESAFIO)}">Quero o Desafio de 21 dias · ${PRECO_DESAFIO} ${SETA}</a><p class="miudo">Pix ou cartão. Pagamento único.</p>`
       : `<button class="btn" id="btn-desafio" type="button">Quero ser avisado quando abrir</button><p class="miudo" id="nota-desafio">O desafio ainda não abriu.</p>`;
     const wa = linkMentoria(R.perfil);
 
@@ -1151,7 +1146,7 @@ svg{display:block}
     const refs = [...E.refs, 'lally'].map((k) => `<li>${esc(REFS[k])}</li>`).join('');
     $('#folha').innerHTML = `
       <div class="f-barra"><p><b>Este é o seu resultado completo.</b> Pra salvar em PDF, abra no navegador do celular (⋯ → Abrir no navegador).</p><button class="btn sec" type="button" id="f-voltar">Voltar pro resultado</button></div>
-      <div class="f-topo"><span class="marca">${SIMBOLO}<span>Evolução Mental</span></span><span>Resultado completo · ${hoje}</span></div>
+      <div class="f-topo"><span class="marca">Evolução Mental</span><span>Resultado completo · ${hoje}</span></div>
       <div class="f-capa"><div><span class="r">${estado.nome ? 'Resultado de ' + esc(estado.nome) : 'Seu resultado'}</span><h1>${esc(R.perfil)}</h1><p>${lema(R)}</p></div><img src="${DIM[R.evo].img}-p.webp" alt=""></div>
 
       <div class="f-sec"><h2>Seu mapa</h2>

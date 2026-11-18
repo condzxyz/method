@@ -1,0 +1,509 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Desafio Evolução Mental · 21 dias</title>
+<meta name="description" content="E-book com uma prática por dia, de 2 a 10 minutos, durante três semanas: atenção e respiração, corpo e emoção, direção e ação. PDF de 60 páginas, R$ 97.">
+<link rel="canonical" href="https://condzmethod.com/desafio/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Conrado de Sá">
+<meta property="og:title" content="Desafio Evolução Mental · 21 dias">
+<meta property="og:description" content="Uma prática por dia, de 2 a 10 minutos, durante três semanas. E-book em PDF, 60 páginas.">
+<meta property="og:url" content="https://condzmethod.com/desafio/">
+<meta property="og:image" content="https://condzmethod.com/desafio/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://condzmethod.com/desafio/og.jpg">
+<meta name="theme-color" content="#ecebe8">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<!--
+  Página de vendas do Desafio Evolução Mental · 21 dias (18/11/2026). Vai pra condzmethod.com/desafio/.
+  Pasta autocontida: index.html, privacidade.html, favicon.svg, og.jpg, fonts/ e img/. Caminhos relativos
+  (só as metas de compartilhamento usam o endereço completo).
+  O link de compra aparece em três botões (class="btn comprar"): pra trocar, procure por buy.stripe.com.
+  Mesma família visual do teste (condzmethod.com/evolucao/) e do site pessoal (condzmethod.com/links/).
+-->
+<style>
+@font-face{font-family:'Geist';src:url(fonts/geist.woff2) format('woff2');font-weight:100 900;font-display:swap}
+@font-face{font-family:'Geist Mono';src:url(fonts/geist-mono.woff2) format('woff2');font-weight:100 900;font-display:swap}
+:root{
+  --fundo:#ecebe8;--cartao:#f7f6f4;--placa:#efede8;--linha:#dad7d1;--tinta:#1d1c1a;--tinta2:#5c5852;--cinza:#6f6a63;
+  --acento:#8a3324;--acento-vivo:#c0563a;--escuro2:#2c2b28;--rot-escuro:#d9a594;
+  --sans:'Geist',system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  --mono:'Geist Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --lado:18px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;background:var(--fundo);scroll-padding-top:16px}
+body{margin:0;color:var(--tinta);font:400 16.5px/1.55 var(--sans);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  background-image:radial-gradient(rgba(29,28,26,.07) 1px,transparent 1.4px);background-size:22px 22px}
+h1,h2,h3,p,ul,ol,figure,blockquote{margin:0}
+ul,ol{padding:0;list-style:none}
+a{color:inherit;text-decoration:none}
+img,svg{display:block;max-width:100%}
+:focus-visible{outline:3px solid var(--acento);outline-offset:3px;border-radius:6px}
+
+/* ---------- peças (as mesmas do site pessoal) ---------- */
+.wrap{width:min(1120px,100%);margin:0 auto;padding:0 var(--lado)}
+.rot{font:500 12.5px/1.4 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--acento)}
+.cartao{background:var(--cartao);border:1px solid var(--linha);border-radius:18px}
+.sombra{box-shadow:0 30px 60px -42px rgba(0,0,0,.5)}
+.sec{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;margin-top:40px;padding-bottom:12px;border-bottom:1px solid var(--linha)}
+.sec h2{font:600 23px/1.2 var(--sans);letter-spacing:-.025em}
+.sec span{font-size:15px;color:var(--cinza)}
+.intro{margin-top:16px;font-size:18px;line-height:1.5;color:var(--tinta2);letter-spacing:-.005em;text-wrap:pretty}
+.intro b{color:var(--tinta);font-weight:600}
+.lista{display:grid;gap:10px}
+.lista li{position:relative;padding-left:22px;line-height:1.45}
+.lista li::before{content:"";position:absolute;left:3px;top:.52em;width:8px;height:8px;border-radius:2px;background:var(--acento)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:58px;padding:12px 26px;border-radius:12px;background:var(--tinta);color:var(--cartao);font:600 17.5px/1.2 var(--sans);letter-spacing:-.01em;text-align:center;transition:filter .2s,transform .2s}
+.btn svg{width:18px;height:18px;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.btn:hover{filter:brightness(1.35)}
+.btn:active{transform:scale(.98)}
+.btn.vivo{background:var(--acento-vivo);color:#fff}
+.btn.vivo:hover{filter:brightness(1.1)}
+.preco{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px}
+.preco b{font:700 40px/1 var(--sans);letter-spacing:-.04em}
+.preco span{font-size:15.5px;color:var(--tinta2)}
+.miudo{font-size:15px;line-height:1.5;color:var(--cinza)}
+.alt{font-size:15.5px;color:var(--tinta2);text-decoration:underline;text-underline-offset:3px}
+
+/* ---------- topo: só o nome, sem símbolo ---------- */
+.topo{height:60px;display:flex;align-items:center;justify-content:space-between}
+.marca{font:700 21px/1 var(--sans);letter-spacing:-.04em}
+.por{font-size:15px;color:var(--cinza)}
+
+/* ---------- hero ---------- */
+.hero{overflow:hidden}
+.h-arte{height:108px;background:var(--placa)}
+.h-arte img{width:100%;height:100%;object-fit:cover;object-position:50% 36%}
+/* no celular a compra vem antes da lista, pra o botão aparecer na primeira tela */
+.h-txt{padding:18px 20px 22px;display:flex;flex-direction:column}
+.h-txt > .lista{order:4}
+.h-txt > .alt{order:5;align-self:flex-start}
+.hero h1{margin-top:10px;font:700 clamp(35px,10vw,42px)/1.02 var(--sans);letter-spacing:-.04em}
+.hero h1 em{display:block;font-style:normal;color:var(--acento)}
+.lead{margin-top:12px;font-size:18px;line-height:1.48;color:var(--tinta2);letter-spacing:-.005em;text-wrap:pretty}
+.hero .lista{margin-top:20px}
+.compra{margin-top:16px;padding-top:16px;border-top:1px solid var(--linha);display:grid;gap:12px}
+.hero .alt{display:inline-block;margin-top:18px}
+.h-livro{display:none}
+
+/* ---------- números ---------- */
+.nums{margin-top:16px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+.nums div{padding:15px 8px 14px 14px}
+.nums div + div{border-left:1px solid var(--linha)}
+.nums b{display:block;font:600 25px/1.1 var(--sans);letter-spacing:-.035em;white-space:nowrap}
+.nums span{display:block;margin-top:3px;font-size:14.5px;line-height:1.3;color:var(--cinza)}
+
+/* ---------- semanas ---------- */
+.semanas{margin-top:16px;display:grid;gap:14px}
+.sem{overflow:hidden;transition:transform .3s,box-shadow .3s}
+.s-topo{display:grid;grid-template-columns:84px minmax(0,1fr);gap:16px;align-items:center;padding:18px 18px 0}
+.s-arte{width:84px;height:104px;border-radius:12px;overflow:hidden;background:var(--placa);border:1px solid var(--linha)}
+.s-arte img{width:100%;height:100%;object-fit:cover;mix-blend-mode:multiply}
+.s-txt{padding:12px 18px 18px}
+.sem h3{margin-top:6px;font:600 22px/1.15 var(--sans);letter-spacing:-.025em}
+.s-txt p{color:var(--tinta2);line-height:1.45}
+.dias{margin-top:14px;padding-top:12px;border-top:1px solid var(--linha);display:grid;gap:7px;counter-reset:d var(--de)}
+.dias li{counter-increment:d;display:grid;grid-template-columns:26px minmax(0,1fr);align-items:baseline;font-size:15.5px;line-height:1.35}
+.dias li::before{content:counter(d);font:500 12.5px/1 var(--mono);color:var(--acento)}
+
+/* ---------- as cinco partes do dia ---------- */
+.partes{margin-top:14px;padding:6px 18px}
+.partes li{display:grid;grid-template-columns:34px minmax(0,1fr);gap:0 6px;padding:14px 0}
+.partes li + li{border-top:1px solid var(--linha)}
+.partes i{grid-row:1/3;font:500 12.5px/1.9 var(--mono);font-style:normal;color:var(--acento)}
+.partes b{font:600 17.5px/1.25 var(--sans);letter-spacing:-.015em}
+.partes span{color:var(--tinta2);font-size:15.5px;line-height:1.45}
+.nota{margin-top:12px;font-size:15.5px;color:var(--tinta2)}
+
+/* ---------- páginas do e-book ---------- */
+.dentro{margin-top:16px;padding:18px}
+.dentro .lista{margin-top:14px;font-size:16px}
+.paginas{margin:16px calc(var(--lado)*-1) 0;padding:4px var(--lado) 14px;display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.paginas::-webkit-scrollbar{display:none}
+.paginas figure{flex:0 0 min(64vw,250px);scroll-snap-align:center}
+.paginas a{display:block;border-radius:8px;overflow:hidden;border:1px solid var(--linha);background:var(--cartao);box-shadow:0 22px 34px -26px rgba(0,0,0,.55);transition:transform .3s}
+.paginas img{width:100%;height:auto}
+.paginas figcaption{margin-top:10px;font-size:14.5px;line-height:1.35;color:var(--tinta2)}
+.paginas figcaption b{display:block;font:500 12.5px/1.4 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--tinta)}
+.arrasta{margin-top:2px;font-size:14.5px;color:var(--cinza)}
+
+/* ---------- cartão escuro de compra (meio) ---------- */
+.meio{margin-top:28px;padding:24px 20px;border-radius:18px;background:var(--tinta);color:var(--cartao);display:grid;gap:16px;box-shadow:0 24px 50px -30px rgba(138,51,36,.7)}
+.meio .rot{color:var(--rot-escuro)}
+.meio h2{margin-top:8px;font:600 27px/1.1 var(--sans);letter-spacing:-.03em}
+.meio .preco span{color:rgba(247,246,244,.7)}
+.meio .lista{font-size:16px;color:rgba(247,246,244,.84)}
+.meio .lista li::before{background:var(--rot-escuro)}
+.meio .lado{display:grid;gap:14px}
+
+/* ---------- de onde vêm ---------- */
+.fontes{margin-top:16px;display:grid;gap:14px}
+.fonte{padding:18px}
+.fonte h3{margin-top:6px;font:600 19px/1.2 var(--sans);letter-spacing:-.02em}
+.fonte .lista{margin-top:12px;font-size:16px}
+.fonte .lista small{display:block;font-size:14.5px;color:var(--cinza)}
+.citacao{overflow:hidden;display:flex;flex-direction:column;background:var(--tinta);border-color:var(--tinta);color:var(--cartao)}
+.citacao .c-arte{flex:1 0 120px;min-height:120px;background:#151412}
+.citacao img{width:100%;height:100%;object-fit:cover;object-position:50% 10%}
+.citacao .c-txt{padding:18px 20px 20px}
+.citacao blockquote{font:italic 400 20px/1.42 Georgia,'Times New Roman',serif;color:#f7f2e8;text-wrap:pretty}
+.citacao blockquote::before{content:"“";margin-right:3px;font:400 1.35em/0 Georgia,serif;vertical-align:-.12em;color:var(--acento-vivo)}
+.citacao figcaption{margin-top:12px;font:600 12.5px/1.4 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:#d3a784}
+.avisos{margin-top:14px;display:grid;gap:8px;font-size:16px;color:var(--tinta2)}
+
+/* ---------- pra quem é ---------- */
+.quem{margin-top:16px;display:grid;gap:14px}
+.quem .cartao{padding:18px}
+.quem h3{margin-top:6px;font:600 20px/1.2 var(--sans);letter-spacing:-.02em}
+.quem .lista{margin-top:12px;font-size:16px}
+.nao .lista li::before{background:none;box-shadow:inset 0 0 0 1.5px var(--cinza)}
+.nao .lista{color:var(--tinta2)}
+
+/* ---------- perguntas ---------- */
+.fim{margin-top:16px;display:grid;gap:18px}
+.faq{padding:4px 18px}
+.faq details + details{border-top:1px solid var(--linha)}
+.faq summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:minmax(0,1fr) 22px;gap:12px;align-items:center;padding:16px 0;font:600 17px/1.3 var(--sans);letter-spacing:-.015em}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font:400 24px/1 var(--sans);color:var(--acento);text-align:center;transition:transform .25s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{padding:0 30px 16px 0;color:var(--tinta2);line-height:1.5}
+.faq details p a{color:var(--acento);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+
+/* ---------- compra final ---------- */
+.final{overflow:hidden}
+.final .f-arte{height:128px;background:var(--placa)}
+.final .f-arte img{width:100%;height:100%;object-fit:cover;object-position:50% 36%}
+.final .f-txt{padding:20px;display:grid;gap:14px}
+.final h2{margin-top:8px;font:700 29px/1.05 var(--sans);letter-spacing:-.035em}
+.final h2 em{font-style:normal;color:var(--acento)}
+
+/* ---------- rodapé ---------- */
+.rodape{margin-top:36px;padding-bottom:44px;display:grid;gap:12px;font-size:14.5px;line-height:1.5;color:var(--cinza)}
+.rodape nav{display:flex;flex-wrap:wrap;gap:8px 20px}
+.rodape nav a{text-decoration:underline;text-underline-offset:3px}
+
+/* ---------- computador: layout próprio ---------- */
+@media (min-width:900px){
+  :root{--lado:32px}
+  body{font-size:17px}
+  .topo{height:68px}
+  .hero{display:grid;grid-template-columns:minmax(0,1fr) 400px}
+  .h-arte{display:none}
+  .h-txt{padding:36px 44px 36px;display:block}
+  .compra{margin-top:20px;padding-top:18px}
+  .hero .lista{margin-top:16px}
+  .hero .alt{margin-top:14px}
+  .hero h1{font-size:58px}
+  .lead{font-size:20px;max-width:560px}
+  .hero .lista{max-width:580px}
+  .compra{grid-template-columns:auto minmax(0,1fr);align-items:center;gap:12px 24px}
+  .compra .preco{display:grid;gap:5px}
+  .compra .btn{justify-self:start}
+  .compra .miudo{grid-column:1/-1}
+  .h-livro{display:block;position:relative;min-height:520px;background:var(--placa);border-left:1px solid var(--linha);overflow:hidden;
+    background-image:radial-gradient(rgba(29,28,26,.07) 1px,transparent 1.4px);background-size:22px 22px}
+  .h-livro img{position:absolute;width:262px;height:auto;border-radius:6px;border:1px solid var(--linha);box-shadow:0 34px 50px -30px rgba(0,0,0,.6)}
+  .h-livro img{width:250px}
+  .h-livro .p2{right:18px;top:132px;transform:rotate(5deg)}
+  .h-livro .p1{left:30px;top:84px;transform:rotate(-3deg)}
+  .nums{margin-top:20px}
+  .nums div{padding:22px 26px}
+  .nums b{font-size:34px}
+  .nums span{font-size:16px}
+  .sec{margin-top:56px}
+  .sec h2{font-size:27px}
+  .intro{font-size:20px;max-width:760px}
+  .semanas{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+  .s-topo{display:block;padding:0}
+  .s-arte{width:auto;height:168px;border:0;border-bottom:1px solid var(--linha);border-radius:0}
+  .s-cab{padding:18px 22px 0}
+  .s-txt{padding:8px 22px 22px}
+  .sem:hover{transform:translateY(-3px);box-shadow:0 22px 40px -30px rgba(0,0,0,.45)}
+  .partes{padding:8px 0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr))}
+  .partes li{display:block;padding:20px 22px}
+  .partes li + li{border-top:0;border-left:1px solid var(--linha)}
+  .partes i{display:block;line-height:1.4;margin-bottom:8px}
+  .partes b{display:block;margin-bottom:6px}
+  .dentro{padding:28px 30px;display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:30px;align-items:start}
+  .dentro .lista{margin-top:0}
+  .paginas{margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;overflow:visible}
+  .paginas a:hover{transform:translateY(-4px) rotate(-.6deg)}
+  .arrasta{display:none}
+  .dentro .paginas{grid-column:1/-1}
+  .meio{margin-top:40px;padding:34px 40px;grid-template-columns:minmax(0,1fr) auto;gap:20px 48px;align-items:center}
+  .meio h2{font-size:32px}
+  .meio .lado{justify-items:start}
+  .meio .btn{min-width:300px}
+  .fontes{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+  .fonte{padding:24px}
+  .citacao .c-arte{flex-basis:150px}
+  .avisos{grid-template-columns:1fr 1fr;gap:8px 32px}
+  .quem{grid-template-columns:1fr 1fr;gap:18px}
+  .quem .cartao{padding:26px 28px}
+  .fim{grid-template-columns:minmax(0,1fr) 380px;gap:22px;align-items:start}
+  .faq{padding:6px 28px}
+  .final{position:sticky;top:20px}
+  .final .f-arte{height:170px}
+  .final .f-txt{padding:24px}
+}
+
+/* ---------- movimento (some pra quem pediu menos animação) ---------- */
+@media (prefers-reduced-motion:no-preference){
+  .h-txt > *{animation:sobe .8s cubic-bezier(.2,.8,.2,1) both}
+  .h-txt > :nth-child(2){animation-delay:.06s}.h-txt > :nth-child(3){animation-delay:.12s}.h-txt > :nth-child(4){animation-delay:.18s}
+  .h-txt > :nth-child(5){animation-delay:.26s}.h-txt > :nth-child(6){animation-delay:.32s}
+  .h-livro .p1{animation:folha1 1.1s cubic-bezier(.2,.8,.2,1) .15s both}
+  .h-livro .p2{animation:folha2 1.2s cubic-bezier(.2,.8,.2,1) .3s both}
+  @keyframes sobe{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+  @keyframes folha1{from{opacity:0;transform:translateY(26px) rotate(0)}to{opacity:1;transform:rotate(-3deg)}}
+  @keyframes folha2{from{opacity:0;transform:translateY(34px) rotate(0)}to{opacity:1;transform:rotate(5deg)}}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="topo">
+    <div class="marca">Evolução Mental</div>
+    <span class="por">por Conrado de Sá</span>
+  </header>
+
+  <main>
+    <!-- ============ TOPO: o que é + compra ============ -->
+    <section class="cartao sombra hero">
+      <div class="h-arte"><img src="img/caminhante-faixa.webp" width="800" height="448" alt="Pintura antiga: um homem de costas, no alto de uma rocha, olha um mar de névoa." fetchpriority="high" decoding="async"></div>
+      <div class="h-txt">
+        <p class="rot">E-book · PDF · 60 páginas</p>
+        <h1>Desafio Evolução Mental <em>21 dias</em></h1>
+        <p class="lead">Uma prática por dia, de 2 a 10 minutos, durante três semanas. Pra quem sente que os dias estão passando no automático e quer voltar pro comando.</p>
+        <ul class="lista">
+          <li>21 práticas em passos numerados, com a duração de cada uma</li>
+          <li>Cada dia traz um texto antigo com a fonte e o estudo que existe sobre a prática. Quando não existe, o e-book avisa</li>
+          <li>Uma pergunta por dia pra responder por escrito, e uma revisão no fim de cada semana</li>
+        </ul>
+        <div class="compra">
+          <p class="preco"><b>R$ 97</b><span>pagamento único · Pix ou cartão</span></p>
+          <a class="btn comprar" href="https://buy.stripe.com/bJebJ23fKahsasB286bsc0g?locale=pt-BR">Quero o Desafio de 21 dias <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          <p class="miudo">Você baixa o PDF na hora, depois do pagamento.</p>
+        </div>
+        <a class="alt" href="https://condzmethod.com/evolucao/">Prefere começar de graça? Faz o teste Evolução Mental</a>
+      </div>
+      <div class="h-livro" aria-hidden="true">
+        <img class="p2" src="img/pagina-dia.webp" width="760" height="1076" alt="" loading="lazy" decoding="async">
+        <img class="p1" src="img/pagina-capa.webp" width="760" height="1076" alt="" loading="lazy" decoding="async">
+      </div>
+    </section>
+
+    <div class="cartao nums">
+      <div><b>21</b><span>práticas, uma por dia</span></div>
+      <div><b>2 a 10</b><span>minutos por prática</span></div>
+      <div><b>60</b><span>páginas em PDF</span></div>
+    </div>
+
+    <!-- ============ O QUE É ============ -->
+    <div class="sec"><h2>O que é</h2></div>
+    <p class="intro">Um e-book pra fazer, não só pra ler. Cada dia tem uma prática curta e uma pergunta pra responder por escrito. <b>Você testa as 21 e, no fim, escolhe as duas ou três que ficam com você.</b></p>
+    <p class="intro">O que dá pra observar ao longo dos dias é simples: perceber mais cedo quando a cabeça saiu, quando o corpo pediu pausa e quando a emoção tomou o volante.</p>
+
+    <!-- ============ COMO FUNCIONA ============ -->
+    <div class="sec"><h2>Como funciona</h2><span>três semanas, um dia por vez, na ordem</span></div>
+    <div class="semanas">
+      <article class="cartao sem">
+        <div class="s-topo">
+          <div class="s-arte"><img src="img/semana-1.webp" width="672" height="720" alt="Gravura antiga de um rosto atento." loading="lazy" decoding="async" style="object-position:58% 44%"></div>
+          <div class="s-cab"><p class="rot">Semana 1 · dias 1–7</p><h3>Atenção e respiração</h3></div>
+        </div>
+        <div class="s-txt">
+          <p>Sentar, respirar e ficar numa coisa só. É a base das outras duas semanas.</p>
+          <ol class="dias" style="--de:0"><li>Sentar e contar</li><li>Coluna reta</li><li>Soltar o ar devagar</li><li>Só pelo nariz</li><li>Uma coisa só</li><li>A espera sem celular</li><li>Dez minutos em silêncio</li></ol>
+        </div>
+      </article>
+      <article class="cartao sem">
+        <div class="s-topo">
+          <div class="s-arte"><img src="img/semana-2.webp" width="575" height="720" alt="Gravura antiga de um semeador andando pelo campo." loading="lazy" decoding="async" style="object-position:50% 8%"></div>
+          <div class="s-cab"><p class="rot">Semana 2 · dias 8–14</p><h3>Corpo e emoção</h3></div>
+        </div>
+        <div class="s-txt">
+          <p>Mexer o corpo, sair de casa e aprender a sentir sem ser arrastado.</p>
+          <ol class="dias" style="--de:7"><li>Sair e andar</li><li>Soltar o corpo</li><li>Nem demais, nem de menos</li><li>Dez minutos de verde</li><li>Suspiro duplo</li><li>Dar nome</li><li>Passar pro papel</li></ol>
+        </div>
+      </article>
+      <article class="cartao sem">
+        <div class="s-topo">
+          <div class="s-arte"><img src="img/semana-3.webp" width="541" height="720" alt="Gravura de 1619: uma cabeça de perfil com círculos que representam a mente." loading="lazy" decoding="async" style="object-position:50% 62%"></div>
+          <div class="s-cab"><p class="rot">Semana 3 · dias 15–21</p><h3>Direção e ação</h3></div>
+        </div>
+        <div class="s-txt">
+          <p>Escolher de propósito, resolver sem alarde e dizer o que você pensa.</p>
+          <ol class="dias" style="--de:14"><li>A pergunta do preço</li><li>O que depende de mim</li><li>Se… então…</li><li>Um problema pequeno, sem alarde</li><li>Cem por cento e solta</li><li>Uma frase verdadeira</li><li>A revisão da noite</li></ol>
+        </div>
+      </article>
+    </div>
+
+    <div class="sec"><h2>Cada dia tem cinco partes</h2><span>duas ou três páginas</span></div>
+    <ol class="cartao partes">
+      <li><i>01</i><b>A ideia</b><span>O porquê do dia, com um texto antigo e a fonte.</span></li>
+      <li><i>02</i><b>A prática</b><span>Passos numerados e a duração: de 2 a 10 minutos.</span></li>
+      <li><i>03</i><b>Por que funciona</b><span>O estudo que existe, com autor, revista e ano. Quando não existe, o e-book diz.</span></li>
+      <li><i>04</i><b>Se travar</b><span>As travas mais comuns e o que fazer: deu sono, deu agonia, não tenho dez minutos.</span></li>
+      <li><i>05</i><b>Pra responder por escrito</b><span>Uma pergunta, linhas pra escrever e o quadradinho de feito.</span></li>
+    </ol>
+    <p class="nota">No fim de cada semana tem uma página de revisão.</p>
+
+    <!-- ============ O QUE VEM DENTRO ============ -->
+    <div class="sec"><h2>O que vem dentro</h2><span>páginas de verdade do e-book</span></div>
+    <div class="cartao dentro">
+      <p class="intro" style="margin-top:0">Um PDF de 60 páginas, em tamanho A5. <b>Lê no celular ou imprime:</b> cabem duas páginas por folha.</p>
+      <ul class="lista">
+        <li>Antes de começar: pra quem é, como usar e o que fazer se pular um dia</li>
+        <li>Os 21 dias e as 3 revisões de semana</li>
+        <li>Depois dos 21 dias: como ficar com duas ou três práticas</li>
+        <li>Leituras e referências: os textos antigos e os 18 estudos citados</li>
+      </ul>
+      <div class="paginas">
+        <figure><a href="img/pagina-capa.webp"><img src="img/pagina-capa.webp" width="760" height="1076" alt="Capa do e-book Desafio Evolução Mental, com a pintura O caminhante sobre o mar de névoa." loading="lazy" decoding="async"></a><figcaption><b>Capa</b>Desafio Evolução Mental · 21 dias</figcaption></figure>
+        <figure><a href="img/pagina-dia.webp"><img src="img/pagina-dia.webp" width="760" height="1076" alt="Página do dia 13, Dar nome: a ideia, uma citação de Sêneca e a prática em cinco passos." loading="lazy" decoding="async"></a><figcaption><b>Dia 13</b>A ideia e a prática em passos</figcaption></figure>
+        <figure><a href="img/pagina-por-que.webp"><img src="img/pagina-por-que.webp" width="760" height="1076" alt="Página do dia 12: por que funciona, com o estudo citado, se travar e a pergunta pra responder por escrito." loading="lazy" decoding="async"></a><figcaption><b>Dia 12</b>Por que funciona, se travar e a pergunta</figcaption></figure>
+        <figure><a href="img/pagina-revisao.webp"><img src="img/pagina-revisao.webp" width="760" height="1076" alt="Página de revisão da semana 1, com a lista dos sete dias e três perguntas." loading="lazy" decoding="async"></a><figcaption><b>Fim da semana</b>Revisão em cinco minutos</figcaption></figure>
+      </div>
+      <p class="arrasta">Arrasta pro lado pra ver as páginas.</p>
+    </div>
+
+    <!-- ============ COMPRA (meio) ============ -->
+    <section class="meio">
+      <div>
+        <p class="rot">E-book · acesso na hora</p>
+        <h2>Desafio Evolução Mental · 21 dias</h2>
+        <ul class="lista" style="margin-top:14px">
+          <li>Pix ou cartão, pagamento único</li>
+          <li>Você baixa o PDF logo depois de pagar</li>
+          <li>7 dias pra pedir o dinheiro de volta</li>
+        </ul>
+      </div>
+      <div class="lado">
+        <p class="preco"><b>R$ 97</b><span>pagamento único</span></p>
+        <a class="btn vivo comprar" href="https://buy.stripe.com/bJebJ23fKahsasB286bsc0g?locale=pt-BR">Quero o Desafio de 21 dias <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+    </section>
+
+    <!-- ============ DE ONDE VÊM AS PRÁTICAS ============ -->
+    <div class="sec"><h2>De onde vêm as práticas</h2></div>
+    <p class="intro">De tradições antigas da Índia (respiração, postura e atenção, como aparecem no Bhagavad Gita, nos Yoga Sutras e nas Upanishads), do Dhammapada, de Sêneca, e do que a psicologia e a neurociência já mediram.</p>
+    <div class="fontes">
+      <div class="cartao fonte">
+        <p class="rot">Textos antigos</p>
+        <h3>Toda citação tem a fonte</h3>
+        <ul class="lista">
+          <li>Bhagavad Gita<small>com o verso e a página da edição</small></li>
+          <li>Dhammapada<small>com o número do verso</small></li>
+          <li>Sêneca<small>Cartas a Lucílio e Sobre a brevidade da vida</small></li>
+          <li>Yoga Sutras e Katha Upanishad<small>em tradução livre, marcados como tal</small></li>
+        </ul>
+      </div>
+      <div class="cartao fonte">
+        <p class="rot">Estudos</p>
+        <h3>18 estudos, com autor, revista e ano</h3>
+        <ul class="lista">
+          <li>Killingsworth e Gilbert<small>Science, 2010 · a mente em outro lugar</small></li>
+          <li>Balban e colegas<small>Cell Reports Medicine, 2023 · respiração de saída longa</small></li>
+          <li>Lieberman e colegas<small>Psychological Science, 2007 · dar nome à emoção</small></li>
+          <li>Lally e colegas<small>European Journal of Social Psychology, 2010 · quanto tempo leva um hábito</small></li>
+        </ul>
+      </div>
+      <figure class="cartao citacao">
+        <div class="c-arte"><img src="img/manuscrito.webp" width="762" height="636" alt="Folhas de um manuscrito do Bhagavad Gita, do século XIX, com molduras decoradas." loading="lazy" decoding="async"></div>
+        <div class="c-txt">
+          <blockquote>Você tem o direito de executar seu dever prescrito, mas não tem direito aos frutos da ação.</blockquote>
+          <figcaption>Bhagavad Gita 2.47 · no dia 19</figcaption>
+        </div>
+      </figure>
+    </div>
+    <ul class="avisos lista">
+      <li>Seis dias dizem com todas as letras que não têm estudo próprio. Ali ficam o texto antigo e o seu teste.</li>
+      <li>A física aparece três vezes, sempre como analogia: é comparação pra ajudar a visualizar, não prova de nada.</li>
+    </ul>
+
+    <!-- ============ PRA QUEM É ============ -->
+    <div class="sec"><h2>Pra quem é, e pra quem não é</h2></div>
+    <div class="quem">
+      <div class="cartao">
+        <p class="rot">É pra você</p>
+        <h3>Se você quer começar pequeno</h3>
+        <ul class="lista">
+          <li>Vive no celular, anda sem energia ou sente que os dias estão passando no automático</li>
+          <li>Quer uma coisa por dia, com começo, meio e fim</li>
+          <li>Nunca meditou. Não precisa de experiência nem de tempo sobrando: alguns minutos por dia, papel e caneta</li>
+        </ul>
+      </div>
+      <div class="cartao nao">
+        <p class="rot" style="color:var(--cinza)">Não é pra você</p>
+        <h3>Se você procura outra coisa</h3>
+        <ul class="lista">
+          <li>Tratamento. O e-book não é diagnóstico, não cura nada e não substitui médico nem psicólogo</li>
+          <li>Resultado garantido. O e-book não promete nenhum</li>
+          <li>Hábito pronto em 21 dias. No estudo citado, o tempo pra uma ação virar automática variou de 18 a 254 dias. Três semanas são o começo</li>
+          <li>Só leitura. Sem fazer a prática e sem escrever, não tem desafio</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ============ PERGUNTAS + COMPRA (fim) ============ -->
+    <div class="sec"><h2>Perguntas frequentes</h2></div>
+    <div class="fim">
+      <div class="cartao faq">
+        <details><summary>Em que formato vem?</summary><p>Um PDF de 60 páginas, em tamanho A5. Dá pra ler no celular ou imprimir.</p></details>
+        <details><summary>Quando eu recebo?</summary><p>Na hora. Depois do pagamento você cai numa página com o botão pra baixar o PDF. Guarda o arquivo no celular.</p></details>
+        <details><summary>Como eu pago?</summary><p>Pix ou cartão. É pagamento único de R$ 97, sem mensalidade.</p></details>
+        <details><summary>E se eu não gostar?</summary><p>Você tem 7 dias, a partir da compra, pra pedir o dinheiro de volta. É o direito de arrependimento do Código de Defesa do Consumidor. Me chama no direct <a href="https://www.instagram.com/conrado_desa/">@conrado_desa</a> com o e-mail da compra.</p></details>
+        <details><summary>Não recebi o link. E agora?</summary><p>Me chama no direct <a href="https://www.instagram.com/conrado_desa/">@conrado_desa</a> com o e-mail da compra.</p></details>
+        <details><summary>Preciso já ter meditado?</summary><p>Não. O dia 1 começa do zero: cinco minutos sentado, contando a respiração.</p></details>
+        <details><summary>Quanto tempo por dia?</summary><p>De 2 a 10 minutos de prática, mais a leitura do dia e uma pergunta pra responder por escrito.</p></details>
+        <details><summary>Pulei um dia. Perdi o desafio?</summary><p>Não. Volta pro dia em que parou, sem recomeçar do zero e sem fazer dois de uma vez.</p></details>
+        <details><summary>Isso substitui terapia ou tratamento?</summary><p>Não. É conteúdo educativo sobre hábitos e bem-estar. Se você está em sofrimento, procure um médico ou psicólogo.</p></details>
+      </div>
+      <section class="cartao sombra final">
+        <div class="f-arte"><img src="img/caminhante-faixa.webp" width="800" height="448" alt="" loading="lazy" decoding="async"></div>
+        <div class="f-txt">
+          <div>
+            <p class="rot">E-book · PDF · 60 páginas</p>
+            <h2>Desafio Evolução Mental <em>21 dias</em></h2>
+          </div>
+          <p class="preco"><b>R$ 97</b><span>pagamento único · Pix ou cartão</span></p>
+          <a class="btn comprar" href="https://buy.stripe.com/bJebJ23fKahsasB286bsc0g?locale=pt-BR">Quero o Desafio de 21 dias <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          <p class="miudo">Você baixa o PDF na hora, depois do pagamento.</p>
+          <a class="alt" href="https://condzmethod.com/evolucao/">Prefere começar de graça? Faz o teste Evolução Mental</a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="rodape">
+    <p>Conteúdo educativo sobre hábitos e bem-estar. Não é diagnóstico nem tratamento, não promete resultado e não substitui acompanhamento médico ou psicológico.</p>
+    <nav>
+      <a href="privacidade.html">Privacidade</a>
+      <a href="https://condzmethod.com/evolucao/">Teste Evolução Mental</a>
+      <a href="https://condzmethod.com/evolucao/creditos.html">Créditos das imagens</a>
+    </nav>
+    <p>© 2026 Conrado de Sá</p>
+  </footer>
+</div>
+
+<script>
+// Quem chega com ?o=teste (ou outra origem, só letras e números) leva essa etiqueta pro pagamento,
+// pra dar pra saber de onde veio a venda. Não é dado pessoal. Sem ?o=, os links ficam como estão.
+(function () {
+  var o = (new URLSearchParams(location.search).get('o') || '').replace(/[^a-zA-Z0-9]/g, '').slice(0, 12);
+  if (!o) return;
+  document.querySelectorAll('a.comprar').forEach(function (a) {
+    try { var u = new URL(a.href); u.searchParams.set('client_reference_id', 'o_' + o); a.href = u.toString(); } catch (e) {}
+  });
+})();
+</script>
+</body>
+</html>
