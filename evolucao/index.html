@@ -1,0 +1,1121 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Teste Evolução Mental · Descubra onde você mais pode evoluir</title>
+<meta name="description" content="Dez perguntas, dois minutos. Veja a sua força, onde você mais pode evoluir e três práticas simples pra começar hoje.">
+<meta name="theme-color" content="#F4EFE6">
+<link rel="canonical" href="https://condzmethod.com/evolucao/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Evolução Mental">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:url" content="https://condzmethod.com/evolucao/">
+<meta property="og:title" content="Teste Evolução Mental · Descubra onde você mais pode evoluir">
+<meta property="og:description" content="Dez perguntas, dois minutos. Veja a sua força, onde você mais pode evoluir e três práticas simples pra começar hoje.">
+<meta property="og:image" content="https://condzmethod.com/evolucao/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Teste Evolução Mental: descubra onde você mais pode evoluir">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Teste Evolução Mental · Descubra onde você mais pode evoluir">
+<meta name="twitter:description" content="Dez perguntas, dois minutos. Sua força, onde evoluir e três práticas pra começar hoje.">
+<meta name="twitter:image" content="https://condzmethod.com/evolucao/og.jpg">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<!--
+  Teste Evolução Mental (17/11/2026). Um arquivo só, sem framework.
+  Caminhos todos relativos: a pasta site/ inteira vai pra /evolucao/ do condzmethod.com
+  (só as tags de compartilhamento usam o endereço completo, porque o Open Graph exige).
+  A configuração fica no começo do script (ENDPOINT_LEAD, LINK_DESAFIO, WHATS_MENTORIA).
+  Atalho: ?parado=1 desliga as animações (bom pra print).
+-->
+<style>
+@font-face{font-family:'Geist';src:url(fonts/geist.woff2) format('woff2');font-weight:100 900;font-style:normal;font-display:swap}
+@font-face{font-family:'Newsreader';src:url(fonts/newsreader-display.woff2) format('woff2');font-weight:400;font-style:normal;font-display:swap}
+:root{
+  --papel:#F4EFE6;--papel2:#EBE4D6;--cartao:#FBF8F2;--tinta:#1B1A17;--tinta2:#4D4841;--cinza:#6B655C;--linha:#D9D1C2;--trilho:#E4DCCD;--neutro:#B4AA99;
+  --acento:#9A3B22;--acento2:#7C2E1A;--acento-suave:#F1DED4;
+  --serif:'Newsreader',Georgia,'Times New Roman',serif;
+  --sans:'Geist',system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  --topo:64px;--lado:clamp(18px,4vw,48px);--mini:14.5px;
+}
+*,*::before,*::after{box-sizing:border-box}
+[hidden]{display:none!important}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--papel);color:var(--tinta);font:400 17px/1.55 var(--sans);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+h1,h2,h3,p,ul,ol{margin:0}
+ul,ol{padding:0;list-style:none}
+a{color:inherit;text-underline-offset:3px}
+button,input{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--acento);outline-offset:3px;border-radius:6px}
+svg{display:block}
+
+/* ---------- topo ---------- */
+.topo{height:var(--topo);padding:0 var(--lado);display:flex;align-items:center;justify-content:space-between}
+.marca{display:flex;align-items:center;gap:10px;font:600 18px/1 var(--sans);letter-spacing:-.01em}
+.simbolo{width:28px;height:28px}
+.por{font:500 15px/1 var(--sans);color:var(--cinza)}
+
+/* ---------- telas ---------- */
+.tela{min-height:calc(100vh - var(--topo));min-height:calc(100dvh - var(--topo));display:grid;place-items:center;padding:16px var(--lado) 48px}
+.rotulo{font:600 var(--mini)/1.2 var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--acento)}
+.miudo{font-size:15px;line-height:1.5;color:var(--cinza)}
+.serif{font-family:var(--serif);font-weight:400;letter-spacing:-.015em}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:58px;padding:10px 28px;border:0;border-radius:14px;background:var(--acento);color:#fff;font:600 18px/1.2 var(--sans);text-decoration:none;text-align:center;cursor:pointer;transition:background .15s,transform .15s,box-shadow .15s;box-shadow:0 10px 24px -14px rgba(124,46,26,.9)}
+.btn svg{width:18px;height:18px;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.btn:hover{background:var(--acento2);transform:translateY(-1px)}
+.btn:active{transform:translateY(0)}
+.btn.sec{background:transparent;color:var(--tinta);box-shadow:inset 0 0 0 1.5px var(--tinta)}
+.btn.sec:hover{background:var(--tinta);color:var(--papel)}
+.btn[disabled]{background:var(--trilho);color:var(--tinta2);box-shadow:none;cursor:default;transform:none}
+.cartao{background:var(--cartao);border:1px solid var(--linha);border-radius:22px;box-shadow:0 28px 56px -36px rgba(70,45,20,.45)}
+
+/* ---------- início ---------- */
+.inicio{width:min(1120px,100%);display:grid;gap:40px;align-items:center}
+.selo{display:inline-flex;align-items:center;gap:9px;padding:8px 14px;border:1px solid var(--linha);border-radius:999px;background:var(--cartao);font:500 15px/1.2 var(--sans);color:var(--tinta2)}
+.selo i{width:8px;height:8px;border-radius:50%;background:var(--acento)}
+.titulo{margin-top:20px;font:400 clamp(40px,5.6vw,72px)/1.02 var(--serif);letter-spacing:-.022em}
+.sub{margin-top:20px;max-width:34em;font-size:clamp(17px,1.5vw,19px);line-height:1.55;color:var(--tinta2)}
+.inicio .btn{margin-top:28px;min-width:260px}
+.inicio .miudo{margin-top:14px}
+.exemplo{padding:26px 26px 22px}
+.exemplo .rotulo{color:var(--cinza)}
+.exemplo h2{margin-top:10px;font:400 30px/1.1 var(--serif);letter-spacing:-.015em}
+.mapa{margin-top:20px;display:grid;gap:13px}
+.linha-mapa{display:grid;grid-template-columns:1fr auto;gap:5px 12px;align-items:baseline}
+.linha-mapa .nome{font:500 16px/1.25 var(--sans)}
+.linha-mapa .nome em{font-style:normal;font-weight:600;font-size:var(--mini);margin-left:8px;padding:2px 8px;border-radius:999px;white-space:nowrap}
+.linha-mapa .nome em.f{background:var(--tinta);color:var(--papel)}
+.linha-mapa .nome em.e{background:var(--acento);color:#fff}
+.linha-mapa .pct{font:600 16px/1 var(--sans);font-variant-numeric:tabular-nums;color:var(--tinta2)}
+.linha-mapa .trilho{grid-column:1/-1;height:9px;border-radius:999px;background:var(--trilho);overflow:hidden}
+.linha-mapa .trilho b{display:block;height:100%;border-radius:999px;background:var(--neutro);transition:width .9s cubic-bezier(.2,.7,.2,1)}
+.linha-mapa.f .trilho b{background:var(--tinta)}
+.linha-mapa.e .trilho b{background:var(--acento)}
+.fichas{margin-top:18px;padding-top:16px;border-top:1px solid var(--linha);display:flex;flex-wrap:wrap;gap:8px}
+.fichas span{padding:6px 12px;border-radius:999px;background:var(--papel);font:500 15px/1.2 var(--sans);color:var(--tinta2)}
+.aviso-ini{grid-column:1/-1;max-width:60em}
+
+/* ---------- perguntas ---------- */
+.quiz{width:min(1080px,100%);display:grid;gap:26px}
+.quiz-meta{display:flex;align-items:center;gap:14px}
+.voltar{flex:none;width:46px;height:46px;border-radius:13px;border:1px solid var(--linha);background:var(--cartao);display:grid;place-items:center;cursor:pointer;transition:border-color .15s}
+.voltar:hover{border-color:var(--tinta)}
+.voltar svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.conta{font:500 16px/1 var(--sans);color:var(--tinta2);font-variant-numeric:tabular-nums}
+.prog{flex:1;height:7px;border-radius:999px;background:var(--trilho);overflow:hidden}
+.prog b{display:block;height:100%;width:0;border-radius:999px;background:var(--acento);transition:width .35s ease}
+.pergunta{margin-top:26px;font:400 clamp(27px,3.4vw,44px)/1.12 var(--serif);letter-spacing:-.018em;outline:0}
+.dica{margin-top:12px;color:var(--tinta2)}
+.opcoes{display:grid;gap:12px}
+.opcao{display:flex;align-items:center;gap:14px;width:100%;min-height:66px;padding:13px 18px;border:1.5px solid var(--linha);border-radius:15px;background:var(--cartao);font:500 17px/1.35 var(--sans);text-align:left;cursor:pointer;transition:border-color .15s,background .15s,color .15s,transform .15s}
+.opcao .tecla{flex:none;width:30px;height:30px;border-radius:9px;border:1.5px solid var(--linha);display:grid;place-items:center;font:600 var(--mini)/1 var(--sans);color:var(--cinza);transition:inherit}
+.opcao:hover{border-color:var(--tinta);transform:translateX(3px)}
+.opcao[aria-checked="true"]{background:var(--acento);border-color:var(--acento);color:#fff}
+.opcao[aria-checked="true"] .tecla{border-color:rgba(255,255,255,.55);color:#fff}
+
+/* ---------- contato ---------- */
+.contato{width:min(1040px,100%);display:grid;gap:26px}
+.contato h2{margin-top:22px;font:400 clamp(30px,3.6vw,46px)/1.08 var(--serif);letter-spacing:-.018em}
+.contato .sub{margin-top:14px}
+.leva{margin-top:20px;display:grid;gap:10px}
+.leva li{display:flex;gap:10px;align-items:flex-start;color:var(--tinta2)}
+.leva svg{flex:none;width:20px;height:20px;margin-top:3px;fill:none;stroke:var(--acento);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.form{padding:26px;display:grid;gap:15px}
+.campo{display:grid;gap:7px}
+.campo span{font:600 15px/1.2 var(--sans)}
+.campo input{width:100%;height:54px;padding:0 16px;border:1.5px solid var(--linha);border-radius:12px;background:#fff;font-size:17px;transition:border-color .15s}
+.campo input::placeholder{color:#A39C90}
+.campo input:focus{outline:0;border-color:var(--acento);box-shadow:0 0 0 3px var(--acento-suave)}
+.aceite{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start;cursor:pointer;font-size:15px;line-height:1.45;color:var(--tinta2)}
+.aceite input{appearance:none;-webkit-appearance:none;width:26px;height:26px;margin:1px 0 0;border:1.5px solid var(--cinza);border-radius:8px;background:#fff;cursor:pointer;display:grid;place-items:center;transition:background .15s,border-color .15s}
+.aceite input:checked{background:var(--acento);border-color:var(--acento)}
+.aceite input:checked::after{content:"";width:7px;height:13px;border:solid #fff;border-width:0 2.5px 2.5px 0;transform:translateY(-1px) rotate(45deg)}
+.isca{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.erro{min-height:0;font:600 15px/1.4 var(--sans);color:var(--acento)}
+.erro:empty{display:none}
+.form .btn{width:100%}
+
+/* ---------- resultado ---------- */
+.tela-res{display:block;padding:8px 0 0}
+.res{width:min(1120px,100%);margin:0 auto;padding:8px var(--lado) 56px;display:grid;gap:30px;align-items:start}
+.perfil{padding:26px}
+.perfil h1{margin-top:12px;font:400 clamp(34px,3.2vw,42px)/1.06 var(--serif);letter-spacing:-.018em}
+.perfil .lema{margin-top:12px;color:var(--tinta2)}
+.perfil .btn{width:100%;margin-top:22px}
+.perfil .miudo{margin-top:12px}
+.bloco{padding:28px 0;border-top:1px solid var(--linha)}
+.bloco:first-child{padding-top:0;border-top:0}
+.bloco h3{font:400 28px/1.15 var(--serif);letter-spacing:-.012em}
+.bloco > p{margin-top:12px}
+.duo{display:grid;gap:14px}
+.caixa{padding:20px 22px;border-radius:18px;background:var(--cartao);border:1px solid var(--linha)}
+.caixa.e{background:var(--acento-suave);border-color:#E3C4B5}
+.caixa .rotulo{color:var(--cinza)}
+.caixa.e .rotulo{color:var(--acento2)}
+.caixa h3{margin-top:8px;font:400 30px/1.1 var(--serif)}
+.caixa p{margin-top:10px;color:var(--tinta2)}
+.leitura{font-size:18px;line-height:1.62}
+.praticas{margin-top:16px;display:grid;gap:12px}
+.pratica{display:grid;grid-template-columns:auto 1fr;gap:4px 16px;padding:18px 20px;border-radius:18px;background:var(--cartao);border:1px solid var(--linha)}
+.pratica .n{grid-row:1/3;width:38px;height:38px;border-radius:50%;background:var(--tinta);color:var(--papel);display:grid;place-items:center;font:600 17px/1 var(--sans)}
+.pratica h4{margin:0;display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;font:600 18px/1.25 var(--sans)}
+.pratica h4 span{padding:3px 10px;border-radius:999px;background:var(--acento-suave);color:var(--acento2);font:600 var(--mini)/1.3 var(--sans);white-space:nowrap}
+.pratica p{grid-column:2;color:var(--tinta2)}
+.fonte{margin-top:12px;font-size:15px;line-height:1.5;color:var(--cinza)}
+.analogia{margin-top:0;padding:22px;border-radius:18px;border:1.5px dashed var(--neutro)}
+.analogia .rotulo{display:inline-block;padding:5px 11px;border-radius:999px;background:var(--tinta);color:var(--papel);letter-spacing:.06em}
+.analogia p{margin-top:12px}
+.analogia .miudo{margin-top:10px}
+.baixar{display:grid;gap:10px;justify-items:start}
+
+/* ---------- oferta ---------- */
+.oferta{background:var(--papel2);border-top:1px solid var(--linha)}
+.oferta-in{width:min(1120px,100%);margin:0 auto;padding:52px var(--lado) 40px;display:grid;gap:30px;align-items:start}
+.oferta h2{margin-top:12px;font:400 clamp(34px,4.2vw,54px)/1.04 var(--serif);letter-spacing:-.02em}
+.oferta .sub{margin-top:16px;max-width:38em}
+.seucaso{margin-top:16px;padding:14px 18px;border-left:3px solid var(--acento);background:var(--cartao);border-radius:0 14px 14px 0;max-width:38em}
+.semanas{margin-top:24px;display:grid;gap:10px;max-width:38em}
+.semanas li{display:grid;grid-template-columns:auto 1fr;gap:2px 16px;padding:16px 18px;border-radius:16px;background:var(--cartao);border:1px solid var(--linha)}
+.semanas .s{grid-row:1/3;align-self:start;padding:5px 10px;border-radius:9px;background:var(--tinta);color:var(--papel);font:600 var(--mini)/1.2 var(--sans);white-space:nowrap}
+.semanas b{font:600 18px/1.25 var(--sans)}
+.semanas p{grid-column:2;color:var(--tinta2)}
+.semanas li.sua{border-color:var(--acento);box-shadow:inset 0 0 0 1px var(--acento)}
+.semanas li.sua .s{background:var(--acento);color:#fff}
+.extra{display:grid;gap:18px;max-width:38em}
+.extra h3{font:600 18px/1.25 var(--sans)}
+.extra p,.extra li{margin-top:6px;color:var(--tinta2)}
+.extra li{padding-left:18px;position:relative}
+.extra li::before{content:"";position:absolute;left:2px;top:.68em;width:6px;height:6px;border-radius:50%;background:var(--acento)}
+.compra{padding:26px}
+.compra .rotulo{color:var(--cinza)}
+.compra h3{margin-top:10px;font:400 28px/1.12 var(--serif)}
+.preco{margin-top:14px;display:flex;align-items:baseline;gap:10px;font:400 64px/1 var(--serif);letter-spacing:-.02em}
+.preco small{font:500 16px/1.2 var(--sans);letter-spacing:0;color:var(--cinza)}
+.compra ul{margin-top:16px;display:grid;gap:8px}
+.compra li{display:flex;gap:10px;align-items:flex-start;color:var(--tinta2)}
+.compra li svg{flex:none;width:20px;height:20px;margin-top:3px;fill:none;stroke:var(--acento);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.compra .btn{width:100%;margin-top:20px}
+.compra .miudo{margin-top:12px}
+.mentoria{grid-column:1/-1;margin-top:6px;padding:20px 22px;border-radius:18px;border:1px solid var(--linha);background:transparent;display:grid;gap:14px;align-items:center}
+.mentoria h3{font:600 18px/1.25 var(--sans)}
+.mentoria p{margin-top:4px;font-size:16px;color:var(--tinta2);max-width:44em}
+.mentoria .btn{min-height:50px;padding:8px 20px;font-size:16px;justify-self:start}
+.rodape{width:min(1120px,100%);margin:0 auto;padding:22px var(--lado) 40px;display:grid;gap:12px}
+.rodape nav{display:flex;flex-wrap:wrap;gap:8px 20px}
+.rodape button{padding:0;border:0;background:none;text-decoration:underline;text-underline-offset:3px;cursor:pointer;font-size:15px;color:var(--cinza)}
+
+/* ---------- computador ---------- */
+@media (min-width:960px){
+  :root{--mini:15px}
+  .inicio{grid-template-columns:1.1fr .9fr;gap:40px 76px}
+  .quiz{grid-template-columns:1fr 1fr;gap:76px;align-items:center}
+  .contato{grid-template-columns:1fr 1fr;gap:76px;align-items:center}
+  .res{grid-template-columns:400px 1fr;gap:60px;padding-top:20px}
+  .perfil{position:sticky;top:20px}
+  .duo{grid-template-columns:1fr 1fr}
+  .oferta-in{grid-template-columns:1fr 380px;gap:30px 64px}
+  .of-topo,.extra{grid-column:1}
+  .compra{grid-column:2;grid-row:1/3;position:sticky;top:20px}
+  .mentoria{grid-template-columns:1fr auto}
+  .miudo{font-size:16px}
+}
+/* ---------- celular ---------- */
+@media (max-width:959px){
+  .tela{place-items:start center;padding-top:20px}
+  .exemplo{order:3}
+  .aviso-ini{order:4}
+  .leva{display:none}
+  .inicio .btn{width:100%}
+}
+@media (max-width:640px){
+  :root{--topo:56px}
+  body{font-size:16px}
+  .por{display:none}
+  .opcao{font-size:16.5px;min-height:62px}
+  .opcao .tecla{display:none}
+  .form,.perfil,.compra,.exemplo{padding:20px}
+  .leitura{font-size:17px}
+  .preco{font-size:56px}
+  .pratica{padding:16px}
+}
+@media (max-height:700px) and (min-width:960px){
+  .titulo{font-size:clamp(40px,5vw,60px)}
+}
+
+/* ---------- movimento ---------- */
+@keyframes sobe{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.entra > *{animation:sobe .5s cubic-bezier(.2,.7,.2,1) both}
+.entra > *:nth-child(2){animation-delay:.06s}
+.entra > *:nth-child(3){animation-delay:.12s}
+.entra > *:nth-child(4){animation-delay:.18s}
+.entra > *:nth-child(5){animation-delay:.24s}
+.entra > *:nth-child(6){animation-delay:.3s}
+.parado *,.parado *::before,.parado *::after{animation:none!important;transition:none!important}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+
+/* ---------- folha do resultado completo ---------- */
+/* Vale pra impressão (o PDF) e pra leitura na tela, quando o navegador não imprime (o do Instagram, por exemplo).
+   As medidas usam --u: calc(1*var(--u)) no papel e 1.54px na tela. */
+#folha{display:none;--u:1pt;color:#1B1A17;font:400 calc(10.4*var(--u))/1.5 var(--sans)}
+#folha h1,#folha h2,#folha h3,#folha p,#folha ul,#folha ol{margin:0;padding:0}
+#folha .f-barra{display:none}
+#folha .f-topo{display:flex;justify-content:space-between;align-items:center;gap:calc(8*var(--u));padding-bottom:calc(9*var(--u));border-bottom:calc(1.2*var(--u)) solid #1B1A17;font:600 calc(10*var(--u))/1.2 var(--sans)}
+#folha .f-topo .marca{font-size:calc(11.5*var(--u));gap:calc(7*var(--u))}
+#folha .f-topo .simbolo{width:calc(17*var(--u));height:calc(17*var(--u))}
+#folha .f-topo > span:last-child{font-weight:500;color:#6B655C}
+#folha .f-capa{padding:calc(16*var(--u)) 0 calc(6*var(--u))}
+#folha .f-capa .r{font:600 calc(8.6*var(--u))/1.2 var(--sans);letter-spacing:.09em;text-transform:uppercase;color:#9A3B22}
+#folha .f-capa h1{margin-top:calc(7*var(--u));font:400 calc(29*var(--u))/1.04 var(--serif);letter-spacing:-.02em}
+#folha .f-capa p{margin-top:calc(7*var(--u));font-size:calc(11*var(--u));color:#4D4841}
+#folha .f-sec{margin-top:calc(15*var(--u));break-inside:avoid}
+#folha .f-sec.solta{break-inside:auto}
+#folha .f-sec > h2{font:400 calc(16.5*var(--u))/1.15 var(--serif);letter-spacing:-.01em;padding-bottom:calc(3*var(--u));border-bottom:calc(.6*var(--u)) solid #D9D1C2;break-after:avoid}
+#folha .f-sec > p{margin-top:calc(7*var(--u))}
+#folha .f-mapa{margin-top:calc(9*var(--u));display:grid;gap:calc(7*var(--u))}
+#folha .f-mapa div{display:grid;grid-template-columns:calc(118*var(--u)) 1fr calc(30*var(--u));gap:calc(10*var(--u));align-items:center;break-inside:avoid}
+#folha .f-mapa b{font-weight:600}
+#folha .f-mapa small{display:block;font-size:calc(8.4*var(--u));line-height:1.3;color:#6B655C;font-weight:400}
+#folha .f-mapa i{display:block;height:calc(7*var(--u));border-radius:calc(99*var(--u));background:#E4DCCD;overflow:hidden}
+#folha .f-mapa i u{display:block;height:100%;border-radius:calc(99*var(--u));background:#B4AA99}
+#folha .f-mapa .f i u{background:#1B1A17}
+#folha .f-mapa .e i u{background:#9A3B22}
+#folha .f-mapa em{font-style:normal;font-weight:600;text-align:right;font-variant-numeric:tabular-nums}
+#folha .f-duo{margin-top:calc(15*var(--u));display:grid;grid-template-columns:1fr 1fr;gap:calc(11*var(--u));break-inside:avoid}
+#folha .f-cx{padding:calc(11*var(--u)) calc(12*var(--u));border:calc(.6*var(--u)) solid #D9D1C2;border-radius:calc(9*var(--u))}
+#folha .f-cx.e{background:#F1DED4;border-color:#E3C4B5}
+#folha .f-cx .r{font:600 calc(7.8*var(--u))/1.2 var(--sans);letter-spacing:.09em;text-transform:uppercase;color:#6B655C}
+#folha .f-cx h3{margin-top:calc(5*var(--u));font:400 calc(15*var(--u))/1.1 var(--serif)}
+#folha .f-cx p{margin-top:calc(5*var(--u));font-size:calc(9.8*var(--u))}
+#folha .f-lista{margin-top:calc(7*var(--u));display:grid;gap:calc(4*var(--u));list-style:none}
+#folha .f-lista li{padding-left:calc(12*var(--u));position:relative}
+#folha .f-lista li::before{content:"";position:absolute;left:calc(1*var(--u));top:.55em;width:calc(4*var(--u));height:calc(4*var(--u));border-radius:50%;background:#9A3B22}
+#folha .f-prat{margin-top:calc(10*var(--u));padding:calc(10*var(--u)) calc(12*var(--u));border:calc(.6*var(--u)) solid #D9D1C2;border-radius:calc(9*var(--u));break-inside:avoid}
+#folha .f-prat h3{font:600 calc(11.4*var(--u))/1.25 var(--sans)}
+#folha .f-prat h3 span{margin-left:calc(6*var(--u));padding:calc(1.5*var(--u)) calc(7*var(--u));border-radius:calc(99*var(--u));background:#F1DED4;color:#7C2E1A;font-size:calc(8.6*var(--u));white-space:nowrap}
+#folha .f-prat ol{margin-top:calc(5*var(--u));padding-left:calc(15*var(--u));list-style:decimal;display:grid;gap:calc(2.5*var(--u))}
+#folha .f-dias{margin-top:calc(8*var(--u));display:grid;grid-template-columns:1fr 1fr;gap:calc(5*var(--u)) calc(16*var(--u));list-style:none}
+#folha .f-dias li{display:grid;grid-template-columns:calc(36*var(--u)) 1fr;gap:calc(6*var(--u));break-inside:avoid}
+#folha .f-dias b{font-weight:600;color:#9A3B22}
+#folha .f-ana{margin-top:calc(15*var(--u));padding:calc(10*var(--u)) calc(12*var(--u));border:calc(.9*var(--u)) dashed #B4AA99;border-radius:calc(9*var(--u));break-inside:avoid}
+#folha .f-ana .r{display:inline-block;padding:calc(2.5*var(--u)) calc(7*var(--u));border-radius:calc(99*var(--u));background:#1B1A17;color:#fff;font:600 calc(7.6*var(--u))/1.2 var(--sans);letter-spacing:.07em;text-transform:uppercase}
+#folha .f-ana p{margin-top:calc(6*var(--u))}
+#folha .f-cit{margin-top:calc(8*var(--u));padding-left:calc(11*var(--u));border-left:calc(2*var(--u)) solid #9A3B22;font:400 calc(12.5*var(--u))/1.35 var(--serif)}
+#folha .f-cit + p{margin-top:calc(5*var(--u));font-size:calc(8.8*var(--u));color:#6B655C}
+#folha .f-refs{margin-top:calc(6*var(--u));display:grid;gap:calc(4*var(--u));font-size:calc(8.6*var(--u));line-height:1.4;color:#4D4841;list-style:none}
+#folha .f-refs li{break-inside:avoid;word-break:break-word}
+#folha .f-nota{margin-top:calc(6*var(--u));font-size:calc(8.8*var(--u));line-height:1.45;color:#6B655C}
+#folha .f-prox{margin-top:calc(15*var(--u));padding:calc(12*var(--u)) calc(14*var(--u));border-radius:calc(9*var(--u));background:#1B1A17;color:#fff;break-inside:avoid}
+#folha .f-prox h2{font:400 calc(15*var(--u))/1.15 var(--serif)}
+#folha .f-prox p{margin-top:calc(5*var(--u));font-size:calc(9.8*var(--u));color:#E9E2D5}
+@page{size:A4;margin:15mm 16mm 16mm}
+@media print{
+  html,body{background:#fff}
+  #app{display:none!important}
+  #folha{display:block;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+@media screen{
+  html.ver-folha #app{display:none}
+  html.ver-folha #folha{display:block;--u:1.54px;width:min(780px,100%);margin:0 auto;padding:18px var(--lado) 64px}
+  html.ver-folha #folha .f-barra{display:grid;gap:12px;margin-bottom:24px;padding:16px 18px;border-radius:16px;background:var(--cartao);border:1px solid var(--linha);font:400 16px/1.5 var(--sans)}
+  html.ver-folha #folha .f-barra .btn{min-height:50px;padding:8px 20px;font-size:16px;justify-self:start}
+  html.ver-folha #folha .f-mapa small,html.ver-folha #folha .f-refs,html.ver-folha #folha .f-nota,html.ver-folha #folha .f-cit + p,html.ver-folha #folha .f-cx .r,html.ver-folha #folha .f-capa .r,html.ver-folha #folha .f-ana .r,html.ver-folha #folha .f-prat h3 span{font-size:14.5px}
+}
+@media screen and (max-width:640px){
+  html.ver-folha #folha .f-topo{flex-direction:column;align-items:flex-start}
+  html.ver-folha #folha .f-capa h1{font-size:36px}
+  html.ver-folha #folha .f-duo,html.ver-folha #folha .f-dias{grid-template-columns:1fr}
+  html.ver-folha #folha .f-mapa div{grid-template-columns:1fr auto;gap:4px 12px}
+  html.ver-folha #folha .f-mapa i{grid-column:1/-1;order:3}
+}
+</style>
+</head>
+<body>
+<div id="app">
+  <header class="topo">
+    <div class="marca">
+      <svg class="simbolo" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#9A3B22"/><g fill="#FBF8F2"><rect x="5" y="17" width="3.4" height="9" rx="1.2"/><rect x="10" y="12" width="3.4" height="14" rx="1.2"/><rect x="15" y="15" width="3.4" height="11" rx="1.2"/><rect x="20" y="6" width="3.4" height="20" rx="1.2"/><rect x="25" y="10" width="3.4" height="16" rx="1.2"/></g></svg>
+      <span>Evolução Mental</span>
+    </div>
+    <span class="por">por Conrado de Sá</span>
+  </header>
+
+  <main>
+    <!-- ============ INÍCIO ============ -->
+    <section class="tela" id="t-inicio">
+      <div class="inicio">
+        <div class="entra">
+          <span class="selo"><i></i>Teste gratuito · 10 perguntas · 2 minutos</span>
+          <h1 class="titulo">Descubra onde você mais pode evoluir.</h1>
+          <p class="sub">Dez perguntas diretas sobre atenção, corpo, emoção, direção e expressão. No fim você vê a sua força, o seu ponto de evolução e três práticas simples pra começar hoje.</p>
+          <button class="btn" id="btn-comecar" type="button">Começar o teste <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
+          <p class="miudo">Resultado na hora, com PDF pra baixar.</p>
+        </div>
+        <aside class="cartao exemplo" aria-label="Exemplo de resultado">
+          <span class="rotulo">Exemplo de resultado</span>
+          <h2>Rumo claro, bateria baixa</h2>
+          <div class="mapa" id="mapa-exemplo"></div>
+          <div class="fichas"><span>Sua força</span><span>Onde evoluir</span><span>3 práticas</span><span>1 estudo</span></div>
+        </aside>
+        <p class="miudo aviso-ini">Conteúdo educativo. Não é diagnóstico e não substitui acompanhamento médico ou psicológico.</p>
+      </div>
+    </section>
+
+    <!-- ============ PERGUNTAS ============ -->
+    <section class="tela" id="t-quiz" hidden>
+      <div class="quiz">
+        <div>
+          <div class="quiz-meta">
+            <button class="voltar" id="q-voltar" type="button" aria-label="Voltar"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M13 8H3M7 4L3 8l4 4"/></svg></button>
+            <span class="conta" id="q-conta">1 de 10</span>
+            <div class="prog" role="progressbar" aria-valuemin="0" aria-valuemax="10" aria-valuenow="1" id="q-prog"><b></b></div>
+          </div>
+          <h2 class="pergunta" id="q-texto" tabindex="-1"></h2>
+          <p class="dica" id="q-dica" hidden></p>
+        </div>
+        <div class="opcoes" id="q-opcoes" role="radiogroup" aria-labelledby="q-texto"></div>
+      </div>
+    </section>
+
+    <!-- ============ CONTATO ============ -->
+    <section class="tela" id="t-contato" hidden>
+      <div class="contato">
+        <div>
+          <div class="quiz-meta">
+            <button class="voltar" id="c-voltar" type="button" aria-label="Voltar pra última pergunta"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M13 8H3M7 4L3 8l4 4"/></svg></button>
+            <span class="conta">Última etapa</span>
+            <div class="prog" aria-hidden="true"><b style="width:100%"></b></div>
+          </div>
+          <h2>Seu resultado está pronto. Pra quem ele é?</h2>
+          <p class="sub">Ele aparece aqui na hora, com o seu nome.</p>
+          <ul class="leva">
+            <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3.2L13 5"/></svg>Sua força e onde você mais pode evoluir</li>
+            <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3.2L13 5"/></svg>Três práticas simples, com o tempo de cada uma</li>
+            <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3.2L13 5"/></svg>O resultado completo em PDF pra baixar</li>
+          </ul>
+        </div>
+        <form class="cartao form" id="form-contato" novalidate>
+          <label class="campo"><span>Seu nome</span><input name="nome" autocomplete="given-name" maxlength="40" required></label>
+          <label class="campo"><span>WhatsApp com DDD</span><input name="whats" type="tel" inputmode="numeric" autocomplete="tel-national" maxlength="16" placeholder="(11) 98765-4321" required></label>
+          <label class="campo"><span>E-mail</span><input name="email" type="email" inputmode="email" autocomplete="email" maxlength="120" placeholder="voce@email.com" required></label>
+          <label class="isca" aria-hidden="true">Site<input name="website" tabindex="-1" autocomplete="off"></label>
+          <label class="aceite"><input type="checkbox" name="aceite"><span>Aceito que o Conrado guarde meu nome, WhatsApp e e-mail e fale comigo por esses canais sobre o meu resultado, o Desafio Evolução Mental e a mentoria. Posso pedir pra sair quando quiser. <a href="privacidade.html" target="_blank" rel="noopener">Ver privacidade</a>.</span></label>
+          <p class="erro" id="c-erro" role="alert"></p>
+          <button class="btn" type="submit">Ver meu resultado <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
+        </form>
+      </div>
+    </section>
+
+    <!-- ============ RESULTADO + OFERTA ============ -->
+    <section class="tela tela-res" id="t-resultado" hidden></section>
+  </main>
+</div>
+
+<!-- folha do resultado completo: aparece no PDF e, no navegador do Instagram, na própria página -->
+<div id="folha" aria-hidden="true"></div>
+
+<noscript><p style="padding:24px;font:17px/1.5 system-ui">Este teste precisa de JavaScript ligado no navegador.</p></noscript>
+
+<script>
+(() => {
+  'use strict';
+
+  // ==========================================================
+  // CONFIGURAÇÃO
+  // ==========================================================
+  // Pra onde vão os contatos: FormSubmit, o mesmo serviço do formulário da mentoria Method. Entrega no e-mail do Conrado.
+  // É o ÚNICO lugar pra onde sai algum dado. Vazio = nada sai do navegador.
+  const ENDPOINT_LEAD = 'https://formsubmit.co/ajax/e9ba5025e418d3a78685795ffd36a308';
+  // PLACEHOLDER: link de compra do Desafio (Payment Link do Stripe). O produto ainda NÃO existe.
+  // Vazio = o botão vira "Quero ser avisado quando abrir" e só marca o interesse na tela (o clique não é enviado).
+  const LINK_DESAFIO = '';
+  // WhatsApp da mentoria (só dígitos, com 55). Só aparece dentro do link wa.me. Vazio = o botão some.
+  const WHATS_MENTORIA = '5548998561417';
+  const PRECO_DESAFIO = 'R$ 97';
+  const PRECO_MENTORIA = 'a partir de R$ 5.000';
+  // ==========================================================
+
+  const $ = (s, r = document) => r.querySelector(s);
+  const esc = (t) => String(t ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
+  const SETA = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>';
+  const CHECK = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3.2L13 5"/></svg>';
+  const SIMBOLO = '<svg class="simbolo" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#9A3B22"/><g fill="#FBF8F2"><rect x="5" y="17" width="3.4" height="9" rx="1.2"/><rect x="10" y="12" width="3.4" height="14" rx="1.2"/><rect x="15" y="15" width="3.4" height="11" rx="1.2"/><rect x="20" y="6" width="3.4" height="20" rx="1.2"/><rect x="25" y="10" width="3.4" height="16" rx="1.2"/></g></svg>';
+  const params = new URLSearchParams(location.search);
+  if (params.has('parado')) document.documentElement.classList.add('parado');
+  // De onde a pessoa veio: ?o=reel, ?o=stories... Só letras e números, até 12. Sem nada, "bio".
+  const ORIGEM = (params.get('o') || '').replace(/[^a-z0-9]/gi, '').slice(0, 12) || 'bio';
+  // Navegador de dentro do Instagram ou do Facebook (ou qualquer um sem impressão): o PDF não abre.
+  // Nesses, o botão abre o resultado completo na própria página.
+  const SEM_IMPRESSAO = /Instagram|FBAN|FBAV/i.test(navigator.userAgent) || typeof window.print !== 'function';
+
+  // ==========================================================
+  // AS 5 DIMENSÕES
+  // ==========================================================
+  const KEYS = ['atencao', 'corpo', 'emocao', 'direcao', 'expressao']; // também é a ordem de desempate de "onde evoluir"
+  const DIM = {
+    atencao:   { nome: 'Atenção',         em: 'na atenção',   eh: 'ficar por inteiro numa coisa só',        forca: 'Foco firme',   trava: 'mente acelerada',   semana: 1 },
+    corpo:     { nome: 'Corpo e energia', em: 'no corpo',     eh: 'ter energia pra fazer o que quiser',      forca: 'Energia alta', trava: 'bateria baixa',     semana: 2 },
+    emocao:    { nome: 'Emoção',          em: 'na emoção',    eh: 'sentir sem ser arrastado',                forca: 'Cabeça fria',  trava: 'emoção no comando', semana: 2 },
+    direcao:   { nome: 'Direção',         em: 'na direção',   eh: 'escolher de propósito e saber o preço',   forca: 'Rumo claro',   trava: 'piloto automático', semana: 3 },
+    expressao: { nome: 'Expressão',       em: 'na expressão', eh: 'dizer o que pensa e mostrar o que faz',   forca: 'Voz clara',    trava: 'voz guardada',      semana: 3 },
+  };
+
+  // ==========================================================
+  // AS 10 PERGUNTAS
+  // Cada opção: [texto, {pontos por dimensão}, frase que devolve a resposta na leitura].
+  // A dimensão principal (d) recebe de 0 a 3; algumas opções mexem meio ponto em outra dimensão.
+  // ==========================================================
+  const Q = [
+    { k: 'vazio', d: 'atencao', q: 'Sobrou um tempo vazio: fila, elevador, alguém atrasou. O que acontece?', o: [
+      ['O celular já está na mão antes de eu perceber', { atencao: 0 }, 'Qualquer espaço vazio vira celular antes de você perceber.'],
+      ['Pego o celular, mas percebo que peguei', { atencao: 1 }, 'No tempo vazio você ainda pega o celular, mas já percebe que pegou, e perceber é o começo.'],
+      ['Às vezes fico só ali, olhando em volta', { atencao: 2 }, 'Você já consegue passar um tempo vazio sem pegar o celular, pelo menos às vezes.'],
+      ['Fico bem sem nada na mão', { atencao: 3 }, 'Tempo vazio não te incomoda: você fica bem sem nada na mão.'],
+    ] },
+    { k: 'tarde', d: 'corpo', q: 'Como está a sua energia no meio da tarde, num dia comum?', o: [
+      ['No chão. Sigo no café e na força', { corpo: 0 }, 'No meio da tarde a sua energia vai pro chão e você segue no café e na força.'],
+      ['Cai bastante, mas eu levo', { corpo: 1 }, 'Sua energia cai bastante à tarde e você leva o resto do dia arrastando.'],
+      ['Oscila, mas dá pra render', { corpo: 2 }, 'Sua energia oscila ao longo do dia, mas ainda dá pra render.'],
+      ['Boa. Chego bem no fim do dia', { corpo: 3 }, 'Você chega bem no fim do dia, com energia sobrando.'],
+    ] },
+    { k: 'irritou', d: 'emocao', q: 'Uma coisa te irritou de manhã. Como você está no fim da tarde?', o: [
+      ['Percebi na hora, entendi o motivo e segui', { emocao: 3 }, 'Quando algo te irrita, você percebe na hora, entende o motivo e segue.'],
+      ['Passou, mas levou umas horas', { emocao: 2 }, 'Uma irritação de manhã passa, mas leva umas horas do seu dia.'],
+      ['Sigo o dia, mas quando lembro a raiva volta', { emocao: 1 }, 'Você segue o dia, mas basta lembrar que a raiva volta inteira.'],
+      ['Ainda remoendo. O dia foi junto', { emocao: 0 }, 'Uma irritação de manhã ainda está com você no fim da tarde, e o dia vai junto.'],
+    ] },
+    { k: 'problema', d: 'direcao', q: 'Apareceu um problema, grande ou pequeno. Qual é o seu primeiro movimento?', o: [
+      ['Reclamo e procuro de quem é a culpa', { direcao: 0, emocao: -0.5 }, 'Quando aparece um problema, o seu primeiro movimento é reclamar e procurar culpado.'],
+      ['Fico me preocupando e vou adiando', { direcao: 1 }, 'Quando aparece um problema, você se preocupa e vai adiando.'],
+      ['Resolvo, mas reclamando no caminho', { direcao: 2 }, 'Você resolve os problemas, mas reclama no caminho.'],
+      ['Penso em como resolver e resolvo, sem alarde', { direcao: 3 }, 'Quando aparece um problema, você pensa em como resolver e resolve, sem alarde.'],
+    ] },
+    { k: 'injusto', d: 'expressao', q: 'Alguém foi injusto com você, e você sabe que não errou. O que você faz?', o: [
+      ['Engulo e fico em silêncio', { expressao: 0 }, 'Quando alguém é injusto com você, você engole e fica em silêncio.'],
+      ['Fico em silêncio na hora e reclamo depois, com outras pessoas', { expressao: 1, direcao: -0.5 }, 'Quando alguém é injusto, você fica em silêncio na hora e reclama depois, com quem não tem nada a ver.'],
+      ['Falo, mas sai atravessado', { expressao: 2, emocao: -0.5 }, 'Quando alguém é injusto, você fala, mas sai atravessado.'],
+      ['Falo com calma o que eu penso', { expressao: 3 }, 'Quando alguém é injusto, você diz com calma o que pensa.'],
+    ] },
+    { k: 'quieto', d: 'atencao', q: 'Quando foi a última vez que você parou só pra respirar ou ficar em silêncio, sem tela e sem tarefa?', o: [
+      ['Hoje ou ontem', { atencao: 3, emocao: 0.5 }, 'Você parou pra respirar ou ficar em silêncio nos últimos dias.'],
+      ['Nesta semana', { atencao: 2 }, 'Você parou pra ficar em silêncio nesta semana, mas ainda não é todo dia.'],
+      ['Faz mais de um mês', { atencao: 1 }, 'Faz mais de um mês que você não para só pra respirar.'],
+      ['Não lembro', { atencao: 0 }, 'Você nem lembra a última vez que ficou em silêncio, sem tela e sem tarefa.'],
+    ] },
+    { k: 'rua', d: 'corpo', q: 'Nos últimos 7 dias, quantas vezes você saiu pra se mexer ou ficar ao ar livre?', dica: 'Vale andar, treinar, praça, praia, mato.', o: [
+      ['Nenhuma', { corpo: 0 }, 'Na última semana você não saiu nenhuma vez pra se mexer ou ficar ao ar livre.'],
+      ['1 ou 2 vezes', { corpo: 1 }, 'Você saiu pra se mexer só uma ou duas vezes na semana.'],
+      ['3 ou 4 vezes', { corpo: 2 }, 'Você saiu pra se mexer três ou quatro vezes na semana.'],
+      ['Quase todo dia', { corpo: 3, atencao: 0.5 }, 'Você se mexe ou fica ao ar livre quase todo dia.'],
+    ] },
+    { k: 'ruim', d: 'emocao', q: 'Bateu um sentimento ruim: ansiedade, inveja, tristeza. O que você costuma fazer?', o: [
+      ['Fujo: celular, comida, série, qualquer coisa', { emocao: 1, atencao: -0.5 }, 'Quando o sentimento é ruim, você foge pro celular, pra comida ou pra série.'],
+      ['Fico dentro dele por dias, sem entender direito', { emocao: 0 }, 'Quando o sentimento é ruim, você fica dentro dele por dias, sem entender direito.'],
+      ['Falo com alguém e melhora', { emocao: 2, expressao: 0.5 }, 'Quando o sentimento é ruim, você fala com alguém, e isso ajuda.'],
+      ['Paro e me pergunto de onde isso vem', { emocao: 3, direcao: 0.5 }, 'Quando o sentimento é ruim, você para e se pergunta de onde ele vem.'],
+    ] },
+    { k: 'escolha', d: 'direcao', q: 'O jeito que você gasta as suas horas hoje foi escolha sua?', o: [
+      ['Foi escolha, e eu sei o preço que estou pagando', { direcao: 3 }, 'Você escolheu como gasta as suas horas e sabe o preço que paga por isso.'],
+      ['Foi escolha, mas nunca parei pra ver o que ela me custa', { direcao: 2 }, 'Você escolheu como gasta as suas horas, mas nunca fez a conta do que isso custa.'],
+      ['Em parte. Algumas coisas eu escolhi, outras me levaram', { direcao: 1 }, 'Parte da sua rotina foi escolha sua, e parte foi te levando.'],
+      ['Não. Fui indo e, quando vi, estava aqui', { direcao: 0 }, 'Você foi indo e, quando viu, a sua rotina estava assim, sem ter sido escolhida.'],
+    ] },
+    { k: 'mostra', d: 'expressao', q: 'Você mostra pras pessoas o que está fazendo, aprendendo ou pensando?', o: [
+      ['Não. Guardo tudo pra mim', { expressao: 0 }, 'O que você faz, aprende e pensa fica guardado com você.'],
+      ['Só pra quem é muito próximo', { expressao: 1 }, 'Só quem é muito próximo sabe o que você está fazendo ou pensando.'],
+      ['Às vezes, quando já está pronto e sem risco', { expressao: 2 }, 'Você só mostra o que faz quando já está pronto e sem risco.'],
+      ['Sim, vou mostrando no caminho, mesmo sem estar perfeito', { expressao: 3 }, 'Você vai mostrando o que faz no caminho, mesmo sem estar perfeito.'],
+    ] },
+  ];
+
+  // limites possíveis de cada dimensão (pra virar de 0 a 100)
+  const LIM = {};
+  KEYS.forEach((k) => {
+    let min = 0, max = 0;
+    Q.forEach((q) => { const v = q.o.map((o) => o[1][k] || 0); min += Math.min(...v); max += Math.max(...v); });
+    LIM[k] = { min, max };
+  });
+
+  // ==========================================================
+  // O CÁLCULO (determinístico, sem IA)
+  // resp = 10 índices (0 a 3), na ordem das perguntas.
+  // ==========================================================
+  const EPS = 1e-9;
+  function calcular(resp) {
+    const bruto = {}, pct = {};
+    KEYS.forEach((k) => { bruto[k] = 0; });
+    Q.forEach((q, i) => { const p = q.o[resp[i]][1]; for (const k in p) bruto[k] += p[k]; });
+    KEYS.forEach((k) => { pct[k] = ((bruto[k] - LIM[k].min) / (LIM[k].max - LIM[k].min)) * 100; });
+    // onde evoluir = a dimensão mais baixa (empate: a que vem antes em KEYS, a ordem das semanas do desafio)
+    const evo = KEYS.reduce((a, k) => (pct[k] < pct[a] - EPS ? k : a), KEYS[0]);
+    // força = a mais alta entre as outras quatro (empate: a que vem depois em KEYS)
+    const resto = KEYS.filter((k) => k !== evo);
+    const forca = resto.reduce((a, k) => (pct[k] >= pct[a] - EPS ? k : a), resto[0]);
+    const media = KEYS.reduce((s, k) => s + pct[k], 0) / KEYS.length;
+    const vals = KEYS.map((k) => pct[k]);
+    const plano = Math.max(...vals) - Math.min(...vals) < 12;
+    const forte = pct[forca] >= 55;   // a força é força de verdade, não só "a menos fraca"
+    const base = pct[forca] < 25;     // nenhuma área se destaca: a pessoa parte do começo
+    const fino = pct[evo] >= 60;      // o ponto de evolução já está bom: vira ajuste fino
+    const nivel = fino && media >= 70 ? 'alto' : media < 38 ? 'baixo' : plano ? 'plano' : 'medio';
+    const F = DIM[forca], E = DIM[evo];
+    const Trava = E.trava[0].toUpperCase() + E.trava.slice(1);
+    const perfil = base ? `${Trava}, ponto de partida` : !forte ? `${Trava}, apoio ${F.em}` : fino ? `${F.forca}, ajuste fino ${E.em}` : `${F.forca}, ${E.trava}`;
+    const arred = {}; KEYS.forEach((k) => { arred[k] = Math.round(pct[k]); });
+    return { bruto, pct, pontos: arred, evo, forca, media, nivel, forte, base, fino, perfil };
+  }
+
+  // ==========================================================
+  // TEXTOS DOS RESULTADOS
+  // ==========================================================
+  const NIVEL = {
+    baixo: 'Hoje o seu mapa está baixo em quase tudo: é um retrato de agora, não uma sentença, e o caminho é começar por uma área só.',
+    medio: 'Seu mapa é desigual: tem área forte e área puxando o resto pra baixo.',
+    plano: 'As cinco áreas ficaram quase empatadas, e o ponto de evolução é a que ficou um pouco abaixo.',
+    alto: 'Seu mapa está alto nas cinco áreas, então aqui o ajuste é fino.',
+  };
+
+  // quando a dimensão é a FORÇA
+  const FORCA = {
+    atencao: {
+      valor: 'Isso hoje é raro, e faz render tudo o que você decide treinar.',
+      apoio: 'comece pelo que pede só alguns minutos de foco por vez',
+      cuidado: 'O cuidado é não usar o foco só pra produzir. Aponta ele também pra como você está se sentindo e pro que o seu corpo está pedindo.',
+    },
+    corpo: {
+      valor: 'É dessa energia que sai todo o resto.',
+      apoio: 'use os dias em que o corpo responde bem pra fazer as práticas mais difíceis',
+      cuidado: 'O cuidado é não gastar tudo em movimento sem direção. Energia sem rumo vira agitação.',
+    },
+    emocao: {
+      valor: 'Isso te deixa decidir e conversar com a cabeça limpa.',
+      apoio: 'nos momentos em que a calma vem, repara no que te ajudou a chegar nela',
+      cuidado: 'O cuidado é não confundir calma com guardar tudo. Cabeça fria serve pra falar melhor, não pra falar menos.',
+    },
+    direcao: {
+      valor: 'Essa é a base de qualquer mudança: responsabilidade pelas próprias escolhas.',
+      apoio: 'você já decide algumas coisas de propósito, e dá pra estender isso pras outras áreas',
+      cuidado: 'O cuidado é o rumo virar corrida sem pausa. Decidir bem também é decidir quando parar, dormir e cuidar do corpo que carrega o plano.',
+    },
+    expressao: {
+      valor: 'Isso aproxima as pessoas certas e te traz retorno pra melhorar.',
+      apoio: 'você já fala e mostra alguma coisa, e isso traz retorno pra ajustar o resto',
+      cuidado: 'O cuidado é a fala andar na frente da prática. Mostra o que você faz, e continua fazendo quando ninguém está olhando.',
+    },
+  };
+
+  // quando a dimensão é ONDE EVOLUIR
+  const EVO = {
+    atencao: {
+      resumo: 'Sua atenção está espalhada. Aprender a ficar numa coisa só é o que mais te devolve energia agora.',
+      resumoFino: 'Sua atenção já é boa. O ajuste é dar a ela alguns minutos de silêncio por dia.',
+      virada: 'Isso não é defeito seu: atenção se treina, e hoje quem treina a sua é a tela. Parar, respirar e ficar em silêncio alguns minutos por dia é o remédio mais simples que existe pra isso.',
+      viradaFina: 'Atenção se treina como qualquer outra coisa. Alguns minutos de silêncio por dia, sem tela e sem tarefa, são o que mantém ela afiada.',
+      sinais: ['Você abre o celular sem ter decidido abrir.', 'Lê a mesma linha três vezes e não lembra o que leu.', 'Chega no fim do dia sem saber dizer o que fez.'],
+      muda: 'Com alguns minutos de treino por dia, o que dá pra observar é que você percebe mais cedo quando a mente saiu e consegue trazer de volta. Você não para de se distrair. Você volta mais rápido.',
+      praticas: [
+        { nome: 'Contar a respiração', tempo: '5 min', como: 'Senta com a coluna reta, fecha os olhos e conta cada vez que o ar sai, de 1 a 10. Perdeu a conta, volta pro 1 sem brigar.', passos: ['Senta numa cadeira, pés no chão, coluna reta sem forçar.', 'Respira pelo nariz, no ritmo normal, sem controlar.', 'Conta cada saída de ar, de 1 a 10, e recomeça.', 'Quando perceber que a mente foi embora, volta pro 1. Voltar é o treino.'] },
+        { nome: 'Uma coisa só', tempo: '15 min', como: 'Escolhe uma tarefa, deixa o celular em outro cômodo e põe um alarme de 15 minutos. Até tocar, é só aquilo.', passos: ['Escolhe uma tarefa que importa e que cabe em 15 minutos.', 'Deixa o celular em outro cômodo e fecha as outras abas.', 'Põe um alarme de 15 minutos.', 'Deu vontade de trocar de assunto, anota num papel e continua.'] },
+        { nome: 'Uma espera sem celular', tempo: '2 min', como: 'Uma vez por dia, numa fila ou no elevador, não pega o celular. Olha em volta e sente o ar entrando e saindo.', passos: ['Escolhe uma espera do dia: fila, elevador, café passando.', 'Deixa o celular no bolso.', 'Olha em volta e sente três respirações inteiras.', 'Repara na vontade de pegar o celular. Ela passa sozinha.'] },
+      ],
+      porque: 'Pesquisadores de Harvard acompanharam 2.250 adultos pelo celular e viram que a mente estava em outro lugar em 46,9% dos momentos, e que as pessoas se sentiam pior justamente neles (Killingsworth e Gilbert, Science, 2010). E atenção se treina: num estudo controlado, duas semanas de treino reduziram a distração e melhoraram a memória de trabalho (Mrazek e colegas, Psychological Science, 2013).',
+      porqueMais: 'Sobre o tempo: em outro estudo, 13 minutos de meditação guiada por dia melhoraram atenção, memória e humor depois de 8 semanas, mas não depois de 4 (Basso e colegas, Behavioural Brain Research, 2019). O que conta é a constância.',
+      refs: ['killingsworth', 'mrazek', 'basso'],
+      analogia: 'Numa lâmpada, a luz sai espalhada pra todo lado. Num laser, as partículas de luz saem alinhadas, no mesmo passo, e por isso um feixe fino consegue cortar metal. Por analogia: atenção alinhada numa coisa só rende mais que a mesma atenção espalhada em dez.',
+      pergunta: 'No que eu estava pensando nos últimos cinco minutos? Fui eu que escolhi?',
+      citacao: 'Estar em todo lugar significa também estar em lugar nenhum.',
+      citacaoFonte: 'Sêneca, Cartas a Lucílio, carta 2 (trad. Alexandre Pires Vieira, Montecristo, 2021).',
+      dias: ['Contar a respiração, 5 min.', 'Contar a respiração e uma espera sem celular.', 'Uma coisa só, 15 min.', 'Contar a respiração antes da primeira tarefa do dia.', 'Uma coisa só e uma espera sem celular.', 'Contar a respiração ao ar livre.', 'No papel: o que mudou? O que foi mais difícil?'],
+    },
+    corpo: {
+      resumo: 'Seu corpo está pedindo cuidado. Sem energia, qualquer plano fica pesado.',
+      resumoFino: 'Seu corpo responde bem. O ajuste é dar regularidade ao que você já faz.',
+      virada: 'Você está tentando resolver com a cabeça um problema que é do corpo. Você não está sem tempo, está sem energia, e energia começa em coisa simples: levantar, sair de casa e andar.',
+      viradaFina: 'Energia não se guarda, se renova todo dia. O que te mantém bem é regularidade: sair, se mexer e dormir direito, mesmo na semana corrida.',
+      sinais: ['No meio da tarde você roda no café e na força de vontade.', 'Passa dias inteiros sem pisar na rua, a não ser por obrigação.', 'Deixa pra depois tudo que pede disposição.'],
+      muda: 'Quando o corpo volta pro jogo, as outras áreas costumam vir junto: fica mais fácil prestar atenção, segurar a emoção e decidir.',
+      praticas: [
+        { nome: 'Caminhada ao ar livre', tempo: '10 min', como: 'Sai de casa e anda dez minutos, de preferência onde tem árvore ou céu aberto. Sem meta de passo: só anda.', passos: ['Escolhe um horário fixo e calça o tênis.', 'Sai e anda cinco minutos numa direção, de preferência onde tem árvore.', 'Volta pelo mesmo caminho.', 'Respira pelo nariz e repara no que tem em volta.'] },
+        { nome: 'Soltar o corpo', tempo: '3 min', como: 'De pé: estica os braços pra cima, gira os ombros pra trás e dobra o tronco pra frente com os joelhos soltos. Devagar e sem dor.', passos: ['De pé, estica os braços pra cima e cresce por cinco respirações.', 'Gira os ombros pra trás, dez vezes, devagar.', 'Dobra o tronco pra frente com os joelhos soltos e deixa a cabeça pesar.', 'Sobe devagar. Se doer, para: alongar não é forçar.'] },
+        { nome: 'Levantar a cada hora', tempo: '1 min', como: 'Põe um alarme de hora em hora. Tocou, levanta, anda até a janela, respira fundo três vezes e volta.', passos: ['Põe um alarme de hora em hora no horário de trabalho.', 'Tocou, levanta da cadeira.', 'Anda até a janela ou até a porta.', 'Três respirações fundas pelo nariz, e volta.'] },
+      ],
+      porque: 'Num estudo controlado da Universidade da Geórgia com 36 adultos sedentários que viviam cansados, seis semanas de exercício leve ou moderado, três vezes por semana, aumentaram a sensação de energia, e o cansaço caiu mais no grupo do exercício leve (Puetz, Flowers e O’Connor, Psychotherapy and Psychosomatics, 2008). E numa pesquisa com 19.806 pessoas na Inglaterra, quem passava pelo menos 120 minutos por semana na natureza relatava mais bem-estar do que quem não ia (White e colegas, Scientific Reports, 2019).',
+      porqueMais: 'O segundo estudo mostra associação, não causa: ele não prova que foi a natureza que gerou o bem-estar. O primeiro é pequeno. Juntos, apontam na mesma direção.',
+      refs: ['puetz', 'white'],
+      analogia: 'Na física quântica, o elétron de um átomo só sobe de nível quando recebe energia de fora, na quantidade certa. Sem isso, ele fica no nível mais baixo, que os físicos chamam de estado fundamental. Por analogia: sem sono, comida e movimento entrando, você também fica no nível mais baixo, por mais vontade que tenha de subir.',
+      pergunta: 'Quando foi a última vez que eu andei, suei ou fiquei ao ar livre porque quis?',
+      citacao: 'Não há possibilidade de uma pessoa tornar-se um yogi, ó Arjuna, se ela come em demasia ou se come muito pouco, se dorme em demasia ou se não dorme o suficiente.',
+      citacaoFonte: 'Bhagavad Gita 6.16 (O Bhagavad-gītā Como Ele É, BBT, 1976, p. 260).',
+      dias: ['Caminhada ao ar livre, 10 min.', 'Levantar a cada hora.', 'Caminhada e soltar o corpo.', 'Levantar a cada hora e soltar o corpo.', 'Caminhada num lugar com árvore.', 'Caminhada mais longa, no seu ritmo.', 'No papel: como estava a energia às 15h no dia 1 e hoje?'],
+    },
+    emocao: {
+      resumo: 'A emoção está dirigindo o seu dia. Dá pra sentir tudo sem ser arrastado.',
+      resumoFino: 'Você lida bem com o que sente. O ajuste é encurtar o tempo entre sentir e entender.',
+      virada: 'Sentir não é o problema. O problema é se enfiar no sentimento sem se perguntar de onde ele vem: emoção é informação, e ela aponta pra alguma coisa que você precisa olhar.',
+      viradaFina: 'Emoção é informação: ela aponta pra alguma coisa que você precisa olhar. Quanto mais cedo você pergunta de onde ela vem, menos ela decide por você.',
+      sinais: ['Uma frase atravessada de manhã estraga a sua tarde.', 'Você reage e só depois entende o que sentiu.', 'Quando o sentimento é ruim, você corre pra tela ou pra comida.'],
+      muda: 'O que dá pra observar com a prática é o intervalo entre sentir e reagir ficando maior. É nesse intervalo que você escolhe.',
+      praticas: [
+        { nome: 'Suspiro duplo', tempo: '5 min', como: 'Puxa o ar pelo nariz, puxa mais um pouco pra encher o pulmão e solta devagar pela boca, até o fim. Se ficar tonto, para e respira normal.', passos: ['Senta ou fica de pé, parado.', 'Puxa o ar pelo nariz, devagar.', 'Sem soltar, puxa mais um pouco, pra encher o pulmão.', 'Solta bem devagar pela boca, até o fim. Repete por cinco minutos. Ficou tonto, para e respira normal.'] },
+        { nome: 'Dar nome', tempo: '1 min', como: 'Quando o sentimento subir, completa em voz baixa: “Estou sentindo ___ porque ___.” Só isso.', passos: ['Percebeu o sentimento subindo, para o que está fazendo.', 'Completa em voz baixa: “Estou sentindo ___ porque ___.”', 'Troca palavra vaga (“mal”) por palavra exata (“inveja”, “medo”, “vergonha”).', 'Só depois decide se responde, e como.'] },
+        { nome: 'Passar pro papel', tempo: '10 min', como: 'Escreve o que está sentindo, sem corrigir e sem mostrar pra ninguém. No fim, sublinha o que depende de você. No papel, você consegue olhar e entender.', passos: ['Papel e caneta, alarme de 10 minutos.', 'Escreve o que está sentindo, sem corrigir e sem reler.', 'Tocou o alarme, lê uma vez.', 'Sublinha o que depende de você. O resto, deixa no papel.'] },
+      ],
+      porque: 'Num estudo de Stanford com 108 pessoas, cinco minutos por dia de respiração com a saída do ar bem longa, durante um mês, melhoraram mais o humor e baixaram mais o ritmo da respiração do que o mesmo tempo de meditação (Balban e colegas, Cell Reports Medicine, 2023). E dar nome ao que se sente diminuiu a resposta da amígdala, região do cérebro ligada ao alarme, num estudo de imagem da UCLA (Lieberman e colegas, Psychological Science, 2007).',
+      porqueMais: 'A escrita vem do protocolo de Pennebaker e Beall (Journal of Abnormal Psychology, 1986): 15 minutos por dia, quatro dias seguidos. Os resultados dos estudos que vieram depois são mistos, então trate como ferramenta pra entender o que sente, não como tratamento.',
+      refs: ['balban', 'lieberman', 'pennebaker'],
+      analogia: 'Um material radioativo perde força sozinho: a cada intervalo fixo, que a física chama de meia-vida, a atividade cai pela metade, sem ninguém empurrar. Por analogia: uma emoção que você para de alimentar com pensamento também vai perdendo força. Ninguém mediu uma “meia-vida” de emoção; a imagem serve pra lembrar que ela passa.',
+      pergunta: 'O que exatamente eu estou sentindo, e de onde isso vem?',
+      citacao: 'O Buda comparou a dor a uma flecha. Ficar remoendo a dor é uma segunda flecha, que a própria pessoa atira em si.',
+      citacaoFonte: 'Resumo do Sallatha Sutta (Samyutta Nikaya 36.6).',
+      dias: ['Suspiro duplo, 5 min.', 'Suspiro duplo e dar nome uma vez.', 'Passar pro papel, 10 min.', 'Suspiro duplo, 5 min.', 'Dar nome toda vez que o sentimento subir.', 'Passar pro papel, 10 min.', 'Reler o que escreveu e marcar o que se repetiu.'],
+    },
+    direcao: {
+      resumo: 'Seus dias estão no automático. O ganho agora é escolher de propósito e saber o preço.',
+      resumoFino: 'Você já escolhe bastante coisa de propósito. O ajuste é fazer a conta do preço com mais frequência.',
+      virada: 'Trabalhar muito ou pouco não é a questão. A questão é se a escolha foi sua e se você sabe o que ela custa: pega a responsabilidade pelo que é seu e resolve uma coisa pequena hoje, sem precisar contar pra ninguém.',
+      viradaFina: 'Toda escolha tem um preço, inclusive as boas. Fazer essa conta de tempos em tempos é o que impede a rotina de voltar pro automático.',
+      sinais: ['Você não saberia dizer por que a sua semana é do jeito que é.', 'Reclama do mesmo problema há meses.', 'Tem uma decisão parada esperando o momento certo.'],
+      muda: 'Quem escolhe de propósito costuma reclamar menos, porque reclamar de uma escolha consciente não faz sentido. Sobra energia pra resolver.',
+      praticas: [
+        { nome: 'A pergunta do preço', tempo: '5 min', como: 'No papel, responde três coisas: o que eu estou escolhendo com as minhas horas? O que isso me custa? Eu topo pagar?', passos: ['Escreve como foram as suas horas de ontem, em blocos.', 'Ao lado de cada bloco: eu escolhi isso?', 'Embaixo: o que essa rotina me custa (sono, corpo, gente, dinheiro)?', 'Última linha: eu topo pagar esse preço? Se não, o que muda esta semana?'] },
+        { nome: 'Se… então…', tempo: '3 min', como: 'Escolhe uma coisa que você vem adiando e escreve: “Se der [hora e lugar], então eu [ação].” Exemplo: se der 7h, então eu calço o tênis e desço.', passos: ['Escolhe uma coisa que você vem adiando.', 'Decide hora e lugar exatos.', 'Escreve: “Se der [hora e lugar], então eu [ação].”', 'Deixa o papel onde você vai ver na hora marcada.'] },
+        { nome: 'Um problema pequeno', tempo: '10 min', como: 'Escolhe o menor problema parado da sua lista e resolve hoje. Sem reclamar e sem contar pra ninguém.', passos: ['Lista três problemas parados, do menor pro maior.', 'Pega o menor.', 'Resolve hoje, em até 10 minutos, ou dá o primeiro passo concreto.', 'Não conta pra ninguém. Só risca da lista.'] },
+      ],
+      porque: 'Planejar no formato “se acontecer X, então eu faço Y” aumenta a chance de a pessoa cumprir o que decidiu. Uma revisão de 94 testes encontrou efeito de médio a grande (Gollwitzer e Sheeran, Advances in Experimental Social Psychology, 2006).',
+      porqueMais: 'Os mesmos autores voltaram ao tema em 2024, com 642 testes (Sheeran, Listrom e Gollwitzer, European Review of Social Psychology). O tamanho do efeito varia de estudo pra estudo: o plano ajuda, não garante.',
+      refs: ['gollwitzer', 'sheeran'],
+      analogia: 'Na física quântica, antes de ser medida, uma partícula é descrita como uma soma de possibilidades. A medição dá um resultado só. Por analogia: enquanto você não escolhe, tudo parece possível e nada acontece. Escolher fecha portas, e é isso que faz um caminho existir.',
+      pergunta: 'Isso que eu estou vivendo foi escolha minha? Eu topo o preço?',
+      citacao: 'Vocês próprios devem esforçar-se; os Buddhas só apontam o caminho.',
+      citacaoFonte: 'Dhammapada 276 (trad. Bhikkhu Dhammiko, Mosteiro Budista Theravada, 2013).',
+      dias: ['A pergunta do preço, 5 min.', 'Um “se… então…” pra uma coisa adiada.', 'Um problema pequeno, resolvido sem alarde.', 'Cumprir o “se… então…” de anteontem.', 'Outro problema pequeno.', 'A pergunta do preço numa área só: trabalho, corpo ou relação.', 'No papel: o que eu resolvi esta semana sem reclamar?'],
+    },
+    expressao: {
+      resumo: 'Você guarda mais do que devia. O ganho agora é dizer o que pensa e mostrar o que faz.',
+      resumoFino: 'Você já se expressa. O ajuste é falar mais cedo e mostrar antes de estar pronto.',
+      virada: 'Assumir quando você errou é metade do trabalho. A outra metade é aprender a se expressar quando você não errou: uma frase calma, dita pra pessoa certa, resolve mais que uma semana remoendo.',
+      viradaFina: 'Quem mostra o que faz recebe retorno, e retorno encurta caminho. O que falta é só antecipar: falar antes de acumular e mostrar antes de ficar perfeito.',
+      sinais: ['Você ensaia a conversa na cabeça e não tem a conversa.', 'Espera ficar perfeito pra mostrar, e não mostra.', 'As pessoas se surpreendem quando descobrem o que você pensa.'],
+      muda: 'Falar e mostrar traz retorno, e com retorno você ajusta mais rápido do que sozinho.',
+      praticas: [
+        { nome: 'Rascunho no papel', tempo: '5 min', como: 'Escreve o que você queria ter dito pra alguém, do jeito que sair. Não manda. Depois reescreve em duas frases calmas.', passos: ['Pensa numa conversa que ficou engasgada.', 'Escreve tudo o que queria ter dito, do jeito que sair.', 'Não manda. Lê uma vez.', 'Reescreve em duas frases calmas: o fato e o que você precisa.'] },
+        { nome: 'Uma frase verdadeira', tempo: '2 min', como: 'Uma vez por dia, diz pra alguém uma coisa que você pensa e estava guardando. Começa com “Eu penso que…” e para aí.', passos: ['Escolhe uma pessoa e um assunto pequeno.', 'Respira uma vez, soltando o ar devagar.', 'Diz uma frase só, começando com “Eu penso que…”.', 'Para e escuta. Não precisa convencer ninguém.'] },
+        { nome: 'Mostrar uma coisa', tempo: '5 min', como: 'Mostra pra uma pessoa, ou publica, uma coisa que você está fazendo ou aprendendo. Do jeito que está hoje.', passos: ['Escolhe uma coisa que você está fazendo ou aprendendo.', 'Escolhe pra quem: uma pessoa ou uma rede.', 'Mostra do jeito que está hoje, com uma frase de contexto.', 'Anota o que voltou: pergunta, crítica, silêncio. Tudo é informação.'] },
+      ],
+      porque: 'A gente erra a conta de como uma conversa vai ser. Em experimentos da Universidade de Chicago com passageiros de trem e ônibus, quem puxou conversa com um desconhecido teve uma viagem mais agradável do que quem ficou calado, e tinha previsto exatamente o contrário (Epley e Schroeder, Journal of Experimental Psychology: General, 2014). E pôr o sentimento em palavras muda a resposta do cérebro: dar nome à emoção diminuiu a atividade da amígdala num estudo de imagem (Lieberman e colegas, Psychological Science, 2007).',
+      porqueMais: 'O primeiro estudo é sobre conversa com desconhecidos, não sobre conversa difícil com gente próxima. Ele mostra uma coisa só: a gente costuma superestimar o desconforto de falar.',
+      refs: ['epley', 'lieberman'],
+      analogia: 'Na física quântica existe o efeito túnel: uma partícula às vezes atravessa uma barreira que, pela conta da física clássica, ela não teria energia pra passar. Por analogia: a barreira de falar parece alta demais na sua cabeça, e uma frase curta já atravessa.',
+      pergunta: 'O que eu estou guardando que a outra pessoa precisava ouvir?',
+      citacao: 'Não precisamos de muitas palavras, mas palavras mais eficazes.',
+      citacaoFonte: 'Sêneca, Cartas a Lucílio, carta 38 (trad. Alexandre Pires Vieira, Montecristo, 2021).',
+      dias: ['Rascunho no papel, 5 min.', 'Uma frase verdadeira.', 'Mostrar uma coisa pra uma pessoa.', 'Uma frase verdadeira.', 'Rascunho no papel e, se fizer sentido, mandar a versão calma.', 'Mostrar uma coisa.', 'No papel: o que aconteceu de verdade quando eu falei?'],
+    },
+  };
+
+  // como usar a força pra trabalhar o ponto de evolução: PONTE[força][evoluir]
+  const PONTE = {
+    atencao: {
+      corpo: 'Usa o seu foco no corpo: escolhe um horário e trata a caminhada como a tarefa mais importante do dia.',
+      emocao: 'Seu foco ajuda aqui: aponta pro que você está sentindo a mesma atenção que você põe no trabalho, antes de reagir.',
+      direcao: 'Você já sabe ficar numa coisa só. Falta escolher de propósito qual coisa merece esse foco.',
+      expressao: 'Você presta atenção nos outros melhor que a média. Agora deixa os outros saberem o que você pensa.',
+    },
+    corpo: {
+      atencao: 'Aproveita a energia que você já tem: faz a prática de respiração logo depois de se mexer, quando o corpo está solto e fica mais fácil sentar em silêncio.',
+      emocao: 'Seu corpo é a sua saída mais rápida: quando o sentimento subir, anda dez minutos antes de responder qualquer coisa.',
+      direcao: 'Energia você tem. Falta apontar: decide hoje pra onde ela vai, senão ela vira só agitação.',
+      expressao: 'Usa o movimento a seu favor: chama a pessoa pra andar e tem a conversa difícil lado a lado.',
+    },
+    emocao: {
+      atencao: 'Sua calma é meio caminho andado: quem não briga com o que sente consegue sentar em silêncio com menos resistência.',
+      corpo: 'Você já percebe bem o que sente. Usa o mesmo radar pro corpo: cansaço também é informação.',
+      direcao: 'Com a cabeça fria que você tem, dá pra olhar o preço das suas escolhas sem drama. Senta e faz a conta.',
+      expressao: 'Sua calma é a ferramenta que falta pra muita gente: você consegue dizer uma coisa difícil sem explodir. Só falta dizer.',
+    },
+    direcao: {
+      atencao: 'Você decide bem. Decide então proteger a sua atenção: põe os minutos de silêncio na agenda, como compromisso.',
+      corpo: 'Trata o corpo como parte do plano. Sem energia, o rumo mais claro do mundo fica no papel.',
+      emocao: 'Você assume o que é seu nos problemas de fora. Faz o mesmo com o que você sente: é seu, e dá pra cuidar.',
+      expressao: 'Você sabe o que quer. As pessoas em volta só vão saber se você disser.',
+    },
+    expressao: {
+      atencao: 'Você põe muita coisa pra fora. Agora treina o contrário por alguns minutos: ficar em silêncio e só observar.',
+      corpo: 'Chama alguém pra andar com você: compromisso combinado com outra pessoa é mais difícil de furar.',
+      emocao: 'Você já consegue falar do que sente. O passo agora é falar depois de respirar, não no pico.',
+      direcao: 'Você comunica bem. Usa isso com você: escreve o que está escolhendo e o preço, como se explicasse pra alguém.',
+    },
+  };
+  const PONTE_APOIO = 'Começa pela primeira prática e fica nela por sete dias, antes de mexer em qualquer outra coisa.';
+
+  // estudos citados (todos conferidos no PubMed ou no Crossref em 17/11/2026)
+  const REFS = {
+    killingsworth: 'Killingsworth, M. A.; Gilbert, D. T. (2010). A wandering mind is an unhappy mind. Science, 330(6006), 932. doi.org/10.1126/science.1192439',
+    mrazek: 'Mrazek, M. D. et al. (2013). Mindfulness training improves working memory capacity and GRE performance while reducing mind wandering. Psychological Science, 24(5), 776–781. doi.org/10.1177/0956797612459659',
+    basso: 'Basso, J. C. et al. (2019). Brief, daily meditation enhances attention, memory, mood, and emotional regulation in non-experienced meditators. Behavioural Brain Research, 356, 208–220. doi.org/10.1016/j.bbr.2018.08.023',
+    puetz: 'Puetz, T. W.; Flowers, S. S.; O’Connor, P. J. (2008). A randomized controlled trial of the effect of aerobic exercise training on feelings of energy and fatigue in sedentary young adults with persistent fatigue. Psychotherapy and Psychosomatics, 77(3), 167–174. doi.org/10.1159/000116610',
+    white: 'White, M. P. et al. (2019). Spending at least 120 minutes a week in nature is associated with good health and wellbeing. Scientific Reports, 9, 7730. doi.org/10.1038/s41598-019-44097-3',
+    balban: 'Balban, M. Y. et al. (2023). Brief structured respiration practices enhance mood and reduce physiological arousal. Cell Reports Medicine, 4(1), 100895. doi.org/10.1016/j.xcrm.2022.100895',
+    lieberman: 'Lieberman, M. D. et al. (2007). Putting feelings into words: affect labeling disrupts amygdala activity in response to affective stimuli. Psychological Science, 18(5), 421–428. doi.org/10.1111/j.1467-9280.2007.01916.x',
+    pennebaker: 'Pennebaker, J. W.; Beall, S. K. (1986). Confronting a traumatic event: toward an understanding of inhibition and disease. Journal of Abnormal Psychology, 95(3), 274–281. doi.org/10.1037/0021-843X.95.3.274',
+    gollwitzer: 'Gollwitzer, P. M.; Sheeran, P. (2006). Implementation intentions and goal achievement: a meta-analysis of effects and processes. Advances in Experimental Social Psychology, 38, 69–119. doi.org/10.1016/S0065-2601(06)38002-1',
+    sheeran: 'Sheeran, P.; Listrom, O.; Gollwitzer, P. M. (2024). The when and how of planning: meta-analysis of the scope and components of implementation intentions in 642 tests. European Review of Social Psychology. doi.org/10.1080/10463283.2024.2334563',
+    epley: 'Epley, N.; Schroeder, J. (2014). Mistakenly seeking solitude. Journal of Experimental Psychology: General, 143(5), 1980–1999. doi.org/10.1037/a0037323',
+    lally: 'Lally, P. et al. (2010). How are habits formed: modelling habit formation in the real world. European Journal of Social Psychology, 40(6), 998–1009. doi.org/10.1002/ejsp.674',
+  };
+  const NOTA_ANALOGIA = 'É comparação, pra ajudar a visualizar. A física não prova nenhuma destas práticas; o que sustenta as práticas são os estudos de psicologia e neurociência citados.';
+  const TEMPO = 'Quanto tempo leva depende de cada pessoa: num estudo com 96 voluntários, o tempo pra uma ação nova virar automática variou de 18 a 254 dias (Lally e colegas, European Journal of Social Psychology, 2010). Por isso o que conta é repetir, não a pressa.';
+  const AVISO = 'Conteúdo educativo sobre hábitos e bem-estar. Não é diagnóstico, não promete resultado e não substitui acompanhamento médico ou psicológico. Se você está em sofrimento, procure um profissional.';
+
+  // ==========================================================
+  // ESTADO (só na memória da página: nada de localStorage)
+  // ==========================================================
+  const estado = { passo: 'inicio', r: Array(Q.length).fill(null), nome: '', whats: '', email: '', res: null, lead: null, enviado: false, interesse: false, restaurado: false };
+
+  // ==========================================================
+  // NAVEGAÇÃO
+  // ==========================================================
+  const TELAS = { inicio: 't-inicio', quiz: 't-quiz', contato: 't-contato', resultado: 't-resultado' };
+  function mostrar(id) { Object.values(TELAS).forEach((t) => { $('#' + t).hidden = t !== id; }); }
+  function ir(passo, push = true) {
+    if ((passo === 'resultado' || passo === 'folha') && !estado.res) passo = 'contato';
+    if (passo === 'contato') { const falta = estado.r.findIndex((v) => v === null); if (falta >= 0) passo = falta; }
+    estado.passo = passo;
+    if (push) {
+      // Com o resultado na tela, o endereço guarda só as respostas (#r=...). Se a pessoa abrir no navegador do celular, o resultado volta.
+      const url = passo === 'resultado' || passo === 'folha' ? '#r=' + estado.r.join('') : location.pathname + location.search;
+      try { history.pushState({ p: passo }, '', url); } catch (e) { try { history.pushState({ p: passo }, ''); } catch (e2) {} }
+    }
+    document.documentElement.classList.toggle('ver-folha', passo === 'folha');
+    $('#folha').setAttribute('aria-hidden', String(passo !== 'folha'));
+    if (passo === 'folha') montarFolha();
+    else if (passo === 'inicio') mostrar(TELAS.inicio);
+    else if (passo === 'contato') { mostrar(TELAS.contato); if (matchMedia('(hover:hover)').matches && !form.nome.value) form.nome.focus({ preventScroll: true }); }
+    else if (passo === 'resultado') { montarResultado(); mostrar(TELAS.resultado); }
+    else { renderPergunta(passo); mostrar(TELAS.quiz); }
+    window.scrollTo(0, 0);
+  }
+  window.addEventListener('popstate', (ev) => { ir(ev.state && ev.state.p !== undefined ? ev.state.p : 'inicio', false); });
+
+  // ==========================================================
+  // MAPA (barras das 5 dimensões)
+  // ==========================================================
+  function mapaHTML(pontos, forca, evo, animar, forte = true) {
+    return KEYS.map((k) => {
+      const cls = k === forca ? ' f' : k === evo ? ' e' : '';
+      const tag = k === forca ? `<em class="f">${forte ? 'sua força' : 'seu apoio'}</em>` : k === evo ? '<em class="e">onde evoluir</em>' : '';
+      return `<div class="linha-mapa${cls}"><span class="nome">${DIM[k].nome}${tag}</span><span class="pct">${pontos[k]}%</span><span class="trilho"><b style="width:${animar ? 0 : pontos[k]}%" data-w="${pontos[k]}"></b></span></div>`;
+    }).join('');
+  }
+  function animarMapa(box) { requestAnimationFrame(() => requestAnimationFrame(() => { box.querySelectorAll('.trilho b').forEach((b) => { b.style.width = b.dataset.w + '%'; }); })); }
+  $('#mapa-exemplo').innerHTML = mapaHTML({ atencao: 58, corpo: 22, emocao: 64, direcao: 88, expressao: 47 }, 'direcao', 'corpo', false);
+
+  // ==========================================================
+  // PERGUNTAS
+  // ==========================================================
+  let trava = false;
+  function renderPergunta(i) {
+    const q = Q[i];
+    $('#q-conta').textContent = `${i + 1} de ${Q.length}`;
+    $('#q-prog').setAttribute('aria-valuenow', String(i + 1));
+    $('#q-prog b').style.width = `${((i + 1) / Q.length) * 100}%`;
+    $('#q-texto').textContent = q.q;
+    const dica = $('#q-dica'); dica.hidden = !q.dica; dica.textContent = q.dica || '';
+    const box = $('#q-opcoes');
+    box.innerHTML = q.o.map((o, j) => `<button type="button" class="opcao" role="radio" aria-checked="${estado.r[i] === j}" data-j="${j}"><span class="tecla" aria-hidden="true">${j + 1}</span><span>${esc(o[0])}</span></button>`).join('');
+    box.querySelectorAll('.opcao').forEach((b) => b.addEventListener('click', () => escolher(i, Number(b.dataset.j))));
+    trava = false;
+    $('#q-texto').focus({ preventScroll: true });
+  }
+  function escolher(i, j) {
+    if (trava) return;
+    trava = true;
+    estado.r[i] = j;
+    $('#q-opcoes').querySelectorAll('.opcao').forEach((o) => o.setAttribute('aria-checked', String(Number(o.dataset.j) === j)));
+    setTimeout(() => ir(i < Q.length - 1 ? i + 1 : 'contato'), document.documentElement.classList.contains('parado') ? 0 : 230);
+  }
+  $('#btn-comecar').addEventListener('click', () => ir(0));
+  $('#q-voltar').addEventListener('click', () => { const i = estado.passo; ir(i > 0 ? i - 1 : 'inicio'); });
+  $('#c-voltar').addEventListener('click', () => ir(Q.length - 1));
+  document.addEventListener('keydown', (ev) => {
+    if (typeof estado.passo !== 'number' || ev.metaKey || ev.ctrlKey || ev.altKey) return;
+    const n = Number(ev.key);
+    if (n >= 1 && n <= Q[estado.passo].o.length) { ev.preventDefault(); escolher(estado.passo, n - 1); }
+  });
+
+  // ==========================================================
+  // CONTATO
+  // ==========================================================
+  const EMAIL = /^[^\s@<>"',;]{1,64}@[^\s@<>"',;]{1,190}\.[a-z]{2,24}$/i;
+  function soDigitos(v) { let d = String(v || '').replace(/\D/g, ''); if (d.length > 11 && d.startsWith('55')) d = d.slice(2); return d.slice(0, 11); }
+  function mascaraZap(v) {
+    const d = soDigitos(v);
+    if (!d) return '';
+    if (d.length <= 2) return '(' + d;
+    if (d.length <= 6) return `(${d.slice(0, 2)}) ${d.slice(2)}`;
+    if (d.length <= 10) return `(${d.slice(0, 2)}) ${d.slice(2, 6)}-${d.slice(6)}`;
+    return `(${d.slice(0, 2)}) ${d.slice(2, 7)}-${d.slice(7)}`;
+  }
+  function zapOk(v) { const d = soDigitos(v); if (!/^[1-9][1-9]/.test(d)) return false; return d.length === 11 ? d[2] === '9' : d.length === 10; }
+
+  const form = $('#form-contato'), erro = $('#c-erro');
+  form.whats.addEventListener('input', () => { form.whats.value = mascaraZap(form.whats.value); });
+  form.addEventListener('input', () => { erro.textContent = ''; });
+  const falha = (msg, campo) => { erro.textContent = msg; campo.focus({ preventScroll: true }); erro.scrollIntoView({ block: 'nearest' }); };
+  form.addEventListener('submit', (ev) => {
+    ev.preventDefault();
+    erro.textContent = '';
+    const nome = form.nome.value.replace(/[<>"]/g, '').replace(/\s+/g, ' ').trim();
+    if (nome.replace(/[^\p{L}]/gu, '').length < 2) { falha('Escreve o seu nome (pelo menos 2 letras).', form.nome); return; }
+    if (!zapOk(form.whats.value)) { falha(form.whats.value ? 'Confere o WhatsApp com DDD.' : 'Coloca o seu WhatsApp com DDD.', form.whats); return; }
+    const email = form.email.value.trim().toLowerCase();
+    if (!EMAIL.test(email)) { falha('Confere o e-mail.', form.email); return; }
+    if (!form.aceite.checked) { falha('Marca a caixa de consentimento pra ver o resultado.', form.aceite); return; }
+    estado.nome = nome.charAt(0).toUpperCase() + nome.slice(1);
+    estado.whats = '55' + soDigitos(form.whats.value);
+    estado.email = email;
+    estado.res = calcular(estado.r);
+    enviarLead(form.website.value);
+    ir('resultado');
+  });
+
+  // Manda o contato e o resultado pro e-mail do Conrado, pelo FormSubmit. Nada vai pra nenhum outro lugar.
+  // Não segura a tela: o resultado aparece na hora e o envio segue por trás (o FormSubmit leva de 10 a 18 s).
+  function enviarLead(isca) {
+    const R = estado.res;
+    estado.lead = {
+      _subject: 'Evolução Mental · novo teste',
+      _template: 'table',
+      nome: estado.nome,
+      whatsapp: mascaraZap(estado.whats),
+      email: estado.email,
+      perfil: R.perfil,
+      forca: DIM[R.forca].nome,
+      evoluir: DIM[R.evo].nome,
+      nota_atencao: R.pontos.atencao,
+      nota_corpo: R.pontos.corpo,
+      nota_emocao: R.pontos.emocao,
+      nota_direcao: R.pontos.direcao,
+      nota_expressao: R.pontos.expressao,
+      origem: ORIGEM,
+      data_hora: new Date().toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' }),
+    };
+    if (!ENDPOINT_LEAD || isca) return; // campo-isca preenchido = robô: não envia
+    const ctl = new AbortController(); const t = setTimeout(() => ctl.abort(), 30000);
+    fetch(ENDPOINT_LEAD, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify(estado.lead), signal: ctl.signal, keepalive: true })
+      .then((r) => r.json().catch(() => ({})).then((j) => { estado.enviado = r.ok && String(j.success) === 'true'; estado.resposta = j.message || ''; if (estado.interesse) notaInteresse(); }))
+      .catch(() => {})
+      .finally(() => clearTimeout(t));
+  }
+
+  // ==========================================================
+  // RESULTADO
+  // ==========================================================
+  function textos() {
+    const R = estado.res, F = FORCA[R.forca], E = EVO[R.evo];
+    const eco = (k) => Q.map((q, i) => ({ q, i })).filter((x) => x.q.d === k).map((x) => ({ pts: x.q.o[estado.r[x.i]][1][k], frase: x.q.o[estado.r[x.i]][2] }));
+    const ecosF = eco(R.forca).sort((a, b) => b.pts - a.pts);
+    const forcaTxt = R.forte
+      ? `${ecosF[0].frase} ${F.valor}`
+      : R.base
+      ? `Hoje nenhuma das cinco áreas está forte, e tudo bem: o mapa mostra de onde você parte. A que ficou um pouco à frente foi ${DIM[R.forca].nome.toLowerCase()}, e é nela que dá pra se apoiar no começo.`
+      : `Das cinco áreas, ${DIM[R.forca].nome.toLowerCase()} é onde você está melhor hoje. Ainda não é um ponto forte, mas é o seu ponto de apoio: ${F.apoio}.`;
+    const ecosE = eco(R.evo).map((x) => x.frase);
+    const leitura = [...ecosE, R.fino ? E.viradaFina : E.virada, R.forte ? PONTE[R.forca][R.evo] : PONTE_APOIO];
+    return { forcaTxt, resumo: R.fino ? E.resumoFino : E.resumo, leitura: leitura.join(' ') };
+  }
+
+  const lema = (R) => (R.base ? `Seu ponto de apoio está ${DIM[R.forca].em}. Seu maior espaço pra evoluir está ${DIM[R.evo].em}.` : `Sua força está ${DIM[R.forca].em}. Seu maior espaço pra evoluir está ${DIM[R.evo].em}.`);
+
+  function linkMentoria(perfil) {
+    if (!WHATS_MENTORIA) return '';
+    const msg = `Oi, Conrado! Fiz o teste Evolução Mental, meu resultado foi "${perfil}" e quero saber da mentoria individual.`;
+    return `https://wa.me/${WHATS_MENTORIA}?text=${encodeURIComponent(msg)}`;
+  }
+
+  function montarResultado() {
+    const R = estado.res, E = EVO[R.evo], T = textos();
+    const sem = DIM[R.evo].semana;
+    const semanas = [
+      ['Atenção e respiração', 'Sentar, respirar e ficar numa coisa só. É a base das outras duas semanas.'],
+      ['Corpo e emoção', 'Mexer o corpo, sair de casa e aprender a sentir sem ser arrastado.'],
+      ['Direção e ação', 'Escolher de propósito, resolver sem alarde e dizer o que você pensa.'],
+    ];
+    const botaoCompra = LINK_DESAFIO
+      ? `<a class="btn" id="btn-desafio" href="${esc(LINK_DESAFIO)}">Quero o desafio de 21 dias ${SETA}</a><p class="miudo">Pagamento seguro pelo Stripe.</p>`
+      : `<button class="btn" id="btn-desafio" type="button">Quero ser avisado quando abrir</button><p class="miudo" id="nota-desafio">O desafio ainda não abriu.</p>`;
+    const wa = linkMentoria(R.perfil);
+
+    $('#t-resultado').innerHTML = `
+      <div class="res">
+        <aside class="cartao perfil">
+          <span class="rotulo">${estado.nome ? 'Resultado de ' + esc(estado.nome) : 'Seu resultado'}</span>
+          <h1 id="perfil-nome">${esc(R.perfil)}</h1>
+          <p class="lema">${lema(R)}</p>
+          <div class="mapa" id="mapa-res">${mapaHTML(R.pontos, R.forca, R.evo, true, R.forte)}</div>
+          <p class="miudo">${esc(NIVEL[R.nivel])}</p>
+          <button class="btn" type="button" data-baixar>${SEM_IMPRESSAO ? 'Ver meu resultado completo' : 'Baixar meu resultado completo'}</button>
+          <p class="miudo">${SEM_IMPRESSAO ? 'Abre aqui mesmo, na página.' : 'Abre a janela de impressão. Escolha “Salvar como PDF”.'}</p>
+        </aside>
+
+        <div>
+          <section class="bloco">
+            <div class="duo">
+              <div class="caixa"><span class="rotulo">${R.forte ? 'Sua força' : 'Seu ponto de apoio'}</span><h3>${DIM[R.forca].nome}</h3><p>${esc(T.forcaTxt)}</p></div>
+              <div class="caixa e"><span class="rotulo">Onde você mais pode evoluir</span><h3>${DIM[R.evo].nome}</h3><p>${esc(T.resumo)}</p></div>
+            </div>
+          </section>
+          <section class="bloco">
+            <h3>Sua leitura</h3>
+            <p class="leitura" id="leitura">${esc(T.leitura)}</p>
+          </section>
+          <section class="bloco">
+            <h3>3 práticas pra começar hoje</h3>
+            <div class="praticas">${E.praticas.map((p, i) => `<div class="pratica"><span class="n">${i + 1}</span><h4>${esc(p.nome)} <span>${esc(p.tempo)}</span></h4><p>${esc(p.como)}</p></div>`).join('')}</div>
+          </section>
+          <section class="bloco">
+            <h3>Por que funciona</h3>
+            <p>${esc(E.porque)}</p>
+            <p class="fonte">As referências completas, com link, estão no resultado completo.</p>
+          </section>
+          <section class="bloco">
+            <div class="analogia"><span class="rotulo">Analogia da física</span><p>${esc(E.analogia)}</p><p class="miudo">${esc(NOTA_ANALOGIA)}</p></div>
+          </section>
+          <section class="bloco baixar">
+            <button class="btn sec" type="button" data-baixar>${SEM_IMPRESSAO ? 'Ver meu resultado completo' : 'Baixar meu resultado completo'}</button>
+            <p class="miudo">No resultado completo: as práticas passo a passo, um plano pros primeiros 7 dias e as referências.</p>
+          </section>
+        </div>
+      </div>
+
+      <section class="oferta" id="oferta">
+        <div class="oferta-in">
+          <div class="of-topo">
+            <span class="rotulo">Próximo passo</span>
+            <h2>Desafio Evolução Mental · 21 dias</h2>
+            <p class="sub">Um e-book com uma prática por dia, de 2 a 10 minutos, pra treinar as cinco áreas do seu mapa. Cada dia traz a prática, a ideia por trás dela e a fonte: um texto antigo ou um estudo.</p>
+            <p class="seucaso">No seu caso: seu ponto de evolução é <b>${DIM[R.evo].nome}</b>, e a Semana ${sem} trabalha exatamente isso.</p>
+            <ol class="semanas">${semanas.map((s, i) => `<li class="${i + 1 === sem ? 'sua' : ''}"><span class="s">Semana ${i + 1}</span><b>${s[0]}</b><p>${s[1]}</p></li>`).join('')}</ol>
+          </div>
+          <aside class="cartao compra">
+            <span class="rotulo">E-book</span>
+            <h3>Desafio Evolução Mental · 21 dias</h3>
+            <p class="preco">${PRECO_DESAFIO}</p>
+            <ul><li>${CHECK}21 práticas de 2 a 10 minutos</li><li>${CHECK}A ideia e a fonte de cada dia</li><li>${CHECK}Três semanas: atenção, corpo e emoção, direção</li></ul>
+            ${botaoCompra}
+          </aside>
+          <div class="extra">
+              <div><h3>De onde vêm as práticas</h3><p>De tradições milenares da Índia (respiração, postura e atenção, como aparecem no Bhagavad Gita e nos Yoga Sutras) e do que a psicologia e a neurociência já mediram. A física quântica entra só como analogia, pra ajudar a visualizar.</p></div>
+              <div><h3>Pra quem é</h3><ul><li>Pra quem vive no celular, anda sem energia ou sente que os dias estão no automático.</li><li>Pra quem quer começar pequeno: uma coisa por dia, com começo, meio e fim.</li><li>Não é tratamento e não promete resultado. Se você está em sofrimento, procure um médico ou psicólogo.</li></ul></div>
+              <div><h3>Por que 21 dias</h3><p>Vinte e um dias não criam um hábito sozinhos: num estudo com 96 pessoas, o tempo pra uma ação virar automática variou de 18 a 254 dias (Lally e colegas, European Journal of Social Psychology, 2010). São três semanas pra testar as práticas e descobrir quais ficam com você.</p></div>
+          </div>
+          <div class="mentoria">
+            <div><h3>Mentoria individual</h3><p>Pra quem quer acompanhamento direto comigo, um a um. É outro nível de investimento: ${PRECO_MENTORIA}.</p></div>
+            ${wa ? `<a class="btn sec" id="btn-mentoria" href="${esc(wa)}" target="_blank" rel="noopener">Falar comigo no WhatsApp</a>` : ''}
+          </div>
+        </div>
+        <footer class="rodape">
+          <p class="miudo">${AVISO}</p>
+          <nav><a class="miudo" href="privacidade.html" target="_blank" rel="noopener">Privacidade</a><button type="button" id="btn-refazer">Refazer o teste</button></nav>
+        </footer>
+      </section>`;
+
+    animarMapa($('#mapa-res'));
+    $('#t-resultado').querySelectorAll('[data-baixar]').forEach((b) => b.addEventListener('click', baixar));
+    $('#btn-refazer').addEventListener('click', () => { estado.r.fill(null); estado.res = null; estado.lead = null; estado.interesse = false; estado.enviado = false; estado.restaurado = false; estado.nome = ''; form.reset(); ir('inicio'); });
+    if (!LINK_DESAFIO) $('#btn-desafio').addEventListener('click', marcarInteresse);
+    if (estado.interesse) marcarInteresse();
+    montarFolha();
+  }
+
+  // Sem LINK_DESAFIO: só marca o interesse na tela. O clique em si não é enviado.
+  function notaInteresse() {
+    const n = $('#nota-desafio'); if (!n) return;
+    n.textContent = estado.enviado ? 'Anotado. Quando o desafio abrir, o aviso vai pro contato que você deixou no teste.' : 'Anotado.';
+  }
+  function marcarInteresse() {
+    estado.interesse = true;
+    const b = $('#btn-desafio'); b.disabled = true; b.textContent = 'Interesse anotado';
+    notaInteresse();
+  }
+
+  // ==========================================================
+  // RESULTADO COMPLETO: a folha que vira PDF (ou abre na página, no navegador do Instagram)
+  // ==========================================================
+  function montarFolha() {
+    const R = estado.res, F = FORCA[R.forca], E = EVO[R.evo], T = textos();
+    const hoje = new Date().toLocaleDateString('pt-BR', { day: 'numeric', month: 'long', year: 'numeric' });
+    const refs = [...E.refs, 'lally'].map((k) => `<li>${esc(REFS[k])}</li>`).join('');
+    $('#folha').innerHTML = `
+      <div class="f-barra"><p><b>Este é o seu resultado completo.</b> Pra salvar em PDF, abra no navegador do celular (⋯ → Abrir no navegador).</p><button class="btn sec" type="button" id="f-voltar">Voltar pro resultado</button></div>
+      <div class="f-topo"><span class="marca">${SIMBOLO}<span>Evolução Mental</span></span><span>Resultado completo · ${hoje}</span></div>
+      <div class="f-capa"><span class="r">${estado.nome ? 'Resultado de ' + esc(estado.nome) : 'Seu resultado'}</span><h1>${esc(R.perfil)}</h1><p>${lema(R)}</p></div>
+
+      <div class="f-sec"><h2>Seu mapa</h2>
+        <div class="f-mapa">${KEYS.map((k) => `<div class="${k === R.forca ? 'f' : k === R.evo ? 'e' : ''}"><b>${DIM[k].nome}<small>${DIM[k].eh}${k === R.forca ? (R.forte ? ' · sua força' : ' · seu apoio') : k === R.evo ? ' · onde evoluir' : ''}</small></b><i><u style="width:${R.pontos[k]}%"></u></i><em>${R.pontos[k]}%</em></div>`).join('')}</div>
+        <p>${esc(NIVEL[R.nivel])}</p>
+        <p class="f-nota">Como é calculado: as 10 respostas somam pontos nas cinco áreas, e cada área vira uma nota de 0 a 100. A mais alta é a sua força (ou o seu ponto de apoio, quando nenhuma está alta); a mais baixa é onde você mais pode evoluir. É um retrato do que você respondeu hoje, não um diagnóstico.</p>
+      </div>
+
+      <div class="f-duo">
+        <div class="f-cx"><span class="r">${R.forte ? 'Sua força' : 'Seu ponto de apoio'}</span><h3>${DIM[R.forca].nome}</h3><p>${esc(T.forcaTxt)}</p>${R.forte ? `<p>${esc(F.cuidado)}</p>` : ''}</div>
+        <div class="f-cx e"><span class="r">Onde você mais pode evoluir</span><h3>${DIM[R.evo].nome}</h3><p>${esc(T.resumo)}</p><p>Esta área é sobre ${DIM[R.evo].eh}. As três práticas e o plano de 7 dias das próximas páginas são pra ela.</p></div>
+      </div>
+
+      <div class="f-sec"><h2>Sua leitura</h2><p>${esc(T.leitura)}</p></div>
+
+      ${R.fino ? '' : `<div class="f-sec"><h2>Repara se isso acontece com você</h2><ul class="f-lista">${E.sinais.map((s) => `<li>${esc(s)}</li>`).join('')}</ul></div>`}
+      <div class="f-sec"><h2>O que observar com a prática</h2><p>${esc(E.muda)}</p><p>${esc(TEMPO)}</p></div>
+
+      <div class="f-sec solta"><h2>Suas 3 práticas, passo a passo</h2>
+        ${E.praticas.map((p, i) => `<div class="f-prat"><h3>${i + 1}. ${esc(p.nome)} <span>${esc(p.tempo)}</span></h3><ol>${p.passos.map((s) => `<li>${esc(s)}</li>`).join('')}</ol></div>`).join('')}
+      </div>
+
+      <div class="f-sec"><h2>Seus primeiros 7 dias</h2><ol class="f-dias">${E.dias.map((d, i) => `<li><b>Dia ${i + 1}</b><span>${esc(d)}</span></li>`).join('')}</ol></div>
+
+      <div class="f-sec"><h2>Por que funciona</h2><p>${esc(E.porque)}</p><p>${esc(E.porqueMais)}</p></div>
+
+      <div class="f-ana"><span class="r">Analogia da física</span><p>${esc(E.analogia)}</p><p class="f-nota">${esc(NOTA_ANALOGIA)}</p></div>
+
+      <div class="f-sec"><h2>Uma pergunta pra se fazer</h2><p>${esc(E.pergunta)}</p></div>
+      <div class="f-sec"><h2>Um texto antigo sobre isso</h2><p class="f-cit">${esc(E.citacao)}</p><p>${esc(E.citacaoFonte)}</p></div>
+
+      <div class="f-sec"><h2>Referências</h2><ul class="f-refs">${refs}</ul><p class="f-nota">${esc(AVISO)}</p></div>
+
+      <div class="f-prox"><h2>Próximo passo: Desafio Evolução Mental · 21 dias</h2><p>Um e-book com uma prática por dia, de 2 a 10 minutos, em três semanas: atenção e respiração, corpo e emoção, direção e ação. A Semana ${DIM[R.evo].semana} trabalha o seu ponto de evolução.</p></div>`;
+    $('#f-voltar').addEventListener('click', () => ir('resultado'));
+  }
+
+  function baixar() {
+    if (!estado.res) return;
+    if (SEM_IMPRESSAO) { ir('folha'); return; }
+    montarFolha();
+    const titulo = document.title;
+    document.title = estado.nome ? `Evolução Mental · resultado de ${estado.nome}` : 'Evolução Mental · resultado';
+    const volta = () => { document.title = titulo; window.removeEventListener('afterprint', volta); };
+    window.addEventListener('afterprint', volta);
+    window.print();
+  }
+
+  // pra teste e simulação no console
+  window.__evolucao = { Q, KEYS, DIM, LIM, EVO, FORCA, PONTE, REFS, calcular, estado, linkMentoria, cfg: { ENDPOINT_LEAD, LINK_DESAFIO, ORIGEM, SEM_IMPRESSAO } };
+
+  // ==========================================================
+  // PARTIDA
+  // Endereço com #r=... (10 respostas) abre direto no resultado, sem nome e sem enviar nada:
+  // é o caso de quem saiu do navegador do Instagram pro navegador do celular pra salvar o PDF.
+  // ==========================================================
+  const salvo = /^#r=([0-3]{10})$/.exec(location.hash);
+  if (salvo) {
+    [...salvo[1]].forEach((d, i) => { estado.r[i] = Number(d); });
+    estado.res = calcular(estado.r); estado.restaurado = true;
+    try { history.replaceState({ p: 'resultado' }, ''); } catch (e) {}
+    ir('resultado', false);
+  } else {
+    try { history.replaceState({ p: 'inicio' }, ''); } catch (e) {}
+  }
+})();
+</script>
+</body>
+</html>
