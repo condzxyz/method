@@ -26,6 +26,12 @@ h1 em{font-style:normal;color:#8a3324}
 .lista li{display:flex;gap:12px;align-items:flex-start;padding:14px 16px;border:1px solid #dad7d1;border-radius:14px;background:#f6f5f2;color:#3b3833}
 .lista b{color:#1d1c1a}
 .num{flex:none;width:26px;height:26px;border-radius:50%;background:#8a3324;color:#fff;font-size:14px;font-weight:700;display:grid;place-items:center;margin-top:1px}
+.tambem{margin:34px 0 10px;color:#6f6a63;font-size:13px;font-weight:650;letter-spacing:.08em;text-transform:uppercase}
+.atalhos{display:grid;gap:10px}
+.atalho{display:block;padding:14px 16px;border:1px solid #dad7d1;border-radius:14px;background:#fff;color:#1d1c1a;text-decoration:none;transition:border-color .15s}
+.atalho:hover{border-color:#8a3324}
+.atalho b{display:block;font-weight:650}
+.atalho span{display:block;color:#6f6a63;font-size:15px}
 .quem{margin-top:auto;padding-top:36px;display:flex;align-items:center;gap:12px;color:#6f6a63;font-size:15px}
 .quem a{color:#6f6a63}
 .aviso{margin-top:14px;color:#8a857d;font-size:13px}
@@ -49,6 +55,13 @@ h1 em{font-style:normal;color:#8a3324}
     <li><span class="num">3</span><span><b>Quer parar?</b> Manda SAIR e pronto.</span></li>
   </ul>
 
+  <p class="tambem">Também por aqui</p>
+  <div class="atalhos">
+    <a class="atalho" data-base="/evolucao/" href="/evolucao/?o=bio"><b>Teste gratuito</b><span>10 perguntas, 2 minutos: onde você mais pode evoluir</span></a>
+    <a class="atalho" data-base="/desafio/" href="/desafio/?o=bio"><b>Desafio Evolução Mental</b><span>21 dias, uma prática por dia · R$ 97</span></a>
+    <a class="atalho" data-base="/sessao/" href="/sessao/?o=bio"><b>Sessão individual comigo</b><span>1 hora por vídeo · R$ 297</span></a>
+  </div>
+
   <div class="quem">Conrado de Sá · <a href="https://www.instagram.com/conrado_desa/">@conrado_desa</a></div>
   <p class="aviso">A conversa começa com respostas automáticas e o Conrado lê tudo depois. <a href="privacidade.html">Privacidade</a>.</p>
 </main>
@@ -58,6 +71,7 @@ h1 em{font-style:normal;color:#8a3324}
   var txt='Quero começar os 7 dias'+(o?' · '+o:'');
   var url='https://wa.me/5511955075077?text='+encodeURIComponent(txt);
   document.getElementById('ir').href=url;
+  if(o) document.querySelectorAll('.atalho').forEach(function(a){a.href=a.getAttribute('data-base')+'?o='+o;});
 })();
 </script>
 </body>
