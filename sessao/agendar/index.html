@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pagamento confirmado · Sessão individual de 1 hora</title>
+<meta name="description" content="Escolha o dia e o horário da sua sessão individual de 1 hora.">
+<meta name="robots" content="noindex,nofollow">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#ecebe8">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<!--
+  Página pra onde o Stripe redireciona depois do pagamento da sessão de 1 hora (20/11/2026): condzmethod.com/sessao/agendar/.
+  Um HTML só: sem JavaScript, sem formulário, CSS aqui dentro. Não deve ser indexada (não está no sitemap).
+  Usa as fontes, o favicon e a imagem da pasta de cima (../fonts, ../favicon.svg, ../img).
+  O botão grande leva pra agenda do Google (conrado@doti.gg): pra trocar, procure por calendar.app.google.
+  O mesmo link da agenda também vai por e-mail pra quem paga (worker evolucao-mental, PLINK_SESSAO/AGENDA_URL).
+-->
+<style>
+@font-face{font-family:'Geist';src:url(../fonts/geist.woff2) format('woff2');font-weight:100 900;font-display:swap}
+@font-face{font-family:'Geist Mono';src:url(../fonts/geist-mono.woff2) format('woff2');font-weight:100 900;font-display:swap}
+:root{
+  --fundo:#ecebe8;--cartao:#f7f6f4;--placa:#efede8;--linha:#dad7d1;--tinta:#1d1c1a;--tinta2:#5c5852;--cinza:#6f6a63;
+  --acento:#8a3324;--acento-vivo:#c0563a;--rot-escuro:#d9a594;
+  --sans:'Geist',system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  --mono:'Geist Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --lado:18px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;background:var(--fundo)}
+body{margin:0;color:var(--tinta);font:400 16.5px/1.55 var(--sans);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  background-image:radial-gradient(rgba(29,28,26,.07) 1px,transparent 1.4px);background-size:22px 22px}
+h1,h2,p,ol,ul,figure{margin:0}
+ol,ul{padding:0;list-style:none}
+a{color:inherit;text-decoration:none}
+img,svg{display:block;max-width:100%}
+:focus-visible{outline:3px solid var(--acento);outline-offset:3px;border-radius:6px}
+
+.wrap{width:min(1040px,100%);margin:0 auto;padding:0 var(--lado)}
+.topo{height:60px;display:flex;align-items:center;justify-content:space-between}
+.marca{font:700 21px/1 var(--sans);letter-spacing:-.04em}
+.por{font-size:15px;color:var(--cinza)}
+.rot{font:500 12.5px/1.4 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--acento)}
+.cartao{background:var(--cartao);border:1px solid var(--linha);border-radius:18px}
+main{display:grid;gap:16px}
+
+/* cartão escuro: confirmação + agenda */
+.pago{padding:24px 20px 22px;border-radius:18px;background:var(--tinta);color:var(--cartao);display:grid;gap:14px;align-content:center;box-shadow:0 24px 50px -30px rgba(138,51,36,.7)}
+.pago .rot{display:flex;align-items:center;gap:9px;color:var(--rot-escuro)}
+.pago .rot svg{width:18px;height:18px;flex:none;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.pago h1{font:700 clamp(35px,10vw,42px)/1.02 var(--sans);letter-spacing:-.04em;text-wrap:balance}
+.pago p{color:rgba(247,246,244,.8);font-size:17px;line-height:1.5}
+.pago p b{color:var(--cartao);font-weight:600}
+.btn{display:flex;align-items:center;justify-content:center;gap:10px;min-height:64px;padding:12px 24px;border-radius:12px;background:var(--acento-vivo);color:#fff;font:600 19px/1.2 var(--sans);letter-spacing:-.01em;text-align:center;transition:filter .2s,transform .2s}
+.btn svg{width:21px;height:21px;flex:none;fill:none;stroke:currentColor;stroke-width:2.1;stroke-linecap:round;stroke-linejoin:round}
+.btn:hover{filter:brightness(1.1)}
+.btn:active{transform:scale(.98)}
+.pago .email{padding:12px 14px;border-radius:12px;background:rgba(247,246,244,.08);border:1px solid rgba(247,246,244,.16);color:var(--cartao);font-size:16.5px}
+.pago .email b{color:var(--rot-escuro)}
+
+/* a gravura */
+.quadro{overflow:hidden;display:grid;grid-template-columns:104px minmax(0,1fr);align-items:center}
+.quadro .arte{height:100%;min-height:128px;background:var(--placa);border-right:1px solid var(--linha)}
+.quadro .arte img{width:100%;height:100%;object-fit:cover;object-position:50% 30%;mix-blend-mode:multiply}
+.quadro figcaption{padding:16px 18px}
+.quadro b{display:block;margin-top:6px;font:600 20px/1.15 var(--sans);letter-spacing:-.025em;text-wrap:balance}
+.quadro span{display:block;margin-top:6px;font-size:15.5px;line-height:1.45;color:var(--tinta2)}
+
+/* passos */
+.como{padding:22px 20px 20px;display:grid;gap:16px}
+.como h2{margin-top:6px;font:600 27px/1.1 var(--sans);letter-spacing:-.03em}
+.passos{counter-reset:p;display:grid;gap:14px}
+.passos li{counter-increment:p;position:relative;padding-left:44px;color:var(--tinta2);line-height:1.5}
+.passos li::before{content:counter(p);position:absolute;left:0;top:1px;width:30px;height:30px;border-radius:8px;background:var(--tinta);color:var(--cartao);display:grid;place-items:center;font:500 14.5px/1 var(--mono)}
+.passos b{display:block;color:var(--tinta);font-weight:600;letter-spacing:-.01em}
+
+.saber{padding:22px 20px 20px;display:grid;gap:14px}
+.saber h2{margin-top:6px;font:600 24px/1.15 var(--sans);letter-spacing:-.025em}
+.lista{display:grid;gap:10px;color:var(--tinta2)}
+.lista li{position:relative;padding-left:22px;line-height:1.5}
+.lista li::before{content:"";position:absolute;left:3px;top:.55em;width:8px;height:8px;border-radius:2px;background:var(--acento)}
+.lista b{color:var(--tinta);font-weight:600}
+
+.ajuda{padding:18px 20px;display:grid;gap:8px;color:var(--tinta2);font-size:16px;line-height:1.5}
+.ajuda b{color:var(--tinta);font-weight:600}
+.ajuda a{color:var(--acento);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+
+.rodape{margin-top:26px;padding-bottom:44px;display:grid;gap:10px;font-size:14.5px;line-height:1.5;color:var(--cinza)}
+.rodape a{text-decoration:underline;text-underline-offset:3px}
+.nw{white-space:nowrap}
+
+@media (min-width:860px){
+  :root{--lado:32px}
+  body{font-size:17px}
+  .topo{height:68px}
+  main{grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:20px}
+  .pago{padding:44px 44px 40px;gap:18px}
+  .pago h1{font-size:54px}
+  .pago p{font-size:18.5px;max-width:540px}
+  .pago .btn{justify-self:start;min-width:360px}
+  .pago .email{justify-self:start}
+  .quadro{grid-template-columns:1fr;grid-template-rows:minmax(0,1fr) auto;align-items:stretch;
+    background-color:var(--placa);background-image:radial-gradient(rgba(29,28,26,.07) 1px,transparent 1.4px);background-size:22px 22px}
+  .quadro .arte{min-height:0;border-right:0;border-bottom:1px solid var(--linha);background:transparent}
+  .quadro .arte img{object-fit:contain;object-position:50% 100%;padding:26px 26px 0}
+  .quadro figcaption{background:var(--cartao);padding:18px 24px 20px}
+  .como{grid-column:1/-1;padding:34px 40px 30px;grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);gap:14px 40px}
+  .como h2{font-size:30px}
+  .passos{grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+  .passos li{padding-left:0;padding-top:44px}
+  .saber{grid-column:1/-1;padding:28px 40px;grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);gap:14px 40px}
+  .ajuda{grid-column:1/-1;padding:22px 40px}
+}
+@media (prefers-reduced-motion:no-preference){
+  .pago > *{animation:sobe .8s cubic-bezier(.2,.8,.2,1) both}
+  .pago > :nth-child(2){animation-delay:.07s}.pago > :nth-child(3){animation-delay:.14s}.pago > :nth-child(4){animation-delay:.22s}.pago > :nth-child(5){animation-delay:.3s}
+  @keyframes sobe{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="topo">
+    <div class="marca">Evolução Mental</div>
+    <span class="por">por Conrado de Sá</span>
+  </header>
+
+  <main>
+    <section class="pago">
+      <p class="rot"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Pagamento confirmado</p>
+      <h1>Agora escolhe o seu horário.</h1>
+      <p><b>Sessão individual de 1 hora, por vídeo.</b> De segunda a sexta, entre 14h e 17h, no horário de Brasília.</p>
+      <a class="btn" id="agenda" href="https://calendar.app.google/4va5g6JJCQizzVJ36" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>
+        Escolher meu horário
+      </a>
+      <p class="email">Na agenda, usa <b>o mesmo <span class="nw">e-mail</span> do pagamento</b>.</p>
+      <p>O link do Google Meet chega no seu <span class="nw">e-mail</span> logo depois que você marcar.</p>
+    </section>
+
+    <figure class="cartao quadro">
+      <div class="arte"><img src="../img/rosto.webp" width="594" height="720" alt="Gravura antiga de um rosto sereno, olhando de frente." decoding="async"></div>
+      <figcaption>
+        <p class="rot">Só você e eu</p>
+        <b>Uma hora, por vídeo, no Google Meet</b>
+        <span>Dá pra entrar pelo celular ou pelo computador.</span>
+      </figcaption>
+    </figure>
+
+    <section class="cartao como">
+      <div>
+        <p class="rot">Leva um minuto</p>
+        <h2>Como marcar</h2>
+      </div>
+      <ol class="passos">
+        <li><b>Escolhe o dia e a hora.</b> Aparecem só os horários livres da minha agenda.</li>
+        <li><b>Preenche nome, <span class="nw">e-mail</span> e telefone.</b> Usa o mesmo <span class="nw">e-mail</span> do pagamento.</li>
+        <li><b>Recebe o link do Meet no <span class="nw">e-mail</span>.</b> O convite chega na hora. Na hora marcada, é só entrar.</li>
+      </ol>
+    </section>
+
+    <section class="cartao saber">
+      <div>
+        <p class="rot">Bom saber</p>
+        <h2>Antes da sessão</h2>
+      </div>
+      <ul class="lista">
+        <li><b>Remarcar:</b> me avisa com pelo menos 24 horas de antecedência.</li>
+        <li><b>Desistiu?</b> Se desistir antes da sessão, você tem 7 dias a partir do pagamento pra pedir o dinheiro de volta.</li>
+        <li><b>Fechou esta página?</b> O link da agenda também vai pro <span class="nw">e-mail</span> que você usou no pagamento. Olha o spam.</li>
+        <li>A sessão não é terapia nem atendimento médico ou psicológico.</li>
+      </ul>
+    </section>
+
+    <section class="cartao ajuda">
+      <p><b>Deu algum problema?</b> Me chama no direct <a href="https://www.instagram.com/conrado_desa/">@conrado_desa</a> com o <span class="nw">e-mail</span> que você usou no pagamento.</p>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <p>Pagamento processado pelo Stripe. Agenda e chamada pelo Google. <a href="../privacidade.html">Privacidade</a></p>
+    <p>© 2026 Conrado de Sá</p>
+  </footer>
+</div>
+</body>
+</html>

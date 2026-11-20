@@ -26,7 +26,7 @@
   Teste Evolução Mental (17/11/2026). Um arquivo só, sem framework.
   Caminhos todos relativos: a pasta site/ inteira vai pra /evolucao/ do condzmethod.com
   (só as tags de compartilhamento usam o endereço completo, porque o Open Graph exige).
-  A configuração fica no começo do script (ENDPOINT_LEAD, ENDPOINT_SEQUENCIA, LINK_DESAFIO, WHATS_MENTORIA).
+  A configuração fica no começo do script (ENDPOINT_LEAD, ENDPOINT_SEQUENCIA, LINK_DESAFIO, LINK_SESSAO, WHATS_MENTORIA).
   Atalho: ?parado=1 desliga as animações (bom pra print).
 -->
 <style>
@@ -232,6 +232,8 @@ svg{display:block}
 .mentoria h3{font:600 18px/1.25 var(--sans);letter-spacing:-.015em}
 .mentoria p{margin-top:4px;font-size:16px;color:var(--tinta2);max-width:44em}
 .mentoria .btn{min-height:50px;padding:8px 20px;font-size:16px;justify-self:start}
+.mentoria.sessao{border-color:var(--acento);box-shadow:inset 0 0 0 1px var(--acento)}
+.mentoria.sessao h3{margin-top:6px;font-size:20px}
 .rodape{width:min(1120px,100%);margin:0 auto;padding:20px var(--lado) 40px;display:grid;gap:12px}
 .rodape nav{display:flex;flex-wrap:wrap;gap:8px 20px}
 .rodape nav a{text-decoration:underline}
@@ -506,6 +508,9 @@ svg{display:block}
   // WhatsApp da mentoria (só dígitos, com 55). Só aparece dentro do link wa.me. Vazio = o botão some.
   const WHATS_MENTORIA = '5548998561417';
   const PRECO_DESAFIO = 'R$ 97';
+  // Sessão individual de 1 hora (20/11): aparece antes da mentoria. Vazio = o cartão some.
+  const LINK_SESSAO = 'https://condzmethod.com/sessao/?o=teste';
+  const PRECO_SESSAO = 'R$ 297';
   const PRECO_MENTORIA = 'a partir de R$ 5.000';
   // ==========================================================
 
@@ -1125,6 +1130,10 @@ svg{display:block}
               <div><h3>Pra quem é</h3><ul><li>Pra quem vive no celular, anda sem energia ou sente que os dias estão no automático.</li><li>Pra quem quer começar pequeno: uma coisa por dia, com começo, meio e fim.</li><li>Não é tratamento e não promete resultado. Se você está em sofrimento, procure um médico ou psicólogo.</li></ul></div>
               <div><h3>Por que 21 dias</h3><p>Vinte e um dias não criam um hábito sozinhos: num estudo com 96 pessoas, o tempo pra uma ação virar automática variou de 18 a 254 dias (Lally e colegas, European Journal of Social Psychology, 2010). São três semanas pra testar as práticas e descobrir quais ficam com você.</p></div>
           </div>
+          ${LINK_SESSAO ? `<div class="mentoria sessao">
+            <div><span class="rotulo">Sessão individual · 1 hora</span><h3>Uma hora comigo, por vídeo <span style="white-space:nowrap">· ${PRECO_SESSAO}</span></h3><p>Pra aplicar o seu resultado na sua situação. Você sai com um plano simples de práticas pras próximas semanas. Pix ou cartão, pagamento único.</p></div>
+            <a class="btn" id="btn-sessao" href="${esc(LINK_SESSAO)}">Ver a sessão de 1 hora ${SETA}</a>
+          </div>` : ''}
           <div class="mentoria">
             <div><h3>Mentoria individual</h3><p>Pra quem quer acompanhamento direto comigo, um a um. É outro nível de investimento: ${PRECO_MENTORIA}.</p></div>
             ${wa ? `<a class="btn sec" id="btn-mentoria" href="${esc(wa)}" target="_blank" rel="noopener">Falar comigo no WhatsApp</a>` : ''}
@@ -1215,7 +1224,7 @@ svg{display:block}
   }
 
   // pra teste e simulação no console
-  window.__evolucao = { Q, KEYS, DIM, LIM, EVO, FORCA, PONTE, REFS, calcular, estado, linkMentoria, cfg: { ENDPOINT_LEAD, ENDPOINT_SEQUENCIA, LINK_DESAFIO, ORIGEM, SEM_IMPRESSAO } };
+  window.__evolucao = { Q, KEYS, DIM, LIM, EVO, FORCA, PONTE, REFS, calcular, estado, linkMentoria, cfg: { ENDPOINT_LEAD, ENDPOINT_SEQUENCIA, LINK_DESAFIO, LINK_SESSAO, ORIGEM, SEM_IMPRESSAO } };
 
   // ==========================================================
   // PARTIDA

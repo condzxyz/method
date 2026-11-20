@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sessão individual de 1 hora · Conrado de Sá</title>
+<meta name="description" content="Uma hora por vídeo, só você e eu, pra olhar a sua situação de perto e sair com um plano simples de práticas pras próximas semanas. R$ 297, Pix ou cartão.">
+<link rel="canonical" href="https://condzmethod.com/sessao/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Conrado de Sá">
+<meta property="og:title" content="Sessão individual de 1 hora · Conrado de Sá">
+<meta property="og:description" content="Uma hora por vídeo, só você e eu. Você sai com um plano simples de práticas pras próximas semanas.">
+<meta property="og:url" content="https://condzmethod.com/sessao/">
+<meta property="og:image" content="https://condzmethod.com/sessao/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://condzmethod.com/sessao/og.jpg">
+<meta name="theme-color" content="#ecebe8">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<!--
+  Página de venda da sessão individual de 1 hora (20/11/2026). Vai pra condzmethod.com/sessao/.
+  Pasta autocontida: index.html, privacidade.html, favicon.svg, og.jpg, fonts/, img/ e agendar/ (pra onde o Stripe
+  redireciona depois do pagamento). Mesma família visual da página do Desafio (condzmethod.com/desafio/).
+  O link de compra aparece em três botões (class="btn comprar"): pra trocar, procure por buy.stripe.com.
+  Stripe (conta Web3growth): produto prod_VfFHtmT13waT2t, preço price_1UdumdIKgGxRhu8sC1WS8Kkm, link plink_1UdumtIKgGxRhu8sYlvnWoco.
+-->
+<style>
+@font-face{font-family:'Geist';src:url(fonts/geist.woff2) format('woff2');font-weight:100 900;font-display:swap}
+@font-face{font-family:'Geist Mono';src:url(fonts/geist-mono.woff2) format('woff2');font-weight:100 900;font-display:swap}
+:root{
+  --fundo:#ecebe8;--cartao:#f7f6f4;--placa:#efede8;--linha:#dad7d1;--tinta:#1d1c1a;--tinta2:#5c5852;--cinza:#6f6a63;
+  --acento:#8a3324;--acento-vivo:#c0563a;--rot-escuro:#d9a594;
+  --sans:'Geist',system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  --mono:'Geist Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --lado:18px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;background:var(--fundo);scroll-padding-top:16px}
+body{margin:0;color:var(--tinta);font:400 16.5px/1.55 var(--sans);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  background-image:radial-gradient(rgba(29,28,26,.07) 1px,transparent 1.4px);background-size:22px 22px}
+h1,h2,h3,p,ul,ol,figure{margin:0}
+ul,ol{padding:0;list-style:none}
+a{color:inherit;text-decoration:none}
+img,svg{display:block;max-width:100%}
+:focus-visible{outline:3px solid var(--acento);outline-offset:3px;border-radius:6px}
+
+/* ---------- peças (as mesmas da página do Desafio) ---------- */
+.wrap{width:min(1120px,100%);margin:0 auto;padding:0 var(--lado)}
+.rot{font:500 12.5px/1.4 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--acento)}
+.cartao{background:var(--cartao);border:1px solid var(--linha);border-radius:18px}
+.sombra{box-shadow:0 30px 60px -42px rgba(0,0,0,.5)}
+.sec{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;margin-top:40px;padding-bottom:12px;border-bottom:1px solid var(--linha)}
+.sec h2{font:600 23px/1.2 var(--sans);letter-spacing:-.025em}
+.sec span{font-size:15px;color:var(--cinza)}
+.intro{margin-top:16px;font-size:18px;line-height:1.5;color:var(--tinta2);letter-spacing:-.005em;text-wrap:pretty}
+.intro b{color:var(--tinta);font-weight:600}
+.lista{display:grid;gap:10px}
+.lista li{position:relative;padding-left:22px;line-height:1.45}
+.lista li::before{content:"";position:absolute;left:3px;top:.52em;width:8px;height:8px;border-radius:2px;background:var(--acento)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:58px;padding:12px 26px;border-radius:12px;background:var(--tinta);color:var(--cartao);font:600 17.5px/1.2 var(--sans);letter-spacing:-.01em;text-align:center;transition:filter .2s,transform .2s}
+.btn svg{width:18px;height:18px;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.btn:hover{filter:brightness(1.35)}
+.btn:active{transform:scale(.98)}
+.btn.vivo{background:var(--acento-vivo);color:#fff}
+.btn.vivo:hover{filter:brightness(1.1)}
+.preco{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px}
+.preco b{font:700 40px/1 var(--sans);letter-spacing:-.04em}
+.preco span{font-size:15.5px;color:var(--tinta2)}
+.miudo{font-size:15px;line-height:1.5;color:var(--cinza)}
+.alt{font-size:15.5px;color:var(--tinta2);text-decoration:underline;text-underline-offset:3px}
+
+/* ---------- topo: só o nome, sem símbolo ---------- */
+.topo{height:60px;display:flex;align-items:center;justify-content:space-between}
+.marca{font:700 21px/1 var(--sans);letter-spacing:-.04em}
+.por{font-size:15px;color:var(--cinza)}
+
+/* ---------- hero ---------- */
+.hero{overflow:hidden}
+.h-arte{height:112px;background:var(--placa);border-bottom:1px solid var(--linha)}
+.h-arte img{width:100%;height:100%;object-fit:cover;object-position:50% 40%;mix-blend-mode:multiply}
+/* no celular a compra vem antes da lista, pro botão aparecer na primeira tela */
+.h-txt{padding:18px 20px 22px;display:flex;flex-direction:column}
+.h-txt > .lista{order:4}
+.h-txt > .alt{order:5;align-self:flex-start}
+.hero h1{margin-top:10px;font:700 clamp(35px,10vw,42px)/1.02 var(--sans);letter-spacing:-.04em;text-wrap:balance}
+.hero h1 em{display:block;font-style:normal;color:var(--acento)}
+.lead{margin-top:12px;font-size:18px;line-height:1.48;color:var(--tinta2);letter-spacing:-.005em;text-wrap:pretty}
+.hero .lista{margin-top:20px}
+.compra{margin-top:16px;padding-top:16px;border-top:1px solid var(--linha);display:grid;gap:12px}
+.hero .alt{display:inline-block;margin-top:18px}
+.h-quadro{display:none}
+
+/* ---------- pra quem é ---------- */
+.quem{margin-top:16px;display:grid;gap:14px}
+.quem .cartao{padding:18px}
+.quem h3{margin-top:6px;font:600 20px/1.2 var(--sans);letter-spacing:-.02em;text-wrap:balance}
+.quem p:not(.rot){margin-top:8px;font-size:16px;line-height:1.5;color:var(--tinta2)}
+.quem .nao{background:transparent;border-style:dashed;border-color:#bdb8ae}
+.quem .nao .rot{color:var(--cinza)}
+
+/* ---------- como funciona: 3 passos ---------- */
+.passos{margin-top:16px;padding:6px 18px;counter-reset:p}
+.passos li{counter-increment:p;display:grid;grid-template-columns:44px minmax(0,1fr);gap:2px 8px;padding:16px 0}
+.passos li + li{border-top:1px solid var(--linha)}
+.passos li::before{content:counter(p);grid-row:1/3;width:32px;height:32px;border-radius:9px;background:var(--tinta);color:var(--cartao);display:grid;place-items:center;font:500 15px/1 var(--mono)}
+.passos b{font:600 18px/1.25 var(--sans);letter-spacing:-.015em}
+.passos span{color:var(--tinta2);font-size:16px;line-height:1.45}
+.passos b{text-wrap:balance}
+.nw{white-space:nowrap;color:inherit!important;font-size:inherit!important}
+
+/* ---------- o que você leva (cartão escuro) ---------- */
+.meio{margin-top:28px;padding:24px 20px;border-radius:18px;background:var(--tinta);color:var(--cartao);display:grid;gap:18px;box-shadow:0 24px 50px -30px rgba(138,51,36,.7)}
+.meio .rot{color:var(--rot-escuro)}
+.meio h2{margin-top:8px;font:600 27px/1.12 var(--sans);letter-spacing:-.03em;text-wrap:balance}
+.meio .txt{margin-top:10px;font-size:17px;line-height:1.5;color:rgba(247,246,244,.8)}
+.meio .preco span{color:rgba(247,246,244,.7)}
+.meio .lista{font-size:16px;color:rgba(247,246,244,.84)}
+.meio .lista li::before{background:var(--rot-escuro)}
+.meio .lado{display:grid;gap:14px;align-content:start}
+
+/* ---------- perguntas + compra final ---------- */
+.fim{margin-top:16px;display:grid;gap:18px}
+.faq{padding:4px 18px}
+.faq details + details{border-top:1px solid var(--linha)}
+.faq summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:minmax(0,1fr) 22px;gap:12px;align-items:center;padding:16px 0;font:600 17px/1.3 var(--sans);letter-spacing:-.015em}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font:400 24px/1 var(--sans);color:var(--acento);text-align:center;transition:transform .25s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{padding:0 30px 16px 0;color:var(--tinta2);line-height:1.5}
+.faq details p a{color:var(--acento);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.final{overflow:hidden}
+.final .f-arte{height:128px;background:var(--placa)}
+.final .f-arte img{width:100%;height:100%;object-fit:cover;object-position:50% 36%}
+.final .f-txt{padding:20px;display:grid;gap:14px}
+.final h2{margin-top:8px;font:700 29px/1.05 var(--sans);letter-spacing:-.035em}
+.final h2 em{display:block;font-style:normal;color:var(--acento)}
+
+/* ---------- rodapé ---------- */
+.rodape{margin-top:36px;padding-bottom:44px;display:grid;gap:12px;font-size:14.5px;line-height:1.5;color:var(--cinza)}
+.rodape nav{display:flex;flex-wrap:wrap;gap:8px 20px}
+.rodape nav a{text-decoration:underline;text-underline-offset:3px}
+
+/* ---------- computador: layout próprio ---------- */
+@media (min-width:900px){
+  :root{--lado:32px}
+  body{font-size:17px}
+  .topo{height:68px}
+  .hero{display:grid;grid-template-columns:minmax(0,1fr) 400px}
+  .h-arte{display:none}
+  .h-txt{padding:40px 44px 38px;display:block}
+  .hero h1{font-size:58px}
+  .lead{font-size:20px;max-width:560px}
+  .hero .lista{margin-top:16px;max-width:580px}
+  .compra{margin-top:22px;padding-top:20px;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:12px 24px}
+  .compra .preco{display:grid;gap:5px}
+  .compra .btn{justify-self:start}
+  .compra .miudo{grid-column:1/-1}
+  .hero .alt{margin-top:14px}
+  .h-quadro{display:flex;flex-direction:column;justify-content:flex-end;border-left:1px solid var(--linha);
+    background-color:var(--placa);background-image:radial-gradient(rgba(29,28,26,.07) 1px,transparent 1.4px);background-size:22px 22px}
+  .h-quadro img{width:100%;height:auto;max-height:470px;object-fit:contain;object-position:50% 100%;padding:30px 30px 0;mix-blend-mode:multiply}
+  .h-quadro figcaption{padding:12px 24px 16px;border-top:1px solid var(--linha);background:var(--cartao);font-size:14.5px;line-height:1.35;color:var(--tinta2)}
+  .h-quadro figcaption b{display:block;font:500 12.5px/1.4 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--tinta)}
+  .sec{margin-top:56px}
+  .sec h2{font-size:27px}
+  .intro{font-size:20px;max-width:780px}
+  .quem{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+  .quem .cartao{padding:26px 26px 28px}
+  .passos{padding:8px 0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+  .passos li{display:block;padding:24px 28px 26px}
+  .passos li + li{border-top:0;border-left:1px solid var(--linha)}
+  .passos li::before{margin-bottom:14px}
+  .passos b{display:block;margin-bottom:6px;font-size:19px}
+  .meio{margin-top:44px;padding:36px 40px;grid-template-columns:minmax(0,1fr) minmax(0,.9fr) auto;gap:20px 44px;align-items:center}
+  .meio h2{font-size:32px}
+  .meio .lado{justify-items:start}
+  .meio .btn{min-width:300px}
+  .fim{grid-template-columns:minmax(0,1fr) 380px;gap:22px;align-items:start}
+  .faq{padding:6px 28px}
+  .final{position:sticky;top:20px}
+  .final .f-arte{height:150px}
+  .final .f-txt{padding:24px}
+}
+
+/* ---------- movimento (some pra quem pediu menos animação) ---------- */
+@media (prefers-reduced-motion:no-preference){
+  .h-txt > *{animation:sobe .8s cubic-bezier(.2,.8,.2,1) both}
+  .h-txt > :nth-child(2){animation-delay:.06s}.h-txt > :nth-child(3){animation-delay:.12s}.h-txt > :nth-child(4){animation-delay:.18s}
+  .h-txt > :nth-child(5){animation-delay:.26s}.h-txt > :nth-child(6){animation-delay:.32s}
+  .h-quadro img{animation:aparece 1.2s cubic-bezier(.2,.8,.2,1) .15s both}
+  @keyframes sobe{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+  @keyframes aparece{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="topo">
+    <div class="marca">Evolução Mental</div>
+    <span class="por">por Conrado de Sá</span>
+  </header>
+
+  <main>
+    <!-- ============ TOPO: o que é + compra ============ -->
+    <section class="cartao sombra hero">
+      <div class="h-arte"><img src="img/rosto.webp" width="594" height="720" alt="Gravura antiga de um rosto sereno, olhando de frente." fetchpriority="high" decoding="async"></div>
+      <div class="h-txt">
+        <p class="rot">Sessão individual · 1 hora</p>
+        <h1>Uma hora comigo, <em>só você e eu.</em></h1>
+        <p class="lead">Uma conversa por vídeo pra olhar de perto o que está acontecendo com você e sair com um plano simples de práticas pras próximas semanas.</p>
+        <ul class="lista">
+          <li>No Google Meet, de segunda a sexta, entre 14h e 17h</li>
+          <li>Pra quem fez o teste e quer ajuda pra aplicar, ou pra quem está travado numa situação agora</li>
+          <li>Você sai com um plano de práticas feito em cima da sua situação</li>
+        </ul>
+        <div class="compra">
+          <p class="preco"><b>R$ 297</b><span>pagamento único · Pix ou cartão</span></p>
+          <a class="btn comprar" href="https://buy.stripe.com/bJe00k8A475gdENcMKbsc0i?locale=pt-BR">Quero a sessão de 1 hora <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          <p class="miudo">Depois de pagar, você escolhe o dia e o horário.</p>
+        </div>
+        <a class="alt" href="https://condzmethod.com/evolucao/?o=sessao">Ainda não fez o teste? Faz de graça antes</a>
+      </div>
+      <figure class="h-quadro" aria-hidden="true">
+        <img src="img/rosto.webp" width="594" height="720" alt="" loading="lazy" decoding="async">
+        <figcaption><b>La Joye tranquille</b>Charles Le Brun, gravura de 1732</figcaption>
+      </figure>
+    </section>
+
+    <!-- ============ O QUE É ============ -->
+    <div class="sec"><h2>O que é</h2></div>
+    <p class="intro">Uma hora por vídeo, só você e eu. Você me conta o que está acontecendo, eu pergunto, e a gente escolhe junto o que faz sentido praticar agora. <b>Você sai com um plano simples de práticas pras próximas semanas, feito em cima da sua situação.</b></p>
+
+    <!-- ============ PRA QUEM É ============ -->
+    <div class="sec"><h2>Pra quem é</h2></div>
+    <div class="quem">
+      <div class="cartao">
+        <p class="rot">Fez o teste</p>
+        <h3>Você quer ajuda pra aplicar o seu resultado</h3>
+        <p>O teste mostrou onde você mais pode evoluir. Na sessão a gente olha o resultado junto e decide por onde começar, dentro da sua rotina de verdade.</p>
+      </div>
+      <div class="cartao">
+        <p class="rot">Está travado</p>
+        <h3>Você está parado numa situação agora</h3>
+        <p>Uma decisão que não sai, uma rotina que voltou pro automático, uma prática que você começou e largou. A gente olha isso de perto e escolhe os próximos passos.</p>
+      </div>
+      <div class="cartao nao">
+        <p class="rot">Não é</p>
+        <h3>Terapia nem atendimento de saúde</h3>
+        <p>A sessão não é terapia nem atendimento médico ou psicológico, e não substitui nenhum deles. Se você está em sofrimento, procure um médico ou psicólogo.</p>
+      </div>
+    </div>
+
+    <!-- ============ COMO FUNCIONA ============ -->
+    <div class="sec"><h2>Como funciona</h2><span>três passos</span></div>
+    <ol class="cartao passos">
+      <li><b>Você paga</b><span>R$ 297, no Pix ou no cartão. Pagamento único.</span></li>
+      <li><b>Escolhe o horário</b><span>Logo depois do pagamento abre a minha agenda. Você escolhe o dia e a hora, de segunda a sexta, entre 14h e 17h.</span></li>
+      <li><b>Recebe o link do Meet no <span class="nw">e-mail</span></b><span>O convite chega no seu <span class="nw">e-mail</span> com o link da chamada. Na hora marcada, é só entrar, pelo celular ou pelo computador.</span></li>
+    </ol>
+
+    <!-- ============ O QUE VOCÊ LEVA + COMPRA (meio) ============ -->
+    <section class="meio">
+      <div>
+        <p class="rot">O que você leva</p>
+        <h2>Um plano simples de práticas pras próximas semanas</h2>
+        <p class="txt">Feito em cima da sua situação. Você sai da sessão com ele.</p>
+      </div>
+      <ul class="lista">
+        <li>Pix ou cartão, pagamento único</li>
+        <li>Pra remarcar, me avisa com 24 horas de antecedência</li>
+        <li>Desistiu antes da sessão? Você tem 7 dias pra pedir o dinheiro de volta</li>
+      </ul>
+      <div class="lado">
+        <p class="preco"><b>R$ 297</b><span>uma hora, por vídeo</span></p>
+        <a class="btn vivo comprar" href="https://buy.stripe.com/bJe00k8A475gdENcMKbsc0i?locale=pt-BR">Quero a sessão de 1 hora <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+    </section>
+
+    <!-- ============ PERGUNTAS + COMPRA (fim) ============ -->
+    <div class="sec"><h2>Perguntas frequentes</h2></div>
+    <div class="fim">
+      <div class="cartao faq">
+        <details><summary>Como é a sessão?</summary><p>Uma chamada de vídeo de 1 hora no Google Meet, só você e eu. Dá pra entrar pelo celular ou pelo computador. Vale estar num lugar tranquilo, onde você consiga falar à vontade.</p></details>
+        <details><summary>Quais são os horários?</summary><p>De segunda a sexta, entre 14h e 17h, no horário de Brasília. Você vê os horários livres e escolhe logo depois de pagar.</p></details>
+        <details><summary>Como chega o link do Meet?</summary><p>Quando você marca o horário, o convite com o link chega no <span class="nw">e-mail</span> que você informou na agenda. Usa o mesmo <span class="nw">e-mail</span> do pagamento. Se não achar, olha o spam.</p></details>
+        <details><summary>Fechei a página depois de pagar. E agora?</summary><p>O link da agenda também vai pro <span class="nw">e-mail</span> que você usou no pagamento. Olha o spam. Se não estiver lá, me chama no direct <a href="https://www.instagram.com/conrado_desa/">@conrado_desa</a>.</p></details>
+        <details><summary>Posso remarcar?</summary><p>Pode. Me avisa com pelo menos 24 horas de antecedência, no direct <a href="https://www.instagram.com/conrado_desa/">@conrado_desa</a>, e a gente acha outro horário.</p></details>
+        <details><summary>E se eu desistir?</summary><p>Se desistir antes da sessão, você tem 7 dias a partir do pagamento pra pedir o dinheiro de volta. Me chama no direct <a href="https://www.instagram.com/conrado_desa/">@conrado_desa</a> com o <span class="nw">e-mail</span> do pagamento.</p></details>
+        <details><summary>Isso é terapia?</summary><p>Não. A sessão não é terapia nem atendimento médico ou psicológico, e não substitui nenhum deles. Se você está em sofrimento, procure um médico ou psicólogo.</p></details>
+      </div>
+      <section class="cartao sombra final">
+        <div class="f-arte"><img src="img/caminhante-faixa.webp" width="800" height="448" alt="" loading="lazy" decoding="async"></div>
+        <div class="f-txt">
+          <div>
+            <p class="rot">Sessão individual · 1 hora</p>
+            <h2>Uma hora comigo, <em>só você e eu.</em></h2>
+          </div>
+          <p class="preco"><b>R$ 297</b><span>pagamento único · Pix ou cartão</span></p>
+          <a class="btn comprar" href="https://buy.stripe.com/bJe00k8A475gdENcMKbsc0i?locale=pt-BR">Quero a sessão de 1 hora <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          <p class="miudo">Depois de pagar, você escolhe o dia e o horário.</p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="rodape">
+    <p>Sessão individual por vídeo. Não é terapia nem atendimento médico ou psicológico, não promete resultado e não substitui acompanhamento profissional.</p>
+    <nav>
+      <a href="privacidade.html">Privacidade</a>
+      <a href="https://condzmethod.com/evolucao/">Teste Evolução Mental</a>
+      <a href="https://condzmethod.com/desafio/">Desafio de 21 dias</a>
+      <a href="https://condzmethod.com/evolucao/creditos.html">Créditos das imagens</a>
+    </nav>
+    <p>© 2026 Conrado de Sá</p>
+  </footer>
+</div>
+
+<script>
+// Quem chega com ?o=teste, ?o=email3 (ou outra origem, só letras e números) leva essa etiqueta pro pagamento,
+// pra dar pra saber de onde veio a venda. Não é dado pessoal. Sem ?o=, os links ficam como estão.
+(function () {
+  var o = (new URLSearchParams(location.search).get('o') || '').replace(/[^a-zA-Z0-9]/g, '').slice(0, 12);
+  if (!o) return;
+  document.querySelectorAll('a.comprar').forEach(function (a) {
+    try { var u = new URL(a.href); u.searchParams.set('client_reference_id', 'o_' + o); a.href = u.toString(); } catch (e) {}
+  });
+})();
+</script>
+</body>
+</html>
