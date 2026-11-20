@@ -26,7 +26,7 @@
   Teste Evolução Mental (17/11/2026). Um arquivo só, sem framework.
   Caminhos todos relativos: a pasta site/ inteira vai pra /evolucao/ do condzmethod.com
   (só as tags de compartilhamento usam o endereço completo, porque o Open Graph exige).
-  A configuração fica no começo do script (ENDPOINT_LEAD, LINK_DESAFIO, WHATS_MENTORIA).
+  A configuração fica no começo do script (ENDPOINT_LEAD, ENDPOINT_SEQUENCIA, LINK_DESAFIO, WHATS_MENTORIA).
   Atalho: ?parado=1 desliga as animações (bom pra print).
 -->
 <style>
@@ -494,8 +494,12 @@ svg{display:block}
   // CONFIGURAÇÃO
   // ==========================================================
   // Pra onde vão os contatos: FormSubmit, o mesmo serviço do formulário da mentoria Method. Entrega no e-mail do Conrado.
-  // É o ÚNICO lugar pra onde sai algum dado. Vazio = nada sai do navegador.
+  // Vazio = não manda pro FormSubmit.
   const ENDPOINT_LEAD = 'https://formsubmit.co/ajax/e9ba5025e418d3a78685795ffd36a308';
+  // Follow-up por e-mail (worker evolucao-mental na Cloudflare): guarda nome, e-mail e o resultado pra mandar os 3 e-mails
+  // sobre o resultado e o Desafio. Não vão as 10 respostas, as notas nem o WhatsApp. Vazio = não manda.
+  // São os ÚNICOS dois lugares pra onde sai algum dado.
+  const ENDPOINT_SEQUENCIA = 'https://evolucao-mental.built-bot.workers.dev/lead';
   // Pra onde vai o botão de compra do Desafio: a página de vendas (condzmethod.com/desafio/), com a origem "teste".
   // Vazio = o botão vira "Quero ser avisado quando abrir" e só marca o interesse na tela (o clique não é enviado).
   const LINK_DESAFIO = 'https://condzmethod.com/desafio/?o=teste';
@@ -973,8 +977,8 @@ svg{display:block}
     ir('resultado');
   });
 
-  // Manda o contato e o resultado pro e-mail do Conrado, pelo FormSubmit. Nada vai pra nenhum outro lugar.
-  // Não segura a tela: o resultado aparece na hora e o envio segue por trás (o FormSubmit leva de 10 a 18 s).
+  // Manda o contato e o resultado pro e-mail do Conrado, pelo FormSubmit, e (em paralelo) pro follow-up por e-mail.
+  // Não segura a tela: o resultado aparece na hora e os envios seguem por trás (o FormSubmit leva de 10 a 18 s).
   function enviarLead(isca) {
     const R = estado.res;
     estado.lead = {
@@ -994,11 +998,26 @@ svg{display:block}
       origem: ORIGEM,
       data_hora: new Date().toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' }),
     };
-    if (!ENDPOINT_LEAD || isca) return; // campo-isca preenchido = robô: não envia
+    if (isca) return; // campo-isca preenchido = robô: não envia nada
+    enviarSequencia();
+    if (!ENDPOINT_LEAD) return;
     const ctl = new AbortController(); const t = setTimeout(() => ctl.abort(), 30000);
     fetch(ENDPOINT_LEAD, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify(estado.lead), signal: ctl.signal, keepalive: true })
       .then((r) => r.json().catch(() => ({})).then((j) => { estado.enviado = r.ok && String(j.success) === 'true'; estado.resposta = j.message || ''; if (estado.interesse) notaInteresse(); }))
       .catch(() => {})
+      .finally(() => clearTimeout(t));
+  }
+
+  // Follow-up: só o nome, o e-mail e o resultado (sem as 10 respostas, sem as notas, sem WhatsApp).
+  // text/plain pra não precisar de pré-verificação de CORS; o worker só aceita vindo de condzmethod.com.
+  function enviarSequencia() {
+    if (!ENDPOINT_SEQUENCIA) return;
+    const R = estado.res;
+    const corpo = { nome: estado.nome, email: estado.email, perfil: R.perfil, forca: R.forca, evoluir: R.evo, origem: ORIGEM, data: estado.lead.data_hora, website: '' };
+    const ctl = new AbortController(); const t = setTimeout(() => ctl.abort(), 20000);
+    fetch(ENDPOINT_SEQUENCIA, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=UTF-8' }, body: JSON.stringify(corpo), signal: ctl.signal, keepalive: true, credentials: 'omit' })
+      .then((r) => { estado.sequencia = r.ok; })
+      .catch(() => { estado.sequencia = false; })
       .finally(() => clearTimeout(t));
   }
 
@@ -1196,7 +1215,7 @@ svg{display:block}
   }
 
   // pra teste e simulação no console
-  window.__evolucao = { Q, KEYS, DIM, LIM, EVO, FORCA, PONTE, REFS, calcular, estado, linkMentoria, cfg: { ENDPOINT_LEAD, LINK_DESAFIO, ORIGEM, SEM_IMPRESSAO } };
+  window.__evolucao = { Q, KEYS, DIM, LIM, EVO, FORCA, PONTE, REFS, calcular, estado, linkMentoria, cfg: { ENDPOINT_LEAD, ENDPOINT_SEQUENCIA, LINK_DESAFIO, ORIGEM, SEM_IMPRESSAO } };
 
   // ==========================================================
   // PARTIDA
