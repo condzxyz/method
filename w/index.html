@@ -5,17 +5,30 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>WhatsApp · Conrado de Sá</title>
 <meta name="robots" content="noindex">
-<meta http-equiv="refresh" content="0;url=https://wa.me/5511955075077?text=Decidi%20evoluir.%20Quero%20come%C3%A7ar%20oficialmente%20meus%207%20dias%20com%20os%20ensinamentos%20milenares.">
+<noscript><meta http-equiv="refresh" content="0;url=https://wa.me/5511955075077?text=Decidi%20evoluir.%20Quero%20come%C3%A7ar%20oficialmente%20meus%207%20dias%20com%20os%20ensinamentos%20milenares."></noscript>
 <script>
+// Link curto que abre o WhatsApp do bot com a mensagem pronta.
+//   ?p=  o que a pessoa quer: 7dias (padrão), desafio, mentoria, teste. Cada frase cai no fluxo certo do bot.
+//   ?o=  de onde veio (story, dm, bio...). Vai no fim da mensagem como " · origem" (a bio não leva sufixo).
 (function(){
-  var o=(new URLSearchParams(location.search).get('o')||'').replace(/[^a-z0-9]/gi,'').slice(0,12);
-  var txt='Decidi evoluir. Quero começar oficialmente meus 7 dias com os ensinamentos milenares.'+(o&&o!=='bio'?' · '+o:'');
-  location.replace('https://wa.me/5511955075077?text='+encodeURIComponent(txt));
+  var q=new URLSearchParams(location.search);
+  var o=(q.get('o')||'').replace(/[^a-z0-9]/gi,'').slice(0,12);
+  var p=(q.get('p')||'').toLowerCase();
+  var F={
+    '7dias':'Decidi evoluir. Quero começar oficialmente meus 7 dias com os ensinamentos milenares.',
+    'desafio':'Quero entrar no DESAFIO Evolução Mental de 21 dias.',
+    'mentoria':'Quero saber da MENTORIA individual com o Conrado.',
+    'teste':'Quero fazer o TESTE: onde eu mais preciso evoluir?'
+  };
+  var txt=(F[p]||F['7dias'])+(o&&o!=='bio'?' · '+o:'');
+  var url='https://wa.me/5511955075077?text='+encodeURIComponent(txt);
+  document.addEventListener('DOMContentLoaded',function(){var a=document.getElementById('ir');if(a)a.href=url;});
+  location.replace(url);
 })();
 </script>
 <style>body{margin:0;min-height:100vh;display:grid;place-items:center;background:#ecebe8;color:#1d1c1a;font:500 17px/1.5 system-ui,-apple-system,sans-serif;text-align:center;padding:20px}a{color:#8a3324}</style>
 </head>
 <body>
-<p>Abrindo o WhatsApp…<br><a href="https://wa.me/5511955075077?text=Decidi%20evoluir.%20Quero%20come%C3%A7ar%20oficialmente%20meus%207%20dias%20com%20os%20ensinamentos%20milenares.">Toque aqui se não abrir</a></p>
+<p>Abrindo o WhatsApp…<br><a id="ir" href="https://wa.me/5511955075077?text=Decidi%20evoluir.%20Quero%20come%C3%A7ar%20oficialmente%20meus%207%20dias%20com%20os%20ensinamentos%20milenares.">Toque aqui se não abrir</a></p>
 </body>
 </html>
