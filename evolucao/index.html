@@ -498,8 +498,9 @@ svg{display:block}
   // Pra onde vão os contatos: FormSubmit, o mesmo serviço do formulário da mentoria Method. Entrega no e-mail do Conrado.
   // Vazio = não manda pro FormSubmit.
   const ENDPOINT_LEAD = 'https://formsubmit.co/ajax/e9ba5025e418d3a78685795ffd36a308';
-  // Follow-up por e-mail (worker evolucao-mental na Cloudflare): guarda nome, e-mail e o resultado pra mandar os 3 e-mails
-  // sobre o resultado e o Desafio. Não vão as 10 respostas, as notas nem o WhatsApp. Vazio = não manda.
+  // Follow-up (worker evolucao-mental na Cloudflare): guarda nome, e-mail, WhatsApp e o resultado pra mandar os 3 e-mails
+  // sobre o resultado e o Desafio e UMA mensagem no WhatsApp oficial (o convite dos 7 dias grátis). Não vão as 10 respostas
+  // nem as notas. Vazio = não manda.
   // São os ÚNICOS dois lugares pra onde sai algum dado.
   const ENDPOINT_SEQUENCIA = 'https://evolucao-mental.built-bot.workers.dev/lead';
   // Pra onde vai o botão de compra do Desafio: a página de vendas (condzmethod.com/desafio/), com a origem "teste".
@@ -1013,12 +1014,12 @@ svg{display:block}
       .finally(() => clearTimeout(t));
   }
 
-  // Follow-up: só o nome, o e-mail e o resultado (sem as 10 respostas, sem as notas, sem WhatsApp).
+  // Follow-up: o nome, o e-mail, o WhatsApp (só dígitos, com 55) e o resultado (sem as 10 respostas, sem as notas).
   // text/plain pra não precisar de pré-verificação de CORS; o worker só aceita vindo de condzmethod.com.
   function enviarSequencia() {
     if (!ENDPOINT_SEQUENCIA) return;
     const R = estado.res;
-    const corpo = { nome: estado.nome, email: estado.email, perfil: R.perfil, forca: R.forca, evoluir: R.evo, origem: ORIGEM, data: estado.lead.data_hora, website: '' };
+    const corpo = { nome: estado.nome, email: estado.email, whats: String(estado.whats || '').replace(/\D/g, ''), perfil: R.perfil, forca: R.forca, evoluir: R.evo, origem: ORIGEM, data: estado.lead.data_hora, website: '' };
     const ctl = new AbortController(); const t = setTimeout(() => ctl.abort(), 20000);
     fetch(ENDPOINT_SEQUENCIA, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=UTF-8' }, body: JSON.stringify(corpo), signal: ctl.signal, keepalive: true, credentials: 'omit' })
       .then((r) => { estado.sequencia = r.ok; })
