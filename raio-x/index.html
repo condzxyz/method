@@ -12,237 +12,275 @@
 <meta property="og:title" content="Raio-X · mentoria de IA 1:1 com o Condz">
 <meta property="og:description" content="30 minutos comigo olhando o seu perfil. Você sai com um plano de 30 dias e 3 roteiros no seu formato.">
 <meta property="og:url" content="https://condzmethod.com/raio-x/">
-<meta property="og:image" content="https://condzmethod.com/raio-x/og.jpg?v=30min">
+<meta property="og:image" content="https://condzmethod.com/raio-x/og.jpg?v=papel">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://condzmethod.com/raio-x/og.jpg?v=30min">
-<meta name="theme-color" content="#f1f0ea">
+<meta name="twitter:image" content="https://condzmethod.com/raio-x/og.jpg?v=papel">
+<meta name="theme-color" content="#f3ead7">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preload" href="fonts/newsreader.woff2" as="font" type="font/woff2" crossorigin>
 <!--
   Página de venda do Raio-X, a mentoria 1:1 de IA do @condzxyz (20/11/2026). Vai pra condzmethod.com/raio-x/.
   NÃO MISTURAR com a /sessao/ (sessão do @conrado_desa, evolução): produto, link de pagamento, agenda e textos são outros.
-  Pasta autocontida: index.html, privacidade.html, favicon.svg, og.jpg, fonts/ e agendar/ (pra onde o Stripe redireciona).
+  Pasta autocontida: index.html, privacidade.html, favicon.svg, og.jpg, montanha.webp, fonts/ e agendar/ (pra onde o Stripe redireciona).
   O link de compra aparece em três botões (class="btn comprar"): pra trocar, procure por buy.stripe.com.
   Stripe (conta Web3growth): produto prod_VfLPX8DPfJcUCw, preço price_1Ue0iYIKgGxRhu8sVTtuJePC (R$ 297), link plink_1Ue0ifIKgGxRhu8sgRmKqM4i.
   Agenda do Google (conrado@doti.gg): "Raio-X · mentoria de IA com Condz (@condzxyz)", https://calendar.app.google/Gy7ub1vaxC6qHUaQ8.
+  Visual de 24/11/2026 ("papel antigo"): papel creme, Newsreader nos títulos, tinta, selo vermelho e a pintura
+  "Viajantes entre montanhas e riachos" de Fan Kuan (c. 1000, domínio público) em montanha.webp.
 -->
 <style>
+@font-face{font-family:'Newsreader';src:url(fonts/newsreader.woff2) format('woff2');font-weight:200 800;font-display:swap}
 @font-face{font-family:'Geist';src:url(fonts/geist.woff2) format('woff2');font-weight:100 900;font-display:swap}
 @font-face{font-family:'Geist Mono';src:url(fonts/geist-mono.woff2) format('woff2');font-weight:100 900;font-display:swap}
 :root{
-  --fundo:#f1f0ea;--cartao:#fbfbf7;--placa:#eceae2;--linha:#dcd9cf;--tinta:#17181a;--tinta2:#55565a;--cinza:#6c6c68;
-  --verde:#1a8a57;--verde-vivo:#3ccf7e;--azul:#2f6fdb;--vermelho:#d8484d;--amarelo:#c98a1b;
+  --papel:#f3ead7;--folha:#fbf6ea;--placa:#efe3c9;--linha:#ddcfb1;--linha2:#c7b18a;
+  --tinta:#22180f;--tinta2:#594938;--cinza:#7a6953;
+  --verm:#b3261e;--verm2:#931d16;--ouro:#9c7022;--ouro2:#e3c27f;--escuro:#211710;
+  --serif:'Newsreader',Georgia,'Times New Roman',serif;
   --sans:'Geist',system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
   --mono:'Geist Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
-  --lado:18px;
+  --lado:16px;
+  --ok:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2.3 6.4 4.9 8.8 9.8 3.2' fill='none' stroke='%23000' stroke-width='2.1' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
 }
 *,*::before,*::after{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%;background:var(--fundo);scroll-padding-top:16px}
+html{-webkit-text-size-adjust:100%;background:var(--papel);scroll-padding-top:16px}
 body{margin:0;color:var(--tinta);font:400 16.5px/1.55 var(--sans);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
-  background-image:linear-gradient(rgba(23,24,26,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(23,24,26,.045) 1px,transparent 1px);background-size:28px 28px}
+  background:radial-gradient(ellipse 90% 60% at 50% -10%,rgba(255,250,236,.9),rgba(255,250,236,0) 70%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .2 0 0 0 0 .13 0 0 0 0 .06 0 0 0 .09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),var(--papel)}
 h1,h2,h3,p,ul,ol,figure{margin:0}
 ul,ol{padding:0;list-style:none}
 a{color:inherit;text-decoration:none}
 img,svg{display:block;max-width:100%}
-:focus-visible{outline:3px solid var(--verde);outline-offset:3px;border-radius:6px}
+:focus-visible{outline:3px solid var(--verm);outline-offset:3px;border-radius:4px}
 
 /* ---------- peças ---------- */
-.wrap{width:min(1140px,100%);margin:0 auto;padding:0 var(--lado)}
-.rot{font:500 12.5px/1.4 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--verde)}
-.selo{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:999px;background:var(--tinta);color:var(--cartao);font:600 14px/1.2 var(--sans);letter-spacing:-.005em}
-.selo i{width:8px;height:8px;border-radius:50%;background:var(--verde-vivo);box-shadow:0 0 0 4px rgba(60,207,126,.22)}
-.cartao{background:var(--cartao);border:1px solid var(--linha);border-radius:18px}
-.sombra{box-shadow:0 30px 60px -42px rgba(0,0,0,.5)}
-.sec{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;margin-top:40px;padding-bottom:12px;border-bottom:1px solid var(--linha)}
-.sec h2{font:600 23px/1.2 var(--sans);letter-spacing:-.025em}
+.wrap{width:min(1160px,100%);margin:0 auto;padding:0 var(--lado)}
+.rot{font:500 12.5px/1.4 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--verm)}
+.selo{display:inline-flex;align-items:center;gap:9px;padding:7px 13px 7px 12px;border-radius:4px;background:var(--tinta);color:var(--folha);font:600 14px/1.2 var(--sans);letter-spacing:.005em}
+.selo i{width:8px;height:8px;background:var(--verm);transform:rotate(45deg);box-shadow:0 0 0 2px rgba(227,194,127,.55)}
+.cartao{background:var(--folha);border:1px solid var(--linha);border-radius:8px}
+.moldura{box-shadow:0 0 0 5px var(--folha),0 0 0 6px var(--linha2),0 44px 70px -48px rgba(70,40,12,.65)}
+.sec{counter-increment:sec;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px;margin-top:44px;padding-bottom:12px;border-bottom:3px double var(--linha2)}
+.sec h2{font:600 27px/1.15 var(--serif);letter-spacing:-.015em;font-variation-settings:'opsz' 48}
+.sec h2::before{content:counter(sec,upper-roman) ".";margin-right:12px;color:var(--verm);font-weight:500}
 .sec span{font-size:15px;color:var(--cinza)}
-.intro{margin-top:16px;font-size:18px;line-height:1.5;color:var(--tinta2);letter-spacing:-.005em;text-wrap:pretty}
+main{counter-reset:sec}
+.intro{margin-top:18px;font:400 20px/1.5 var(--serif);color:var(--tinta2);text-wrap:pretty;font-variation-settings:'opsz' 24}
 .intro b{color:var(--tinta);font-weight:600}
 .lista{display:grid;gap:10px}
-.lista li{position:relative;padding-left:24px;line-height:1.45}
-.lista li::before{content:"";position:absolute;left:2px;top:.42em;width:12px;height:12px;border-radius:4px;background:var(--verde);
-  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2.5 6.2 5 8.5 9.5 3.5' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/12px no-repeat;
-          mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2.5 6.2 5 8.5 9.5 3.5' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/12px no-repeat}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:58px;padding:12px 26px;border-radius:12px;background:var(--tinta);color:var(--cartao);font:600 17.5px/1.2 var(--sans);letter-spacing:-.01em;text-align:center;transition:filter .2s,transform .2s,box-shadow .2s}
-.btn svg{width:18px;height:18px;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.btn:hover{filter:brightness(1.4)}
+.lista li{position:relative;padding-left:26px;line-height:1.45}
+.lista li::before{content:"";position:absolute;left:2px;top:.36em;width:14px;height:14px;background:var(--verm);-webkit-mask:var(--ok) center/14px no-repeat;mask:var(--ok) center/14px no-repeat}
+.btn{position:relative;overflow:hidden;isolation:isolate;display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:58px;padding:12px 28px;border-radius:6px;
+  background:var(--verm);color:#fdf5e6;font:600 17.5px/1.2 var(--sans);letter-spacing:-.005em;text-align:center;
+  box-shadow:inset 0 1px 0 rgba(255,225,190,.35),inset 0 0 0 1px rgba(80,10,6,.35),0 14px 26px -14px rgba(147,29,22,.85);transition:background .2s,transform .2s,box-shadow .2s}
+.btn svg{width:18px;height:18px;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;transition:transform .25s}
+.btn::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(105deg,transparent 30%,rgba(255,226,170,.5) 50%,transparent 70%);transform:translateX(-130%)}
+.btn:hover{background:var(--verm2);box-shadow:inset 0 1px 0 rgba(255,225,190,.35),inset 0 0 0 1px rgba(80,10,6,.35),0 18px 30px -14px rgba(147,29,22,.95),0 0 0 5px rgba(179,38,30,.14)}
+.btn:hover svg{transform:translateX(3px)}
+.btn:hover::after{transform:translateX(130%);transition:transform .75s ease}
 .btn:active{transform:scale(.98)}
-.btn.vivo{background:var(--verde-vivo);color:var(--tinta);box-shadow:0 0 0 0 rgba(60,207,126,.5)}
-.btn.vivo:hover{filter:brightness(1.05);box-shadow:0 0 0 6px rgba(60,207,126,.18)}
 .preco{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px}
-.preco b{font:700 40px/1 var(--sans);letter-spacing:-.04em}
+.preco b{font:600 44px/1 var(--serif);letter-spacing:-.02em;font-variation-settings:'opsz' 72}
 .preco span{font-size:15.5px;color:var(--tinta2)}
 .miudo{font-size:15px;line-height:1.5;color:var(--cinza)}
 .nw{white-space:nowrap}
 
 /* ---------- topo ---------- */
-.topo{height:60px;display:flex;align-items:center;justify-content:space-between;gap:12px}
-.marca{display:flex;align-items:center;gap:10px;font:600 19px/1 var(--mono);letter-spacing:-.02em}
-.marca svg{width:28px;height:28px}
-.por{font-size:15px;color:var(--cinza)}
+.topo{height:62px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.marca{display:flex;align-items:center;gap:10px;font:600 18px/1 var(--mono);letter-spacing:-.02em}
+.marca svg{width:30px;height:30px;transform:rotate(-4deg)}
+.por{font:500 16px/1 var(--serif);color:var(--tinta2);font-variation-settings:'opsz' 18}
 
 /* ---------- hero ---------- */
 .hero{overflow:hidden}
+.h-faixa{height:92px;background:linear-gradient(180deg,rgba(34,24,15,0) 40%,rgba(34,24,15,.25)),url(montanha.webp) center 18%/cover;border-bottom:1px solid var(--linha2)}
 .h-txt{padding:22px 20px 24px;display:flex;flex-direction:column}
 .h-txt > .lista{order:4}
-.hero h1{margin-top:14px;font:700 clamp(36px,10.4vw,44px)/1.02 var(--sans);letter-spacing:-.045em;text-wrap:balance}
-.hero h1 em{display:block;font-style:normal;color:var(--verde)}
-.lead{margin-top:12px;font-size:18px;line-height:1.48;color:var(--tinta2);letter-spacing:-.005em;text-wrap:pretty}
+.hero h1{margin-top:16px;font:600 clamp(38px,11vw,46px)/1 var(--serif);letter-spacing:-.025em;text-wrap:balance;font-variation-settings:'opsz' 72}
+.hero h1 em{display:block;font-style:normal;color:var(--verm)}
+.lead{margin-top:14px;font-size:18px;line-height:1.48;color:var(--tinta2);text-wrap:pretty}
 .lead b{color:var(--tinta);font-weight:600}
 .hero .lista{margin-top:20px}
-.compra{margin-top:18px;padding-top:16px;border-top:1px solid var(--linha);display:grid;gap:12px}
+.compra{margin-top:18px;padding-top:18px;border-top:1px solid var(--linha);display:grid;gap:12px}
 .h-quadro{display:none}
 
-/* ---------- relatório de exemplo (só no computador, no topo) ---------- */
-.rel{position:relative;background:var(--tinta);color:#e9e7df;border-radius:16px;padding:20px 20px 18px;font:400 14.5px/1.4 var(--mono);box-shadow:0 30px 60px -36px rgba(23,24,26,.8)}
-.rel::before{content:"";position:absolute;inset:-1px;border-radius:17px;padding:1px;background:linear-gradient(135deg,rgba(60,207,126,.9),rgba(60,207,126,0) 40%,rgba(47,111,219,0) 60%,rgba(47,111,219,.8));
-  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
-.rel-top{display:flex;justify-content:space-between;align-items:center;gap:10px;padding-bottom:12px;border-bottom:1px solid rgba(233,231,223,.14)}
-.rel-top b{font-weight:600;color:#fbfbf7}
-.rel-top span{font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:#9a9aa2}
-.barras{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));align-items:end;gap:6px;height:86px;margin-top:16px}
-.barras i{display:block;border-radius:4px 4px 2px 2px;background:#3a3c40}
-.barras i.bom{background:var(--verde-vivo)}
-.barras-leg{display:flex;justify-content:space-between;margin-top:6px;font-size:12px;color:#9a9aa2}
-.chk{margin-top:14px;display:grid;gap:9px}
-.chk li{display:grid;grid-template-columns:22px minmax(0,1fr) auto;gap:8px;align-items:center}
-.chk li::before{content:"";width:16px;height:16px;border-radius:5px}
-.chk .ok::before{background:var(--verde-vivo)}
-.chk .meio::before{background:#e0a43a}
-.chk .nao::before{background:#ff5f5f}
-.chk em{font-style:normal;color:#9a9aa2;font-size:13px}
-.plano{margin-top:14px;padding:12px 14px;border-radius:10px;background:rgba(60,207,126,.1);border:1px solid rgba(60,207,126,.35);color:#d9f5e5}
-.plano b{display:block;margin-bottom:4px;color:var(--verde-vivo);font-weight:600;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase}
-.rel-leg{margin-top:10px;font:400 13.5px/1.4 var(--sans);color:var(--cinza)}
+/* ---------- relatório de exemplo, como uma folha de registro (só no computador, no topo) ---------- */
+.rel{position:relative;background:var(--folha);color:var(--tinta);border:1px solid var(--linha2);border-radius:3px;padding:20px 22px 18px;
+  box-shadow:inset 0 0 0 5px var(--folha),inset 0 0 0 6px var(--linha),0 30px 50px -26px rgba(20,12,4,.75);transform:rotate(-.6deg)}
+.rel-top{display:flex;justify-content:flex-start;align-items:baseline;gap:12px;padding-right:70px;padding-bottom:10px;border-bottom:3px double var(--linha2)}
+.rel-top b{font:600 19px/1.1 var(--serif);letter-spacing:.01em}
+.rel-top span{font:500 12px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--cinza)}
+.barras{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));align-items:end;gap:6px;height:88px;margin-top:16px;padding-bottom:1px;border-bottom:1.5px solid var(--tinta)}
+.barras i{display:block;border:1.5px solid rgba(34,24,15,.7);border-bottom:0;background:repeating-linear-gradient(135deg,rgba(34,24,15,.42) 0 1.5px,transparent 1.5px 5px)}
+.barras i.bom{background:var(--verm);border-color:var(--verm2)}
+.barras-leg{display:flex;justify-content:space-between;margin-top:6px;font:400 12.5px/1.3 var(--mono);color:var(--cinza)}
+.chk{margin-top:14px;display:grid;gap:9px;font-size:15px}
+.chk li{display:grid;grid-template-columns:22px minmax(0,1fr) auto;gap:8px;align-items:center;padding-bottom:8px;border-bottom:1px dotted var(--linha2)}
+.chk li::before{content:"";width:16px;height:16px}
+.chk .ok::before{background:var(--verm);-webkit-mask:var(--ok) center/16px no-repeat;mask:var(--ok) center/16px no-repeat}
+.chk .meio::before{background:var(--ouro);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2 6.6c1.3-1.6 2.6-1.6 4 0s2.7 1.6 4 0' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E") center/16px no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2 6.6c1.3-1.6 2.6-1.6 4 0s2.7 1.6 4 0' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E") center/16px no-repeat}
+.chk .nao::before{background:var(--tinta);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M3 3l6 6M9 3 3 9' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E") center/16px no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M3 3l6 6M9 3 3 9' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E") center/16px no-repeat}
+.chk em{font:400 12.5px/1.2 var(--mono);font-style:normal;color:var(--cinza)}
+.plano{margin-top:14px;padding:12px 14px;border:1.5px dashed var(--ouro);border-radius:3px;background:rgba(227,194,127,.2);font-size:15px;line-height:1.4}
+.plano b{display:block;margin-bottom:4px;color:var(--ouro);font:600 12px/1.3 var(--mono);letter-spacing:.12em;text-transform:uppercase}
+.carimbo{position:absolute;right:-30px;top:-40px;display:grid;place-items:center;width:108px;height:108px;border-radius:50%;color:var(--verm);
+  border:3px solid currentColor;box-shadow:inset 0 0 0 4px var(--folha),inset 0 0 0 5.5px currentColor;transform:rotate(-14deg);opacity:.88;mix-blend-mode:multiply;text-align:center;pointer-events:none;
+  background:rgba(251,246,234,.82)}
+.carimbo b{display:block;font:700 15px/1 var(--serif);letter-spacing:.16em}
+.carimbo span{display:block;margin-top:5px;font:500 10px/1 var(--mono);letter-spacing:.14em}
+.rel-leg{margin-top:14px;padding:9px 12px;border-radius:4px;background:rgba(251,246,234,.9);font-size:14.5px;line-height:1.4;color:var(--tinta2);box-shadow:0 10px 20px -14px rgba(20,12,4,.6)}
 
 /* ---------- pra quem é ---------- */
-.quem{margin-top:16px;display:grid;gap:14px}
-.quem .cartao{padding:18px}
-.quem h3{margin-top:6px;font:600 20px/1.2 var(--sans);letter-spacing:-.02em;text-wrap:balance}
-.quem p:not(.rot){margin-top:8px;font-size:16px;line-height:1.5;color:var(--tinta2)}
-.quem .nao{background:transparent;border-style:dashed;border-color:#bdbab0}
+.quem{margin-top:18px;display:grid;gap:14px}
+.quem .cartao{padding:20px;transition:transform .25s,box-shadow .25s,border-color .25s}
+.quem h3{margin-top:8px;font:600 22px/1.2 var(--serif);letter-spacing:-.01em;text-wrap:balance;font-variation-settings:'opsz' 36}
+.quem p:not(.rot){margin-top:10px;font-size:16px;line-height:1.5;color:var(--tinta2)}
+.quem .nao{background:transparent;border:1.5px dashed var(--linha2)}
 .quem .nao .rot{color:var(--cinza)}
 
 /* ---------- como funciona: 4 passos ---------- */
-.passos{margin-top:16px;padding:6px 18px;counter-reset:p}
-.passos li{counter-increment:p;display:grid;grid-template-columns:44px minmax(0,1fr);gap:2px 8px;padding:16px 0}
+.passos{margin-top:18px;padding:6px 20px;counter-reset:p}
+.passos li{counter-increment:p;display:grid;grid-template-columns:48px minmax(0,1fr);gap:2px 8px;padding:16px 0}
 .passos li + li{border-top:1px solid var(--linha)}
-.passos li::before{content:counter(p);grid-row:1/3;width:32px;height:32px;border-radius:9px;background:var(--tinta);color:var(--verde-vivo);display:grid;place-items:center;font:600 15px/1 var(--mono)}
-.passos b{font:600 18px/1.25 var(--sans);letter-spacing:-.015em;text-wrap:balance}
+.passos li::before{content:counter(p);grid-row:1/3;width:36px;height:36px;border-radius:4px;background:var(--verm);color:#fdf5e6;display:grid;place-items:center;
+  font:600 19px/1 var(--serif);box-shadow:inset 0 0 0 2.5px var(--verm),inset 0 0 0 4px rgba(253,245,230,.75);transform:rotate(-4deg)}
+.passos b{font:600 19px/1.25 var(--serif);letter-spacing:-.005em;text-wrap:balance}
 .passos span{color:var(--tinta2);font-size:16px;line-height:1.45}
 
 /* ---------- a call, minuto a minuto ---------- */
-.call{margin-top:16px;overflow:hidden}
-.call li{display:grid;grid-template-columns:86px minmax(0,1fr);gap:4px 14px;padding:16px 18px;align-items:baseline}
+.call{margin-top:18px;overflow:hidden}
+.call li{display:grid;grid-template-columns:86px minmax(0,1fr);gap:4px 14px;padding:16px 20px;align-items:baseline}
 .call li + li{border-top:1px solid var(--linha)}
-.call time{font:600 15px/1.3 var(--mono);color:var(--verde)}
-.call b{font:600 18px/1.25 var(--sans);letter-spacing:-.015em}
+.call time{font:600 18px/1.3 var(--serif);color:var(--verm);font-variant-numeric:tabular-nums}
+.call b{font:600 19px/1.25 var(--serif);letter-spacing:-.005em}
 .call span{grid-column:2;color:var(--tinta2);font-size:16px;line-height:1.45}
 .call .barra{display:none}
 
-/* ---------- o que você leva (cartão escuro) ---------- */
-.leva{margin-top:28px;padding:24px 20px;border-radius:18px;background:var(--tinta);color:var(--cartao);display:grid;gap:18px;box-shadow:0 24px 50px -30px rgba(26,138,87,.75)}
-.leva .rot{color:var(--verde-vivo)}
-.leva h2{margin-top:8px;font:600 27px/1.12 var(--sans);letter-spacing:-.03em;text-wrap:balance}
-.leva .txt{margin-top:10px;font-size:17px;line-height:1.5;color:rgba(251,251,247,.8)}
-.leva .preco span{color:rgba(251,251,247,.7)}
-.leva .lista{font-size:16.5px;color:rgba(251,251,247,.88)}
-.leva .lista li::before{background:var(--verde-vivo)}
+/* ---------- o que você leva (cartão escuro com a pintura) ---------- */
+.leva{position:relative;margin-top:32px;padding:150px 20px 24px;border-radius:8px;color:var(--folha);display:grid;gap:18px;overflow:hidden;
+  background:linear-gradient(180deg,rgba(33,23,16,0),rgba(33,23,16,.7) 125px,var(--escuro) 175px),url(montanha.webp) center -40px/100% auto no-repeat,var(--escuro);
+  box-shadow:inset 0 0 0 6px var(--escuro),inset 0 0 0 7px rgba(227,194,127,.3),0 30px 60px -36px rgba(40,20,5,.9)}
+.leva .rot{color:var(--ouro2)}
+.leva h2{margin-top:8px;font:600 29px/1.1 var(--serif);letter-spacing:-.015em;text-wrap:balance;font-variation-settings:'opsz' 60}
+.leva .txt{margin-top:10px;font-size:17px;line-height:1.5;color:rgba(251,246,234,.8)}
+.leva .preco span{color:rgba(251,246,234,.72)}
+.leva .lista{font-size:16.5px;color:rgba(251,246,234,.9)}
+.leva .lista li::before{background:var(--ouro2)}
 .leva .lado{display:grid;gap:14px;align-content:start}
 
 /* ---------- perguntas + compra final ---------- */
-.fim{margin-top:16px;display:grid;gap:18px}
-.faq{padding:4px 18px}
+.fim{margin-top:18px;display:grid;gap:22px}
+.faq{padding:4px 20px}
 .faq details + details{border-top:1px solid var(--linha)}
-.faq summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:minmax(0,1fr) 22px;gap:12px;align-items:center;padding:16px 0;font:600 17px/1.3 var(--sans);letter-spacing:-.015em}
+.faq summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:minmax(0,1fr) 22px;gap:12px;align-items:center;padding:17px 0;font:600 17px/1.3 var(--sans);letter-spacing:-.01em;transition:color .2s}
+.faq summary:hover{color:var(--verm)}
 .faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"+";font:400 24px/1 var(--sans);color:var(--verde);text-align:center;transition:transform .25s}
+.faq summary::after{content:"+";font:400 26px/1 var(--serif);color:var(--verm);text-align:center;transition:transform .25s}
 .faq details[open] summary::after{transform:rotate(45deg)}
-.faq details p{padding:0 30px 16px 0;color:var(--tinta2);line-height:1.5}
-.faq details p a{color:var(--verde);font-weight:600;text-decoration:underline;text-underline-offset:3px}
-.final{overflow:hidden}
-.final .f-txt{padding:22px 20px;display:grid;gap:14px}
-.final h2{margin-top:10px;font:700 29px/1.05 var(--sans);letter-spacing:-.035em}
-.final h2 em{display:block;font-style:normal;color:var(--verde)}
+.faq details p{padding:0 30px 17px 0;color:var(--tinta2);line-height:1.55}
+.faq details p a{color:var(--verm);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.final{overflow:hidden;position:relative}
+.final .f-txt{padding:24px 20px;display:grid;gap:14px}
+.final h2{margin-top:12px;font:600 32px/1.02 var(--serif);letter-spacing:-.02em;font-variation-settings:'opsz' 72}
+.final h2 em{display:block;font-style:normal;color:var(--verm)}
 
 /* ---------- rodapé ---------- */
-.rodape{margin-top:36px;padding-bottom:44px;display:grid;gap:12px;font-size:14.5px;line-height:1.5;color:var(--cinza)}
+.rodape{margin-top:40px;padding:18px 0 44px;border-top:3px double var(--linha2);display:grid;gap:12px;font-size:14.5px;line-height:1.5;color:var(--cinza)}
 .rodape nav{display:flex;flex-wrap:wrap;gap:8px 20px}
 .rodape nav a{text-decoration:underline;text-underline-offset:3px}
+.rodape nav a:hover{color:var(--verm)}
 
 /* ---------- computador: layout próprio ---------- */
 @media (min-width:900px){
   :root{--lado:32px}
   body{font-size:17px}
-  .topo{height:68px}
-  .hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(340px,430px)}
-  .h-txt{padding:32px 44px 30px;display:block}
-  .hero h1{font-size:54px}
-  .lead{font-size:19px;max-width:560px}
+  .topo{height:70px}
+  .hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(360px,450px);margin:6px}
+  .h-faixa{display:none}
+  .h-txt{padding:34px 46px 30px;display:block}
+  .hero h1{font-size:60px}
+  .lead{font-size:19px;max-width:570px}
   .compra .preco span{white-space:nowrap}
-  .hero .lista{margin-top:16px;max-width:580px}
-  .compra{margin-top:22px;padding-top:20px;grid-template-columns:auto auto;justify-content:start;align-items:center;gap:12px 28px}
-  .compra .preco{display:grid;gap:5px}
-  .compra .btn{justify-self:start;white-space:nowrap}
+  .hero .lista{margin-top:16px;max-width:590px}
+  .compra{margin-top:22px;padding-top:20px;grid-template-columns:auto auto;justify-content:start;align-items:center;gap:12px 30px}
+  .compra .preco{display:grid;gap:6px}
+  .compra .btn{justify-self:start;white-space:nowrap;min-width:260px}
   .compra .miudo{grid-column:1/-1}
-  .h-quadro{display:flex;flex-direction:column;justify-content:center;padding:30px 30px 24px;border-left:1px solid var(--linha);background:var(--placa)}
-  .sec{margin-top:56px}
-  .sec h2{font-size:27px}
-  .intro{font-size:20px;max-width:800px}
+  .h-quadro{display:flex;flex-direction:column;justify-content:center;padding:28px 30px 24px;border-left:1px solid var(--linha2);
+    background:linear-gradient(180deg,rgba(243,234,215,.1),rgba(243,234,215,.35)),url(montanha.webp) center 14%/cover}
+  .sec{margin-top:60px}
+  .sec h2{font-size:32px}
+  .intro{font-size:22px;max-width:840px}
   .quem{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-  .quem .cartao{padding:26px 26px 28px}
+  .quem .cartao{padding:28px 28px 30px}
+  .quem .cartao:not(.nao):hover{transform:translateY(-4px);border-color:var(--linha2);box-shadow:0 26px 40px -30px rgba(70,40,12,.7)}
+  .quem h3{font-size:24px}
   .passos{padding:8px 0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
   .passos li{display:block;padding:24px 26px 26px}
   .passos li + li{border-top:0;border-left:1px solid var(--linha)}
-  .passos li::before{margin-bottom:14px}
-  .passos b{display:block;margin-bottom:6px;font-size:19px}
-  .call .barra{display:grid;grid-template-columns:5fr 15fr 7fr 3fr;gap:4px;padding:16px 18px 0}
-  .call .barra i{height:10px;border-radius:3px;background:var(--linha)}
-  .call .barra i:nth-child(2){background:var(--verde-vivo)}
+  .passos li::before{margin-bottom:16px}
+  .passos b{display:block;margin-bottom:6px;font-size:21px}
+  .call .barra{display:grid;grid-template-columns:5fr 15fr 7fr 3fr;gap:4px;padding:18px 20px 0}
+  .call .barra i{height:10px;border-radius:2px;background:var(--linha2)}
+  .call .barra i:nth-child(2){background:var(--verm)}
   .call .barra i:nth-child(3){background:var(--tinta)}
+  .call .barra i:nth-child(4){background:var(--ouro2)}
   .call ol{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
-  .call li{display:block;padding:16px 18px 22px}
+  .call li{display:block;padding:16px 20px 22px}
   .call li + li{border-top:0;border-left:1px solid var(--linha)}
-  .call time{display:block;margin-bottom:6px}
-  .call b{display:block;margin-bottom:6px}
-  .leva{margin-top:44px;padding:36px 40px;grid-template-columns:minmax(0,1fr) minmax(0,.95fr) auto;gap:20px 44px;align-items:center}
-  .leva h2{font-size:32px}
+  .call time{display:block;margin-bottom:6px;font-size:20px}
+  .call b{display:block;margin-bottom:6px;font-size:21px}
+  .leva{margin-top:48px;padding:40px 44px;grid-template-columns:minmax(0,1fr) minmax(0,.9fr) auto;gap:20px 44px;align-items:center;
+    background:linear-gradient(90deg,var(--escuro) 30%,rgba(33,23,16,.72) 52%,rgba(33,23,16,.18)),url(montanha.webp) right 36%/64% auto no-repeat,var(--escuro)}
+  .leva h2{font-size:36px}
   .leva .lado{justify-items:start}
   .leva .btn{min-width:300px}
-  .fim{grid-template-columns:minmax(0,1fr) 380px;gap:22px;align-items:start}
-  .faq{padding:6px 28px}
-  .final{position:sticky;top:20px}
-  .final .f-txt{padding:26px}
+  .fim{grid-template-columns:minmax(0,1fr) 390px;gap:26px;align-items:start}
+  .faq{padding:6px 30px}
+  .final{position:sticky;top:24px;margin:6px}
+  .final .f-txt{padding:28px}
+  .final h2{font-size:38px}
 }
 
 /* ---------- movimento (some pra quem pediu menos animação) ---------- */
 @media (prefers-reduced-motion:no-preference){
   .h-txt > *{animation:sobe .8s cubic-bezier(.2,.8,.2,1) both}
-  .h-txt > :nth-child(2){animation-delay:.06s}.h-txt > :nth-child(3){animation-delay:.12s}.h-txt > :nth-child(4){animation-delay:.18s}
-  .h-txt > :nth-child(5){animation-delay:.26s}
-  .rel{animation:aparece 1s cubic-bezier(.2,.8,.2,1) .15s both}
-  .barras i{transform-origin:50% 100%;animation:cresce .9s cubic-bezier(.2,.8,.2,1) both}
-  .barras i:nth-child(n){animation-delay:calc(.35s + var(--d,0) * 45ms)}
+  .h-txt > :nth-child(2){animation-delay:.07s}.h-txt > :nth-child(3){animation-delay:.14s}.h-txt > :nth-child(4){animation-delay:.21s}
+  .h-txt > :nth-child(5){animation-delay:.3s}
+  .h-faixa{animation:revela 1.1s cubic-bezier(.2,.8,.2,1) both}
+  .h-quadro{animation:revela 1.3s cubic-bezier(.2,.8,.2,1) both}
+  .rel{animation:pousa 1s cubic-bezier(.2,.8,.2,1) .2s both}
+  .barras i{transform-origin:50% 100%;animation:cresce .9s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(.5s + var(--d,0) * 45ms)}
   .chk li{animation:sobe .6s cubic-bezier(.2,.8,.2,1) both}
-  .chk li:nth-child(1){animation-delay:.9s}.chk li:nth-child(2){animation-delay:1s}.chk li:nth-child(3){animation-delay:1.1s}.chk li:nth-child(4){animation-delay:1.2s}
-  .plano{animation:sobe .7s cubic-bezier(.2,.8,.2,1) 1.35s both}
+  .chk li:nth-child(1){animation-delay:1s}.chk li:nth-child(2){animation-delay:1.1s}.chk li:nth-child(3){animation-delay:1.2s}.chk li:nth-child(4){animation-delay:1.3s}
+  .plano{animation:sobe .7s cubic-bezier(.2,.8,.2,1) 1.45s both}
+  .carimbo{animation:carimba .42s cubic-bezier(.3,1.6,.5,1) 1.9s both}
+  .compra .btn::after{animation:brilho 1.1s ease 1.6s 1}
+  .js .rev{opacity:0;transform:translateY(18px);transition:opacity .7s cubic-bezier(.2,.8,.2,1),transform .7s cubic-bezier(.2,.8,.2,1)}
+  .js .rev.vis{opacity:1;transform:none}
   @keyframes sobe{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
-  @keyframes aparece{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-  @keyframes cresce{from{transform:scaleY(.05)}to{transform:none}}
+  @keyframes revela{from{opacity:0;filter:sepia(1) brightness(1.25)}to{opacity:1;filter:none}}
+  @keyframes pousa{from{opacity:0;transform:translateY(22px) rotate(2deg)}to{opacity:1;transform:rotate(-.6deg)}}
+  @keyframes cresce{from{transform:scaleY(.04)}to{transform:none}}
+  @keyframes carimba{from{opacity:0;transform:rotate(-24deg) scale(1.9)}to{opacity:.88;transform:rotate(-14deg) scale(1)}}
+  @keyframes brilho{from{transform:translateX(-130%)}to{transform:translateX(130%)}}
 }
 </style>
 </head>
 <body>
+<script>document.documentElement.classList.add('js')</script>
 <div class="wrap">
   <header class="topo">
-    <div class="marca"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#17181a"/><path d="M18 34.5 27 43l19-21" fill="none" stroke="#3ccf7e" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>@condzxyz</div>
+    <div class="marca"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="9" fill="#b3261e"/><rect x="5" y="5" width="54" height="54" rx="5" fill="none" stroke="#fbf3e4" stroke-width="2.5"/><path d="M19 34 28 42.5 45.5 22" fill="none" stroke="#fbf3e4" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>@condzxyz</div>
     <span class="por">IA pra viralizar</span>
   </header>
 
   <main>
     <!-- ============ TOPO: o que é + compra ============ -->
-    <section class="cartao sombra hero">
+    <section class="cartao moldura hero">
+      <div class="h-faixa" aria-hidden="true"></div>
       <div class="h-txt">
         <p><span class="selo"><i></i>Mentoria 1:1 · 30 minutos</span></p>
         <h1>Raio-X do seu perfil, <em>com IA.</em></h1>
@@ -254,13 +292,13 @@ img,svg{display:block;max-width:100%}
         </ul>
         <div class="compra">
           <p class="preco"><b>R$ 297</b><span>pagamento único · Pix ou cartão</span></p>
-          <a class="btn vivo comprar" href="https://buy.stripe.com/00w4gA3fKblw3099Aybsc0j?locale=pt-BR">Quero o meu Raio-X <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          <a class="btn comprar" href="https://buy.stripe.com/00w4gA3fKblw3099Aybsc0j?locale=pt-BR">Quero o meu Raio-X <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
           <p class="miudo">Depois de pagar, você escolhe o dia e o horário.</p>
         </div>
       </div>
       <figure class="h-quadro">
         <div class="rel" role="img" aria-label="Exemplo do relatório de preparo: os últimos 12 Reels, o que está funcionando e o plano de 30 dias.">
-          <div class="rel-top"><b>RAIO-X · @seuperfil</b><span>exemplo</span></div>
+          <div class="rel-top"><b>Raio-X · @seuperfil</b><span>exemplo</span></div>
           <div class="barras" aria-hidden="true">
             <i style="height:34%;--d:0"></i><i style="height:22%;--d:1"></i><i class="bom" style="height:88%;--d:2"></i><i style="height:28%;--d:3"></i>
             <i style="height:40%;--d:4"></i><i style="height:18%;--d:5"></i><i style="height:30%;--d:6"></i><i class="bom" style="height:100%;--d:7"></i>
@@ -274,18 +312,19 @@ img,svg{display:block;max-width:100%}
             <li class="nao">Automação de DM<em>desligada</em></li>
           </ul>
           <p class="plano" aria-hidden="true"><b>Plano de 30 dias</b>1 formato fixo · 3 referências · 4 posts por semana · 1 automação</p>
+          <div class="carimbo" aria-hidden="true"><div><b>VISTO</b><span>RAIO-X</span></div></div>
         </div>
         <figcaption class="rel-leg">Exemplo do relatório que eu preparo antes da call, com os números do seu perfil.</figcaption>
       </figure>
     </section>
 
     <!-- ============ O QUE É ============ -->
-    <div class="sec"><h2>O que é</h2></div>
-    <p class="intro">30 minutos por vídeo, só você e eu, olhando o seu perfil do jeito que eu olho o meu: o que fez um vídeo andar e o outro parar, onde a IA economiza o seu tempo e o que dá pra deixar rodando sozinho. <b>Sem fórmula pronta: é feedback de verdade em cima do que você já posta.</b></p>
+    <div class="sec rev"><h2>O que é</h2></div>
+    <p class="intro rev">30 minutos por vídeo, só você e eu, olhando o seu perfil do jeito que eu olho o meu: o que fez um vídeo andar e o outro parar, onde a IA economiza o seu tempo e o que dá pra deixar rodando sozinho. <b>Sem fórmula pronta: é feedback de verdade em cima do que você já posta.</b></p>
 
     <!-- ============ PRA QUEM É ============ -->
-    <div class="sec"><h2>Pra quem é</h2></div>
-    <div class="quem">
+    <div class="sec rev"><h2>Pra quem é</h2></div>
+    <div class="quem rev">
       <div class="cartao">
         <p class="rot">Posta e não anda</p>
         <h3>Você posta, mas não sabe por que um vídeo vai e o outro não</h3>
@@ -304,8 +343,8 @@ img,svg{display:block;max-width:100%}
     </div>
 
     <!-- ============ COMO FUNCIONA ============ -->
-    <div class="sec"><h2>Como funciona</h2><span>quatro passos</span></div>
-    <ol class="cartao passos">
+    <div class="sec rev"><h2>Como funciona</h2><span>quatro passos</span></div>
+    <ol class="cartao passos rev">
       <li><b>Você paga</b><span>R$ 297, no Pix ou no cartão. Pagamento único.</span></li>
       <li><b>Escolhe o horário</b><span>Logo depois do pagamento abre a minha agenda. Lá você responde 5 perguntas rápidas sobre o seu perfil.</span></li>
       <li><b>Eu preparo o seu relatório</b><span>Antes da call eu analiso os seus últimos 12 Reels: views, gancho, formato e isca.</span></li>
@@ -313,8 +352,8 @@ img,svg{display:block;max-width:100%}
     </ol>
 
     <!-- ============ A CALL ============ -->
-    <div class="sec"><h2>A call, minuto a minuto</h2><span>30 minutos no Google Meet</span></div>
-    <div class="cartao call">
+    <div class="sec rev"><h2>A call, minuto a minuto</h2><span>30 minutos no Google Meet</span></div>
+    <div class="cartao call rev">
       <div class="barra" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
       <ol>
         <li><time>0–5</time><b>Contexto e meta</b><span>O que você quer desse perfil nos próximos 90 dias.</span></li>
@@ -325,7 +364,7 @@ img,svg{display:block;max-width:100%}
     </div>
 
     <!-- ============ O QUE VOCÊ LEVA + COMPRA (meio) ============ -->
-    <section class="leva">
+    <section class="leva rev">
       <div>
         <p class="rot">O que você leva</p>
         <h2>Um plano de 30 dias pro seu perfil, e não um genérico</h2>
@@ -339,14 +378,14 @@ img,svg{display:block;max-width:100%}
       </ul>
       <div class="lado">
         <p class="preco"><b>R$ 297</b><span>30 minutos, por vídeo</span></p>
-        <a class="btn vivo comprar" href="https://buy.stripe.com/00w4gA3fKblw3099Aybsc0j?locale=pt-BR">Quero o meu Raio-X <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <a class="btn comprar" href="https://buy.stripe.com/00w4gA3fKblw3099Aybsc0j?locale=pt-BR">Quero o meu Raio-X <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
       </div>
     </section>
 
     <!-- ============ PERGUNTAS + COMPRA (fim) ============ -->
-    <div class="sec"><h2>Perguntas frequentes</h2></div>
+    <div class="sec rev"><h2>Perguntas frequentes</h2></div>
     <div class="fim">
-      <div class="cartao faq">
+      <div class="cartao faq rev">
         <details><summary>Como é a call?</summary><p>Uma chamada de vídeo de 30 minutos no Google Meet, só você e eu. Dá pra entrar pelo celular, mas pelo computador fica melhor, porque a gente olha a tela junto.</p></details>
         <details><summary>Quais são os horários?</summary><p>De segunda a sexta, à tarde, no horário de Brasília. Você vê os horários livres logo depois de pagar. Precisa marcar com pelo menos 1 dia de antecedência, que é o tempo de eu preparar o seu relatório.</p></details>
         <details><summary>Preciso ter muitos seguidores?</summary><p>Não. Serve pra quem está começando e pra quem já posta faz tempo. Só precisa ter alguns vídeos postados, pra gente ter o que olhar.</p></details>
@@ -356,14 +395,14 @@ img,svg{display:block;max-width:100%}
         <details><summary>Posso remarcar?</summary><p>Pode. Me avisa com pelo menos 24 horas de antecedência, no direct <a href="https://www.instagram.com/condzxyz/">@condzxyz</a>, e a gente acha outro horário.</p></details>
         <details><summary>E se eu desistir?</summary><p>Se desistir antes da call, você tem 7 dias a partir do pagamento pra pedir o dinheiro de volta. Me chama no direct <a href="https://www.instagram.com/condzxyz/">@condzxyz</a> com o <span class="nw">e-mail</span> do pagamento.</p></details>
       </div>
-      <section class="cartao sombra final">
+      <section class="cartao moldura final">
         <div class="f-txt">
           <div>
             <p><span class="selo"><i></i>Mentoria 1:1 · 30 minutos</span></p>
             <h2>Raio-X do seu perfil, <em>com IA.</em></h2>
           </div>
           <p class="preco"><b>R$ 297</b><span>pagamento único · Pix ou cartão</span></p>
-          <a class="btn vivo comprar" href="https://buy.stripe.com/00w4gA3fKblw3099Aybsc0j?locale=pt-BR">Quero o meu Raio-X <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          <a class="btn comprar" href="https://buy.stripe.com/00w4gA3fKblw3099Aybsc0j?locale=pt-BR">Quero o meu Raio-X <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
           <p class="miudo">Depois de pagar, você escolhe o dia e o horário.</p>
         </div>
       </section>
@@ -389,6 +428,15 @@ img,svg{display:block;max-width:100%}
   document.querySelectorAll('a.comprar').forEach(function (a) {
     try { var u = new URL(a.href); u.searchParams.set('client_reference_id', 'rx_' + o); a.href = u.toString(); } catch (e) {}
   });
+})();
+// Entrada suave das seções conforme a pessoa rola. Sem suporte, tudo aparece normal.
+(function () {
+  var els = document.querySelectorAll('.rev');
+  if (!('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('vis'); }); return; }
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('vis'); io.unobserve(e.target); } });
+  }, {rootMargin: '0px 0px -8% 0px', threshold: .08});
+  els.forEach(function (e) { io.observe(e); });
 })();
 </script>
 </body>
