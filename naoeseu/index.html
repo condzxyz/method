@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Não é seu · 7 dias pra parar de carregar o que jogam em você</title>
+<meta name="description" content="Uma prática de 3 a 5 minutos por dia, durante 7 dias, a partir de ensinamentos antigos com a fonte. PDF + 7 cards pro celular. R$ 27.">
+<link rel="canonical" href="https://condzmethod.com/naoeseu/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Conrado de Sá">
+<meta property="og:title" content="Não é seu · 7 dias pra parar de carregar o que jogam em você">
+<meta property="og:description" content="Uma prática curta por dia, durante 7 dias. PDF + 7 cards pro celular.">
+<meta property="og:url" content="https://condzmethod.com/naoeseu/">
+<meta property="og:image" content="https://condzmethod.com/naoeseu/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://condzmethod.com/naoeseu/og.jpg">
+<meta name="theme-color" content="#ecebe8">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<!--
+  Página de vendas do "Não é seu" (25/11/2026), o produto de entrada de R$ 27 do @conrado_desa. Vai pra condzmethod.com/naoeseu/.
+  Pasta autocontida: index.html, privacidade.html, favicon.svg, og.jpg, fonts/ e img/. Caminhos relativos.
+  O link de compra aparece nos botões com class="comprar". Antes de publicar, o link do Stripe está nos botões
+  (procure por buy.stripe.com: são 3).
+  Mesma família visual do Desafio (condzmethod.com/desafio/) e do teste (condzmethod.com/evolucao/).
+  Pixel da Meta: fica fora até o Conrado mandar o ID (bloco PIXEL no fim, comentado).
+-->
+<style>
+@font-face{font-family:'Geist';src:url(fonts/geist.woff2) format('woff2');font-weight:100 900;font-display:swap}
+@font-face{font-family:'Geist Mono';src:url(fonts/geist-mono.woff2) format('woff2');font-weight:100 900;font-display:swap}
+:root{
+  --fundo:#ecebe8;--cartao:#f7f6f4;--placa:#efede8;--linha:#dad7d1;--tinta:#1d1c1a;--tinta2:#5c5852;--cinza:#6f6a63;
+  --acento:#8a3324;--acento-vivo:#c0563a;--rot-escuro:#d9a594;
+  --sans:'Geist',system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  --mono:'Geist Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --serif:Georgia,'Times New Roman',serif;
+  --lado:18px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;background:var(--fundo);scroll-padding-top:16px}
+body{margin:0;color:var(--tinta);font:400 16.5px/1.55 var(--sans);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  background-image:radial-gradient(rgba(29,28,26,.07) 1px,transparent 1.4px);background-size:22px 22px}
+h1,h2,h3,p,ul,ol,figure,blockquote{margin:0}
+ul,ol{padding:0;list-style:none}
+a{color:inherit;text-decoration:none}
+img,svg{display:block;max-width:100%}
+:focus-visible{outline:3px solid var(--acento);outline-offset:3px;border-radius:6px}
+
+.wrap{width:min(1120px,100%);margin:0 auto;padding:0 var(--lado)}
+.rot{font:500 12.5px/1.4 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--acento)}
+.cartao{background:var(--cartao);border:1px solid var(--linha);border-radius:18px}
+.sombra{box-shadow:0 30px 60px -42px rgba(0,0,0,.5)}
+.sec{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;margin-top:40px;padding-bottom:12px;border-bottom:1px solid var(--linha)}
+.sec h2{font:600 23px/1.2 var(--sans);letter-spacing:-.025em}
+.sec span{font-size:15px;color:var(--cinza)}
+.intro{margin-top:16px;font-size:18px;line-height:1.5;color:var(--tinta2);letter-spacing:-.005em;text-wrap:pretty}
+.intro b{color:var(--tinta);font-weight:600}
+.lista{display:grid;gap:10px}
+.lista li{position:relative;padding-left:22px;line-height:1.45}
+.lista li::before{content:"";position:absolute;left:3px;top:.52em;width:8px;height:8px;border-radius:2px;background:var(--acento)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:58px;padding:12px 26px;border-radius:12px;background:var(--tinta);color:var(--cartao);font:600 17.5px/1.2 var(--sans);letter-spacing:-.01em;text-align:center;transition:filter .2s,transform .2s}
+.btn svg{width:18px;height:18px;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.btn:hover{filter:brightness(1.35)}
+.btn:active{transform:scale(.98)}
+.btn.vivo{background:var(--acento-vivo);color:#fff}
+.btn.vivo:hover{filter:brightness(1.1)}
+.preco{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px}
+.preco b{font:700 40px/1 var(--sans);letter-spacing:-.04em}
+.preco span{font-size:15.5px;color:var(--tinta2)}
+.miudo{font-size:15px;line-height:1.5;color:var(--cinza)}
+.alt{font-size:15.5px;color:var(--tinta2);text-decoration:underline;text-underline-offset:3px}
+
+.topo{height:60px;display:flex;align-items:center;justify-content:space-between}
+.marca{font:700 21px/1 var(--sans);letter-spacing:-.04em}
+.por{font-size:15px;color:var(--cinza)}
+
+/* ---------- hero ---------- */
+.hero{overflow:hidden}
+.h-arte{height:190px;background:var(--placa)}
+.h-arte img{width:100%;height:100%;object-fit:cover;object-position:62% 30%}
+.h-txt{padding:18px 20px 22px;display:flex;flex-direction:column}
+.h-txt > .lista{order:4}
+.h-txt > .alt{order:5;align-self:flex-start}
+.hero h1{margin-top:10px;font:700 clamp(40px,12vw,48px)/1 var(--sans);letter-spacing:-.045em}
+.hero .sub{margin-top:8px;font:600 21px/1.2 var(--sans);letter-spacing:-.025em;color:var(--acento);text-wrap:balance}
+.lead{margin-top:14px;font-size:18px;line-height:1.48;color:var(--tinta2);letter-spacing:-.005em;text-wrap:pretty}
+.lead b{color:var(--tinta);font-weight:600}
+.hero .lista{margin-top:20px}
+.compra{margin-top:16px;padding-top:16px;border-top:1px solid var(--linha);display:grid;gap:12px}
+.hero .alt{display:inline-block;margin-top:18px}
+.h-painel{display:none}
+
+/* ---------- números do vídeo ---------- */
+.nums{margin-top:16px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+.nums div{padding:15px 8px 14px 14px}
+.nums div + div{border-left:1px solid var(--linha)}
+.nums b{display:block;font:600 25px/1.1 var(--sans);letter-spacing:-.035em;white-space:nowrap}
+.nums span{display:block;margin-top:3px;font-size:14.5px;line-height:1.3;color:var(--cinza)}
+.coments{margin-top:14px;display:grid;gap:12px}
+.coment{padding:16px 18px}
+.coment blockquote{font:italic 400 19px/1.4 var(--serif);color:var(--tinta);text-wrap:pretty}
+.coment blockquote::before{content:"“";margin-right:2px;color:var(--acento-vivo)}
+.coment blockquote::after{content:"”";margin-left:1px;color:var(--acento-vivo)}
+.coment p{margin-top:8px;font:500 12px/1.4 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--cinza)}
+
+/* ---------- o presente recusado ---------- */
+.historia{margin-top:16px;overflow:hidden;display:grid}
+.historia figure{background:#2a2622}
+.historia figure img{width:100%;height:auto}
+.historia figcaption{padding:10px 18px 12px;font-size:13.5px;line-height:1.4;color:#c9c2b8;background:#2a2622}
+.historia .h-corpo{padding:20px 20px 22px;display:grid;gap:14px}
+.historia h3{font:600 24px/1.15 var(--sans);letter-spacing:-.025em}
+.historia p{color:var(--tinta2);line-height:1.55;text-wrap:pretty}
+.historia p b{color:var(--tinta);font-weight:600}
+.cena{padding:16px 18px;border-left:3px solid var(--acento);background:var(--placa);border-radius:0 12px 12px 0}
+.cena p{color:var(--tinta);font:400 18.5px/1.5 var(--serif)}
+.cena small{display:block;margin-top:8px;font:500 12px/1.4 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--cinza)}
+
+/* ---------- os 7 dias ---------- */
+.dias7{margin-top:16px;padding:4px 18px}
+.dias7 li{display:grid;grid-template-columns:40px minmax(0,1fr);gap:2px 8px;padding:16px 0}
+.dias7 li + li{border-top:1px solid var(--linha)}
+.dias7 i{grid-row:1/4;font:500 13px/1.75 var(--mono);font-style:normal;color:var(--acento)}
+.dias7 b{font:600 18.5px/1.25 var(--sans);letter-spacing:-.02em}
+.dias7 span{color:var(--tinta2);font-size:16px;line-height:1.45}
+.dias7 small{font-size:14px;line-height:1.4;color:var(--cinza)}
+
+/* ---------- as cinco partes do dia ---------- */
+.partes{margin-top:14px;padding:6px 18px}
+.partes li{display:grid;grid-template-columns:34px minmax(0,1fr);gap:0 6px;padding:14px 0}
+.partes li + li{border-top:1px solid var(--linha)}
+.partes i{grid-row:1/3;font:500 12.5px/1.9 var(--mono);font-style:normal;color:var(--acento)}
+.partes b{font:600 17.5px/1.25 var(--sans);letter-spacing:-.015em}
+.partes span{color:var(--tinta2);font-size:15.5px;line-height:1.45}
+
+/* ---------- o que vem dentro ---------- */
+.dentro{margin-top:16px;padding:18px}
+.dentro .lista{margin-top:14px;font-size:16px}
+.galeria{margin:16px calc(var(--lado)*-1) 0;padding:4px var(--lado) 14px;display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.galeria::-webkit-scrollbar{display:none}
+.galeria figure{flex:0 0 min(44vw,190px);scroll-snap-align:center}
+.galeria figure.pag{flex-basis:min(62vw,250px)}
+.galeria a{display:block;border-radius:12px;overflow:hidden;border:1px solid var(--linha);background:var(--cartao);box-shadow:0 22px 34px -26px rgba(0,0,0,.55);transition:transform .3s}
+.galeria figure.pag a{border-radius:8px}
+.galeria img{width:100%;height:auto}
+.galeria figcaption{margin-top:9px;font-size:14px;line-height:1.35;color:var(--tinta2)}
+.galeria figcaption b{display:block;font:500 12px/1.4 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--tinta)}
+.arrasta{margin-top:2px;font-size:14.5px;color:var(--cinza)}
+
+/* ---------- cartão escuro de compra ---------- */
+.meio{margin-top:28px;border-radius:18px;background:var(--tinta);color:var(--cartao);overflow:hidden;display:grid;box-shadow:0 24px 50px -30px rgba(138,51,36,.7)}
+.meio .m-arte{height:170px;background:#3a1410}
+.meio .m-arte img{width:100%;height:100%;object-fit:cover;object-position:50% 22%}
+.meio .m-txt{padding:24px 20px;display:grid;gap:16px}
+.meio .rot{color:var(--rot-escuro)}
+.meio h2{margin-top:8px;font:600 27px/1.1 var(--sans);letter-spacing:-.03em}
+.meio .preco span{color:rgba(247,246,244,.7)}
+.meio .lista{font-size:16px;color:rgba(247,246,244,.84)}
+.meio .lista li::before{background:var(--rot-escuro)}
+.bump{padding:14px 16px;border:1px dashed rgba(217,165,148,.55);border-radius:12px;font-size:15.5px;line-height:1.45;color:rgba(247,246,244,.84)}
+.bump b{color:var(--cartao);font-weight:600}
+
+/* ---------- quem escreve ---------- */
+.autor{margin-top:16px;padding:20px;display:grid;gap:12px}
+.autor p{color:var(--tinta2);line-height:1.55;text-wrap:pretty}
+.autor p b{color:var(--tinta);font-weight:600}
+.autor a{color:var(--acento);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+
+/* ---------- pra quem é ---------- */
+.quem{margin-top:16px;display:grid;gap:14px}
+.quem .cartao{padding:18px}
+.quem h3{margin-top:6px;font:600 20px/1.2 var(--sans);letter-spacing:-.02em}
+.quem .lista{margin-top:12px;font-size:16px}
+.nao .lista li::before{background:none;box-shadow:inset 0 0 0 1.5px var(--cinza)}
+.nao .lista{color:var(--tinta2)}
+.nao .lista b{color:var(--tinta);font-weight:600}
+
+/* ---------- perguntas ---------- */
+.fim{margin-top:16px;display:grid;gap:18px}
+.faq{padding:4px 18px}
+.faq details + details{border-top:1px solid var(--linha)}
+.faq summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:minmax(0,1fr) 22px;gap:12px;align-items:center;padding:16px 0;font:600 17px/1.3 var(--sans);letter-spacing:-.015em}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font:400 24px/1 var(--sans);color:var(--acento);text-align:center;transition:transform .25s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{padding:0 30px 16px 0;color:var(--tinta2);line-height:1.5}
+.faq details p a{color:var(--acento);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+
+.final{overflow:hidden}
+.final .f-arte{height:150px;background:var(--placa)}
+.final .f-arte img{width:100%;height:100%;object-fit:cover;object-position:62% 30%}
+.final .f-txt{padding:20px;display:grid;gap:14px}
+.final h2{margin-top:8px;font:700 32px/1.02 var(--sans);letter-spacing:-.04em}
+.final h2 em{display:block;margin-top:6px;font:600 19px/1.25 var(--sans);font-style:normal;letter-spacing:-.02em;color:var(--acento)}
+
+.rodape{margin-top:36px;padding-bottom:44px;display:grid;gap:12px;font-size:14.5px;line-height:1.5;color:var(--cinza)}
+.rodape nav{display:flex;flex-wrap:wrap;gap:8px 20px}
+.rodape nav a{text-decoration:underline;text-underline-offset:3px}
+
+/* ---------- computador ---------- */
+@media (min-width:900px){
+  :root{--lado:32px}
+  body{font-size:17px}
+  .topo{height:68px}
+  .hero{display:grid;grid-template-columns:minmax(0,1fr) 420px}
+  .h-arte{display:none}
+  .h-txt{padding:40px 44px 36px;display:block}
+  .hero h1{font-size:72px}
+  .hero .sub{font-size:26px;max-width:560px}
+  .lead{font-size:20px;max-width:580px}
+  .hero .lista{margin-top:18px;max-width:580px}
+  .compra{margin-top:22px;padding-top:18px;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:12px 24px}
+  .compra .preco{display:grid;gap:5px}
+  .compra .btn{justify-self:start}
+  .compra .miudo{grid-column:1/-1}
+  .hero .alt{margin-top:14px}
+  .h-painel{display:block;position:relative;min-height:560px;background:#2a2622;border-left:1px solid var(--linha);overflow:hidden}
+  .h-painel img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:62% 22%}
+  .nums{margin-top:20px}
+  .nums div{padding:22px 26px}
+  .nums b{font-size:34px}
+  .nums span{font-size:16px}
+  .coments{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+  .coment{padding:20px 22px}
+  .sec{margin-top:56px}
+  .sec h2{font-size:27px}
+  .intro{font-size:20px;max-width:760px}
+  .historia{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)}
+  .historia figure{display:flex;flex-direction:column}
+  .historia figure img{flex:1;object-fit:cover;object-position:35% 60%;min-height:0}
+  .historia .h-corpo{padding:34px 40px;align-content:center}
+  .historia h3{font-size:28px}
+  .dias7{padding:8px 0;display:grid;grid-template-columns:1fr 1fr}
+  .dias7 li{padding:20px 26px}
+  .dias7 li + li{border-top:0}
+  .dias7 li:nth-child(n+3){border-top:1px solid var(--linha)}
+  .dias7 li:nth-child(even){border-left:1px solid var(--linha)}
+  .partes{padding:8px 0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr))}
+  .partes li{display:block;padding:20px 22px}
+  .partes li + li{border-top:0;border-left:1px solid var(--linha)}
+  .partes i{display:block;line-height:1.4;margin-bottom:8px}
+  .partes b{display:block;margin-bottom:6px}
+  .dentro{padding:28px 30px}
+  .galeria{margin:18px 0 0;padding:0 0 6px;display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:14px;overflow:visible}
+  .galeria figure.pag{grid-column:span 2}
+  .galeria a:hover{transform:translateY(-4px) rotate(-.6deg)}
+  .arrasta{display:none}
+  .meio{margin-top:40px;grid-template-columns:300px minmax(0,1fr)}
+  .meio .m-arte{height:auto}
+  .meio .m-txt{padding:34px 40px;grid-template-columns:minmax(0,1fr) auto;gap:20px 40px;align-items:center}
+  .meio .m-txt > .bump{grid-column:1/-1}
+  .meio h2{font-size:32px}
+  .meio .lado{display:grid;gap:14px;justify-items:start}
+  .meio .btn{min-width:290px}
+  .autor{padding:28px 34px;grid-template-columns:1fr 1fr;gap:12px 40px}
+  .quem{grid-template-columns:1fr 1fr;gap:18px}
+  .quem .cartao{padding:26px 28px}
+  .fim{grid-template-columns:minmax(0,1fr) 380px;gap:22px;align-items:start}
+  .faq{padding:6px 28px}
+  .final{position:sticky;top:20px}
+  .final .f-arte{height:190px}
+  .final .f-txt{padding:24px}
+}
+@media (prefers-reduced-motion:no-preference){
+  .h-txt > *{animation:sobe .8s cubic-bezier(.2,.8,.2,1) both}
+  .h-txt > :nth-child(2){animation-delay:.06s}.h-txt > :nth-child(3){animation-delay:.12s}.h-txt > :nth-child(4){animation-delay:.18s}
+  .h-txt > :nth-child(5){animation-delay:.26s}.h-txt > :nth-child(6){animation-delay:.32s}
+  @keyframes sobe{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="topo">
+    <div class="marca">Não é seu</div>
+    <span class="por">por Conrado de Sá</span>
+  </header>
+
+  <main>
+    <!-- ============ TOPO: dor + compra ============ -->
+    <section class="cartao sombra hero">
+      <div class="h-arte"><img src="img/kyosai-faixa.webp" width="900" height="504" alt="Pintura japonesa antiga: Buda sentado, de mãos juntas e olhos calmos, enquanto chamas sobem ao lado dele." fetchpriority="high" decoding="async"></div>
+      <div class="h-txt">
+        <p class="rot">7 dias · PDF + 7 cards pro celular</p>
+        <h1>Não é seu.</h1>
+        <p class="sub">7 dias pra parar de carregar o que jogam em você.</p>
+        <p class="lead">Alguém te provoca de manhã e, à noite, você ainda está remoendo. A crítica, o tom, a indireta no grupo. Buda respondeu isso há uns 2.500 anos com uma pergunta só: <b>isso é meu ou de quem trouxe?</b></p>
+        <ul class="lista">
+          <li>Uma prática de 3 a 5 minutos por dia, durante 7 dias</li>
+          <li>Cada dia com um ensinamento antigo e a fonte: Buda, Zhuangzi, Rumi, Sêneca, Epicteto</li>
+          <li>7 cards pro celular, pra abrir na hora que bater</li>
+        </ul>
+        <div class="compra">
+          <p class="preco"><b>R$ 27</b><span>pagamento único · Pix ou cartão</span></p>
+          <a class="btn comprar" href="https://buy.stripe.com/4gM6oI3fK89kasBdQObsc0k?locale=pt-BR">Quero começar hoje <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          <p class="miudo">O acesso chega na hora, no seu e-mail. 7 dias pra pedir o dinheiro de volta.</p>
+        </div>
+        <a class="alt" href="https://www.instagram.com/reel/Df3J9yvu0az/">Não viu o vídeo que deu origem a isso? Assiste aqui</a>
+      </div>
+      <div class="h-painel" aria-hidden="true"><img src="img/kyosai.webp" width="900" height="1198" alt="" loading="lazy" decoding="async"></div>
+    </section>
+
+    <!-- ============ PROVA: o vídeo ============ -->
+    <div class="sec"><h2>Começou num vídeo</h2><span>Instagram, 17 de novembro</span></div>
+    <p class="intro">Eu contei essa história de Buda num vídeo de um minuto e meio. <b>Ele passou de 400 mil visualizações e foi enviado mais de 11 mil vezes.</b> Pelos comentários, muita gente se reconheceu nela.</p>
+    <div class="cartao nums">
+      <div><b>421 mil</b><span>visualizações</span></div>
+      <div><b>58,8 mil</b><span>curtidas</span></div>
+      <div><b>11,6 mil</b><span>envios</span></div>
+    </div>
+    <div class="coments">
+      <figure class="cartao coment"><blockquote>O veneno só funciona se a gente beber.</blockquote><p>Comentário no vídeo · 2.081 curtidas</p></figure>
+      <figure class="cartao coment"><blockquote>Esse veneno não me pertence, devolva para o remetente.</blockquote><p>Comentário no vídeo · 957 curtidas</p></figure>
+      <figure class="cartao coment"><blockquote>Muito importante identificar projeções.</blockquote><p>Comentário no vídeo · 657 curtidas</p></figure>
+    </div>
+    <p class="intro">Entender a ideia leva um minuto. Fazer isso na hora em que a provocação chega é outra coisa. <b>Este material é pra treinar, um dia de cada vez.</b></p>
+
+    <!-- ============ O MECANISMO ============ -->
+    <div class="sec"><h2>O presente recusado</h2><span>a ideia por trás dos 7 dias</span></div>
+    <section class="cartao historia">
+      <figure>
+        <img src="img/kyosai-demonio.webp" width="900" height="695" alt="Detalhe da pintura de Kawanabe Kyōsai: um demônio e labaredas avançam na direção de Buda, sentado e sereno numa rocha." loading="lazy" decoding="async">
+        <figcaption>Kawanabe Kyōsai, <i>Shakyamuni Subjugating Demons</i>, c. 1888. The Metropolitan Museum of Art, domínio público.</figcaption>
+      </figure>
+      <div class="h-corpo">
+        <div class="cena">
+          <p>Um homem chegou xingando Buda na frente de todo mundo. Buda esperou ele terminar e perguntou: quando você recebe visitas e oferece comida, e elas não aceitam, de quem fica a comida? O homem disse que ficava com ele. Aí Buda fala: então o que você me ofereceu, eu não aceito. Continua sendo seu.</p>
+          <small>Akkosa Sutta, Samyutta Nikaya 7.2 · em paráfrase</small>
+        </div>
+        <h3>Você não escolhe o que trazem. Escolhe se aceita.</h3>
+        <p>A provocação chega como um pacote na sua porta. Quando você passa o dia remoendo, você aceitou o pacote, e abre ele de novo a cada vez que lembra.</p>
+        <p>Nos 7 dias, você treina o outro lado: <b>perceber o pacote chegando, dar nome ao que sentiu, esperar antes de responder e deixar com quem trouxe.</b> Uma prática curta por dia, com um texto antigo diferente em cada um.</p>
+      </div>
+    </section>
+
+    <!-- ============ OS 7 DIAS ============ -->
+    <div class="sec"><h2>Os 7 dias</h2><span>um por dia, na ordem</span></div>
+    <ol class="cartao dias7">
+      <li><i>Dia 1</i><b>O presente recusado</b><span>A pergunta antes de reagir: isso é meu ou de quem trouxe?</span><small>Akkosa Sutta</small></li>
+      <li><i>Dia 2</i><b>O barco vazio</b><span>Por que o mesmo esbarrão irrita ou não, dependendo de quem estava no barco.</span><small>Zhuangzi</small></li>
+      <li><i>Dia 3</i><b>Dá nome ao que chegou</b><span>Dar nome à emoção, numa palavra, antes de fazer qualquer coisa.</span><small>Rumi · Lieberman e colegas, 2007</small></li>
+      <li><i>Dia 4</i><b>A demora</b><span>Escrever a resposta e só mandar no dia seguinte.</span><small>Sêneca, Sobre a ira</small></li>
+      <li><i>Dia 5</i><b>Eu deixei ela lá</b><span>A lista do que você ainda está carregando.</span><small>Tanzan e Ekido, história zen</small></li>
+      <li><i>Dia 6</i><b>Não é ele, é a sua opinião</b><span>Reescrever o que aconteceu sem o adjetivo.</span><small>Epicteto, Manual</small></li>
+      <li><i>Dia 7</i><b>O que é seu de volta</b><span>Três minutos desejando o bem, começando por alguém neutro.</span><small>Dhammapada</small></li>
+    </ol>
+
+    <div class="sec"><h2>Cada dia tem cinco partes</h2><span>cerca de duas páginas</span></div>
+    <ol class="cartao partes">
+      <li><i>01</i><b>O ensinamento</b><span>A cena contada, com a fonte.</span></li>
+      <li><i>02</i><b>O que significa hoje</b><span>Como isso aparece no seu dia: no trabalho, na família, no grupo.</span></li>
+      <li><i>03</i><b>A prática de agora</b><span>De 3 a 5 minutos, em passos.</span></li>
+      <li><i>04</i><b>A frase pra quando bater</b><span>Uma frase curta, que também vem num card pro celular.</span></li>
+      <li><i>05</i><b>Pra responder por escrito</b><span>Uma pergunta e linhas pra escrever.</span></li>
+    </ol>
+
+    <!-- ============ O QUE VEM DENTRO ============ -->
+    <div class="sec"><h2>O que vem dentro</h2></div>
+    <div class="cartao dentro">
+      <ul class="lista">
+        <li><b>O PDF dos 7 dias, com 21 páginas.</b> Lê no celular ou imprime.</li>
+        <li><b>7 cards pro celular,</b> um por dia, com a frase pra quando bater. Salva na galeria ou usa de tela de bloqueio.</li>
+        <li><b>Antes de começar e Depois dos 7 dias:</b> como usar e o que fazer depois.</li>
+      </ul>
+      <div class="galeria">
+        <figure class="pag"><a href="img/pagina-capa.webp"><img src="img/pagina-capa.webp" width="560" height="793" alt="Capa do PDF Não é seu, com a pintura de um barco vazio." loading="lazy" decoding="async"></a><figcaption><b>Capa</b>PDF, 21 páginas</figcaption></figure>
+        <figure class="pag"><a href="img/pagina-dia.webp"><img src="img/pagina-dia.webp" width="560" height="793" alt="Página do dia 1, O presente recusado: a cena de Buda e o brâmane, com a fonte, e o que isso quer dizer hoje." loading="lazy" decoding="async"></a><figcaption><b>Dia 1</b>O ensinamento e o que quer dizer hoje</figcaption></figure>
+        <figure><a href="img/card-1.webp"><img src="img/card-1.webp" width="360" height="640" alt="Card do dia 1: Isso é meu ou de quem trouxe?" loading="lazy" decoding="async"></a><figcaption><b>Card 1</b>O presente recusado</figcaption></figure>
+        <figure><a href="img/card-2.webp"><img src="img/card-2.webp" width="360" height="640" alt="Card do dia 2: E se o barco estivesse vazio?" loading="lazy" decoding="async"></a><figcaption><b>Card 2</b>O barco vazio</figcaption></figure>
+        <figure><a href="img/card-4.webp"><img src="img/card-4.webp" width="360" height="640" alt="Card do dia 4: Escreve agora. Manda amanhã." loading="lazy" decoding="async"></a><figcaption><b>Card 4</b>A demora</figcaption></figure>
+      </div>
+      <p class="arrasta">Arrasta pro lado pra ver mais.</p>
+    </div>
+
+    <!-- ============ COMPRA (meio) ============ -->
+    <section class="meio" id="oferta">
+      <div class="m-arte"><img src="img/thangka.webp" width="760" height="955" alt="Pintura tibetana do século XVII: Buda sentado, sereno, em tons de vermelho e dourado." loading="lazy" decoding="async"></div>
+      <div class="m-txt">
+        <div>
+          <p class="rot">PDF + 7 cards · acesso na hora</p>
+          <h2>Não é seu · 7 dias</h2>
+          <ul class="lista" style="margin-top:14px">
+            <li>Pix ou cartão, pagamento único</li>
+            <li>O acesso chega no seu e-mail logo depois de pagar</li>
+            <li>7 dias pra pedir o dinheiro de volta</li>
+          </ul>
+        </div>
+        <div class="lado">
+          <p class="preco"><b>R$ 27</b><span>pagamento único</span></p>
+          <a class="btn vivo comprar" href="https://buy.stripe.com/4gM6oI3fK89kasBdQObsc0k?locale=pt-BR">Quero começar hoje <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        </div>
+        <p class="bump"><b>No pagamento, dá pra incluir o Desafio Evolução Mental de 21 dias por R$ 47, em vez de R$ 97.</b> É opcional: são as três semanas seguintes, uma prática por dia, em e-book.</p>
+      </div>
+    </section>
+
+    <!-- ============ QUEM ESCREVE ============ -->
+    <div class="sec"><h2>Quem escreve</h2></div>
+    <div class="cartao autor">
+      <p><b>Eu sou o Conrado de Sá.</b> No <a href="https://www.instagram.com/conrado_desa/">@conrado_desa</a> eu conto ensinamentos antigos pra vida de hoje: Buda, o Bhagavad Gita, Sêneca, os mestres zen. Sempre com a fonte.</p>
+      <p>Não sou psicólogo nem monge. Eu leio os textos, confiro de onde vem cada frase e transformo numa prática curta. Foi assim que nasceram os vídeos, e foi assim que este material foi feito.</p>
+    </div>
+
+    <!-- ============ PRA QUEM É ============ -->
+    <div class="sec"><h2>Pra quem é, e pra quem não é</h2></div>
+    <div class="quem">
+      <div class="cartao">
+        <p class="rot">É pra você</p>
+        <h3>Se o que os outros dizem fica rodando na sua cabeça</h3>
+        <ul class="lista">
+          <li>Você remói uma crítica ou uma indireta por horas, às vezes por dias</li>
+          <li>Responde no impulso e se arrepende, ou engole e descarrega em quem não tem nada a ver</li>
+          <li>Quer uma coisa curta por dia, sem precisar de experiência: alguns minutos, papel e caneta</li>
+        </ul>
+      </div>
+      <div class="cartao nao">
+        <p class="rot" style="color:var(--cinza)">Não é pra você</p>
+        <h3>Se você procura outra coisa</h3>
+        <ul class="lista">
+          <li><b>Tratamento.</b> Não é terapia, não é diagnóstico e não substitui médico nem psicólogo</li>
+          <li><b>Situação de abuso ou violência.</b> Aí o caminho não é "não aceitar o presente": é buscar ajuda. CVV: 188. Violência contra a mulher: 180</li>
+          <li><b>Resultado garantido.</b> O material não promete nenhum. Sem fazer a prática, nada muda</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ============ PERGUNTAS + COMPRA (fim) ============ -->
+    <div class="sec"><h2>Perguntas frequentes</h2></div>
+    <div class="fim">
+      <div class="cartao faq">
+        <details><summary>Em que formato vem?</summary><p>Um PDF com os 7 dias e 7 imagens (os cards) pra salvar no celular. Dá pra ler no celular ou imprimir.</p></details>
+        <details><summary>Quando eu recebo?</summary><p>Na hora. Depois do pagamento você cai na página de acesso, e o link também chega no e-mail que você usou na compra.</p></details>
+        <details><summary>Como eu pago?</summary><p>Pix ou cartão. É pagamento único de R$ 27, sem mensalidade.</p></details>
+        <details><summary>O que é o Desafio que aparece no pagamento?</summary><p>É o meu e-book de 21 dias, uma prática por dia em três semanas: atenção e respiração, corpo e emoção, direção e ação. Sozinho ele custa R$ 97; junto com o Não é seu, sai por R$ 47. É opcional: se você não marcar, paga só os R$ 27. <a href="https://condzmethod.com/desafio/?o=naoeseu">Ver o Desafio</a>.</p></details>
+        <details><summary>Preciso ser budista?</summary><p>Não. Os textos vêm de várias tradições (Buda, Zhuangzi, Rumi, Sêneca, Epicteto), e a prática não pede crença nenhuma. É sobre o que você faz com o que jogam em você.</p></details>
+        <details><summary>Quanto tempo por dia?</summary><p>De 3 a 5 minutos de prática, mais a leitura do dia e uma pergunta pra responder por escrito.</p></details>
+        <details><summary>E se eu não gostar?</summary><p>Você tem 7 dias, a partir da compra, pra pedir o dinheiro de volta. É o direito de arrependimento do Código de Defesa do Consumidor. Me chama no direct <a href="https://www.instagram.com/conrado_desa/">@conrado_desa</a> com o e-mail da compra.</p></details>
+        <details><summary>Não recebi o link. E agora?</summary><p>Olha a caixa de spam do e-mail que você usou na compra. Se não estiver lá, me chama no direct <a href="https://www.instagram.com/conrado_desa/">@conrado_desa</a> com o e-mail da compra.</p></details>
+        <details><summary>Isso substitui terapia ou tratamento?</summary><p>Não. É conteúdo educativo. Se você está em sofrimento, procure um médico ou psicólogo. Se precisar conversar agora, o CVV atende de graça, 24 horas, no 188.</p></details>
+      </div>
+      <section class="cartao sombra final">
+        <div class="f-arte"><img src="img/kyosai-faixa.webp" width="900" height="504" alt="" loading="lazy" decoding="async"></div>
+        <div class="f-txt">
+          <div>
+            <p class="rot">PDF + 7 cards pro celular</p>
+            <h2>Não é seu.<em>7 dias pra parar de carregar o que jogam em você.</em></h2>
+          </div>
+          <p class="preco"><b>R$ 27</b><span>pagamento único · Pix ou cartão</span></p>
+          <a class="btn comprar" href="https://buy.stripe.com/4gM6oI3fK89kasBdQObsc0k?locale=pt-BR">Quero começar hoje <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          <p class="miudo">O acesso chega na hora. 7 dias pra pedir o dinheiro de volta.</p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="rodape">
+    <p>Conteúdo educativo sobre bem-estar emocional. Não é diagnóstico nem tratamento, não promete resultado e não substitui acompanhamento médico ou psicológico. CVV: 188, de graça, 24 horas.</p>
+    <nav>
+      <a href="privacidade.html">Privacidade</a>
+      <a href="https://condzmethod.com/desafio/?o=naoeseu">Desafio Evolução Mental · 21 dias</a>
+      <a href="https://www.instagram.com/conrado_desa/">@conrado_desa</a>
+    </nav>
+    <p>Imagens: Kawanabe Kyōsai, <i>Shakyamuni Subjugating Demons</i>, c. 1888, e <i>Buddha Shakyamuni as "Lord of the Munis"</i>, Tibete Ocidental, séc. XVII. The Metropolitan Museum of Art, Open Access (domínio público).</p>
+    <p>© 2026 Conrado de Sá</p>
+  </footer>
+</div>
+
+<script>
+// Origem da venda: ?o=bio, ?o=dm, ?o=story etc. (só letras e números, até 12) vira client_reference_id=o_<origem>
+// no link do Stripe. Sem ?o=, os links ficam como estão. Não é dado pessoal.
+(function () {
+  var q = new URLSearchParams(location.search);
+  var o = (q.get('o') || '').replace(/[^a-zA-Z0-9]/g, '').slice(0, 12);
+  if (!o) return;
+  document.querySelectorAll('a.comprar').forEach(function (a) {
+    try { var u = new URL(a.href); u.searchParams.set('client_reference_id', 'o_' + o); a.href = u.toString(); } catch (e) {}
+  });
+})();
+</script>
+<!-- PIXEL: quando o Conrado mandar o ID do pixel da Meta, entra aqui o código base (PageView) e um
+     fbq('track','InitiateCheckout') no clique de a.comprar. A compra (Purchase) vem do Stripe, não desta página. -->
+</body>
+</html>
