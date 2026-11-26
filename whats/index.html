@@ -72,6 +72,12 @@ h1 em{font-style:normal;color:#8a3324}
   var url='https://wa.me/5511955075077?text='+encodeURIComponent(txt);
   document.getElementById('ir').href=url;
   if(o) document.querySelectorAll('.atalho').forEach(function(a){a.href=a.getAttribute('data-base')+'?o='+o;});
+  // contador de visitas (bot whats-evolucao, src/visitas.js): sem cookie, sem IP; u=1 só na 1ª vez do dia neste navegador
+  var vo=(o||'direto').toLowerCase();
+  function conta(pg,k){try{var d=new Date(Date.now()-108e5).toISOString().slice(0,10),u='0';try{if(localStorage.getItem(k)!==d){localStorage.setItem(k,d);u='1';}}catch(e){}
+    if(navigator.sendBeacon)navigator.sendBeacon('https://whats-evolucao.built-bot.workers.dev/v?p='+pg+'&o='+vo+'&u='+u);}catch(e){}}
+  conta('whats','cz_v_whats');
+  document.getElementById('ir').addEventListener('click',function(){conta('whats-botao','cz_v_botao');});
 })();
 </script>
 </body>

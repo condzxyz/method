@@ -23,6 +23,10 @@
   var txt=(F[p]||F['7dias'])+(o&&o!=='bio'?' · '+o:'');
   var url='https://wa.me/5511955075077?text='+encodeURIComponent(txt);
   document.addEventListener('DOMContentLoaded',function(){var a=document.getElementById('ir');if(a)a.href=url;});
+  // contador de visitas (bot whats-evolucao, src/visitas.js): sem cookie, sem IP; u=1 só na 1ª vez do dia neste navegador
+  try{var d=new Date(Date.now()-108e5).toISOString().slice(0,10),u='0';try{if(localStorage.getItem('cz_v_w')!==d){localStorage.setItem('cz_v_w',d);u='1';}}catch(e){}
+    var vo=(o||'bio').toLowerCase()+(F[p]&&p!=='7dias'?'-'+p:'');
+    if(navigator.sendBeacon)navigator.sendBeacon('https://whats-evolucao.built-bot.workers.dev/v?p=w&o='+vo+'&u='+u);}catch(e){}
   location.replace(url);
 })();
 </script>
